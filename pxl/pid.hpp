@@ -13,7 +13,7 @@ namespace pxl {
 class PID {
 public:
     /**
-     * Constructor for the PID controller.
+     * Constructor for a genaric PID controller.
      *
      * @param kP The proportional gain.
      * @param kI The integral gain.
@@ -22,6 +22,17 @@ public:
     PID(float kP, float kI, float kD)
         : kP(kP), kI(kI), kD(kD) {}
 
+    /**
+     * Constructor for a lateral PID controller.
+     *
+     * @param kP The proportional gain.
+     * @param kI The integral gain.
+     * @param kD The derivative gain.
+     * @param kP_d The porportinal drift gain 
+     */
+
+    PID(float kP, float kI, float kD, float kP_d)
+        : kP(kP), kI(kI), kD(kD), kP_d(kP_d) {}
     /**
      * Updates the PID controller output based on the current error.
      *
@@ -56,6 +67,16 @@ protected:
     float kD;
 
     /**
+     * he porportinal drift gain (kP_d)
+     */
+    float kP_d;
+
+    /**
+     * The proportional term of the PID controller.
+     */
+    float proportional = 0;
+
+    /**
      * The integral term of the PID controller.
      */
     float integral = 0;
@@ -69,7 +90,9 @@ private:
     /**
      * The previous time point used for calculating the time difference.
      */
-    time_point<system_clock> prevTime;
+    std::chrono::time_point<std::chrono::system_clock> prevTime;
+
+    void updateIntegral(float error, float lastError, float activeDistance, float& integral);
 };
 
 } // namespace pxl
