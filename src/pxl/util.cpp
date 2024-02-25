@@ -1,7 +1,9 @@
 #include "pxl/util.hpp"
+#include <iostream>
 #include <algorithm>
 #include <math.h>
 #include <vector>
+#include <type_traits>
 
 namespace pxl {
 float slew(float target, float current, float maxChange) {
@@ -27,14 +29,6 @@ float angleError(float angle1, float angle2, bool radians) {
     return error;
 }
 
-template <typename T> T sgn(T x) { return (x < T(0)) ? T(-1) : T(1); }
-
 float ema(float current, float previous, float smooth) { return (current * smooth) + (previous * (1 - smooth)); }
-
-template <typename T> T average(const std::vector<T>& vec) {
-    T sum = T(); // Initialize sum to default value for T
-    for (const T& elem : vec) { sum += elem; }
-    return sum / vec.size();
-}
 
 } // namespace pxl

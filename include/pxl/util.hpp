@@ -1,6 +1,10 @@
+#pragma once
+
 #include <cmath>
 #include <algorithm>
 #include <vector>
+#include <type_traits>
+#include <memory>
 
 namespace pxl {
 
@@ -97,7 +101,13 @@ float angleError(float angle1, float angle2, bool radians);
  * @tparam x The number.
  * @return The sign of x.
  */
-template <typename T> T sgn(T x);
+template <typename T> T sgn(T x) {
+    if constexpr (std::is_floating_point_v<T>) {
+        return std::signbit(x) ? T(-1) : T(1);
+    } else {
+        return (x < T(0)) ? T(-1) : T(1);
+    }
+}
 
 /**
  * The function calculates the exponential moving average (EMA) of a current value based on a previous
@@ -126,6 +136,10 @@ float ema(float current, float previous, float smooth);
  * @tparam vec The vector of elements.
  * @return The average value (in any datatype).
  */
-template <typename T> T average(const std::vector<T>& vec);
+template <typename T> T avg(const std::vector<T>& vec) {
+    T sum = T(); // Initialize sum to default value for T
+    for (const T& elem : vec) { sum += elem; }
+    return sum / vec.size();
+}
 
 } // namespace pxl
