@@ -29,11 +29,10 @@ class Drivetrain {
 
 class ExtendedDrivetrain {
     public:
-        ExtendedDrivetrain(float verticalTrackWidth) : verticalTrackWidth(verticalTrackWidth) {}
-
+        ExtendedDrivetrain(float verticalTrackWidth)
+            : verticalTrackWidth(verticalTrackWidth) {}
     private:
         float verticalTrackWidth;
 };
-
 
 }; // namespace pxl
