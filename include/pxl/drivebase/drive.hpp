@@ -2,7 +2,7 @@
 
 #include <memory>
 #include "main.h"
-#include "drive_sensors.hpp"
+#include "pxl/aSync.hpp"
 #include "pros/motors.hpp"
 
 namespace pxl {
@@ -18,6 +18,14 @@ class Drivetrain {
               rpm(rpm) {}
 
         // Add any necessary member functions here
+        
+        /**
+         * @brief Method to queue a function to happen mid movement 
+         *
+         * @param actionPoint the type of actionPoint to be used 
+         * @param input input function
+         */
+        pxl::Coord addOnAction(action_Point actionPoint, void input());
     private:
         pros::MotorGroup* leftMotors;
         pros::MotorGroup* rightMotors;

@@ -11,12 +11,12 @@
 
 namespace pxl {
 
-/**
- * Represents a tracking wheel on a robot.
- * Can be constructed with an encoder, rotation sensor, or motor group.
- */
-class TrackingWheel {
-    public:
+ /**
+  * Represents a tracking wheel on a robot.
+  * Can be constructed with an encoder, rotation sensor, or motor group.
+  */
+ class TrackingWheel {
+       public:
         // Constructor with encoder
         TrackingWheel(pros::ADIEncoder* encoder, float wheelDiameter, float distance, float gearRatio);
 
@@ -37,7 +37,8 @@ class TrackingWheel {
 
         // Get the type of wheel (0 for encoder/rotation, 1 for motor group)
         int getType();
-    private:
+
+        private:
         std::unique_ptr<pros::ADIEncoder> encoder; // Pointer to encoder (optional)
         std::unique_ptr<pros::Rotation> rotation; // Pointer to rotation sensor (optional)
         std::unique_ptr<pros::MotorGroup> motors; // Pointer to motor group (optional)
@@ -45,6 +46,6 @@ class TrackingWheel {
         float distance; // Wheel offset from the robot center in meters
         float gearRatio; // Gear ratio of the wheel (encoder/motor)
         float rpm; // RPM of the motor group (optional)
-};
+    };
 
 } // namespace pxl
