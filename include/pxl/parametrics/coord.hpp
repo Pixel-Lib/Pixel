@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cmath>
 
 namespace pxl {
@@ -9,7 +11,8 @@ class Coord {
         Coord(float x, float y)
             : x(x),
               y(y) {}
-        //Overloaded Operators
+
+        // Overloaded Operators
         Coord operator+(const Coord& other) const;
         Coord operator-(const Coord& other) const;
         float operator*(const Coord& other) const;

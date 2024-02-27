@@ -1,3 +1,5 @@
+#pragma once
+
 #include "pxl/parametrics/coord.hpp"
 
 namespace pxl {
