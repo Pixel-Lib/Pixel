@@ -40,6 +40,13 @@ class Timer {
      * returns -1 to indicate that the stop time is not set.
      */
     uint32_t get_time_left();
+    /**
+     * Returns true if the time left on the timer is 0.
+     *
+     * @return  a boolean value indicating whether the timer has finished or
+     * not.
+     */
+    bool isDone();
 
     private:
     uint32_t start_time;

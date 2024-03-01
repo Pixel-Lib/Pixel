@@ -29,4 +29,6 @@ uint32_t Timer::get_time_left() {
     if (stop_time == -1) return -1; // stop time not set
     return pros::millis() - stop_time;
 }
+
+bool Timer::isDone() { return Timer::get_time_left() == 0; }
 } // namespace pxl
