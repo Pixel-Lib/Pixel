@@ -7,6 +7,7 @@
 #include "math.h"
 #include "pxl/util.hpp"
 #include <algorithm>
+#include "pxl/timer.hpp"
 #include <iterator>
 
 namespace pxl {
