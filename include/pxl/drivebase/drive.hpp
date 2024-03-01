@@ -1,7 +1,7 @@
 #pragma once
 
 #include <memory>
-#include "main.h"
+#include "pxl/pid.hpp"
 #include "pxl/aSync.hpp"
 #include "pros/motors.hpp"
 
@@ -26,6 +26,9 @@ class Drivetrain {
          * @param input input function
          */
         pxl::Coord addOnAction(action_Point actionPoint, void input());
+
+        void setConstants(PID& constants);
+
     private:
         pros::MotorGroup* leftMotors;
         pros::MotorGroup* rightMotors;

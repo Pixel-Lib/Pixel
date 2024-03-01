@@ -97,7 +97,6 @@ class PID {
          */
         void reset();
 
-        void setConstants(PID& constants);
     protected:
         /**
          * The proportional gain (Kp).
