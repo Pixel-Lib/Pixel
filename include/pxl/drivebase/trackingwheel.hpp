@@ -27,8 +27,8 @@ class TrackingWheel {
         // Constructor with motor group
         TrackingWheel(pros::MotorGroup* motors, float wheelDiameter, float distance, float rpm);
 
-        // Reset the wheel measurement
-        void reset();
+        // Reset the optocal encoder measurement
+        bool reset();
 
         // Get the distance traveled by the wheel
         float getDistanceTraveled();

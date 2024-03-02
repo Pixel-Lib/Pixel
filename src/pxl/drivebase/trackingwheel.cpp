@@ -38,11 +38,7 @@ TrackingWheel::TrackingWheel(pros::MotorGroup* motors, float wheelDiameter, floa
 }
 
 // Reset the wheel measurement
-void TrackingWheel::reset() {
-    if (encoder) encoder->reset();
-    if (rotation) rotation->reset_position();
-    if (motors) motors->tare_position();
-}
+bool TrackingWheel::reset() { return this->encoder->reset(); }
 
 // Get the distance traveled by the wheel
 float TrackingWheel::getDistanceTraveled() {

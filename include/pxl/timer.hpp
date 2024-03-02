@@ -6,7 +6,7 @@ namespace pxl {
 class Timer {
     public:
         // Constructor
-        Timer();
+        Timer(uint32_t stop_time = -1);
 
         // Destructor
         ~Timer();

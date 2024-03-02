@@ -4,8 +4,8 @@
 
 namespace pxl {
 // Constructor
-Timer::Timer()
-    : stop_time(-1) {
+Timer::Timer(uint32_t stop_time)
+    : stop_time(stop_time) {
     if (stop_time != -1) stop_time += pros::millis();
 }
 
