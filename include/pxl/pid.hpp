@@ -96,7 +96,6 @@ class PID {
          * This function sets the integral term and the previous error value to zero.
          */
         void reset();
-
     protected:
         /**
          * The proportional gain (Kp).

@@ -5,34 +5,32 @@
 #include <functional>
 #include "pxl/parametrics/coord.hpp"
 
-//Macro for implicit creatiion of LAMBDAs 
-#define LAMBDA(func) [](){func;}
+// Macro for implicit creatiion of LAMBDAs
+#define LAMBDA(func) []() { func; }
 
 namespace pxl {
- 
- enum action_Point{
-  pose,
-  point,
-  error,
-  sensed,
- };
 
- class aSync{
+enum action_Point {
+    pose,
+    point,
+    error,
+    sensed,
+};
 
-  protected:
-  pros::Task asyncTask;
-  
+class aSync {
+    protected:
+        pros::Task asyncTask;
+};
 
- };
+struct ActionFuncTuple {
+        std::function<void()> func;
+        action_Point actionPoint;
+        bool called;
 
- struct ActionFuncTuple{
-   std::function<void()> func;
-   action_Point actionPoint;
-   bool called;
-   ActionFuncTuple(std::function<void()> func, action_Point actionPoint, bool called):
-   func(func),actionPoint(actionPoint), called(called){}
+        ActionFuncTuple(std::function<void()> func, action_Point actionPoint, bool called)
+            : func(func),
+              actionPoint(actionPoint),
+              called(called) {}
+};
 
-   
- };
-
-};// namespace pxl
+}; // namespace pxl
