@@ -1,5 +1,4 @@
 #include "pxl/drivebase/odom.hpp"
-#include "pros/imu.hpp"
 
 #include <iostream>
 
@@ -132,4 +131,14 @@ void Odom::update() {
     this->pose += local.rotate(avgTheta);
 }
 
+void Odom::init() {
+    if (OdomTask == nullptr) {
+        OdomTask = new pros::Task([this]() {
+            while (true) {
+                update();
+                pros::delay(10);
+            }
+        });
+    }
+}
 } // namespace pxl
