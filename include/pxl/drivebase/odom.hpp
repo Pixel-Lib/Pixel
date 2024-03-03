@@ -26,8 +26,7 @@ class Odom {
         std::vector<std::shared_ptr<pros::IMU>> imu;
         float lastAngle = 0;
         float calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>>& imu, bool update = true);
-        float calcDeltaTheta(std::vector<std::unique_ptr<TrackingWheel>>& tracker1,
-                             std::vector<std::unique_ptr<TrackingWheel>>& tracker2);
+        float calcDeltaTheta(TrackingWheel& tracker1, TrackingWheel& tracker2);
         Pose pose = Pose(0, 0, 0);
 };
 

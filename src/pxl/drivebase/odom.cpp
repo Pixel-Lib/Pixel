@@ -81,25 +81,9 @@ float Odom::calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>>& imu, bool up
     return pxl::avg(deltaAngles);
 }
 
-float Odom::calcDeltaTheta(std::vector<std::unique_ptr<TrackingWheel>>& tracker1,
-                           std::vector<std::unique_ptr<TrackingWheel>>& tracker2) {
-    auto distanceDeltas1 = std::vector<float>();
-    auto distanceDeltas2 = std::vector<float>();
-    auto offsets1 = std::vector<float>();
-    auto offsets2 = std::vector<float>();
-
-    for (const auto& wheel : tracker1) {
-        distanceDeltas1.push_back(wheel->getDistanceDelta(false));
-        offsets1.push_back(wheel->getOffset());
-    }
-
-    for (const auto& wheel : tracker2) {
-        distanceDeltas2.push_back(wheel->getDistanceDelta(false));
-        offsets2.push_back(wheel->getOffset());
-    }
-
-    const float numerator = pxl::avg(distanceDeltas1) - pxl::avg(distanceDeltas2);
-    const float denominator = pxl::avg(offsets1) - pxl::avg(offsets2);
+float Odom::calcDeltaTheta(TrackingWheel& tracker1, TrackingWheel& tracker2) {
+    const float numerator = tracker1.getDistanceDelta(false) - tracker2.getDistanceDelta(false);
+    const float denominator = tracker1.getOffset() - tracker2.getOffset();
     return numerator / denominator;
 }
 
@@ -108,17 +92,11 @@ void Odom::update() {
     if (this->imu.size() > 0) {
         theta += Odom::calcDeltaTheta(this->imu);
     } else if (horizontals.size() > 1) {
-        std::vector<std::unique_ptr<TrackingWheel>> horizontalsSubset = {std::move(this->horizontals.at(0)),
-                                                                         std::move(this->horizontals.at(1))};
-        theta += Odom::calcDeltaTheta(horizontalsSubset, horizontalsSubset);
+        theta += Odom::calcDeltaTheta(*this->horizontals.at(0), *this->horizontals.at(1));
     } else if (verticals.size() > 1) {
-        std::vector<std::unique_ptr<TrackingWheel>> verticalsSubset = {std::move(this->verticals.at(0)),
-                                                                       std::move(this->verticals.at(1))};
-        theta += Odom::calcDeltaTheta(verticalsSubset, verticalsSubset);
+        theta += Odom::calcDeltaTheta(*this->verticals.at(0), *this->verticals.at(1));
     } else if (drivetrain.size() > 1) {
-        std::vector<std::unique_ptr<TrackingWheel>> drivetrainSubset = {std::move(this->drivetrain.at(0)),
-                                                                        std::move(this->drivetrain.at(1))};
-        theta += Odom::calcDeltaTheta(drivetrainSubset, drivetrainSubset);
+        theta += Odom::calcDeltaTheta(*this->drivetrain.at(0), *this->drivetrain.at(1));
     } else {
         std::cerr << "Odom calculation failure! Not enough sensors to calculate heading" << std::endl;
         return;
