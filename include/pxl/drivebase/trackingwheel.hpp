@@ -33,6 +33,8 @@ class TrackingWheel {
         // Get the distance traveled by the wheel
         float getDistanceTraveled();
 
+        //get the distance delta or the change in distance
+        float getDistanceDelta(bool update);
         // Get the wheel offset
         float getOffset();
 
@@ -46,6 +48,7 @@ class TrackingWheel {
         float distance; // Wheel offset from the robot center in meters
         float gearRatio; // Gear ratio of the wheel (encoder/motor)
         float rpm; // RPM of the motor group (optional)
+        float lastAngle = 0; // Last angle of the wheel
 };
 
 } // namespace pxl

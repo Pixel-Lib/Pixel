@@ -75,6 +75,12 @@ float Odom::getRotationDelta(bool update) {
     return pxl::avg(deltaAngles);
 }
 
+float calcDeltaTheta(TrackingWheel& tracker1, TrackingWheel& tracker2) {
+    const float numerator = tracker1.getDistanceDelta(false) - tracker2.getDistanceDelta(false);
+    const float denominator = tracker1.getOffset() - tracker2.getOffset();
+    return numerator / denominator;
+}
+
 void Odom::update() {
     // TODO: Implement update logic for odom
 }
