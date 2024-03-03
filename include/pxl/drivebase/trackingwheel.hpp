@@ -33,8 +33,8 @@ class TrackingWheel {
         // Get the distance traveled by the wheel
         float getDistanceTraveled();
 
-        //get the distance delta or the change in distance
-        float getDistanceDelta(bool update);
+        // get the distance delta or the change in distance
+        float getDistanceDelta(bool update = true);
         // Get the wheel offset
         float getOffset();
 

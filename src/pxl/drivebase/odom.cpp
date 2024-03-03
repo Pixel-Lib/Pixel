@@ -1,7 +1,7 @@
 #include "pxl/drivebase/odom.hpp"
-#include "pxl/timer.hpp"
 #include "pros/imu.hpp"
-#include "pxl/util.hpp"
+
+#include <iostream>
 
 namespace pxl {
 Odom::Odom(std::vector<std::unique_ptr<TrackingWheel>>& verticals,
@@ -54,12 +54,18 @@ void Odom::calibrate(bool calibrateIMUs) {
     this->imu = std::move(newIMUs);
 }
 
-float Odom::getRotationDelta(bool update) {
+float Odom::calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>>& imu, bool update) {
     auto getRotation = [this](const std::shared_ptr<pros::IMU>& imu) {
-        if (!imu) {
-            return 0.0f; // Return 0 if the IMU pointer is null
+        if (this->imu.empty()) {
+            return 0.0f; // Return 0 if the IMU vector is empty
         }
-        const float rotation = M_PI_2 - degToRad(imu->get_rotation());
+        // Create a lambda to calculate the rotation
+        auto Rotation = [this](const std::shared_ptr<pros::IMU>& imu) {
+            std::vector<float> rotations;
+            for (const auto& imuPtr : this->imu) { rotations.push_back(imuPtr->get_rotation()); }
+            return rotations;
+        };
+        const float rotation = M_PI_2 - degToRad(pxl::avg(Rotation(imu)));
         return rotation;
     };
 
@@ -75,14 +81,77 @@ float Odom::getRotationDelta(bool update) {
     return pxl::avg(deltaAngles);
 }
 
-float calcDeltaTheta(TrackingWheel& tracker1, TrackingWheel& tracker2) {
-    const float numerator = tracker1.getDistanceDelta(false) - tracker2.getDistanceDelta(false);
-    const float denominator = tracker1.getOffset() - tracker2.getOffset();
+float Odom::calcDeltaTheta(std::vector<std::unique_ptr<TrackingWheel>>& tracker1,
+                           std::vector<std::unique_ptr<TrackingWheel>>& tracker2) {
+    auto distanceDeltas1 = std::vector<float>();
+    auto distanceDeltas2 = std::vector<float>();
+    auto offsets1 = std::vector<float>();
+    auto offsets2 = std::vector<float>();
+
+    for (const auto& wheel : tracker1) {
+        distanceDeltas1.push_back(wheel->getDistanceDelta(false));
+        offsets1.push_back(wheel->getOffset());
+    }
+
+    for (const auto& wheel : tracker2) {
+        distanceDeltas2.push_back(wheel->getDistanceDelta(false));
+        offsets2.push_back(wheel->getOffset());
+    }
+
+    const float numerator = pxl::avg(distanceDeltas1) - pxl::avg(distanceDeltas2);
+    const float denominator = pxl::avg(offsets1) - pxl::avg(offsets2);
     return numerator / denominator;
 }
 
 void Odom::update() {
-    // TODO: Implement update logic for odom
+    float theta = this->pose.theta;
+    if (this->imu.size() > 0) {
+        theta += Odom::calcDeltaTheta(this->imu);
+    } else if (horizontals.size() > 1) {
+        std::vector<std::unique_ptr<TrackingWheel>> horizontalsSubset = {std::move(this->horizontals.at(0)),
+                                                                         std::move(this->horizontals.at(1))};
+        theta += Odom::calcDeltaTheta(horizontalsSubset, horizontalsSubset);
+    } else if (verticals.size() > 1) {
+        std::vector<std::unique_ptr<TrackingWheel>> verticalsSubset = {std::move(this->verticals.at(0)),
+                                                                       std::move(this->verticals.at(1))};
+        theta += Odom::calcDeltaTheta(verticalsSubset, verticalsSubset);
+    } else if (drivetrain.size() > 1) {
+        std::vector<std::unique_ptr<TrackingWheel>> drivetrainSubset = {std::move(this->drivetrain.at(0)),
+                                                                        std::move(this->drivetrain.at(1))};
+        theta += Odom::calcDeltaTheta(drivetrainSubset, drivetrainSubset);
+    } else {
+        std::cerr << "Odom calculation failure! Not enough sensors to calculate heading" << std::endl;
+        return;
+    }
+    const float deltaTheta = theta - this->pose.theta; // change in angle
+    const float avgTheta = this->pose.theta + deltaTheta / 2;
+
+    Pose local(0, 0, deltaTheta);
+    const float sinDTheta2 = (deltaTheta == 0) ? 1 : 2 * std::sin(deltaTheta / 2);
+
+    for (auto& tracker : this->horizontals) {
+        const float radius = (deltaTheta == 0) ? tracker->getDistanceDelta()
+                                               : tracker->getDistanceDelta() / deltaTheta + tracker->getOffset();
+        local.y += sinDTheta2 * radius / this->horizontals.size();
+    }
+
+    if (this->verticals.size() > 0) {
+        for (auto& tracker : this->verticals) {
+            const float radius = (deltaTheta == 0) ? tracker->getDistanceDelta()
+                                                   : tracker->getDistanceDelta() / deltaTheta + tracker->getOffset();
+            local.x += sinDTheta2 * radius / this->verticals.size();
+        }
+    } else if (this->drivetrain.size() > 0) {
+        for (auto& motor : this->drivetrain) {
+            const float radius = (deltaTheta == 0) ? motor->getDistanceDelta()
+                                                   : motor->getDistanceDelta() / deltaTheta + motor->getOffset();
+            local.x += sinDTheta2 * radius / this->drivetrain.size();
+        }
+    } else {
+        std::cout << "No vertical tracking wheels! Assuming y movement is 0" << std::endl;
+    }
+
+    this->pose += local.rotate(avgTheta);
 }
 
 } // namespace pxl
