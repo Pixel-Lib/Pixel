@@ -20,11 +20,19 @@ jobs:
 
     - name: Format code
       run: |
-        git diff --name-only HEAD^ | while read filename; do
-          if [[ $filename == *.cpp || $filename == *.h ]]; then
+        changed_files=$(git diff --name-only HEAD^)
+        if [ -z "$changed_files" ]; then
+          echo "No files were changed in the last commit. Formatting all .cpp and .hpp files in the repository."
+          find . -name '*.cpp' -or -name '*.hpp' | while read filename; do
             clang-format -i $filename
-          fi
-        done
+          done
+        else
+          echo "$changed_files" | while read filename; do
+            if [[ $filename == *.cpp || $filename == *.hpp ]]; then
+              clang-format -i $filename
+            fi
+          done
+        fi
 
     - name: Check for changes
       run: git diff
