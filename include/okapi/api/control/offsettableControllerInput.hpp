@@ -6,6 +6,7 @@
 #pragma once
 
 #include <memory>
+
 #include "okapi/api/control/controllerInput.hpp"
 
 namespace okapi {

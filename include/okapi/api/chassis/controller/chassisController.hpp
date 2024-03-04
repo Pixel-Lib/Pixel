@@ -7,6 +7,7 @@
 
 #include <memory>
 #include <valarray>
+
 #include "okapi/api/chassis/controller/chassisScales.hpp"
 #include "okapi/api/chassis/model/chassisModel.hpp"
 #include "okapi/api/device/motor/abstractMotor.hpp"

@@ -21,10 +21,10 @@
 #ifndef _PROS_MISC_HPP_
 #define _PROS_MISC_HPP_
 
-#include "pros/misc.h"
-
 #include <cstdint>
 #include <string>
+
+#include "pros/misc.h"
 
 namespace pros {
 class Controller {
@@ -227,7 +227,8 @@ public:
    * port.
    *
    * \param rumble_pattern
-   *				A string consisting of the characters '.', '-', and '
+   *				A string consisting of the characters '.', '-', and
+   *'
    *', where dots are short rumbles, dashes are long rumbles, and spaces are
    *pauses. Maximum supported length is 8 characters.
    *

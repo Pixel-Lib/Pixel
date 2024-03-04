@@ -7,6 +7,7 @@
 
 #include <initializer_list>
 #include <vector>
+
 #include "okapi/api/device/motor/abstractMotor.hpp"
 #include "okapi/api/util/logging.hpp"
 #include "okapi/impl/device/motor/motor.hpp"

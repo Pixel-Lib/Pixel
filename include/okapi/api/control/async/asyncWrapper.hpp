@@ -7,6 +7,7 @@
 
 #include <atomic>
 #include <memory>
+
 #include "okapi/api/control/async/asyncController.hpp"
 #include "okapi/api/control/controllerInput.hpp"
 #include "okapi/api/control/iterative/iterativeController.hpp"
@@ -207,9 +208,7 @@ public:
     LOG_INFO_S("AsyncWrapper: Waiting to settle");
 
     auto rate = rateSupplier.get();
-    while (!isSettled()) {
-      rate->delayUntil(motorUpdateRate);
-    }
+    while (!isSettled()) { rate->delayUntil(motorUpdateRate); }
 
     LOG_INFO_S("AsyncWrapper: Done waiting to settle");
   }
@@ -245,9 +244,7 @@ protected:
   CrossplatformThread *task{nullptr};
 
   static void trampoline(void *context) {
-    if (context) {
-      static_cast<AsyncWrapper *>(context)->loop();
-    }
+    if (context) { static_cast<AsyncWrapper *>(context)->loop(); }
   }
 
   void loop() {
@@ -271,9 +268,7 @@ protected:
       // This will grab the output *when disabled*
       output->controllerSet(controller->getOutput());
     } else {
-      if (hasFirstTarget) {
-        setTarget(lastTarget);
-      }
+      if (hasFirstTarget) { setTarget(lastTarget); }
     }
   }
 };

@@ -35,13 +35,11 @@ void Odom::calibrate(bool calibrateIMUs) {
   }
 
   // calibrate IMUs
-  for (auto &it : this->imu)
-    it.reset();
+  for (auto &it : this->imu) it.reset();
   pxl::Timer timer(3000);  // try calibrating IMUs for 3000 ms
   while (!timer.isDone()) {
     for (auto &IMU : this->imu) {  // continuously calibrate in case of failure
-      if (!IMU->is_calibrating() && !IMU->is_calibrating())
-        IMU->reset();
+      if (!IMU->is_calibrating() && !IMU->is_calibrating()) IMU->reset();
     }
     pros::delay(10);
   }
@@ -86,8 +84,7 @@ float Odom::calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>> &imu,
   for (const auto &imu : this->imu) {
     const float angle = getRotation(imu);
     deltaAngles.push_back(angle - prevAngle);
-    if (update)
-      this->lastAngle = angle;
+    if (update) this->lastAngle = angle;
   }
 
   return pxl::avg(deltaAngles);

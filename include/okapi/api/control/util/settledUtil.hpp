@@ -6,6 +6,7 @@
 #pragma once
 
 #include <memory>
+
 #include "okapi/api/units/QTime.hpp"
 #include "okapi/api/util/abstractTimer.hpp"
 

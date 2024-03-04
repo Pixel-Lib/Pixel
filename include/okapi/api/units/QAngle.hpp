@@ -10,6 +10,7 @@
 #pragma once
 
 #include <cmath>
+
 #include "okapi/api/units/RQuantity.hpp"
 
 namespace okapi {

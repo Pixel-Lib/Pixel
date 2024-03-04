@@ -17,6 +17,7 @@
 
 #include <cstdint>
 #include <string>
+
 #include "pros/screen.h"
 
 namespace pros {

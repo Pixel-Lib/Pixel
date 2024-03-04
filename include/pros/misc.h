@@ -142,15 +142,9 @@ failed to connect or an invalid id is given.
 */
 #define CONTROLLER_PORT_MUTEX_TAKE(id, port)                                   \
   switch (id) {                                                                \
-  case E_CONTROLLER_MASTER:                                                    \
-    port = V5_PORT_CONTROLLER_1;                                               \
-    break;                                                                     \
-  case E_CONTROLLER_PARTNER:                                                   \
-    port = V5_PORT_CONTROLLER_2;                                               \
-    break;                                                                     \
-  default:                                                                     \
-    errno = EINVAL;                                                            \
-    return PROS_ERR;                                                           \
+    case E_CONTROLLER_MASTER: port = V5_PORT_CONTROLLER_1; break;              \
+    case E_CONTROLLER_PARTNER: port = V5_PORT_CONTROLLER_2; break;             \
+    default: errno = EINVAL; return PROS_ERR;                                  \
   }                                                                            \
   if (!internal_port_mutex_take(port)) {                                       \
     errno = EACCES;                                                            \

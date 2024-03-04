@@ -9,6 +9,7 @@
 #include <initializer_list>
 #include <memory>
 #include <vector>
+
 #include "okapi/api/chassis/model/readOnlyChassisModel.hpp"
 #include "okapi/api/device/motor/abstractMotor.hpp"
 

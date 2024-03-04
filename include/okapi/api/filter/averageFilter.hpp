@@ -7,6 +7,7 @@
 
 #include <array>
 #include <cstddef>
+
 #include "okapi/api/filter/filter.hpp"
 
 namespace okapi {
@@ -30,13 +31,10 @@ public:
    */
   double filter(const double ireading) override {
     data[index++] = ireading;
-    if (index >= n) {
-      index = 0;
-    }
+    if (index >= n) { index = 0; }
 
     output = 0.0;
-    for (size_t i = 0; i < n; i++)
-      output += data[i];
+    for (size_t i = 0; i < n; i++) output += data[i];
     output /= (double)n;
 
     return output;

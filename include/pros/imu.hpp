@@ -19,6 +19,7 @@
 #define _PROS_IMU_HPP_
 
 #include <cstdint>
+
 #include "pros/imu.h"
 
 namespace pros {

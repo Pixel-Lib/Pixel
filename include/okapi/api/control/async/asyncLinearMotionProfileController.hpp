@@ -7,6 +7,7 @@
 
 #include <atomic>
 #include <map>
+
 #include "okapi/api/control/async/asyncPositionController.hpp"
 #include "okapi/api/control/util/pathfinderUtil.hpp"
 #include "okapi/api/device/motor/abstractMotor.hpp"
@@ -14,7 +15,6 @@
 #include "okapi/api/units/QSpeed.hpp"
 #include "okapi/api/util/logging.hpp"
 #include "okapi/api/util/timeUtil.hpp"
-
 #include "squiggles.hpp"
 
 namespace okapi {

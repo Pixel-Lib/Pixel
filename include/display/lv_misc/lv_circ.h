@@ -14,6 +14,7 @@ extern "C" {
  *      INCLUDES
  *********************/
 #include <stddef.h>
+
 #include "lv_area.h"
 
 /*********************

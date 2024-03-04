@@ -7,6 +7,7 @@
 
 #include <memory>
 #include <mutex>
+
 #include "okapi/api/coreProsAPI.hpp"
 #include "okapi/api/util/abstractTimer.hpp"
 #include "okapi/api/util/mathUtil.hpp"
@@ -157,14 +158,10 @@ extern std::shared_ptr<Logger> defaultLogger;
 
 struct DefaultLoggerInitializer {
   DefaultLoggerInitializer() {
-    if (count++ == 0) {
-      init();
-    }
+    if (count++ == 0) { init(); }
   }
   ~DefaultLoggerInitializer() {
-    if (--count == 0) {
-      cleanup();
-    }
+    if (--count == 0) { cleanup(); }
   }
 
   static int count;

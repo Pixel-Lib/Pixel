@@ -2,6 +2,7 @@
 
 #include <chrono>
 #include <cmath>
+
 #include "pxl/util.hpp"
 
 namespace pxl {

@@ -1,5 +1,6 @@
 #include <chrono>
 #include <cmath>
+
 #include "pxl/util.hpp"
 
 namespace pxl {
@@ -17,8 +18,7 @@ public:
 
     // Calculate integral
     integral += error * dt.count();
-    if (pxl::sgn(error) != pxl::sgn(prevError))
-      integral = 0;
+    if (pxl::sgn(error) != pxl::sgn(prevError)) integral = 0;
 
     // Calculate derivative
     const float derivative = (error - prevError) / dt.count();

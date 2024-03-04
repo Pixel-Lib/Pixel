@@ -6,9 +6,11 @@
 #pragma once
 
 #include <math.h>
+
 #include <algorithm>
 #include <cstdint>
 #include <type_traits>
+
 #include "okapi/api/device/motor/abstractMotor.hpp"
 
 namespace okapi {
@@ -220,14 +222,11 @@ constexpr long modulus(const long lhs, const long rhs) noexcept {
 constexpr std::int32_t
 gearsetToTPR(const AbstractMotor::gearset igearset) noexcept {
   switch (igearset) {
-  case AbstractMotor::gearset::red:
-    return imev5RedTPR;
-  case AbstractMotor::gearset::green:
-    return imev5GreenTPR;
-  case AbstractMotor::gearset::blue:
-  case AbstractMotor::gearset::invalid:
-  default:
-    return imev5BlueTPR;
+    case AbstractMotor::gearset::red: return imev5RedTPR;
+    case AbstractMotor::gearset::green: return imev5GreenTPR;
+    case AbstractMotor::gearset::blue:
+    case AbstractMotor::gearset::invalid:
+    default: return imev5BlueTPR;
   }
 }
 

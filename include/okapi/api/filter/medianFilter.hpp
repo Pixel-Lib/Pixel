@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <array>
 #include <cstddef>
+
 #include "okapi/api/filter/filter.hpp"
 
 namespace okapi {
@@ -31,9 +32,7 @@ public:
    */
   double filter(const double ireading) override {
     data[index++] = ireading;
-    if (index >= n) {
-      index = 0;
-    }
+    if (index >= n) { index = 0; }
 
     output = kth_smallset();
     return output;
@@ -66,12 +65,8 @@ protected:
       size_t i = l;
       j = m;
       do {
-        while (dataCopy[i] < x) {
-          i++;
-        }
-        while (x < dataCopy[j]) {
-          j--;
-        }
+        while (dataCopy[i] < x) { i++; }
+        while (x < dataCopy[j]) { j--; }
         if (i <= j) {
           const double t = dataCopy[i];
           dataCopy[i] = dataCopy[j];
@@ -80,10 +75,8 @@ protected:
           j--;
         }
       } while (i <= j);
-      if (j < middleIndex)
-        l = i;
-      if (middleIndex < i)
-        m = j;
+      if (j < middleIndex) l = i;
+      if (middleIndex < i) m = j;
     }
 
     return dataCopy[middleIndex];

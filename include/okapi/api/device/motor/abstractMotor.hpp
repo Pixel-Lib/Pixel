@@ -6,6 +6,7 @@
 #pragma once
 
 #include <memory>
+
 #include "okapi/api/control/controllerOutput.hpp"
 #include "okapi/api/device/rotarysensor/continuousRotarySensor.hpp"
 

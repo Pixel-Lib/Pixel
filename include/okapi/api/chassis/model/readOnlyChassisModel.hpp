@@ -6,6 +6,7 @@
 #pragma once
 
 #include <valarray>
+
 #include "okapi/api/coreProsAPI.hpp"
 
 namespace okapi {

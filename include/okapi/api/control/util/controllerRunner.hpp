@@ -6,6 +6,7 @@
 #pragma once
 
 #include <memory>
+
 #include "okapi/api/control/async/asyncController.hpp"
 #include "okapi/api/control/controllerOutput.hpp"
 #include "okapi/api/control/iterative/iterativeController.hpp"
@@ -41,9 +42,7 @@ public:
         std::to_string(itarget));
     icontroller.setTarget(itarget);
 
-    while (!icontroller.isSettled()) {
-      rate->delayUntil(10_ms);
-    }
+    while (!icontroller.isSettled()) { rate->delayUntil(10_ms); }
 
     LOG_INFO("ControllerRunner: runUntilSettled(AsyncController): Done waiting "
              "to settle");

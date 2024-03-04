@@ -8,6 +8,7 @@
 #include <atomic>
 #include <memory>
 #include <valarray>
+
 #include "okapi/api/odometry/odometry.hpp"
 #include "okapi/api/units/QSpeed.hpp"
 #include "okapi/api/util/abstractRate.hpp"

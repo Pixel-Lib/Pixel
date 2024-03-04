@@ -8,6 +8,7 @@
 #include <initializer_list>
 #include <stdexcept>
 #include <vector>
+
 #include "okapi/api/units/QAngle.hpp"
 #include "okapi/api/units/QLength.hpp"
 #include "okapi/api/units/RQuantity.hpp"

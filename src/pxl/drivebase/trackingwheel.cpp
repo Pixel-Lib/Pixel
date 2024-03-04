@@ -1,8 +1,10 @@
 #include "trackingwheel.hpp"
+
 #include <algorithm>
 #include <iterator>
 #include <memory>
 #include <vector>
+
 #include "math.h"
 #include "pros/adi.hpp"
 #include "pros/distance.hpp"
@@ -72,8 +74,7 @@ float TrackingWheel::getDistanceDelta(bool update) {
   auto getAngleDelta = [this, update]() {
     const float prevAngle = this->lastAngle;
     const float angle = this->encoder->get_value();
-    if (!update)
-      this->lastAngle = prevAngle;
+    if (!update) this->lastAngle = prevAngle;
     return (angle - prevAngle);
   };
 
@@ -85,8 +86,7 @@ float TrackingWheel::getOffset() { return this->distance; }
 
 // Get the type of wheel (0 for encoder/rotation, 1 for motor group)
 int TrackingWheel::getType() {
-  if (this->motors != nullptr)
-    return 1;
+  if (this->motors != nullptr) return 1;
   return 0;
 }
 

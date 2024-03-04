@@ -7,16 +7,14 @@
 #ifndef _ROBOT_SQUIGGLES_H_
 #define _ROBOT_SQUIGGLES_H_
 
+#include "constraints.hpp"
 #include "geometry/controlvector.hpp"
 #include "geometry/pose.hpp"
 #include "geometry/profilepoint.hpp"
-
+#include "io.hpp"
 #include "physicalmodel/passthroughmodel.hpp"
 #include "physicalmodel/physicalmodel.hpp"
 #include "physicalmodel/tankmodel.hpp"
-
-#include "constraints.hpp"
-#include "io.hpp"
 #include "spline.hpp"
 
 #endif

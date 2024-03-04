@@ -20,9 +20,9 @@
 #ifndef _PROS_VISION_HPP_
 #define _PROS_VISION_HPP_
 
-#include "pros/vision.h"
-
 #include <cstdint>
+
+#include "pros/vision.h"
 
 namespace pros {
 class Vision {

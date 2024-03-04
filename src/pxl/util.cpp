@@ -1,5 +1,7 @@
 #include "pxl/util.hpp"
+
 #include <math.h>
+
 #include <algorithm>
 #include <iostream>
 #include <type_traits>
@@ -27,8 +29,7 @@ float wrapTo2Pi(float rad) { return std::fmod(rad, 2 * M_PI); }
 float angleError(float angle1, float angle2, bool radians) {
   float max = radians ? 2 * M_PI : 360;
   float error = fmod(angle1 - angle2 + max, max);
-  if (error > max / 2)
-    error -= max;
+  if (error > max / 2) error -= max;
   return error;
 }
 

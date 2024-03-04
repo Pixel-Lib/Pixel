@@ -23,6 +23,7 @@ extern "C" {
 #if USE_LV_FILESYSTEM
 
 #include <stdbool.h>
+
 #include "lv_fs.h"
 #include "lv_mem.h"
 

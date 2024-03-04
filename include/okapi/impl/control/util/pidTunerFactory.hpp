@@ -6,6 +6,7 @@
 #pragma once
 
 #include <memory>
+
 #include "okapi/api/control/util/pidTuner.hpp"
 
 namespace okapi {

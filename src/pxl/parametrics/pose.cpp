@@ -1,5 +1,7 @@
 #include "pxl/parametrics/pose.hpp"
+
 #include <math.h>
+
 #include "pxl/util.hpp"
 
 namespace pxl {

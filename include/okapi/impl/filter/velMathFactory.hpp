@@ -6,6 +6,7 @@
 #pragma once
 
 #include <memory>
+
 #include "okapi/api/filter/velMath.hpp"
 
 namespace okapi {

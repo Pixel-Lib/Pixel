@@ -6,6 +6,7 @@
 #pragma once
 
 #include <functional>
+
 #include "okapi/api/chassis/model/threeEncoderSkidSteerModel.hpp"
 #include "okapi/api/odometry/twoEncoderOdometry.hpp"
 #include "okapi/api/util/timeUtil.hpp"

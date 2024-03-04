@@ -102,10 +102,10 @@ int32_t gps_set_offset(uint8_t port, double xOffset, double yOffset);
  * \param  port
  * 				 The V5 GPS port number from 1-21
  * \param  xOffset
- * 				 Pointer to cartesian 4-Quadrant X offset from center
- * of turning (meters) \param  yOffset Pointer to cartesian 4-Quadrant Y offset
- * from center of turning (meters) \return 1 if the operation was successful or
- * PROS_ERR if the operation failed, setting errno.
+ * 				 Pointer to cartesian 4-Quadrant X offset from
+ * center of turning (meters) \param  yOffset Pointer to cartesian 4-Quadrant Y
+ * offset from center of turning (meters) \return 1 if the operation was
+ * successful or PROS_ERR if the operation failed, setting errno.
  */
 int32_t gps_get_offset(uint8_t port, double *xOffset, double *yOffset);
 
@@ -121,8 +121,8 @@ int32_t gps_get_offset(uint8_t port, double *xOffset, double *yOffset);
  * \param  port
  * 				 The V5 GPS port number from 1-21
  * \param  xInitial
- * 				 Initial 4-Quadrant X Position, with (0,0) being at
- * the center of the field (meters) \param  yInitial Initial 4-Quadrant Y
+ * 				 Initial 4-Quadrant X Position, with (0,0) being
+ * at the center of the field (meters) \param  yInitial Initial 4-Quadrant Y
  * Position, with (0,0) being at the center of the field (meters) \param
  * headingInitial Heading with 0 being north on the field, in degrees [0,360)
  * going clockwise \return 1 if the operation was successful or PROS_ERR if the

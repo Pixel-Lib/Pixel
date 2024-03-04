@@ -20,6 +20,7 @@
 #define _PROS_SERIAL_HPP_
 
 #include <cstdint>
+
 #include "pros/serial.h"
 
 namespace pros {

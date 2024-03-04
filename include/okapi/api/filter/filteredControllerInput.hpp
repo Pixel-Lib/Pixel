@@ -6,6 +6,7 @@
 #pragma once
 
 #include <memory>
+
 #include "okapi/api/control/controllerInput.hpp"
 #include "okapi/api/filter/filter.hpp"
 

@@ -111,8 +111,7 @@ public:
 #ifdef THREADS_STD
     mutex.lock();
 #else
-    while (!mutex.take(1)) {
-    }
+    while (!mutex.take(1)) {}
 #endif
   }
 

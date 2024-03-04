@@ -157,8 +157,8 @@ int32_t rotation_get_angle(uint8_t port);
  * \param  port
  * 				 The V5 Rotation Sensor port number from 1-21
  * \param  value
- * 				 Determines if the direction of the Rotation Sensor
- * is reversed or not.
+ * 				 Determines if the direction of the Rotation
+ * Sensor is reversed or not.
  *
  * \return 1 if operation succeeded or PROS_ERR if the operation failed, setting
  * errno.

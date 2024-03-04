@@ -6,6 +6,7 @@
 #pragma once
 
 #include <memory>
+
 #include "okapi/api/filter/composableFilter.hpp"
 #include "okapi/api/units/QAngularAcceleration.hpp"
 #include "okapi/api/units/QAngularSpeed.hpp"

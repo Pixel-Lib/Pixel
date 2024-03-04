@@ -148,9 +148,7 @@ float ema(float current, float previous, float smooth);
  */
 template <typename T> T avg(const std::vector<T> &vec) {
   T sum = T();  // Initialize sum to default value for T
-  for (const T &elem : vec) {
-    sum += elem;
-  }
+  for (const T &elem : vec) { sum += elem; }
   return sum / vec.size();
 }
 

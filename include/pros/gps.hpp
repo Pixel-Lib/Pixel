@@ -101,9 +101,9 @@ public:
    * EAGAIN - The sensor is still calibrating
    *
    * \param  xOffset
-   * 				 Pointer to cartesian 4-Quadrant X offset from center
-   * of turning (meters) \param  yOffset Pointer to cartesian 4-Quadrant Y
-   * offset from center of turning (meters) \return 1 if the operation was
+   * 				 Pointer to cartesian 4-Quadrant X offset from
+   * center of turning (meters) \param  yOffset Pointer to cartesian 4-Quadrant
+   * Y offset from center of turning (meters) \return 1 if the operation was
    * successful or PROS_ERR if the operation failed, setting errno.
    */
   virtual std::int32_t get_offset(double *xOffset, double *yOffset) const;
@@ -118,8 +118,8 @@ public:
    * EAGAIN - The sensor is still calibrating
    *
    * \param  xInitial
-   * 				 Initial 4-Quadrant X Position, with (0,0) being at the
-   * center of the field (meters) \param  yInitial Initial 4-Quadrant Y
+   * 				 Initial 4-Quadrant X Position, with (0,0) being at
+   * the center of the field (meters) \param  yInitial Initial 4-Quadrant Y
    * Position, with (0,0) being at the center of the field (meters) \param
    * headingInitial Heading with 0 being north on the field, in degrees [0,360)
    * going clockwise \return 1 if the operation was successful or PROS_ERR if

@@ -8,6 +8,7 @@
 #include <atomic>
 #include <iostream>
 #include <map>
+
 #include "okapi/api/chassis/controller/chassisScales.hpp"
 #include "okapi/api/chassis/model/skidSteerModel.hpp"
 #include "okapi/api/control/async/asyncPositionController.hpp"
@@ -16,7 +17,6 @@
 #include "okapi/api/units/QSpeed.hpp"
 #include "okapi/api/util/logging.hpp"
 #include "okapi/api/util/timeUtil.hpp"
-
 #include "squiggles.hpp"
 
 namespace okapi {

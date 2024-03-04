@@ -7,6 +7,7 @@
 
 #include <array>
 #include <memory>
+
 #include "okapi/api/control/iterative/iterativeVelocityController.hpp"
 #include "okapi/api/device/motor/abstractMotor.hpp"
 

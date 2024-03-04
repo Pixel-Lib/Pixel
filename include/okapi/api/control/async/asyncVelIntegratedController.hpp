@@ -6,6 +6,7 @@
 #pragma once
 
 #include <memory>
+
 #include "okapi/api/control/async/asyncVelocityController.hpp"
 #include "okapi/api/device/motor/abstractMotor.hpp"
 #include "okapi/api/util/logging.hpp"

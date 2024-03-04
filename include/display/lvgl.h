@@ -16,21 +16,14 @@ extern "C" {
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpedantic"
-#include "lv_version.h"
-
-#include "lv_misc/lv_log.h"
-#include "lv_misc/lv_task.h"
-
-#include "lv_hal/lv_hal.h"
-
 #include "lv_core/lv_group.h"
 #include "lv_core/lv_lang.h"
 #include "lv_core/lv_obj.h"
 #include "lv_core/lv_refr.h"
 #include "lv_core/lv_vdb.h"
-
-#include "lv_themes/lv_theme.h"
-
+#include "lv_hal/lv_hal.h"
+#include "lv_misc/lv_log.h"
+#include "lv_misc/lv_task.h"
 #include "lv_objx/lv_arc.h"
 #include "lv_objx/lv_bar.h"
 #include "lv_objx/lv_btn.h"
@@ -62,6 +55,8 @@ extern "C" {
 #include "lv_objx/lv_tabview.h"
 #include "lv_objx/lv_tileview.h"
 #include "lv_objx/lv_win.h"
+#include "lv_themes/lv_theme.h"
+#include "lv_version.h"
 #pragma GCC diagnostic pop
 
 /*********************

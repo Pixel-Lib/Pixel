@@ -21,6 +21,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+
 #include "error.h"
 
 #define OPT_GESTURE_ERR (INT8_MAX)
