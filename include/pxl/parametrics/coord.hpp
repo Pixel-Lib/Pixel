@@ -18,6 +18,7 @@ class Coord {
         float operator*(const Coord& other) const;
         Coord operator*(const float& scalar) const;
         Coord operator/(const float& scalar) const;
+        Coord& operator+=(const Coord& other);
 
         Coord lerp(Coord other, float t) const;
         float distance(const Coord& other) const;

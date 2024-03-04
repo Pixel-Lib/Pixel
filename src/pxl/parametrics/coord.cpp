@@ -13,6 +13,12 @@ Coord Coord::operator*(const float& scalar) const { return Coord(this->x * scala
 
 Coord Coord::operator/(const float& scalar) const { return Coord(x / scalar, y / scalar); }
 
+Coord& Coord::operator+=(const Coord& other) {
+    this->x += other.x;
+    this->y += other.y;
+    return *this;
+}
+
 Coord Coord::lerp(Coord other, float t) const {
     return Coord(this->x + (other.x - this->x) * t, this->y + (other.y - this->y) * t);
 }
