@@ -1,30 +1,31 @@
-name: format-code
+name: clang-format-check
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - '*'
   pull_request:
-    branches: [ main ]
 
 jobs:
-  clang-format:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
 
-    - name: Install clang-format
-      run: sudo apt-get install -y clang-format
+    - name: Get list of modified files
+      id: files
+      uses: dorny/paths-filter@v2
+      with:
+        filters: |
+          source:
+            - './**.cpp'
+            - './**.hpp'
 
-    - name: Format code
-      run: |
-        git diff --name-only --diff-filter=d origin/main | grep -E "\.(cpp|hpp|cc|cxx)$" | xargs clang-format -style=file -i
-
-    - name: Commit changes
-      run: |
-        git config --global user.name 'GitHub Actions'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add .
-        git commit -m "Code formatted with clang-format" || echo "No changes to commit"
-        git push
+    - name: Run clang-format
+      if: steps.files.outputs.source == 'true'
+      uses: DoozyX/clang-format-lint-action@v0.14
+      with:
+        source: ${{ steps.files.outputs.files }}
+        extensions: 'hpp,cpp'
+        clangFormatVersion: 14
