@@ -5,8 +5,7 @@
 namespace pxl {
 Odom::Odom(std::vector<std::unique_ptr<TrackingWheel>> &verticals,
            std::vector<std::unique_ptr<TrackingWheel>> &horizontals,
-           std::vector<std::unique_ptr<TrackingWheel>> &drivetrain,
-           std::vector<std::shared_ptr<pros::IMU>> &imu)
+           std::vector<std::unique_ptr<TrackingWheel>> &drivetrain, std::vector<std::shared_ptr<pros::IMU>> &imu)
     : verticals(std::move(verticals)),
       horizontals(std::move(horizontals)),
       drivetrain(std::move(drivetrain)),
@@ -21,30 +20,25 @@ void Odom::calibrate(bool calibrateIMUs) {
     // calibrate vertical tracking wheels
     for (auto it = this->verticals.begin(); it != this->verticals.end(); it++) {
         if ((*it)->getOffset()) {
-            std::cout << "Vertical tracker at offset " << (*it)->getOffset()
-                      << " failed calibration!" << std::endl;
+            std::cout << "Vertical tracker at offset " << (*it)->getOffset() << " failed calibration!" << std::endl;
         } else
             newVerticals.push_back(std::move(*it));
-    } // move successful calibrations to new vector
+    }  // move successful calibrations to new vector
 
     // calibrate horizontal tracking wheels
-    for (auto it = this->horizontals.begin(); it != this->horizontals.end();
-         it++) {
-        if (pxl::sgn((*it)->getOffset() == 1))
-            std::cout << "Left drivetrain motor failed to calibrate!"
-                      << std::endl;
-    } // move successful calibrations to new vector
+    for (auto it = this->horizontals.begin(); it != this->horizontals.end(); it++) {
+        if (pxl::sgn((*it)->getOffset() == 1)) std::cout << "Left drivetrain motor failed to calibrate!" << std::endl;
+    }  // move successful calibrations to new vector
 
     // calibrate IMUs
     for (auto &it : this->imu) it.reset();
     pxl::Timer timer(3000);  // try calibrating IMUs for 3000 ms
     while (!timer.isDone()) {
-        for (auto &IMU :
-             this->imu) {  // continuously calibrate in case of failure
+        for (auto &IMU : this->imu) {  // continuously calibrate in case of failure
             if (!IMU->is_calibrating() && !IMU->is_calibrating()) IMU->reset();
         }
         pros::delay(10);
-    }   // wait for IMUs to calibrate
+    }  // wait for IMUs to calibrate
 
     for (auto it = this->imu.begin(); it != this->imu.end(); it++) {
         if (!(*it)->is_calibrating()) {
@@ -52,7 +46,7 @@ void Odom::calibrate(bool calibrateIMUs) {
         } else {
             newIMUs.push_back(*it);
         }
-    }   // move successful calibrations to new vector
+    }  // move successful calibrations to new vector
 
     this->verticals = std::move(newVerticals);
     this->horizontals = std::move(newHorizontals);
@@ -60,8 +54,7 @@ void Odom::calibrate(bool calibrateIMUs) {
     this->imu = std::move(newIMUs);
 }
 
-float Odom::calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>> &imu,
-                           bool update) {
+float Odom::calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>> &imu, bool update) {
     auto getRotation = [this](const std::shared_ptr<pros::IMU> &imu) {
         if (this->imu.empty()) {
             return 0.0f;  // Return 0 if the IMU vector is empty
@@ -69,9 +62,7 @@ float Odom::calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>> &imu,
         // Create a lambda to calculate the rotation
         auto Rotation = [this](const std::shared_ptr<pros::IMU> &imu) {
             std::vector<float> rotations;
-            for (const auto &imuPtr : this->imu) {
-                rotations.push_back(imuPtr->get_rotation());
-            }
+            for (const auto &imuPtr : this->imu) { rotations.push_back(imuPtr->get_rotation()); }
             return rotations;
         };
         const float rotation = M_PI_2 - degToRad(pxl::avg(Rotation(imu)));
@@ -79,9 +70,8 @@ float Odom::calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>> &imu,
     };
 
     std::vector<float> deltaAngles;
-    const float prevAngle =
-        this->lastAngle;  // save lastAngle, as it will get reset when calling
-                          // getAngle() below
+    const float prevAngle = this->lastAngle;  // save lastAngle, as it will get reset when calling
+                                              // getAngle() below
 
     for (const auto &imu : this->imu) {
         const float angle = getRotation(imu);
@@ -93,8 +83,7 @@ float Odom::calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>> &imu,
 }
 
 float Odom::calcDeltaTheta(TrackingWheel &tracker1, TrackingWheel &tracker2) {
-    const float numerator =
-        tracker1.getDistanceDelta(false) - tracker2.getDistanceDelta(false);
+    const float numerator = tracker1.getDistanceDelta(false) - tracker2.getDistanceDelta(false);
     const float denominator = tracker1.getOffset() - tracker2.getOffset();
     return numerator / denominator;
 }
@@ -104,14 +93,11 @@ void Odom::update() {
     if (this->imu.size() > 0) {
         theta += Odom::calcDeltaTheta(this->imu);
     } else if (horizontals.size() > 1) {
-        theta += Odom::calcDeltaTheta(*this->horizontals.at(0),
-                                      *this->horizontals.at(1));
+        theta += Odom::calcDeltaTheta(*this->horizontals.at(0), *this->horizontals.at(1));
     } else if (verticals.size() > 1) {
-        theta += Odom::calcDeltaTheta(*this->verticals.at(0),
-                                      *this->verticals.at(1));
+        theta += Odom::calcDeltaTheta(*this->verticals.at(0), *this->verticals.at(1));
     } else if (drivetrain.size() > 1) {
-        theta += Odom::calcDeltaTheta(*this->drivetrain.at(0),
-                                      *this->drivetrain.at(1));
+        theta += Odom::calcDeltaTheta(*this->drivetrain.at(0), *this->drivetrain.at(1));
     } else {
         std::cerr << "Odom calculation failure! Not enough sensors to "
                      "calculate heading"
@@ -122,36 +108,28 @@ void Odom::update() {
     const float avgTheta = this->pose.theta + deltaTheta / 2;
 
     Pose local(0, 0, deltaTheta);
-    const float sinDTheta2 =
-        (deltaTheta == 0) ? 1 : 2 * std::sin(deltaTheta / 2);
+    const float sinDTheta2 = (deltaTheta == 0) ? 1 : 2 * std::sin(deltaTheta / 2);
 
     for (auto &tracker : this->horizontals) {
-        const float radius = (deltaTheta == 0)
-                                 ? tracker->getDistanceDelta()
-                                 : tracker->getDistanceDelta() / deltaTheta +
-                                       tracker->getOffset();
+        const float radius = (deltaTheta == 0) ? tracker->getDistanceDelta()
+                                               : tracker->getDistanceDelta() / deltaTheta + tracker->getOffset();
         local.y += sinDTheta2 * radius / this->horizontals.size();
     }
 
     if (this->verticals.size() > 0) {
         for (auto &tracker : this->verticals) {
-            const float radius =
-                (deltaTheta == 0) ? tracker->getDistanceDelta()
-                                  : tracker->getDistanceDelta() / deltaTheta +
-                                        tracker->getOffset();
+            const float radius = (deltaTheta == 0) ? tracker->getDistanceDelta()
+                                                   : tracker->getDistanceDelta() / deltaTheta + tracker->getOffset();
             local.x += sinDTheta2 * radius / this->verticals.size();
         }
     } else if (this->drivetrain.size() > 0) {
         for (auto &motor : this->drivetrain) {
-            const float radius = (deltaTheta == 0)
-                                     ? motor->getDistanceDelta()
-                                     : motor->getDistanceDelta() / deltaTheta +
-                                           motor->getOffset();
+            const float radius = (deltaTheta == 0) ? motor->getDistanceDelta()
+                                                   : motor->getDistanceDelta() / deltaTheta + motor->getOffset();
             local.x += sinDTheta2 * radius / this->drivetrain.size();
         }
     } else {
-        std::cout << "No vertical tracking wheels! Assuming y movement is 0"
-                  << std::endl;
+        std::cout << "No vertical tracking wheels! Assuming y movement is 0" << std::endl;
     }
 
     this->pose += local.rotate(avgTheta);
