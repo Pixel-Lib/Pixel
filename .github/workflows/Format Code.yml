@@ -18,11 +18,13 @@ jobs:
       run: sudo apt-get install -y clang-format
 
     - name: Format code
-      run: find . -regex '.*\.\(cpp\|hpp\|cc\|cxx\)' -exec clang-format -style=file -i {} \;
+      run: |
+        git diff --name-only --diff-filter=d origin/main | grep -E "\.(cpp|hpp|cc|cxx)$" | xargs clang-format -style=file -i
 
     - name: Commit changes
       run: |
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git commit -am "Code formatted with clang-format" || echo "No changes to commit"
+        git add .
+        git commit -m "Code formatted with clang-format" || echo "No changes to commit"
         git push
