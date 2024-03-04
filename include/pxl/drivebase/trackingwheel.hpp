@@ -18,7 +18,7 @@ namespace pxl {
  * Can be constructed with an encoder, rotation sensor, or motor group.
  */
 class TrackingWheel {
-public:
+  public:
   // Constructor with encoder
   TrackingWheel(pros::ADIEncoder *encoder, float wheelDiameter, float distance,
                 float gearRatio);
@@ -45,7 +45,7 @@ public:
   // Get the type of wheel (0 for encoder/rotation, 1 for motor group)
   int getType();
 
-private:
+  private:
   std::unique_ptr<pros::ADIEncoder> encoder;  // Pointer to encoder (optional)
   std::unique_ptr<pros::Rotation>
       rotation;  // Pointer to rotation sensor (optional)

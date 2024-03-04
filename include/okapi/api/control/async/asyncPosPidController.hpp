@@ -17,7 +17,7 @@
 namespace okapi {
 class AsyncPosPIDController : public AsyncWrapper<double, double>,
                               public AsyncPositionController<double, double> {
-public:
+  public:
   /**
    * An async position PID controller.
    *
@@ -90,7 +90,7 @@ public:
    */
   IterativePosPIDController::Gains getGains() const;
 
-protected:
+  protected:
   std::shared_ptr<OffsetableControllerInput> offsettableInput;
   std::shared_ptr<IterativePosPIDController> internalController;
 };

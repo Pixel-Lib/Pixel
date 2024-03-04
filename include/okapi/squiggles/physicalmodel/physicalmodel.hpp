@@ -12,7 +12,7 @@
 
 namespace squiggles {
 class PhysicalModel {
-public:
+  public:
   /**
    * Calculate a set of stricter constraints for the path at the given state
    * than the general constraints based on the robot's kinematics.

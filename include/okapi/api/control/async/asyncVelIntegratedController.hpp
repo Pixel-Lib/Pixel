@@ -19,7 +19,7 @@ namespace okapi {
  */
 class AsyncVelIntegratedController
     : public AsyncVelocityController<double, double> {
-public:
+  public:
   /**
    * Closed-loop controller that uses the V5 motor's onboard control to move.
    * Input units are whatever units the motor is in. Throws a
@@ -113,7 +113,7 @@ public:
    */
   void controllerSet(double ivalue) override;
 
-protected:
+  protected:
   std::shared_ptr<Logger> logger;
   TimeUtil timeUtil;
   std::shared_ptr<AbstractMotor> motor;

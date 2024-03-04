@@ -14,7 +14,7 @@
 
 namespace okapi {
 class DefaultOdomChassisController : public OdomChassisController {
-public:
+  public:
   /**
    * Odometry based chassis controller that moves using a separately constructed
    * chassis controller. Spins up a task at the default priority plus 1 for
@@ -180,7 +180,7 @@ public:
    */
   ChassisModel &model() override;
 
-protected:
+  protected:
   std::shared_ptr<Logger> logger;
   std::shared_ptr<ChassisController> controller;
 

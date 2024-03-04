@@ -29,7 +29,7 @@
 
 namespace okapi {
 class Logger {
-public:
+  public:
   enum class LogLevel {
     debug = 4,  ///< debug
     info = 3,   ///< info
@@ -145,7 +145,7 @@ public:
    */
   static void setDefaultLogger(std::shared_ptr<Logger> ilogger);
 
-private:
+  private:
   const std::unique_ptr<AbstractTimer> timer;
   const LogLevel logLevel;
   FILE *logfile;

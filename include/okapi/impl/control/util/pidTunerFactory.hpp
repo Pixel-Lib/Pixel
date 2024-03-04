@@ -11,7 +11,7 @@
 
 namespace okapi {
 class PIDTunerFactory {
-public:
+  public:
   static PIDTuner
   create(const std::shared_ptr<ControllerInput<double>> &iinput,
          const std::shared_ptr<ControllerOutput<double>> &ioutput,

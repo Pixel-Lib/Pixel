@@ -33,7 +33,7 @@
 
 namespace pros {
 class Task {
-public:
+  public:
   /**
    * Creates a new task and add it to the list of tasks that are ready to run.
    *
@@ -390,7 +390,7 @@ public:
    */
   static std::uint32_t get_count();
 
-private:
+  private:
   task_t task{};
 };
 
@@ -415,7 +415,7 @@ struct Clock {
 class Mutex {
   std::shared_ptr<std::remove_pointer_t<mutex_t>> mutex;
 
-public:
+  public:
   Mutex();
 
   // disable copy and move construction and assignment per Mutex requirements
@@ -558,7 +558,7 @@ template <typename Var> class MutexVarLock {
 
   constexpr MutexVarLock(Mutex &mutex, Var &var) : mutex(mutex), var(var) {}
 
-public:
+  public:
   /**
    * Accesses the value of the mutex-protected variable.
    */
@@ -576,7 +576,7 @@ template <typename Var> class MutexVar {
   Mutex mutex;
   Var var;
 
-public:
+  public:
   /**
    * Creates a mutex-protected variable which is initialized with the given
    * constructor arguments.

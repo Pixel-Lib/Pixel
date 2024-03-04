@@ -21,7 +21,7 @@
 namespace okapi {
 class IterativePosPIDController
     : public IterativePositionController<double, double> {
-public:
+  public:
   struct Gains {
     double kP{0};
     double kI{0};
@@ -244,7 +244,7 @@ public:
    */
   Gains getGains() const;
 
-protected:
+  protected:
   std::shared_ptr<Logger> logger;
   double kP, kI, kD, kBias;
   QTime sampleTime{10_ms};

@@ -19,7 +19,7 @@ enum action_Point {
 };
 
 class aSync {
-protected:
+  protected:
   pros::Task asyncTask;
 };
 

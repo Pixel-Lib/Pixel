@@ -10,7 +10,7 @@
 
 namespace okapi {
 class AbstractTimer {
-public:
+  public:
   /**
    * A Timer base class which implements its methods in terms of millis().
    *
@@ -117,7 +117,7 @@ public:
    */
   virtual bool repeat(QFrequency frequency);
 
-protected:
+  protected:
   QTime firstCalled;
   QTime lastCalled;
   QTime mark;

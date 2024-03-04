@@ -13,7 +13,7 @@
 
 namespace okapi {
 class ADIUltrasonic : public ControllerInput<double> {
-public:
+  public:
   /**
    * An ultrasonic sensor in the ADI (3-wire) ports.
    *
@@ -71,7 +71,7 @@ public:
    */
   virtual double controllerGet() override;
 
-protected:
+  protected:
   pros::c::ext_adi_ultrasonic_t ultra;
   std::unique_ptr<Filter> filter;
 };

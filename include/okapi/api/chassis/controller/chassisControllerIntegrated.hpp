@@ -12,7 +12,7 @@
 
 namespace okapi {
 class ChassisControllerIntegrated : public ChassisController {
-public:
+  public:
   /**
    * ChassisController using the V5 motor's integrated control. Puts the motors
    * into encoder count units. Throws a `std::invalid_argument` exception if the
@@ -176,7 +176,7 @@ public:
    */
   double getMaxVelocity() const override;
 
-protected:
+  protected:
   std::shared_ptr<Logger> logger;
   bool normalTurns{true};
   std::shared_ptr<ChassisModel> chassisModel;

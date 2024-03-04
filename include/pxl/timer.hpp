@@ -5,7 +5,7 @@
 
 namespace pxl {
 class Timer {
-public:
+  public:
   // Constructor
   Timer(uint32_t stop_time = -1);
 
@@ -53,7 +53,7 @@ public:
    */
   bool isDone();
 
-private:
+  private:
   uint32_t start_time;
   uint32_t stop_time;
 };

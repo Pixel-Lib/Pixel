@@ -25,10 +25,10 @@
 
 namespace pros {
 class Link {
-private:
+  private:
   std::uint8_t _port;
 
-public:
+  public:
   /**
    * Initializes a link on a radio port, with an indicated type. There might be
    * a 1 to 2 second delay from when this function is called to when the link is

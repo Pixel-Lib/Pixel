@@ -16,7 +16,7 @@
 
 namespace okapi {
 template <typename Input, typename Output> class ControllerRunner {
-public:
+  public:
   /**
    * A utility class that runs a closed-loop controller.
    *
@@ -138,7 +138,7 @@ public:
     return icontroller.getError();
   }
 
-protected:
+  protected:
   std::shared_ptr<Logger> logger;
   std::unique_ptr<AbstractRate> rate;
 };

@@ -4,7 +4,7 @@
 
 namespace pxl {
 class Pose : public pxl::Coord {
-public:
+  public:
   float theta;
 
   Pose(float x, float y, float theta);

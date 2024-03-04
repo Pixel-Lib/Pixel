@@ -14,7 +14,7 @@
 
 namespace squiggles {
 class Pose {
-public:
+  public:
   /**
    * Specifies a point and heading in 2D space.
    *

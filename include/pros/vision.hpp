@@ -26,7 +26,7 @@
 
 namespace pros {
 class Vision {
-public:
+  public:
   /**
    * Create a Vision Sensor object on the given port.
    *
@@ -450,7 +450,7 @@ public:
    */
   std::int32_t set_wifi_mode(const std::uint8_t enable) const;
 
-private:
+  private:
   std::uint8_t _port;
 };
 }  // namespace pros

@@ -17,7 +17,7 @@
 
 namespace okapi {
 class TwoEncoderOdometry : public Odometry {
-public:
+  public:
   /**
    * TwoEncoderOdometry. Tracks the movement of the robot and estimates its
    * position in coordinates relative to the start (assumed to be (0, 0, 0)).
@@ -74,7 +74,7 @@ public:
    */
   ChassisScales getScales() override;
 
-protected:
+  protected:
   std::shared_ptr<Logger> logger;
   std::unique_ptr<AbstractRate> rate;
   std::unique_ptr<AbstractTimer> timer;

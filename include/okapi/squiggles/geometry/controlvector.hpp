@@ -14,7 +14,7 @@
 
 namespace squiggles {
 class ControlVector {
-public:
+  public:
   /**
    * A vector used to specify a state along a hermite spline.
    *

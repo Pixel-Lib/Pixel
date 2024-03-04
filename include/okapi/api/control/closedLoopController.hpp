@@ -17,7 +17,7 @@ namespace okapi {
  */
 template <typename Input, typename Output>
 class ClosedLoopController : public ControllerOutput<Input> {
-public:
+  public:
   virtual ~ClosedLoopController() = default;
 
   /**

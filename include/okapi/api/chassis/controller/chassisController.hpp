@@ -16,7 +16,7 @@
 
 namespace okapi {
 class ChassisController {
-public:
+  public:
   /**
    * A ChassisController adds a closed-loop layer on top of a ChassisModel.
    * moveDistance and turnAngle both use closed-loop control to move the robot.

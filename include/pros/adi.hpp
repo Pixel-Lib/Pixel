@@ -37,7 +37,7 @@ using ext_adi_port_tuple_t =
     std::tuple<std::uint8_t, std::uint8_t, std::uint8_t>;
 
 class ADIPort {
-public:
+  public:
   /**
    * Configures an ADI port to act as a given sensor type.
    *
@@ -109,13 +109,13 @@ public:
    */
   std::int32_t set_value(std::int32_t value) const;
 
-protected:
+  protected:
   std::uint8_t _smart_port;
   std::uint8_t _adi_port;
 };
 
 class ADIAnalogIn : protected ADIPort {
-public:
+  public:
   /**
    * Configures an ADI port to act as an Analog Input.
    *
@@ -235,7 +235,7 @@ using ADILightSensor = ADIAnalogIn;
 using ADIAccelerometer = ADIAnalogIn;
 
 class ADIAnalogOut : private ADIPort {
-public:
+  public:
   /**
    * Configures an ADI port to act as an Analog Output.
    *
@@ -284,7 +284,7 @@ public:
 };
 
 class ADIDigitalOut : private ADIPort {
-public:
+  public:
   /**
    * Configures an ADI port to act as a Digital Output.
    *
@@ -336,7 +336,7 @@ public:
 };
 
 class ADIDigitalIn : private ADIPort {
-public:
+  public:
   /**
    * Configures an ADI port to act as a Digital Input.
    *
@@ -399,7 +399,7 @@ public:
 using ADIButton = ADIDigitalIn;
 
 class ADIMotor : private ADIPort {
-public:
+  public:
   /**
    * Configures an ADI port to act as a Motor.
    *
@@ -468,7 +468,7 @@ public:
 };
 
 class ADIEncoder : private ADIPort {
-public:
+  public:
   /**
    * Configures a set of ADI ports to act as an Encoder.
    *
@@ -537,7 +537,7 @@ public:
 };
 
 class ADIUltrasonic : private ADIPort {
-public:
+  public:
   /**
    * Configures a set of ADI ports to act as an Ultrasonic sensor.
    *
@@ -589,7 +589,7 @@ public:
 };
 
 class ADIGyro : private ADIPort {
-public:
+  public:
   /**
    * Initializes a gyroscope on the given port. If the given port has not
    * previously been configured as a gyro, then this function starts a 1300ms
@@ -669,7 +669,7 @@ public:
 };
 
 class ADIPotentiometer : public ADIAnalogIn {
-public:
+  public:
   /**
    * Configures an ADI port to act as a Potentiometer.
    *
@@ -779,7 +779,7 @@ public:
 };
 
 class ADILed : protected ADIPort {
-public:
+  public:
   /**
    * @brief Configures an ADI port to act as a LED.
    *
@@ -899,7 +899,7 @@ public:
    */
   std::int32_t length();
 
-protected:
+  protected:
   std::vector<uint32_t> _buffer;
 };
 

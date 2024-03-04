@@ -9,7 +9,7 @@
 
 namespace okapi {
 class ThreeEncoderSkidSteerModel : public SkidSteerModel {
-public:
+  public:
   /**
    * Model for a skid steer drive (wheels parallel with robot's direction of
    * motion). When all motors are powered +127, the robot should move forward in
@@ -41,7 +41,7 @@ public:
    */
   void resetSensors() override;
 
-protected:
+  protected:
   std::shared_ptr<ContinuousRotarySensor> middleSensor;
 };
 }  // namespace okapi

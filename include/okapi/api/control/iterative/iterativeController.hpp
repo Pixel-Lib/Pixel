@@ -17,7 +17,7 @@ namespace okapi {
  */
 template <typename Input, typename Output>
 class IterativeController : public ClosedLoopController<Input, Output> {
-public:
+  public:
   /**
    * Do one iteration of the controller.
    *

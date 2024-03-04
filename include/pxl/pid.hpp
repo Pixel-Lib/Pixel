@@ -16,7 +16,7 @@ namespace pxl {
  * for feedback systems.
  */
 class PID {
-public:
+  public:
   /**
    *PID class constructors
    *
@@ -90,7 +90,7 @@ public:
    */
   void reset();
 
-protected:
+  protected:
   /**
    * The proportional gain (Kp).
    */
@@ -135,7 +135,7 @@ protected:
    */
   float prevError = 0;
 
-private:
+  private:
   /**
    * The previous time point used for calculating the time difference.
    */

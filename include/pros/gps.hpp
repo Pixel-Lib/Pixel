@@ -29,7 +29,7 @@ namespace pros {
 class Gps {
   const std::uint8_t _port;
 
-public:
+  public:
   Gps(const std::uint8_t port) : _port(port){};
 
   Gps(const std::uint8_t port, double xInitial, double yInitial,
@@ -118,8 +118,8 @@ public:
    * EAGAIN - The sensor is still calibrating
    *
    * \param  xInitial
-   * 				 Initial 4-Quadrant X Position, with (0,0) being at
-   * the center of the field (meters) \param  yInitial Initial 4-Quadrant Y
+   * 				 Initial 4-Quadrant X Position, with (0,0) being
+   * at the center of the field (meters) \param  yInitial Initial 4-Quadrant Y
    * Position, with (0,0) being at the center of the field (meters) \param
    * headingInitial Heading with 0 being north on the field, in degrees [0,360)
    * going clockwise \return 1 if the operation was successful or PROS_ERR if

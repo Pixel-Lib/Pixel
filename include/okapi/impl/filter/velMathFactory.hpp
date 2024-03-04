@@ -11,7 +11,7 @@
 
 namespace okapi {
 class VelMathFactory {
-public:
+  public:
   /**
    * Velocity math helper. Calculates filtered velocity. Throws a
    * std::invalid_argument exception if iticksPerRev is zero. Averages the last

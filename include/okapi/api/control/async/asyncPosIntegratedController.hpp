@@ -17,7 +17,7 @@ namespace okapi {
  */
 class AsyncPosIntegratedController
     : public AsyncPositionController<double, double> {
-public:
+  public:
   /**
    * Closed-loop controller that uses the V5 motor's onboard control to move.
    * Input units are whatever units the motor is in. Throws a
@@ -129,7 +129,7 @@ public:
    */
   virtual void stop();
 
-protected:
+  protected:
   std::shared_ptr<Logger> logger;
   TimeUtil timeUtil;
   std::shared_ptr<AbstractMotor> motor;

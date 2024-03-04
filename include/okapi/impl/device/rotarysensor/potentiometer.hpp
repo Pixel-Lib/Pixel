@@ -10,7 +10,7 @@
 
 namespace okapi {
 class Potentiometer : public RotarySensor {
-public:
+  public:
   /**
    * A potentiometer in an ADI port.
    *
@@ -51,7 +51,7 @@ public:
    */
   virtual double controllerGet() override;
 
-protected:
+  protected:
   std::uint8_t smartPort;
   std::uint8_t port;
 };

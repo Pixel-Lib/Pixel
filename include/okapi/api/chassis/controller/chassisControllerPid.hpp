@@ -17,7 +17,7 @@
 
 namespace okapi {
 class ChassisControllerPID : public ChassisController {
-public:
+  public:
   /**
    * ChassisController using PID control. Puts the motors into encoder count
    * units. Throws a `std::invalid_argument` exception if the gear ratio is
@@ -239,7 +239,7 @@ public:
    */
   ChassisModel &model() override;
 
-protected:
+  protected:
   std::shared_ptr<Logger> logger;
   bool normalTurns{true};
   std::shared_ptr<ChassisModel> chassisModel;

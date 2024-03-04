@@ -10,7 +10,7 @@
 
 namespace okapi {
 class ADIEncoder : public ContinuousRotarySensor {
-public:
+  public:
   /**
    * An encoder in an ADI port.
    *
@@ -73,7 +73,7 @@ public:
    */
   virtual double controllerGet() override;
 
-protected:
+  protected:
   pros::c::ext_adi_encoder_t enc;
 };
 }  // namespace okapi

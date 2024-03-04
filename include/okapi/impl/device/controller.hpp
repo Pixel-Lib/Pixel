@@ -13,7 +13,7 @@
 
 namespace okapi {
 class Controller {
-public:
+  public:
   Controller(ControllerId iid = ControllerId::master);
 
   virtual ~Controller();
@@ -118,7 +118,7 @@ public:
    */
   virtual std::int32_t getBatteryLevel();
 
-protected:
+  protected:
   ControllerId okapiId;
   pros::controller_id_e_t prosId;
   std::array<ControllerButton *, 12> buttonArray{};

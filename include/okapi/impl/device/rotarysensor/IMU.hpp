@@ -17,7 +17,7 @@ enum class IMUAxes {
 };
 
 class IMU : public ContinuousRotarySensor {
-public:
+  public:
   /**
    * An inertial sensor on the given port. The IMU returns an angle about the
    * selected axis in degrees.
@@ -96,7 +96,7 @@ public:
    */
   bool isCalibrating() const;
 
-protected:
+  protected:
   std::uint8_t port;
   IMUAxes axis;
   double offset = 0;

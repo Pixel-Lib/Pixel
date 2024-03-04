@@ -20,7 +20,7 @@ namespace okapi {
  * only be one owner and as such copying is disabled.
  */
 class ChassisModel : public ReadOnlyChassisModel {
-public:
+  public:
   explicit ChassisModel() = default;
   ChassisModel(const ChassisModel &) = delete;
   ChassisModel &operator=(const ChassisModel &) = delete;

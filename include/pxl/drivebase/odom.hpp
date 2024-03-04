@@ -14,7 +14,7 @@
 
 namespace pxl {
 class Odom {
-public:
+  public:
   Odom(std::vector<std::unique_ptr<TrackingWheel>> &verticals,
        std::vector<std::unique_ptr<TrackingWheel>> &horizontals,
        std::vector<std::unique_ptr<TrackingWheel>> &drivetrain,
@@ -23,7 +23,7 @@ public:
   void calibrate(bool calibrateIMUs = true);
   void update();
 
-private:
+  private:
   std::vector<std::unique_ptr<TrackingWheel>> verticals;
   std::vector<std::unique_ptr<TrackingWheel>> horizontals;
   std::vector<std::unique_ptr<TrackingWheel>> drivetrain;

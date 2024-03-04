@@ -11,7 +11,7 @@
 
 namespace okapi {
 class Motor : public AbstractMotor {
-public:
+  public:
   /**
    * A V5 motor.
    *
@@ -474,7 +474,7 @@ public:
    */
   bool isReversed() const;
 
-protected:
+  protected:
   std::uint8_t port;
   std::int8_t reversed{1};
 };

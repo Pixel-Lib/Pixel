@@ -10,7 +10,7 @@
 
 namespace okapi {
 class EKFFilter : public Filter {
-public:
+  public:
   /**
    * One dimensional extended Kalman filter. The default arguments should work
    * fine for most signal filtering. It won't hurt to graph your signal and the
@@ -60,7 +60,7 @@ public:
    */
   double getOutput() const override;
 
-protected:
+  protected:
   const double Q, R;
   double xHat = 0;
   double xHatPrev = 0;

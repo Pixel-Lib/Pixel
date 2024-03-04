@@ -17,7 +17,7 @@
 
 namespace okapi {
 class AsyncPosControllerBuilder {
-public:
+  public:
   /**
    * A builder that creates async position controllers. Use this to create an
    * AsyncPosIntegratedController or an AsyncPosPIDController.
@@ -170,7 +170,7 @@ public:
    */
   std::shared_ptr<AsyncPositionController<double, double>> build();
 
-private:
+  private:
   std::shared_ptr<Logger> logger;
 
   bool hasMotors{false};  // Used to verify motors were passed

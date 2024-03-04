@@ -27,7 +27,7 @@
 
 namespace pros {
 class Optical {
-public:
+  public:
   /**
    * Creates an Optical Sensor object for the given port.
    *
@@ -259,7 +259,7 @@ public:
    */
   virtual std::uint8_t get_port();
 
-private:
+  private:
   const std::uint8_t _port;
 };
 }  // namespace pros

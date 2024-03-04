@@ -19,7 +19,7 @@ namespace okapi {
  */
 template <typename InputType, typename FilterType>
 class FilteredControllerInput : public ControllerInput<double> {
-public:
+  public:
   /**
    * A filtered controller input. Applies a filter to the controller input.
    * Useful if you want to place a filter between a control input and a control
@@ -42,7 +42,7 @@ public:
     return filter->filter(input->controllerGet());
   }
 
-protected:
+  protected:
   std::unique_ptr<ControllerInput<InputType>> input;
   std::unique_ptr<FilterType> filter;
 };

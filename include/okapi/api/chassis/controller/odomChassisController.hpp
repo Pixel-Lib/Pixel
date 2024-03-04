@@ -21,7 +21,7 @@
 
 namespace okapi {
 class OdomChassisController : public ChassisController {
-public:
+  public:
   /**
    * Odometry based chassis controller. Starts task at the default for odometry
    * when constructed, which calls `Odometry::step` every `10ms`. The default
@@ -143,7 +143,7 @@ public:
    */
   std::shared_ptr<Odometry> getOdometry();
 
-protected:
+  protected:
   std::shared_ptr<Logger> logger;
   TimeUtil timeUtil;
   QLength moveThreshold;

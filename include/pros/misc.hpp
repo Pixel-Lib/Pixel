@@ -28,7 +28,7 @@
 
 namespace pros {
 class Controller {
-public:
+  public:
   /**
    * Creates a controller object for the given controller id.
    *
@@ -227,7 +227,8 @@ public:
    * port.
    *
    * \param rumble_pattern
-   *				A string consisting of the characters '.', '-', and
+   *				A string consisting of the characters '.', '-',
+   *and
    *'
    *', where dots are short rumbles, dashes are long rumbles, and spaces are
    *pauses. Maximum supported length is 8 characters.
@@ -254,7 +255,7 @@ public:
    */
   std::int32_t clear(void);
 
-private:
+  private:
   controller_id_e_t _id;
 };
 

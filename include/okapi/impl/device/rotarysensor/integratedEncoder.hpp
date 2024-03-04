@@ -11,7 +11,7 @@
 
 namespace okapi {
 class IntegratedEncoder : public ContinuousRotarySensor {
-public:
+  public:
   /**
    * Integrated motor encoder. Uses the encoder inside the V5 motor.
    *
@@ -49,7 +49,7 @@ public:
    */
   virtual double controllerGet() override;
 
-protected:
+  protected:
   std::uint8_t port;
   std::int8_t reversed{1};
 };

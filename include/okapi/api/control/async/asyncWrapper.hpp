@@ -21,7 +21,7 @@
 namespace okapi {
 template <typename Input, typename Output>
 class AsyncWrapper : virtual public AsyncController<Input, Output> {
-public:
+  public:
   /**
    * A wrapper class that transforms an `IterativeController` into an
    * `AsyncController` by running it in another task. The input controller will
@@ -231,7 +231,7 @@ public:
    */
   CrossplatformThread *getThread() const { return task; }
 
-protected:
+  protected:
   std::shared_ptr<Logger> logger;
   Supplier<std::unique_ptr<AbstractRate>> rateSupplier;
   std::shared_ptr<ControllerInput<Input>> input;

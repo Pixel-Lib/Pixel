@@ -9,7 +9,7 @@
 
 namespace okapi {
 class ButtonBase : public AbstractButton {
-public:
+  public:
   /**
    * @param iinverted Whether the button is inverted (`true` meaning default
    * pressed and `false` meaning default not pressed).
@@ -39,7 +39,7 @@ public:
    **/
   bool changedToReleased() override;
 
-protected:
+  protected:
   bool inverted{false};
   bool wasPressedLast_c{false};
   bool wasPressedLast_ctp{false};
@@ -47,7 +47,7 @@ protected:
 
   virtual bool currentlyPressed() = 0;
 
-private:
+  private:
   bool changedImpl(bool &prevState);
 };
 }  // namespace okapi

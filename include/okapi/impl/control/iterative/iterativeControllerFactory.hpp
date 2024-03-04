@@ -15,7 +15,7 @@
 
 namespace okapi {
 class IterativeControllerFactory {
-public:
+  public:
   /**
    * Position PID controller.
    *

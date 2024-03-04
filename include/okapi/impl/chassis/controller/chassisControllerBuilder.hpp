@@ -22,7 +22,7 @@
 
 namespace okapi {
 class ChassisControllerBuilder {
-public:
+  public:
   /**
    * A builder that creates ChassisControllers. Use this to create your
    * ChassisController.
@@ -462,7 +462,7 @@ public:
    */
   std::shared_ptr<OdomChassisController> buildOdometry();
 
-private:
+  private:
   std::shared_ptr<Logger> logger;
 
   struct SkidSteerMotors {

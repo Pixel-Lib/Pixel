@@ -14,7 +14,7 @@ namespace okapi {
  * @tparam T the type to supply
  */
 template <typename T> class Supplier {
-public:
+  public:
   explicit Supplier(std::function<T(void)> ifunc) : func(ifunc) {}
 
   virtual ~Supplier() = default;
@@ -26,7 +26,7 @@ public:
    */
   T get() const { return func(); }
 
-protected:
+  protected:
   std::function<T(void)> func;
 };
 }  // namespace okapi

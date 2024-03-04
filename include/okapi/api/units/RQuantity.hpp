@@ -16,7 +16,7 @@ namespace okapi {
 template <typename MassDim, typename LengthDim, typename TimeDim,
           typename AngleDim>
 class RQuantity {
-public:
+  public:
   explicit constexpr RQuantity() : value(0.0) {}
 
   explicit constexpr RQuantity(double val) : value(val) {}
@@ -72,7 +72,7 @@ public:
         std::sqrt(value));
   }
 
-private:
+  private:
   double value;
 };
 

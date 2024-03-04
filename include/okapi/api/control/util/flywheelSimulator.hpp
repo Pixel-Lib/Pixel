@@ -9,7 +9,7 @@
 
 namespace okapi {
 class FlywheelSimulator {
-public:
+  public:
   /**
    * A simulator for an inverted pendulum. The center of mass of the system
    * changes as the link rotates (by default, you can set a new torque function
@@ -137,7 +137,7 @@ public:
    */
   double getMaxTorque() const;
 
-protected:
+  protected:
   double inputTorque = 0;     // N*m
   double maxTorque = 0.5649;  // N*m
   double angle = 0;           // rad

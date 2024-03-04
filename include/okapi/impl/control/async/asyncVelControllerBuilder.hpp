@@ -17,7 +17,7 @@
 
 namespace okapi {
 class AsyncVelControllerBuilder {
-public:
+  public:
   /**
    * A builder that creates async velocity controllers. Use this to create an
    * AsyncVelIntegratedController or an AsyncVelPIDController.
@@ -180,7 +180,7 @@ public:
    */
   std::shared_ptr<AsyncVelocityController<double, double>> build();
 
-private:
+  private:
   std::shared_ptr<Logger> logger;
 
   bool hasMotors{false};  // Used to verify motors were passed

@@ -19,7 +19,7 @@ enum class OpticalSensorOutput {
 };
 
 class OpticalSensor : public ControllerInput<double> {
-public:
+  public:
   /**
    * An optical sensor on a V5 port.
    *
@@ -137,7 +137,7 @@ public:
    */
   int32_t disableGestures() const;
 
-protected:
+  protected:
   std::uint8_t port;
   OpticalSensorOutput output;
   std::unique_ptr<Filter> filter;

@@ -12,7 +12,7 @@
 
 namespace okapi {
 class XDriveModel : public ChassisModel {
-public:
+  public:
   /**
    * Model for an x drive (wheels at 45 deg from a skid steer drive). When all
    * motors are powered +100%, the robot should move forward in a straight line.
@@ -260,7 +260,7 @@ public:
    */
   std::shared_ptr<AbstractMotor> getBottomLeftMotor() const;
 
-protected:
+  protected:
   double maxVelocity;
   double maxVoltage;
   std::shared_ptr<AbstractMotor> topLeftMotor;

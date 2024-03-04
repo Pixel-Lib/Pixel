@@ -21,7 +21,7 @@ namespace okapi {
  * @tparam n number of taps in the filter
  */
 template <std::size_t n> class MedianFilter : public Filter {
-public:
+  public:
   MedianFilter() : middleIndex((((n)&1) ? ((n) / 2) : (((n) / 2) - 1))) {}
 
   /**
@@ -45,7 +45,7 @@ public:
    */
   double getOutput() const override { return output; }
 
-protected:
+  protected:
   std::array<double, n> data{0};
   std::size_t index = 0;
   double output = 0;

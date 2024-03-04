@@ -11,7 +11,7 @@
 
 namespace okapi {
 class SkidSteerModel : public ChassisModel {
-public:
+  public:
   /**
    * Model for a skid steer drive (wheels parallel with robot's direction of
    * motion). When all motors are powered +100%, the robot should move forward
@@ -192,7 +192,7 @@ public:
    */
   std::shared_ptr<AbstractMotor> getRightSideMotor() const;
 
-protected:
+  protected:
   double maxVelocity;
   double maxVoltage;
   std::shared_ptr<AbstractMotor> leftSideMotor;

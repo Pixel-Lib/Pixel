@@ -11,7 +11,7 @@
 
 namespace okapi {
 class AbstractRate {
-public:
+  public:
   virtual ~AbstractRate();
 
   /**

@@ -10,7 +10,7 @@
 
 namespace okapi {
 class RotationSensor : public ContinuousRotarySensor {
-public:
+  public:
   /**
    * A rotation sensor in a V5 port.
    *
@@ -59,7 +59,7 @@ public:
    */
   double getVelocity() const;
 
-protected:
+  protected:
   std::uint8_t port;
   std::int8_t reversed{1};
 };

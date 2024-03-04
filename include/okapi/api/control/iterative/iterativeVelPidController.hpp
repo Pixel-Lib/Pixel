@@ -15,7 +15,7 @@
 namespace okapi {
 class IterativeVelPIDController
     : public IterativeVelocityController<double, double> {
-public:
+  public:
   struct Gains {
     double kP{0};
     double kD{0};
@@ -235,7 +235,7 @@ public:
    */
   virtual QAngularSpeed getVel() const;
 
-protected:
+  protected:
   std::shared_ptr<Logger> logger;
   double kP, kD, kF, kSF;
   QTime sampleTime{10_ms};

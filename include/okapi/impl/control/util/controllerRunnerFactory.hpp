@@ -10,7 +10,7 @@
 
 namespace okapi {
 template <typename Input, typename Output> class ControllerRunnerFactory {
-public:
+  public:
   /**
    * A utility class that runs a closed-loop controller.
    *

@@ -5,7 +5,7 @@
 
 namespace pxl {
 class PID {
-public:
+  public:
   // Constructor
   PID(float kP, float kI, float kD) : kP(kP), kI(kI), kD(kD) {}
 
@@ -34,7 +34,7 @@ public:
     prevError = 0;
   }
 
-protected:
+  protected:
   // Member variables
   float kP;
   float kI;
@@ -43,7 +43,7 @@ protected:
   float prevError = 0;
 
   // Member functions can also be added here!
-private:
+  private:
   std::chrono::time_point<std::chrono::system_clock> prevTime;
 };
 }  // namespace pxl

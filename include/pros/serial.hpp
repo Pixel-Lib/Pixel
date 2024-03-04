@@ -25,7 +25,7 @@
 
 namespace pros {
 class Serial {
-public:
+  public:
   /**
    * Creates a Serial object for the given port and specifications.
    *
@@ -220,7 +220,7 @@ public:
    */
   virtual std::int32_t write(std::uint8_t *buffer, std::int32_t length) const;
 
-private:
+  private:
   const std::uint8_t _port;
 };
 

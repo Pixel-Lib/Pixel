@@ -36,7 +36,7 @@
           "User Comp. Init. (PROS)") != 0)
 
 class CrossplatformThread {
-public:
+  public:
 #ifdef THREADS_STD
   CrossplatformThread(void (*ptr)(void *), void *params,
                       const char *const = "OkapiLibCrossplatformTask")
@@ -104,7 +104,7 @@ public:
 };
 
 class CrossplatformMutex {
-public:
+  public:
   CrossplatformMutex() = default;
 
   void lock() {
@@ -123,6 +123,6 @@ public:
 #endif
   }
 
-protected:
+  protected:
   CROSSPLATFORM_MUTEX_T mutex;
 };

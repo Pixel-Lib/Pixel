@@ -9,7 +9,7 @@
 
 namespace okapi {
 class AbstractButton : public ControllerInput<bool> {
-public:
+  public:
   virtual ~AbstractButton();
 
   /**

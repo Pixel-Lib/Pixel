@@ -13,7 +13,7 @@
 
 namespace okapi {
 class DistanceSensor : public ControllerInput<double> {
-public:
+  public:
   /**
    * A distance sensor on a V5 port.
    *
@@ -72,7 +72,7 @@ public:
    */
   double getObjectVelocity() const;
 
-protected:
+  protected:
   std::uint8_t port;
   std::unique_ptr<Filter> filter;
 };

@@ -10,7 +10,7 @@
 
 namespace okapi {
 class ADIButton : public ButtonBase {
-public:
+  public:
   /**
    * A button in an ADI port.
    *
@@ -43,7 +43,7 @@ public:
   ADIButton(std::pair<std::uint8_t, std::uint8_t> iports,
             bool iinverted = false);
 
-protected:
+  protected:
   std::uint8_t smartPort;
   std::uint8_t port;
 

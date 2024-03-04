@@ -15,7 +15,7 @@
 
 namespace okapi {
 class AsyncMotionProfileControllerBuilder {
-public:
+  public:
   /**
    * A builder that creates async motion profile controllers. Use this to build
    * an AsyncMotionProfileController or an AsyncLinearMotionProfileController.
@@ -166,7 +166,7 @@ public:
    */
   std::shared_ptr<AsyncMotionProfileController> buildMotionProfileController();
 
-private:
+  private:
   std::shared_ptr<Logger> logger;
 
   bool hasLimits{false};

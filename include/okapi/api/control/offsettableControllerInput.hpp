@@ -11,7 +11,7 @@
 
 namespace okapi {
 class OffsetableControllerInput : public ControllerInput<double> {
-public:
+  public:
   /**
    * A ControllerInput which can be tared to change the zero position.
    *
@@ -37,7 +37,7 @@ public:
    */
   virtual void tarePosition();
 
-protected:
+  protected:
   std::shared_ptr<ControllerInput<double>> input;
   double offset{0};
 };

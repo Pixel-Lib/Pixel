@@ -5,7 +5,7 @@
 namespace pxl {
 
 class Coord {
-public:
+  public:
   float x, y;
 
   Coord(float x, float y) : x(x), y(y) {}

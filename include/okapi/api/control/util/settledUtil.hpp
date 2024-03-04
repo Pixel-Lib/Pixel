@@ -12,7 +12,7 @@
 
 namespace okapi {
 class SettledUtil {
-public:
+  public:
   /**
    * A utility class to determine if a control loop has settled based on error.
    * A control loop is settled if the error is within `iatTargetError` and
@@ -45,7 +45,7 @@ public:
    */
   virtual void reset();
 
-protected:
+  protected:
   double atTargetError = 50;
   double atTargetDerivative = 5;
   QTime atTargetTime = 250_ms;

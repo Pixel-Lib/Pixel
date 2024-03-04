@@ -10,7 +10,7 @@
 namespace pxl {
 
 class Drivetrain {
-public:
+  public:
   Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *rightMotors,
              float trackWidth, float wheelDiameter, float rpm)
       : leftMotors(leftMotors),
@@ -31,7 +31,7 @@ public:
 
   void setConstants(PID &constants);
 
-private:
+  private:
   pros::MotorGroup *leftMotors;
   pros::MotorGroup *rightMotors;
   float trackWidth;
@@ -40,11 +40,11 @@ private:
 };
 
 class ExtendedDrivetrain {
-public:
+  public:
   ExtendedDrivetrain(float verticalTrackWidth)
       : verticalTrackWidth(verticalTrackWidth) {}
 
-private:
+  private:
   float verticalTrackWidth;
 };
 

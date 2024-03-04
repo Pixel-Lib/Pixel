@@ -14,7 +14,7 @@
 
 namespace okapi {
 class MotorGroup : public AbstractMotor {
-public:
+  public:
   /**
    * A group of V5 motors which act as one motor (i.e. they are mechanically
    * linked). A MotorGroup requires at least one motor. If no motors are
@@ -427,7 +427,7 @@ public:
    */
   virtual std::shared_ptr<ContinuousRotarySensor> getEncoder(std::size_t index);
 
-protected:
+  protected:
   std::vector<std::shared_ptr<AbstractMotor>> motors;
 };
 }  // namespace okapi

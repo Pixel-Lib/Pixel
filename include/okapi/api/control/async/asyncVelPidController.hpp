@@ -17,7 +17,7 @@
 namespace okapi {
 class AsyncVelPIDController : public AsyncWrapper<double, double>,
                               public AsyncVelocityController<double, double> {
-public:
+  public:
   /**
    * An async velocity PID controller.
    *
@@ -55,7 +55,7 @@ public:
    */
   IterativeVelPIDController::Gains getGains() const;
 
-protected:
+  protected:
   std::shared_ptr<IterativeVelPIDController> internalController;
 };
 }  // namespace okapi

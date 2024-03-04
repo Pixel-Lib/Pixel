@@ -11,7 +11,7 @@
 
 namespace okapi {
 class ADIMotor : public ControllerOutput<double> {
-public:
+  public:
   /**
    * A motor in an ADI port.
    *
@@ -61,7 +61,7 @@ public:
    */
   void controllerSet(double ivalue) override;
 
-protected:
+  protected:
   std::uint8_t smartPort;
   std::uint8_t port;
   std::int8_t reversed;

@@ -13,7 +13,7 @@
 
 namespace okapi {
 class ThreeEncoderOdometry : public TwoEncoderOdometry {
-public:
+  public:
   /**
    * Odometry. Tracks the movement of the robot and estimates its position in
    * coordinates relative to the start (assumed to be (0, 0)).
@@ -32,7 +32,7 @@ public:
       const ChassisScales &ichassisScales,
       const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
 
-protected:
+  protected:
   /**
    * Does the math, side-effect free, for one odom step.
    *

@@ -22,7 +22,7 @@
 namespace okapi {
 class AsyncMotionProfileController
     : public AsyncPositionController<std::string, PathfinderPoint> {
-public:
+  public:
   /**
    * An Async Controller which generates and follows 2D motion profiles. Throws
    * a `std::invalid_argument` exception if the gear ratio is zero.
@@ -282,7 +282,7 @@ public:
    */
   void forceRemovePath(const std::string &ipathId);
 
-protected:
+  protected:
   std::shared_ptr<Logger> logger;
   std::map<std::string, std::vector<squiggles::ProfilePoint>> paths{};
   PathfinderLimits limits;

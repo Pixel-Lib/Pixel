@@ -12,7 +12,7 @@
 namespace okapi {
 template <typename Input, typename Output>
 class AsyncPositionController : virtual public AsyncController<Input, Output> {
-public:
+  public:
   /**
    * Sets the "absolute" zero position of the controller to its current
    * position.

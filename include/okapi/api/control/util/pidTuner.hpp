@@ -17,7 +17,7 @@
 
 namespace okapi {
 class PIDTuner {
-public:
+  public:
   struct Output {
     double kP, kI, kD;
   };
@@ -35,7 +35,7 @@ public:
 
   virtual Output autotune();
 
-protected:
+  protected:
   static constexpr double inertia = 0.5;    // Particle inertia
   static constexpr double confSelf = 1.1;   // Self confidence
   static constexpr double confSwarm = 1.2;  // Particle swarm confidence

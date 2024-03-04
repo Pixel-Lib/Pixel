@@ -7,7 +7,7 @@
 
 namespace okapi {
 template <typename T> class ControllerOutput {
-public:
+  public:
   /**
    * Writes the value of the controller output. This method might be
    * automatically called in another thread by the controller. The range of

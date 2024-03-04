@@ -11,7 +11,7 @@
 
 namespace okapi {
 class HDriveModel : public ChassisModel {
-public:
+  public:
   /**
    * Model for an h-drive (wheels parallel with robot's direction of motion,
    * with an additional wheel perpendicular to those). When the left and right
@@ -240,7 +240,7 @@ public:
    */
   std::shared_ptr<AbstractMotor> getMiddleMotor() const;
 
-protected:
+  protected:
   double maxVelocity;
   double maxVoltage;
   std::shared_ptr<AbstractMotor> leftSideMotor;

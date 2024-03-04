@@ -20,7 +20,7 @@
 
 namespace squiggles {
 class SplineGenerator {
-public:
+  public:
   /**
    * Generates curves that match the given motion constraints.
    *
@@ -62,7 +62,7 @@ public:
   std::vector<ProfilePoint>
   generate(std::initializer_list<ControlVector> iwaypoints);
 
-protected:
+  protected:
   /**
    * The maximum allowable values for the robot's motion.
    */
@@ -97,7 +97,7 @@ protected:
    * This was 1.2 in the WPILib example but that large of a value seems to
    * create wild paths, 0.12 worked better in testing with VEX-sized paths.
    */
-public:
+  public:
   const double K_DEFAULT_VEL = 1.0;
 
   /**
@@ -201,7 +201,7 @@ public:
   template <class Iter>
   std::vector<ProfilePoint> _generate(Iter start, Iter end, bool fast);
 
-public:
+  public:
   /**
    * Performs the "naive" generation step.
    *

@@ -9,7 +9,7 @@
 
 namespace okapi {
 class Rate : public AbstractRate {
-public:
+  public:
   Rate();
 
   /**
@@ -37,7 +37,7 @@ public:
    */
   void delayUntil(uint32_t ims) override;
 
-protected:
+  protected:
   std::uint32_t lastTime{0};
 };
 }  // namespace okapi

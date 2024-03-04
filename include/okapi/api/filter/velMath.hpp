@@ -16,7 +16,7 @@
 
 namespace okapi {
 class VelMath {
-public:
+  public:
   /**
    * Velocity math helper. Calculates filtered velocity. Throws a
    * `std::invalid_argument` exception if `iticksPerRev` is zero.
@@ -60,7 +60,7 @@ public:
    */
   virtual QAngularAcceleration getAccel() const;
 
-protected:
+  protected:
   std::shared_ptr<Logger> logger;
   QAngularSpeed vel{0_rpm};
   QAngularSpeed lastVel{0_rpm};

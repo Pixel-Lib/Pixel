@@ -13,7 +13,7 @@
 
 namespace okapi {
 class OdomMath {
-public:
+  public:
   /**
    * Computes the distance from the given Odometry state to the given point. The
    * point and the OdomState must be in `StateMode::FRAME_TRANSFORMATION`.
@@ -64,7 +64,7 @@ public:
    */
   static QAngle constrainAngle180(const QAngle &angle);
 
-private:
+  private:
   OdomMath();
   ~OdomMath();
 

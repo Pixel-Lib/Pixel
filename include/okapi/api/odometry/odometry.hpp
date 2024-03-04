@@ -12,7 +12,7 @@
 
 namespace okapi {
 class Odometry {
-public:
+  public:
   /**
    * Odometry. Tracks the movement of the robot and estimates its position in
    * coordinates relative to the start (assumed to be (0, 0, 0)).

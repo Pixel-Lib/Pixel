@@ -14,7 +14,7 @@
 namespace okapi {
 class IterativeMotorVelocityController
     : public IterativeVelocityController<double, double> {
-public:
+  public:
   /**
    * Velocity controller that automatically writes to the motor.
    */
@@ -151,7 +151,7 @@ public:
    */
   QTime getSampleTime() const override;
 
-protected:
+  protected:
   std::shared_ptr<AbstractMotor> motor;
   std::shared_ptr<IterativeVelocityController<double, double>> controller;
 };

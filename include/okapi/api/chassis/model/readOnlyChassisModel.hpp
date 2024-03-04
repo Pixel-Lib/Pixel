@@ -16,7 +16,7 @@ namespace okapi {
  * supports having multiple owners and as a result copying is enabled.
  */
 class ReadOnlyChassisModel {
-public:
+  public:
   virtual ~ReadOnlyChassisModel() = default;
 
   /**

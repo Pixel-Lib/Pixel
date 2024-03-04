@@ -28,7 +28,7 @@
 
 namespace pros {
 class Motor {
-public:
+  public:
   /**
    * Creates a Motor object for the given port and specifications.
    *
@@ -860,12 +860,12 @@ public:
    */
   virtual std::uint8_t get_port(void) const;
 
-private:
+  private:
   const std::uint8_t _port;
 };
 
 class Motor_Group {
-public:
+  public:
   Motor_Group(const std::initializer_list<Motor> motors);
   explicit Motor_Group(const std::vector<pros::Motor> &motors);
   explicit Motor_Group(const std::initializer_list<std::int8_t> motor_ports);
@@ -1478,7 +1478,7 @@ public:
    */
   virtual std::vector<double> get_temperatures(void);
 
-private:
+  private:
   std::vector<Motor> _motors;
   pros::Mutex _motor_group_mutex;
   std::uint8_t _motor_count;

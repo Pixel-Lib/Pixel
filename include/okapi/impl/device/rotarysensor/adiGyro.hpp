@@ -11,7 +11,7 @@
 
 namespace okapi {
 class ADIGyro : public ContinuousRotarySensor {
-public:
+  public:
   /**
    * A gyroscope on the given ADI port. If the port has not previously been
    * configured as a gyro, then the constructor will block for 1 second for
@@ -81,7 +81,7 @@ public:
    */
   double controllerGet() override;
 
-protected:
+  protected:
   pros::c::ext_adi_gyro_t gyro;
 };
 }  // namespace okapi

@@ -16,7 +16,7 @@ namespace okapi {
  * together in one class since they are commonly used together.
  */
 class TimeUtil {
-public:
+  public:
   TimeUtil(const Supplier<std::unique_ptr<AbstractTimer>> &itimerSupplier,
            const Supplier<std::unique_ptr<AbstractRate>> &irateSupplier,
            const Supplier<std::unique_ptr<SettledUtil>> &isettledUtilSupplier);
@@ -33,7 +33,7 @@ public:
 
   Supplier<std::unique_ptr<SettledUtil>> getSettledUtilSupplier() const;
 
-protected:
+  protected:
   Supplier<std::unique_ptr<AbstractTimer>> timerSupplier;
   Supplier<std::unique_ptr<AbstractRate>> rateSupplier;
   Supplier<std::unique_ptr<SettledUtil>> settledUtilSupplier;

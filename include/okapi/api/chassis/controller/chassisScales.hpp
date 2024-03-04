@@ -16,7 +16,7 @@
 
 namespace okapi {
 class ChassisScales {
-public:
+  public:
   /**
    * The scales a ChassisController needs to do all of its closed-loop control.
    * The first element is the wheel diameter, the second element is the wheel
@@ -86,7 +86,7 @@ public:
   double middle;
   double tpr;
 
-protected:
+  protected:
   static void validateInputSize(std::size_t inputSize,
                                 const std::shared_ptr<Logger> &logger);
 };
