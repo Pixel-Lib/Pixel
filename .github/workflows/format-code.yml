@@ -1,0 +1,30 @@
+name: format-code
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  clang-format:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install clang-format
+      run: sudo apt-get install -y clang-format
+
+    - name: Format code
+      run: |
+        git diff --name-only --diff-filter=d origin/main | grep -E "\.(cpp|hpp|cc|cxx)$" | xargs clang-format -style=file -i
+
+    - name: Commit changes
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add .
+        git commit -m "Code formatted with clang-format" || echo "No changes to commit"
+        git push
