@@ -25,7 +25,7 @@ void Odom::calibrate(bool calibrateIMUs) {
                       << " failed calibration!" << std::endl;
         } else
             newVerticals.push_back(std::move(*it));
-    }
+    } // move successful calibrations to new vector
 
     // calibrate horizontal tracking wheels
     for (auto it = this->horizontals.begin(); it != this->horizontals.end();
@@ -33,7 +33,7 @@ void Odom::calibrate(bool calibrateIMUs) {
         if (pxl::sgn((*it)->getOffset() == 1))
             std::cout << "Left drivetrain motor failed to calibrate!"
                       << std::endl;
-    }
+    } // move successful calibrations to new vector
 
     // calibrate IMUs
     for (auto &it : this->imu) it.reset();
@@ -44,7 +44,7 @@ void Odom::calibrate(bool calibrateIMUs) {
             if (!IMU->is_calibrating() && !IMU->is_calibrating()) IMU->reset();
         }
         pros::delay(10);
-    }
+    }   // wait for IMUs to calibrate
 
     for (auto it = this->imu.begin(); it != this->imu.end(); it++) {
         if (!(*it)->is_calibrating()) {
@@ -52,7 +52,7 @@ void Odom::calibrate(bool calibrateIMUs) {
         } else {
             newIMUs.push_back(*it);
         }
-    }
+    }   // move successful calibrations to new vector
 
     this->verticals = std::move(newVerticals);
     this->horizontals = std::move(newHorizontals);
