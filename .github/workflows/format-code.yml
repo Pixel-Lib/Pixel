@@ -13,8 +13,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.CICLANGFORMAT }}  # Use your PAT here
 
     - name: Install clang-format
       run: sudo apt-get install -y clang-format
