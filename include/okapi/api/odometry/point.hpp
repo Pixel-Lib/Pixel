@@ -27,4 +27,4 @@ struct Point {
     }
   }
 };
-} // namespace okapi
+}  // namespace okapi

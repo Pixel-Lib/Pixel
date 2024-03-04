@@ -9,7 +9,7 @@
 
 namespace okapi {
 class TimeUtilFactory {
-  public:
+public:
   virtual ~TimeUtilFactory() = default;
 
   /**
@@ -29,4 +29,4 @@ class TimeUtilFactory {
                                         double iatTargetDerivative = 5,
                                         const QTime &iatTargetTime = 250_ms);
 };
-} // namespace okapi
+}  // namespace okapi

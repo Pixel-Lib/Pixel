@@ -1,13 +1,15 @@
 #include "pxl/util.hpp"
-#include <iostream>
-#include <algorithm>
 #include <math.h>
-#include <vector>
+#include <algorithm>
+#include <iostream>
 #include <type_traits>
+#include <vector>
 
 namespace pxl {
 float slew(float target, float current, float maxChange) {
-    return maxChange == 0 ? target : current + std::clamp(target - current, -maxChange, maxChange);
+  return maxChange == 0
+             ? target
+             : current + std::clamp(target - current, -maxChange, maxChange);
 }
 
 float radToDeg(float rad) { return rad * 180 / M_PI; }
@@ -23,12 +25,15 @@ float wrapToPi(float rad) { return std::fmod(rad + M_PI, 2 * M_PI) - M_PI; }
 float wrapTo2Pi(float rad) { return std::fmod(rad, 2 * M_PI); }
 
 float angleError(float angle1, float angle2, bool radians) {
-    float max = radians ? 2 * M_PI : 360;
-    float error = fmod(angle1 - angle2 + max, max);
-    if (error > max / 2) error -= max;
-    return error;
+  float max = radians ? 2 * M_PI : 360;
+  float error = fmod(angle1 - angle2 + max, max);
+  if (error > max / 2)
+    error -= max;
+  return error;
 }
 
-float ema(float current, float previous, float smooth) { return (current * smooth) + (previous * (1 - smooth)); }
+float ema(float current, float previous, float smooth) {
+  return (current * smooth) + (previous * (1 - smooth));
+}
 
-} // namespace pxl
+}  // namespace pxl

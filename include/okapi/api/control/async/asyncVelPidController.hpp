@@ -5,18 +5,18 @@
  */
 #pragma once
 
+#include <memory>
 #include "okapi/api/control/async/asyncVelocityController.hpp"
 #include "okapi/api/control/async/asyncWrapper.hpp"
 #include "okapi/api/control/controllerInput.hpp"
 #include "okapi/api/control/controllerOutput.hpp"
 #include "okapi/api/control/iterative/iterativeVelPidController.hpp"
 #include "okapi/api/util/timeUtil.hpp"
-#include <memory>
 
 namespace okapi {
 class AsyncVelPIDController : public AsyncWrapper<double, double>,
                               public AsyncVelocityController<double, double> {
-  public:
+public:
   /**
    * An async velocity PID controller.
    *
@@ -32,17 +32,13 @@ class AsyncVelPIDController : public AsyncWrapper<double, double>,
    * @param iderivativeFilter The derivative filter.
    */
   AsyncVelPIDController(
-    const std::shared_ptr<ControllerInput<double>> &iinput,
-    const std::shared_ptr<ControllerOutput<double>> &ioutput,
-    const TimeUtil &itimeUtil,
-    double ikP,
-    double ikD,
-    double ikF,
-    double ikSF,
-    std::unique_ptr<VelMath> ivelMath,
-    double iratio = 1,
-    std::unique_ptr<Filter> iderivativeFilter = std::make_unique<PassthroughFilter>(),
-    const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
+      const std::shared_ptr<ControllerInput<double>> &iinput,
+      const std::shared_ptr<ControllerOutput<double>> &ioutput,
+      const TimeUtil &itimeUtil, double ikP, double ikD, double ikF,
+      double ikSF, std::unique_ptr<VelMath> ivelMath, double iratio = 1,
+      std::unique_ptr<Filter> iderivativeFilter =
+          std::make_unique<PassthroughFilter>(),
+      const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
 
   /**
    * Set controller gains.
@@ -58,7 +54,7 @@ class AsyncVelPIDController : public AsyncWrapper<double, double>,
    */
   IterativeVelPIDController::Gains getGains() const;
 
-  protected:
+protected:
   std::shared_ptr<IterativeVelPIDController> internalController;
 };
-} // namespace okapi
+}  // namespace okapi
