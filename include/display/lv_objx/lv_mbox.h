@@ -50,21 +50,21 @@ extern "C" {
 
 /*Data of message box*/
 typedef struct {
-  lv_cont_ext_t bg; /*Ext. of ancestor*/
-  /*New data for this type */
-  lv_obj_t *text;     /*Text of the message box*/
-  lv_obj_t *btnm;     /*Button matrix for the buttons*/
-  uint16_t anim_time; /*Duration of close animation [ms] (0: no animation)*/
+    lv_cont_ext_t bg; /*Ext. of ancestor*/
+    /*New data for this type */
+    lv_obj_t *text;     /*Text of the message box*/
+    lv_obj_t *btnm;     /*Button matrix for the buttons*/
+    uint16_t anim_time; /*Duration of close animation [ms] (0: no animation)*/
 } lv_mbox_ext_t;
 
 enum {
-  LV_MBOX_STYLE_BG,
-  LV_MBOX_STYLE_BTN_BG,
-  LV_MBOX_STYLE_BTN_REL,
-  LV_MBOX_STYLE_BTN_PR,
-  LV_MBOX_STYLE_BTN_TGL_REL,
-  LV_MBOX_STYLE_BTN_TGL_PR,
-  LV_MBOX_STYLE_BTN_INA,
+    LV_MBOX_STYLE_BG,
+    LV_MBOX_STYLE_BTN_BG,
+    LV_MBOX_STYLE_BTN_REL,
+    LV_MBOX_STYLE_BTN_PR,
+    LV_MBOX_STYLE_BTN_TGL_REL,
+    LV_MBOX_STYLE_BTN_TGL_PR,
+    LV_MBOX_STYLE_BTN_INA,
 };
 typedef uint8_t lv_mbox_style_t;
 

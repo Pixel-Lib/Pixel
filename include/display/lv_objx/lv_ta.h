@@ -44,45 +44,48 @@ extern "C" {
  **********************/
 
 enum {
-  LV_CURSOR_NONE,
-  LV_CURSOR_LINE,
-  LV_CURSOR_BLOCK,
-  LV_CURSOR_OUTLINE,
-  LV_CURSOR_UNDERLINE,
-  LV_CURSOR_HIDDEN = 0x08, /*Or it to any value to hide the cursor temporally*/
+    LV_CURSOR_NONE,
+    LV_CURSOR_LINE,
+    LV_CURSOR_BLOCK,
+    LV_CURSOR_OUTLINE,
+    LV_CURSOR_UNDERLINE,
+    LV_CURSOR_HIDDEN =
+        0x08, /*Or it to any value to hide the cursor temporally*/
 };
 typedef uint8_t lv_cursor_type_t;
 
 /*Data of text area*/
 typedef struct {
-  lv_page_ext_t page; /*Ext. of ancestor*/
-  /*New data for this type */
-  lv_obj_t *label; /*Label of the text area*/
-  char *pwd_tmp;   /*Used to store the original text in password mode*/
-  const char *accapted_chars; /*Only these characters will be accepted. NULL:
-                                 accept all*/
-  uint16_t max_length;        /*The max. number of characters. 0: no limit*/
-  uint8_t pwd_mode : 1;       /*Replace characters with '*' */
-  uint8_t one_line : 1;       /*One line mode (ignore line breaks)*/
-  struct {
-    lv_style_t *style;  /*Style of the cursor (NULL to use label's style)*/
-    lv_coord_t valid_x; /*Used when stepping up/down in text area when stepping
+    lv_page_ext_t page; /*Ext. of ancestor*/
+    /*New data for this type */
+    lv_obj_t *label; /*Label of the text area*/
+    char *pwd_tmp;   /*Used to store the original text in password mode*/
+    const char *accapted_chars; /*Only these characters will be accepted. NULL:
+                                   accept all*/
+    uint16_t max_length;        /*The max. number of characters. 0: no limit*/
+    uint8_t pwd_mode : 1;       /*Replace characters with '*' */
+    uint8_t one_line : 1;       /*One line mode (ignore line breaks)*/
+    struct {
+        lv_style_t *style; /*Style of the cursor (NULL to use label's style)*/
+        lv_coord_t
+            valid_x;    /*Used when stepping up/down in text area when stepping
                            to a shorter line. (Handled by the library)*/
-    uint16_t pos;       /*The current cursor position (0: before 1. letter; 1:
+        uint16_t pos;   /*The current cursor position (0: before 1. letter; 1:
                            before 2. letter etc.)*/
-    lv_area_t area;     /*Cursor area relative to the Text Area*/
-    uint16_t txt_byte_pos; /*Byte index of the letter after (on) the cursor*/
-    lv_cursor_type_t type : 4; /*Shape of the cursor*/
-    uint8_t state : 1;         /*Indicates that the cursor is visible now or not
-                                  (Handled by the library)*/
-  } cursor;
+        lv_area_t area; /*Cursor area relative to the Text Area*/
+        uint16_t
+            txt_byte_pos; /*Byte index of the letter after (on) the cursor*/
+        lv_cursor_type_t type : 4; /*Shape of the cursor*/
+        uint8_t state : 1; /*Indicates that the cursor is visible now or not
+                              (Handled by the library)*/
+    } cursor;
 } lv_ta_ext_t;
 
 enum {
-  LV_TA_STYLE_BG,
-  LV_TA_STYLE_SB,
-  LV_TA_STYLE_EDGE_FLASH,
-  LV_TA_STYLE_CURSOR,
+    LV_TA_STYLE_BG,
+    LV_TA_STYLE_SB,
+    LV_TA_STYLE_EDGE_FLASH,
+    LV_TA_STYLE_CURSOR,
 };
 typedef uint8_t lv_ta_style_t;
 
@@ -198,7 +201,7 @@ void lv_ta_set_max_length(lv_obj_t *ta, uint16_t num);
  * @param action a function pointer
  */
 static inline void lv_ta_set_action(lv_obj_t *ta, lv_action_t action) {
-  lv_page_set_rel_action(ta, action);
+    lv_page_set_rel_action(ta, action);
 }
 
 /**
@@ -207,7 +210,7 @@ static inline void lv_ta_set_action(lv_obj_t *ta, lv_action_t action) {
  * @param sb_mode the new mode from 'lv_page_sb_mode_t' enum
  */
 static inline void lv_ta_set_sb_mode(lv_obj_t *ta, lv_sb_mode_t mode) {
-  lv_page_set_sb_mode(ta, mode);
+    lv_page_set_sb_mode(ta, mode);
 }
 
 /**
@@ -217,7 +220,7 @@ static inline void lv_ta_set_sb_mode(lv_obj_t *ta, lv_sb_mode_t mode) {
  * @param en true or false to enable/disable scroll propagation
  */
 static inline void lv_ta_set_scroll_propagation(lv_obj_t *ta, bool en) {
-  lv_page_set_scroll_propagation(ta, en);
+    lv_page_set_scroll_propagation(ta, en);
 }
 
 /**
@@ -226,7 +229,7 @@ static inline void lv_ta_set_scroll_propagation(lv_obj_t *ta, bool en) {
  * @param en true or false to enable/disable end flash
  */
 static inline void lv_ta_set_edge_flash(lv_obj_t *ta, bool en) {
-  lv_page_set_edge_flash(ta, en);
+    lv_page_set_edge_flash(ta, en);
 }
 
 /**
@@ -311,7 +314,7 @@ uint16_t lv_ta_get_max_length(lv_obj_t *ta);
  * @param action a function pointer
  */
 static inline lv_action_t lv_ta_get_action(lv_obj_t *ta) {
-  return lv_page_get_rel_action(ta);
+    return lv_page_get_rel_action(ta);
 }
 
 /**
@@ -320,7 +323,7 @@ static inline lv_action_t lv_ta_get_action(lv_obj_t *ta) {
  * @return scrollbar mode from 'lv_page_sb_mode_t' enum
  */
 static inline lv_sb_mode_t lv_ta_get_sb_mode(const lv_obj_t *ta) {
-  return lv_page_get_sb_mode(ta);
+    return lv_page_get_sb_mode(ta);
 }
 
 /**
@@ -329,7 +332,7 @@ static inline lv_sb_mode_t lv_ta_get_sb_mode(const lv_obj_t *ta) {
  * @return true or false
  */
 static inline bool lv_ta_get_scroll_propagation(lv_obj_t *ta) {
-  return lv_page_get_scroll_propagation(ta);
+    return lv_page_get_scroll_propagation(ta);
 }
 
 /**
@@ -338,7 +341,7 @@ static inline bool lv_ta_get_scroll_propagation(lv_obj_t *ta) {
  * @return true or false
  */
 static inline bool lv_ta_get_edge_flash(lv_obj_t *ta) {
-  return lv_page_get_edge_flash(ta);
+    return lv_page_get_edge_flash(ta);
 }
 
 /**

@@ -39,14 +39,14 @@ extern "C" {
  **********************/
 /*Data of template*/
 typedef struct {
-  lv_ANCESTOR_ext_t ANCESTOR; /*Ext. of ancestor*/
-                              /*New data for this type */
+    lv_ANCESTOR_ext_t ANCESTOR; /*Ext. of ancestor*/
+                                /*New data for this type */
 } lv_templ_ext_t;
 
 /*Styles*/
 enum {
-  LV_TEMPL_STYLE_X,
-  LV_TEMPL_STYLE_Y,
+    LV_TEMPL_STYLE_X,
+    LV_TEMPL_STYLE_Y,
 };
 typedef uint8_t lv_templ_style_t;
 

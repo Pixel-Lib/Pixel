@@ -32,59 +32,59 @@ extern "C" {
  **********************/
 
 typedef struct {
-  uint16_t year;
-  int8_t month;
-  int8_t day;
+    uint16_t year;
+    int8_t month;
+    int8_t day;
 } lv_calendar_date_t;
 
 enum {
-  LV_CALENDAR_ACTION_CLICK,
-  LV_CALENDAR_ACTION_PR,
-  LV_CALENDAR_ACTION_LONG_PR,
-  LV_CALENDAR_ACTION_LONG_PR_REPEAT,
-  LV_CALENDAR_ACTION_NUM,
+    LV_CALENDAR_ACTION_CLICK,
+    LV_CALENDAR_ACTION_PR,
+    LV_CALENDAR_ACTION_LONG_PR,
+    LV_CALENDAR_ACTION_LONG_PR_REPEAT,
+    LV_CALENDAR_ACTION_NUM,
 };
 typedef uint8_t lv_calendar_action_t;
 
 /*Data of calendar*/
 typedef struct {
-  /*None*/ /*Ext. of ancestor*/
-  /*New data for this type */
-  lv_calendar_date_t today;       /*Date of today*/
-  lv_calendar_date_t showed_date; /*Currently visible month (day is ignored)*/
-  lv_calendar_date_t
-      *highlighted_dates; /*Apply different style on these days (pointer to an
-                             array defined by the user)*/
-  uint8_t highlighted_dates_num; /*Number of elements in `highlighted_days`*/
-  int8_t btn_pressing; /*-1: prev month pressing, +1 next month pressing on the
-                          header*/
-  lv_calendar_date_t pressed_date;
-  const char **day_names; /*Pointer to an array with the name of the days (NULL:
-                             use default names)*/
-  const char **month_names; /*Pointer to an array with the name of the month
-                               (NULL. use default names)*/
-  lv_action_t actions[LV_CALENDAR_ACTION_NUM];
+    /*None*/ /*Ext. of ancestor*/
+    /*New data for this type */
+    lv_calendar_date_t today;       /*Date of today*/
+    lv_calendar_date_t showed_date; /*Currently visible month (day is ignored)*/
+    lv_calendar_date_t
+        *highlighted_dates; /*Apply different style on these days (pointer to an
+                               array defined by the user)*/
+    uint8_t highlighted_dates_num; /*Number of elements in `highlighted_days`*/
+    int8_t btn_pressing; /*-1: prev month pressing, +1 next month pressing on
+                            the header*/
+    lv_calendar_date_t pressed_date;
+    const char **day_names;   /*Pointer to an array with the name of the days
+                                 (NULL:   use default names)*/
+    const char **month_names; /*Pointer to an array with the name of the month
+                                 (NULL. use default names)*/
+    lv_action_t actions[LV_CALENDAR_ACTION_NUM];
 
-  /*Styles*/
-  lv_style_t *style_header;
-  lv_style_t *style_header_pr;
-  lv_style_t *style_day_names;
-  lv_style_t *style_highlighted_days;
-  lv_style_t *style_inactive_days;
-  lv_style_t *style_week_box;
-  lv_style_t *style_today_box;
+    /*Styles*/
+    lv_style_t *style_header;
+    lv_style_t *style_header_pr;
+    lv_style_t *style_day_names;
+    lv_style_t *style_highlighted_days;
+    lv_style_t *style_inactive_days;
+    lv_style_t *style_week_box;
+    lv_style_t *style_today_box;
 } lv_calendar_ext_t;
 
 /*Styles*/
 enum {
-  LV_CALENDAR_STYLE_BG, /*Also the style of the "normal" date numbers*/
-  LV_CALENDAR_STYLE_HEADER,
-  LV_CALENDAR_STYLE_HEADER_PR,
-  LV_CALENDAR_STYLE_DAY_NAMES,
-  LV_CALENDAR_STYLE_HIGHLIGHTED_DAYS,
-  LV_CALENDAR_STYLE_INACTIVE_DAYS,
-  LV_CALENDAR_STYLE_WEEK_BOX,
-  LV_CALENDAR_STYLE_TODAY_BOX,
+    LV_CALENDAR_STYLE_BG, /*Also the style of the "normal" date numbers*/
+    LV_CALENDAR_STYLE_HEADER,
+    LV_CALENDAR_STYLE_HEADER_PR,
+    LV_CALENDAR_STYLE_DAY_NAMES,
+    LV_CALENDAR_STYLE_HIGHLIGHTED_DAYS,
+    LV_CALENDAR_STYLE_INACTIVE_DAYS,
+    LV_CALENDAR_STYLE_WEEK_BOX,
+    LV_CALENDAR_STYLE_TODAY_BOX,
 };
 typedef uint8_t lv_calendar_style_t;
 

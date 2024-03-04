@@ -38,23 +38,23 @@ typedef lv_res_t (*lv_tileview_action_t)(lv_obj_t *, lv_coord_t, lv_coord_t);
 
 /*Data of tileview*/
 typedef struct {
-  lv_page_ext_t page;
-  /*New data for this type */
-  const lv_point_t *valid_pos;
-  uint16_t anim_time;
-  lv_tileview_action_t action;
-  lv_point_t act_id;
-  uint8_t drag_top_en : 1;
-  uint8_t drag_bottom_en : 1;
-  uint8_t drag_left_en : 1;
-  uint8_t drag_right_en : 1;
-  uint8_t drag_hor : 1;
-  uint8_t drag_ver : 1;
+    lv_page_ext_t page;
+    /*New data for this type */
+    const lv_point_t *valid_pos;
+    uint16_t anim_time;
+    lv_tileview_action_t action;
+    lv_point_t act_id;
+    uint8_t drag_top_en : 1;
+    uint8_t drag_bottom_en : 1;
+    uint8_t drag_left_en : 1;
+    uint8_t drag_right_en : 1;
+    uint8_t drag_hor : 1;
+    uint8_t drag_ver : 1;
 } lv_tileview_ext_t;
 
 /*Styles*/
 enum {
-  LV_TILEVIEW_STYLE_BG,
+    LV_TILEVIEW_STYLE_BG,
 };
 typedef uint8_t lv_tileview_style_t;
 
@@ -114,7 +114,7 @@ void lv_tileview_set_tile_act(lv_obj_t *tileview, lv_coord_t x, lv_coord_t y,
  * @param en true or false to enable/disable end flash
  */
 static inline void lv_tileview_set_edge_flash(lv_obj_t *tileview, bool en) {
-  lv_page_set_edge_flash(tileview, en);
+    lv_page_set_edge_flash(tileview, en);
 }
 
 /**
@@ -136,7 +136,7 @@ void lv_tileview_set_style(lv_obj_t *tileview, lv_tileview_style_t type,
  * @return true or false
  */
 static inline bool lv_tileview_get_edge_flash(lv_obj_t *tileview) {
-  return lv_page_get_edge_flash(tileview);
+    return lv_page_get_edge_flash(tileview);
 }
 
 /**

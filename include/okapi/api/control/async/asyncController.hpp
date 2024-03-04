@@ -14,11 +14,11 @@ namespace okapi {
  */
 template <typename Input, typename Output>
 class AsyncController : public ClosedLoopController<Input, Output> {
-  public:
-  /**
-   * Blocks the current task until the controller has settled. Determining what
-   * settling means is implementation-dependent.
-   */
-  virtual void waitUntilSettled() = 0;
+    public:
+    /**
+     * Blocks the current task until the controller has settled. Determining
+     * what settling means is implementation-dependent.
+     */
+    virtual void waitUntilSettled() = 0;
 };
 }  // namespace okapi

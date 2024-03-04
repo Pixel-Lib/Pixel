@@ -36,18 +36,18 @@ extern "C" {
 
 /*Data of bar*/
 typedef struct {
-  /*No inherited ext*/ /*Ext. of ancestor*/
-  /*New data for this type */
-  int16_t cur_value;       /*Current value of the bar*/
-  int16_t min_value;       /*Minimum value of the bar*/
-  int16_t max_value;       /*Maximum value of the bar*/
-  uint8_t sym : 1;         /*Symmetric: means the center is around zero value*/
-  lv_style_t *style_indic; /*Style of the indicator*/
+    /*No inherited ext*/ /*Ext. of ancestor*/
+    /*New data for this type */
+    int16_t cur_value; /*Current value of the bar*/
+    int16_t min_value; /*Minimum value of the bar*/
+    int16_t max_value; /*Maximum value of the bar*/
+    uint8_t sym : 1;   /*Symmetric: means the center is around zero value*/
+    lv_style_t *style_indic; /*Style of the indicator*/
 } lv_bar_ext_t;
 
 enum {
-  LV_BAR_STYLE_BG,
-  LV_BAR_STYLE_INDIC,
+    LV_BAR_STYLE_BG,
+    LV_BAR_STYLE_INDIC,
 };
 typedef uint8_t lv_bar_style_t;
 

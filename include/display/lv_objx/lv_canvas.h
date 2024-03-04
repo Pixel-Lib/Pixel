@@ -33,14 +33,14 @@ extern "C" {
  **********************/
 /*Data of canvas*/
 typedef struct {
-  lv_img_ext_t img; /*Ext. of ancestor*/
-  /*New data for this type */
-  lv_img_dsc_t dsc;
+    lv_img_ext_t img; /*Ext. of ancestor*/
+    /*New data for this type */
+    lv_img_dsc_t dsc;
 } lv_canvas_ext_t;
 
 /*Styles*/
 enum {
-  LV_CANVAS_STYLE_MAIN,
+    LV_CANVAS_STYLE_MAIN,
 };
 typedef uint8_t lv_canvas_style_t;
 

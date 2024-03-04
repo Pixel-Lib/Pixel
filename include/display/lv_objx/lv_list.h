@@ -50,31 +50,31 @@ extern "C" {
  **********************/
 /*Data of list*/
 typedef struct {
-  lv_page_ext_t page; /*Ext. of ancestor*/
-  /*New data for this type */
-  uint16_t anim_time; /*Scroll animation time*/
-  lv_style_t
-      *styles_btn[LV_BTN_STATE_NUM]; /*Styles of the list element buttons*/
-  lv_style_t *style_img; /*Style of the list element images on buttons*/
-  uint32_t size;         /*the number of items(buttons) in the list*/
-  bool single_mode;      /* whether single selected mode is enabled */
+    lv_page_ext_t page; /*Ext. of ancestor*/
+    /*New data for this type */
+    uint16_t anim_time; /*Scroll animation time*/
+    lv_style_t
+        *styles_btn[LV_BTN_STATE_NUM]; /*Styles of the list element buttons*/
+    lv_style_t *style_img; /*Style of the list element images on buttons*/
+    uint32_t size;         /*the number of items(buttons) in the list*/
+    bool single_mode;      /* whether single selected mode is enabled */
 #if USE_LV_GROUP
-  lv_obj_t *last_sel; /* The last selected button. It will be reverted when the
-                         list is focused again */
-  lv_obj_t *selected_btn; /* The button is currently being selected*/
+    lv_obj_t *last_sel; /* The last selected button. It will be reverted when
+                           the list is focused again */
+    lv_obj_t *selected_btn; /* The button is currently being selected*/
 #endif
 } lv_list_ext_t;
 
 enum {
-  LV_LIST_STYLE_BG,
-  LV_LIST_STYLE_SCRL,
-  LV_LIST_STYLE_SB,
-  LV_LIST_STYLE_EDGE_FLASH,
-  LV_LIST_STYLE_BTN_REL,
-  LV_LIST_STYLE_BTN_PR,
-  LV_LIST_STYLE_BTN_TGL_REL,
-  LV_LIST_STYLE_BTN_TGL_PR,
-  LV_LIST_STYLE_BTN_INA,
+    LV_LIST_STYLE_BG,
+    LV_LIST_STYLE_SCRL,
+    LV_LIST_STYLE_SB,
+    LV_LIST_STYLE_EDGE_FLASH,
+    LV_LIST_STYLE_BTN_REL,
+    LV_LIST_STYLE_BTN_PR,
+    LV_LIST_STYLE_BTN_TGL_REL,
+    LV_LIST_STYLE_BTN_TGL_PR,
+    LV_LIST_STYLE_BTN_INA,
 };
 typedef uint8_t lv_list_style_t;
 
@@ -156,7 +156,7 @@ void lv_list_set_anim_time(lv_obj_t *list, uint16_t anim_time);
  * @param sb_mode the new mode from 'lv_page_sb_mode_t' enum
  */
 static inline void lv_list_set_sb_mode(lv_obj_t *list, lv_sb_mode_t mode) {
-  lv_page_set_sb_mode(list, mode);
+    lv_page_set_sb_mode(list, mode);
 }
 
 /**
@@ -166,7 +166,7 @@ static inline void lv_list_set_sb_mode(lv_obj_t *list, lv_sb_mode_t mode) {
  * @param en true or false to enable/disable scroll propagation
  */
 static inline void lv_list_set_scroll_propagation(lv_obj_t *list, bool en) {
-  lv_page_set_scroll_propagation(list, en);
+    lv_page_set_scroll_propagation(list, en);
 }
 
 /**
@@ -175,7 +175,7 @@ static inline void lv_list_set_scroll_propagation(lv_obj_t *list, bool en) {
  * @param en true or false to enable/disable end flash
  */
 static inline void lv_list_set_edge_flash(lv_obj_t *list, bool en) {
-  lv_page_set_edge_flash(list, en);
+    lv_page_set_edge_flash(list, en);
 }
 
 /**
@@ -271,7 +271,7 @@ uint16_t lv_list_get_anim_time(const lv_obj_t *list);
  * @return scrollbar mode from 'lv_page_sb_mode_t' enum
  */
 static inline lv_sb_mode_t lv_list_get_sb_mode(const lv_obj_t *list) {
-  return lv_page_get_sb_mode(list);
+    return lv_page_get_sb_mode(list);
 }
 
 /**
@@ -280,7 +280,7 @@ static inline lv_sb_mode_t lv_list_get_sb_mode(const lv_obj_t *list) {
  * @return true or false
  */
 static inline bool lv_list_get_scroll_propagation(lv_obj_t *list) {
-  return lv_page_get_scroll_propagation(list);
+    return lv_page_get_scroll_propagation(list);
 }
 
 /**
@@ -289,7 +289,7 @@ static inline bool lv_list_get_scroll_propagation(lv_obj_t *list) {
  * @return true or false
  */
 static inline bool lv_list_get_edge_flash(lv_obj_t *list) {
-  return lv_page_get_edge_flash(list);
+    return lv_page_get_edge_flash(list);
 }
 
 /**

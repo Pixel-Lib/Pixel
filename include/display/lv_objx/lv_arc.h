@@ -32,14 +32,14 @@ extern "C" {
  **********************/
 /*Data of arc*/
 typedef struct {
-  /*New data for this type */
-  lv_coord_t angle_start;
-  lv_coord_t angle_end;
+    /*New data for this type */
+    lv_coord_t angle_start;
+    lv_coord_t angle_end;
 } lv_arc_ext_t;
 
 /*Styles*/
 enum {
-  LV_ARC_STYLE_MAIN,
+    LV_ARC_STYLE_MAIN,
 };
 typedef uint8_t lv_arc_style_t;
 

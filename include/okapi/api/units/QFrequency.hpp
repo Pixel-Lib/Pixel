@@ -19,7 +19,7 @@ constexpr QFrequency Hz(1.0);
 inline namespace literals {
 constexpr QFrequency operator"" _Hz(long double x) { return QFrequency(x); }
 constexpr QFrequency operator"" _Hz(unsigned long long int x) {
-  return QFrequency(static_cast<long double>(x));
+    return QFrequency(static_cast<long double>(x));
 }
 }  // namespace literals
 }  // namespace okapi

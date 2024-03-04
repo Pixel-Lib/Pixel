@@ -29,32 +29,32 @@ namespace c {
 #endif
 
 typedef enum imu_status_e {
-  E_IMU_STATUS_CALIBRATING = 0x01,
-  E_IMU_STATUS_ERROR =
-      0xFF,  // NOTE: used for returning an error from the get_status function,
-             // not that the IMU is necessarily in an error state
+    E_IMU_STATUS_CALIBRATING = 0x01,
+    E_IMU_STATUS_ERROR =
+        0xFF,  // NOTE: used for returning an error from the get_status
+               // function, not that the IMU is necessarily in an error state
 } imu_status_e_t;
 
 typedef struct __attribute__((__packed__)) quaternion_s {
-  double x;
-  double y;
-  double z;
-  double w;
+    double x;
+    double y;
+    double z;
+    double w;
 } quaternion_s_t;
 
 struct imu_raw_s {
-  double x;
-  double y;
-  double z;
+    double x;
+    double y;
+    double z;
 };
 
 typedef struct imu_raw_s imu_gyro_s_t;
 typedef struct imu_raw_s imu_accel_s_t;
 
 typedef struct __attribute__((__packed__)) euler_s {
-  double pitch;
-  double roll;
-  double yaw;
+    double pitch;
+    double roll;
+    double yaw;
 } euler_s_t;
 
 #ifdef PROS_USE_SIMPLE_NAMES

@@ -33,9 +33,9 @@ extern "C" {
 
 /*Data of led*/
 typedef struct {
-  /*No inherited ext.*/
-  /*New data for this type */
-  uint8_t bright; /*Current brightness of the LED (0..255)*/
+    /*No inherited ext.*/
+    /*New data for this type */
+    uint8_t bright; /*Current brightness of the LED (0..255)*/
 } lv_led_ext_t;
 
 /**********************
@@ -82,7 +82,7 @@ void lv_led_toggle(lv_obj_t *led);
  * @param style pointer to a style
  */
 static inline void lv_led_set_style(lv_obj_t *led, lv_style_t *style) {
-  lv_obj_set_style(led, style);
+    lv_obj_set_style(led, style);
 }
 
 /**
@@ -98,7 +98,7 @@ uint8_t lv_led_get_bright(const lv_obj_t *led);
  * @return pointer to the led's style
  */
 static inline lv_style_t *lv_led_get_style(const lv_obj_t *led) {
-  return lv_obj_get_style(led);
+    return lv_obj_get_style(led);
 }
 
 /**********************

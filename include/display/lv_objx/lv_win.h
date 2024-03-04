@@ -55,25 +55,25 @@ extern "C" {
 
 /*Data of window*/
 typedef struct {
-  /*Ext. of ancestor*/
-  /*New data for this type */
-  lv_obj_t *page;            /*Pointer to a page which holds the content*/
-  lv_obj_t *header;          /*Pointer to the header container of the window*/
-  lv_obj_t *title;           /*Pointer to the title label of the window*/
-  lv_style_t *style_header;  /*Style of the header container*/
-  lv_style_t *style_btn_rel; /*Control button releases style*/
-  lv_style_t *style_btn_pr;  /*Control button pressed style*/
-  lv_coord_t btn_size;       /*Size of the control buttons (square)*/
+    /*Ext. of ancestor*/
+    /*New data for this type */
+    lv_obj_t *page;            /*Pointer to a page which holds the content*/
+    lv_obj_t *header;          /*Pointer to the header container of the window*/
+    lv_obj_t *title;           /*Pointer to the title label of the window*/
+    lv_style_t *style_header;  /*Style of the header container*/
+    lv_style_t *style_btn_rel; /*Control button releases style*/
+    lv_style_t *style_btn_pr;  /*Control button pressed style*/
+    lv_coord_t btn_size;       /*Size of the control buttons (square)*/
 } lv_win_ext_t;
 
 enum {
-  LV_WIN_STYLE_BG,
-  LV_WIN_STYLE_CONTENT_BG,
-  LV_WIN_STYLE_CONTENT_SCRL,
-  LV_WIN_STYLE_SB,
-  LV_WIN_STYLE_HEADER,
-  LV_WIN_STYLE_BTN_REL,
-  LV_WIN_STYLE_BTN_PR,
+    LV_WIN_STYLE_BG,
+    LV_WIN_STYLE_CONTENT_BG,
+    LV_WIN_STYLE_CONTENT_SCRL,
+    LV_WIN_STYLE_SB,
+    LV_WIN_STYLE_HEADER,
+    LV_WIN_STYLE_BTN_REL,
+    LV_WIN_STYLE_BTN_PR,
 };
 typedef uint8_t lv_win_style_t;
 
@@ -237,7 +237,7 @@ lv_style_t *lv_win_get_style(const lv_obj_t *win, lv_win_style_t type);
  * @return whether window is draggable
  */
 static inline bool lv_win_get_drag(const lv_obj_t *win) {
-  return lv_obj_get_drag(win);
+    return lv_obj_get_drag(win);
 }
 
 /*=====================
@@ -258,8 +258,8 @@ void lv_win_focus(lv_obj_t *win, lv_obj_t *obj, uint16_t anim_time);
  * @param dist the distance to scroll (< 0: scroll right; > 0 scroll left)
  */
 static inline void lv_win_scroll_hor(lv_obj_t *win, lv_coord_t dist) {
-  lv_win_ext_t *ext = (lv_win_ext_t *)lv_obj_get_ext_attr(win);
-  lv_page_scroll_hor(ext->page, dist);
+    lv_win_ext_t *ext = (lv_win_ext_t *)lv_obj_get_ext_attr(win);
+    lv_page_scroll_hor(ext->page, dist);
 }
 /**
  * Scroll the window vertically
@@ -267,8 +267,8 @@ static inline void lv_win_scroll_hor(lv_obj_t *win, lv_coord_t dist) {
  * @param dist the distance to scroll (< 0: scroll down; > 0 scroll up)
  */
 static inline void lv_win_scroll_ver(lv_obj_t *win, lv_coord_t dist) {
-  lv_win_ext_t *ext = (lv_win_ext_t *)lv_obj_get_ext_attr(win);
-  lv_page_scroll_ver(ext->page, dist);
+    lv_win_ext_t *ext = (lv_win_ext_t *)lv_obj_get_ext_attr(win);
+    lv_page_scroll_ver(ext->page, dist);
 }
 
 /**********************

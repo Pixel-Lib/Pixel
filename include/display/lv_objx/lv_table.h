@@ -43,32 +43,32 @@ extern "C" {
  **********************/
 
 typedef union {
-  struct {
-    uint8_t align : 2;
-    uint8_t right_merge : 1;
-    uint8_t type : 2;
-    uint8_t crop : 1;
-  };
-  uint8_t format_byte;
+    struct {
+        uint8_t align : 2;
+        uint8_t right_merge : 1;
+        uint8_t type : 2;
+        uint8_t crop : 1;
+    };
+    uint8_t format_byte;
 } lv_table_cell_format_t;
 
 /*Data of table*/
 typedef struct {
-  /*New data for this type */
-  uint16_t col_cnt;
-  uint16_t row_cnt;
-  char **cell_data;
-  lv_style_t *cell_style[LV_TABLE_CELL_STYLE_CNT];
-  lv_coord_t col_w[LV_TABLE_COL_MAX];
+    /*New data for this type */
+    uint16_t col_cnt;
+    uint16_t row_cnt;
+    char **cell_data;
+    lv_style_t *cell_style[LV_TABLE_CELL_STYLE_CNT];
+    lv_coord_t col_w[LV_TABLE_COL_MAX];
 } lv_table_ext_t;
 
 /*Styles*/
 enum {
-  LV_TABLE_STYLE_BG,
-  LV_TABLE_STYLE_CELL1,
-  LV_TABLE_STYLE_CELL2,
-  LV_TABLE_STYLE_CELL3,
-  LV_TABLE_STYLE_CELL4,
+    LV_TABLE_STYLE_BG,
+    LV_TABLE_STYLE_CELL1,
+    LV_TABLE_STYLE_CELL2,
+    LV_TABLE_STYLE_CELL3,
+    LV_TABLE_STYLE_CELL4,
 };
 typedef uint8_t lv_table_style_t;
 

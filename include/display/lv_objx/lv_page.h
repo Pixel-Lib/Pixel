@@ -39,64 +39,64 @@ extern "C" {
 
 /*Scrollbar modes: shows when should the scrollbars be visible*/
 enum {
-  LV_SB_MODE_OFF = 0x0,  /*Never show scrollbars*/
-  LV_SB_MODE_ON = 0x1,   /*Always show scrollbars*/
-  LV_SB_MODE_DRAG = 0x2, /*Show scrollbars when page is being dragged*/
-  LV_SB_MODE_AUTO = 0x3, /*Show scrollbars when the scrollable container is
-                            large enough to be scrolled*/
-  LV_SB_MODE_HIDE = 0x4, /*Hide the scroll bar temporally*/
-  LV_SB_MODE_UNHIDE =
-      0x5, /*Unhide the previously hidden scrollbar. Recover it's type too*/
+    LV_SB_MODE_OFF = 0x0,  /*Never show scrollbars*/
+    LV_SB_MODE_ON = 0x1,   /*Always show scrollbars*/
+    LV_SB_MODE_DRAG = 0x2, /*Show scrollbars when page is being dragged*/
+    LV_SB_MODE_AUTO = 0x3, /*Show scrollbars when the scrollable container is
+                              large enough to be scrolled*/
+    LV_SB_MODE_HIDE = 0x4, /*Hide the scroll bar temporally*/
+    LV_SB_MODE_UNHIDE =
+        0x5, /*Unhide the previously hidden scrollbar. Recover it's type too*/
 };
 typedef uint8_t lv_sb_mode_t;
 
 /*Data of page*/
 typedef struct {
-  lv_cont_ext_t bg; /*Ext. of ancestor*/
-  /*New data for this type */
-  lv_obj_t *scrl;         /*The scrollable object on the background*/
-  lv_action_t rel_action; /*Function to call when the page is released*/
-  lv_action_t pr_action;  /*Function to call when the page is pressed*/
-  struct {
-    lv_style_t *style;  /*Style of scrollbars*/
-    lv_area_t hor_area; /*Horizontal scrollbar area relative to the page.
-                           (Handled by the library) */
-    lv_area_t ver_area; /*Vertical scrollbar area relative to the page (Handled
-                           by the library)*/
-    uint8_t hor_draw : 1; /*1: horizontal scrollbar is visible now (Handled by
-                             the library)*/
-    uint8_t ver_draw : 1; /*1: vertical scrollbar is visible now (Handled by the
-                             library)*/
-    lv_sb_mode_t mode : 3; /*Scrollbar visibility from 'lv_page_sb_mode_t'*/
-  } sb;
-  struct {
-    uint16_t state; /*Store the current size of the edge flash effect*/
-    lv_style_t
-        *style; /*Style of edge flash effect (usually homogeneous circle)*/
-    uint8_t enabled : 1;   /*1: Show a flash animation on the edge*/
-    uint8_t top_ip : 1;    /*Used internally to show that top most position is
-                              reached (flash is In Progress)*/
-    uint8_t bottom_ip : 1; /*Used internally to show that bottom most position
-                              is reached (flash is In Progress)*/
-    uint8_t right_ip : 1;  /*Used internally to show that right most position is
-                              reached (flash is In Progress)*/
-    uint8_t left_ip : 1;   /*Used internally to show that left most position is
-                              reached (flash is In Progress)*/
-  } edge_flash;
-
-  uint8_t arrow_scroll : 1;   /*1: Enable scrolling with
-                                 LV_GROUP_KEY_LEFT/RIGHT/UP/DOWN*/
-  uint8_t scroll_prop : 1;    /*1: Propagate the scrolling the the parent if the
-                                 edge is reached*/
-  uint8_t scroll_prop_ip : 1; /*1: Scroll propagation is in progress (used by
+    lv_cont_ext_t bg; /*Ext. of ancestor*/
+    /*New data for this type */
+    lv_obj_t *scrl;         /*The scrollable object on the background*/
+    lv_action_t rel_action; /*Function to call when the page is released*/
+    lv_action_t pr_action;  /*Function to call when the page is pressed*/
+    struct {
+        lv_style_t *style;    /*Style of scrollbars*/
+        lv_area_t hor_area;   /*Horizontal scrollbar area relative to the page.
+                                 (Handled by the library) */
+        lv_area_t ver_area;   /*Vertical scrollbar area relative to the page
+                                 (Handled   by the library)*/
+        uint8_t hor_draw : 1; /*1: horizontal scrollbar is visible now (Handled
+                                 by the library)*/
+        uint8_t ver_draw : 1; /*1: vertical scrollbar is visible now (Handled by
                                  the library)*/
+        lv_sb_mode_t mode : 3; /*Scrollbar visibility from 'lv_page_sb_mode_t'*/
+    } sb;
+    struct {
+        uint16_t state; /*Store the current size of the edge flash effect*/
+        lv_style_t
+            *style; /*Style of edge flash effect (usually homogeneous circle)*/
+        uint8_t enabled : 1; /*1: Show a flash animation on the edge*/
+        uint8_t top_ip : 1;  /*Used internally to show that top most position is
+                                reached (flash is In Progress)*/
+        uint8_t bottom_ip : 1; /*Used internally to show that bottom most
+                                  position is reached (flash is In Progress)*/
+        uint8_t right_ip : 1; /*Used internally to show that right most position
+                                 is reached (flash is In Progress)*/
+        uint8_t left_ip : 1;  /*Used internally to show that left most position
+                                 is  reached (flash is In Progress)*/
+    } edge_flash;
+
+    uint8_t arrow_scroll : 1; /*1: Enable scrolling with
+                                 LV_GROUP_KEY_LEFT/RIGHT/UP/DOWN*/
+    uint8_t scroll_prop : 1;  /*1: Propagate the scrolling the the parent if the
+                                 edge is reached*/
+    uint8_t scroll_prop_ip : 1; /*1: Scroll propagation is in progress (used by
+                                   the library)*/
 } lv_page_ext_t;
 
 enum {
-  LV_PAGE_STYLE_BG,
-  LV_PAGE_STYLE_SCRL,
-  LV_PAGE_STYLE_SB,
-  LV_PAGE_STYLE_EDGE_FLASH,
+    LV_PAGE_STYLE_BG,
+    LV_PAGE_STYLE_SCRL,
+    LV_PAGE_STYLE_SB,
+    LV_PAGE_STYLE_EDGE_FLASH,
 };
 typedef uint8_t lv_page_style_t;
 
@@ -198,7 +198,7 @@ void lv_page_set_edge_flash(lv_obj_t *page, bool en);
  */
 static inline void lv_page_set_scrl_fit(lv_obj_t *page, bool hor_en,
                                         bool ver_en) {
-  lv_cont_set_fit(lv_page_get_scrl(page), hor_en, ver_en);
+    lv_cont_set_fit(lv_page_get_scrl(page), hor_en, ver_en);
 }
 
 /**
@@ -208,7 +208,7 @@ static inline void lv_page_set_scrl_fit(lv_obj_t *page, bool hor_en,
  * is enabled)
  */
 static inline void lv_page_set_scrl_width(lv_obj_t *page, lv_coord_t w) {
-  lv_obj_set_width(lv_page_get_scrl(page), w);
+    lv_obj_set_width(lv_page_get_scrl(page), w);
 }
 
 /**
@@ -218,7 +218,7 @@ static inline void lv_page_set_scrl_width(lv_obj_t *page, lv_coord_t w) {
  * enabled)
  */
 static inline void lv_page_set_scrl_height(lv_obj_t *page, lv_coord_t h) {
-  lv_obj_set_height(lv_page_get_scrl(page), h);
+    lv_obj_set_height(lv_page_get_scrl(page), h);
 }
 
 /**
@@ -227,7 +227,7 @@ static inline void lv_page_set_scrl_height(lv_obj_t *page, lv_coord_t h) {
  * @param layout a layout from 'lv_cont_layout_t'
  */
 static inline void lv_page_set_scrl_layout(lv_obj_t *page, lv_layout_t layout) {
-  lv_cont_set_layout(lv_page_get_scrl(page), layout);
+    lv_cont_set_layout(lv_page_get_scrl(page), layout);
 }
 
 /**
@@ -293,7 +293,7 @@ lv_coord_t lv_page_get_fit_height(lv_obj_t *page);
  * @return the width of the scrollable
  */
 static inline lv_coord_t lv_page_get_scrl_width(const lv_obj_t *page) {
-  return lv_obj_get_width(lv_page_get_scrl(page));
+    return lv_obj_get_width(lv_page_get_scrl(page));
 }
 
 /**
@@ -302,7 +302,7 @@ static inline lv_coord_t lv_page_get_scrl_width(const lv_obj_t *page) {
  * @return the height of the scrollable
  */
 static inline lv_coord_t lv_page_get_scrl_height(const lv_obj_t *page) {
-  return lv_obj_get_height(lv_page_get_scrl(page));
+    return lv_obj_get_height(lv_page_get_scrl(page));
 }
 
 /**
@@ -311,7 +311,7 @@ static inline lv_coord_t lv_page_get_scrl_height(const lv_obj_t *page) {
  * @return the layout from 'lv_cont_layout_t'
  */
 static inline lv_layout_t lv_page_get_scrl_layout(const lv_obj_t *page) {
-  return lv_cont_get_layout(lv_page_get_scrl(page));
+    return lv_cont_get_layout(lv_page_get_scrl(page));
 }
 
 /**
@@ -320,7 +320,7 @@ static inline lv_layout_t lv_page_get_scrl_layout(const lv_obj_t *page) {
  * @return true: horizontal fit is enabled; false: disabled
  */
 static inline bool lv_page_get_scrl_hor_fit(const lv_obj_t *page) {
-  return lv_cont_get_hor_fit(lv_page_get_scrl(page));
+    return lv_cont_get_hor_fit(lv_page_get_scrl(page));
 }
 
 /**
@@ -329,7 +329,7 @@ static inline bool lv_page_get_scrl_hor_fit(const lv_obj_t *page) {
  * @return true: vertical fit is enabled; false: disabled
  */
 static inline bool lv_page_get_scrl_fit_ver(const lv_obj_t *page) {
-  return lv_cont_get_ver_fit(lv_page_get_scrl(page));
+    return lv_cont_get_ver_fit(lv_page_get_scrl(page));
 }
 
 /**

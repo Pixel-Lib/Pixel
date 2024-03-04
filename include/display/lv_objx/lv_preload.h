@@ -43,23 +43,23 @@ extern "C" {
  **********************/
 
 enum {
-  LV_PRELOAD_TYPE_SPINNING_ARC,
-  LV_PRELOAD_TYPE_FILLSPIN_ARC,
+    LV_PRELOAD_TYPE_SPINNING_ARC,
+    LV_PRELOAD_TYPE_FILLSPIN_ARC,
 };
 typedef uint8_t lv_preloader_type_t;
 
 /*Data of pre loader*/
 typedef struct {
-  lv_arc_ext_t arc; /*Ext. of ancestor*/
-  /*New data for this type */
-  uint16_t arc_length;           /*Length of the spinning indicator in degree*/
-  uint16_t time;                 /*Time of one round*/
-  lv_preloader_type_t anim_type; /*Type of the arc animation*/
+    lv_arc_ext_t arc; /*Ext. of ancestor*/
+    /*New data for this type */
+    uint16_t arc_length; /*Length of the spinning indicator in degree*/
+    uint16_t time;       /*Time of one round*/
+    lv_preloader_type_t anim_type; /*Type of the arc animation*/
 } lv_preload_ext_t;
 
 /*Styles*/
 enum {
-  LV_PRELOAD_STYLE_MAIN,
+    LV_PRELOAD_STYLE_MAIN,
 };
 typedef uint8_t lv_preload_style_t;
 

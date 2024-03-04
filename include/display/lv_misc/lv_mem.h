@@ -44,13 +44,13 @@ extern "C" {
  **********************/
 
 typedef struct {
-  uint32_t total_size;
-  uint32_t free_cnt;
-  uint32_t free_size;
-  uint32_t free_biggest_size;
-  uint32_t used_cnt;
-  uint8_t used_pct;
-  uint8_t frag_pct;
+    uint32_t total_size;
+    uint32_t free_cnt;
+    uint32_t free_size;
+    uint32_t free_biggest_size;
+    uint32_t used_cnt;
+    uint8_t used_pct;
+    uint8_t frag_pct;
 } lv_mem_monitor_t;
 
 /**********************
@@ -113,20 +113,20 @@ uint32_t lv_mem_get_size(const void *data);
  */
 #if USE_LV_LOG == 0
 #define lv_mem_assert(p)                                                       \
-  {                                                                            \
-    if (p == NULL)                                                             \
-      while (1)                                                                \
-        ;                                                                      \
-  }
+    {                                                                          \
+        if (p == NULL)                                                         \
+            while (1)                                                          \
+                ;                                                              \
+    }
 #else
 #define lv_mem_assert(p)                                                       \
-  {                                                                            \
-    if (p == NULL) {                                                           \
-      LV_LOG_ERROR("Out of memory!");                                          \
-      while (1)                                                                \
-        ;                                                                      \
-    }                                                                          \
-  }
+    {                                                                          \
+        if (p == NULL) {                                                       \
+            LV_LOG_ERROR("Out of memory!");                                    \
+            while (1)                                                          \
+                ;                                                              \
+        }                                                                      \
+    }
 #endif
 #ifdef __cplusplus
 } /* extern "C" */

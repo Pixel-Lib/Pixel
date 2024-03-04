@@ -16,14 +16,14 @@ namespace okapi {
  * supports having multiple owners and as a result copying is enabled.
  */
 class ReadOnlyChassisModel {
-  public:
-  virtual ~ReadOnlyChassisModel() = default;
+    public:
+    virtual ~ReadOnlyChassisModel() = default;
 
-  /**
-   * Read the sensors.
-   *
-   * @return sensor readings (format is implementation dependent)
-   */
-  virtual std::valarray<std::int32_t> getSensorVals() const = 0;
+    /**
+     * Read the sensors.
+     *
+     * @return sensor readings (format is implementation dependent)
+     */
+    virtual std::valarray<std::int32_t> getSensorVals() const = 0;
 };
 }  // namespace okapi

@@ -27,7 +27,7 @@ extern "C" {
  *      DEFINES
  *********************/
 #define LV_LANG_TXT_ID_NONE                                                    \
-  0xFFFF /*Used to not assign any text IDs for a multi-language object.*/
+    0xFFFF /*Used to not assign any text IDs for a multi-language object.*/
 
 /**********************
  *      TYPEDEFS

@@ -9,12 +9,12 @@
 
 namespace okapi {
 class ContinuousRotarySensor : public RotarySensor {
-  public:
-  /**
-   * Reset the sensor to zero.
-   *
-   * @return `1` on success, `PROS_ERR` on fail
-   */
-  virtual std::int32_t reset() = 0;
+    public:
+    /**
+     * Reset the sensor to zero.
+     *
+     * @return `1` on success, `PROS_ERR` on fail
+     */
+    virtual std::int32_t reset() = 0;
 };
 }  // namespace okapi

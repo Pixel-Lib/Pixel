@@ -29,10 +29,10 @@ namespace pros {
 #endif
 
 typedef enum link_type_e {
-  E_LINK_RECIEVER = 0,
-  E_LINK_TRANSMITTER,
-  E_LINK_RX = E_LINK_RECIEVER,
-  E_LINK_TX = E_LINK_TRANSMITTER
+    E_LINK_RECIEVER = 0,
+    E_LINK_TRANSMITTER,
+    E_LINK_RX = E_LINK_RECIEVER,
+    E_LINK_TX = E_LINK_TRANSMITTER
 } link_type_e_t;
 
 #ifdef PROS_USE_SIMPLE_NAMES

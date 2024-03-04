@@ -31,7 +31,7 @@ extern "C" {
 
 /*Control byte*/
 #define LV_BTNM_CTRL_CODE                                                      \
-  0x80 /*The control byte has to begin (if present) with 0b10xxxxxx*/
+    0x80 /*The control byte has to begin (if present) with 0b10xxxxxx*/
 #define LV_BTNM_CTRL_MASK 0xC0
 #define LV_BTNM_WIDTH_MASK 0x07
 #define LV_BTNM_HIDE_MASK 0x08
@@ -51,28 +51,29 @@ typedef lv_res_t (*lv_btnm_action_t)(lv_obj_t *, const char *txt);
 
 /*Data of button matrix*/
 typedef struct {
-  /*No inherited ext.*/ /*Ext. of ancestor*/
-  /*New data for this type */
-  const char **map_p;      /*Pointer to the current map*/
-  lv_area_t *button_areas; /*Array of areas of buttons*/
-  lv_btnm_action_t action; /*A function to call when a button is releases*/
-  lv_style_t *styles_btn[LV_BTN_STATE_NUM]; /*Styles of buttons in each state*/
-  uint16_t btn_cnt;    /*Number of button in 'map_p'(Handled by the library)*/
-  uint16_t btn_id_pr;  /*Index of the currently pressed button (in
-                          `button_areas`) or LV_BTNM_PR_NONE*/
-  uint16_t btn_id_tgl; /*Index of the currently toggled button (in
-                          `button_areas`) or LV_BTNM_PR_NONE */
-  uint8_t toggle : 1;  /*Enable toggling*/
-  uint8_t recolor : 1; /*Enable button recoloring*/
+    /*No inherited ext.*/ /*Ext. of ancestor*/
+    /*New data for this type */
+    const char **map_p;      /*Pointer to the current map*/
+    lv_area_t *button_areas; /*Array of areas of buttons*/
+    lv_btnm_action_t action; /*A function to call when a button is releases*/
+    lv_style_t
+        *styles_btn[LV_BTN_STATE_NUM]; /*Styles of buttons in each state*/
+    uint16_t btn_cnt;    /*Number of button in 'map_p'(Handled by the library)*/
+    uint16_t btn_id_pr;  /*Index of the currently pressed button (in
+                            `button_areas`) or LV_BTNM_PR_NONE*/
+    uint16_t btn_id_tgl; /*Index of the currently toggled button (in
+                            `button_areas`) or LV_BTNM_PR_NONE */
+    uint8_t toggle : 1;  /*Enable toggling*/
+    uint8_t recolor : 1; /*Enable button recoloring*/
 } lv_btnm_ext_t;
 
 enum {
-  LV_BTNM_STYLE_BG,
-  LV_BTNM_STYLE_BTN_REL,
-  LV_BTNM_STYLE_BTN_PR,
-  LV_BTNM_STYLE_BTN_TGL_REL,
-  LV_BTNM_STYLE_BTN_TGL_PR,
-  LV_BTNM_STYLE_BTN_INA,
+    LV_BTNM_STYLE_BG,
+    LV_BTNM_STYLE_BTN_REL,
+    LV_BTNM_STYLE_BTN_PR,
+    LV_BTNM_STYLE_BTN_TGL_REL,
+    LV_BTNM_STYLE_BTN_TGL_PR,
+    LV_BTNM_STYLE_BTN_INA,
 };
 typedef uint8_t lv_btnm_style_t;
 

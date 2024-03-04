@@ -42,30 +42,30 @@ extern "C" {
  **********************/
 
 enum {
-  LV_KB_MODE_TEXT,
-  LV_KB_MODE_NUM,
+    LV_KB_MODE_TEXT,
+    LV_KB_MODE_NUM,
 };
 typedef uint8_t lv_kb_mode_t;
 
 /*Data of keyboard*/
 typedef struct {
-  lv_btnm_ext_t btnm; /*Ext. of ancestor*/
-  /*New data for this type */
-  lv_obj_t *ta;            /*Pointer to the assigned text area*/
-  lv_kb_mode_t mode;       /*Key map type*/
-  uint8_t cursor_mng : 1;  /*1: automatically show/hide cursor when a text area
-                              is assigned or left*/
-  lv_action_t ok_action;   /*Called when the "Ok" button is clicked*/
-  lv_action_t hide_action; /*Called when the "Hide" button is clicked*/
+    lv_btnm_ext_t btnm; /*Ext. of ancestor*/
+    /*New data for this type */
+    lv_obj_t *ta;           /*Pointer to the assigned text area*/
+    lv_kb_mode_t mode;      /*Key map type*/
+    uint8_t cursor_mng : 1; /*1: automatically show/hide cursor when a text area
+                               is assigned or left*/
+    lv_action_t ok_action;  /*Called when the "Ok" button is clicked*/
+    lv_action_t hide_action; /*Called when the "Hide" button is clicked*/
 } lv_kb_ext_t;
 
 enum {
-  LV_KB_STYLE_BG,
-  LV_KB_STYLE_BTN_REL,
-  LV_KB_STYLE_BTN_PR,
-  LV_KB_STYLE_BTN_TGL_REL,
-  LV_KB_STYLE_BTN_TGL_PR,
-  LV_KB_STYLE_BTN_INA,
+    LV_KB_STYLE_BG,
+    LV_KB_STYLE_BTN_REL,
+    LV_KB_STYLE_BTN_PR,
+    LV_KB_STYLE_BTN_TGL_REL,
+    LV_KB_STYLE_BTN_TGL_PR,
+    LV_KB_STYLE_BTN_INA,
 };
 typedef uint8_t lv_kb_style_t;
 
@@ -128,7 +128,7 @@ void lv_kb_set_hide_action(lv_obj_t *kb, lv_action_t action);
  *            See 'lv_btnm_set_map()' for more info.
  */
 static inline void lv_kb_set_map(lv_obj_t *kb, const char **map) {
-  lv_btnm_set_map(kb, map);
+    lv_btnm_set_map(kb, map);
 }
 
 /**

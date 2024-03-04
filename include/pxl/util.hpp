@@ -109,11 +109,11 @@ float angleError(float angle1, float angle2, bool radians);
  * @return The sign of x.
  */
 template <typename T> T sgn(T x) {
-  if constexpr (std::is_floating_point_v<T>) {
-    return std::signbit(x) ? T(-1) : T(1);
-  } else {
-    return (x < T(0)) ? T(-1) : T(1);
-  }
+    if constexpr (std::is_floating_point_v<T>) {
+        return std::signbit(x) ? T(-1) : T(1);
+    } else {
+        return (x < T(0)) ? T(-1) : T(1);
+    }
 }
 
 /**
@@ -147,9 +147,9 @@ float ema(float current, float previous, float smooth);
  * @return The average value (in any datatype).
  */
 template <typename T> T avg(const std::vector<T> &vec) {
-  T sum = T();  // Initialize sum to default value for T
-  for (const T &elem : vec) { sum += elem; }
-  return sum / vec.size();
+    T sum = T();  // Initialize sum to default value for T
+    for (const T &elem : vec) { sum += elem; }
+    return sum / vec.size();
 }
 
 }  // namespace pxl

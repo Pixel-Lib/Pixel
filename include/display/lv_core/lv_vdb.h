@@ -30,8 +30,8 @@ extern "C" {
 /*Can be used in `lv_conf.h` the set an invalid address for the VDB. It should
  * be replaced later by a valid address using `lv_vdb_set_adr()`*/
 #define LV_VDB_ADR_INV                                                         \
-  8 /*8 is still too small to be valid but it's aligned on 64 bit machines as  \
-       well*/
+    8 /*8 is still too small to be valid but it's aligned on 64 bit machines   \
+         as well*/
 
 #ifndef LV_VDB_PX_BPP
 #define LV_VDB_PX_BPP LV_COLOR_SIZE /* Default is LV_COLOR_SIZE */
@@ -49,16 +49,16 @@ extern "C" {
  * (((LV_VDB_SIZE * LV_VDB_PX_BPP) & 0x7) ? 1 : 0): add an extra byte to round
  * up. E.g. if LV_VDB_SIZE = 10 and LV_VDB_PX_BPP = 1 -> 10 bits -> 2 bytes*/
 #define LV_VDB_SIZE_IN_BYTES                                                   \
-  ((LV_VDB_SIZE * LV_VDB_PX_BPP) >> 3) +                                       \
-      (((LV_VDB_SIZE * LV_VDB_PX_BPP) & 0x7) ? 1 : 0)
+    ((LV_VDB_SIZE * LV_VDB_PX_BPP) >> 3) +                                     \
+        (((LV_VDB_SIZE * LV_VDB_PX_BPP) & 0x7) ? 1 : 0)
 
 /**********************
  *      TYPEDEFS
  **********************/
 
 typedef struct {
-  lv_area_t area;
-  lv_color_t *buf;
+    lv_area_t area;
+    lv_color_t *buf;
 } lv_vdb_t;
 
 /**********************

@@ -45,25 +45,26 @@ extern "C" {
  **********************/
 /*Data of drop down list*/
 typedef struct {
-  lv_page_ext_t page; /*Ext. of ancestor*/
-  /*New data for this type */
-  lv_obj_t *label;       /*Label for the options*/
-  lv_style_t *sel_style; /*Style of the selected option*/
-  lv_action_t action; /*Pointer to function to call when an option is selected*/
-  uint16_t option_cnt;     /*Number of options*/
-  uint16_t sel_opt_id;     /*Index of the current option*/
-  uint16_t sel_opt_id_ori; /*Store the original index on focus*/
-  uint16_t anim_time;      /*Open/Close animation time [ms]*/
-  uint8_t opened : 1;      /*1: The list is opened (handled by the library)*/
-  uint8_t draw_arrow : 1;  /*1: Draw arrow*/
+    lv_page_ext_t page; /*Ext. of ancestor*/
+    /*New data for this type */
+    lv_obj_t *label;       /*Label for the options*/
+    lv_style_t *sel_style; /*Style of the selected option*/
+    lv_action_t
+        action; /*Pointer to function to call when an option is selected*/
+    uint16_t option_cnt;     /*Number of options*/
+    uint16_t sel_opt_id;     /*Index of the current option*/
+    uint16_t sel_opt_id_ori; /*Store the original index on focus*/
+    uint16_t anim_time;      /*Open/Close animation time [ms]*/
+    uint8_t opened : 1;      /*1: The list is opened (handled by the library)*/
+    uint8_t draw_arrow : 1;  /*1: Draw arrow*/
 
-  lv_coord_t fix_height; /*Height of the ddlist when opened. (0: auto-size)*/
+    lv_coord_t fix_height; /*Height of the ddlist when opened. (0: auto-size)*/
 } lv_ddlist_ext_t;
 
 enum {
-  LV_DDLIST_STYLE_BG,
-  LV_DDLIST_STYLE_SEL,
-  LV_DDLIST_STYLE_SB,
+    LV_DDLIST_STYLE_BG,
+    LV_DDLIST_STYLE_SEL,
+    LV_DDLIST_STYLE_SB,
 };
 typedef uint8_t lv_ddlist_style_t;
 
@@ -134,7 +135,7 @@ void lv_ddlist_set_hor_fit(lv_obj_t *ddlist, bool en);
  * @param sb_mode the new mode from 'lv_page_sb_mode_t' enum
  */
 static inline void lv_ddlist_set_sb_mode(lv_obj_t *ddlist, lv_sb_mode_t mode) {
-  lv_page_set_sb_mode(ddlist, mode);
+    lv_page_set_sb_mode(ddlist, mode);
 }
 
 /**
@@ -211,7 +212,7 @@ lv_coord_t lv_ddlist_get_fix_height(const lv_obj_t *ddlist);
  * @return scrollbar mode from 'lv_page_sb_mode_t' enum
  */
 static inline lv_sb_mode_t lv_ddlist_get_sb_mode(const lv_obj_t *ddlist) {
-  return lv_page_get_sb_mode(ddlist);
+    return lv_page_get_sb_mode(ddlist);
 }
 
 /**

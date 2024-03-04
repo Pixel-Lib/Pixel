@@ -25,14 +25,14 @@ constexpr QAngularSpeed cps =
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-function"
 static QAngularSpeed convertHertzToRadPerSec(QFrequency in) {
-  return (in.convert(Hz) / 2_pi) * radps;
+    return (in.convert(Hz) / 2_pi) * radps;
 }
 #pragma GCC diagnostic pop
 
 inline namespace literals {
 constexpr QAngularSpeed operator"" _rpm(long double x) { return x * rpm; }
 constexpr QAngularSpeed operator"" _rpm(unsigned long long int x) {
-  return static_cast<double>(x) * rpm;
+    return static_cast<double>(x) * rpm;
 }
 }  // namespace literals
 }  // namespace okapi

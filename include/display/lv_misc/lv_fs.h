@@ -35,62 +35,62 @@ extern "C" {
  *      TYPEDEFS
  **********************/
 enum {
-  LV_FS_RES_OK = 0,
-  LV_FS_RES_HW_ERR,  /*Low level hardware error*/
-  LV_FS_RES_FS_ERR,  /*Error in the file system structure */
-  LV_FS_RES_NOT_EX,  /*Driver, file or directory is not exists*/
-  LV_FS_RES_FULL,    /*Disk full*/
-  LV_FS_RES_LOCKED,  /*The file is already opened*/
-  LV_FS_RES_DENIED,  /*Access denied. Check 'fs_open' modes and write protect*/
-  LV_FS_RES_BUSY,    /*The file system now can't handle it, try later*/
-  LV_FS_RES_TOUT,    /*Process time outed*/
-  LV_FS_RES_NOT_IMP, /*Requested function is not implemented*/
-  LV_FS_RES_OUT_OF_MEM, /*Not enough memory for an internal operation*/
-  LV_FS_RES_INV_PARAM,  /*Invalid parameter among arguments*/
-  LV_FS_RES_UNKNOWN,    /*Other unknown error*/
+    LV_FS_RES_OK = 0,
+    LV_FS_RES_HW_ERR, /*Low level hardware error*/
+    LV_FS_RES_FS_ERR, /*Error in the file system structure */
+    LV_FS_RES_NOT_EX, /*Driver, file or directory is not exists*/
+    LV_FS_RES_FULL,   /*Disk full*/
+    LV_FS_RES_LOCKED, /*The file is already opened*/
+    LV_FS_RES_DENIED, /*Access denied. Check 'fs_open' modes and write protect*/
+    LV_FS_RES_BUSY,   /*The file system now can't handle it, try later*/
+    LV_FS_RES_TOUT,   /*Process time outed*/
+    LV_FS_RES_NOT_IMP,    /*Requested function is not implemented*/
+    LV_FS_RES_OUT_OF_MEM, /*Not enough memory for an internal operation*/
+    LV_FS_RES_INV_PARAM,  /*Invalid parameter among arguments*/
+    LV_FS_RES_UNKNOWN,    /*Other unknown error*/
 };
 typedef uint8_t lv_fs_res_t;
 
 struct __lv_fs_drv_t;
 
 typedef struct {
-  void *file_d;
-  struct __lv_fs_drv_t *drv;
+    void *file_d;
+    struct __lv_fs_drv_t *drv;
 } lv_fs_file_t;
 
 typedef struct {
-  void *dir_d;
-  struct __lv_fs_drv_t *drv;
+    void *dir_d;
+    struct __lv_fs_drv_t *drv;
 } lv_fs_dir_t;
 
 enum {
-  LV_FS_MODE_WR = 0x01,
-  LV_FS_MODE_RD = 0x02,
+    LV_FS_MODE_WR = 0x01,
+    LV_FS_MODE_RD = 0x02,
 };
 typedef uint8_t lv_fs_mode_t;
 
 typedef struct __lv_fs_drv_t {
-  char letter;
-  uint16_t file_size;
-  uint16_t rddir_size;
-  bool (*ready)(void);
+    char letter;
+    uint16_t file_size;
+    uint16_t rddir_size;
+    bool (*ready)(void);
 
-  lv_fs_res_t (*open)(void *file_p, const char *path, lv_fs_mode_t mode);
-  lv_fs_res_t (*close)(void *file_p);
-  lv_fs_res_t (*remove)(const char *fn);
-  lv_fs_res_t (*read)(void *file_p, void *buf, uint32_t btr, uint32_t *br);
-  lv_fs_res_t (*write)(void *file_p, const void *buf, uint32_t btw,
-                       uint32_t *bw);
-  lv_fs_res_t (*seek)(void *file_p, uint32_t pos);
-  lv_fs_res_t (*tell)(void *file_p, uint32_t *pos_p);
-  lv_fs_res_t (*trunc)(void *file_p);
-  lv_fs_res_t (*size)(void *file_p, uint32_t *size_p);
-  lv_fs_res_t (*rename)(const char *oldname, const char *newname);
-  lv_fs_res_t (*free)(uint32_t *total_p, uint32_t *free_p);
+    lv_fs_res_t (*open)(void *file_p, const char *path, lv_fs_mode_t mode);
+    lv_fs_res_t (*close)(void *file_p);
+    lv_fs_res_t (*remove)(const char *fn);
+    lv_fs_res_t (*read)(void *file_p, void *buf, uint32_t btr, uint32_t *br);
+    lv_fs_res_t (*write)(void *file_p, const void *buf, uint32_t btw,
+                         uint32_t *bw);
+    lv_fs_res_t (*seek)(void *file_p, uint32_t pos);
+    lv_fs_res_t (*tell)(void *file_p, uint32_t *pos_p);
+    lv_fs_res_t (*trunc)(void *file_p);
+    lv_fs_res_t (*size)(void *file_p, uint32_t *size_p);
+    lv_fs_res_t (*rename)(const char *oldname, const char *newname);
+    lv_fs_res_t (*free)(uint32_t *total_p, uint32_t *free_p);
 
-  lv_fs_res_t (*dir_open)(void *rddir_p, const char *path);
-  lv_fs_res_t (*dir_read)(void *rddir_p, char *fn);
-  lv_fs_res_t (*dir_close)(void *rddir_p);
+    lv_fs_res_t (*dir_open)(void *rddir_p, const char *path);
+    lv_fs_res_t (*dir_read)(void *rddir_p, char *fn);
+    lv_fs_res_t (*dir_close)(void *rddir_p);
 } lv_fs_drv_t;
 
 /**********************

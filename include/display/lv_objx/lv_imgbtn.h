@@ -39,28 +39,28 @@ extern "C" {
  **********************/
 /*Data of image button*/
 typedef struct {
-  lv_btn_ext_t btn; /*Ext. of ancestor*/
-                    /*New data for this type */
+    lv_btn_ext_t btn; /*Ext. of ancestor*/
+                      /*New data for this type */
 #if LV_IMGBTN_TILED == 0
-  const void *img_src[LV_BTN_STATE_NUM]; /*Store images to each state*/
+    const void *img_src[LV_BTN_STATE_NUM]; /*Store images to each state*/
 #else
-  const void
-      *img_src_left[LV_BTN_STATE_NUM]; /*Store left side images to each state*/
-  const void
-      *img_src_mid[LV_BTN_STATE_NUM]; /*Store center images to each state*/
-  const void *
-      img_src_right[LV_BTN_STATE_NUM]; /*Store right side images to each state*/
+    const void *
+        img_src_left[LV_BTN_STATE_NUM]; /*Store left side images to each state*/
+    const void
+        *img_src_mid[LV_BTN_STATE_NUM]; /*Store center images to each state*/
+    const void *img_src_right[LV_BTN_STATE_NUM]; /*Store right side images to
+                                                    each state*/
 #endif
-  lv_img_cf_t act_cf; /*Color format of the currently active image*/
+    lv_img_cf_t act_cf; /*Color format of the currently active image*/
 } lv_imgbtn_ext_t;
 
 /*Styles*/
 enum {
-  LV_IMGBTN_STYLE_REL,
-  LV_IMGBTN_STYLE_PR,
-  LV_IMGBTN_STYLE_TGL_REL,
-  LV_IMGBTN_STYLE_TGL_PR,
-  LV_IMGBTN_STYLE_INA,
+    LV_IMGBTN_STYLE_REL,
+    LV_IMGBTN_STYLE_PR,
+    LV_IMGBTN_STYLE_TGL_REL,
+    LV_IMGBTN_STYLE_TGL_PR,
+    LV_IMGBTN_STYLE_INA,
 };
 typedef uint8_t lv_imgbtn_style_t;
 
@@ -119,7 +119,7 @@ void lv_imgbtn_set_src(lv_obj_t *imgbtn, lv_btn_state_t state,
  * @param tgl true: enable toggled states, false: disable
  */
 static inline void lv_imgbtn_set_toggle(lv_obj_t *imgbtn, bool tgl) {
-  lv_btn_set_toggle(imgbtn, tgl);
+    lv_btn_set_toggle(imgbtn, tgl);
 }
 
 /**
@@ -128,7 +128,7 @@ static inline void lv_imgbtn_set_toggle(lv_obj_t *imgbtn, bool tgl) {
  * @param state the new state of the button (from lv_btn_state_t enum)
  */
 static inline void lv_imgbtn_set_state(lv_obj_t *imgbtn, lv_btn_state_t state) {
-  lv_btn_set_state(imgbtn, state);
+    lv_btn_set_state(imgbtn, state);
 }
 
 /**
@@ -145,7 +145,7 @@ static inline void lv_imgbtn_toggle(lv_obj_t *imgbtn) { lv_btn_toggle(imgbtn); }
  */
 static inline void lv_imgbtn_set_action(lv_obj_t *imgbtn, lv_btn_action_t type,
                                         lv_action_t action) {
-  lv_btn_set_action(imgbtn, type, action);
+    lv_btn_set_action(imgbtn, type, action);
 }
 
 /**
@@ -203,7 +203,7 @@ const void *lv_imgbtn_get_src_right(lv_obj_t *imgbtn, lv_btn_state_t state);
  * @return the state of the button (from lv_btn_state_t enum)
  */
 static inline lv_btn_state_t lv_imgbtn_get_state(const lv_obj_t *imgbtn) {
-  return lv_btn_get_state(imgbtn);
+    return lv_btn_get_state(imgbtn);
 }
 
 /**
@@ -212,7 +212,7 @@ static inline lv_btn_state_t lv_imgbtn_get_state(const lv_obj_t *imgbtn) {
  * @return ture: toggle enabled, false: disabled
  */
 static inline bool lv_imgbtn_get_toggle(const lv_obj_t *imgbtn) {
-  return lv_btn_get_toggle(imgbtn);
+    return lv_btn_get_toggle(imgbtn);
 }
 
 /**
@@ -222,7 +222,7 @@ static inline bool lv_imgbtn_get_toggle(const lv_obj_t *imgbtn) {
  */
 static inline lv_action_t lv_imgbtn_get_action(const lv_obj_t *imgbtn,
                                                lv_btn_action_t type) {
-  return lv_btn_get_action(imgbtn, type);
+    return lv_btn_get_action(imgbtn, type);
 }
 
 /**
