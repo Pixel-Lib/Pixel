@@ -458,9 +458,9 @@ v5_device_e_t registry_get_plugged_type(uint8_t port);
  * Control settings of the serial driver.
  *
  * \param action
- * 			An action to perform on the serial driver. See the SERCTL_*
- * macros for details on the different actions. \param extra_arg An argument to
- * pass in based on the action
+ * 			An action to perform on the serial driver. See the
+ * SERCTL_* macros for details on the different actions. \param extra_arg An
+ * argument to pass in based on the action
  */
 int32_t serctl(const uint32_t action, void *const extra_arg);
 
@@ -481,12 +481,11 @@ int32_t serctl(const uint32_t action, void *const extra_arg);
  * \param file
  * 			A valid file descriptor number
  * \param action
- * 			An action to perform on the file's driver. See the *CTL_*
- * macros for details on the different actions. Note that the action passed in
- * must match the correct driver (e.g. don't perform a SERCTL_* action on a
- *      microSD card file)
- * \param extra_arg
- * 		  	An argument to pass in based on the action
+ * 			An action to perform on the file's driver. See the
+ * *CTL_* macros for details on the different actions. Note that the action
+ * passed in must match the correct driver (e.g. don't perform a SERCTL_* action
+ * on a microSD card file) \param extra_arg An argument to pass in based on the
+ * action
  */
 int32_t fdctl(int file, const uint32_t action, void *const extra_arg);
 

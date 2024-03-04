@@ -151,8 +151,8 @@ public:
    * ENODEV - The port cannot be configured as an Rotation Sensor
    *
    * \param  value
-   * 				 Determines if the direction of the rotational sensor
-   * is reversed or not.
+   * 				 Determines if the direction of the rotational
+   * sensor is reversed or not.
    *
    * \return 1 if the operation was successful or PROS_ERR if the operation
    * failed, setting errno.

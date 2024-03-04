@@ -439,8 +439,8 @@ int32_t imu_tare(uint8_t port);
  * \param  port
  * 				 The V5 Inertial Sensor port number from 1-21
  * \param  target
- * 				 Target euler values for the euler values to be set
- * to \return 1 if the operation was successful or PROS_ERR if the operation
+ * 				 Target euler values for the euler values to be
+ * set to \return 1 if the operation was successful or PROS_ERR if the operation
  * failed, setting errno.
  */
 int32_t imu_set_euler(uint8_t port, euler_s_t target);

@@ -12,8 +12,11 @@ class Drivetrain {
 public:
   Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *rightMotors,
              float trackWidth, float wheelDiameter, float rpm)
-      : leftMotors(leftMotors), rightMotors(rightMotors),
-        trackWidth(trackWidth), wheelDiameter(wheelDiameter), rpm(rpm) {}
+      : leftMotors(leftMotors),
+        rightMotors(rightMotors),
+        trackWidth(trackWidth),
+        wheelDiameter(wheelDiameter),
+        rpm(rpm) {}
 
   // Add any necessary member functions here
 

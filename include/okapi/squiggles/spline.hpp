@@ -162,8 +162,12 @@ public:
   struct ConstrainedState {
     ConstrainedState(Pose ipose, double icurvature, double idistance,
                      double imax_vel, double imin_accel, double imax_accel)
-        : pose(ipose), curvature(icurvature), distance(idistance),
-          max_vel(imax_vel), min_accel(imin_accel), max_accel(imax_accel) {}
+        : pose(ipose),
+          curvature(icurvature),
+          distance(idistance),
+          max_vel(imax_vel),
+          min_accel(imin_accel),
+          max_accel(imax_accel) {}
 
     ConstrainedState() = default;
 

@@ -198,7 +198,7 @@ typedef struct _lv_obj_t {
 
 #ifdef LV_OBJ_FREE_NUM_TYPE
   LV_OBJ_FREE_NUM_TYPE
-      free_num; /*Application specific identifier (set it freely)*/
+  free_num; /*Application specific identifier (set it freely)*/
 #endif
 } lv_obj_t;
 

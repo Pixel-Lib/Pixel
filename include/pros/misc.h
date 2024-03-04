@@ -422,10 +422,10 @@ int32_t controller_clear(controller_id_e_t id);
  * EACCES - Another resource is currently trying to access the controller port.
  *
  * \param id
- *				The ID of the controller (e.g. the master or partner
- *controller). Must be one of CONTROLLER_MASTER or CONTROLLER_PARTNER \param
- *rumble_pattern A string consisting of the characters '.', '-', and ' ', where
- *dots are short rumbles, dashes are long rumbles, and spaces are pauses.
+ *				The ID of the controller (e.g. the master or
+ *partner controller). Must be one of CONTROLLER_MASTER or CONTROLLER_PARTNER
+ *\param rumble_pattern A string consisting of the characters '.', '-', and ' ',
+ *where dots are short rumbles, dashes are long rumbles, and spaces are pauses.
  *				Maximum supported length is 8 characters.
  *
  * \return 1 if the operation was successful or PROS_ERR if the operation

@@ -16,13 +16,17 @@ namespace pxl {
 // Constructor with encoder
 TrackingWheel::TrackingWheel(pros::ADIEncoder *encoder, float wheelDiameter,
                              float distance, float gearRatio)
-    : encoder(encoder), diameter(wheelDiameter), distance(distance),
+    : encoder(encoder),
+      diameter(wheelDiameter),
+      distance(distance),
       gearRatio(gearRatio) {}
 
 // Constructor with rotation sensor
 TrackingWheel::TrackingWheel(pros::Rotation *rotation, float wheelDiameter,
                              float distance, float gearRatio)
-    : rotation(rotation), diameter(wheelDiameter), distance(distance),
+    : rotation(rotation),
+      diameter(wheelDiameter),
+      distance(distance),
       gearRatio(gearRatio) {}
 
 // Constructor with motor group

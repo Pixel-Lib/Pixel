@@ -7,8 +7,10 @@ Odom::Odom(std::vector<std::unique_ptr<TrackingWheel>> &verticals,
            std::vector<std::unique_ptr<TrackingWheel>> &horizontals,
            std::vector<std::unique_ptr<TrackingWheel>> &drivetrain,
            std::vector<std::shared_ptr<pros::IMU>> &imu)
-    : verticals(std::move(verticals)), horizontals(std::move(horizontals)),
-      drivetrain(std::move(drivetrain)), imu(std::move(imu)) {}
+    : verticals(std::move(verticals)),
+      horizontals(std::move(horizontals)),
+      drivetrain(std::move(drivetrain)),
+      imu(std::move(imu)) {}
 
 void Odom::calibrate(bool calibrateIMUs) {
   std::vector<std::unique_ptr<TrackingWheel>> newDrivetrain = {};

@@ -29,8 +29,10 @@ struct ProfilePoint {
    */
   ProfilePoint(ControlVector ivector, std::vector<double> iwheel_velocities,
                double icurvature, double itime)
-      : vector(ivector), wheel_velocities(iwheel_velocities),
-        curvature(icurvature), time(itime) {}
+      : vector(ivector),
+        wheel_velocities(iwheel_velocities),
+        curvature(icurvature),
+        time(itime) {}
 
   ProfilePoint() = default;
 

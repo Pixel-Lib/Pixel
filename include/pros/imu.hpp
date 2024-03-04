@@ -394,9 +394,9 @@ public:
    * \param  port
    * 				 The V5 Inertial Sensor port number from 1-21
    * \param  target
-   * 				 Target euler values for the euler values to be set
-   * to \return 1 if the operation was successful or PROS_ERR if the operation
-   * failed, setting errno.
+   * 				 Target euler values for the euler values to be
+   * set to \return 1 if the operation was successful or PROS_ERR if the
+   * operation failed, setting errno.
    */
   virtual std::int32_t set_roll(const double target) const;
   /**
@@ -412,9 +412,9 @@ public:
    * \param  port
    * 				 The V5 Inertial Sensor port number from 1-21
    * \param  target
-   * 				 Target euler values for the euler values to be set
-   * to \return 1 if the operation was successful or PROS_ERR if the operation
-   * failed, setting errno.
+   * 				 Target euler values for the euler values to be
+   * set to \return 1 if the operation was successful or PROS_ERR if the
+   * operation failed, setting errno.
    */
   virtual std::int32_t set_euler(const pros::c::euler_s_t target) const;
   /**

@@ -41,8 +41,12 @@ public:
       const Supplier<std::unique_ptr<AbstractRate>> &irateSupplier,
       const double iratio = 1,
       std::shared_ptr<Logger> ilogger = Logger::getDefaultLogger())
-      : logger(std::move(ilogger)), rateSupplier(irateSupplier), input(iinput),
-        output(ioutput), controller(icontroller), ratio(iratio) {}
+      : logger(std::move(ilogger)),
+        rateSupplier(irateSupplier),
+        input(iinput),
+        output(ioutput),
+        controller(icontroller),
+        ratio(iratio) {}
 
   AsyncWrapper(AsyncWrapper<Input, Output> &&other) = delete;
 
