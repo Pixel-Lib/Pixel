@@ -1,10 +1,10 @@
-name: Clang Format
+name: format-code
 
 on:
   push:
     paths:
       - '**.cpp'
-      - '***.hpp'
+      - '**.hpp'
       - '**.h'
 
 jobs:
