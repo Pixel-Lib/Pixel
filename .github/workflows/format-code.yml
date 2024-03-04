@@ -24,6 +24,9 @@ jobs:
           fi
         done
 
+    - name: Check for changes
+      run: git diff
+
     - name: Commit changes
       run: |
         git config --local user.email "action@github.com"
