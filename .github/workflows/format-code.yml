@@ -24,8 +24,9 @@ jobs:
 
     - name: Run clang-format
       if: steps.files.outputs.source == 'true'
-      uses: DoozyX/clang-format-lint-action@v0.14
+      uses: ArtificialAmateur/clang-format-action@v1.1
       with:
         source: ${{ steps.files.outputs.files }}
-        extensions: 'hpp,cpp'
-        clangFormatVersion: 14
+        clangFormatVersion: '14'
+        style: 'file'
+        inplace: true
