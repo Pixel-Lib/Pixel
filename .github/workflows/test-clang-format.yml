@@ -1,11 +1,10 @@
-name: test-clang-format
+name: format-code
 
 on:
   push:
     branches:
       - '*'
   pull_request:
-
 
 jobs:
   build:
@@ -18,3 +17,14 @@ jobs:
         source: './src/pxl ./include/pxl'
         extensions: 'hpp,cpp'
         clangFormatVersion: 14
+        inplace: true  # Add this line to make clang-format fix the issues
+    - name: Commit changes
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'github-actions@github.com'
+        git add -u
+        git commit -m "Automatically fix code formatting issues with Clang Format"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
