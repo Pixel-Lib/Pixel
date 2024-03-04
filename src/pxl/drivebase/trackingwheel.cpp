@@ -5,7 +5,6 @@
 #include "pros/rotation.hpp"
 #include "trackingwheel.hpp"
 #include <memory>
-#include "main.h"
 #include <vector>
 #include "math.h"
 #include "pxl/util.hpp"
@@ -38,11 +37,7 @@ TrackingWheel::TrackingWheel(pros::MotorGroup* motors, float wheelDiameter, floa
 }
 
 // Reset the wheel measurement
-void TrackingWheel::reset() {
-    if (encoder) encoder->reset();
-    if (rotation) rotation->reset_position();
-    if (motors) motors->tare_position();
-}
+bool TrackingWheel::reset() { return this->encoder->reset(); }
 
 // Get the distance traveled by the wheel
 float TrackingWheel::getDistanceTraveled() {
@@ -66,6 +61,18 @@ float TrackingWheel::getDistanceTraveled() {
     } else {
         return 0;
     }
+}
+
+// Get the distance delta or the change in distance
+float TrackingWheel::getDistanceDelta(bool update) {
+    auto getAngleDelta = [this, update]() {
+        const float prevAngle = this->lastAngle;
+        const float angle = this->encoder->get_value();
+        if (!update) this->lastAngle = prevAngle;
+        return (angle - prevAngle);
+    };
+
+    return getAngleDelta() / 2 * this->diameter;
 }
 
 // Get the wheel offset
