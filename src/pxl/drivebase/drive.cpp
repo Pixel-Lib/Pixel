@@ -19,17 +19,18 @@ void pxl::Drivebase::calibrateIMU(OdomSensors sensors) {
         do pros::delay(10);
         while (sensors.imu->get_status() != 0xFF && sensors.imu->is_calibrating() && !isDriverControl());
 
-        if (!isnanf(sensors.imu->get_heading()) && !isinf(sensors.imu->get_heading())) {
-            return;
-        }
+        if (!isnanf(sensors.imu->get_heading()) && !isinf(sensors.imu->get_heading())) { return; }
 
         pros::c::controller_rumble(pros::E_CONTROLLER_MASTER, "---");
         std::cerr << "IMU failed to calibrate! Attempt #" << attempt << std::endl;
     }
 
     sensors.imu = nullptr;
-    std::cerr << (isDriverControl() ? "Driver control started, abandoning IMU calibration, defaulting to tracking wheels / motor encoders"
-                                   : "IMU calibration failed, defaulting to tracking wheels / motor encoders") << std::endl;
+    std::cerr
+        << (isDriverControl()
+                ? "Driver control started, abandoning IMU calibration, defaulting to tracking wheels / motor encoders"
+                : "IMU calibration failed, defaulting to tracking wheels / motor encoders")
+        << std::endl;
 }
 bool Drivebase::isDriverControl() {
     return pros::competition::is_connected() && !pros::competition::is_autonomous()
@@ -40,9 +41,9 @@ void Drivebase::setSensors(OdomSensors sensors) {
     std::vector<std::unique_ptr<TrackingWheel>> Horizontals;
     std::vector<std::unique_ptr<TrackingWheel>> drive;
     std::vector<std::shared_ptr<pros::IMU>> imu;
-auto pushIfNotNull = [](auto& vec, auto& sensor) {
-    sensor != nullptr ? vec.push_back(std::make_unique<TrackingWheel>(std::move(*sensor))) : void();
-};
+    auto pushIfNotNull = [](auto &vec, auto &sensor) {
+        sensor != nullptr ? vec.push_back(std::make_unique<TrackingWheel>(std::move(*sensor))) : void();
+    };
 
     pushIfNotNull(Verticals, sensors.vertical1);
     pushIfNotNull(Verticals, sensors.vertical2);
