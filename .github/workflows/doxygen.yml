@@ -16,7 +16,7 @@ jobs:
       run: sudo apt-get install doxygen
 
     - name: Generate Doxygen HTML
-      run: doxygen Doxyfile
+      run: doxygen .github/Doxyfile
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
