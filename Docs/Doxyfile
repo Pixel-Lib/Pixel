@@ -13,4 +13,4 @@ EXTRACT_ALL            = YES
 EXTRACT_PRIVATE        = YES
 EXTRACT_STATIC         = YES
 FILE_PATTERNS          = *.cpp *.hpp *.h
-HTML_EXTRA_STYLESHEET  = custom.css  # Add a custom CSS file for more control over the look
+HTML_EXTRA_STYLESHEET  = docs/custom.css
