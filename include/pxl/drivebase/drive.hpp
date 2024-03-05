@@ -1,23 +1,29 @@
 #pragma once
 
 #include <memory>
-
+#include "pros/rtos.hpp"
+#include "pros/imu.hpp"
 #include "pros/motors.hpp"
 #include "pxl/aSync.hpp"
 #include "pxl/drivebase/trackingwheel.hpp"
 #include "pxl/pid.hpp"
 
 namespace pxl {
-
+struct OdomSensors {
+    OdomSensors(TrackingWheel *vertical1, TrackingWheel *vertical2,
+                TrackingWheel *horizontal1, TrackingWheel *horizontal2,
+                pros::Imu *imu);
+    TrackingWheel *vertical1;
+    TrackingWheel *vertical2;
+    TrackingWheel *horizontal1;
+    TrackingWheel *horizontal2;
+    pros::IMU *imu;
+};
 class Drivetrain {
     public:
+
     Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *rightMotors,
-               float trackWidth, float wheelDiameter, float rpm)
-        : leftMotors(leftMotors),
-          rightMotors(rightMotors),
-          trackWidth(trackWidth),
-          wheelDiameter(wheelDiameter),
-          rpm(rpm) {}
+               float trackWidth, float wheelDiameter, float rpm);
 
     // Add any necessary member functions here
 
@@ -31,6 +37,7 @@ class Drivetrain {
 
     void setConstants(PID &constants);
 
+
     private:
     pros::MotorGroup *leftMotors;
     pros::MotorGroup *rightMotors;
@@ -41,22 +48,23 @@ class Drivetrain {
 
 class ExtendedDrivetrain {
     public:
-    ExtendedDrivetrain(float verticalTrackWidth)
-        : verticalTrackWidth(verticalTrackWidth) {}
+    ExtendedDrivetrain(float verticalTrackWidth);
 
     private:
     float verticalTrackWidth;
 };
 
-struct OdomSensors {
-    OdomSensors(TrackingWheel *vertical1, TrackingWheel *vertical2,
-                TrackingWheel *horizontal1, TrackingWheel *horizontal2,
-                pros::Imu *imu);
-    TrackingWheel *vertical1;
-    TrackingWheel *vertical2;
-    TrackingWheel *horizontal1;
-    TrackingWheel *horizontal2;
-    pros::Imu *imu;
+class Drivebase{
+    public:
+        bool isDriverControl();
+        Drivebase(Drivetrain drivetrain,OdomSensors sensors);
+            void callibrateIMU();
+
+    void callibrate(bool callibrateIMU);
+    private:
+    Drivetrain drivetrain;
+    OdomSensors sensors;
 };
+
 
 };  // namespace pxl
