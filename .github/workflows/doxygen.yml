@@ -1,20 +1,25 @@
 name: Doxygen
+
 on:
   push:
     branches:
       - main  # or your default branch
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
+
     - name: Install Doxygen
       run: sudo apt-get install doxygen
+
     - name: Generate Doxygen HTML
-      run: doxygen .github/Doxyfile
+      run: doxygen Doxyfile
+
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
         branch: gh-pages
-        folder: doc
-        token: ${{ secrets.GITHUB_TOKEN }}
+        folder: doc/html
