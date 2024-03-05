@@ -27,8 +27,7 @@ float wrapTo2Pi(float rad) { return std::fmod(rad, 2 * M_PI); }
 float angleError(float angle1, float angle2, bool radians) {
     float max = radians ? 2 * M_PI : 360;
     float error = fmod(angle1 - angle2 + max, max);
-    if (error > max / 2) error -= max;
-    return error;
+    return (error > max / 2) ? error - max : error;
 }
 
 float ema(float current, float previous, float smooth) { return (current * smooth) + (previous * (1 - smooth)); }

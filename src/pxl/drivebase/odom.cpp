@@ -83,9 +83,7 @@ float Odom::calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>> &imu, bool up
 }
 
 float Odom::calcDeltaTheta(TrackingWheel &tracker1, TrackingWheel &tracker2) {
-    const float numerator = tracker1.getDistanceDelta(false) - tracker2.getDistanceDelta(false);
-    const float denominator = tracker1.getOffset() - tracker2.getOffset();
-    return numerator / denominator;
+    return (tracker1.getDistanceDelta(false) - tracker2.getDistanceDelta(false)) / (tracker1.getOffset() - tracker2.getOffset());
 }
 
 void Odom::update() {

@@ -109,11 +109,7 @@ float angleError(float angle1, float angle2, bool radians);
  * @return The sign of x.
  */
 template <typename T> T sgn(T x) {
-    if constexpr (std::is_floating_point_v<T>) {
-        return std::signbit(x) ? T(-1) : T(1);
-    } else {
-        return (x < T(0)) ? T(-1) : T(1);
-    }
+    return std::is_floating_point_v<T> ? (std::signbit(x) ? T(-1) : T(1)) : ((x < T(0)) ? T(-1) : T(1));
 }
 
 /**
