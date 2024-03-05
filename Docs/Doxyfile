@@ -1,0 +1,16 @@
+PROJECT_NAME           = "Pixel"
+INPUT                  = include/pxl src/pxl
+RECURSIVE              = YES
+OUTPUT_DIRECTORY       = doc
+GENERATE_HTML          = YES
+HTML_COLORSTYLE_HUE    = 80     # Change the hue to a cooler color
+HTML_COLORSTYLE_SAT    = 60     # Reduce the saturation for a more pastel look
+HTML_COLORSTYLE_GAMMA  = 220    # Increase the gamma for a brighter look
+HTML_TIMESTAMP         = YES
+HTML_DYNAMIC_SECTIONS  = YES
+GENERATE_LATEX         = YES
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+FILE_PATTERNS          = *.cpp *.hpp *.h
+HTML_EXTRA_STYLESHEET  = custom.css  # Add a custom CSS file for more control over the look
