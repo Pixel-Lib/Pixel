@@ -1,10 +1,12 @@
 #pragma once
 
 #include <memory>
+#include <memory>
 
 #include "pros/imu.hpp"
 #include "pros/motors.hpp"
 #include "pros/rtos.hpp"
+#include "pxl/drivebase/odom.hpp"
 #include "pxl/aSync.hpp"
 #include "pxl/drivebase/trackingwheel.hpp"
 #include "pxl/pid.hpp"
@@ -36,7 +38,7 @@ class Drivetrain {
 
         void setConstants(PID &constants);
 
-    private:
+    // private:
         pros::MotorGroup *leftMotors;
         pros::MotorGroup *rightMotors;
         float trackWidth;
@@ -56,13 +58,15 @@ class Drivebase {
     public:
         bool isDriverControl();
         Drivebase(Drivetrain drivetrain, OdomSensors sensors);
-        void callibrateIMU();
-
-        void callibrate(bool callibrateIMU);
+        void calibrateIMU(OdomSensors sensors);
+        void setSensors(OdomSensors sensors);
+        void calibrate(bool calibrateIMU);
 
     private:
         Drivetrain drivetrain;
         OdomSensors sensors;
+        OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
+        
 };
 
 };  // namespace pxl
