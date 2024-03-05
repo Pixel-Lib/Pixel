@@ -54,9 +54,9 @@ void Drivebase::setSensors(OdomSensors sensors) {
     std::vector<std::unique_ptr<TrackingWheel>> Horizontals;
     std::vector<std::unique_ptr<TrackingWheel>> drive;
     std::vector<std::shared_ptr<pros::IMU>> imu;
-auto pushIfNotNull = [](auto& vec, auto& sensor) {
-    sensor != nullptr ? vec.push_back(std::make_unique<TrackingWheel>(std::move(*sensor))) : void();
-};
+    auto pushIfNotNull = [](auto &vec, auto &sensor) {
+        sensor != nullptr ? vec.push_back(std::make_unique<TrackingWheel>(std::move(*sensor))) : void();
+    };
 
     pushIfNotNull(Verticals, sensors.vertical1);
     pushIfNotNull(Verticals, sensors.vertical2);
