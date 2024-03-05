@@ -46,19 +46,19 @@ enum class ControllerDigital {
 
 class ControllerUtil {
     public:
-    /**
-     * Maps an `id` to the PROS enum equivalent.
-     */
-    static pros::controller_id_e_t idToProsEnum(ControllerId in);
+        /**
+         * Maps an `id` to the PROS enum equivalent.
+         */
+        static pros::controller_id_e_t idToProsEnum(ControllerId in);
 
-    /**
-     * Maps an `analog` to the PROS enum equivalent.
-     */
-    static pros::controller_analog_e_t analogToProsEnum(ControllerAnalog in);
+        /**
+         * Maps an `analog` to the PROS enum equivalent.
+         */
+        static pros::controller_analog_e_t analogToProsEnum(ControllerAnalog in);
 
-    /**
-     * Maps a `digital` to the PROS enum equivalent.
-     */
-    static pros::controller_digital_e_t digitalToProsEnum(ControllerDigital in);
+        /**
+         * Maps a `digital` to the PROS enum equivalent.
+         */
+        static pros::controller_digital_e_t digitalToProsEnum(ControllerDigital in);
 };
 }  // namespace okapi

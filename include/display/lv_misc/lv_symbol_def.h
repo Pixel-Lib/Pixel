@@ -73,8 +73,8 @@ extern "C" {
 #define SYMBOL_BATTERY_EMPTY _SYMBOL_VALUE1(F0)
 #define SYMBOL_BLUETOOTH _SYMBOL_VALUE1(F1)
 #define LV_SYMBOL_GLYPH_LAST 0xF1
-#define SYMBOL_DUMMY                                                           \
-    _SYMBOL_VALUE1(FF) /*Invalid symbol. If written before a string then       \
+#define SYMBOL_DUMMY                                                                                                   \
+    _SYMBOL_VALUE1(FF) /*Invalid symbol. If written before a string then                                               \
                           `lv_img` will show it as a label*/
 
 #else
@@ -130,10 +130,9 @@ extern "C" {
 #define SYMBOL_BATTERY_EMPTY _SYMBOL_VALUE3(EF, A0, B0)
 #define SYMBOL_BLUETOOTH _SYMBOL_VALUE3(EF, A0, B1)
 #define LV_SYMBOL_GLYPH_LAST 0xF831
-#define SYMBOL_DUMMY                                                           \
-    _SYMBOL_VALUE3(EF, A3,                                                     \
-                   BF) /*Invalid symbol at (U+F831). If written before a       \
-                          string then `lv_img` will show it as a label*/
+#define SYMBOL_DUMMY                                                                                                   \
+    _SYMBOL_VALUE3(EF, A3, BF) /*Invalid symbol at (U+F831). If written before a                                       \
+                                  string then `lv_img` will show it as a label*/
 #endif
 
 #define _SYMBOL_VALUE1(x) (0x##x)
@@ -201,8 +200,7 @@ enum {
 #define _SYMBOL_STR(x) _SYMBOL_STR_(x)
 #define _SYMBOL_CHAR(c) \x##c
 #define _SYMBOL_VALUE1(x) _SYMBOL_STR(_SYMBOL_CHAR(x))
-#define _SYMBOL_VALUE3(x, y, z)                                                \
-    _SYMBOL_STR(_SYMBOL_CHAR(x) _SYMBOL_CHAR(y) _SYMBOL_CHAR(z))
+#define _SYMBOL_VALUE3(x, y, z) _SYMBOL_STR(_SYMBOL_CHAR(x) _SYMBOL_CHAR(y) _SYMBOL_CHAR(z))
 
 #ifdef __cplusplus
 } /* extern "C" */

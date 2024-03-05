@@ -23,38 +23,16 @@ constexpr QMass stone = 14 * pound;
 
 inline namespace literals {
 constexpr QMass operator"" _kg(long double x) { return QMass(x); }
-constexpr QMass operator"" _g(long double x) {
-    return static_cast<double>(x) * gramme;
-}
-constexpr QMass operator"" _t(long double x) {
-    return static_cast<double>(x) * tonne;
-}
-constexpr QMass operator"" _oz(long double x) {
-    return static_cast<double>(x) * ounce;
-}
-constexpr QMass operator"" _lb(long double x) {
-    return static_cast<double>(x) * pound;
-}
-constexpr QMass operator"" _st(long double x) {
-    return static_cast<double>(x) * stone;
-}
-constexpr QMass operator"" _kg(unsigned long long int x) {
-    return QMass(static_cast<double>(x));
-}
-constexpr QMass operator"" _g(unsigned long long int x) {
-    return static_cast<double>(x) * gramme;
-}
-constexpr QMass operator"" _t(unsigned long long int x) {
-    return static_cast<double>(x) * tonne;
-}
-constexpr QMass operator"" _oz(unsigned long long int x) {
-    return static_cast<double>(x) * ounce;
-}
-constexpr QMass operator"" _lb(unsigned long long int x) {
-    return static_cast<double>(x) * pound;
-}
-constexpr QMass operator"" _st(unsigned long long int x) {
-    return static_cast<double>(x) * stone;
-}
+constexpr QMass operator"" _g(long double x) { return static_cast<double>(x) * gramme; }
+constexpr QMass operator"" _t(long double x) { return static_cast<double>(x) * tonne; }
+constexpr QMass operator"" _oz(long double x) { return static_cast<double>(x) * ounce; }
+constexpr QMass operator"" _lb(long double x) { return static_cast<double>(x) * pound; }
+constexpr QMass operator"" _st(long double x) { return static_cast<double>(x) * stone; }
+constexpr QMass operator"" _kg(unsigned long long int x) { return QMass(static_cast<double>(x)); }
+constexpr QMass operator"" _g(unsigned long long int x) { return static_cast<double>(x) * gramme; }
+constexpr QMass operator"" _t(unsigned long long int x) { return static_cast<double>(x) * tonne; }
+constexpr QMass operator"" _oz(unsigned long long int x) { return static_cast<double>(x) * ounce; }
+constexpr QMass operator"" _lb(unsigned long long int x) { return static_cast<double>(x) * pound; }
+constexpr QMass operator"" _st(unsigned long long int x) { return static_cast<double>(x) * stone; }
 }  // namespace literals
 }  // namespace okapi

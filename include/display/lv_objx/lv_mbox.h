@@ -31,8 +31,7 @@ extern "C" {
 #endif
 
 #if USE_LV_LABEL == 0
-#error                                                                         \
-    "lv_mbox: lv_label is required. Enable it in lv_conf.h (USE_LV_LABEL  1) "
+#error "lv_mbox: lv_label is required. Enable it in lv_conf.h (USE_LV_LABEL  1) "
 #endif
 
 #include "display/lv_core/lv_obj.h"
@@ -50,11 +49,11 @@ extern "C" {
 
 /*Data of message box*/
 typedef struct {
-    lv_cont_ext_t bg; /*Ext. of ancestor*/
-    /*New data for this type */
-    lv_obj_t *text;     /*Text of the message box*/
-    lv_obj_t *btnm;     /*Button matrix for the buttons*/
-    uint16_t anim_time; /*Duration of close animation [ms] (0: no animation)*/
+        lv_cont_ext_t bg; /*Ext. of ancestor*/
+        /*New data for this type */
+        lv_obj_t *text;     /*Text of the message box*/
+        lv_obj_t *btnm;     /*Button matrix for the buttons*/
+        uint16_t anim_time; /*Duration of close animation [ms] (0: no animation)*/
 } lv_mbox_ext_t;
 
 enum {
@@ -93,8 +92,7 @@ lv_obj_t *lv_mbox_create(lv_obj_t *par, const lv_obj_t *copy);
  * local variable)
  * @param action a function which will be called when a button is released
  */
-void lv_mbox_add_btns(lv_obj_t *mbox, const char **btn_map,
-                      lv_btnm_action_t action);
+void lv_mbox_add_btns(lv_obj_t *mbox, const char **btn_map, lv_btnm_action_t action);
 
 /*=====================
  * Setter functions

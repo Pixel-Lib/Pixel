@@ -20,8 +20,7 @@ extern "C" {
 /*********************
  *      DEFINES
  *********************/
-#define LV_COORD_MAX                                                           \
-    (16383) /*To avoid overflow don't let the max [-32,32k] range */
+#define LV_COORD_MAX (16383) /*To avoid overflow don't let the max [-32,32k] range */
 #define LV_COORD_MIN (-16384)
 
 /**********************
@@ -30,15 +29,15 @@ extern "C" {
 typedef int16_t lv_coord_t;
 
 typedef struct {
-    lv_coord_t x;
-    lv_coord_t y;
+        lv_coord_t x;
+        lv_coord_t y;
 } lv_point_t;
 
 typedef struct {
-    lv_coord_t x1;
-    lv_coord_t y1;
-    lv_coord_t x2;
-    lv_coord_t y2;
+        lv_coord_t x1;
+        lv_coord_t y1;
+        lv_coord_t x2;
+        lv_coord_t y2;
 } lv_area_t;
 
 /**********************
@@ -53,35 +52,28 @@ typedef struct {
  * @param x2 right coordinate of the area
  * @param y2 bottom coordinate of the area
  */
-void lv_area_set(lv_area_t *area_p, lv_coord_t x1, lv_coord_t y1, lv_coord_t x2,
-                 lv_coord_t y2);
+void lv_area_set(lv_area_t *area_p, lv_coord_t x1, lv_coord_t y1, lv_coord_t x2, lv_coord_t y2);
 
 /**
  * Copy an area
  * @param dest pointer to the destination area
  * @param src pointer to the source area
  */
-inline static void lv_area_copy(lv_area_t *dest, const lv_area_t *src) {
-    memcpy(dest, src, sizeof(lv_area_t));
-}
+inline static void lv_area_copy(lv_area_t *dest, const lv_area_t *src) { memcpy(dest, src, sizeof(lv_area_t)); }
 
 /**
  * Get the width of an area
  * @param area_p pointer to an area
  * @return the width of the area (if x1 == x2 -> width = 1)
  */
-static inline lv_coord_t lv_area_get_width(const lv_area_t *area_p) {
-    return area_p->x2 - area_p->x1 + 1;
-}
+static inline lv_coord_t lv_area_get_width(const lv_area_t *area_p) { return area_p->x2 - area_p->x1 + 1; }
 
 /**
  * Get the height of an area
  * @param area_p pointer to an area
  * @return the height of the area (if y1 == y2 -> height = 1)
  */
-static inline lv_coord_t lv_area_get_height(const lv_area_t *area_p) {
-    return area_p->y2 - area_p->y1 + 1;
-}
+static inline lv_coord_t lv_area_get_height(const lv_area_t *area_p) { return area_p->y2 - area_p->y1 + 1; }
 
 /**
  * Set the width of an area
@@ -119,8 +111,7 @@ uint32_t lv_area_get_size(const lv_area_t *area_p);
  * @param a2_p pointer to the second area
  * @return false: the two area has NO common parts, res_p is invalid
  */
-bool lv_area_intersect(lv_area_t *res_p, const lv_area_t *a1_p,
-                       const lv_area_t *a2_p);
+bool lv_area_intersect(lv_area_t *res_p, const lv_area_t *a1_p, const lv_area_t *a2_p);
 
 /**
  * Join two areas into a third which involves the other two
@@ -128,8 +119,7 @@ bool lv_area_intersect(lv_area_t *res_p, const lv_area_t *a1_p,
  * @param a1_p pointer to the first area
  * @param a2_p pointer to the second area
  */
-void lv_area_join(lv_area_t *a_res_p, const lv_area_t *a1_p,
-                  const lv_area_t *a2_p);
+void lv_area_join(lv_area_t *a_res_p, const lv_area_t *a1_p, const lv_area_t *a2_p);
 
 /**
  * Check if a point is on an area

@@ -39,8 +39,8 @@ extern "C" {
  **********************/
 /*Data of template*/
 typedef struct {
-    lv_ANCESTOR_ext_t ANCESTOR; /*Ext. of ancestor*/
-                                /*New data for this type */
+        lv_ANCESTOR_ext_t ANCESTOR; /*Ext. of ancestor*/
+                                    /*New data for this type */
 } lv_templ_ext_t;
 
 /*Styles*/
@@ -77,8 +77,7 @@ lv_obj_t *lv_templ_create(lv_obj_t *par, const lv_obj_t *copy);
  * @param type which style should be set
  * @param style pointer to a style
  */
-void lv_templ_set_style(lv_obj_t *templ, lv_templ_style_t type,
-                        lv_style_t *style);
+void lv_templ_set_style(lv_obj_t *templ, lv_templ_style_t type, lv_style_t *style);
 
 /*=====================
  * Getter functions

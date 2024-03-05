@@ -5,13 +5,13 @@
 namespace pxl {
 class Pose : public pxl::Coord {
     public:
-    float theta;
+        float theta;
 
-    Pose(float x, float y, float theta);
+        Pose(float x, float y, float theta);
 
-    // Constructor to convert pxl::Coord to Pose
-    Pose(const pxl::Coord &other);
+        // Constructor to convert pxl::Coord to Pose
+        Pose(const pxl::Coord &other);
 
-    float getCurvature(Pose &pose, Pose &other);
+        float getCurvature(Pose &pose, Pose &other);
 };
 }  // namespace pxl

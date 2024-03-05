@@ -38,13 +38,13 @@ extern "C" {
  **********************/
 /*Data of slider*/
 typedef struct {
-    lv_bar_ext_t bar; /*Ext. of ancestor*/
-    /*New data for this type */
-    lv_action_t action;     /*Function to call when a new value is set*/
-    lv_style_t *style_knob; /*Style of the knob*/
-    int16_t drag_value;     /*Store a temporal value during press until release
-                               (Handled by the library)*/
-    uint8_t knob_in : 1;    /*1: Draw the knob inside the bar*/
+        lv_bar_ext_t bar; /*Ext. of ancestor*/
+        /*New data for this type */
+        lv_action_t action;     /*Function to call when a new value is set*/
+        lv_style_t *style_knob; /*Style of the knob*/
+        int16_t drag_value;     /*Store a temporal value during press until release
+                                   (Handled by the library)*/
+        uint8_t knob_in : 1;    /*1: Draw the knob inside the bar*/
 } lv_slider_ext_t;
 
 /*Built-in styles of slider*/
@@ -77,9 +77,7 @@ lv_obj_t *lv_slider_create(lv_obj_t *par, const lv_obj_t *copy);
  * @param slider pointer to a slider object
  * @param value new value
  */
-static inline void lv_slider_set_value(lv_obj_t *slider, int16_t value) {
-    lv_bar_set_value(slider, value);
-}
+static inline void lv_slider_set_value(lv_obj_t *slider, int16_t value) { lv_bar_set_value(slider, value); }
 
 /**
  * Set a new value with animation on a slider
@@ -87,8 +85,7 @@ static inline void lv_slider_set_value(lv_obj_t *slider, int16_t value) {
  * @param value new value
  * @param anim_time animation time in milliseconds
  */
-static inline void lv_slider_set_value_anim(lv_obj_t *slider, int16_t value,
-                                            uint16_t anim_time) {
+static inline void lv_slider_set_value_anim(lv_obj_t *slider, int16_t value, uint16_t anim_time) {
     lv_bar_set_value_anim(slider, value, anim_time);
 }
 
@@ -98,8 +95,7 @@ static inline void lv_slider_set_value_anim(lv_obj_t *slider, int16_t value,
  * @param min minimum value
  * @param max maximum value
  */
-static inline void lv_slider_set_range(lv_obj_t *slider, int16_t min,
-                                       int16_t max) {
+static inline void lv_slider_set_range(lv_obj_t *slider, int16_t min, int16_t max) {
     lv_bar_set_range(slider, min, max);
 }
 
@@ -124,8 +120,7 @@ void lv_slider_set_knob_in(lv_obj_t *slider, bool in);
  * @param type which style should be set
  * @param style pointer to a style
  */
-void lv_slider_set_style(lv_obj_t *slider, lv_slider_style_t type,
-                         lv_style_t *style);
+void lv_slider_set_style(lv_obj_t *slider, lv_slider_style_t type, lv_style_t *style);
 
 /*=====================
  * Getter functions
@@ -143,18 +138,14 @@ int16_t lv_slider_get_value(const lv_obj_t *slider);
  * @param slider pointer to a slider object
  * @return the minimum value of the slider
  */
-static inline int16_t lv_slider_get_min_value(const lv_obj_t *slider) {
-    return lv_bar_get_min_value(slider);
-}
+static inline int16_t lv_slider_get_min_value(const lv_obj_t *slider) { return lv_bar_get_min_value(slider); }
 
 /**
  * Get the maximum value of a slider
  * @param slider pointer to a slider object
  * @return the maximum value of the slider
  */
-static inline int16_t lv_slider_get_max_value(const lv_obj_t *slider) {
-    return lv_bar_get_max_value(slider);
-}
+static inline int16_t lv_slider_get_max_value(const lv_obj_t *slider) { return lv_bar_get_max_value(slider); }
 
 /**
  * Get the slider action function

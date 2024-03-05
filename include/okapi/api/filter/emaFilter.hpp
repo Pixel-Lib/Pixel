@@ -10,38 +10,38 @@
 namespace okapi {
 class EmaFilter : public Filter {
     public:
-    /**
-     * Exponential moving average filter.
-     *
-     * @param ialpha alpha gain
-     */
-    explicit EmaFilter(double ialpha);
+        /**
+         * Exponential moving average filter.
+         *
+         * @param ialpha alpha gain
+         */
+        explicit EmaFilter(double ialpha);
 
-    /**
-     * Filters a value, like a sensor reading.
-     *
-     * @param reading new measurement
-     * @return filtered result
-     */
-    double filter(double ireading) override;
+        /**
+         * Filters a value, like a sensor reading.
+         *
+         * @param reading new measurement
+         * @return filtered result
+         */
+        double filter(double ireading) override;
 
-    /**
-     * Returns the previous output from filter.
-     *
-     * @return the previous output from filter
-     */
-    double getOutput() const override;
+        /**
+         * Returns the previous output from filter.
+         *
+         * @return the previous output from filter
+         */
+        double getOutput() const override;
 
-    /**
-     * Set filter gains.
-     *
-     * @param ialpha alpha gain
-     */
-    virtual void setGains(double ialpha);
+        /**
+         * Set filter gains.
+         *
+         * @param ialpha alpha gain
+         */
+        virtual void setGains(double ialpha);
 
     protected:
-    double alpha;
-    double output = 0;
-    double lastOutput = 0;
+        double alpha;
+        double output = 0;
+        double lastOutput = 0;
 };
 }  // namespace okapi

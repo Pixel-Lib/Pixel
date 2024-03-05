@@ -31,8 +31,7 @@ extern "C" {
 #endif
 
 #if USE_LV_LABEL == 0
-#error                                                                         \
-    "lv_list: lv_label is required. Enable it in lv_conf.h (USE_LV_LABEL  1) "
+#error "lv_list: lv_label is required. Enable it in lv_conf.h (USE_LV_LABEL  1) "
 #endif
 
 #include "display/lv_core/lv_obj.h"
@@ -50,18 +49,17 @@ extern "C" {
  **********************/
 /*Data of list*/
 typedef struct {
-    lv_page_ext_t page; /*Ext. of ancestor*/
-    /*New data for this type */
-    uint16_t anim_time; /*Scroll animation time*/
-    lv_style_t
-        *styles_btn[LV_BTN_STATE_NUM]; /*Styles of the list element buttons*/
-    lv_style_t *style_img; /*Style of the list element images on buttons*/
-    uint32_t size;         /*the number of items(buttons) in the list*/
-    bool single_mode;      /* whether single selected mode is enabled */
+        lv_page_ext_t page; /*Ext. of ancestor*/
+        /*New data for this type */
+        uint16_t anim_time;                       /*Scroll animation time*/
+        lv_style_t *styles_btn[LV_BTN_STATE_NUM]; /*Styles of the list element buttons*/
+        lv_style_t *style_img;                    /*Style of the list element images on buttons*/
+        uint32_t size;                            /*the number of items(buttons) in the list*/
+        bool single_mode;                         /* whether single selected mode is enabled */
 #if USE_LV_GROUP
-    lv_obj_t *last_sel; /* The last selected button. It will be reverted when
-                           the list is focused again */
-    lv_obj_t *selected_btn; /* The button is currently being selected*/
+        lv_obj_t *last_sel;     /* The last selected button. It will be reverted when
+                                   the list is focused again */
+        lv_obj_t *selected_btn; /* The button is currently being selected*/
 #endif
 } lv_list_ext_t;
 
@@ -109,8 +107,7 @@ void lv_list_clean(lv_obj_t *obj);
  * @param rel_action pointer to release action function (like with lv_btn)
  * @return pointer to the new list element which can be customized (a button)
  */
-lv_obj_t *lv_list_add(lv_obj_t *list, const void *img_src, const char *txt,
-                      lv_action_t rel_action);
+lv_obj_t *lv_list_add(lv_obj_t *list, const void *img_src, const char *txt, lv_action_t rel_action);
 
 /**
  * Remove the index of the button in the list
@@ -155,9 +152,7 @@ void lv_list_set_anim_time(lv_obj_t *list, uint16_t anim_time);
  * @param list pointer to a list object
  * @param sb_mode the new mode from 'lv_page_sb_mode_t' enum
  */
-static inline void lv_list_set_sb_mode(lv_obj_t *list, lv_sb_mode_t mode) {
-    lv_page_set_sb_mode(list, mode);
-}
+static inline void lv_list_set_sb_mode(lv_obj_t *list, lv_sb_mode_t mode) { lv_page_set_sb_mode(list, mode); }
 
 /**
  * Enable the scroll propagation feature. If enabled then the List will move its
@@ -165,18 +160,14 @@ static inline void lv_list_set_sb_mode(lv_obj_t *list, lv_sb_mode_t mode) {
  * @param list pointer to a List
  * @param en true or false to enable/disable scroll propagation
  */
-static inline void lv_list_set_scroll_propagation(lv_obj_t *list, bool en) {
-    lv_page_set_scroll_propagation(list, en);
-}
+static inline void lv_list_set_scroll_propagation(lv_obj_t *list, bool en) { lv_page_set_scroll_propagation(list, en); }
 
 /**
  * Enable the edge flash effect. (Show an arc when the an edge is reached)
  * @param list pointer to a List
  * @param en true or false to enable/disable end flash
  */
-static inline void lv_list_set_edge_flash(lv_obj_t *list, bool en) {
-    lv_page_set_edge_flash(list, en);
-}
+static inline void lv_list_set_edge_flash(lv_obj_t *list, bool en) { lv_page_set_edge_flash(list, en); }
 
 /**
  * Set a style of a list
@@ -270,27 +261,21 @@ uint16_t lv_list_get_anim_time(const lv_obj_t *list);
  * @param list pointer to a list object
  * @return scrollbar mode from 'lv_page_sb_mode_t' enum
  */
-static inline lv_sb_mode_t lv_list_get_sb_mode(const lv_obj_t *list) {
-    return lv_page_get_sb_mode(list);
-}
+static inline lv_sb_mode_t lv_list_get_sb_mode(const lv_obj_t *list) { return lv_page_get_sb_mode(list); }
 
 /**
  * Get the scroll propagation property
  * @param list pointer to a List
  * @return true or false
  */
-static inline bool lv_list_get_scroll_propagation(lv_obj_t *list) {
-    return lv_page_get_scroll_propagation(list);
-}
+static inline bool lv_list_get_scroll_propagation(lv_obj_t *list) { return lv_page_get_scroll_propagation(list); }
 
 /**
  * Get the scroll propagation property
  * @param list pointer to a List
  * @return true or false
  */
-static inline bool lv_list_get_edge_flash(lv_obj_t *list) {
-    return lv_page_get_edge_flash(list);
-}
+static inline bool lv_list_get_edge_flash(lv_obj_t *list) { return lv_page_get_edge_flash(list); }
 
 /**
  * Get a style of a list

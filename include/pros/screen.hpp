@@ -142,8 +142,7 @@ std::uint32_t scroll(const std::int16_t start_line, const std::int16_t lines);
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  * taking or returning the screen mutex.
  */
-std::uint32_t scroll_area(const std::int16_t x0, const std::int16_t y0,
-                          const std::int16_t x1, const std::int16_t y1,
+std::uint32_t scroll_area(const std::int16_t x0, const std::int16_t y0, const std::int16_t x1, const std::int16_t y1,
                           std::int16_t lines);
 
 /**
@@ -165,8 +164,7 @@ std::uint32_t scroll_area(const std::int16_t x0, const std::int16_t y0,
  * \return 1 if there were no errors, or PROS_ERR if an error occured taking
  *  or returning the screen mutex.
  */
-std::uint32_t copy_area(const std::int16_t x0, const std::int16_t y0,
-                        const std::int16_t x1, const std::int16_t y1,
+std::uint32_t copy_area(const std::int16_t x0, const std::int16_t y0, const std::int16_t x1, const std::int16_t y1,
                         uint32_t *buf, const std::int32_t stride);
 
 /**
@@ -210,8 +208,7 @@ std::uint32_t erase_pixel(const std::int16_t x, const std::int16_t y);
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  * taking or returning the screen mutex.
  */
-std::uint32_t draw_line(const std::int16_t x0, const std::int16_t y0,
-                        const std::int16_t x1, const std::int16_t y1);
+std::uint32_t draw_line(const std::int16_t x0, const std::int16_t y0, const std::int16_t x1, const std::int16_t y1);
 
 /**
  * Erase a line on the screen using the current eraser color
@@ -226,8 +223,7 @@ std::uint32_t draw_line(const std::int16_t x0, const std::int16_t y0,
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  * taking or returning the screen mutex.
  */
-std::uint32_t erase_line(const std::int16_t x0, const std::int16_t y0,
-                         const std::int16_t x1, const std::int16_t y1);
+std::uint32_t erase_line(const std::int16_t x0, const std::int16_t y0, const std::int16_t x1, const std::int16_t y1);
 
 /**
  * Draw a rectangle on the screen using the current pen color
@@ -243,8 +239,7 @@ std::uint32_t erase_line(const std::int16_t x0, const std::int16_t y0,
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  * taking or returning the screen mutex.
  */
-std::uint32_t draw_rect(const std::int16_t x0, const std::int16_t y0,
-                        const std::int16_t x1, const std::int16_t y1);
+std::uint32_t draw_rect(const std::int16_t x0, const std::int16_t y0, const std::int16_t x1, const std::int16_t y1);
 
 /**
  * Erase a rectangle on the screen using the current eraser color
@@ -260,8 +255,7 @@ std::uint32_t draw_rect(const std::int16_t x0, const std::int16_t y0,
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  * taking or returning the screen mutex.
  */
-std::uint32_t erase_rect(const std::int16_t x0, const std::int16_t y0,
-                         const std::int16_t x1, const std::int16_t y1);
+std::uint32_t erase_rect(const std::int16_t x0, const std::int16_t y0, const std::int16_t x1, const std::int16_t y1);
 
 /**
  * Fill a rectangular region of the screen using the current pen
@@ -278,8 +272,7 @@ std::uint32_t erase_rect(const std::int16_t x0, const std::int16_t y0,
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  * taking or returning the screen mutex.
  */
-std::uint32_t fill_rect(const std::int16_t x0, const std::int16_t y0,
-                        const std::int16_t x1, const std::int16_t y1);
+std::uint32_t fill_rect(const std::int16_t x0, const std::int16_t y0, const std::int16_t x1, const std::int16_t y1);
 
 /**
  * Draw a circle on the screen using the current pen color
@@ -294,8 +287,7 @@ std::uint32_t fill_rect(const std::int16_t x0, const std::int16_t y0,
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  * taking or returning the screen mutex.
  */
-std::uint32_t draw_circle(const std::int16_t x, const std::int16_t y,
-                          const std::int16_t radius);
+std::uint32_t draw_circle(const std::int16_t x, const std::int16_t y, const std::int16_t radius);
 
 /**
  * Erase a circle on the screen using the current eraser color
@@ -310,8 +302,7 @@ std::uint32_t draw_circle(const std::int16_t x, const std::int16_t y,
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  * taking or returning the screen mutex.
  */
-std::uint32_t erase_circle(const std::int16_t x, const std::int16_t y,
-                           const std::int16_t radius);
+std::uint32_t erase_circle(const std::int16_t x, const std::int16_t y, const std::int16_t radius);
 
 /**
  * Fill a circular region of the screen using the current pen
@@ -327,8 +318,7 @@ std::uint32_t erase_circle(const std::int16_t x, const std::int16_t y,
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  * taking or returning the screen mutex.
  */
-std::uint32_t fill_circle(const std::int16_t x, const std::int16_t y,
-                          const std::int16_t radius);
+std::uint32_t fill_circle(const std::int16_t x, const std::int16_t y, const std::int16_t radius);
 
 /******************************************************************************/
 /**                       Screen Text Display Functions                      **/
@@ -350,14 +340,13 @@ std::uint32_t fill_circle(const std::int16_t x, const std::int16_t y,
  * for the format string
  */
 template <typename... Params>
-void print(pros::text_format_e_t txt_fmt, const std::int16_t line,
-           const char *text, Params... args) {
+void print(pros::text_format_e_t txt_fmt, const std::int16_t line, const char *text, Params... args) {
     pros::c::screen_print(txt_fmt, line, text, convert_args(args)...);
 }
 
 template <typename... Params>
-void print(pros::text_format_e_t txt_fmt, const std::int16_t x,
-           const std::int16_t y, const char *text, Params... args) {
+void print(pros::text_format_e_t txt_fmt, const std::int16_t x, const std::int16_t y, const char *text,
+           Params... args) {
     pros::c::screen_print_at(txt_fmt, x, y, text, convert_args(args)...);
 }
 

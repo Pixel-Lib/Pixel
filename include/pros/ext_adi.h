@@ -58,8 +58,7 @@ namespace c {
  *
  * \return The ADI configuration for the given port
  */
-adi_port_config_e_t ext_adi_port_get_config(uint8_t smart_port,
-                                            uint8_t adi_port);
+adi_port_config_e_t ext_adi_port_get_config(uint8_t smart_port, uint8_t adi_port);
 
 /**
  * Gets the value for the given ADI port.
@@ -97,8 +96,7 @@ int32_t ext_adi_port_get_value(uint8_t smart_port, uint8_t adi_port);
  * \return 1 if the operation was successful or PROS_ERR if the operation
  * failed, setting errno.
  */
-int32_t ext_adi_port_set_config(uint8_t smart_port, uint8_t adi_port,
-                                adi_port_config_e_t type);
+int32_t ext_adi_port_set_config(uint8_t smart_port, uint8_t adi_port, adi_port_config_e_t type);
 
 /**
  * Sets the value for the given ADI port.
@@ -120,8 +118,7 @@ int32_t ext_adi_port_set_config(uint8_t smart_port, uint8_t adi_port,
  * \return 1 if the operation was successful or PROS_ERR if the operation
  * failed, setting errno.
  */
-int32_t ext_adi_port_set_value(uint8_t smart_port, uint8_t adi_port,
-                               int32_t value);
+int32_t ext_adi_port_set_value(uint8_t smart_port, uint8_t adi_port, int32_t value);
 
 /**
  * Calibrates the analog sensor on the specified port and returns the new
@@ -431,8 +428,7 @@ int32_t ext_adi_encoder_get(ext_adi_encoder_t enc);
  * \return An adi_encoder_t object to be stored and used for later calls to
  * encoder functions
  */
-ext_adi_encoder_t ext_adi_encoder_init(uint8_t smart_port, uint8_t adi_port_top,
-                                       uint8_t adi_port_bottom, bool reverse);
+ext_adi_encoder_t ext_adi_encoder_init(uint8_t smart_port, uint8_t adi_port_top, uint8_t adi_port_bottom, bool reverse);
 
 /**
  * Sets the encoder value to zero.
@@ -521,9 +517,7 @@ int32_t ext_adi_ultrasonic_get(ext_adi_ultrasonic_t ult);
  * \return An adi_ultrasonic_t object to be stored and used for later calls to
  * ultrasonic functions
  */
-ext_adi_ultrasonic_t ext_adi_ultrasonic_init(uint8_t smart_port,
-                                             uint8_t adi_port_ping,
-                                             uint8_t adi_port_echo);
+ext_adi_ultrasonic_t ext_adi_ultrasonic_init(uint8_t smart_port, uint8_t adi_port_ping, uint8_t adi_port_echo);
 
 /**
  * Disables the ultrasonic sensor and voids the configuration on its ports.
@@ -598,8 +592,7 @@ double ext_adi_gyro_get(ext_adi_gyro_t gyro);
  * \return An adi_gyro_t object containing the given port, or PROS_ERR if the
  * initialization failed.
  */
-ext_adi_gyro_t ext_adi_gyro_init(uint8_t smart_port, uint8_t adi_port,
-                                 double multiplier);
+ext_adi_gyro_t ext_adi_gyro_init(uint8_t smart_port, uint8_t adi_port, double multiplier);
 
 /**
  * Resets the gyroscope value to zero.
@@ -662,9 +655,8 @@ typedef int32_t ext_adi_potentiometer_t;
  * \return An adi_potentiometer_t object containing the given port, or PROS_ERR
  * if the initialization failed.
  */
-ext_adi_potentiometer_t
-ext_adi_potentiometer_init(uint8_t smart_port, uint8_t adi_port,
-                           adi_potentiometer_type_e_t potentiometer_type);
+ext_adi_potentiometer_t ext_adi_potentiometer_init(uint8_t smart_port, uint8_t adi_port,
+                                                   adi_potentiometer_type_e_t potentiometer_type);
 
 /**
  * Gets the current potentiometer angle in tenths of a degree.
@@ -725,8 +717,7 @@ ext_adi_led_t ext_adi_led_init(uint8_t smart_port, uint8_t adi_port);
  * @param buffer_length length of buffer to clear
  * @return PROS_SUCCESS if successful, PROS_ERR if not
  */
-int32_t ext_adi_led_clear_all(ext_adi_led_t led, uint32_t *buffer,
-                              uint32_t buffer_length);
+int32_t ext_adi_led_clear_all(ext_adi_led_t led, uint32_t *buffer, uint32_t buffer_length);
 
 /**
  * @brief Set the entire led strip using the colors contained in the buffer
@@ -743,8 +734,7 @@ int32_t ext_adi_led_clear_all(ext_adi_led_t led, uint32_t *buffer,
  * @param buffer_length length of buffer to clear
  * @return PROS_SUCCESS if successful, PROS_ERR if not
  */
-int32_t ext_adi_led_set(ext_adi_led_t led, uint32_t *buffer,
-                        uint32_t buffer_length);
+int32_t ext_adi_led_set(ext_adi_led_t led, uint32_t *buffer, uint32_t buffer_length);
 
 /**
  * @brief Set the entire led strip to one color
@@ -762,8 +752,7 @@ int32_t ext_adi_led_set(ext_adi_led_t led, uint32_t *buffer,
  * @param color color to set all the led strip value to
  * @return PROS_SUCCESS if successful, PROS_ERR if not
  */
-int32_t ext_adi_led_set_all(ext_adi_led_t led, uint32_t *buffer,
-                            uint32_t buffer_length, uint32_t color);
+int32_t ext_adi_led_set_all(ext_adi_led_t led, uint32_t *buffer, uint32_t buffer_length, uint32_t color);
 
 /**
  * @brief Set one pixel on the led strip
@@ -782,8 +771,7 @@ int32_t ext_adi_led_set_all(ext_adi_led_t led, uint32_t *buffer,
  * @param pixel_position position of the pixel to clear (0 indexed)
  * @return PROS_SUCCESS if successful, PROS_ERR if not
  */
-int32_t ext_adi_led_set_pixel(ext_adi_led_t led, uint32_t *buffer,
-                              uint32_t buffer_length, uint32_t color,
+int32_t ext_adi_led_set_pixel(ext_adi_led_t led, uint32_t *buffer, uint32_t buffer_length, uint32_t color,
                               uint32_t pixel_position);
 
 /**
@@ -802,9 +790,7 @@ int32_t ext_adi_led_set_pixel(ext_adi_led_t led, uint32_t *buffer,
  * @param pixel_position position of the pixel to clear (0 indexed)
  * @return PROS_SUCCESS if successful, PROS_ERR if not
  */
-int32_t ext_adi_led_clear_pixel(ext_adi_led_t led, uint32_t *buffer,
-                                uint32_t buffer_length,
-                                uint32_t pixel_position);
+int32_t ext_adi_led_clear_pixel(ext_adi_led_t led, uint32_t *buffer, uint32_t buffer_length, uint32_t pixel_position);
 
 #ifdef __cplusplus
 }  // namespace c

@@ -42,11 +42,8 @@ typedef enum adi_port_config_e {
 #define _DEPRECATE_DIGITAL_IN = E_ADI_DIGITAL_IN
 #define _DEPRECATE_ANALOG_IN = E_ADI_ANALOG_IN
 #else
-#define _DEPRECATE_DIGITAL_IN                                                  \
-    __attribute__((deprecated("use E_ADI_DIGITAL_IN instead"))) =              \
-        E_ADI_DIGITAL_IN
-#define _DEPRECATE_ANALOG_IN                                                   \
-    __attribute__((deprecated("use E_ADI_ANALOG_IN instead"))) = E_ADI_ANALOG_IN
+#define _DEPRECATE_DIGITAL_IN __attribute__((deprecated("use E_ADI_DIGITAL_IN instead"))) = E_ADI_DIGITAL_IN
+#define _DEPRECATE_ANALOG_IN __attribute__((deprecated("use E_ADI_ANALOG_IN instead"))) = E_ADI_ANALOG_IN
 #endif
 
     E_ADI_SMART_BUTTON _DEPRECATE_DIGITAL_IN,
@@ -75,10 +72,7 @@ typedef enum adi_port_config_e {
 /**
  * Represents the potentiometer version type.
  */
-typedef enum adi_potentiometer_type_e {
-    E_ADI_POT_EDR = 0,
-    E_ADI_POT_V2
-} adi_potentiometer_type_e_t;
+typedef enum adi_potentiometer_type_e { E_ADI_POT_EDR = 0, E_ADI_POT_V2 } adi_potentiometer_type_e_t;
 
 #ifdef PROS_USE_SIMPLE_NAMES
 #ifdef __cplusplus
@@ -514,8 +508,7 @@ int32_t adi_encoder_get(adi_encoder_t enc);
  * \return An adi_encoder_t object to be stored and used for later calls to
  * encoder functions
  */
-adi_encoder_t adi_encoder_init(uint8_t port_top, uint8_t port_bottom,
-                               bool reverse);
+adi_encoder_t adi_encoder_init(uint8_t port_top, uint8_t port_bottom, bool reverse);
 
 /**
  * Sets the encoder value to zero.
@@ -742,9 +735,7 @@ adi_potentiometer_t adi_potentiometer_init(uint8_t port);
  * \return An adi_potentiometer_t object containing the given port, or PROS_ERR
  * if the initialization failed.
  */
-adi_potentiometer_t
-adi_potentiometer_type_init(uint8_t port,
-                            adi_potentiometer_type_e_t potentiometer_type);
+adi_potentiometer_t adi_potentiometer_type_init(uint8_t port, adi_potentiometer_type_e_t potentiometer_type);
 
 /**
  * Gets the current potentiometer angle in tenths of a degree.
@@ -805,8 +796,7 @@ adi_led_t adi_led_init(uint8_t port);
  * @param buffer_length length of buffer to clear
  * @return PROS_SUCCESS if successful, PROS_ERR if not
  */
-int32_t adi_led_clear_all(adi_led_t led, uint32_t *buffer,
-                          uint32_t buffer_length);
+int32_t adi_led_clear_all(adi_led_t led, uint32_t *buffer, uint32_t buffer_length);
 
 /**
  * @brief Set the entire led strip using the colors contained in the buffer
@@ -841,8 +831,7 @@ int32_t adi_led_set(adi_led_t led, uint32_t *buffer, uint32_t buffer_length);
  * @param color color to set all the led strip value to
  * @return PROS_SUCCESS if successful, PROS_ERR if not
  */
-int32_t adi_led_set_all(adi_led_t led, uint32_t *buffer, uint32_t buffer_length,
-                        uint32_t color);
+int32_t adi_led_set_all(adi_led_t led, uint32_t *buffer, uint32_t buffer_length, uint32_t color);
 
 /**
  * @brief Set one pixel on the led strip
@@ -861,8 +850,7 @@ int32_t adi_led_set_all(adi_led_t led, uint32_t *buffer, uint32_t buffer_length,
  * @param pixel_position position of the pixel to clear
  * @return PROS_SUCCESS if successful, PROS_ERR if not
  */
-int32_t adi_led_set_pixel(adi_led_t led, uint32_t *buffer,
-                          uint32_t buffer_length, uint32_t color,
+int32_t adi_led_set_pixel(adi_led_t led, uint32_t *buffer, uint32_t buffer_length, uint32_t color,
                           uint32_t pixel_position);
 
 /**
@@ -881,8 +869,7 @@ int32_t adi_led_set_pixel(adi_led_t led, uint32_t *buffer,
  * @param pixel_position position of the pixel to clear
  * @return PROS_SUCCESS if successful, PROS_ERR if not
  */
-int32_t adi_led_clear_pixel(adi_led_t led, uint32_t *buffer,
-                            uint32_t buffer_length, uint32_t pixel_position);
+int32_t adi_led_clear_pixel(adi_led_t led, uint32_t *buffer, uint32_t buffer_length, uint32_t pixel_position);
 
 #ifdef __cplusplus
 }  // namespace c

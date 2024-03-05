@@ -23,13 +23,11 @@ extern "C" {
 
 /*Testing of dependencies*/
 #if USE_LV_BTNM == 0
-#error                                                                         \
-    "lv_tabview: lv_btnm is required. Enable it in lv_conf.h (USE_LV_BTNM  1) "
+#error "lv_tabview: lv_btnm is required. Enable it in lv_conf.h (USE_LV_BTNM  1) "
 #endif
 
 #if USE_LV_PAGE == 0
-#error                                                                         \
-    "lv_tabview: lv_page is required. Enable it in lv_conf.h (USE_LV_PAGE  1) "
+#error "lv_tabview: lv_page is required. Enable it in lv_conf.h (USE_LV_PAGE  1) "
 #endif
 
 #include "display/lv_core/lv_obj.h"
@@ -57,22 +55,22 @@ typedef uint8_t lv_tabview_btns_pos_t;
 
 /*Data of tab*/
 typedef struct {
-    /*Ext. of ancestor*/
-    /*New data for this type */
-    lv_obj_t *btns;
-    lv_obj_t *indic;
-    lv_obj_t *content; /*A rectangle to show the current tab*/
-    const char **tab_name_ptr;
-    lv_point_t point_last;
-    uint16_t tab_cur;
-    uint16_t tab_cnt;
-    uint16_t anim_time;
-    uint8_t slide_enable : 1; /*1: enable horizontal sliding by touch pad*/
-    uint8_t draging : 1;
-    uint8_t drag_hor : 1;
-    uint8_t btns_hide : 1;
-    lv_tabview_btns_pos_t btns_pos : 1;
-    lv_tabview_action_t tab_load_action;
+        /*Ext. of ancestor*/
+        /*New data for this type */
+        lv_obj_t *btns;
+        lv_obj_t *indic;
+        lv_obj_t *content; /*A rectangle to show the current tab*/
+        const char **tab_name_ptr;
+        lv_point_t point_last;
+        uint16_t tab_cur;
+        uint16_t tab_cnt;
+        uint16_t anim_time;
+        uint8_t slide_enable : 1; /*1: enable horizontal sliding by touch pad*/
+        uint8_t draging : 1;
+        uint8_t drag_hor : 1;
+        uint8_t btns_hide : 1;
+        lv_tabview_btns_pos_t btns_pos : 1;
+        lv_tabview_action_t tab_load_action;
 } lv_tabview_ext_t;
 
 enum {
@@ -137,8 +135,7 @@ void lv_tabview_set_tab_act(lv_obj_t *tabview, uint16_t id, bool anim_en);
  * @param tabview pointer to a tabview object
  * @param action pointer to a function to call when a tab is loaded
  */
-void lv_tabview_set_tab_load_action(lv_obj_t *tabview,
-                                    lv_tabview_action_t action);
+void lv_tabview_set_tab_load_action(lv_obj_t *tabview, lv_tabview_action_t action);
 
 /**
  * Enable horizontal sliding with touch pad
@@ -160,8 +157,7 @@ void lv_tabview_set_anim_time(lv_obj_t *tabview, uint16_t anim_time);
  * @param type which style should be set
  * @param style pointer to the new style
  */
-void lv_tabview_set_style(lv_obj_t *tabview, lv_tabview_style_t type,
-                          lv_style_t *style);
+void lv_tabview_set_style(lv_obj_t *tabview, lv_tabview_style_t type, lv_style_t *style);
 
 /**
  * Set the position of tab select buttons
@@ -229,8 +225,7 @@ uint16_t lv_tabview_get_anim_time(const lv_obj_t *tabview);
  * @param type which style should be get
  * @return style pointer to a style
  */
-lv_style_t *lv_tabview_get_style(const lv_obj_t *tabview,
-                                 lv_tabview_style_t type);
+lv_style_t *lv_tabview_get_style(const lv_obj_t *tabview, lv_tabview_style_t type);
 
 /**
  * Get position of tab select buttons

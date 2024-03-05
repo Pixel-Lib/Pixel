@@ -49,12 +49,9 @@ uint8_t competition_get_status(void);
 }
 }
 #endif
-#define competition_is_disabled()                                              \
-    ((competition_get_status() & COMPETITION_DISABLED) != 0)
-#define competition_is_connected()                                             \
-    ((competition_get_status() & COMPETITION_CONNECTED) != 0)
-#define competition_is_autonomous()                                            \
-    ((competition_get_status() & COMPETITION_AUTONOMOUS) != 0)
+#define competition_is_disabled() ((competition_get_status() & COMPETITION_DISABLED) != 0)
+#define competition_is_connected() ((competition_get_status() & COMPETITION_CONNECTED) != 0)
+#define competition_is_autonomous() ((competition_get_status() & COMPETITION_AUTONOMOUS) != 0)
 
 /******************************************************************************/
 /**                              V5 Controller                               **/
@@ -64,10 +61,7 @@ extern "C" {
 namespace pros {
 #endif
 
-typedef enum {
-    E_CONTROLLER_MASTER = 0,
-    E_CONTROLLER_PARTNER
-} controller_id_e_t;
+typedef enum { E_CONTROLLER_MASTER = 0, E_CONTROLLER_PARTNER } controller_id_e_t;
 
 typedef enum {
     E_CONTROLLER_ANALOG_LEFT_X = 0,
@@ -140,16 +134,16 @@ variable based on the id and allows the mutex to take that port.
 Returns error (in the function/scope it's in) if the controller
 failed to connect or an invalid id is given.
 */
-#define CONTROLLER_PORT_MUTEX_TAKE(id, port)                                   \
-    switch (id) {                                                              \
-        case E_CONTROLLER_MASTER: port = V5_PORT_CONTROLLER_1; break;          \
-        case E_CONTROLLER_PARTNER: port = V5_PORT_CONTROLLER_2; break;         \
-        default: errno = EINVAL; return PROS_ERR;                              \
-    }                                                                          \
-    if (!internal_port_mutex_take(port)) {                                     \
-        errno = EACCES;                                                        \
-        return PROS_ERR;                                                       \
-    }                                                                          \
+#define CONTROLLER_PORT_MUTEX_TAKE(id, port)                                                                           \
+    switch (id) {                                                                                                      \
+        case E_CONTROLLER_MASTER: port = V5_PORT_CONTROLLER_1; break;                                                  \
+        case E_CONTROLLER_PARTNER: port = V5_PORT_CONTROLLER_2; break;                                                 \
+        default: errno = EINVAL; return PROS_ERR;                                                                      \
+    }                                                                                                                  \
+    if (!internal_port_mutex_take(port)) {                                                                             \
+        errno = EACCES;                                                                                                \
+        return PROS_ERR;                                                                                               \
+    }                                                                                                                  \
 /******************************************************************************/
 /**                              Date and Time                               **/
 /******************************************************************************/
@@ -158,16 +152,16 @@ extern const char *baked_date;
 extern const char *baked_time;
 
 typedef struct {
-    uint16_t year;  // Year - 1980
-    uint8_t day;
-    uint8_t month;  // 1 = January
+        uint16_t year;  // Year - 1980
+        uint8_t day;
+        uint8_t month;  // 1 = January
 } date_s_t;
 
 typedef struct {
-    uint8_t hour;
-    uint8_t min;
-    uint8_t sec;
-    uint8_t sec_hund;  // hundredths of a second
+        uint8_t hour;
+        uint8_t min;
+        uint8_t sec;
+        uint8_t sec_hund;  // hundredths of a second
 } time_s_t;
 
 #ifdef __cplusplus
@@ -211,8 +205,7 @@ int32_t controller_is_connected(controller_id_e_t id);
  * \return The current reading of the analog channel: [-127, 127].
  * If the controller was not connected, then 0 is returned
  */
-int32_t controller_get_analog(controller_id_e_t id,
-                              controller_analog_e_t channel);
+int32_t controller_get_analog(controller_id_e_t id, controller_analog_e_t channel);
 
 /**
  * Gets the battery capacity of the given controller.
@@ -267,8 +260,7 @@ int32_t controller_get_battery_level(controller_id_e_t id);
  * \return 1 if the button on the controller is pressed.
  * If the controller was not connected, then 0 is returned
  */
-int32_t controller_get_digital(controller_id_e_t id,
-                               controller_digital_e_t button);
+int32_t controller_get_digital(controller_id_e_t id, controller_digital_e_t button);
 
 /**
  * Returns a rising-edge case for a controller button press.
@@ -297,8 +289,7 @@ int32_t controller_get_digital(controller_id_e_t id,
  * \return 1 if the button on the controller is pressed and had not been pressed
  * the last time this function was called, 0 otherwise.
  */
-int32_t controller_get_digital_new_press(controller_id_e_t id,
-                                         controller_digital_e_t button);
+int32_t controller_get_digital_new_press(controller_id_e_t id, controller_digital_e_t button);
 
 /**
  * Sets text to the controller LCD screen.
@@ -327,8 +318,7 @@ int32_t controller_get_digital_new_press(controller_id_e_t id,
  * \return 1 if the operation was successful or PROS_ERR if the operation
  * failed, setting errno.
  */
-int32_t controller_print(controller_id_e_t id, uint8_t line, uint8_t col,
-                         const char *fmt, ...);
+int32_t controller_print(controller_id_e_t id, uint8_t line, uint8_t col, const char *fmt, ...);
 
 /**
  * Sets text to the controller LCD screen.
@@ -355,8 +345,7 @@ int32_t controller_print(controller_id_e_t id, uint8_t line, uint8_t col,
  * \return 1 if the operation was successful or PROS_ERR if the operation
  * failed, setting errno.
  */
-int32_t controller_set_text(controller_id_e_t id, uint8_t line, uint8_t col,
-                            const char *str);
+int32_t controller_set_text(controller_id_e_t id, uint8_t line, uint8_t col, const char *str);
 
 /**
  * Clears an individual line of the controller screen.

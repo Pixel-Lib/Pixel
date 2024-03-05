@@ -37,26 +37,26 @@ extern "C" {
  **********************/
 /*Description of a file entry */
 typedef struct {
-    char *fn_d;
-    void *data_d;
-    uint32_t size; /*Data length in bytes*/
-    uint16_t oc;   /*Open Count*/
-    uint8_t const_data : 1;
+        char *fn_d;
+        void *data_d;
+        uint32_t size; /*Data length in bytes*/
+        uint16_t oc;   /*Open Count*/
+        uint8_t const_data : 1;
 } lv_ufs_ent_t;
 
 /*File descriptor, used to handle opening an entry more times simultaneously
  Contains unique informations about the specific opening*/
 typedef struct {
-    lv_ufs_ent_t *ent; /*Pointer to the entry*/
-    uint32_t rwp;      /*Read Write Pointer*/
-    uint8_t ar : 1;    /*1: Access for read is enabled */
-    uint8_t aw : 1;    /*1: Access for write is enabled */
+        lv_ufs_ent_t *ent; /*Pointer to the entry*/
+        uint32_t rwp;      /*Read Write Pointer*/
+        uint8_t ar : 1;    /*1: Access for read is enabled */
+        uint8_t aw : 1;    /*1: Access for write is enabled */
 } lv_ufs_file_t;
 
 /* Read directory descriptor.
  * It is used to to iterate through the entries in a directory*/
 typedef struct {
-    lv_ufs_ent_t *last_ent;
+        lv_ufs_ent_t *last_ent;
 } lv_ufs_dir_t;
 
 /**********************
@@ -93,8 +93,7 @@ lv_fs_res_t lv_ufs_open(void *file_p, const char *fn, lv_fs_mode_t mode);
  * @return LV_FS_RES_OK: no error, the file is read
  *         any error from lv_fs_res_t enum
  */
-lv_fs_res_t lv_ufs_create_const(const char *fn, const void *const_p,
-                                uint32_t len);
+lv_fs_res_t lv_ufs_create_const(const char *fn, const void *const_p, uint32_t len);
 
 /**
  * Close an opened file
@@ -132,8 +131,7 @@ lv_fs_res_t lv_ufs_read(void *file_p, void *buf, uint32_t btr, uint32_t *br);
  * @return LV_FS_RES_OK: no error, the file is read
  *         any error from lv_fs_res_t enum
  */
-lv_fs_res_t lv_ufs_write(void *file_p, const void *buf, uint32_t btw,
-                         uint32_t *bw);
+lv_fs_res_t lv_ufs_write(void *file_p, const void *buf, uint32_t btw, uint32_t *bw);
 
 /**
  * Set the read write pointer. Also expand the file size if necessary.

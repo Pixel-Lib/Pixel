@@ -86,8 +86,7 @@ const char *convert_args(const std::string &arg) { return arg.c_str(); }
  * \return True if the operation was successful, or false otherwise, setting
  * errno values as specified above.
  */
-template <typename... Params>
-bool print(std::int16_t line, const char *fmt, Params... args) {
+template <typename... Params> bool print(std::int16_t line, const char *fmt, Params... args) {
     return pros::c::lcd_print(line, fmt, convert_args(args)...);
 }
 

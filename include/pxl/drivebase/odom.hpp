@@ -15,25 +15,23 @@
 namespace pxl {
 class Odom {
     public:
-    Odom(std::vector<std::unique_ptr<TrackingWheel>> &verticals,
-         std::vector<std::unique_ptr<TrackingWheel>> &horizontals,
-         std::vector<std::unique_ptr<TrackingWheel>> &drivetrain,
-         std::vector<std::shared_ptr<pros::IMU>> &imu);
-    void init();
-    void calibrate(bool calibrateIMUs = true);
-    void update();
+        Odom(std::vector<std::unique_ptr<TrackingWheel>> &verticals,
+             std::vector<std::unique_ptr<TrackingWheel>> &horizontals,
+             std::vector<std::unique_ptr<TrackingWheel>> &drivetrain, std::vector<std::shared_ptr<pros::IMU>> &imu);
+        void init();
+        void calibrate(bool calibrateIMUs = true);
+        void update();
 
     private:
-    std::vector<std::unique_ptr<TrackingWheel>> verticals;
-    std::vector<std::unique_ptr<TrackingWheel>> horizontals;
-    std::vector<std::unique_ptr<TrackingWheel>> drivetrain;
-    std::vector<std::shared_ptr<pros::IMU>> imu;
-    Pose pose = Pose(0, 0, 0);
-    pros::Task *OdomTask = nullptr;
-    float lastAngle = 0;
-    float calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>> &imu,
-                         bool update = true);
-    float calcDeltaTheta(TrackingWheel &tracker1, TrackingWheel &tracker2);
+        std::vector<std::unique_ptr<TrackingWheel>> verticals;
+        std::vector<std::unique_ptr<TrackingWheel>> horizontals;
+        std::vector<std::unique_ptr<TrackingWheel>> drivetrain;
+        std::vector<std::shared_ptr<pros::IMU>> imu;
+        Pose pose = Pose(0, 0, 0);
+        pros::Task *OdomTask = nullptr;
+        float lastAngle = 0;
+        float calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>> &imu, bool update = true);
+        float calcDeltaTheta(TrackingWheel &tracker1, TrackingWheel &tracker2);
 };
 
 }  // namespace pxl

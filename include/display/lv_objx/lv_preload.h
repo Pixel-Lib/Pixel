@@ -27,8 +27,7 @@ extern "C" {
 #endif
 
 #if USE_LV_ANIMATION == 0
-#error                                                                         \
-    "lv_preload: animations are required. Enable it in lv_conf.h (USE_LV_ANIMATION  1) "
+#error "lv_preload: animations are required. Enable it in lv_conf.h (USE_LV_ANIMATION  1) "
 #endif
 
 #include "display/lv_core/lv_obj.h"
@@ -50,11 +49,11 @@ typedef uint8_t lv_preloader_type_t;
 
 /*Data of pre loader*/
 typedef struct {
-    lv_arc_ext_t arc; /*Ext. of ancestor*/
-    /*New data for this type */
-    uint16_t arc_length; /*Length of the spinning indicator in degree*/
-    uint16_t time;       /*Time of one round*/
-    lv_preloader_type_t anim_type; /*Type of the arc animation*/
+        lv_arc_ext_t arc; /*Ext. of ancestor*/
+        /*New data for this type */
+        uint16_t arc_length;           /*Length of the spinning indicator in degree*/
+        uint16_t time;                 /*Time of one round*/
+        lv_preloader_type_t anim_type; /*Type of the arc animation*/
 } lv_preload_ext_t;
 
 /*Styles*/
@@ -104,8 +103,7 @@ void lv_preload_set_spin_time(lv_obj_t *preload, uint16_t time);
  * @param type which style should be set
  * @param style pointer to a style
  *  */
-void lv_preload_set_style(lv_obj_t *preload, lv_preload_style_t type,
-                          lv_style_t *style);
+void lv_preload_set_style(lv_obj_t *preload, lv_preload_style_t type, lv_style_t *style);
 
 /**
  * Set the animation type of a preloadeer.
@@ -136,8 +134,7 @@ uint16_t lv_preload_get_spin_time(const lv_obj_t *preload);
  * @param type which style should be get
  * @return style pointer to the style
  *  */
-lv_style_t *lv_preload_get_style(const lv_obj_t *preload,
-                                 lv_preload_style_t type);
+lv_style_t *lv_preload_get_style(const lv_obj_t *preload, lv_preload_style_t type);
 
 /**
  * Get the animation type of a preloadeer.

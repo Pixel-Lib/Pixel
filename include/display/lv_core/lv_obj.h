@@ -47,19 +47,15 @@ extern "C" {
 #endif
 
 #if LV_VDB_SIZE > 0 && LV_VDB_SIZE < LV_HOR_RES
-#error                                                                         \
-    "LittlevGL: Small Virtual Display Buffer (lv_conf.h: LV_VDB_SIZE >= LV_HOR_RES)"
+#error "LittlevGL: Small Virtual Display Buffer (lv_conf.h: LV_VDB_SIZE >= LV_HOR_RES)"
 #endif
 
 #if LV_VDB_SIZE == 0 && USE_LV_REAL_DRAW == 0
-#error                                                                         \
-    "LittlevGL: If LV_VDB_SIZE = 0 Real drawing function are required (lv_conf.h: USE_LV_REAL_DRAW 1)"
+#error "LittlevGL: If LV_VDB_SIZE = 0 Real drawing function are required (lv_conf.h: USE_LV_REAL_DRAW 1)"
 #endif
 
-#define LV_ANIM_IN                                                             \
-    0x00 /*Animation to show an object. 'OR' it with lv_anim_builtin_t*/
-#define LV_ANIM_OUT                                                            \
-    0x80 /*Animation to hide an object. 'OR' it with lv_anim_builtin_t*/
+#define LV_ANIM_IN 0x00       /*Animation to show an object. 'OR' it with lv_anim_builtin_t*/
+#define LV_ANIM_OUT 0x80      /*Animation to hide an object. 'OR' it with lv_anim_builtin_t*/
 #define LV_ANIM_DIR_MASK 0x80 /*ANIM_IN/ANIM_OUT mask*/
 
 #define LV_MAX_ANCESTOR_NUM 8
@@ -77,14 +73,12 @@ enum {
 };
 typedef uint8_t lv_design_mode_t;
 
-typedef bool (*lv_design_func_t)(struct _lv_obj_t *obj, const lv_area_t *mask_p,
-                                 lv_design_mode_t mode);
+typedef bool (*lv_design_func_t)(struct _lv_obj_t *obj, const lv_area_t *mask_p, lv_design_mode_t mode);
 
 enum {
-    LV_RES_INV =
-        0, /*Typically indicates that the object is deleted (become invalid) in
-              the action function or an operation was failed*/
-    LV_RES_OK, /*The object is valid (no deleted) after the action*/
+    LV_RES_INV = 0, /*Typically indicates that the object is deleted (become invalid) in
+                       the action function or an operation was failed*/
+    LV_RES_OK,      /*The object is valid (no deleted) after the action*/
 };
 typedef uint8_t lv_res_t;
 
@@ -118,8 +112,7 @@ enum {
 };
 typedef uint8_t lv_signal_t;
 
-typedef lv_res_t (*lv_signal_func_t)(struct _lv_obj_t *obj, lv_signal_t sign,
-                                     void *param);
+typedef lv_res_t (*lv_signal_func_t)(struct _lv_obj_t *obj, lv_signal_t sign, void *param);
 
 enum {
     LV_ALIGN_CENTER = 0,
@@ -148,58 +141,58 @@ typedef uint8_t lv_align_t;
 
 #if LV_OBJ_REALIGN
 typedef struct {
-    const struct _lv_obj_t *base;
-    lv_coord_t xofs;
-    lv_coord_t yofs;
-    lv_align_t align;
-    uint8_t auto_realign : 1;
-    uint8_t origo_align : 1; /*1: the oigo (center of the object) was aligned
-                                with `lv_obj_align_origo`*/
+        const struct _lv_obj_t *base;
+        lv_coord_t xofs;
+        lv_coord_t yofs;
+        lv_align_t align;
+        uint8_t auto_realign : 1;
+        uint8_t origo_align : 1; /*1: the oigo (center of the object) was aligned
+                                    with `lv_obj_align_origo`*/
 } lv_reailgn_t;
 #endif
 
 typedef struct _lv_obj_t {
-    struct _lv_obj_t *par; /*Pointer to the parent object*/
-    lv_ll_t child_ll;      /*Linked list to store the children objects*/
+        struct _lv_obj_t *par; /*Pointer to the parent object*/
+        lv_ll_t child_ll;      /*Linked list to store the children objects*/
 
-    lv_area_t coords; /*Coordinates of the object (x1, y1, x2, y2)*/
+        lv_area_t coords; /*Coordinates of the object (x1, y1, x2, y2)*/
 
-    lv_signal_func_t signal_func; /*Object type specific signal function*/
-    lv_design_func_t design_func; /*Object type specific design function*/
+        lv_signal_func_t signal_func; /*Object type specific signal function*/
+        lv_design_func_t design_func; /*Object type specific design function*/
 
-    void *ext_attr;      /*Object type specific extended data*/
-    lv_style_t *style_p; /*Pointer to the object's style*/
+        void *ext_attr;      /*Object type specific extended data*/
+        lv_style_t *style_p; /*Pointer to the object's style*/
 
 #if LV_OBJ_FREE_PTR != 0
-    void *free_ptr; /*Application specific pointer (set it freely)*/
+        void *free_ptr; /*Application specific pointer (set it freely)*/
 #endif
 
 #if USE_LV_GROUP != 0
-    void *group_p; /*Pointer to the group of the object*/
+        void *group_p; /*Pointer to the group of the object*/
 #endif
-    /*Attributes and states*/
-    uint8_t click : 1;       /*1: Can be pressed by an input device*/
-    uint8_t drag : 1;        /*1: Enable the dragging*/
-    uint8_t drag_throw : 1;  /*1: Enable throwing with drag*/
-    uint8_t drag_parent : 1; /*1: Parent will be dragged instead*/
-    uint8_t hidden : 1;      /*1: Object is hidden*/
-    uint8_t top : 1; /*1: If the object or its children is clicked it goes to
-                        the foreground*/
-    uint8_t opa_scale_en : 1; /*1: opa_scale is set*/
-    uint8_t protect; /*Automatically happening actions can be prevented. 'OR'ed
-                        values from `lv_protect_t`*/
-    lv_opa_t opa_scale; /*Scale down the opacity by this factor. Effects all
-                           children as well*/
+        /*Attributes and states*/
+        uint8_t click : 1;        /*1: Can be pressed by an input device*/
+        uint8_t drag : 1;         /*1: Enable the dragging*/
+        uint8_t drag_throw : 1;   /*1: Enable throwing with drag*/
+        uint8_t drag_parent : 1;  /*1: Parent will be dragged instead*/
+        uint8_t hidden : 1;       /*1: Object is hidden*/
+        uint8_t top : 1;          /*1: If the object or its children is clicked it goes to
+                                     the foreground*/
+        uint8_t opa_scale_en : 1; /*1: opa_scale is set*/
+        uint8_t protect;          /*Automatically happening actions can be prevented. 'OR'ed
+                                     values from `lv_protect_t`*/
+        lv_opa_t opa_scale;       /*Scale down the opacity by this factor. Effects all
+                                     children as well*/
 
-    lv_coord_t ext_size; /*EXTtend the size of the object in every direction.
-                            E.g. for shadow drawing*/
+        lv_coord_t ext_size; /*EXTtend the size of the object in every direction.
+                                E.g. for shadow drawing*/
 #if LV_OBJ_REALIGN
-    lv_reailgn_t realign;
+        lv_reailgn_t realign;
 #endif
 
 #ifdef LV_OBJ_FREE_NUM_TYPE
-    LV_OBJ_FREE_NUM_TYPE
-    free_num; /*Application specific identifier (set it freely)*/
+        LV_OBJ_FREE_NUM_TYPE
+        free_num; /*Application specific identifier (set it freely)*/
 #endif
 } lv_obj_t;
 
@@ -208,28 +201,22 @@ typedef lv_res_t (*lv_action_t)(struct _lv_obj_t *obj);
 /*Protect some attributes (max. 8 bit)*/
 enum {
     LV_PROTECT_NONE = 0x00,
-    LV_PROTECT_CHILD_CHG =
-        0x01, /*Disable the child change signal. Used by the library*/
-    LV_PROTECT_PARENT =
-        0x02, /*Prevent automatic parent change (e.g. in lv_page)*/
-    LV_PROTECT_POS =
-        0x04, /*Prevent automatic positioning (e.g. in lv_cont layout)*/
-    LV_PROTECT_FOLLOW = 0x08, /*Prevent the object be followed in automatic
-                                 ordering (e.g. in lv_cont PRETTY layout)*/
-    LV_PROTECT_PRESS_LOST =
-        0x10, /*If the `indev` was pressing this object but swiped out while
-                 pressing do not search other object.*/
-    LV_PROTECT_CLICK_FOCUS =
-        0x20, /*Prevent focusing the object by clicking on it*/
+    LV_PROTECT_CHILD_CHG = 0x01,   /*Disable the child change signal. Used by the library*/
+    LV_PROTECT_PARENT = 0x02,      /*Prevent automatic parent change (e.g. in lv_page)*/
+    LV_PROTECT_POS = 0x04,         /*Prevent automatic positioning (e.g. in lv_cont layout)*/
+    LV_PROTECT_FOLLOW = 0x08,      /*Prevent the object be followed in automatic
+                                      ordering (e.g. in lv_cont PRETTY layout)*/
+    LV_PROTECT_PRESS_LOST = 0x10,  /*If the `indev` was pressing this object but swiped out while
+                                      pressing do not search other object.*/
+    LV_PROTECT_CLICK_FOCUS = 0x20, /*Prevent focusing the object by clicking on it*/
 };
 typedef uint8_t lv_protect_t;
 
 /*Used by `lv_obj_get_type()`. The object's and its ancestor types are stored
  * here*/
 typedef struct {
-    const char
-        *type[LV_MAX_ANCESTOR_NUM]; /*[0]: the actual type, [1]: ancestor, [2]
-                                       #1's ancestor ... [x]: "lv_obj" */
+        const char *type[LV_MAX_ANCESTOR_NUM]; /*[0]: the actual type, [1]: ancestor, [2]
+                                                  #1's ancestor ... [x]: "lv_obj" */
 } lv_obj_type_t;
 
 enum {
@@ -368,8 +355,7 @@ void lv_obj_set_height(lv_obj_t *obj, lv_coord_t h);
  * @param x_mod x coordinate shift after alignment
  * @param y_mod y coordinate shift after alignment
  */
-void lv_obj_align(lv_obj_t *obj, const lv_obj_t *base, lv_align_t align,
-                  lv_coord_t x_mod, lv_coord_t y_mod);
+void lv_obj_align(lv_obj_t *obj, const lv_obj_t *base, lv_align_t align, lv_coord_t x_mod, lv_coord_t y_mod);
 
 /**
  * Align an object to an other object.
@@ -380,8 +366,7 @@ void lv_obj_align(lv_obj_t *obj, const lv_obj_t *base, lv_align_t align,
  * @param x_mod x coordinate shift after alignment
  * @param y_mod y coordinate shift after alignment
  */
-void lv_obj_align_origo(lv_obj_t *obj, const lv_obj_t *base, lv_align_t align,
-                        lv_coord_t x_mod, lv_coord_t y_mod);
+void lv_obj_align_origo(lv_obj_t *obj, const lv_obj_t *base, lv_align_t align, lv_coord_t x_mod, lv_coord_t y_mod);
 
 /**
  * Realign the object based on the last `lv_obj_align` parameters.
@@ -570,8 +555,7 @@ void lv_obj_set_free_ptr(lv_obj_t *obj, void *free_p);
  * @param delay delay before the animation in milliseconds
  * @param cb a function to call when the animation is ready
  */
-void lv_obj_animate(lv_obj_t *obj, lv_anim_builtin_t type, uint16_t time,
-                    uint16_t delay, void (*cb)(lv_obj_t *));
+void lv_obj_animate(lv_obj_t *obj, lv_anim_builtin_t type, uint16_t time, uint16_t delay, void (*cb)(lv_obj_t *));
 #endif
 
 /*=======================

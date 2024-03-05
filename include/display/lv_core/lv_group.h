@@ -47,23 +47,21 @@ typedef void (*lv_group_style_mod_func_t)(lv_style_t *);
 typedef void (*lv_group_focus_cb_t)(struct _lv_group_t *);
 
 typedef struct _lv_group_t {
-    lv_ll_t obj_ll;       /*Linked list to store the objects in the group */
-    lv_obj_t **obj_focus; /*The object in focus*/
-    lv_group_style_mod_func_t
-        style_mod; /*A function which modifies the style of the focused object*/
-    lv_group_style_mod_func_t style_mod_edit; /*A function which modifies the
-                                                 style of the focused object*/
-    lv_group_focus_cb_t
-        focus_cb; /*A function to call when a new object is focused (optional)*/
-    lv_style_t style_tmp; /*Stores the modified style of the focused object */
-    uint8_t frozen : 1;   /*1: can't focus to new object*/
-    uint8_t editing : 1;  /*1: Edit mode, 0: Navigate mode*/
-    uint8_t click_focus : 1; /*1: If an object in a group is clicked by an indev
-                                then it will be focused */
-    uint8_t refocus_policy : 1; /*1: Focus prev if focused on deletion. 0: Focus
-                                   prev if focused on deletion.*/
-    uint8_t wrap : 1; /*1: Focus next/prev can wrap at end of list. 0: Focus
-                         next/prev stops at end of list.*/
+        lv_ll_t obj_ll;                           /*Linked list to store the objects in the group */
+        lv_obj_t **obj_focus;                     /*The object in focus*/
+        lv_group_style_mod_func_t style_mod;      /*A function which modifies the style of the focused object*/
+        lv_group_style_mod_func_t style_mod_edit; /*A function which modifies the
+                                                     style of the focused object*/
+        lv_group_focus_cb_t focus_cb;             /*A function to call when a new object is focused (optional)*/
+        lv_style_t style_tmp;                     /*Stores the modified style of the focused object */
+        uint8_t frozen : 1;                       /*1: can't focus to new object*/
+        uint8_t editing : 1;                      /*1: Edit mode, 0: Navigate mode*/
+        uint8_t click_focus : 1;                  /*1: If an object in a group is clicked by an indev
+                                                     then it will be focused */
+        uint8_t refocus_policy : 1;               /*1: Focus prev if focused on deletion. 0: Focus
+                                                     prev if focused on deletion.*/
+        uint8_t wrap : 1;                         /*1: Focus next/prev can wrap at end of list. 0: Focus
+                                                     next/prev stops at end of list.*/
 } lv_group_t;
 
 typedef enum _lv_group_refocus_policy_t {
@@ -139,8 +137,7 @@ lv_res_t lv_group_send_data(lv_group_t *group, uint32_t c);
  * @param group pointer to a group
  * @param style_mod_func the style modifier function pointer
  */
-void lv_group_set_style_mod_cb(lv_group_t *group,
-                               lv_group_style_mod_func_t style_mod_func);
+void lv_group_set_style_mod_cb(lv_group_t *group, lv_group_style_mod_func_t style_mod_func);
 
 /**
  * Set a function for a group which will modify the object's style if it is in
@@ -148,8 +145,7 @@ void lv_group_set_style_mod_cb(lv_group_t *group,
  * @param group pointer to a group
  * @param style_mod_func the style modifier function pointer
  */
-void lv_group_set_style_mod_edit_cb(lv_group_t *group,
-                                    lv_group_style_mod_func_t style_mod_func);
+void lv_group_set_style_mod_edit_cb(lv_group_t *group, lv_group_style_mod_func_t style_mod_func);
 
 /**
  * Set a function for a group which will be called when a new object is focused
@@ -164,8 +160,7 @@ void lv_group_set_focus_cb(lv_group_t *group, lv_group_focus_cb_t focus_cb);
  * @param group pointer to a group
  * @param new refocus policy enum
  */
-void lv_group_set_refocus_policy(lv_group_t *group,
-                                 lv_group_refocus_policy_t policy);
+void lv_group_set_refocus_policy(lv_group_t *group, lv_group_refocus_policy_t policy);
 
 /**
  * Manually set the current mode (edit or navigate).
@@ -218,8 +213,7 @@ lv_group_style_mod_func_t lv_group_get_style_mod_cb(const lv_group_t *group);
  * @param group pointer to a group
  * @return pointer to the style modifier function
  */
-lv_group_style_mod_func_t
-lv_group_get_style_mod_edit_cb(const lv_group_t *group);
+lv_group_style_mod_func_t lv_group_get_style_mod_edit_cb(const lv_group_t *group);
 
 /**
  * Get the focus callback function of a group

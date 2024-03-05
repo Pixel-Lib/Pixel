@@ -47,7 +47,7 @@ typedef enum {
     E_TOUCH_RELEASED = 0,  ///< Last interaction with screen was a quick press
     E_TOUCH_PRESSED,       ///< Last interaction with screen was a release
     E_TOUCH_HELD,          ///< User is holding screen down
-    E_TOUCH_ERROR  ///< An error occured while taking/returning the mutex
+    E_TOUCH_ERROR          ///< An error occured while taking/returning the mutex
 } last_touch_e_t;
 
 /**
@@ -55,14 +55,13 @@ typedef enum {
  * press count, release count.
  */
 typedef struct screen_touch_status_s {
-    last_touch_e_t touch_status;  ///< Represents if the screen is being held,
-                                  ///< released, or pressed.
-    int16_t x;  ///< Represents the x value of the location of the touch.
-    int16_t y;  ///< Represents the y value of the location of the touch.
-    int32_t
-        press_count;  ///< Represents how many times the screen has be pressed.
-    int32_t release_count;  ///< Represents how many times the user released
-                            ///< after a touch on the screen.
+        last_touch_e_t touch_status;  ///< Represents if the screen is being held,
+                                      ///< released, or pressed.
+        int16_t x;                    ///< Represents the x value of the location of the touch.
+        int16_t y;                    ///< Represents the y value of the location of the touch.
+        int32_t press_count;          ///< Represents how many times the screen has be pressed.
+        int32_t release_count;        ///< Represents how many times the user released
+                                      ///< after a touch on the screen.
 } screen_touch_status_s_t;
 
 #ifdef PROS_USE_SIMPLE_NAMES
@@ -202,8 +201,7 @@ uint32_t screen_scroll(int16_t start_line, int16_t lines);
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  *           taking or returning the screen mutex.
  */
-uint32_t screen_scroll_area(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
-                            int16_t lines);
+uint32_t screen_scroll_area(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t lines);
 
 /**
  * Copy a screen region (designated by a rectangle) from an off-screen buffer
@@ -224,8 +222,7 @@ uint32_t screen_scroll_area(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  *         taking or returning the screen mutex.
  */
-uint32_t screen_copy_area(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
-                          uint32_t *buf, int32_t stride);
+uint32_t screen_copy_area(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint32_t *buf, int32_t stride);
 
 /**
  * Draw a single pixel on the screen using the current pen color
@@ -399,8 +396,7 @@ uint32_t screen_fill_circle(int16_t x, int16_t y, int16_t radius);
  *  \return 1 if there were no errors, or PROS_ERR if an error occured
  *          taking or returning the screen mutex.
  */
-uint32_t screen_print(text_format_e_t txt_fmt, const int16_t line,
-                      const char *text, ...);
+uint32_t screen_print(text_format_e_t txt_fmt, const int16_t line, const char *text, ...);
 
 /**
  * Print a formatted string to the screen at the specified point
@@ -419,8 +415,7 @@ uint32_t screen_print(text_format_e_t txt_fmt, const int16_t line,
  *  \return 1 if there were no errors, or PROS_ERR if an error occured
  *          taking or returning the screen mutex.
  */
-uint32_t screen_print_at(text_format_e_t txt_fmt, const int16_t x,
-                         const int16_t y, const char *text, ...);
+uint32_t screen_print_at(text_format_e_t txt_fmt, const int16_t x, const int16_t y, const char *text, ...);
 
 /**
  * Print a formatted string to the screen on the specified line
@@ -443,8 +438,7 @@ uint32_t screen_print_at(text_format_e_t txt_fmt, const int16_t x,
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  *          while taking or returning the screen mutex.
  */
-uint32_t screen_vprintf(text_format_e_t txt_fmt, const int16_t line,
-                        const char *text, va_list args);
+uint32_t screen_vprintf(text_format_e_t txt_fmt, const int16_t line, const char *text, va_list args);
 
 /**
  * Print a formatted string to the screen at the specified coordinates
@@ -469,8 +463,7 @@ uint32_t screen_vprintf(text_format_e_t txt_fmt, const int16_t line,
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  *          while taking or returning the screen mutex.
  */
-uint32_t screen_vprintf_at(text_format_e_t txt_fmt, const int16_t x,
-                           const int16_t y, const char *text, va_list args);
+uint32_t screen_vprintf_at(text_format_e_t txt_fmt, const int16_t x, const int16_t y, const char *text, va_list args);
 
 /******************************************************************************/
 /**                         Screen Touch Functions                           **/
@@ -503,8 +496,7 @@ screen_touch_status_s_t screen_touch_status(void);
  * \return 1 if there were no errors, or PROS_ERR if an error occured
  *          while taking or returning the screen mutex.
  */
-uint32_t screen_touch_callback(touch_event_cb_fn_t cb,
-                               last_touch_e_t event_type);
+uint32_t screen_touch_callback(touch_event_cb_fn_t cb, last_touch_e_t event_type);
 
 #ifdef __cplusplus
 }  // namespace c

@@ -55,15 +55,15 @@ extern "C" {
 
 /*Data of window*/
 typedef struct {
-    /*Ext. of ancestor*/
-    /*New data for this type */
-    lv_obj_t *page;            /*Pointer to a page which holds the content*/
-    lv_obj_t *header;          /*Pointer to the header container of the window*/
-    lv_obj_t *title;           /*Pointer to the title label of the window*/
-    lv_style_t *style_header;  /*Style of the header container*/
-    lv_style_t *style_btn_rel; /*Control button releases style*/
-    lv_style_t *style_btn_pr;  /*Control button pressed style*/
-    lv_coord_t btn_size;       /*Size of the control buttons (square)*/
+        /*Ext. of ancestor*/
+        /*New data for this type */
+        lv_obj_t *page;            /*Pointer to a page which holds the content*/
+        lv_obj_t *header;          /*Pointer to the header container of the window*/
+        lv_obj_t *title;           /*Pointer to the title label of the window*/
+        lv_style_t *style_header;  /*Style of the header container*/
+        lv_style_t *style_btn_rel; /*Control button releases style*/
+        lv_style_t *style_btn_pr;  /*Control button pressed style*/
+        lv_coord_t btn_size;       /*Size of the control buttons (square)*/
 } lv_win_ext_t;
 
 enum {
@@ -108,8 +108,7 @@ void lv_win_clean(lv_obj_t *obj);
  * @param rel_action a function pointer to call when the button is released
  * @return pointer to the created button object
  */
-lv_obj_t *lv_win_add_btn(lv_obj_t *win, const void *img_src,
-                         lv_action_t rel_action);
+lv_obj_t *lv_win_add_btn(lv_obj_t *win, const void *img_src, lv_action_t rel_action);
 
 /*=====================
  * Setter functions
@@ -236,9 +235,7 @@ lv_style_t *lv_win_get_style(const lv_obj_t *win, lv_win_style_t type);
  * @param win pointer to a window object
  * @return whether window is draggable
  */
-static inline bool lv_win_get_drag(const lv_obj_t *win) {
-    return lv_obj_get_drag(win);
-}
+static inline bool lv_win_get_drag(const lv_obj_t *win) { return lv_obj_get_drag(win); }
 
 /*=====================
  * Other functions

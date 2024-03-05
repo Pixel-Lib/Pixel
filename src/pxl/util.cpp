@@ -9,9 +9,7 @@
 
 namespace pxl {
 float slew(float target, float current, float maxChange) {
-    return maxChange == 0
-               ? target
-               : current + std::clamp(target - current, -maxChange, maxChange);
+    return maxChange == 0 ? target : current + std::clamp(target - current, -maxChange, maxChange);
 }
 
 float radToDeg(float rad) { return rad * 180 / M_PI; }
@@ -33,8 +31,6 @@ float angleError(float angle1, float angle2, bool radians) {
     return error;
 }
 
-float ema(float current, float previous, float smooth) {
-    return (current * smooth) + (previous * (1 - smooth));
-}
+float ema(float current, float previous, float smooth) { return (current * smooth) + (previous * (1 - smooth)); }
 
 }  // namespace pxl

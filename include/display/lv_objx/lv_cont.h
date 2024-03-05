@@ -48,11 +48,11 @@ enum {
 typedef uint8_t lv_layout_t;
 
 typedef struct {
-    /*Inherited from 'base_obj' so no inherited ext. */ /*Ext. of ancestor*/
-    /*New data for this type */
-    uint8_t layout : 4;  /*A layout from 'lv_cont_layout_t' enum*/
-    uint8_t hor_fit : 1; /*1: Enable horizontal fit to involve all children*/
-    uint8_t ver_fit : 1; /*1: Enable horizontal fit to involve all children*/
+        /*Inherited from 'base_obj' so no inherited ext. */ /*Ext. of ancestor*/
+        /*New data for this type */
+        uint8_t layout : 4;  /*A layout from 'lv_cont_layout_t' enum*/
+        uint8_t hor_fit : 1; /*1: Enable horizontal fit to involve all children*/
+        uint8_t ver_fit : 1; /*1: Enable horizontal fit to involve all children*/
 } lv_cont_ext_t;
 
 /**********************
@@ -94,9 +94,7 @@ void lv_cont_set_fit(lv_obj_t *cont, bool hor_en, bool ver_en);
  * @param cont pointer to a container object
  * @param style pointer to the new style
  */
-static inline void lv_cont_set_style(lv_obj_t *cont, lv_style_t *style) {
-    lv_obj_set_style(cont, style);
-}
+static inline void lv_cont_set_style(lv_obj_t *cont, lv_style_t *style) { lv_obj_set_style(cont, style); }
 
 /*=====================
  * Getter functions
@@ -142,9 +140,7 @@ lv_coord_t lv_cont_get_fit_height(lv_obj_t *cont);
  * @param cont pointer to a container object
  * @return pointer to the container's style
  */
-static inline lv_style_t *lv_cont_get_style(const lv_obj_t *cont) {
-    return lv_obj_get_style(cont);
-}
+static inline lv_style_t *lv_cont_get_style(const lv_obj_t *cont) { return lv_obj_get_style(cont); }
 
 /**********************
  *      MACROS

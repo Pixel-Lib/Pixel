@@ -17,13 +17,13 @@ namespace okapi {
  */
 class ReadOnlyChassisModel {
     public:
-    virtual ~ReadOnlyChassisModel() = default;
+        virtual ~ReadOnlyChassisModel() = default;
 
-    /**
-     * Read the sensors.
-     *
-     * @return sensor readings (format is implementation dependent)
-     */
-    virtual std::valarray<std::int32_t> getSensorVals() const = 0;
+        /**
+         * Read the sensors.
+         *
+         * @return sensor readings (format is implementation dependent)
+         */
+        virtual std::valarray<std::int32_t> getSensorVals() const = 0;
 };
 }  // namespace okapi

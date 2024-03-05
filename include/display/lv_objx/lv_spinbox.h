@@ -39,22 +39,21 @@ extern "C" {
  **********************/
 
 /*callback on value change*/
-typedef void (*lv_spinbox_value_changed_cb_t)(lv_obj_t *spinbox,
-                                              int32_t new_value);
+typedef void (*lv_spinbox_value_changed_cb_t)(lv_obj_t *spinbox, int32_t new_value);
 
 /*Data of spinbox*/
 typedef struct {
-    lv_ta_ext_t ta; /*Ext. of ancestor*/
-    /*New data for this type */
-    int32_t value;
-    int32_t range_max;
-    int32_t range_min;
-    int32_t step;
-    uint16_t digit_count : 4;
-    uint16_t dec_point_pos : 4; /*if 0, there is no separator and the number is
-                                   an integer*/
-    uint16_t digit_padding_left : 4;
-    lv_spinbox_value_changed_cb_t value_changed_cb;
+        lv_ta_ext_t ta; /*Ext. of ancestor*/
+        /*New data for this type */
+        int32_t value;
+        int32_t range_max;
+        int32_t range_min;
+        int32_t step;
+        uint16_t digit_count : 4;
+        uint16_t dec_point_pos : 4; /*if 0, there is no separator and the number is
+                                       an integer*/
+        uint16_t digit_padding_left : 4;
+        lv_spinbox_value_changed_cb_t value_changed_cb;
 } lv_spinbox_ext_t;
 
 /*Styles*/
@@ -88,9 +87,7 @@ lv_obj_t *lv_spinbox_create(lv_obj_t *par, const lv_obj_t *copy);
  * @param type which style should be set
  * @param style pointer to a style
  */
-static inline void lv_spinbox_set_style(lv_obj_t *spinbox,
-                                        lv_spinbox_style_t type,
-                                        lv_style_t *style) {
+static inline void lv_spinbox_set_style(lv_obj_t *spinbox, lv_spinbox_style_t type, lv_style_t *style) {
     lv_ta_set_style(spinbox, type, style);
 }
 
@@ -109,8 +106,7 @@ void lv_spinbox_set_value(lv_obj_t *spinbox, int32_t i);
  * @param separator_position number of digit before the decimal point. If 0,
  * decimal point is not shown
  */
-void lv_spinbox_set_digit_format(lv_obj_t *spinbox, uint8_t digit_count,
-                                 uint8_t separator_position);
+void lv_spinbox_set_digit_format(lv_obj_t *spinbox, uint8_t digit_count, uint8_t separator_position);
 
 /**
  * Set spinbox step
@@ -125,16 +121,14 @@ void lv_spinbox_set_step(lv_obj_t *spinbox, uint32_t step);
  * @param range_min maximum value, inclusive
  * @param range_max minimum value, inclusive
  */
-void lv_spinbox_set_range(lv_obj_t *spinbox, int32_t range_min,
-                          int32_t range_max);
+void lv_spinbox_set_range(lv_obj_t *spinbox, int32_t range_min, int32_t range_max);
 
 /**
  * Set spinbox callback on calue change
  * @param spinbox pointer to spinbox
  * @param cb Callback function called on value change event
  */
-void lv_spinbox_set_value_changed_cb(lv_obj_t *spinbox,
-                                     lv_spinbox_value_changed_cb_t cb);
+void lv_spinbox_set_value_changed_cb(lv_obj_t *spinbox, lv_spinbox_value_changed_cb_t cb);
 
 /**
  * Set spinbox left padding in digits count (added between sign and first digit)
@@ -153,8 +147,7 @@ void lv_spinbox_set_padding_left(lv_obj_t *spinbox, uint8_t padding);
  * @param type which style should be get
  * @return style pointer to the style
  */
-static inline lv_style_t *lv_spinbox_get_style(lv_obj_t *spinbox,
-                                               lv_spinbox_style_t type) {
+static inline lv_style_t *lv_spinbox_get_style(lv_obj_t *spinbox, lv_spinbox_style_t type) {
     return lv_ta_get_style(spinbox, type);
 }
 

@@ -72,8 +72,8 @@ bool task_abort_delay(task_t task);
  * \param notify_action
  * 				The action to supply to task_notify_ext
  */
-void task_notify_when_deleting(task_t target_task, task_t task_to_notify,
-                               uint32_t value, notify_action_e_t notify_action);
+void task_notify_when_deleting(task_t target_task, task_t task_to_notify, uint32_t value,
+                               notify_action_e_t notify_action);
 
 /**
  * Creates a recursive mutex which can be locked recursively by the owner.
@@ -379,9 +379,7 @@ typedef enum v5_device_e {
     E_DEVICE_OPTICAL = 16,
     E_DEVICE_GPS = 20,
     E_DEVICE_SERIAL = 129,
-    E_DEVICE_GENERIC
-    __attribute__((deprecated("use E_DEVICE_SERIAL instead"))) =
-        E_DEVICE_SERIAL,
+    E_DEVICE_GENERIC __attribute__((deprecated("use E_DEVICE_SERIAL instead"))) = E_DEVICE_SERIAL,
     E_DEVICE_UNDEFINED = 255
 } v5_device_e_t;
 

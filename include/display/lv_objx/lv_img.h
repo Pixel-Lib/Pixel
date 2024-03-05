@@ -36,20 +36,20 @@ extern "C" {
  **********************/
 /*Data of image*/
 typedef struct {
-    /*No inherited ext. because inherited from the base object*/ /*Ext. of
-                                                                    ancestor*/
-    /*New data for this type */
-    const void *src; /*Image source: Pointer to an array or a file or a symbol*/
+        /*No inherited ext. because inherited from the base object*/ /*Ext. of
+                                                                        ancestor*/
+        /*New data for this type */
+        const void *src; /*Image source: Pointer to an array or a file or a symbol*/
 
-    lv_coord_t w; /*Width of the image (Handled by the library)*/
-    lv_coord_t h; /*Height of the image (Handled by the library)*/
+        lv_coord_t w; /*Width of the image (Handled by the library)*/
+        lv_coord_t h; /*Height of the image (Handled by the library)*/
 #if USE_LV_MULTI_LANG
-    uint16_t lang_txt_id; /*The ID of the image to display. */
+        uint16_t lang_txt_id; /*The ID of the image to display. */
 #endif
-    uint8_t src_type : 2;  /*See: lv_img_src_t*/
-    uint8_t auto_size : 1; /*1: automatically set the object size to the image
-                              size*/
-    uint8_t cf : 5;        /*Color format from `lv_img_color_format_t`*/
+        uint8_t src_type : 2;  /*See: lv_img_src_t*/
+        uint8_t auto_size : 1; /*1: automatically set the object size to the image
+                                  size*/
+        uint8_t cf : 5;        /*Color format from `lv_img_color_format_t`*/
 } lv_img_ext_t;
 
 /**********************
@@ -109,9 +109,7 @@ void lv_img_set_auto_size(lv_obj_t *img, bool autosize_en);
  * @param img pointer to an image object
  * @param style pointer to a style
  */
-static inline void lv_img_set_style(lv_obj_t *img, lv_style_t *style) {
-    lv_obj_set_style(img, style);
-}
+static inline void lv_img_set_style(lv_obj_t *img, lv_style_t *style) { lv_obj_set_style(img, style); }
 
 /**
  * Obsolete since v5.1. Just for compatibility with v5.0. Will be removed in
@@ -163,9 +161,7 @@ bool lv_img_get_auto_size(const lv_obj_t *img);
  * @param img pointer to an image object
  * @return pointer to the image's style
  */
-static inline lv_style_t *lv_img_get_style(const lv_obj_t *img) {
-    return lv_obj_get_style(img);
-}
+static inline lv_style_t *lv_img_get_style(const lv_obj_t *img) { return lv_obj_get_style(img); }
 
 /**
  * Obsolete since v5.1. Just for compatibility with v5.0. Will be removed in

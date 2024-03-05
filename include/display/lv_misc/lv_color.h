@@ -21,13 +21,11 @@ extern "C" {
 
 /*Error checking*/
 #if LV_COLOR_DEPTH == 24
-#error                                                                         \
-    "LV_COLOR_DEPTH  24 is deprecated. Use LV_COLOR_DEPTH  32 instead (lv_conf.h)"
+#error "LV_COLOR_DEPTH  24 is deprecated. Use LV_COLOR_DEPTH  32 instead (lv_conf.h)"
 #endif
 
 #if LV_COLOR_DEPTH != 32 && LV_COLOR_SCREEN_TRANSP != 0
-#error                                                                         \
-    "LV_COLOR_SCREEN_TRANSP requires LV_COLOR_DEPTH == 32. Set it in lv_conf.h"
+#error "LV_COLOR_SCREEN_TRANSP requires LV_COLOR_DEPTH == 32. Set it in lv_conf.h"
 #endif
 
 #if LV_COLOR_DEPTH != 16 && LV_COLOR_16_SWAP != 0
@@ -94,45 +92,45 @@ enum {
  **********************/
 
 typedef union {
-    uint8_t blue : 1;
-    uint8_t green : 1;
-    uint8_t red : 1;
-    uint8_t full : 1;
+        uint8_t blue : 1;
+        uint8_t green : 1;
+        uint8_t red : 1;
+        uint8_t full : 1;
 } lv_color1_t;
 
 typedef union {
-    struct {
-        uint8_t blue : 2;
-        uint8_t green : 3;
-        uint8_t red : 3;
-    };
-    uint8_t full;
+        struct {
+                uint8_t blue : 2;
+                uint8_t green : 3;
+                uint8_t red : 3;
+        };
+        uint8_t full;
 } lv_color8_t;
 
 typedef union {
-    struct {
+        struct {
 #if LV_COLOR_16_SWAP == 0
-        uint16_t blue : 5;
-        uint16_t green : 6;
-        uint16_t red : 5;
+                uint16_t blue : 5;
+                uint16_t green : 6;
+                uint16_t red : 5;
 #else
-        uint16_t green_h : 3;
-        uint16_t red : 5;
-        uint16_t blue : 5;
-        uint16_t green_l : 3;
+                uint16_t green_h : 3;
+                uint16_t red : 5;
+                uint16_t blue : 5;
+                uint16_t green_l : 3;
 #endif
-    };
-    uint16_t full;
+        };
+        uint16_t full;
 } lv_color16_t;
 
 typedef union {
-    struct {
-        uint8_t blue;
-        uint8_t green;
-        uint8_t red;
-        uint8_t alpha;
-    };
-    uint32_t full;
+        struct {
+                uint8_t blue;
+                uint8_t green;
+                uint8_t red;
+                uint8_t alpha;
+        };
+        uint32_t full;
 } lv_color32_t;
 
 #if LV_COLOR_DEPTH == 1
@@ -154,9 +152,9 @@ typedef lv_color32_t lv_color_t;
 typedef uint8_t lv_opa_t;
 
 typedef struct {
-    uint16_t h;
-    uint8_t s;
-    uint8_t v;
+        uint16_t h;
+        uint8_t s;
+        uint8_t v;
 } lv_color_hsv_t;
 
 /**********************
@@ -299,10 +297,9 @@ static inline uint32_t lv_color_to32(lv_color_t color) {
     return ret.full;
 #else
     lv_color32_t ret;
-    ret.red = color.red * 8; /*(2^8 - 1)/(2^5 - 1) = 255/31 = 8*/
-    ret.green = ((color.green_h << 3) + color.green_l) *
-                4;             /*(2^8 - 1)/(2^6 - 1) = 255/63 = 4*/
-    ret.blue = color.blue * 8; /*(2^8 - 1)/(2^5 - 1) = 255/31 = 8*/
+    ret.red = color.red * 8;                                /*(2^8 - 1)/(2^5 - 1) = 255/31 = 8*/
+    ret.green = ((color.green_h << 3) + color.green_l) * 4; /*(2^8 - 1)/(2^6 - 1) = 255/63 = 4*/
+    ret.blue = color.blue * 8;                              /*(2^8 - 1)/(2^5 - 1) = 255/31 = 8*/
     ret.alpha = 0xFF;
     return ret.full;
 #endif
@@ -311,8 +308,7 @@ static inline uint32_t lv_color_to32(lv_color_t color) {
 #endif
 }
 
-static inline lv_color_t lv_color_mix(lv_color_t c1, lv_color_t c2,
-                                      uint8_t mix) {
+static inline lv_color_t lv_color_mix(lv_color_t c1, lv_color_t c2, uint8_t mix) {
     lv_color_t ret;
 #if LV_COLOR_DEPTH != 1
     /*LV_COLOR_DEPTH == 8, 16 or 32*/
@@ -325,11 +321,9 @@ static inline lv_color_t lv_color_mix(lv_color_t c1, lv_color_t c2,
     ret.green_h = g_out >> 3;
     ret.green_l = g_out & 0x7;
 #else
-    ret.green =
-        (uint16_t)((uint16_t)c1.green * mix + (c2.green * (255 - mix))) >> 8;
+    ret.green = (uint16_t)((uint16_t)c1.green * mix + (c2.green * (255 - mix))) >> 8;
 #endif
-    ret.blue =
-        (uint16_t)((uint16_t)c1.blue * mix + (c2.blue * (255 - mix))) >> 8;
+    ret.blue = (uint16_t)((uint16_t)c1.blue * mix + (c2.blue * (255 - mix))) >> 8;
 #if LV_COLOR_DEPTH == 32
     ret.alpha = 0xFF;
 #endif
@@ -365,16 +359,14 @@ static inline uint8_t lv_color_brightness(lv_color_t color) {
 #if LV_COLOR_16_SWAP == 0
 #define LV_COLOR_MAKE(r8, g8, b8) ((lv_color_t){{b8 >> 3, g8 >> 2, r8 >> 3}})
 #else
-#define LV_COLOR_MAKE(r8, g8, b8)                                              \
-    ((lv_color_t){{g8 >> 5, r8 >> 3, b8 >> 3, (g8 >> 2) & 0x7}})
+#define LV_COLOR_MAKE(r8, g8, b8) ((lv_color_t){{g8 >> 5, r8 >> 3, b8 >> 3, (g8 >> 2) & 0x7}})
 #endif
 #elif LV_COLOR_DEPTH == 32
 #ifdef __cplusplus
-#define LV_COLOR_MAKE(r8, g8, b8)                                              \
+#define LV_COLOR_MAKE(r8, g8, b8)                                                                                      \
     lv_color_t { b8, g8, r8, 0xff }
 #else
-#define LV_COLOR_MAKE(r8, g8, b8)                                              \
-    ((lv_color_t){{b8, g8, r8, 0xff}}) /*Fix 0xff alpha*/
+#define LV_COLOR_MAKE(r8, g8, b8) ((lv_color_t){{b8, g8, r8, 0xff}}) /*Fix 0xff alpha*/
 #endif
 #endif
 #else
@@ -385,20 +377,18 @@ static inline uint8_t lv_color_brightness(lv_color_t color) {
 #elif LV_COLOR_DEPTH == 16
 #define LV_COLOR_MAKE(r8, g8, b8) ((lv_color_t){{r8 >> 3, g8 >> 2, b8 >> 3}})
 #elif LV_COLOR_DEPTH == 32
-#define LV_COLOR_MAKE(r8, g8, b8)                                              \
-    ((lv_color_t){{0xff, r8, g8, b8}}) /*Fix 0xff alpha*/
+#define LV_COLOR_MAKE(r8, g8, b8) ((lv_color_t){{0xff, r8, g8, b8}}) /*Fix 0xff alpha*/
 #endif
 #endif
 
-#define LV_COLOR_HEX(c)                                                        \
-    LV_COLOR_MAKE((uint8_t)((uint32_t)((uint32_t)c >> 16) & 0xFF),             \
-                  (uint8_t)((uint32_t)((uint32_t)c >> 8) & 0xFF),              \
+#define LV_COLOR_HEX(c)                                                                                                \
+    LV_COLOR_MAKE((uint8_t)((uint32_t)((uint32_t)c >> 16) & 0xFF), (uint8_t)((uint32_t)((uint32_t)c >> 8) & 0xFF),     \
                   (uint8_t)((uint32_t)c & 0xFF))
 
 /*Usage LV_COLOR_HEX3(0x16C) which means LV_COLOR_HEX(0x1166CC)*/
-#define LV_COLOR_HEX3(c)                                                       \
-    LV_COLOR_MAKE((uint8_t)(((c >> 4) & 0xF0) | ((c >> 8) & 0xF)),             \
-                  (uint8_t)((uint32_t)(c & 0xF0) | ((c & 0xF0) >> 4)),         \
+#define LV_COLOR_HEX3(c)                                                                                               \
+    LV_COLOR_MAKE((uint8_t)(((c >> 4) & 0xF0) | ((c >> 8) & 0xF)),                                                     \
+                  (uint8_t)((uint32_t)(c & 0xF0) | ((c & 0xF0) >> 4)),                                                 \
                   (uint8_t)((uint32_t)(c & 0xF) | ((c & 0xF) << 4)))
 
 static inline lv_color_t lv_color_hex(uint32_t c) { return LV_COLOR_HEX(c); }

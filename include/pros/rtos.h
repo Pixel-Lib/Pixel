@@ -159,8 +159,8 @@ uint64_t micros(void);
  * error occurred, NULL will be returned and errno can be checked for hints as
  * to why task_create failed.
  */
-task_t task_create(task_fn_t function, void *const parameters, uint32_t prio,
-                   const uint16_t stack_depth, const char *const name);
+task_t task_create(task_fn_t function, void *const parameters, uint32_t prio, const uint16_t stack_depth,
+                   const char *const name);
 
 /**
  * Removes a task from the RTOS real time kernel's management. The task being
@@ -347,8 +347,7 @@ void task_join(task_t task);
  * needing to overwrite, 1 otherwise.
  * For all other NOTIFY_ACTION values: always return 0
  */
-uint32_t task_notify_ext(task_t task, uint32_t value, notify_action_e_t action,
-                         uint32_t *prev_value);
+uint32_t task_notify_ext(task_t task, uint32_t value, notify_action_e_t action, uint32_t *prev_value);
 
 /**
  * Waits for a notification to be nonzero.

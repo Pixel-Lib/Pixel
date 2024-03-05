@@ -124,10 +124,8 @@ static constexpr std::int8_t adiUpdateRate = 10;
 constexpr double ipow(const double base, const int expo) {
     return (expo == 0) ? 1
            : expo == 1 ? base
-           : expo > 1
-               ? ((expo & 1) ? base * ipow(base, expo - 1)
-                             : ipow(base, expo / 2) * ipow(base, expo / 2))
-               : 1 / ipow(base, -expo);
+           : expo > 1  ? ((expo & 1) ? base * ipow(base, expo - 1) : ipow(base, expo / 2) * ipow(base, expo / 2))
+                       : 1 / ipow(base, -expo);
 }
 
 /**
@@ -140,8 +138,7 @@ constexpr double ipow(const double base, const int expo) {
  * @param max The upper bound of range.
  * @return The remapped value.
  */
-constexpr double cutRange(const double value, const double min,
-                          const double max) {
+constexpr double cutRange(const double value, const double min, const double max) {
     const double middle = max - ((max - min) / 2);
 
     if (value > min && value < middle) {
@@ -162,8 +159,7 @@ constexpr double cutRange(const double value, const double min,
  * @param max The upper bound of deadband.
  * @return The input value or `0` if it is in the range `[min, max]`.
  */
-constexpr double deadband(const double value, const double min,
-                          const double max) {
+constexpr double deadband(const double value, const double min, const double max) {
     return std::clamp(value, min, max) == value ? 0 : value;
 }
 
@@ -178,8 +174,7 @@ constexpr double deadband(const double value, const double min,
  * @param newMax The new range upper bound.
  * @return The input value in the new range `[newMin, newMax]`.
  */
-constexpr double remapRange(const double value, const double oldMin,
-                            const double oldMax, const double newMin,
+constexpr double remapRange(const double value, const double oldMin, const double oldMax, const double newMin,
                             const double newMax) {
     return (value - oldMin) * ((newMax - newMin) / (oldMax - oldMin)) + newMin;
 }
@@ -210,9 +205,7 @@ constexpr auto boolToSign(const bool b) noexcept { return b ? 1 : -1; }
  * @param rhs The right-hand side.
  * @return `lhs` mod `rhs`.
  */
-constexpr long modulus(const long lhs, const long rhs) noexcept {
-    return ((lhs % rhs) + rhs) % rhs;
-}
+constexpr long modulus(const long lhs, const long rhs) noexcept { return ((lhs % rhs) + rhs) % rhs; }
 
 /**
  * Converts a gearset to its TPR.
@@ -220,8 +213,7 @@ constexpr long modulus(const long lhs, const long rhs) noexcept {
  * @param igearset The gearset.
  * @return The corresponding TPR.
  */
-constexpr std::int32_t
-gearsetToTPR(const AbstractMotor::gearset igearset) noexcept {
+constexpr std::int32_t gearsetToTPR(const AbstractMotor::gearset igearset) noexcept {
     switch (igearset) {
         case AbstractMotor::gearset::red: return imev5RedTPR;
         case AbstractMotor::gearset::green: return imev5GreenTPR;

@@ -13,21 +13,20 @@
 /* Memory size which will be used by the library
  * to store the graphical objects and other data */
 #ifndef LV_MEM_CUSTOM
-#define LV_MEM_CUSTOM                                                          \
-    0 /*1: use custom malloc/free, 0: use the built-in                         \
+#define LV_MEM_CUSTOM                                                                                                  \
+    0 /*1: use custom malloc/free, 0: use the built-in                                                                 \
          lv_mem_alloc/lv_mem_free*/
 #endif
 #if LV_MEM_CUSTOM == 0
 #ifndef LV_MEM_SIZE
-#define LV_MEM_SIZE                                                            \
-    (64U * 1024U) /*Size memory used by `lv_mem_alloc` in bytes (>= 2kB)*/
+#define LV_MEM_SIZE (64U * 1024U) /*Size memory used by `lv_mem_alloc` in bytes (>= 2kB)*/
 #endif
 #ifndef LV_MEM_ATTR
 #define LV_MEM_ATTR /*Complier prefix for big array declaration*/
 #endif
 #ifndef LV_MEM_ADR
-#define LV_MEM_ADR                                                             \
-    0 /*Set an address for memory pool instead of allocation it as an array.   \
+#define LV_MEM_ADR                                                                                                     \
+    0 /*Set an address for memory pool instead of allocation it as an array.                                           \
          Can be in external SRAM too.*/
 #endif
 #ifndef LV_MEM_AUTO_DEFRAG
@@ -35,8 +34,7 @@
 #endif
 #else /*LV_MEM_CUSTOM*/
 #ifndef LV_MEM_CUSTOM_INCLUDE
-#define LV_MEM_CUSTOM_INCLUDE                                                  \
-    <stdlib.h> /*Header for the dynamic memory function*/
+#define LV_MEM_CUSTOM_INCLUDE <stdlib.h> /*Header for the dynamic memory function*/
 #endif
 #ifndef LV_MEM_CUSTOM_ALLOC
 #define LV_MEM_CUSTOM_ALLOC malloc /*Wrapper to malloc*/
@@ -57,8 +55,8 @@
 #define LV_MEM_CUSTOM_REALLOC your_realloc /*Wrapper to realloc*/
 #endif
 #ifndef LV_MEM_CUSTOM_GET_SIZE
-#define LV_MEM_CUSTOM_GET_SIZE                                                 \
-    your_mem_get_size /*Wrapper to                                             \
+#define LV_MEM_CUSTOM_GET_SIZE                                                                                         \
+    your_mem_get_size /*Wrapper to                                                                                     \
                          lv_mem_get_size*/
 #endif
 #ifndef LV_GC_INCLUDE
@@ -117,8 +115,8 @@
 /* Bit-per-pixel of VDB. Useful for monochrome or non-standard color format
  * displays. Special formats are handled with `disp_drv.vdb_wr`)*/
 #ifndef LV_VDB_PX_BPP
-#define LV_VDB_PX_BPP                                                          \
-    LV_COLOR_SIZE /*LV_COLOR_SIZE comes from LV_COLOR_DEPTH below to set 8, 16 \
+#define LV_VDB_PX_BPP                                                                                                  \
+    LV_COLOR_SIZE /*LV_COLOR_SIZE comes from LV_COLOR_DEPTH below to set 8, 16                                         \
                      or 32 bit pixel size automatically */
 #endif
 
@@ -163,23 +161,21 @@
 #define LV_INDEV_READ_PERIOD 50 /*Input device read period in milliseconds*/
 #endif
 #ifndef LV_INDEV_POINT_MARKER
-#define LV_INDEV_POINT_MARKER                                                  \
-    0 /*Mark the pressed points  (required: USE_LV_REAL_DRAW = 1)*/
+#define LV_INDEV_POINT_MARKER 0 /*Mark the pressed points  (required: USE_LV_REAL_DRAW = 1)*/
 #endif
 #ifndef LV_INDEV_DRAG_LIMIT
 #define LV_INDEV_DRAG_LIMIT 10 /*Drag threshold in pixels */
 #endif
 #ifndef LV_INDEV_DRAG_THROW
-#define LV_INDEV_DRAG_THROW                                                    \
-    20 /*Drag throw slow-down in [%] (must be > 0). Greater value means faster \
+#define LV_INDEV_DRAG_THROW                                                                                            \
+    20 /*Drag throw slow-down in [%] (must be > 0). Greater value means faster                                         \
           slow-down */
 #endif
 #ifndef LV_INDEV_LONG_PRESS_TIME
 #define LV_INDEV_LONG_PRESS_TIME 400 /*Long press time in milliseconds*/
 #endif
 #ifndef LV_INDEV_LONG_PRESS_REP_TIME
-#define LV_INDEV_LONG_PRESS_REP_TIME                                           \
-    100 /*Repeated trigger period in long press [ms] */
+#define LV_INDEV_LONG_PRESS_REP_TIME 100 /*Repeated trigger period in long press [ms] */
 #endif
 
 /*Color settings*/
@@ -187,18 +183,18 @@
 #define LV_COLOR_DEPTH 16 /*Color depth: 1/8/16/32*/
 #endif
 #ifndef LV_COLOR_16_SWAP
-#define LV_COLOR_16_SWAP                                                       \
-    0 /*Swap the 2 bytes of RGB565 color. Useful if the display has a 8 bit    \
+#define LV_COLOR_16_SWAP                                                                                               \
+    0 /*Swap the 2 bytes of RGB565 color. Useful if the display has a 8 bit                                            \
          interface (e.g. SPI)*/
 #endif
 #ifndef LV_COLOR_SCREEN_TRANSP
-#define LV_COLOR_SCREEN_TRANSP                                                 \
-    0 /*1: Enable screen transparency. Useful for OSD or other overlapping     \
+#define LV_COLOR_SCREEN_TRANSP                                                                                         \
+    0 /*1: Enable screen transparency. Useful for OSD or other overlapping                                             \
          GUIs. Requires ARGB8888 colors*/
 #endif
 #ifndef LV_COLOR_TRANSP
-#define LV_COLOR_TRANSP                                                        \
-    LV_COLOR_LIME /*Images pixels with this color will not be drawn (with      \
+#define LV_COLOR_TRANSP                                                                                                \
+    LV_COLOR_LIME /*Images pixels with this color will not be drawn (with                                              \
                      chroma keying)*/
 #endif
 
@@ -210,20 +206,20 @@
 #define LV_TXT_BREAK_CHARS " ,.;:-_" /*Can break texts on these chars*/
 #endif
 #ifndef LV_TXT_LINE_BREAK_LONG_LEN
-#define LV_TXT_LINE_BREAK_LONG_LEN                                             \
-    12 /* If a character is at least this long, will break wherever            \
-        * "prettiest"                                                          \
+#define LV_TXT_LINE_BREAK_LONG_LEN                                                                                     \
+    12 /* If a character is at least this long, will break wherever                                                    \
+        * "prettiest"                                                                                                  \
         */
 #endif
 #ifndef LV_TXT_LINE_BREAK_LONG_PRE_MIN_LEN
-#define LV_TXT_LINE_BREAK_LONG_PRE_MIN_LEN                                     \
-    3 /* Minimum number of characters of a word to put on a line before a      \
-       * break                                                                 \
+#define LV_TXT_LINE_BREAK_LONG_PRE_MIN_LEN                                                                             \
+    3 /* Minimum number of characters of a word to put on a line before a                                              \
+       * break                                                                                                         \
        */
 #endif
 #ifndef LV_TXT_LINE_BREAK_LONG_POST_MIN_LEN
-#define LV_TXT_LINE_BREAK_LONG_POST_MIN_LEN                                    \
-    1 /* Minimum number of characters of a word to put on a line after a break \
+#define LV_TXT_LINE_BREAK_LONG_POST_MIN_LEN                                                                            \
+    1 /* Minimum number of characters of a word to put on a line after a break                                         \
        */
 #endif
 
@@ -241,57 +237,53 @@
 #define USE_LV_GPU 1 /*1: Enable GPU interface*/
 #endif
 #ifndef USE_LV_REAL_DRAW
-#define USE_LV_REAL_DRAW                                                       \
-    1 /*1: Enable function which draw directly to the frame buffer instead of  \
+#define USE_LV_REAL_DRAW                                                                                               \
+    1 /*1: Enable function which draw directly to the frame buffer instead of                                          \
          VDB (required if LV_VDB_SIZE = 0)*/
 #endif
 #ifndef USE_LV_FILESYSTEM
-#define USE_LV_FILESYSTEM                                                      \
-    1 /*1: Enable file system (might be required for images*/
+#define USE_LV_FILESYSTEM 1 /*1: Enable file system (might be required for images*/
 #endif
 #ifndef USE_LV_MULTI_LANG
-#define USE_LV_MULTI_LANG                                                      \
-    0 /* Number of languages for labels to store (0: to disable this           \
+#define USE_LV_MULTI_LANG                                                                                              \
+    0 /* Number of languages for labels to store (0: to disable this                                                   \
          feature)*/
 #endif
 
 /*Compiler settings*/
 #ifndef LV_ATTRIBUTE_TICK_INC
-#define LV_ATTRIBUTE_TICK_INC /* Define a custom attribute to `lv_tick_inc`    \
+#define LV_ATTRIBUTE_TICK_INC /* Define a custom attribute to `lv_tick_inc`                                            \
                                  function */
 #endif
 #ifndef LV_ATTRIBUTE_TASK_HANDLER
-#define LV_ATTRIBUTE_TASK_HANDLER /* Define a custom attribute to              \
+#define LV_ATTRIBUTE_TASK_HANDLER /* Define a custom attribute to                                                      \
                                      `lv_task_handler` function */
 #endif
 #ifndef LV_ATTRIBUTE_MEM_ALIGN
-#define LV_ATTRIBUTE_MEM_ALIGN /* With size optimization (-Os) the compiler    \
-                                  might not align data to 4 or 8 byte          \
-                                  boundary. This alignment will be explicitly  \
+#define LV_ATTRIBUTE_MEM_ALIGN /* With size optimization (-Os) the compiler                                            \
+                                  might not align data to 4 or 8 byte                                                  \
+                                  boundary. This alignment will be explicitly                                          \
                                   applied where needed.*/
 #endif
 #ifndef LV_COMPILER_VLA_SUPPORTED
 #define LV_COMPILER_VLA_SUPPORTED 1 /* 1: Variable length array is supported*/
 #endif
 #ifndef LV_COMPILER_NON_CONST_INIT_SUPPORTED
-#define LV_COMPILER_NON_CONST_INIT_SUPPORTED                                   \
-    1 /* 1: Initialization with non constant values are supported */
+#define LV_COMPILER_NON_CONST_INIT_SUPPORTED 1 /* 1: Initialization with non constant values are supported */
 #endif
 
 /*HAL settings*/
 #ifndef LV_TICK_CUSTOM
-#define LV_TICK_CUSTOM                                                         \
-    0 /*1: use a custom tick source (removing the need to manually update the  \
+#define LV_TICK_CUSTOM                                                                                                 \
+    0 /*1: use a custom tick source (removing the need to manually update the                                          \
          tick with `lv_tick_inc`) */
 #endif
 #if LV_TICK_CUSTOM == 1
 #ifndef LV_TICK_CUSTOM_INCLUDE
-#define LV_TICK_CUSTOM_INCLUDE                                                 \
-    "something.h" /*Header for the sys time function*/
+#define LV_TICK_CUSTOM_INCLUDE "something.h" /*Header for the sys time function*/
 #endif
 #ifndef LV_TICK_CUSTOM_SYS_TIME_EXPR
-#define LV_TICK_CUSTOM_SYS_TIME_EXPR                                           \
-    (millis()) /*Expression evaluating to current systime in ms*/
+#define LV_TICK_CUSTOM_SYS_TIME_EXPR (millis()) /*Expression evaluating to current systime in ms*/
 #endif
 #endif /*LV_TICK_CUSTOM*/
 
@@ -321,16 +313,14 @@
  *  THEME USAGE
  *================*/
 #ifndef LV_THEME_LIVE_UPDATE
-#define LV_THEME_LIVE_UPDATE                                                   \
-    1 /*1: Allow theme switching at run time. Uses 8..10 kB of RAM*/
+#define LV_THEME_LIVE_UPDATE 1 /*1: Allow theme switching at run time. Uses 8..10 kB of RAM*/
 #endif
 
 #ifndef USE_LV_THEME_TEMPL
 #define USE_LV_THEME_TEMPL 0 /*Just for test*/
 #endif
 #ifndef USE_LV_THEME_DEFAULT
-#define USE_LV_THEME_DEFAULT                                                   \
-    1 /*Built mainly from the built-in styles. Consumes very few RAM*/
+#define USE_LV_THEME_DEFAULT 1 /*Built mainly from the built-in styles. Consumes very few RAM*/
 #endif
 #ifndef USE_LV_THEME_ALIEN
 #define USE_LV_THEME_ALIEN 1 /*Dark futuristic theme*/
@@ -342,15 +332,13 @@
 #define USE_LV_THEME_MONO 1 /*Mono color theme for monochrome displays*/
 #endif
 #ifndef USE_LV_THEME_MATERIAL
-#define USE_LV_THEME_MATERIAL                                                  \
-    1 /*Flat theme with bold colors and light shadows*/
+#define USE_LV_THEME_MATERIAL 1 /*Flat theme with bold colors and light shadows*/
 #endif
 #ifndef USE_LV_THEME_ZEN
 #define USE_LV_THEME_ZEN 1 /*Peaceful, mainly light theme */
 #endif
 #ifndef USE_LV_THEME_NEMO
-#define USE_LV_THEME_NEMO                                                      \
-    1 /*Water-like theme based on the movie "Finding Nemo"*/
+#define USE_LV_THEME_NEMO 1 /*Water-like theme based on the movie "Finding Nemo"*/
 #endif
 
 /*==================
@@ -427,24 +415,22 @@
 #endif
 
 #ifndef LV_FONT_DEFAULT
-#define LV_FONT_DEFAULT                                                        \
-    &lv_font_dejavu_20 /*Always set a default font from the built-in fonts*/
+#define LV_FONT_DEFAULT &lv_font_dejavu_20 /*Always set a default font from the built-in fonts*/
 #endif
 
 /*===================
  *  LV_OBJ SETTINGS
  *==================*/
 #ifndef LV_OBJ_FREE_NUM_TYPE
-#define LV_OBJ_FREE_NUM_TYPE                                                   \
-    uint32_t /*Type of free number attribute (comment out disable free         \
+#define LV_OBJ_FREE_NUM_TYPE                                                                                           \
+    uint32_t /*Type of free number attribute (comment out disable free                                                 \
                 number)*/
 #endif
 #ifndef LV_OBJ_FREE_PTR
 #define LV_OBJ_FREE_PTR 1 /*Enable the free pointer attribute*/
 #endif
 #ifndef LV_OBJ_REALIGN
-#define LV_OBJ_REALIGN                                                         \
-    1 /*Enable `lv_obj_realaign()` based on `lv_obj_align()` parameters*/
+#define LV_OBJ_REALIGN 1 /*Enable `lv_obj_realaign()` based on `lv_obj_align()` parameters*/
 #endif
 
 /*==================
@@ -464,8 +450,8 @@
 #endif
 #if USE_LV_LABEL != 0
 #ifndef LV_LABEL_SCROLL_SPEED
-#define LV_LABEL_SCROLL_SPEED                                                  \
-    25 /*Hor, or ver. scroll speed [px/sec] in 'LV_LABEL_LONG_SCROLL/ROLL'     \
+#define LV_LABEL_SCROLL_SPEED                                                                                          \
+    25 /*Hor, or ver. scroll speed [px/sec] in 'LV_LABEL_LONG_SCROLL/ROLL'                                             \
           mode*/
 #endif
 #endif
@@ -518,8 +504,7 @@
 #endif
 #if USE_LV_TABVIEW != 0
 #ifndef LV_TABVIEW_ANIM_TIME
-#define LV_TABVIEW_ANIM_TIME                                                   \
-    300 /*Time of slide animation [ms] (0: no animation)*/
+#define LV_TABVIEW_ANIM_TIME 300 /*Time of slide animation [ms] (0: no animation)*/
 #endif
 #endif
 
@@ -529,8 +514,7 @@
 #endif
 #if USE_LV_TILEVIEW
 #ifndef LV_TILEVIEW_ANIM_TIME
-#define LV_TILEVIEW_ANIM_TIME                                                  \
-    300 /*Time of slide animation [ms] (0: no animation)*/
+#define LV_TILEVIEW_ANIM_TIME 300 /*Time of slide animation [ms] (0: no animation)*/
 #endif
 #endif
 
@@ -631,8 +615,8 @@
 #endif
 #if USE_LV_BTN != 0
 #ifndef LV_BTN_INK_EFFECT
-#define LV_BTN_INK_EFFECT                                                      \
-    1 /*Enable button-state animations - draw a circle on click (dependencies: \
+#define LV_BTN_INK_EFFECT                                                                                              \
+    1 /*Enable button-state animations - draw a circle on click (dependencies:                                         \
          USE_LV_ANIMATION)*/
 #endif
 #endif
@@ -643,8 +627,8 @@
 #endif
 #if USE_LV_IMGBTN
 #ifndef LV_IMGBTN_TILED
-#define LV_IMGBTN_TILED                                                        \
-    0 /*1: The imgbtn requires left, mid and right parts and the width can be  \
+#define LV_IMGBTN_TILED                                                                                                \
+    0 /*1: The imgbtn requires left, mid and right parts and the width can be                                          \
          set freely*/
 #endif
 #endif
@@ -671,8 +655,8 @@
 #endif
 #if USE_LV_LIST != 0
 #ifndef LV_LIST_FOCUS_TIME
-#define LV_LIST_FOCUS_TIME                                                     \
-    100 /*Default animation time of focusing to a list element [ms] (0: no     \
+#define LV_LIST_FOCUS_TIME                                                                                             \
+    100 /*Default animation time of focusing to a list element [ms] (0: no                                             \
            animation)  */
 #endif
 #endif
@@ -683,8 +667,7 @@
 #endif
 #if USE_LV_DDLIST != 0
 #ifndef LV_DDLIST_ANIM_TIME
-#define LV_DDLIST_ANIM_TIME                                                    \
-    200 /*Open and close default animation time [ms] (0: no animation)*/
+#define LV_DDLIST_ANIM_TIME 200 /*Open and close default animation time [ms] (0: no animation)*/
 #endif
 #endif
 
@@ -694,8 +677,8 @@
 #endif
 #if USE_LV_ROLLER != 0
 #ifndef LV_ROLLER_ANIM_TIME
-#define LV_ROLLER_ANIM_TIME                                                    \
-    200 /*Focus animation time [ms] (0: no                                     \
+#define LV_ROLLER_ANIM_TIME                                                                                            \
+    200 /*Focus animation time [ms] (0: no                                                                             \
            animation)*/
 #endif
 #endif
@@ -722,8 +705,7 @@
 #endif
 #endif
 
-#if defined(_MSC_VER) &&                                                       \
-    !defined(_CRT_SECURE_NO_WARNINGS) /* Disable warnings for Visual Studio*/
+#if defined(_MSC_VER) && !defined(_CRT_SECURE_NO_WARNINGS) /* Disable warnings for Visual Studio*/
 #ifndef _CRT_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
 #endif

@@ -9,6 +9,5 @@
 
 namespace okapi {
 template <typename Input, typename Output>
-class IterativePositionController : public IterativeController<Input, Output> {
-};
+class IterativePositionController : public IterativeController<Input, Output> {};
 }  // namespace okapi

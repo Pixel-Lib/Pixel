@@ -35,9 +35,9 @@ extern "C" {
 enum {
     LV_TXT_FLAG_NONE = 0x00,
     LV_TXT_FLAG_RECOLOR = 0x01, /*Enable parsing of recolor command*/
-    LV_TXT_FLAG_EXPAND = 0x02, /*Ignore width to avoid automatic word wrapping*/
-    LV_TXT_FLAG_CENTER = 0x04, /*Align the text to the middle*/
-    LV_TXT_FLAG_RIGHT = 0x08,  /*Align the text to the right*/
+    LV_TXT_FLAG_EXPAND = 0x02,  /*Ignore width to avoid automatic word wrapping*/
+    LV_TXT_FLAG_CENTER = 0x04,  /*Align the text to the middle*/
+    LV_TXT_FLAG_RIGHT = 0x08,   /*Align the text to the right*/
 };
 typedef uint8_t lv_txt_flag_t;
 
@@ -63,10 +63,8 @@ typedef uint8_t lv_txt_cmd_state_t;
  * @param max_width max with of the text (break the lines to fit this size) Set
  * CORD_MAX to avoid line breaks
  */
-void lv_txt_get_size(lv_point_t *size_res, const char *text,
-                     const lv_font_t *font, lv_coord_t letter_space,
-                     lv_coord_t line_space, lv_coord_t max_width,
-                     lv_txt_flag_t flag);
+void lv_txt_get_size(lv_point_t *size_res, const char *text, const lv_font_t *font, lv_coord_t letter_space,
+                     lv_coord_t line_space, lv_coord_t max_width, lv_txt_flag_t flag);
 
 /**
  * Get the next line of text. Check line length and break chars too.
@@ -79,8 +77,7 @@ void lv_txt_get_size(lv_point_t *size_res, const char *text,
  * @return the index of the first char of the new line (in byte index not letter
  * index. With UTF-8 they are different)
  */
-uint16_t lv_txt_get_next_line(const char *txt, const lv_font_t *font,
-                              lv_coord_t letter_space, lv_coord_t max_width,
+uint16_t lv_txt_get_next_line(const char *txt, const lv_font_t *font, lv_coord_t letter_space, lv_coord_t max_width,
                               lv_txt_flag_t flag);
 
 /**
@@ -93,8 +90,7 @@ uint16_t lv_txt_get_next_line(const char *txt, const lv_font_t *font,
  * @param flags settings for the text from 'txt_flag_t' enum
  * @return length of a char_num long text
  */
-lv_coord_t lv_txt_get_width(const char *txt, uint16_t length,
-                            const lv_font_t *font, lv_coord_t letter_space,
+lv_coord_t lv_txt_get_width(const char *txt, uint16_t length, const lv_font_t *font, lv_coord_t letter_space,
                             lv_txt_flag_t flag);
 
 /**

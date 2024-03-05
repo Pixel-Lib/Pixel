@@ -44,10 +44,10 @@ extern "C" {
 
 /*Data of check box*/
 typedef struct {
-    lv_btn_ext_t bg_btn; /*Ext. of ancestor*/
-    /*New data for this type */
-    lv_obj_t *bullet; /*Pointer to button*/
-    lv_obj_t *label;  /*Pointer to label*/
+        lv_btn_ext_t bg_btn; /*Ext. of ancestor*/
+        /*New data for this type */
+        lv_obj_t *bullet; /*Pointer to button*/
+        lv_obj_t *label;  /*Pointer to label*/
 } lv_cb_ext_t;
 
 enum {
@@ -97,9 +97,7 @@ static inline void lv_cb_set_checked(lv_obj_t *cb, bool checked) {
  * Make the check box inactive (disabled)
  * @param cb pointer to a check box object
  */
-static inline void lv_cb_set_inactive(lv_obj_t *cb) {
-    lv_btn_set_state(cb, LV_BTN_STATE_INA);
-}
+static inline void lv_cb_set_inactive(lv_obj_t *cb) { lv_btn_set_state(cb, LV_BTN_STATE_INA); }
 
 /**
  * Set a function to call when the check box is clicked
@@ -142,9 +140,7 @@ static inline bool lv_cb_is_checked(const lv_obj_t *cb) {
  * @param cb pointer to a button object
  * @return pointer to the action function
  */
-static inline lv_action_t lv_cb_get_action(const lv_obj_t *cb) {
-    return lv_btn_get_action(cb, LV_BTN_ACTION_CLICK);
-}
+static inline lv_action_t lv_cb_get_action(const lv_obj_t *cb) { return lv_btn_get_action(cb, LV_BTN_ACTION_CLICK); }
 
 /**
  * Get a style of a button

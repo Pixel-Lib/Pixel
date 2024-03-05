@@ -102,8 +102,7 @@ uint32_t link_init(uint8_t port, const char *link_id, link_type_e_t type);
  *
  * \return PROS_ERR if initialization fails, 1 if the initialization succeeds.
  */
-uint32_t link_init_override(uint8_t port, const char *link_id,
-                            link_type_e_t type);
+uint32_t link_init_override(uint8_t port, const char *link_id, link_type_e_t type);
 
 /**
  * Checks if a radio link on a port is active or not.
