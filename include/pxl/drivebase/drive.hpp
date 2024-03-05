@@ -8,6 +8,7 @@
 #include "pxl/aSync.hpp"
 #include "pxl/drivebase/odom.hpp"
 #include "pxl/drivebase/trackingwheel.hpp"
+#include "pxl/parametrics/pose.hpp"
 #include "pxl/pid.hpp"
 
 namespace pxl {
@@ -20,6 +21,7 @@ struct OdomSensors {
         TrackingWheel *horizontal2;
         pros::IMU *imu;
 };
+
 class Drivetrain {
     public:
         Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *rightMotors, float trackWidth, float wheelDiameter,
@@ -60,6 +62,8 @@ class Drivebase {
         void calibrateIMU(OdomSensors sensors);
         void setSensors(OdomSensors sensors);
         void calibrate(bool calibrateIMU);
+
+        void move_to_pose(Pose pose);
 
     private:
         Drivetrain drivetrain;
