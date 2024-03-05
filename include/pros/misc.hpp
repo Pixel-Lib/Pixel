@@ -257,71 +257,71 @@ class Controller {
 };
 
 namespace battery {
-/**
- * Gets the current voltage of the battery, as reported by VEXos.
- *
- * This function uses the following values of errno when an error state is
- * reached:
- * EACCES - Another resource is currently trying to access the battery port.
- *
- * \return The current voltage of the battery
- */
-double get_capacity(void);
+    /**
+     * Gets the current voltage of the battery, as reported by VEXos.
+     *
+     * This function uses the following values of errno when an error state is
+     * reached:
+     * EACCES - Another resource is currently trying to access the battery port.
+     *
+     * \return The current voltage of the battery
+     */
+    double get_capacity(void);
 
-/**
- * Gets the current current of the battery in milliamps, as reported by VEXos.
- *
- * This function uses the following values of errno when an error state is
- * reached:
- * EACCES - Another resource is currently trying to access the battery port.
- *
- * \return The current current of the battery
- */
-int32_t get_current(void);
+    /**
+     * Gets the current current of the battery in milliamps, as reported by VEXos.
+     *
+     * This function uses the following values of errno when an error state is
+     * reached:
+     * EACCES - Another resource is currently trying to access the battery port.
+     *
+     * \return The current current of the battery
+     */
+    int32_t get_current(void);
 
-/**
- * Gets the current temperature of the battery, as reported by VEXos.
- *
- * This function uses the following values of errno when an error state is
- * reached:
- * EACCES - Another resource is currently trying to access the battery port.
- *
- * \return The current temperature of the battery
- */
-double get_temperature(void);
+    /**
+     * Gets the current temperature of the battery, as reported by VEXos.
+     *
+     * This function uses the following values of errno when an error state is
+     * reached:
+     * EACCES - Another resource is currently trying to access the battery port.
+     *
+     * \return The current temperature of the battery
+     */
+    double get_temperature(void);
 
-/**
- * Gets the current capacity of the battery in millivolts, as reported by VEXos.
- *
- * This function uses the following values of errno when an error state is
- * reached:
- * EACCES - Another resource is currently trying to access the battery port.
- *
- * \return The current capacity of the battery
- */
-int32_t get_voltage(void);
+    /**
+     * Gets the current capacity of the battery in millivolts, as reported by VEXos.
+     *
+     * This function uses the following values of errno when an error state is
+     * reached:
+     * EACCES - Another resource is currently trying to access the battery port.
+     *
+     * \return The current capacity of the battery
+     */
+    int32_t get_voltage(void);
 }  // namespace battery
 
 namespace competition {
-/**
- * Get the current status of the competition control.
- *
- * \return The competition control status as a mask of bits with
- * COMPETITION_{ENABLED,AUTONOMOUS,CONNECTED}.
- */
-std::uint8_t get_status(void);
-std::uint8_t is_autonomous(void);
-std::uint8_t is_connected(void);
-std::uint8_t is_disabled(void);
+    /**
+     * Get the current status of the competition control.
+     *
+     * \return The competition control status as a mask of bits with
+     * COMPETITION_{ENABLED,AUTONOMOUS,CONNECTED}.
+     */
+    std::uint8_t get_status(void);
+    std::uint8_t is_autonomous(void);
+    std::uint8_t is_connected(void);
+    std::uint8_t is_disabled(void);
 }  // namespace competition
 
 namespace usd {
-/**
- * Checks if the SD card is installed.
- *
- * \return 1 if the SD card is installed, 0 otherwise
- */
-std::int32_t is_installed(void);
+    /**
+     * Checks if the SD card is installed.
+     *
+     * \return 1 if the SD card is installed, 0 otherwise
+     */
+    std::int32_t is_installed(void);
 }  // namespace usd
 }  // namespace pros
 

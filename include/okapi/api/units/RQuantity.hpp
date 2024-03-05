@@ -311,12 +311,12 @@ atan2(const RQuantity<M, L, T, A> &lhs, const RQuantity<M, L, T, A> &rhs) {
 }
 
 inline namespace literals {
-constexpr long double operator"" _pi(long double x) {
-    return static_cast<double>(x) * 3.1415926535897932384626433832795;
-}
-constexpr long double operator"" _pi(unsigned long long int x) {
-    return static_cast<double>(x) * 3.1415926535897932384626433832795;
-}
+    constexpr long double operator"" _pi(long double x) {
+        return static_cast<double>(x) * 3.1415926535897932384626433832795;
+    }
+    constexpr long double operator"" _pi(unsigned long long int x) {
+        return static_cast<double>(x) * 3.1415926535897932384626433832795;
+    }
 }  // namespace literals
 }  // namespace okapi
 

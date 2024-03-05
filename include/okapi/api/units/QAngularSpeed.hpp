@@ -27,7 +27,7 @@ static QAngularSpeed convertHertzToRadPerSec(QFrequency in) { return (in.convert
 #pragma GCC diagnostic pop
 
 inline namespace literals {
-constexpr QAngularSpeed operator"" _rpm(long double x) { return x * rpm; }
-constexpr QAngularSpeed operator"" _rpm(unsigned long long int x) { return static_cast<double>(x) * rpm; }
+    constexpr QAngularSpeed operator"" _rpm(long double x) { return x * rpm; }
+    constexpr QAngularSpeed operator"" _rpm(unsigned long long int x) { return static_cast<double>(x) * rpm; }
 }  // namespace literals
 }  // namespace okapi

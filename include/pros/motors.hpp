@@ -1482,8 +1482,8 @@ class Motor_Group {
 using MotorGroup = Motor_Group;  // alias
 
 namespace literals {
-const pros::Motor operator"" _mtr(const unsigned long long int m);
-const pros::Motor operator"" _rmtr(const unsigned long long int m);
+    const pros::Motor operator"" _mtr(const unsigned long long int m);
+    const pros::Motor operator"" _rmtr(const unsigned long long int m);
 }  // namespace literals
 }  // namespace pros
 #endif  // _PROS_MOTORS_HPP_

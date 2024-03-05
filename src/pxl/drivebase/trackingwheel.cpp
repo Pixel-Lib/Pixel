@@ -68,8 +68,6 @@ float TrackingWheel::getDistanceDelta(bool update) {
 float TrackingWheel::getOffset() { return this->distance; }
 
 // Get the type of wheel (0 for encoder/rotation, 1 for motor group)
-int TrackingWheel::getType() {
-    return (this->motors != nullptr) ? 1 : 0;
-}
+int TrackingWheel::getType() { return (this->motors != nullptr) ? 1 : 0; }
 
 }  // namespace pxl

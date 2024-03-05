@@ -26,23 +26,23 @@ constexpr QLength mile = 5280 * foot;
 constexpr QLength tile = 24 * inch;
 
 inline namespace literals {
-constexpr QLength operator"" _mm(long double x) { return static_cast<double>(x) * millimeter; }
-constexpr QLength operator"" _cm(long double x) { return static_cast<double>(x) * centimeter; }
-constexpr QLength operator"" _m(long double x) { return static_cast<double>(x) * meter; }
-constexpr QLength operator"" _km(long double x) { return static_cast<double>(x) * kilometer; }
-constexpr QLength operator"" _mi(long double x) { return static_cast<double>(x) * mile; }
-constexpr QLength operator"" _yd(long double x) { return static_cast<double>(x) * yard; }
-constexpr QLength operator"" _ft(long double x) { return static_cast<double>(x) * foot; }
-constexpr QLength operator"" _in(long double x) { return static_cast<double>(x) * inch; }
-constexpr QLength operator"" _tile(long double x) { return static_cast<double>(x) * tile; }
-constexpr QLength operator"" _mm(unsigned long long int x) { return static_cast<double>(x) * millimeter; }
-constexpr QLength operator"" _cm(unsigned long long int x) { return static_cast<double>(x) * centimeter; }
-constexpr QLength operator"" _m(unsigned long long int x) { return static_cast<double>(x) * meter; }
-constexpr QLength operator"" _km(unsigned long long int x) { return static_cast<double>(x) * kilometer; }
-constexpr QLength operator"" _mi(unsigned long long int x) { return static_cast<double>(x) * mile; }
-constexpr QLength operator"" _yd(unsigned long long int x) { return static_cast<double>(x) * yard; }
-constexpr QLength operator"" _ft(unsigned long long int x) { return static_cast<double>(x) * foot; }
-constexpr QLength operator"" _in(unsigned long long int x) { return static_cast<double>(x) * inch; }
-constexpr QLength operator"" _tile(unsigned long long int x) { return static_cast<double>(x) * tile; }
+    constexpr QLength operator"" _mm(long double x) { return static_cast<double>(x) * millimeter; }
+    constexpr QLength operator"" _cm(long double x) { return static_cast<double>(x) * centimeter; }
+    constexpr QLength operator"" _m(long double x) { return static_cast<double>(x) * meter; }
+    constexpr QLength operator"" _km(long double x) { return static_cast<double>(x) * kilometer; }
+    constexpr QLength operator"" _mi(long double x) { return static_cast<double>(x) * mile; }
+    constexpr QLength operator"" _yd(long double x) { return static_cast<double>(x) * yard; }
+    constexpr QLength operator"" _ft(long double x) { return static_cast<double>(x) * foot; }
+    constexpr QLength operator"" _in(long double x) { return static_cast<double>(x) * inch; }
+    constexpr QLength operator"" _tile(long double x) { return static_cast<double>(x) * tile; }
+    constexpr QLength operator"" _mm(unsigned long long int x) { return static_cast<double>(x) * millimeter; }
+    constexpr QLength operator"" _cm(unsigned long long int x) { return static_cast<double>(x) * centimeter; }
+    constexpr QLength operator"" _m(unsigned long long int x) { return static_cast<double>(x) * meter; }
+    constexpr QLength operator"" _km(unsigned long long int x) { return static_cast<double>(x) * kilometer; }
+    constexpr QLength operator"" _mi(unsigned long long int x) { return static_cast<double>(x) * mile; }
+    constexpr QLength operator"" _yd(unsigned long long int x) { return static_cast<double>(x) * yard; }
+    constexpr QLength operator"" _ft(unsigned long long int x) { return static_cast<double>(x) * foot; }
+    constexpr QLength operator"" _in(unsigned long long int x) { return static_cast<double>(x) * inch; }
+    constexpr QLength operator"" _tile(unsigned long long int x) { return static_cast<double>(x) * tile; }
 }  // namespace literals
 }  // namespace okapi

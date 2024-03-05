@@ -20,9 +20,9 @@ constexpr QAngle radian(1.0);
 constexpr QAngle degree = static_cast<double>(2_pi / 360.0) * radian;
 
 inline namespace literals {
-constexpr QAngle operator"" _rad(long double x) { return QAngle(x); }
-constexpr QAngle operator"" _rad(unsigned long long int x) { return QAngle(static_cast<double>(x)); }
-constexpr QAngle operator"" _deg(long double x) { return static_cast<double>(x) * degree; }
-constexpr QAngle operator"" _deg(unsigned long long int x) { return static_cast<double>(x) * degree; }
+    constexpr QAngle operator"" _rad(long double x) { return QAngle(x); }
+    constexpr QAngle operator"" _rad(unsigned long long int x) { return QAngle(static_cast<double>(x)); }
+    constexpr QAngle operator"" _deg(long double x) { return static_cast<double>(x) * degree; }
+    constexpr QAngle operator"" _deg(unsigned long long int x) { return static_cast<double>(x) * degree; }
 }  // namespace literals
 }  // namespace okapi
