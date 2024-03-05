@@ -1,0 +1,138 @@
+\hypertarget{classpxl_1_1Odom}{}\doxysection{pxl\+::Odom Class Reference}
+\label{classpxl_1_1Odom}\index{pxl::Odom@{pxl::Odom}}
+
+
+{\ttfamily \#include $<$odom.\+hpp$>$}
+
+
+
+Collaboration diagram for pxl\+::Odom\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpxl_1_1Odom_a1d431b27727093276f854509297768e3}{Odom}} (std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}} $>$$>$ \&\mbox{\hyperlink{classpxl_1_1Odom_a147f2b027ea20a520998a7748a2c9d4a}{verticals}}, std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}} $>$$>$ \&\mbox{\hyperlink{classpxl_1_1Odom_a583a89074d5f9da5b7722fc471a49f41}{horizontals}}, std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}} $>$$>$ \&\mbox{\hyperlink{classpxl_1_1Odom_a25a62f0a15b5fabf52b8896d97a5016d}{drivetrain}}, std\+::vector$<$ std\+::shared\+\_\+ptr$<$ pros\+::\+IMU $>$$>$ \&\mbox{\hyperlink{classpxl_1_1Odom_a42fb961578d4d980af5531b570c7f43d}{imu}})
+\item 
+void \mbox{\hyperlink{classpxl_1_1Odom_aaa32e3e3b6d2871ad8bf394267b83753}{init}} ()
+\item 
+void \mbox{\hyperlink{classpxl_1_1Odom_a11b4f0251d39de3167c89d59466b8524}{calibrate}} (bool calibrate\+IMUs=true)
+\item 
+void \mbox{\hyperlink{classpxl_1_1Odom_a464b30a97f57c9de25bff0ffada5302b}{update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classpxl_1_1Odom_a380828e0d450f4f61a0188eb52af511e}{calc\+Delta\+Theta}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ pros\+::\+IMU $>$$>$ \&\mbox{\hyperlink{classpxl_1_1Odom_a42fb961578d4d980af5531b570c7f43d}{imu}}, bool \mbox{\hyperlink{classpxl_1_1Odom_a464b30a97f57c9de25bff0ffada5302b}{update}}=true)
+\item 
+float \mbox{\hyperlink{classpxl_1_1Odom_ae3dbd0d3ab06623505e424056e8c5de7}{calc\+Delta\+Theta}} (\mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}} \&tracker1, \mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}} \&tracker2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}} $>$ $>$ \mbox{\hyperlink{classpxl_1_1Odom_a147f2b027ea20a520998a7748a2c9d4a}{verticals}}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}} $>$ $>$ \mbox{\hyperlink{classpxl_1_1Odom_a583a89074d5f9da5b7722fc471a49f41}{horizontals}}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}} $>$ $>$ \mbox{\hyperlink{classpxl_1_1Odom_a25a62f0a15b5fabf52b8896d97a5016d}{drivetrain}}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ pros\+::\+IMU $>$ $>$ \mbox{\hyperlink{classpxl_1_1Odom_a42fb961578d4d980af5531b570c7f43d}{imu}}
+\item 
+\mbox{\hyperlink{classpxl_1_1Pose}{Pose}} \mbox{\hyperlink{classpxl_1_1Odom_a8744dce9b1354892fdb1d644984690bb}{pose}} = \mbox{\hyperlink{classpxl_1_1Pose}{Pose}}(0, 0, 0)
+\item 
+pros\+::\+Task $\ast$ \mbox{\hyperlink{classpxl_1_1Odom_a6799ea0db500086a975962604bf751ce}{Odom\+Task}} = nullptr
+\item 
+float \mbox{\hyperlink{classpxl_1_1Odom_a208a6d622031e9a15c0782e3e5a2c9fa}{last\+Angle}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpxl_1_1Odom_a1d431b27727093276f854509297768e3}\label{classpxl_1_1Odom_a1d431b27727093276f854509297768e3}} 
+\index{pxl::Odom@{pxl::Odom}!Odom@{Odom}}
+\index{Odom@{Odom}!pxl::Odom@{pxl::Odom}}
+\doxysubsubsection{\texorpdfstring{Odom()}{Odom()}}
+{\footnotesize\ttfamily pxl\+::\+Odom\+::\+Odom (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}} $>$$>$ \&}]{verticals,  }\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}} $>$$>$ \&}]{horizontals,  }\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}} $>$$>$ \&}]{drivetrain,  }\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ pros\+::\+IMU $>$$>$ \&}]{imu }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpxl_1_1Odom_a380828e0d450f4f61a0188eb52af511e}\label{classpxl_1_1Odom_a380828e0d450f4f61a0188eb52af511e}} 
+\index{pxl::Odom@{pxl::Odom}!calcDeltaTheta@{calcDeltaTheta}}
+\index{calcDeltaTheta@{calcDeltaTheta}!pxl::Odom@{pxl::Odom}}
+\doxysubsubsection{\texorpdfstring{calcDeltaTheta()}{calcDeltaTheta()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float pxl\+::\+Odom\+::calc\+Delta\+Theta (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ pros\+::\+IMU $>$$>$ \&}]{imu,  }\item[{bool}]{update = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpxl_1_1Odom_ae3dbd0d3ab06623505e424056e8c5de7}\label{classpxl_1_1Odom_ae3dbd0d3ab06623505e424056e8c5de7}} 
+\index{pxl::Odom@{pxl::Odom}!calcDeltaTheta@{calcDeltaTheta}}
+\index{calcDeltaTheta@{calcDeltaTheta}!pxl::Odom@{pxl::Odom}}
+\doxysubsubsection{\texorpdfstring{calcDeltaTheta()}{calcDeltaTheta()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float pxl\+::\+Odom\+::calc\+Delta\+Theta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}} \&}]{tracker1,  }\item[{\mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}} \&}]{tracker2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpxl_1_1Odom_a11b4f0251d39de3167c89d59466b8524}\label{classpxl_1_1Odom_a11b4f0251d39de3167c89d59466b8524}} 
+\index{pxl::Odom@{pxl::Odom}!calibrate@{calibrate}}
+\index{calibrate@{calibrate}!pxl::Odom@{pxl::Odom}}
+\doxysubsubsection{\texorpdfstring{calibrate()}{calibrate()}}
+{\footnotesize\ttfamily void pxl\+::\+Odom\+::calibrate (\begin{DoxyParamCaption}\item[{bool}]{calibrate\+IMUs = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpxl_1_1Odom_aaa32e3e3b6d2871ad8bf394267b83753}\label{classpxl_1_1Odom_aaa32e3e3b6d2871ad8bf394267b83753}} 
+\index{pxl::Odom@{pxl::Odom}!init@{init}}
+\index{init@{init}!pxl::Odom@{pxl::Odom}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void pxl\+::\+Odom\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpxl_1_1Odom_a464b30a97f57c9de25bff0ffada5302b}\label{classpxl_1_1Odom_a464b30a97f57c9de25bff0ffada5302b}} 
+\index{pxl::Odom@{pxl::Odom}!update@{update}}
+\index{update@{update}!pxl::Odom@{pxl::Odom}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void pxl\+::\+Odom\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpxl_1_1Odom_a25a62f0a15b5fabf52b8896d97a5016d}\label{classpxl_1_1Odom_a25a62f0a15b5fabf52b8896d97a5016d}} 
+\index{pxl::Odom@{pxl::Odom}!drivetrain@{drivetrain}}
+\index{drivetrain@{drivetrain}!pxl::Odom@{pxl::Odom}}
+\doxysubsubsection{\texorpdfstring{drivetrain}{drivetrain}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}}$>$ $>$ pxl\+::\+Odom\+::drivetrain\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpxl_1_1Odom_a583a89074d5f9da5b7722fc471a49f41}\label{classpxl_1_1Odom_a583a89074d5f9da5b7722fc471a49f41}} 
+\index{pxl::Odom@{pxl::Odom}!horizontals@{horizontals}}
+\index{horizontals@{horizontals}!pxl::Odom@{pxl::Odom}}
+\doxysubsubsection{\texorpdfstring{horizontals}{horizontals}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}}$>$ $>$ pxl\+::\+Odom\+::horizontals\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpxl_1_1Odom_a42fb961578d4d980af5531b570c7f43d}\label{classpxl_1_1Odom_a42fb961578d4d980af5531b570c7f43d}} 
+\index{pxl::Odom@{pxl::Odom}!imu@{imu}}
+\index{imu@{imu}!pxl::Odom@{pxl::Odom}}
+\doxysubsubsection{\texorpdfstring{imu}{imu}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$pros\+::\+IMU$>$ $>$ pxl\+::\+Odom\+::imu\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpxl_1_1Odom_a208a6d622031e9a15c0782e3e5a2c9fa}\label{classpxl_1_1Odom_a208a6d622031e9a15c0782e3e5a2c9fa}} 
+\index{pxl::Odom@{pxl::Odom}!lastAngle@{lastAngle}}
+\index{lastAngle@{lastAngle}!pxl::Odom@{pxl::Odom}}
+\doxysubsubsection{\texorpdfstring{lastAngle}{lastAngle}}
+{\footnotesize\ttfamily float pxl\+::\+Odom\+::last\+Angle = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpxl_1_1Odom_a6799ea0db500086a975962604bf751ce}\label{classpxl_1_1Odom_a6799ea0db500086a975962604bf751ce}} 
+\index{pxl::Odom@{pxl::Odom}!OdomTask@{OdomTask}}
+\index{OdomTask@{OdomTask}!pxl::Odom@{pxl::Odom}}
+\doxysubsubsection{\texorpdfstring{OdomTask}{OdomTask}}
+{\footnotesize\ttfamily pros\+::\+Task$\ast$ pxl\+::\+Odom\+::\+Odom\+Task = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpxl_1_1Odom_a8744dce9b1354892fdb1d644984690bb}\label{classpxl_1_1Odom_a8744dce9b1354892fdb1d644984690bb}} 
+\index{pxl::Odom@{pxl::Odom}!pose@{pose}}
+\index{pose@{pose}!pxl::Odom@{pxl::Odom}}
+\doxysubsubsection{\texorpdfstring{pose}{pose}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpxl_1_1Pose}{Pose}} pxl\+::\+Odom\+::pose = \mbox{\hyperlink{classpxl_1_1Pose}{Pose}}(0, 0, 0)\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpxl_1_1Odom_a147f2b027ea20a520998a7748a2c9d4a}\label{classpxl_1_1Odom_a147f2b027ea20a520998a7748a2c9d4a}} 
+\index{pxl::Odom@{pxl::Odom}!verticals@{verticals}}
+\index{verticals@{verticals}!pxl::Odom@{pxl::Odom}}
+\doxysubsubsection{\texorpdfstring{verticals}{verticals}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}}$>$ $>$ pxl\+::\+Odom\+::verticals\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/pxl/drivebase/\mbox{\hyperlink{odom_8hpp}{odom.\+hpp}}\item 
+src/pxl/drivebase/\mbox{\hyperlink{odom_8cpp}{odom.\+cpp}}\end{DoxyCompactItemize}

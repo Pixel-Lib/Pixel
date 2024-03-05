@@ -1,0 +1,381 @@
+\hypertarget{namespacepxl}{}\doxysection{pxl Namespace Reference}
+\label{namespacepxl}\index{pxl@{pxl}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpxl_1_1aSync}{a\+Sync}}
+\item 
+struct \mbox{\hyperlink{structpxl_1_1ActionFuncTuple}{Action\+Func\+Tuple}}
+\item 
+struct \mbox{\hyperlink{structpxl_1_1OdomSensors}{Odom\+Sensors}}
+\item 
+class \mbox{\hyperlink{classpxl_1_1Drivetrain}{Drivetrain}}
+\item 
+class \mbox{\hyperlink{classpxl_1_1ExtendedDrivetrain}{Extended\+Drivetrain}}
+\item 
+class \mbox{\hyperlink{classpxl_1_1Drivebase}{Drivebase}}
+\item 
+struct \mbox{\hyperlink{structpxl_1_1stand__still}{stand\+\_\+still}}
+\item 
+struct \mbox{\hyperlink{structpxl_1_1parallel__line__cross}{parallel\+\_\+line\+\_\+cross}}
+\item 
+struct \mbox{\hyperlink{structpxl_1_1global__timeOuts}{global\+\_\+time\+Outs}}
+\item 
+class \mbox{\hyperlink{classpxl_1_1exit__conditions}{exit\+\_\+conditions}}
+\item 
+class \mbox{\hyperlink{classpxl_1_1Odom}{Odom}}
+\item 
+class \mbox{\hyperlink{classpxl_1_1TrackingWheel}{Tracking\+Wheel}}
+\item 
+class \mbox{\hyperlink{classpxl_1_1ObjectTracker}{Object\+Tracker}}
+\item 
+class \mbox{\hyperlink{classpxl_1_1Coord}{Coord}}
+\item 
+class \mbox{\hyperlink{classpxl_1_1Pose}{Pose}}
+\item 
+class \mbox{\hyperlink{classpxl_1_1PID}{PID}}
+\begin{DoxyCompactList}\small\item\em A class representing a Proportional-\/\+Integral-\/\+Derivative (\mbox{\hyperlink{classpxl_1_1PID}{PID}}) controller. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classpxl_1_1Timer}{Timer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0}{action\+\_\+\+Point}} \{ \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0a41319fa3d0af6570af134c7465a45916}{pose}}
+, \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0ae049005f408ad18964ff92c37164b6c4}{point}}
+, \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0a8381a8a16d8bd68597e8faa0aa6bd961}{error}}
+, \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0a20656fb3d6af7de026b66e2d69639cc8}{sensed}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacepxl_afd77ac6809a811ca911fe64f4e47410c}{movement\+\_\+\+Type}} \{ \mbox{\hyperlink{namespacepxl_afd77ac6809a811ca911fe64f4e47410ca75753cf2b953e7f1e5d657b97c1f6894}{lateral}}
+, \mbox{\hyperlink{namespacepxl_afd77ac6809a811ca911fe64f4e47410ca60dc3d9659607b3f6d7a1f5d2477fbc3}{turn}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacepxl_a93a826b4e3a75a792a4ed863cd6a90a7}{sensed}} \{ \mbox{\hyperlink{namespacepxl_a93a826b4e3a75a792a4ed863cd6a90a7a36c9f8cb447eca51d27aa9d398c19605}{SENSED}} = 1
+, \mbox{\hyperlink{namespacepxl_a93a826b4e3a75a792a4ed863cd6a90a7a7b1748c490ce6463734c91391402c8d2}{SENSING\+\_\+\+FAILED}} = std\+::numeric\+\_\+limits$<$int$>$\+::max()
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{namespacepxl_aef4d585e132a7669441e66bd34be8f11}{slew}} (float target, float current, float max\+Change)
+\begin{DoxyCompactList}\small\item\em Clamps a value to a specified range. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_accc0c31a4c5d20ceb1ea8de0417006d6}{rad\+To\+Deg}} (float rad)
+\begin{DoxyCompactList}\small\item\em Converts radians to degrees. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_a092e7e57e83f9d3a78fe9ffcf940cef8}{deg\+To\+Rad}} (float deg)
+\begin{DoxyCompactList}\small\item\em Converts degrees to radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_aa3ad78e90d5e52e5b47f463c6c6924be}{wrap\+To180}} (float deg)
+\begin{DoxyCompactList}\small\item\em Wraps an angle to the range \mbox{[}-\/180, 180\mbox{]} degrees. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_a7d815267e7c29949aacc85ab67ad82e6}{wrap\+To360}} (float deg)
+\begin{DoxyCompactList}\small\item\em Wraps an angle to the range \mbox{[}0, 360\mbox{]} degrees. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_ad17d8719f3bf43ec4cc5d52c805338f7}{wrap\+To\+Pi}} (float rad)
+\begin{DoxyCompactList}\small\item\em Wraps an angle to the range \mbox{[}-\/Pi, Pi\mbox{]} radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_a847a12cda4c61b6fcc017ff7f8b35060}{wrap\+To2\+Pi}} (float rad)
+\begin{DoxyCompactList}\small\item\em Wraps an angle to the range \mbox{[}0, 2$\ast$\+Pi\mbox{]} radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_a26c76428239cd4f5adbb23aff8cd6384}{angle\+Error}} (float angle1, float angle2, bool radians)
+\begin{DoxyCompactList}\small\item\em Calculates the smallest angular difference between two angles. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacepxl_afa79c20911ee3116206f645a9e1e3ed0}{sgn}} (T x)
+\begin{DoxyCompactList}\small\item\em Returns the sign of a number (-\/1 for negative, 1 for positive, 0 for zero). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_aae3973eb617ab05e24069a0ad9a1d9b0}{ema}} (float current, float previous, float smooth)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacepxl_a1400e5c065d0e56c9cfc4d7998ab0a4f}{avg}} (const std\+::vector$<$ T $>$ \&vec)
+\begin{DoxyCompactList}\small\item\em Calculates the average of a vector of any type. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_a68b10b21d74b18d39d19169ef013e4d6}{get\+Curvature}} (\mbox{\hyperlink{classpxl_1_1Pose}{Pose}} \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0a41319fa3d0af6570af134c7465a45916}{pose}}, \mbox{\hyperlink{classpxl_1_1Pose}{Pose}} other)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacepxl_a0701b37c7456e2154050add8257094c0}\label{namespacepxl_a0701b37c7456e2154050add8257094c0}} 
+\index{pxl@{pxl}!action\_Point@{action\_Point}}
+\index{action\_Point@{action\_Point}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{action\_Point}{action\_Point}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0}{pxl\+::action\+\_\+\+Point}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{pose@{pose}!pxl@{pxl}}\index{pxl@{pxl}!pose@{pose}}}\mbox{\Hypertarget{namespacepxl_a0701b37c7456e2154050add8257094c0a41319fa3d0af6570af134c7465a45916}\label{namespacepxl_a0701b37c7456e2154050add8257094c0a41319fa3d0af6570af134c7465a45916}} 
+pose&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{point@{point}!pxl@{pxl}}\index{pxl@{pxl}!point@{point}}}\mbox{\Hypertarget{namespacepxl_a0701b37c7456e2154050add8257094c0ae049005f408ad18964ff92c37164b6c4}\label{namespacepxl_a0701b37c7456e2154050add8257094c0ae049005f408ad18964ff92c37164b6c4}} 
+point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{error@{error}!pxl@{pxl}}\index{pxl@{pxl}!error@{error}}}\mbox{\Hypertarget{namespacepxl_a0701b37c7456e2154050add8257094c0a8381a8a16d8bd68597e8faa0aa6bd961}\label{namespacepxl_a0701b37c7456e2154050add8257094c0a8381a8a16d8bd68597e8faa0aa6bd961}} 
+error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sensed@{sensed}!pxl@{pxl}}\index{pxl@{pxl}!sensed@{sensed}}}\mbox{\Hypertarget{namespacepxl_a0701b37c7456e2154050add8257094c0a20656fb3d6af7de026b66e2d69639cc8}\label{namespacepxl_a0701b37c7456e2154050add8257094c0a20656fb3d6af7de026b66e2d69639cc8}} 
+sensed&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespacepxl_afd77ac6809a811ca911fe64f4e47410c}\label{namespacepxl_afd77ac6809a811ca911fe64f4e47410c}} 
+\index{pxl@{pxl}!movement\_Type@{movement\_Type}}
+\index{movement\_Type@{movement\_Type}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{movement\_Type}{movement\_Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacepxl_afd77ac6809a811ca911fe64f4e47410c}{pxl\+::movement\+\_\+\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lateral@{lateral}!pxl@{pxl}}\index{pxl@{pxl}!lateral@{lateral}}}\mbox{\Hypertarget{namespacepxl_afd77ac6809a811ca911fe64f4e47410ca75753cf2b953e7f1e5d657b97c1f6894}\label{namespacepxl_afd77ac6809a811ca911fe64f4e47410ca75753cf2b953e7f1e5d657b97c1f6894}} 
+lateral&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{turn@{turn}!pxl@{pxl}}\index{pxl@{pxl}!turn@{turn}}}\mbox{\Hypertarget{namespacepxl_afd77ac6809a811ca911fe64f4e47410ca60dc3d9659607b3f6d7a1f5d2477fbc3}\label{namespacepxl_afd77ac6809a811ca911fe64f4e47410ca60dc3d9659607b3f6d7a1f5d2477fbc3}} 
+turn&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespacepxl_a93a826b4e3a75a792a4ed863cd6a90a7}\label{namespacepxl_a93a826b4e3a75a792a4ed863cd6a90a7}} 
+\index{pxl@{pxl}!sensed@{sensed}}
+\index{sensed@{sensed}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{sensed}{sensed}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacepxl_a93a826b4e3a75a792a4ed863cd6a90a7}{pxl\+::sensed}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SENSED@{SENSED}!pxl@{pxl}}\index{pxl@{pxl}!SENSED@{SENSED}}}\mbox{\Hypertarget{namespacepxl_a93a826b4e3a75a792a4ed863cd6a90a7a36c9f8cb447eca51d27aa9d398c19605}\label{namespacepxl_a93a826b4e3a75a792a4ed863cd6a90a7a36c9f8cb447eca51d27aa9d398c19605}} 
+SENSED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SENSING\_FAILED@{SENSING\_FAILED}!pxl@{pxl}}\index{pxl@{pxl}!SENSING\_FAILED@{SENSING\_FAILED}}}\mbox{\Hypertarget{namespacepxl_a93a826b4e3a75a792a4ed863cd6a90a7a7b1748c490ce6463734c91391402c8d2}\label{namespacepxl_a93a826b4e3a75a792a4ed863cd6a90a7a7b1748c490ce6463734c91391402c8d2}} 
+SENSING\+\_\+\+FAILED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepxl_a26c76428239cd4f5adbb23aff8cd6384}\label{namespacepxl_a26c76428239cd4f5adbb23aff8cd6384}} 
+\index{pxl@{pxl}!angleError@{angleError}}
+\index{angleError@{angleError}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{angleError()}{angleError()}}
+{\footnotesize\ttfamily float pxl\+::angle\+Error (\begin{DoxyParamCaption}\item[{float}]{angle1,  }\item[{float}]{angle2,  }\item[{bool}]{radians }\end{DoxyParamCaption})}
+
+
+
+Calculates the smallest angular difference between two angles. 
+
+This function computes the minimum difference between two angles, considering the specified range (degrees or radians).
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle1} & The first angle. \\
+\hline
+{\em angle2} & The second angle. \\
+\hline
+{\em radians} & True if angles are in radians, false for degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The smallest angular difference. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacepxl_a1400e5c065d0e56c9cfc4d7998ab0a4f}\label{namespacepxl_a1400e5c065d0e56c9cfc4d7998ab0a4f}} 
+\index{pxl@{pxl}!avg@{avg}}
+\index{avg@{avg}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{avg()}{avg()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T pxl\+::avg (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+
+
+Calculates the average of a vector of any type. 
+
+This function computes the arithmetic mean of a vector of elements of any type.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em vec} & The vector of elements. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The average value (in any datatype). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacepxl_a092e7e57e83f9d3a78fe9ffcf940cef8}\label{namespacepxl_a092e7e57e83f9d3a78fe9ffcf940cef8}} 
+\index{pxl@{pxl}!degToRad@{degToRad}}
+\index{degToRad@{degToRad}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{degToRad()}{degToRad()}}
+{\footnotesize\ttfamily float pxl\+::deg\+To\+Rad (\begin{DoxyParamCaption}\item[{float}]{deg }\end{DoxyParamCaption})}
+
+
+
+Converts degrees to radians. 
+
+This function converts an angle from degrees to radians.
+
+
+\begin{DoxyParams}{Parameters}
+{\em deg} & The angle in degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The angle in radians. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacepxl_aae3973eb617ab05e24069a0ad9a1d9b0}\label{namespacepxl_aae3973eb617ab05e24069a0ad9a1d9b0}} 
+\index{pxl@{pxl}!ema@{ema}}
+\index{ema@{ema}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{ema()}{ema()}}
+{\footnotesize\ttfamily float pxl\+::ema (\begin{DoxyParamCaption}\item[{float}]{current,  }\item[{float}]{previous,  }\item[{float}]{smooth }\end{DoxyParamCaption})}
+
+The function calculates the exponential moving average (EMA) of a current value based on a previous value and a smoothing factor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em current} & The {\ttfamily current} parameter represents the current value for which you want to calculate the Exponential Moving Average (EMA). \\
+\hline
+{\em previous} & The \char`\"{}previous\char`\"{} parameter in the {\ttfamily ema} function represents the previous value that you want to use in the exponential moving average calculation. This value is used in the formula to calculate the new exponential moving average based on the current value and the smoothing factor. \\
+\hline
+{\em smooth} & The {\ttfamily smooth} parameter in the {\ttfamily ema} function represents the weight given to the current value {\ttfamily current} when calculating the exponential moving average. A higher {\ttfamily smooth} value will give more weight to the current value, making the EMA more responsive to recent changes. On the other hand, a\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Exponential Moving Average (EMA) calculated using the formula\+: (current $\ast$ smooth) + (previous $\ast$ (1 -\/ smooth)). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacepxl_a68b10b21d74b18d39d19169ef013e4d6}\label{namespacepxl_a68b10b21d74b18d39d19169ef013e4d6}} 
+\index{pxl@{pxl}!getCurvature@{getCurvature}}
+\index{getCurvature@{getCurvature}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{getCurvature()}{getCurvature()}}
+{\footnotesize\ttfamily float pxl\+::get\+Curvature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpxl_1_1Pose}{Pose}}}]{pose,  }\item[{\mbox{\hyperlink{classpxl_1_1Pose}{Pose}}}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepxl_accc0c31a4c5d20ceb1ea8de0417006d6}\label{namespacepxl_accc0c31a4c5d20ceb1ea8de0417006d6}} 
+\index{pxl@{pxl}!radToDeg@{radToDeg}}
+\index{radToDeg@{radToDeg}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{radToDeg()}{radToDeg()}}
+{\footnotesize\ttfamily float pxl\+::rad\+To\+Deg (\begin{DoxyParamCaption}\item[{float}]{rad }\end{DoxyParamCaption})}
+
+
+
+Converts radians to degrees. 
+
+This function converts an angle from radians to degrees.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rad} & The angle in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The angle in degrees. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacepxl_afa79c20911ee3116206f645a9e1e3ed0}\label{namespacepxl_afa79c20911ee3116206f645a9e1e3ed0}} 
+\index{pxl@{pxl}!sgn@{sgn}}
+\index{sgn@{sgn}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{sgn()}{sgn()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T pxl\+::sgn (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption})}
+
+
+
+Returns the sign of a number (-\/1 for negative, 1 for positive, 0 for zero). 
+
+This function returns the sign (+1, -\/1, or 0) of a given number(in any datatype)
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em x} & The number. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The sign of x. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacepxl_aef4d585e132a7669441e66bd34be8f11}\label{namespacepxl_aef4d585e132a7669441e66bd34be8f11}} 
+\index{pxl@{pxl}!slew@{slew}}
+\index{slew@{slew}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{slew()}{slew()}}
+{\footnotesize\ttfamily float pxl\+::slew (\begin{DoxyParamCaption}\item[{float}]{target,  }\item[{float}]{current,  }\item[{float}]{max\+Change }\end{DoxyParamCaption})}
+
+
+
+Clamps a value to a specified range. 
+
+This function ensures the input value remains within the specified minimum and maximum values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The desired target value. \\
+\hline
+{\em current} & The current value. \\
+\hline
+{\em max\+Change} & The maximum allowed change per update. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The clamped value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacepxl_aa3ad78e90d5e52e5b47f463c6c6924be}\label{namespacepxl_aa3ad78e90d5e52e5b47f463c6c6924be}} 
+\index{pxl@{pxl}!wrapTo180@{wrapTo180}}
+\index{wrapTo180@{wrapTo180}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{wrapTo180()}{wrapTo180()}}
+{\footnotesize\ttfamily float pxl\+::wrap\+To180 (\begin{DoxyParamCaption}\item[{float}]{deg }\end{DoxyParamCaption})}
+
+
+
+Wraps an angle to the range \mbox{[}-\/180, 180\mbox{]} degrees. 
+
+This function wraps an angle to the specified range, ensuring it remains within the bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em deg} & The angle in degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The wrapped angle in degrees. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacepxl_a847a12cda4c61b6fcc017ff7f8b35060}\label{namespacepxl_a847a12cda4c61b6fcc017ff7f8b35060}} 
+\index{pxl@{pxl}!wrapTo2Pi@{wrapTo2Pi}}
+\index{wrapTo2Pi@{wrapTo2Pi}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{wrapTo2Pi()}{wrapTo2Pi()}}
+{\footnotesize\ttfamily float pxl\+::wrap\+To2\+Pi (\begin{DoxyParamCaption}\item[{float}]{rad }\end{DoxyParamCaption})}
+
+
+
+Wraps an angle to the range \mbox{[}0, 2$\ast$\+Pi\mbox{]} radians. 
+
+This function wraps an angle to the specified range, ensuring it remains within the bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rad} & The angle in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The wrapped angle in radians. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacepxl_a7d815267e7c29949aacc85ab67ad82e6}\label{namespacepxl_a7d815267e7c29949aacc85ab67ad82e6}} 
+\index{pxl@{pxl}!wrapTo360@{wrapTo360}}
+\index{wrapTo360@{wrapTo360}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{wrapTo360()}{wrapTo360()}}
+{\footnotesize\ttfamily float pxl\+::wrap\+To360 (\begin{DoxyParamCaption}\item[{float}]{deg }\end{DoxyParamCaption})}
+
+
+
+Wraps an angle to the range \mbox{[}0, 360\mbox{]} degrees. 
+
+This function wraps an angle to the specified range, ensuring it remains within the bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em deg} & The angle in degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The wrapped angle in degrees. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacepxl_ad17d8719f3bf43ec4cc5d52c805338f7}\label{namespacepxl_ad17d8719f3bf43ec4cc5d52c805338f7}} 
+\index{pxl@{pxl}!wrapToPi@{wrapToPi}}
+\index{wrapToPi@{wrapToPi}!pxl@{pxl}}
+\doxysubsubsection{\texorpdfstring{wrapToPi()}{wrapToPi()}}
+{\footnotesize\ttfamily float pxl\+::wrap\+To\+Pi (\begin{DoxyParamCaption}\item[{float}]{rad }\end{DoxyParamCaption})}
+
+
+
+Wraps an angle to the range \mbox{[}-\/Pi, Pi\mbox{]} radians. 
+
+This function wraps an angle to the specified range, ensuring it remains within the bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rad} & The angle in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The wrapped angle in radians. 
+\end{DoxyReturn}

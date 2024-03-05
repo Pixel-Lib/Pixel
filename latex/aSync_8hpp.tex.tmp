@@ -1,0 +1,46 @@
+\hypertarget{aSync_8hpp}{}\doxysection{include/pxl/a\+Sync.hpp File Reference}
+\label{aSync_8hpp}\index{include/pxl/aSync.hpp@{include/pxl/aSync.hpp}}
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include \char`\"{}pros/rtos.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pxl/parametrics/coord.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pxl/parametrics/pose.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pxl/util.\+hpp\char`\"{}}\newline
+Include dependency graph for a\+Sync.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpxl_1_1aSync}{pxl\+::a\+Sync}}
+\item 
+struct \mbox{\hyperlink{structpxl_1_1ActionFuncTuple}{pxl\+::\+Action\+Func\+Tuple}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacepxl}{pxl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{aSync_8hpp_a8f425be7043e221bb8ad37ddb078c864}{LAMBDA}}(func)~\mbox{[}$\,$\mbox{]}() \{ func; \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0}{pxl\+::action\+\_\+\+Point}} \{ \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0a41319fa3d0af6570af134c7465a45916}{pxl\+::pose}}
+, \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0ae049005f408ad18964ff92c37164b6c4}{pxl\+::point}}
+, \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0a8381a8a16d8bd68597e8faa0aa6bd961}{pxl\+::error}}
+, \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0a20656fb3d6af7de026b66e2d69639cc8}{pxl\+::sensed}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{aSync_8hpp_a8f425be7043e221bb8ad37ddb078c864}\label{aSync_8hpp_a8f425be7043e221bb8ad37ddb078c864}} 
+\index{aSync.hpp@{aSync.hpp}!LAMBDA@{LAMBDA}}
+\index{LAMBDA@{LAMBDA}!aSync.hpp@{aSync.hpp}}
+\doxysubsubsection{\texorpdfstring{LAMBDA}{LAMBDA}}
+{\footnotesize\ttfamily \#define LAMBDA(\begin{DoxyParamCaption}\item[{}]{func }\end{DoxyParamCaption})~\mbox{[}$\,$\mbox{]}() \{ func; \}}
+

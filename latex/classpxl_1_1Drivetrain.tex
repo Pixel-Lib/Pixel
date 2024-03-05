@@ -1,0 +1,102 @@
+\hypertarget{classpxl_1_1Drivetrain}{}\doxysection{pxl\+::Drivetrain Class Reference}
+\label{classpxl_1_1Drivetrain}\index{pxl::Drivetrain@{pxl::Drivetrain}}
+
+
+{\ttfamily \#include $<$drive.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpxl_1_1Drivetrain_aede2e8ef67b2ae3fd1fde91cb924e3ee}{Drivetrain}} (pros\+::\+Motor\+Group $\ast$\mbox{\hyperlink{classpxl_1_1Drivetrain_a1e683aa28b4f6f9b9e1fe769fe60fe5d}{left\+Motors}}, pros\+::\+Motor\+Group $\ast$\mbox{\hyperlink{classpxl_1_1Drivetrain_a6344bb88ae3424a089fb1d83d04a5537}{right\+Motors}}, float \mbox{\hyperlink{classpxl_1_1Drivetrain_ac86cb20fd156c3e3a4c04d5e5ac834b1}{track\+Width}}, float \mbox{\hyperlink{classpxl_1_1Drivetrain_a07571e4b87d1cc5654bfe12486cfdf7f}{wheel\+Diameter}}, float \mbox{\hyperlink{classpxl_1_1Drivetrain_a3a13181dc7d479fdb4c5e28d79249371}{rpm}})
+\item 
+\mbox{\hyperlink{classpxl_1_1Coord}{pxl\+::\+Coord}} \mbox{\hyperlink{classpxl_1_1Drivetrain_a64f33ccd04d72ab2a02f38ca5ee8cb5d}{add\+On\+Action}} (\mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0}{action\+\_\+\+Point}} action\+Point, void input())
+\begin{DoxyCompactList}\small\item\em Method to queue a function to happen mid movement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpxl_1_1Drivetrain_ab51f21697996f75f03f41d2e6078c89e}{set\+Constants}} (\mbox{\hyperlink{classpxl_1_1PID}{PID}} \&constants)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pros\+::\+Motor\+Group $\ast$ \mbox{\hyperlink{classpxl_1_1Drivetrain_a1e683aa28b4f6f9b9e1fe769fe60fe5d}{left\+Motors}}
+\item 
+pros\+::\+Motor\+Group $\ast$ \mbox{\hyperlink{classpxl_1_1Drivetrain_a6344bb88ae3424a089fb1d83d04a5537}{right\+Motors}}
+\item 
+float \mbox{\hyperlink{classpxl_1_1Drivetrain_ac86cb20fd156c3e3a4c04d5e5ac834b1}{track\+Width}}
+\item 
+float \mbox{\hyperlink{classpxl_1_1Drivetrain_a07571e4b87d1cc5654bfe12486cfdf7f}{wheel\+Diameter}}
+\item 
+float \mbox{\hyperlink{classpxl_1_1Drivetrain_a3a13181dc7d479fdb4c5e28d79249371}{rpm}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpxl_1_1Drivetrain_aede2e8ef67b2ae3fd1fde91cb924e3ee}\label{classpxl_1_1Drivetrain_aede2e8ef67b2ae3fd1fde91cb924e3ee}} 
+\index{pxl::Drivetrain@{pxl::Drivetrain}!Drivetrain@{Drivetrain}}
+\index{Drivetrain@{Drivetrain}!pxl::Drivetrain@{pxl::Drivetrain}}
+\doxysubsubsection{\texorpdfstring{Drivetrain()}{Drivetrain()}}
+{\footnotesize\ttfamily pxl\+::\+Drivetrain\+::\+Drivetrain (\begin{DoxyParamCaption}\item[{pros\+::\+Motor\+Group $\ast$}]{left\+Motors,  }\item[{pros\+::\+Motor\+Group $\ast$}]{right\+Motors,  }\item[{float}]{track\+Width,  }\item[{float}]{wheel\+Diameter,  }\item[{float}]{rpm }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpxl_1_1Drivetrain_a64f33ccd04d72ab2a02f38ca5ee8cb5d}\label{classpxl_1_1Drivetrain_a64f33ccd04d72ab2a02f38ca5ee8cb5d}} 
+\index{pxl::Drivetrain@{pxl::Drivetrain}!addOnAction@{addOnAction}}
+\index{addOnAction@{addOnAction}!pxl::Drivetrain@{pxl::Drivetrain}}
+\doxysubsubsection{\texorpdfstring{addOnAction()}{addOnAction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpxl_1_1Coord}{pxl\+::\+Coord}} pxl\+::\+Drivetrain\+::add\+On\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0}{action\+\_\+\+Point}}}]{action\+Point,  }\item[{void }]{input() }\end{DoxyParamCaption})}
+
+
+
+Method to queue a function to happen mid movement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action\+Point} & the type of action\+Point to be used \\
+\hline
+{\em input} & input function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpxl_1_1Drivetrain_ab51f21697996f75f03f41d2e6078c89e}\label{classpxl_1_1Drivetrain_ab51f21697996f75f03f41d2e6078c89e}} 
+\index{pxl::Drivetrain@{pxl::Drivetrain}!setConstants@{setConstants}}
+\index{setConstants@{setConstants}!pxl::Drivetrain@{pxl::Drivetrain}}
+\doxysubsubsection{\texorpdfstring{setConstants()}{setConstants()}}
+{\footnotesize\ttfamily void pxl\+::\+Drivetrain\+::set\+Constants (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpxl_1_1PID}{PID}} \&}]{constants }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpxl_1_1Drivetrain_a1e683aa28b4f6f9b9e1fe769fe60fe5d}\label{classpxl_1_1Drivetrain_a1e683aa28b4f6f9b9e1fe769fe60fe5d}} 
+\index{pxl::Drivetrain@{pxl::Drivetrain}!leftMotors@{leftMotors}}
+\index{leftMotors@{leftMotors}!pxl::Drivetrain@{pxl::Drivetrain}}
+\doxysubsubsection{\texorpdfstring{leftMotors}{leftMotors}}
+{\footnotesize\ttfamily pros\+::\+Motor\+Group$\ast$ pxl\+::\+Drivetrain\+::left\+Motors}
+
+\mbox{\Hypertarget{classpxl_1_1Drivetrain_a6344bb88ae3424a089fb1d83d04a5537}\label{classpxl_1_1Drivetrain_a6344bb88ae3424a089fb1d83d04a5537}} 
+\index{pxl::Drivetrain@{pxl::Drivetrain}!rightMotors@{rightMotors}}
+\index{rightMotors@{rightMotors}!pxl::Drivetrain@{pxl::Drivetrain}}
+\doxysubsubsection{\texorpdfstring{rightMotors}{rightMotors}}
+{\footnotesize\ttfamily pros\+::\+Motor\+Group$\ast$ pxl\+::\+Drivetrain\+::right\+Motors}
+
+\mbox{\Hypertarget{classpxl_1_1Drivetrain_a3a13181dc7d479fdb4c5e28d79249371}\label{classpxl_1_1Drivetrain_a3a13181dc7d479fdb4c5e28d79249371}} 
+\index{pxl::Drivetrain@{pxl::Drivetrain}!rpm@{rpm}}
+\index{rpm@{rpm}!pxl::Drivetrain@{pxl::Drivetrain}}
+\doxysubsubsection{\texorpdfstring{rpm}{rpm}}
+{\footnotesize\ttfamily float pxl\+::\+Drivetrain\+::rpm}
+
+\mbox{\Hypertarget{classpxl_1_1Drivetrain_ac86cb20fd156c3e3a4c04d5e5ac834b1}\label{classpxl_1_1Drivetrain_ac86cb20fd156c3e3a4c04d5e5ac834b1}} 
+\index{pxl::Drivetrain@{pxl::Drivetrain}!trackWidth@{trackWidth}}
+\index{trackWidth@{trackWidth}!pxl::Drivetrain@{pxl::Drivetrain}}
+\doxysubsubsection{\texorpdfstring{trackWidth}{trackWidth}}
+{\footnotesize\ttfamily float pxl\+::\+Drivetrain\+::track\+Width}
+
+\mbox{\Hypertarget{classpxl_1_1Drivetrain_a07571e4b87d1cc5654bfe12486cfdf7f}\label{classpxl_1_1Drivetrain_a07571e4b87d1cc5654bfe12486cfdf7f}} 
+\index{pxl::Drivetrain@{pxl::Drivetrain}!wheelDiameter@{wheelDiameter}}
+\index{wheelDiameter@{wheelDiameter}!pxl::Drivetrain@{pxl::Drivetrain}}
+\doxysubsubsection{\texorpdfstring{wheelDiameter}{wheelDiameter}}
+{\footnotesize\ttfamily float pxl\+::\+Drivetrain\+::wheel\+Diameter}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/pxl/drivebase/\mbox{\hyperlink{drive_8hpp}{drive.\+hpp}}\item 
+src/pxl/drivebase/\mbox{\hyperlink{drive_8cpp}{drive.\+cpp}}\end{DoxyCompactItemize}

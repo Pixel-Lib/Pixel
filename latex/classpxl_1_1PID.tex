@@ -1,0 +1,283 @@
+\hypertarget{classpxl_1_1PID}{}\doxysection{pxl\+::PID Class Reference}
+\label{classpxl_1_1PID}\index{pxl::PID@{pxl::PID}}
+
+
+A class representing a Proportional-\/\+Integral-\/\+Derivative (\mbox{\hyperlink{classpxl_1_1PID}{PID}}) controller.  
+
+
+
+
+{\ttfamily \#include $<$pid.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpxl_1_1PID_a3cecdb6c97a89f1908e14dea28f3a4c1}{PID}} (float \mbox{\hyperlink{classpxl_1_1PID_adef18b6e2b86a67f7e4b764aac8b30d6}{kP}}, float \mbox{\hyperlink{classpxl_1_1PID_ad607152a2e13242f8f611b2596bdccce}{kI}}, float \mbox{\hyperlink{classpxl_1_1PID_afe9ddbcc8e1feddcedb007e362ad5315}{kD}})
+\begin{DoxyCompactList}\small\item\em Constructor for a genaric \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpxl_1_1PID_a61e23901efdfd91cc1c177913d6419f7}{PID}} (float \mbox{\hyperlink{classpxl_1_1PID_adef18b6e2b86a67f7e4b764aac8b30d6}{kP}}, float \mbox{\hyperlink{classpxl_1_1PID_ad607152a2e13242f8f611b2596bdccce}{kI}}, float \mbox{\hyperlink{classpxl_1_1PID_afe9ddbcc8e1feddcedb007e362ad5315}{kD}}, float \mbox{\hyperlink{classpxl_1_1PID_a9d54dbc30b82357a73f24e3e91d7ecf0}{k\+P\+\_\+d}})
+\begin{DoxyCompactList}\small\item\em Constructor for a lateral \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpxl_1_1PID_aabad8a8d50a40ae87d1ba5c78ee7b9d0}{PID}} (float \mbox{\hyperlink{classpxl_1_1PID_adef18b6e2b86a67f7e4b764aac8b30d6}{kP}}, float \mbox{\hyperlink{classpxl_1_1PID_ad607152a2e13242f8f611b2596bdccce}{kI}}, float \mbox{\hyperlink{classpxl_1_1PID_afe9ddbcc8e1feddcedb007e362ad5315}{kD}}, float \mbox{\hyperlink{classpxl_1_1PID_a9d54dbc30b82357a73f24e3e91d7ecf0}{k\+P\+\_\+d}}, float \mbox{\hyperlink{classpxl_1_1PID_a4401bf97f5681f9e5eeb4e97ce2a4fa2}{integral\+MAX}})
+\begin{DoxyCompactList}\small\item\em Constructor for a lateral \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classpxl_1_1PID_a92566c1bc7c45ea48f6886f3e16c1298}{update}} (const float \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0a8381a8a16d8bd68597e8faa0aa6bd961}{error}})
+\begin{DoxyCompactList}\small\item\em the \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller output based on the current error. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{classpxl_1_1PID_afab80d4bcb2c24d8d05dca451c57f81b}{get\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Accessor function for Error. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpxl_1_1PID_aa2e8dc0f3757ea432863fa1ecfb7953f}{reset}} ()
+\begin{DoxyCompactList}\small\item\em The internal state of the \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpxl_1_1PID_a3cecdb6c97a89f1908e14dea28f3a4c1}{PID}} (float \mbox{\hyperlink{classpxl_1_1PID_adef18b6e2b86a67f7e4b764aac8b30d6}{kP}}, float \mbox{\hyperlink{classpxl_1_1PID_ad607152a2e13242f8f611b2596bdccce}{kI}}, float \mbox{\hyperlink{classpxl_1_1PID_afe9ddbcc8e1feddcedb007e362ad5315}{kD}})
+\item 
+float \mbox{\hyperlink{classpxl_1_1PID_a92566c1bc7c45ea48f6886f3e16c1298}{update}} (const float \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0a8381a8a16d8bd68597e8faa0aa6bd961}{error}})
+\item 
+void \mbox{\hyperlink{classpxl_1_1PID_aa2e8dc0f3757ea432863fa1ecfb7953f}{reset}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classpxl_1_1PID_adef18b6e2b86a67f7e4b764aac8b30d6}{kP}}
+\item 
+float \mbox{\hyperlink{classpxl_1_1PID_ad607152a2e13242f8f611b2596bdccce}{kI}}
+\item 
+float \mbox{\hyperlink{classpxl_1_1PID_afe9ddbcc8e1feddcedb007e362ad5315}{kD}}
+\item 
+float \mbox{\hyperlink{classpxl_1_1PID_a9d54dbc30b82357a73f24e3e91d7ecf0}{k\+P\+\_\+d}}
+\item 
+float \mbox{\hyperlink{classpxl_1_1PID_a57cd4191dfb990c59e79cf487661c1ef}{proportional}} = 0
+\item 
+float \mbox{\hyperlink{classpxl_1_1PID_ab8ab54ff311b7e3d445d7f05f34566bc}{integral}} = 0
+\item 
+float \mbox{\hyperlink{classpxl_1_1PID_a5054a5f525bf884229c81e6df36f176f}{derivative}} = 0
+\item 
+float \mbox{\hyperlink{classpxl_1_1PID_a4401bf97f5681f9e5eeb4e97ce2a4fa2}{integral\+MAX}} = 0
+\item 
+float \mbox{\hyperlink{classpxl_1_1PID_a595772c3fa362c37d5f268324cecf087}{prev\+Error}} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classpxl_1_1PID_a0a844eff7cecf34f43989d5206e0be62}{update\+Integral}} (float \mbox{\hyperlink{namespacepxl_a0701b37c7456e2154050add8257094c0a8381a8a16d8bd68597e8faa0aa6bd961}{error}}, float last\+Error, float active\+Distance, float \&\mbox{\hyperlink{classpxl_1_1PID_ab8ab54ff311b7e3d445d7f05f34566bc}{integral}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ \mbox{\hyperlink{classpxl_1_1PID_a48de5c5111c6d4468434518f8ebaaf0c}{prev\+Time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a Proportional-\/\+Integral-\/\+Derivative (\mbox{\hyperlink{classpxl_1_1PID}{PID}}) controller. 
+
+This class provides a convenient way to implement and use a \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller for feedback systems. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpxl_1_1PID_a3cecdb6c97a89f1908e14dea28f3a4c1}\label{classpxl_1_1PID_a3cecdb6c97a89f1908e14dea28f3a4c1}} 
+\index{pxl::PID@{pxl::PID}!PID@{PID}}
+\index{PID@{PID}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{PID()}{PID()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily pxl\+::\+PID\+::\+PID (\begin{DoxyParamCaption}\item[{float}]{kP,  }\item[{float}]{kI,  }\item[{float}]{kD }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for a genaric \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller. 
+
+\mbox{\hyperlink{classpxl_1_1PID}{PID}} class constructors
+
+Users can create multiple \mbox{\hyperlink{classpxl_1_1PID}{PID}} instants and name them to their choosing and use the \mbox{\hyperlink{classpxl_1_1PID}{PID}} muatator to change their gain values
+
+Users can create multiple \mbox{\hyperlink{classpxl_1_1PID}{PID}} instants and name them to their choosing and use the \mbox{\hyperlink{classpxl_1_1PID}{PID}} muatator to change their gain values
+
+
+\begin{DoxyParams}{Parameters}
+{\em kP} & The proportional gain. \\
+\hline
+{\em kI} & The integral gain. \\
+\hline
+{\em kD} & The derivative gain. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpxl_1_1PID_a61e23901efdfd91cc1c177913d6419f7}\label{classpxl_1_1PID_a61e23901efdfd91cc1c177913d6419f7}} 
+\index{pxl::PID@{pxl::PID}!PID@{PID}}
+\index{PID@{PID}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{PID()}{PID()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily pxl\+::\+PID\+::\+PID (\begin{DoxyParamCaption}\item[{float}]{kP,  }\item[{float}]{kI,  }\item[{float}]{kD,  }\item[{float}]{k\+P\+\_\+d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for a lateral \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller. 
+
+Users can create multiple \mbox{\hyperlink{classpxl_1_1PID}{PID}} instants and name them to their choosing and use the \mbox{\hyperlink{classpxl_1_1PID}{PID}} muatator to change their gain values
+
+
+\begin{DoxyParams}{Parameters}
+{\em kP} & The proportional gain. \\
+\hline
+{\em kI} & The integral gain. \\
+\hline
+{\em kD} & The derivative gain. \\
+\hline
+{\em k\+P\+\_\+d} & The porportinal drift gain \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpxl_1_1PID_aabad8a8d50a40ae87d1ba5c78ee7b9d0}\label{classpxl_1_1PID_aabad8a8d50a40ae87d1ba5c78ee7b9d0}} 
+\index{pxl::PID@{pxl::PID}!PID@{PID}}
+\index{PID@{PID}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{PID()}{PID()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily pxl\+::\+PID\+::\+PID (\begin{DoxyParamCaption}\item[{float}]{kP,  }\item[{float}]{kI,  }\item[{float}]{kD,  }\item[{float}]{k\+P\+\_\+d,  }\item[{float}]{integral\+MAX }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for a lateral \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kP} & The proportional gain. \\
+\hline
+{\em kI} & The integral gain. \\
+\hline
+{\em kD} & The derivative gain. \\
+\hline
+{\em k\+P\+\_\+d} & The porportinal drift gain \\
+\hline
+{\em integral\+MAX} & The max value to clamp integral to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpxl_1_1PID_a3cecdb6c97a89f1908e14dea28f3a4c1}\label{classpxl_1_1PID_a3cecdb6c97a89f1908e14dea28f3a4c1}} 
+\index{pxl::PID@{pxl::PID}!PID@{PID}}
+\index{PID@{PID}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{PID()}{PID()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily pxl\+::\+PID\+::\+PID (\begin{DoxyParamCaption}\item[{float}]{kP,  }\item[{float}]{kI,  }\item[{float}]{kD }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpxl_1_1PID_afab80d4bcb2c24d8d05dca451c57f81b}\label{classpxl_1_1PID_afab80d4bcb2c24d8d05dca451c57f81b}} 
+\index{pxl::PID@{pxl::PID}!getError@{getError}}
+\index{getError@{getError}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}}
+{\footnotesize\ttfamily const float pxl\+::\+PID\+::get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Accessor function for Error. 
+
+This function returns the current value of the error varible
+
+\begin{DoxyReturn}{Returns}
+The current error of the \mbox{\hyperlink{classpxl_1_1PID}{PID}} class instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpxl_1_1PID_aa2e8dc0f3757ea432863fa1ecfb7953f}\label{classpxl_1_1PID_aa2e8dc0f3757ea432863fa1ecfb7953f}} 
+\index{pxl::PID@{pxl::PID}!reset@{reset}}
+\index{reset@{reset}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void pxl\+::\+PID\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The internal state of the \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller. 
+
+This function sets the integral term and the previous error value to zero. \mbox{\Hypertarget{classpxl_1_1PID_aa2e8dc0f3757ea432863fa1ecfb7953f}\label{classpxl_1_1PID_aa2e8dc0f3757ea432863fa1ecfb7953f}} 
+\index{pxl::PID@{pxl::PID}!reset@{reset}}
+\index{reset@{reset}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void pxl\+::\+PID\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpxl_1_1PID_a92566c1bc7c45ea48f6886f3e16c1298}\label{classpxl_1_1PID_a92566c1bc7c45ea48f6886f3e16c1298}} 
+\index{pxl::PID@{pxl::PID}!update@{update}}
+\index{update@{update}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float pxl\+::\+PID\+::update (\begin{DoxyParamCaption}\item[{const float}]{error }\end{DoxyParamCaption})}
+
+
+
+the \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller output based on the current error. 
+
+This function calculates the \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller output based on the current error value and updates the internal state of the controller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & The current error value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller output. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpxl_1_1PID_a92566c1bc7c45ea48f6886f3e16c1298}\label{classpxl_1_1PID_a92566c1bc7c45ea48f6886f3e16c1298}} 
+\index{pxl::PID@{pxl::PID}!update@{update}}
+\index{update@{update}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float pxl\+::\+PID\+::update (\begin{DoxyParamCaption}\item[{const float}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpxl_1_1PID_a0a844eff7cecf34f43989d5206e0be62}\label{classpxl_1_1PID_a0a844eff7cecf34f43989d5206e0be62}} 
+\index{pxl::PID@{pxl::PID}!updateIntegral@{updateIntegral}}
+\index{updateIntegral@{updateIntegral}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{updateIntegral()}{updateIntegral()}}
+{\footnotesize\ttfamily void pxl\+::\+PID\+::update\+Integral (\begin{DoxyParamCaption}\item[{float}]{error,  }\item[{float}]{last\+Error,  }\item[{float}]{active\+Distance,  }\item[{float \&}]{integral }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpxl_1_1PID_a5054a5f525bf884229c81e6df36f176f}\label{classpxl_1_1PID_a5054a5f525bf884229c81e6df36f176f}} 
+\index{pxl::PID@{pxl::PID}!derivative@{derivative}}
+\index{derivative@{derivative}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{derivative}{derivative}}
+{\footnotesize\ttfamily float pxl\+::\+PID\+::derivative = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classpxl_1_1PID_ab8ab54ff311b7e3d445d7f05f34566bc}\label{classpxl_1_1PID_ab8ab54ff311b7e3d445d7f05f34566bc}} 
+\index{pxl::PID@{pxl::PID}!integral@{integral}}
+\index{integral@{integral}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{integral}{integral}}
+{\footnotesize\ttfamily float pxl\+::\+PID\+::integral = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+The integral term of the \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller. \mbox{\Hypertarget{classpxl_1_1PID_a4401bf97f5681f9e5eeb4e97ce2a4fa2}\label{classpxl_1_1PID_a4401bf97f5681f9e5eeb4e97ce2a4fa2}} 
+\index{pxl::PID@{pxl::PID}!integralMAX@{integralMAX}}
+\index{integralMAX@{integralMAX}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{integralMAX}{integralMAX}}
+{\footnotesize\ttfamily float pxl\+::\+PID\+::integral\+MAX = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+The max value of integral to prevent windup. \mbox{\Hypertarget{classpxl_1_1PID_afe9ddbcc8e1feddcedb007e362ad5315}\label{classpxl_1_1PID_afe9ddbcc8e1feddcedb007e362ad5315}} 
+\index{pxl::PID@{pxl::PID}!kD@{kD}}
+\index{kD@{kD}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{kD}{kD}}
+{\footnotesize\ttfamily float pxl\+::\+PID\+::kD\hspace{0.3cm}{\ttfamily [protected]}}
+
+The derivative gain (Kd). \mbox{\Hypertarget{classpxl_1_1PID_ad607152a2e13242f8f611b2596bdccce}\label{classpxl_1_1PID_ad607152a2e13242f8f611b2596bdccce}} 
+\index{pxl::PID@{pxl::PID}!kI@{kI}}
+\index{kI@{kI}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{kI}{kI}}
+{\footnotesize\ttfamily float pxl\+::\+PID\+::kI\hspace{0.3cm}{\ttfamily [protected]}}
+
+The integral gain (Ki). \mbox{\Hypertarget{classpxl_1_1PID_adef18b6e2b86a67f7e4b764aac8b30d6}\label{classpxl_1_1PID_adef18b6e2b86a67f7e4b764aac8b30d6}} 
+\index{pxl::PID@{pxl::PID}!kP@{kP}}
+\index{kP@{kP}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{kP}{kP}}
+{\footnotesize\ttfamily float pxl\+::\+PID\+::kP\hspace{0.3cm}{\ttfamily [protected]}}
+
+The proportional gain (Kp). \mbox{\Hypertarget{classpxl_1_1PID_a9d54dbc30b82357a73f24e3e91d7ecf0}\label{classpxl_1_1PID_a9d54dbc30b82357a73f24e3e91d7ecf0}} 
+\index{pxl::PID@{pxl::PID}!kP\_d@{kP\_d}}
+\index{kP\_d@{kP\_d}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{kP\_d}{kP\_d}}
+{\footnotesize\ttfamily float pxl\+::\+PID\+::k\+P\+\_\+d\hspace{0.3cm}{\ttfamily [protected]}}
+
+The porportinal drift gain (k\+P\+\_\+d) \mbox{\Hypertarget{classpxl_1_1PID_a595772c3fa362c37d5f268324cecf087}\label{classpxl_1_1PID_a595772c3fa362c37d5f268324cecf087}} 
+\index{pxl::PID@{pxl::PID}!prevError@{prevError}}
+\index{prevError@{prevError}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{prevError}{prevError}}
+{\footnotesize\ttfamily float pxl\+::\+PID\+::prev\+Error = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+The previous error value used for calculating the derivative term. \mbox{\Hypertarget{classpxl_1_1PID_a48de5c5111c6d4468434518f8ebaaf0c}\label{classpxl_1_1PID_a48de5c5111c6d4468434518f8ebaaf0c}} 
+\index{pxl::PID@{pxl::PID}!prevTime@{prevTime}}
+\index{prevTime@{prevTime}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{prevTime}{prevTime}}
+{\footnotesize\ttfamily std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ pxl\+::\+PID\+::prev\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+The previous time point used for calculating the time difference. \mbox{\Hypertarget{classpxl_1_1PID_a57cd4191dfb990c59e79cf487661c1ef}\label{classpxl_1_1PID_a57cd4191dfb990c59e79cf487661c1ef}} 
+\index{pxl::PID@{pxl::PID}!proportional@{proportional}}
+\index{proportional@{proportional}!pxl::PID@{pxl::PID}}
+\doxysubsubsection{\texorpdfstring{proportional}{proportional}}
+{\footnotesize\ttfamily float pxl\+::\+PID\+::proportional = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+The proportional term of the \mbox{\hyperlink{classpxl_1_1PID}{PID}} controller. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/pxl/\mbox{\hyperlink{pid_8hpp}{pid.\+hpp}}\item 
+src/pxl/\mbox{\hyperlink{pid_8cpp}{pid.\+cpp}}\end{DoxyCompactItemize}
