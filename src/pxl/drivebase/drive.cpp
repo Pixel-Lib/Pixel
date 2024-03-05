@@ -54,16 +54,14 @@ void Drivebase::setSensors(OdomSensors sensors) {
     std::vector<std::unique_ptr<TrackingWheel>> Horizontals;
     std::vector<std::unique_ptr<TrackingWheel>> drive;
     std::vector<std::shared_ptr<pros::IMU>> imu;
+auto pushIfNotNull = [](auto& vec, auto& sensor) {
+    sensor != nullptr ? vec.push_back(std::make_unique<TrackingWheel>(std::move(*sensor))) : void();
+};
 
-    if (sensors.vertical1 != nullptr)
-        Verticals.push_back(std::make_unique<TrackingWheel>(std::move(*sensors.vertical1)));
-    if (sensors.vertical2 != nullptr)
-        Verticals.push_back(std::make_unique<TrackingWheel>(std::move(*sensors.vertical2)));
-    if (sensors.horizontal1 != nullptr)
-        Horizontals.push_back(std::make_unique<TrackingWheel>(std::move(*sensors.horizontal1)));
-    if (sensors.horizontal2 != nullptr)
-        Horizontals.push_back(std::make_unique<TrackingWheel>(std::move(*sensors.horizontal2)));
-    if (sensors.imu != nullptr) imu.push_back(std::make_shared<pros::IMU>(std::move(*sensors.imu)));
+    pushIfNotNull(Verticals, sensors.vertical1);
+    pushIfNotNull(Verticals, sensors.vertical2);
+    pushIfNotNull(Horizontals, sensors.horizontal1);
+    pushIfNotNull(Horizontals, sensors.horizontal2);
 
     drive.push_back(std::make_unique<TrackingWheel>(drivetrain.leftMotors, drivetrain.wheelDiameter,
                                                     -drivetrain.trackWidth / 2, drivetrain.rpm));
