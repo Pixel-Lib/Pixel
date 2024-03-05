@@ -1,0 +1,14 @@
+PROJECT_NAME           = "Pixel"
+INPUT                  = include/pxl src/pxl
+RECURSIVE              = YES
+OUTPUT_DIRECTORY       = doc
+GENERATE_HTML          = YES
+HTML_COLORSTYLE_HUE    = 220
+HTML_COLORSTYLE_SAT    = 100
+HTML_COLORSTYLE_GAMMA  = 80
+HTML_TIMESTAMP         = YES
+HTML_DYNAMIC_SECTIONS  = YES
+GENERATE_LATEX         = NO
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
