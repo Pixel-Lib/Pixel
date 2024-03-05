@@ -1,15 +1,9 @@
 #include "pxl/drivebase/drive.hpp"
 
 namespace pxl {
-pxl::OdomSensors::OdomSensors(TrackingWheel *vertical1,
-                            TrackingWheel *vertical2,
-                            TrackingWheel *horizontal1,
-                            TrackingWheel *horizontal2, pros::Imu *imu)
-  : vertical1(vertical1),
-    vertical2(vertical2),
-    horizontal1(horizontal1),
-    horizontal2(horizontal2),
-    imu(imu) {}
+pxl::OdomSensors::OdomSensors(TrackingWheel *vertical1, TrackingWheel *vertical2, TrackingWheel *horizontal1,
+                              TrackingWheel *horizontal2, pros::Imu *imu)
+    : vertical1(vertical1), vertical2(vertical2), horizontal1(horizontal1), horizontal2(horizontal2), imu(imu) {}
 pxl::Drivetrain::Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *rightMotors, float trackWidth,
                             float wheelDiameter, float rpm)
     : leftMotors(leftMotors),
@@ -18,7 +12,6 @@ pxl::Drivetrain::Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *righ
       wheelDiameter(wheelDiameter),
       rpm(rpm) {}
 pxl::Drivebase::Drivebase(Drivetrain drivetrain, OdomSensors sensors) : drivetrain(drivetrain), sensors(sensors) {}
-
 
 void pxl::Drivebase::calibrateIMU(OdomSensors sensors) {
     int attempt = 1;
@@ -57,21 +50,27 @@ bool Drivebase::isDriverControl() {
            && !pros::competition::is_disabled();
 }
 void Drivebase::setSensors(OdomSensors sensors) {
-std::vector<std::unique_ptr<TrackingWheel>> Verticals;
-std::vector<std::unique_ptr<TrackingWheel>> Horizontals; 
-std::vector<std::unique_ptr<TrackingWheel>> drive;
-std::vector<std::shared_ptr<pros::IMU>> imu; 
+    std::vector<std::unique_ptr<TrackingWheel>> Verticals;
+    std::vector<std::unique_ptr<TrackingWheel>> Horizontals;
+    std::vector<std::unique_ptr<TrackingWheel>> drive;
+    std::vector<std::shared_ptr<pros::IMU>> imu;
 
-if (sensors.vertical1 != nullptr) Verticals.push_back(std::make_unique<TrackingWheel>(std::move(*sensors.vertical1)));
-if (sensors.vertical2 != nullptr) Verticals.push_back(std::make_unique<TrackingWheel>(std::move(*sensors.vertical2)));
-if (sensors.horizontal1 != nullptr) Horizontals.push_back(std::make_unique<TrackingWheel>(std::move(*sensors.horizontal1))); 
-if (sensors.horizontal2 != nullptr) Horizontals.push_back(std::make_unique<TrackingWheel>(std::move(*sensors.horizontal2))); 
-if (sensors.imu != nullptr) imu.push_back(std::make_shared<pros::IMU>(std::move(*sensors.imu))); 
+    if (sensors.vertical1 != nullptr)
+        Verticals.push_back(std::make_unique<TrackingWheel>(std::move(*sensors.vertical1)));
+    if (sensors.vertical2 != nullptr)
+        Verticals.push_back(std::make_unique<TrackingWheel>(std::move(*sensors.vertical2)));
+    if (sensors.horizontal1 != nullptr)
+        Horizontals.push_back(std::make_unique<TrackingWheel>(std::move(*sensors.horizontal1)));
+    if (sensors.horizontal2 != nullptr)
+        Horizontals.push_back(std::make_unique<TrackingWheel>(std::move(*sensors.horizontal2)));
+    if (sensors.imu != nullptr) imu.push_back(std::make_shared<pros::IMU>(std::move(*sensors.imu)));
 
-drive.push_back(std::make_unique<TrackingWheel>(drivetrain.leftMotors, drivetrain.wheelDiameter, -drivetrain.trackWidth / 2, drivetrain.rpm));
-drive.push_back(std::make_unique<TrackingWheel>(drivetrain.leftMotors, drivetrain.wheelDiameter, drivetrain.trackWidth / 2, drivetrain.rpm));
-pxl::Odom odom(Verticals, Horizontals, drive, imu);
-odom.init();
+    drive.push_back(std::make_unique<TrackingWheel>(drivetrain.leftMotors, drivetrain.wheelDiameter,
+                                                    -drivetrain.trackWidth / 2, drivetrain.rpm));
+    drive.push_back(std::make_unique<TrackingWheel>(drivetrain.leftMotors, drivetrain.wheelDiameter,
+                                                    drivetrain.trackWidth / 2, drivetrain.rpm));
+    pxl::Odom odom(Verticals, Horizontals, drive, imu);
+    odom.init();
 }
 void Drivebase::calibrate(bool calibrateImu) {
     // calibrate the IMU if it exists and the user doesn't specify otherwise
@@ -79,10 +78,10 @@ void Drivebase::calibrate(bool calibrateImu) {
     // initialize odom
     if (sensors.vertical1 == nullptr)
         sensors.vertical1 = new pxl::TrackingWheel(drivetrain.leftMotors, drivetrain.wheelDiameter,
-                                                      -(drivetrain.trackWidth / 2), drivetrain.rpm);
+                                                   -(drivetrain.trackWidth / 2), drivetrain.rpm);
     if (sensors.vertical2 == nullptr)
         sensors.vertical2 = new pxl::TrackingWheel(drivetrain.rightMotors, drivetrain.wheelDiameter,
-                                                      drivetrain.trackWidth / 2, drivetrain.rpm);
+                                                   drivetrain.trackWidth / 2, drivetrain.rpm);
     sensors.vertical1->reset();
     sensors.vertical2->reset();
     if (sensors.horizontal1 != nullptr) sensors.horizontal1->reset();
