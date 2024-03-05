@@ -58,14 +58,10 @@ float TrackingWheel::getDistanceTraveled() {
 
 // Get the distance delta or the change in distance
 float TrackingWheel::getDistanceDelta(bool update) {
-    auto getAngleDelta = [this, update]() {
-        const float prevAngle = this->lastAngle;
-        const float angle = this->encoder->get_value();
-        if (!update) this->lastAngle = prevAngle;
-        return (angle - prevAngle);
-    };
-
-    return getAngleDelta() / 2 * this->diameter;
+    const float prevAngle = this->lastAngle;
+    const float angle = this->encoder->get_value();
+    if (!update) this->lastAngle = prevAngle;
+    return (angle - prevAngle) / 2 * this->diameter;
 }
 
 // Get the wheel offset
@@ -73,8 +69,7 @@ float TrackingWheel::getOffset() { return this->distance; }
 
 // Get the type of wheel (0 for encoder/rotation, 1 for motor group)
 int TrackingWheel::getType() {
-    if (this->motors != nullptr) return 1;
-    return 0;
+    return (this->motors != nullptr) ? 1 : 0;
 }
 
 }  // namespace pxl
