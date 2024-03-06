@@ -22,3 +22,11 @@ document.querySelectorAll('.navbar a').forEach((link) => {
         });
     });
 });
+
+// Add a function to toggle a dropdown menu when it's clicked
+document.querySelectorAll('.dropdown-toggle').forEach((dropdown) => {
+    dropdown.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.target.nextElementSibling.classList.toggle('show');
+    });
+});
