@@ -1,7 +1,5 @@
 PROJECT_NAME           = "Pixel"
-PROJECT_LOGO           = "path/to/your/logo.png" # Add your project logo
 RECURSIVE              = YES
-OUTPUT_DIRECTORY       = doc
 GENERATE_HTML          = YES
 HTML_COLORSTYLE_HUE    = 220    # Change the hue to a cooler color
 HTML_COLORSTYLE_SAT    = 120    # Increase the saturation for a more vibrant look
