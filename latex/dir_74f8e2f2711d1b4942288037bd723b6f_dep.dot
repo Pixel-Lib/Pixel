@@ -1,0 +1,13 @@
+digraph "include/okapi/api/chassis/model" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_4202d117f5e57a9e678d731f6dbe9d69 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="chassis" fontname="Helvetica", fontsize="10", URL="dir_4202d117f5e57a9e678d731f6dbe9d69.html"]
+  dir_74f8e2f2711d1b4942288037bd723b6f [shape=box, label="model", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_74f8e2f2711d1b4942288037bd723b6f.html"];
+  }
+  dir_168cb15b1518231d3e9529c538899201 [shape=box label="device" fillcolor="white" style="filled" color="red" URL="dir_168cb15b1518231d3e9529c538899201.html"];
+  dir_e84fea72a7bc70ffe5d343194ba5b48e [shape=box label="units" URL="dir_e84fea72a7bc70ffe5d343194ba5b48e.html"];
+  dir_74f8e2f2711d1b4942288037bd723b6f->dir_168cb15b1518231d3e9529c538899201 [headlabel="7", labeldistance=1.5 headhref="dir_000014_000019.html"];
+  dir_74f8e2f2711d1b4942288037bd723b6f->dir_e84fea72a7bc70ffe5d343194ba5b48e [headlabel="1", labeldistance=1.5 headhref="dir_000014_000025.html"];
+}

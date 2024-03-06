@@ -1,0 +1,63 @@
+\hypertarget{classokapi_1_1TimeUtilFactory}{}\doxysection{okapi\+::Time\+Util\+Factory Class Reference}
+\label{classokapi_1_1TimeUtilFactory}\index{okapi::TimeUtilFactory@{okapi::TimeUtilFactory}}
+
+
+{\ttfamily \#include $<$time\+Util\+Factory.\+hpp$>$}
+
+
+
+Inheritance diagram for okapi\+::Time\+Util\+Factory\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classokapi_1_1TimeUtilFactory_a28e8bcd1d56e81be65068848052718fe}{$\sim$\+Time\+Util\+Factory}} ()=default
+\item 
+virtual \mbox{\hyperlink{classokapi_1_1TimeUtil}{Time\+Util}} \mbox{\hyperlink{classokapi_1_1TimeUtilFactory_abac38202f12e2cd697935f1178150095}{create}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classokapi_1_1TimeUtil}{Time\+Util}} \mbox{\hyperlink{classokapi_1_1TimeUtilFactory_afa3783bd7e6b9cf1313430ff7a05a16d}{create\+Default}} ()
+\item 
+static \mbox{\hyperlink{classokapi_1_1TimeUtil}{Time\+Util}} \mbox{\hyperlink{classokapi_1_1TimeUtilFactory_a3a8949368da406d164508fa5f36e70af}{with\+Settled\+Util\+Params}} (double iat\+Target\+Error=50, double iat\+Target\+Derivative=5, const QTime \&iat\+Target\+Time=250\+\_\+ms)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1TimeUtilFactory_a28e8bcd1d56e81be65068848052718fe}\label{classokapi_1_1TimeUtilFactory_a28e8bcd1d56e81be65068848052718fe}} 
+\index{okapi::TimeUtilFactory@{okapi::TimeUtilFactory}!````~TimeUtilFactory@{$\sim$TimeUtilFactory}}
+\index{````~TimeUtilFactory@{$\sim$TimeUtilFactory}!okapi::TimeUtilFactory@{okapi::TimeUtilFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$TimeUtilFactory()}{~TimeUtilFactory()}}
+{\footnotesize\ttfamily virtual okapi\+::\+Time\+Util\+Factory\+::$\sim$\+Time\+Util\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1TimeUtilFactory_abac38202f12e2cd697935f1178150095}\label{classokapi_1_1TimeUtilFactory_abac38202f12e2cd697935f1178150095}} 
+\index{okapi::TimeUtilFactory@{okapi::TimeUtilFactory}!create@{create}}
+\index{create@{create}!okapi::TimeUtilFactory@{okapi::TimeUtilFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classokapi_1_1TimeUtil}{Time\+Util}} okapi\+::\+Time\+Util\+Factory\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Creates a default \mbox{\hyperlink{classokapi_1_1TimeUtil}{Time\+Util}}. 
+
+Reimplemented in \mbox{\hyperlink{classokapi_1_1ConfigurableTimeUtilFactory_a40de39d64f1992bdc55030fb82e5bf9f}{okapi\+::\+Configurable\+Time\+Util\+Factory}}.
+
+\mbox{\Hypertarget{classokapi_1_1TimeUtilFactory_afa3783bd7e6b9cf1313430ff7a05a16d}\label{classokapi_1_1TimeUtilFactory_afa3783bd7e6b9cf1313430ff7a05a16d}} 
+\index{okapi::TimeUtilFactory@{okapi::TimeUtilFactory}!createDefault@{createDefault}}
+\index{createDefault@{createDefault}!okapi::TimeUtilFactory@{okapi::TimeUtilFactory}}
+\doxysubsubsection{\texorpdfstring{createDefault()}{createDefault()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classokapi_1_1TimeUtil}{Time\+Util}} okapi\+::\+Time\+Util\+Factory\+::create\+Default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a default \mbox{\hyperlink{classokapi_1_1TimeUtil}{Time\+Util}}. \mbox{\Hypertarget{classokapi_1_1TimeUtilFactory_a3a8949368da406d164508fa5f36e70af}\label{classokapi_1_1TimeUtilFactory_a3a8949368da406d164508fa5f36e70af}} 
+\index{okapi::TimeUtilFactory@{okapi::TimeUtilFactory}!withSettledUtilParams@{withSettledUtilParams}}
+\index{withSettledUtilParams@{withSettledUtilParams}!okapi::TimeUtilFactory@{okapi::TimeUtilFactory}}
+\doxysubsubsection{\texorpdfstring{withSettledUtilParams()}{withSettledUtilParams()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classokapi_1_1TimeUtil}{Time\+Util}} okapi\+::\+Time\+Util\+Factory\+::with\+Settled\+Util\+Params (\begin{DoxyParamCaption}\item[{double}]{iat\+Target\+Error = {\ttfamily 50},  }\item[{double}]{iat\+Target\+Derivative = {\ttfamily 5},  }\item[{const QTime \&}]{iat\+Target\+Time = {\ttfamily 250\+\_\+ms} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \mbox{\hyperlink{classokapi_1_1TimeUtil}{Time\+Util}} with custom \mbox{\hyperlink{classokapi_1_1SettledUtil}{Settled\+Util}} params. See \mbox{\hyperlink{classokapi_1_1SettledUtil}{Settled\+Util}} docs. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/impl/util/\mbox{\hyperlink{timeUtilFactory_8hpp}{time\+Util\+Factory.\+hpp}}\end{DoxyCompactItemize}

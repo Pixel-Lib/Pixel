@@ -1,0 +1,11 @@
+digraph "include/okapi/api/device/rotarysensor" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_168cb15b1518231d3e9529c538899201 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="device" fontname="Helvetica", fontsize="10", URL="dir_168cb15b1518231d3e9529c538899201.html"]
+  dir_6cd138e6435d2fcbac3fd73f0893bcbc [shape=box, label="rotarysensor", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_6cd138e6435d2fcbac3fd73f0893bcbc.html"];
+  }
+  dir_ee8fabeddabdeff2f9d7f82f9bc73f75 [shape=box label="control" fillcolor="white" style="filled" color="red" URL="dir_ee8fabeddabdeff2f9d7f82f9bc73f75.html"];
+  dir_6cd138e6435d2fcbac3fd73f0893bcbc->dir_ee8fabeddabdeff2f9d7f82f9bc73f75 [headlabel="1", labeldistance=1.5 headhref="dir_000022_000015.html"];
+}

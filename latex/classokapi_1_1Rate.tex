@@ -1,0 +1,107 @@
+\hypertarget{classokapi_1_1Rate}{}\doxysection{okapi\+::Rate Class Reference}
+\label{classokapi_1_1Rate}\index{okapi::Rate@{okapi::Rate}}
+
+
+{\ttfamily \#include $<$rate.\+hpp$>$}
+
+
+
+Inheritance diagram for okapi\+::Rate\+:
+% FIG 0
+
+
+Collaboration diagram for okapi\+::Rate\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1Rate_af6bc24e88c99cb3ba9b5384c80b13645}{Rate}} ()
+\item 
+void \mbox{\hyperlink{classokapi_1_1Rate_ad066b6b32b6d43f4ccbb66617018e1fc}{delay}} (QFrequency ihz) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1Rate_a9244a301c81388054954076b739cec50}{delay\+Until}} (QTime itime) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1Rate_a0d31416c85408d63830cceaa07aff1e0}{delay\+Until}} (uint32\+\_\+t ims) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{classokapi_1_1Rate_aec1dbde3c1139531b48a035e9041e61b}{last\+Time}} \{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1Rate_af6bc24e88c99cb3ba9b5384c80b13645}\label{classokapi_1_1Rate_af6bc24e88c99cb3ba9b5384c80b13645}} 
+\index{okapi::Rate@{okapi::Rate}!Rate@{Rate}}
+\index{Rate@{Rate}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{Rate()}{Rate()}}
+{\footnotesize\ttfamily okapi\+::\+Rate\+::\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1Rate_ad066b6b32b6d43f4ccbb66617018e1fc}\label{classokapi_1_1Rate_ad066b6b32b6d43f4ccbb66617018e1fc}} 
+\index{okapi::Rate@{okapi::Rate}!delay@{delay}}
+\index{delay@{delay}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay (\begin{DoxyParamCaption}\item[{QFrequency}]{ihz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task such that it runs at the given frequency. The first delay will run for 1000/(ihz). Subsequent delays will adjust according to the previous runtime of the task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ihz} & the frequency \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1AbstractRate_ab1abf71d6cf3184abeed1d3556d39d4f}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1Rate_a9244a301c81388054954076b739cec50}\label{classokapi_1_1Rate_a9244a301c81388054954076b739cec50}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{QTime}]{itime }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until itime has passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itime} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1AbstractRate_a53a15074ca3bd0787ce34d30c068d9b2}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1Rate_a0d31416c85408d63830cceaa07aff1e0}\label{classokapi_1_1Rate_a0d31416c85408d63830cceaa07aff1e0}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ims }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until ims milliseconds have passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ims} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1AbstractRate_a3faf54ea2951ae5e0567cd50ddba0227}{okapi\+::\+Abstract\+Rate}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classokapi_1_1Rate_aec1dbde3c1139531b48a035e9041e61b}\label{classokapi_1_1Rate_aec1dbde3c1139531b48a035e9041e61b}} 
+\index{okapi::Rate@{okapi::Rate}!lastTime@{lastTime}}
+\index{lastTime@{lastTime}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{lastTime}{lastTime}}
+{\footnotesize\ttfamily std\+::uint32\+\_\+t okapi\+::\+Rate\+::last\+Time \{0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/impl/util/\mbox{\hyperlink{rate_8hpp}{rate.\+hpp}}\end{DoxyCompactItemize}

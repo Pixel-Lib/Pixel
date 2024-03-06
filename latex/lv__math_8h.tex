@@ -1,0 +1,131 @@
+\hypertarget{lv__math_8h}{}\doxysection{include/display/lv\+\_\+misc/lv\+\_\+math.h File Reference}
+\label{lv__math_8h}\index{include/display/lv\_misc/lv\_math.h@{include/display/lv\_misc/lv\_math.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for lv\+\_\+math.\+h\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lv__math_8h_a820d36c04e90020db62f563358910807}{LV\+\_\+\+MATH\+\_\+\+MIN}}(a,  b)~((a) $<$ (b) ? (a) \+: (b))
+\item 
+\#define \mbox{\hyperlink{lv__math_8h_ae532fd7eb3f50c685401c8ddc49755aa}{LV\+\_\+\+MATH\+\_\+\+MAX}}(a,  b)~((a) $>$ (b) ? (a) \+: (b))
+\item 
+\#define \mbox{\hyperlink{lv__math_8h_a866d44c53cb89e18ff0c2c693d42012f}{LV\+\_\+\+MATH\+\_\+\+ABS}}(x)~((x) $>$ 0 ? (x) \+: (-\/(x)))
+\item 
+\#define \mbox{\hyperlink{lv__math_8h_a4d2ec6c2d57bba3a907cd0f54556b39a}{LV\+\_\+\+TRIGO\+\_\+\+SIN\+\_\+\+MAX}}~32767
+\item 
+\#define \mbox{\hyperlink{lv__math_8h_a32656adf979cc453f3abc9ed5efad596}{LV\+\_\+\+TRIGO\+\_\+\+SHIFT}}~15 /$\ast$ $>$$>$ LV\+\_\+\+TRIGO\+\_\+\+SHIFT to normalize$\ast$/
+\item 
+\#define \mbox{\hyperlink{lv__math_8h_a371be2f990b1496a0aa78009e4be993b}{LV\+\_\+\+BEZIER\+\_\+\+VAL\+\_\+\+MAX}}~1024 /$\ast$Max time in Bezier functions (not \mbox{[}0..\+1\mbox{]} to use integers) $\ast$/
+\item 
+\#define \mbox{\hyperlink{lv__math_8h_ac6341faec2d9d29861fb3e7132834f7e}{LV\+\_\+\+BEZIER\+\_\+\+VAL\+\_\+\+SHIFT}}~10 /$\ast$log2(\mbox{\hyperlink{lv__math_8h_a371be2f990b1496a0aa78009e4be993b}{LV\+\_\+\+BEZIER\+\_\+\+VAL\+\_\+\+MAX}})\+: used to normalize up scaled values$\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{lv__math_8h_a9e470148b17244e59b8cb5e5895d5b57}{lv\+\_\+math\+\_\+num\+\_\+to\+\_\+str}} (int32\+\_\+t num, char $\ast$buf)
+\item 
+int16\+\_\+t \mbox{\hyperlink{lv__math_8h_ab51e71295e3c0225d56f52b8f58ea057}{lv\+\_\+trigo\+\_\+sin}} (int16\+\_\+t angle)
+\item 
+int32\+\_\+t \mbox{\hyperlink{lv__math_8h_a0ef88301410405973e73360f89f27e3d}{lv\+\_\+bezier3}} (uint32\+\_\+t t, int32\+\_\+t u0, int32\+\_\+t u1, int32\+\_\+t u2, int32\+\_\+t u3)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{lv__math_8h_a371be2f990b1496a0aa78009e4be993b}\label{lv__math_8h_a371be2f990b1496a0aa78009e4be993b}} 
+\index{lv\_math.h@{lv\_math.h}!LV\_BEZIER\_VAL\_MAX@{LV\_BEZIER\_VAL\_MAX}}
+\index{LV\_BEZIER\_VAL\_MAX@{LV\_BEZIER\_VAL\_MAX}!lv\_math.h@{lv\_math.h}}
+\doxysubsubsection{\texorpdfstring{LV\_BEZIER\_VAL\_MAX}{LV\_BEZIER\_VAL\_MAX}}
+{\footnotesize\ttfamily \#define LV\+\_\+\+BEZIER\+\_\+\+VAL\+\_\+\+MAX~1024 /$\ast$Max time in Bezier functions (not \mbox{[}0..\+1\mbox{]} to use integers) $\ast$/}
+
+\mbox{\Hypertarget{lv__math_8h_ac6341faec2d9d29861fb3e7132834f7e}\label{lv__math_8h_ac6341faec2d9d29861fb3e7132834f7e}} 
+\index{lv\_math.h@{lv\_math.h}!LV\_BEZIER\_VAL\_SHIFT@{LV\_BEZIER\_VAL\_SHIFT}}
+\index{LV\_BEZIER\_VAL\_SHIFT@{LV\_BEZIER\_VAL\_SHIFT}!lv\_math.h@{lv\_math.h}}
+\doxysubsubsection{\texorpdfstring{LV\_BEZIER\_VAL\_SHIFT}{LV\_BEZIER\_VAL\_SHIFT}}
+{\footnotesize\ttfamily \#define LV\+\_\+\+BEZIER\+\_\+\+VAL\+\_\+\+SHIFT~10 /$\ast$log2(\mbox{\hyperlink{lv__math_8h_a371be2f990b1496a0aa78009e4be993b}{LV\+\_\+\+BEZIER\+\_\+\+VAL\+\_\+\+MAX}})\+: used to normalize up scaled values$\ast$/}
+
+\mbox{\Hypertarget{lv__math_8h_a866d44c53cb89e18ff0c2c693d42012f}\label{lv__math_8h_a866d44c53cb89e18ff0c2c693d42012f}} 
+\index{lv\_math.h@{lv\_math.h}!LV\_MATH\_ABS@{LV\_MATH\_ABS}}
+\index{LV\_MATH\_ABS@{LV\_MATH\_ABS}!lv\_math.h@{lv\_math.h}}
+\doxysubsubsection{\texorpdfstring{LV\_MATH\_ABS}{LV\_MATH\_ABS}}
+{\footnotesize\ttfamily \#define LV\+\_\+\+MATH\+\_\+\+ABS(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) $>$ 0 ? (x) \+: (-\/(x)))}
+
+\mbox{\Hypertarget{lv__math_8h_ae532fd7eb3f50c685401c8ddc49755aa}\label{lv__math_8h_ae532fd7eb3f50c685401c8ddc49755aa}} 
+\index{lv\_math.h@{lv\_math.h}!LV\_MATH\_MAX@{LV\_MATH\_MAX}}
+\index{LV\_MATH\_MAX@{LV\_MATH\_MAX}!lv\_math.h@{lv\_math.h}}
+\doxysubsubsection{\texorpdfstring{LV\_MATH\_MAX}{LV\_MATH\_MAX}}
+{\footnotesize\ttfamily \#define LV\+\_\+\+MATH\+\_\+\+MAX(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~((a) $>$ (b) ? (a) \+: (b))}
+
+\mbox{\Hypertarget{lv__math_8h_a820d36c04e90020db62f563358910807}\label{lv__math_8h_a820d36c04e90020db62f563358910807}} 
+\index{lv\_math.h@{lv\_math.h}!LV\_MATH\_MIN@{LV\_MATH\_MIN}}
+\index{LV\_MATH\_MIN@{LV\_MATH\_MIN}!lv\_math.h@{lv\_math.h}}
+\doxysubsubsection{\texorpdfstring{LV\_MATH\_MIN}{LV\_MATH\_MIN}}
+{\footnotesize\ttfamily \#define LV\+\_\+\+MATH\+\_\+\+MIN(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~((a) $<$ (b) ? (a) \+: (b))}
+
+\mbox{\Hypertarget{lv__math_8h_a32656adf979cc453f3abc9ed5efad596}\label{lv__math_8h_a32656adf979cc453f3abc9ed5efad596}} 
+\index{lv\_math.h@{lv\_math.h}!LV\_TRIGO\_SHIFT@{LV\_TRIGO\_SHIFT}}
+\index{LV\_TRIGO\_SHIFT@{LV\_TRIGO\_SHIFT}!lv\_math.h@{lv\_math.h}}
+\doxysubsubsection{\texorpdfstring{LV\_TRIGO\_SHIFT}{LV\_TRIGO\_SHIFT}}
+{\footnotesize\ttfamily \#define LV\+\_\+\+TRIGO\+\_\+\+SHIFT~15 /$\ast$ $>$$>$ LV\+\_\+\+TRIGO\+\_\+\+SHIFT to normalize$\ast$/}
+
+\mbox{\Hypertarget{lv__math_8h_a4d2ec6c2d57bba3a907cd0f54556b39a}\label{lv__math_8h_a4d2ec6c2d57bba3a907cd0f54556b39a}} 
+\index{lv\_math.h@{lv\_math.h}!LV\_TRIGO\_SIN\_MAX@{LV\_TRIGO\_SIN\_MAX}}
+\index{LV\_TRIGO\_SIN\_MAX@{LV\_TRIGO\_SIN\_MAX}!lv\_math.h@{lv\_math.h}}
+\doxysubsubsection{\texorpdfstring{LV\_TRIGO\_SIN\_MAX}{LV\_TRIGO\_SIN\_MAX}}
+{\footnotesize\ttfamily \#define LV\+\_\+\+TRIGO\+\_\+\+SIN\+\_\+\+MAX~32767}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lv__math_8h_a0ef88301410405973e73360f89f27e3d}\label{lv__math_8h_a0ef88301410405973e73360f89f27e3d}} 
+\index{lv\_math.h@{lv\_math.h}!lv\_bezier3@{lv\_bezier3}}
+\index{lv\_bezier3@{lv\_bezier3}!lv\_math.h@{lv\_math.h}}
+\doxysubsubsection{\texorpdfstring{lv\_bezier3()}{lv\_bezier3()}}
+{\footnotesize\ttfamily int32\+\_\+t lv\+\_\+bezier3 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{t,  }\item[{int32\+\_\+t}]{u0,  }\item[{int32\+\_\+t}]{u1,  }\item[{int32\+\_\+t}]{u2,  }\item[{int32\+\_\+t}]{u3 }\end{DoxyParamCaption})}
+
+Calculate a value of a Cubic Bezier function. 
+\begin{DoxyParams}{Parameters}
+{\em t} & time in range of \mbox{[}0..LV\+\_\+\+BEZIER\+\_\+\+VAL\+\_\+\+MAX\mbox{]} \\
+\hline
+{\em u0} & start values in range of \mbox{[}0..LV\+\_\+\+BEZIER\+\_\+\+VAL\+\_\+\+MAX\mbox{]} \\
+\hline
+{\em u1} & control value 1 values in range of \mbox{[}0..LV\+\_\+\+BEZIER\+\_\+\+VAL\+\_\+\+MAX\mbox{]} \\
+\hline
+{\em u2} & control value 2 in range of \mbox{[}0..LV\+\_\+\+BEZIER\+\_\+\+VAL\+\_\+\+MAX\mbox{]} \\
+\hline
+{\em u3} & end values in range of \mbox{[}0..LV\+\_\+\+BEZIER\+\_\+\+VAL\+\_\+\+MAX\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value calculated from the given parameters in range of \mbox{[}0..LV\+\_\+\+BEZIER\+\_\+\+VAL\+\_\+\+MAX\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lv__math_8h_a9e470148b17244e59b8cb5e5895d5b57}\label{lv__math_8h_a9e470148b17244e59b8cb5e5895d5b57}} 
+\index{lv\_math.h@{lv\_math.h}!lv\_math\_num\_to\_str@{lv\_math\_num\_to\_str}}
+\index{lv\_math\_num\_to\_str@{lv\_math\_num\_to\_str}!lv\_math.h@{lv\_math.h}}
+\doxysubsubsection{\texorpdfstring{lv\_math\_num\_to\_str()}{lv\_math\_num\_to\_str()}}
+{\footnotesize\ttfamily char$\ast$ lv\+\_\+math\+\_\+num\+\_\+to\+\_\+str (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{num,  }\item[{char $\ast$}]{buf }\end{DoxyParamCaption})}
+
+Convert a number to string 
+\begin{DoxyParams}{Parameters}
+{\em num} & a number \\
+\hline
+{\em buf} & pointer to a {\ttfamily char} buffer. The result will be stored here (max 10 elements) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+same as {\ttfamily buf} (just for convenience) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lv__math_8h_ab51e71295e3c0225d56f52b8f58ea057}\label{lv__math_8h_ab51e71295e3c0225d56f52b8f58ea057}} 
+\index{lv\_math.h@{lv\_math.h}!lv\_trigo\_sin@{lv\_trigo\_sin}}
+\index{lv\_trigo\_sin@{lv\_trigo\_sin}!lv\_math.h@{lv\_math.h}}
+\doxysubsubsection{\texorpdfstring{lv\_trigo\_sin()}{lv\_trigo\_sin()}}
+{\footnotesize\ttfamily int16\+\_\+t lv\+\_\+trigo\+\_\+sin (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{angle }\end{DoxyParamCaption})}
+
+Return with sinus of an angle 
+\begin{DoxyParams}{Parameters}
+{\em angle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sinus of \textquotesingle{}angle\textquotesingle{}. sin(-\/90) = -\/32767, sin(90) = 32767 
+\end{DoxyReturn}

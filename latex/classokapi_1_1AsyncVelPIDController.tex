@@ -1,0 +1,104 @@
+\hypertarget{classokapi_1_1AsyncVelPIDController}{}\doxysection{okapi\+::Async\+Vel\+PIDController Class Reference}
+\label{classokapi_1_1AsyncVelPIDController}\index{okapi::AsyncVelPIDController@{okapi::AsyncVelPIDController}}
+
+
+{\ttfamily \#include $<$async\+Vel\+Pid\+Controller.\+hpp$>$}
+
+
+
+Inheritance diagram for okapi\+::Async\+Vel\+PIDController\+:
+% FIG 0
+
+
+Collaboration diagram for okapi\+::Async\+Vel\+PIDController\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1AsyncVelPIDController_af1f3d7f4b31514ca97500265f5e3295e}{Async\+Vel\+PIDController}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerInput}{Controller\+Input}}$<$ double $>$$>$ \&iinput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerOutput}{Controller\+Output}}$<$ double $>$$>$ \&ioutput, const \mbox{\hyperlink{classokapi_1_1TimeUtil}{Time\+Util}} \&itime\+Util, double ikP, double ikD, double ikF, double ik\+SF, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1VelMath}{Vel\+Math}} $>$ ivel\+Math, double iratio=1, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1Filter}{Filter}} $>$ iderivative\+Filter=std\+::make\+\_\+unique$<$ \mbox{\hyperlink{classokapi_1_1PassthroughFilter}{Passthrough\+Filter}} $>$(), const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1Logger}{Logger}} $>$ \&ilogger=\mbox{\hyperlink{classokapi_1_1Logger_a70bc25e46e50059ef047c9cbfd8bef3a}{Logger\+::get\+Default\+Logger}}())
+\item 
+void \mbox{\hyperlink{classokapi_1_1AsyncVelPIDController_a18b0097f55bd1d04e2e757faa8f84ad7}{set\+Gains}} (const \mbox{\hyperlink{structokapi_1_1IterativeVelPIDController_1_1Gains}{Iterative\+Vel\+PIDController\+::\+Gains}} \&igains)
+\item 
+\mbox{\hyperlink{structokapi_1_1IterativeVelPIDController_1_1Gains}{Iterative\+Vel\+PIDController\+::\+Gains}} \mbox{\hyperlink{classokapi_1_1AsyncVelPIDController_ae58c57c3483e9b6aad7898cbfd93806d}{get\+Gains}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1IterativeVelPIDController}{Iterative\+Vel\+PIDController}} $>$ \mbox{\hyperlink{classokapi_1_1AsyncVelPIDController_adadfc6e395b36459af42f9cc4d6bafe1}{internal\+Controller}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1AsyncVelPIDController_af1f3d7f4b31514ca97500265f5e3295e}\label{classokapi_1_1AsyncVelPIDController_af1f3d7f4b31514ca97500265f5e3295e}} 
+\index{okapi::AsyncVelPIDController@{okapi::AsyncVelPIDController}!AsyncVelPIDController@{AsyncVelPIDController}}
+\index{AsyncVelPIDController@{AsyncVelPIDController}!okapi::AsyncVelPIDController@{okapi::AsyncVelPIDController}}
+\doxysubsubsection{\texorpdfstring{AsyncVelPIDController()}{AsyncVelPIDController()}}
+{\footnotesize\ttfamily okapi\+::\+Async\+Vel\+PIDController\+::\+Async\+Vel\+PIDController (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerInput}{Controller\+Input}}$<$ double $>$$>$ \&}]{iinput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerOutput}{Controller\+Output}}$<$ double $>$$>$ \&}]{ioutput,  }\item[{const \mbox{\hyperlink{classokapi_1_1TimeUtil}{Time\+Util}} \&}]{itime\+Util,  }\item[{double}]{ikP,  }\item[{double}]{ikD,  }\item[{double}]{ikF,  }\item[{double}]{ik\+SF,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1VelMath}{Vel\+Math}} $>$}]{ivel\+Math,  }\item[{double}]{iratio = {\ttfamily 1},  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1Filter}{Filter}} $>$}]{iderivative\+Filter = {\ttfamily std\+:\+:make\+\_\+unique$<$~\mbox{\hyperlink{classokapi_1_1PassthroughFilter}{Passthrough\+Filter}}~$>$()},  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1Logger}{Logger}} $>$ \&}]{ilogger = {\ttfamily \mbox{\hyperlink{classokapi_1_1Logger_a70bc25e46e50059ef047c9cbfd8bef3a}{Logger\+::get\+Default\+Logger}}()} }\end{DoxyParamCaption})}
+
+An async velocity PID controller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iinput} & The controller input. \\
+\hline
+{\em ioutput} & The controller output. \\
+\hline
+{\em itime\+Util} & The \mbox{\hyperlink{classokapi_1_1TimeUtil}{Time\+Util}}. \\
+\hline
+{\em ikP} & The proportional gain. \\
+\hline
+{\em ikD} & The derivative gain. \\
+\hline
+{\em ikF} & The feed-\/forward gain. \\
+\hline
+{\em ik\+SF} & A feed-\/forward gain to counteract static friction. \\
+\hline
+{\em ivel\+Math} & The \mbox{\hyperlink{classokapi_1_1VelMath}{Vel\+Math}} used for calculating velocity. \\
+\hline
+{\em iratio} & Any external gear ratio. \\
+\hline
+{\em iderivative\+Filter} & The derivative filter. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1AsyncVelPIDController_ae58c57c3483e9b6aad7898cbfd93806d}\label{classokapi_1_1AsyncVelPIDController_ae58c57c3483e9b6aad7898cbfd93806d}} 
+\index{okapi::AsyncVelPIDController@{okapi::AsyncVelPIDController}!getGains@{getGains}}
+\index{getGains@{getGains}!okapi::AsyncVelPIDController@{okapi::AsyncVelPIDController}}
+\doxysubsubsection{\texorpdfstring{getGains()}{getGains()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structokapi_1_1IterativeVelPIDController_1_1Gains}{Iterative\+Vel\+PIDController\+::\+Gains}} okapi\+::\+Async\+Vel\+PIDController\+::get\+Gains (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the current gains.
+
+\begin{DoxyReturn}{Returns}
+The current gains. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1AsyncVelPIDController_a18b0097f55bd1d04e2e757faa8f84ad7}\label{classokapi_1_1AsyncVelPIDController_a18b0097f55bd1d04e2e757faa8f84ad7}} 
+\index{okapi::AsyncVelPIDController@{okapi::AsyncVelPIDController}!setGains@{setGains}}
+\index{setGains@{setGains}!okapi::AsyncVelPIDController@{okapi::AsyncVelPIDController}}
+\doxysubsubsection{\texorpdfstring{setGains()}{setGains()}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Vel\+PIDController\+::set\+Gains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structokapi_1_1IterativeVelPIDController_1_1Gains}{Iterative\+Vel\+PIDController\+::\+Gains}} \&}]{igains }\end{DoxyParamCaption})}
+
+Set controller gains.
+
+
+\begin{DoxyParams}{Parameters}
+{\em igains} & The new gains. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classokapi_1_1AsyncVelPIDController_adadfc6e395b36459af42f9cc4d6bafe1}\label{classokapi_1_1AsyncVelPIDController_adadfc6e395b36459af42f9cc4d6bafe1}} 
+\index{okapi::AsyncVelPIDController@{okapi::AsyncVelPIDController}!internalController@{internalController}}
+\index{internalController@{internalController}!okapi::AsyncVelPIDController@{okapi::AsyncVelPIDController}}
+\doxysubsubsection{\texorpdfstring{internalController}{internalController}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classokapi_1_1IterativeVelPIDController}{Iterative\+Vel\+PIDController}}$>$ okapi\+::\+Async\+Vel\+PIDController\+::internal\+Controller\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/api/control/async/\mbox{\hyperlink{asyncVelPidController_8hpp}{async\+Vel\+Pid\+Controller.\+hpp}}\end{DoxyCompactItemize}

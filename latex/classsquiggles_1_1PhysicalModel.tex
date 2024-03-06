@@ -1,0 +1,77 @@
+\hypertarget{classsquiggles_1_1PhysicalModel}{}\doxysection{squiggles\+::Physical\+Model Class Reference}
+\label{classsquiggles_1_1PhysicalModel}\index{squiggles::PhysicalModel@{squiggles::PhysicalModel}}
+
+
+{\ttfamily \#include $<$physicalmodel.\+hpp$>$}
+
+
+
+Inheritance diagram for squiggles\+::Physical\+Model\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structsquiggles_1_1Constraints}{Constraints}} \mbox{\hyperlink{classsquiggles_1_1PhysicalModel_a39b09199c02fe508fc00f78e7b205302}{constraints}} (const \mbox{\hyperlink{classsquiggles_1_1Pose}{Pose}} pose, double curvature, double vel)=0
+\item 
+virtual std\+::vector$<$ double $>$ \mbox{\hyperlink{classsquiggles_1_1PhysicalModel_a5e730ef474a06693e3398070861d7ca7}{linear\+\_\+to\+\_\+wheel\+\_\+vels}} (double linear, double curvature)=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classsquiggles_1_1PhysicalModel_a424f090d9145d93cd310d705cf68a2b9}{to\+\_\+string}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsquiggles_1_1PhysicalModel_a39b09199c02fe508fc00f78e7b205302}\label{classsquiggles_1_1PhysicalModel_a39b09199c02fe508fc00f78e7b205302}} 
+\index{squiggles::PhysicalModel@{squiggles::PhysicalModel}!constraints@{constraints}}
+\index{constraints@{constraints}!squiggles::PhysicalModel@{squiggles::PhysicalModel}}
+\doxysubsubsection{\texorpdfstring{constraints()}{constraints()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structsquiggles_1_1Constraints}{Constraints}} squiggles\+::\+Physical\+Model\+::constraints (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsquiggles_1_1Pose}{Pose}}}]{pose,  }\item[{double}]{curvature,  }\item[{double}]{vel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Calculate a set of stricter constraints for the path at the given state than the general constraints based on the robot\textquotesingle{}s kinematics.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pose} & The 2D pose for this state in the path. \\
+\hline
+{\em curvature} & The change in heading at this state in the path in 1 / meters. \\
+\hline
+{\em vel} & The linear velocity at this state in the path in meters per second. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classsquiggles_1_1TankModel_a228118a70bc48fcca6265fca42dc2efc}{squiggles\+::\+Tank\+Model}}.
+
+\mbox{\Hypertarget{classsquiggles_1_1PhysicalModel_a5e730ef474a06693e3398070861d7ca7}\label{classsquiggles_1_1PhysicalModel_a5e730ef474a06693e3398070861d7ca7}} 
+\index{squiggles::PhysicalModel@{squiggles::PhysicalModel}!linear\_to\_wheel\_vels@{linear\_to\_wheel\_vels}}
+\index{linear\_to\_wheel\_vels@{linear\_to\_wheel\_vels}!squiggles::PhysicalModel@{squiggles::PhysicalModel}}
+\doxysubsubsection{\texorpdfstring{linear\_to\_wheel\_vels()}{linear\_to\_wheel\_vels()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$double$>$ squiggles\+::\+Physical\+Model\+::linear\+\_\+to\+\_\+wheel\+\_\+vels (\begin{DoxyParamCaption}\item[{double}]{linear,  }\item[{double}]{curvature }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Converts a linear velocity and desired curvature into the component for each wheel of the robot.
+
+
+\begin{DoxyParams}{Parameters}
+{\em linear} & The linear velocity for the robot in meters per second. \\
+\hline
+{\em curvature} & The change in heading for the robot in 1 / meters. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classsquiggles_1_1TankModel_a7d91dd9fd7ce412d3c05be96520b21a1}{squiggles\+::\+Tank\+Model}}.
+
+\mbox{\Hypertarget{classsquiggles_1_1PhysicalModel_a424f090d9145d93cd310d705cf68a2b9}\label{classsquiggles_1_1PhysicalModel_a424f090d9145d93cd310d705cf68a2b9}} 
+\index{squiggles::PhysicalModel@{squiggles::PhysicalModel}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!squiggles::PhysicalModel@{squiggles::PhysicalModel}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily virtual std\+::string squiggles\+::\+Physical\+Model\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classsquiggles_1_1TankModel_a10c913c5ac93113fcac61610cafff43c}{squiggles\+::\+Tank\+Model}}, and \mbox{\hyperlink{classsquiggles_1_1PassthroughModel_aa774b8955998214baadfa017c7b9976c}{squiggles\+::\+Passthrough\+Model}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/squiggles/physicalmodel/\mbox{\hyperlink{physicalmodel_8hpp}{physicalmodel.\+hpp}}\end{DoxyCompactItemize}

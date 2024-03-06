@@ -1,0 +1,314 @@
+\hypertarget{link_8h}{}\doxysection{include/pros/link.h File Reference}
+\label{link_8h}\index{include/pros/link.h@{include/pros/link.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for link.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{link_8h_a74f7a80d93eb19b82627a0565ae77f6d}{LINK\+\_\+\+BUFFER\+\_\+\+SIZE}}~512
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{link_8h_aeb9b97127da30edb91cc281b28f5e8df}{link\+\_\+type\+\_\+e}} \mbox{\hyperlink{link_8h_a63fef5a619cd034d3ee2e71ac74103c4}{link\+\_\+type\+\_\+e\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{link_8h_aeb9b97127da30edb91cc281b28f5e8df}{link\+\_\+type\+\_\+e}} \{ \mbox{\hyperlink{link_8h_aeb9b97127da30edb91cc281b28f5e8dfaab8163ecac2542f247939dae82071628}{E\+\_\+\+LINK\+\_\+\+RECIEVER}} = 0
+, \mbox{\hyperlink{link_8h_aeb9b97127da30edb91cc281b28f5e8dfa959bf4f7005bdf46615e47d59b1b551e}{E\+\_\+\+LINK\+\_\+\+TRANSMITTER}}
+, \mbox{\hyperlink{link_8h_aeb9b97127da30edb91cc281b28f5e8dfabb07f278cb352fd102c4da036ea4a6e2}{E\+\_\+\+LINK\+\_\+\+RX}} = E\+\_\+\+LINK\+\_\+\+RECIEVER
+, \mbox{\hyperlink{link_8h_aeb9b97127da30edb91cc281b28f5e8dfab0ef9c35843cf88823e252745aaac1bd}{E\+\_\+\+LINK\+\_\+\+TX}} = E\+\_\+\+LINK\+\_\+\+TRANSMITTER
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{link_8h_a96130006a3d2dd4ea7935d90525b40cc}{link\+\_\+init}} (uint8\+\_\+t port, const char $\ast$link\+\_\+id, \mbox{\hyperlink{link_8h_a63fef5a619cd034d3ee2e71ac74103c4}{link\+\_\+type\+\_\+e\+\_\+t}} type)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{link_8h_a62ba3655861bf1d739897100d62bc9e2}{link\+\_\+init\+\_\+override}} (uint8\+\_\+t port, const char $\ast$link\+\_\+id, \mbox{\hyperlink{link_8h_a63fef5a619cd034d3ee2e71ac74103c4}{link\+\_\+type\+\_\+e\+\_\+t}} type)
+\item 
+bool \mbox{\hyperlink{link_8h_af35198b0d94685c25800a8ccd03e9087}{link\+\_\+connected}} (uint8\+\_\+t port)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{link_8h_ad93e824e70f80bf0275efc2a00d2c8da}{link\+\_\+raw\+\_\+receivable\+\_\+size}} (uint8\+\_\+t port)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{link_8h_af41c5046b1bcac9952310eef92a79611}{link\+\_\+raw\+\_\+transmittable\+\_\+size}} (uint8\+\_\+t port)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{link_8h_a5dfdea4d57445877ce1ff36560ad7010}{link\+\_\+transmit\+\_\+raw}} (uint8\+\_\+t port, void $\ast$data, uint16\+\_\+t data\+\_\+size)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{link_8h_a7e8fafa4f335bed613f59bbc49d30e5e}{link\+\_\+receive\+\_\+raw}} (uint8\+\_\+t port, void $\ast$dest, uint16\+\_\+t data\+\_\+size)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{link_8h_ac7fe2288263fb6e76652b87507b2b41d}{link\+\_\+transmit}} (uint8\+\_\+t port, void $\ast$data, uint16\+\_\+t data\+\_\+size)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{link_8h_adcc5e8c69eb2b0bb65078d7d9f94d9e3}{link\+\_\+receive}} (uint8\+\_\+t port, void $\ast$dest, uint16\+\_\+t data\+\_\+size)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{link_8h_a911f9321b7ed3b1df907fe0f4a5a7b71}{link\+\_\+clear\+\_\+receive\+\_\+buf}} (uint8\+\_\+t port)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains prototypes for functions related to the robot to robot communications.
+
+Visit \href{https://pros.cs.purdue.edu/v5/api/c/link.html}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/api/c/link.\+html}} to learn more.
+
+This file should not be modified by users, since it gets replaced whenever a kernel upgrade occurs.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2023, Purdue University ACM SIGBots.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{link_8h_a74f7a80d93eb19b82627a0565ae77f6d}\label{link_8h_a74f7a80d93eb19b82627a0565ae77f6d}} 
+\index{link.h@{link.h}!LINK\_BUFFER\_SIZE@{LINK\_BUFFER\_SIZE}}
+\index{LINK\_BUFFER\_SIZE@{LINK\_BUFFER\_SIZE}!link.h@{link.h}}
+\doxysubsubsection{\texorpdfstring{LINK\_BUFFER\_SIZE}{LINK\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define LINK\+\_\+\+BUFFER\+\_\+\+SIZE~512}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{link_8h_a63fef5a619cd034d3ee2e71ac74103c4}\label{link_8h_a63fef5a619cd034d3ee2e71ac74103c4}} 
+\index{link.h@{link.h}!link\_type\_e\_t@{link\_type\_e\_t}}
+\index{link\_type\_e\_t@{link\_type\_e\_t}!link.h@{link.h}}
+\doxysubsubsection{\texorpdfstring{link\_type\_e\_t}{link\_type\_e\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{link_8h_aeb9b97127da30edb91cc281b28f5e8df}{link\+\_\+type\+\_\+e}} \mbox{\hyperlink{link_8h_a63fef5a619cd034d3ee2e71ac74103c4}{link\+\_\+type\+\_\+e\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{link_8h_aeb9b97127da30edb91cc281b28f5e8df}\label{link_8h_aeb9b97127da30edb91cc281b28f5e8df}} 
+\index{link.h@{link.h}!link\_type\_e@{link\_type\_e}}
+\index{link\_type\_e@{link\_type\_e}!link.h@{link.h}}
+\doxysubsubsection{\texorpdfstring{link\_type\_e}{link\_type\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{link_8h_aeb9b97127da30edb91cc281b28f5e8df}{link\+\_\+type\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_LINK\_RECIEVER@{E\_LINK\_RECIEVER}!link.h@{link.h}}\index{link.h@{link.h}!E\_LINK\_RECIEVER@{E\_LINK\_RECIEVER}}}\mbox{\Hypertarget{link_8h_aeb9b97127da30edb91cc281b28f5e8dfaab8163ecac2542f247939dae82071628}\label{link_8h_aeb9b97127da30edb91cc281b28f5e8dfaab8163ecac2542f247939dae82071628}} 
+E\+\_\+\+LINK\+\_\+\+RECIEVER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_LINK\_TRANSMITTER@{E\_LINK\_TRANSMITTER}!link.h@{link.h}}\index{link.h@{link.h}!E\_LINK\_TRANSMITTER@{E\_LINK\_TRANSMITTER}}}\mbox{\Hypertarget{link_8h_aeb9b97127da30edb91cc281b28f5e8dfa959bf4f7005bdf46615e47d59b1b551e}\label{link_8h_aeb9b97127da30edb91cc281b28f5e8dfa959bf4f7005bdf46615e47d59b1b551e}} 
+E\+\_\+\+LINK\+\_\+\+TRANSMITTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_LINK\_RX@{E\_LINK\_RX}!link.h@{link.h}}\index{link.h@{link.h}!E\_LINK\_RX@{E\_LINK\_RX}}}\mbox{\Hypertarget{link_8h_aeb9b97127da30edb91cc281b28f5e8dfabb07f278cb352fd102c4da036ea4a6e2}\label{link_8h_aeb9b97127da30edb91cc281b28f5e8dfabb07f278cb352fd102c4da036ea4a6e2}} 
+E\+\_\+\+LINK\+\_\+\+RX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_LINK\_TX@{E\_LINK\_TX}!link.h@{link.h}}\index{link.h@{link.h}!E\_LINK\_TX@{E\_LINK\_TX}}}\mbox{\Hypertarget{link_8h_aeb9b97127da30edb91cc281b28f5e8dfab0ef9c35843cf88823e252745aaac1bd}\label{link_8h_aeb9b97127da30edb91cc281b28f5e8dfab0ef9c35843cf88823e252745aaac1bd}} 
+E\+\_\+\+LINK\+\_\+\+TX&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{link_8h_a911f9321b7ed3b1df907fe0f4a5a7b71}\label{link_8h_a911f9321b7ed3b1df907fe0f4a5a7b71}} 
+\index{link.h@{link.h}!link\_clear\_receive\_buf@{link\_clear\_receive\_buf}}
+\index{link\_clear\_receive\_buf@{link\_clear\_receive\_buf}!link.h@{link.h}}
+\doxysubsubsection{\texorpdfstring{link\_clear\_receive\_buf()}{link\_clear\_receive\_buf()}}
+{\footnotesize\ttfamily uint32\+\_\+t link\+\_\+clear\+\_\+receive\+\_\+buf (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Clear the receive buffer of the link, and discarding the data.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a radio. ENXIO -\/ The sensor is still calibrating, or no link is connected via the radio.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port of the radio for the intended link.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+ERR if port is not a link, and the successfully received data size if it succeeded. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8h_af35198b0d94685c25800a8ccd03e9087}\label{link_8h_af35198b0d94685c25800a8ccd03e9087}} 
+\index{link.h@{link.h}!link\_connected@{link\_connected}}
+\index{link\_connected@{link\_connected}!link.h@{link.h}}
+\doxysubsubsection{\texorpdfstring{link\_connected()}{link\_connected()}}
+{\footnotesize\ttfamily bool link\+\_\+connected (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Checks if a radio link on a port is active or not.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a radio. ENXIO -\/ The sensor is still calibrating, or no link is connected via the radio.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port of the radio for the intended link.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If a radio is connected to a port and it\textquotesingle{}s connected to a link. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8h_a96130006a3d2dd4ea7935d90525b40cc}\label{link_8h_a96130006a3d2dd4ea7935d90525b40cc}} 
+\index{link.h@{link.h}!link\_init@{link\_init}}
+\index{link\_init@{link\_init}!link.h@{link.h}}
+\doxysubsubsection{\texorpdfstring{link\_init()}{link\_init()}}
+{\footnotesize\ttfamily uint32\+\_\+t link\+\_\+init (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{const char $\ast$}]{link\+\_\+id,  }\item[{\mbox{\hyperlink{link_8h_a63fef5a619cd034d3ee2e71ac74103c4}{link\+\_\+type\+\_\+e\+\_\+t}}}]{type }\end{DoxyParamCaption})}
+
+Initializes a link on a radio port, with an indicated type. There might be a 1 to 2 second delay from when this function is called to when the link is initializes. PROS currently only supports the use of one radio per brain.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a radio. ENXIO -\/ The sensor is still calibrating, or no link is connected via the radio.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port of the radio for the intended link. \\
+\hline
+{\em link\+\_\+id} & Unique link ID in the form of a string, needs to be different from other links in the area.\\
+\hline
+{\em type} & Indicates whether the radio link on the brain is a transmitter or reciever, with the transmitter having double the transmitting bandwidth as the recieving end (1040 bytes/s vs 520 bytes/s).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+ERR if initialization fails, 1 if the initialization succeeds. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8h_a62ba3655861bf1d739897100d62bc9e2}\label{link_8h_a62ba3655861bf1d739897100d62bc9e2}} 
+\index{link.h@{link.h}!link\_init\_override@{link\_init\_override}}
+\index{link\_init\_override@{link\_init\_override}!link.h@{link.h}}
+\doxysubsubsection{\texorpdfstring{link\_init\_override()}{link\_init\_override()}}
+{\footnotesize\ttfamily uint32\+\_\+t link\+\_\+init\+\_\+override (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{const char $\ast$}]{link\+\_\+id,  }\item[{\mbox{\hyperlink{link_8h_a63fef5a619cd034d3ee2e71ac74103c4}{link\+\_\+type\+\_\+e\+\_\+t}}}]{type }\end{DoxyParamCaption})}
+
+Initializes a link on a radio port, with an indicated type and the ability for vexlink to override the controller radio. There might be a 1 to 2 second delay from when this function is called to when the link is initializes. PROS currently only supports the use of one radio per brain.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a radio. ENXIO -\/ The sensor is still calibrating, or no link is connected via the radio.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port of the radio for the intended link. \\
+\hline
+{\em link\+\_\+id} & Unique link ID in the form of a string, needs to be different from other links in the area.\\
+\hline
+{\em type} & Indicates whether the radio link on the brain is a transmitter or reciever, with the transmitter having double the transmitting bandwidth as the recieving end (1040 bytes/s vs 520 bytes/s).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+ERR if initialization fails, 1 if the initialization succeeds. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8h_ad93e824e70f80bf0275efc2a00d2c8da}\label{link_8h_ad93e824e70f80bf0275efc2a00d2c8da}} 
+\index{link.h@{link.h}!link\_raw\_receivable\_size@{link\_raw\_receivable\_size}}
+\index{link\_raw\_receivable\_size@{link\_raw\_receivable\_size}!link.h@{link.h}}
+\doxysubsubsection{\texorpdfstring{link\_raw\_receivable\_size()}{link\_raw\_receivable\_size()}}
+{\footnotesize\ttfamily uint32\+\_\+t link\+\_\+raw\+\_\+receivable\+\_\+size (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Returns the bytes of data available to be read
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a radio. ENXIO -\/ The sensor is still calibrating, or no link is connected via the radio.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port of the radio for the intended link.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+ERR if port is not a link/radio, else the bytes available to be read by the user. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8h_af41c5046b1bcac9952310eef92a79611}\label{link_8h_af41c5046b1bcac9952310eef92a79611}} 
+\index{link.h@{link.h}!link\_raw\_transmittable\_size@{link\_raw\_transmittable\_size}}
+\index{link\_raw\_transmittable\_size@{link\_raw\_transmittable\_size}!link.h@{link.h}}
+\doxysubsubsection{\texorpdfstring{link\_raw\_transmittable\_size()}{link\_raw\_transmittable\_size()}}
+{\footnotesize\ttfamily uint32\+\_\+t link\+\_\+raw\+\_\+transmittable\+\_\+size (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Returns the bytes of data available in transmission buffer.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a radio. ENXIO -\/ The sensor is still calibrating, or no link is connected via the radio.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port of the radio for the intended link.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+ERR if port is not a link/radio, 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8h_adcc5e8c69eb2b0bb65078d7d9f94d9e3}\label{link_8h_adcc5e8c69eb2b0bb65078d7d9f94d9e3}} 
+\index{link.h@{link.h}!link\_receive@{link\_receive}}
+\index{link\_receive@{link\_receive}!link.h@{link.h}}
+\doxysubsubsection{\texorpdfstring{link\_receive()}{link\_receive()}}
+{\footnotesize\ttfamily uint32\+\_\+t link\+\_\+receive (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{void $\ast$}]{dest,  }\item[{uint16\+\_\+t}]{data\+\_\+size }\end{DoxyParamCaption})}
+
+Receive packeted message through vexlink, with a checksum and start byte.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a radio. ENXIO -\/ The sensor is still calibrating, or no link is connected via the radio. EINVAL -\/ The destination given is NULL, or the size given is larger than the FIFO buffer or destination buffer. EBADMSG -\/ Protocol error related to start byte, data size, or checksum.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port of the radio for the intended link. \\
+\hline
+{\em dest} & Destination buffer to read data to \\
+\hline
+{\em data\+\_\+size} & Bytes of data to be read to the destination buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+ERR if port is not a link or protocol error, and the successfully transmitted data size if it succeeded. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8h_a7e8fafa4f335bed613f59bbc49d30e5e}\label{link_8h_a7e8fafa4f335bed613f59bbc49d30e5e}} 
+\index{link.h@{link.h}!link\_receive\_raw@{link\_receive\_raw}}
+\index{link\_receive\_raw@{link\_receive\_raw}!link.h@{link.h}}
+\doxysubsubsection{\texorpdfstring{link\_receive\_raw()}{link\_receive\_raw()}}
+{\footnotesize\ttfamily uint32\+\_\+t link\+\_\+receive\+\_\+raw (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{void $\ast$}]{dest,  }\item[{uint16\+\_\+t}]{data\+\_\+size }\end{DoxyParamCaption})}
+
+Receive raw serial data through vexlink.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a radio. ENXIO -\/ The sensor is still calibrating, or no link is connected via the radio. EINVAL -\/ The destination given is NULL, or the size given is larger than the FIFO buffer or destination buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port of the radio for the intended link. \\
+\hline
+{\em dest} & Destination buffer to read data to \\
+\hline
+{\em data\+\_\+size} & Bytes of data to be read to the destination buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+ERR if port is not a link, and the successfully received data size if it succeeded. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8h_ac7fe2288263fb6e76652b87507b2b41d}\label{link_8h_ac7fe2288263fb6e76652b87507b2b41d}} 
+\index{link.h@{link.h}!link\_transmit@{link\_transmit}}
+\index{link\_transmit@{link\_transmit}!link.h@{link.h}}
+\doxysubsubsection{\texorpdfstring{link\_transmit()}{link\_transmit()}}
+{\footnotesize\ttfamily uint32\+\_\+t link\+\_\+transmit (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{void $\ast$}]{data,  }\item[{uint16\+\_\+t}]{data\+\_\+size }\end{DoxyParamCaption})}
+
+Send packeted message through vexlink, with a checksum and start byte.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a radio. ENXIO -\/ The sensor is still calibrating, or no link is connected via the radio. EBUSY -\/ The transmitter buffer is still busy with a previous transmission, and there is no room in the FIFO buffer (queue) to transmit the data. EINVAL -\/ The data given is NULL
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port of the radio for the intended link. \\
+\hline
+{\em data} & Buffer with data to send \\
+\hline
+{\em data\+\_\+size} & Bytes of data to be read to the destination buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+ERR if port is not a link, and the successfully transmitted data size if it succeeded. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8h_a5dfdea4d57445877ce1ff36560ad7010}\label{link_8h_a5dfdea4d57445877ce1ff36560ad7010}} 
+\index{link.h@{link.h}!link\_transmit\_raw@{link\_transmit\_raw}}
+\index{link\_transmit\_raw@{link\_transmit\_raw}!link.h@{link.h}}
+\doxysubsubsection{\texorpdfstring{link\_transmit\_raw()}{link\_transmit\_raw()}}
+{\footnotesize\ttfamily uint32\+\_\+t link\+\_\+transmit\+\_\+raw (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{void $\ast$}]{data,  }\item[{uint16\+\_\+t}]{data\+\_\+size }\end{DoxyParamCaption})}
+
+Send raw serial data through vexlink.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a radio. ENXIO -\/ The sensor is still calibrating, or no link is connected via the radio. EBUSY -\/ The transmitter buffer is still busy with a previous transmission, and there is no room in the FIFO buffer (queue) to transmit the data. EINVAL -\/ The data given is NULL
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port of the radio for the intended link. \\
+\hline
+{\em data} & Buffer with data to send \\
+\hline
+{\em data\+\_\+size} & Bytes of data to be read to the destination buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+ERR if port is not a link, and the successfully transmitted data size if it succeeded. 
+\end{DoxyReturn}

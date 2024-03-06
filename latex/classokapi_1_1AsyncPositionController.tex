@@ -1,0 +1,58 @@
+\hypertarget{classokapi_1_1AsyncPositionController}{}\doxysection{okapi\+::Async\+Position\+Controller$<$ Input, Output $>$ Class Template Reference}
+\label{classokapi_1_1AsyncPositionController}\index{okapi::AsyncPositionController$<$ Input, Output $>$@{okapi::AsyncPositionController$<$ Input, Output $>$}}
+
+
+{\ttfamily \#include $<$async\+Position\+Controller.\+hpp$>$}
+
+
+
+Inheritance diagram for okapi\+::Async\+Position\+Controller$<$ Input, Output $>$\+:
+% FIG 0
+
+
+Collaboration diagram for okapi\+::Async\+Position\+Controller$<$ Input, Output $>$\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1AsyncPositionController_a0af03d0035343cbf843a19374f38a059}{tare\+Position}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1AsyncPositionController_ac56b3e8bc43ad9d9a6c95ff0a883e499}{set\+Max\+Velocity}} (std\+::int32\+\_\+t imax\+Velocity)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1AsyncPositionController_ac56b3e8bc43ad9d9a6c95ff0a883e499}\label{classokapi_1_1AsyncPositionController_ac56b3e8bc43ad9d9a6c95ff0a883e499}} 
+\index{okapi::AsyncPositionController$<$ Input, Output $>$@{okapi::AsyncPositionController$<$ Input, Output $>$}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::AsyncPositionController$<$ Input, Output $>$@{okapi::AsyncPositionController$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+virtual void \mbox{\hyperlink{classokapi_1_1AsyncPositionController}{okapi\+::\+Async\+Position\+Controller}}$<$ Input, Output $>$\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{std\+::int32\+\_\+t}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets a new maximum velocity (typically motor RPM \mbox{[}0-\/600\mbox{]}). The interpretation of the units of this velocity and whether it will be respected is implementation-\/dependent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1AsyncPosPIDController_a4e4d599f04780e0e980116f38d8044fa}{okapi\+::\+Async\+Pos\+PIDController}}, \mbox{\hyperlink{classokapi_1_1AsyncPosIntegratedController_a8559a6aa43c74f5caf1a6839d1a2224a}{okapi\+::\+Async\+Pos\+Integrated\+Controller}}, \mbox{\hyperlink{classokapi_1_1AsyncMotionProfileController_a8c8214249732c79d48601a2da579f220}{okapi\+::\+Async\+Motion\+Profile\+Controller}}, and \mbox{\hyperlink{classokapi_1_1AsyncLinearMotionProfileController_aaeecb68c5bfdc32a7d50b9f1691a0c9c}{okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller}}.
+
+\mbox{\Hypertarget{classokapi_1_1AsyncPositionController_a0af03d0035343cbf843a19374f38a059}\label{classokapi_1_1AsyncPositionController_a0af03d0035343cbf843a19374f38a059}} 
+\index{okapi::AsyncPositionController$<$ Input, Output $>$@{okapi::AsyncPositionController$<$ Input, Output $>$}!tarePosition@{tarePosition}}
+\index{tarePosition@{tarePosition}!okapi::AsyncPositionController$<$ Input, Output $>$@{okapi::AsyncPositionController$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{tarePosition()}{tarePosition()}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+virtual void \mbox{\hyperlink{classokapi_1_1AsyncPositionController}{okapi\+::\+Async\+Position\+Controller}}$<$ Input, Output $>$\+::tare\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets the \char`\"{}absolute\char`\"{} zero position of the controller to its current position. 
+
+Implemented in \mbox{\hyperlink{classokapi_1_1AsyncPosPIDController_a4d5bb5646dcdc3bc80f15c1d6ae72747}{okapi\+::\+Async\+Pos\+PIDController}}, \mbox{\hyperlink{classokapi_1_1AsyncPosIntegratedController_a5fa801adbb46287423c5baae82f75924}{okapi\+::\+Async\+Pos\+Integrated\+Controller}}, \mbox{\hyperlink{classokapi_1_1AsyncMotionProfileController_afc3476c87e3428f9f166273688e45249}{okapi\+::\+Async\+Motion\+Profile\+Controller}}, and \mbox{\hyperlink{classokapi_1_1AsyncLinearMotionProfileController_a6cfe67f9e4db556fbed1f2c4c4252b0a}{okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/api/control/async/\mbox{\hyperlink{asyncPositionController_8hpp}{async\+Position\+Controller.\+hpp}}\end{DoxyCompactItemize}

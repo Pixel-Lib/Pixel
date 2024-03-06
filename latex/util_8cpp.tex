@@ -1,0 +1,36 @@
+\hypertarget{util_8cpp}{}\doxysection{src/pxl/util.cpp File Reference}
+\label{util_8cpp}\index{src/pxl/util.cpp@{src/pxl/util.cpp}}
+{\ttfamily \#include \char`\"{}pxl/util.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for util.\+cpp\+:
+% FIG 0
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacepxl}{pxl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{namespacepxl_aef4d585e132a7669441e66bd34be8f11}{pxl\+::slew}} (float target, float current, float max\+Change)
+\begin{DoxyCompactList}\small\item\em Clamps a value to a specified range. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_accc0c31a4c5d20ceb1ea8de0417006d6}{pxl\+::rad\+To\+Deg}} (float rad)
+\begin{DoxyCompactList}\small\item\em Converts radians to degrees. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_a092e7e57e83f9d3a78fe9ffcf940cef8}{pxl\+::deg\+To\+Rad}} (float deg)
+\begin{DoxyCompactList}\small\item\em Converts degrees to radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_aa3ad78e90d5e52e5b47f463c6c6924be}{pxl\+::wrap\+To180}} (float deg)
+\begin{DoxyCompactList}\small\item\em Wraps an angle to the range \mbox{[}-\/180, 180\mbox{]} degrees. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_a7d815267e7c29949aacc85ab67ad82e6}{pxl\+::wrap\+To360}} (float deg)
+\begin{DoxyCompactList}\small\item\em Wraps an angle to the range \mbox{[}0, 360\mbox{]} degrees. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_ad17d8719f3bf43ec4cc5d52c805338f7}{pxl\+::wrap\+To\+Pi}} (float rad)
+\begin{DoxyCompactList}\small\item\em Wraps an angle to the range \mbox{[}-\/Pi, Pi\mbox{]} radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_a847a12cda4c61b6fcc017ff7f8b35060}{pxl\+::wrap\+To2\+Pi}} (float rad)
+\begin{DoxyCompactList}\small\item\em Wraps an angle to the range \mbox{[}0, 2$\ast$\+Pi\mbox{]} radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_a26c76428239cd4f5adbb23aff8cd6384}{pxl\+::angle\+Error}} (float angle1, float angle2, bool radians)
+\begin{DoxyCompactList}\small\item\em Calculates the smallest angular difference between two angles. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacepxl_aae3973eb617ab05e24069a0ad9a1d9b0}{pxl\+::ema}} (float current, float previous, float smooth)
+\end{DoxyCompactItemize}

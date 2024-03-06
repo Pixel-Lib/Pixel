@@ -1,0 +1,19 @@
+digraph "include/okapi/api/filter" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_63ebd08b8cf71fd366bf0de4231ab7e6 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="api" fontname="Helvetica", fontsize="10", URL="dir_63ebd08b8cf71fd366bf0de4231ab7e6.html"]
+  dir_01997f625f96480294339ddf79b14f04 [shape=box label="util" URL="dir_01997f625f96480294339ddf79b14f04.html"];
+  dir_e84fea72a7bc70ffe5d343194ba5b48e [shape=box label="units" URL="dir_e84fea72a7bc70ffe5d343194ba5b48e.html"];
+  dir_ee8fabeddabdeff2f9d7f82f9bc73f75 [shape=box label="control" fillcolor="white" style="filled" color="red" URL="dir_ee8fabeddabdeff2f9d7f82f9bc73f75.html"];
+  dir_7f5467880c6256ea2f9499e004d2592a [shape=box, label="filter", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_7f5467880c6256ea2f9499e004d2592a.html"];
+  }
+  dir_ee8fabeddabdeff2f9d7f82f9bc73f75->dir_01997f625f96480294339ddf79b14f04 [headlabel="24", labeldistance=1.5 headhref="dir_000015_000026.html"];
+  dir_ee8fabeddabdeff2f9d7f82f9bc73f75->dir_e84fea72a7bc70ffe5d343194ba5b48e [headlabel="10", labeldistance=1.5 headhref="dir_000015_000025.html"];
+  dir_01997f625f96480294339ddf79b14f04->dir_e84fea72a7bc70ffe5d343194ba5b48e [headlabel="4", labeldistance=1.5 headhref="dir_000026_000025.html"];
+  dir_01997f625f96480294339ddf79b14f04->dir_ee8fabeddabdeff2f9d7f82f9bc73f75 [headlabel="1", labeldistance=1.5 headhref="dir_000026_000015.html"];
+  dir_7f5467880c6256ea2f9499e004d2592a->dir_01997f625f96480294339ddf79b14f04 [headlabel="3", labeldistance=1.5 headhref="dir_000023_000026.html"];
+  dir_7f5467880c6256ea2f9499e004d2592a->dir_e84fea72a7bc70ffe5d343194ba5b48e [headlabel="3", labeldistance=1.5 headhref="dir_000023_000025.html"];
+  dir_7f5467880c6256ea2f9499e004d2592a->dir_ee8fabeddabdeff2f9d7f82f9bc73f75 [headlabel="1", labeldistance=1.5 headhref="dir_000023_000015.html"];
+}

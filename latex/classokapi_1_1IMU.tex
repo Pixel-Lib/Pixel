@@ -1,0 +1,225 @@
+\hypertarget{classokapi_1_1IMU}{}\doxysection{okapi\+::IMU Class Reference}
+\label{classokapi_1_1IMU}\index{okapi::IMU@{okapi::IMU}}
+
+
+{\ttfamily \#include $<$IMU.\+hpp$>$}
+
+
+
+Inheritance diagram for okapi\+::IMU\+:
+% FIG 0
+
+
+Collaboration diagram for okapi\+::IMU\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1IMU_a8dd0b07e2bd1da965dcaefaabdf821c4}{IMU}} (std\+::uint8\+\_\+t iport, \mbox{\hyperlink{namespaceokapi_abc16400b91bea99f326802bad79f9c99}{IMUAxes}} iaxis=\mbox{\hyperlink{namespaceokapi_abc16400b91bea99f326802bad79f9c99afbade9e36a3f36d3d676c1b808451dd7}{IMUAxes\+::z}})
+\item 
+double \mbox{\hyperlink{classokapi_1_1IMU_ab4f006169b21d7280980c14200986f02}{get}} () const override
+\item 
+double \mbox{\hyperlink{classokapi_1_1IMU_af28ffacddf2490f27eb5337dda85ebda}{get\+Remapped}} (double iupper\+Bound=1800, double ilower\+Bound=-\/1800) const
+\item 
+double \mbox{\hyperlink{classokapi_1_1IMU_acf02aac5308af0eff7e7a3e780dacbdf}{get\+Acceleration}} () const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1IMU_a1b5ba91b1eaa8520cc4a4154be382ddf}{reset}} () override
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1IMU_a233ed21c87990e6a30191ed401f9444a}{reset}} (double inew\+Angle)
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1IMU_aaab7c59addb969843cc9549bcd4bd5ea}{calibrate}} ()
+\item 
+double \mbox{\hyperlink{classokapi_1_1IMU_a7ae196ae818efa5bc2a47afb0dfd84fd}{controller\+Get}} () override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1IMU_aa0da8d98a5b6e7c1ca172b99b337c8c6}{is\+Calibrating}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classokapi_1_1IMU_adc26013f851228b91483efc201ff6430}{read\+Angle}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::uint8\+\_\+t \mbox{\hyperlink{classokapi_1_1IMU_a04786ce1b31d5e2275b743cbf1ac196a}{port}}
+\item 
+\mbox{\hyperlink{namespaceokapi_abc16400b91bea99f326802bad79f9c99}{IMUAxes}} \mbox{\hyperlink{classokapi_1_1IMU_ab73270c99a046eec6a67e869facf8439}{axis}}
+\item 
+double \mbox{\hyperlink{classokapi_1_1IMU_a2ffd84eaa0c0cf2add46335a7528d1f0}{offset}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1IMU_a8dd0b07e2bd1da965dcaefaabdf821c4}\label{classokapi_1_1IMU_a8dd0b07e2bd1da965dcaefaabdf821c4}} 
+\index{okapi::IMU@{okapi::IMU}!IMU@{IMU}}
+\index{IMU@{IMU}!okapi::IMU@{okapi::IMU}}
+\doxysubsubsection{\texorpdfstring{IMU()}{IMU()}}
+{\footnotesize\ttfamily okapi\+::\+IMU\+::\+IMU (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{iport,  }\item[{\mbox{\hyperlink{namespaceokapi_abc16400b91bea99f326802bad79f9c99}{IMUAxes}}}]{iaxis = {\ttfamily \mbox{\hyperlink{namespaceokapi_abc16400b91bea99f326802bad79f9c99afbade9e36a3f36d3d676c1b808451dd7}{IMUAxes\+::z}}} }\end{DoxyParamCaption})}
+
+An inertial sensor on the given port. The \mbox{\hyperlink{classokapi_1_1IMU}{IMU}} returns an angle about the selected axis in degrees.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} imuZ = \mbox{\hyperlink{classokapi_1_1IMU_a8dd0b07e2bd1da965dcaefaabdf821c4}{IMU}}(1);}
+\DoxyCodeLine{\textcolor{keyword}{auto} imuX = \mbox{\hyperlink{classokapi_1_1IMU_a8dd0b07e2bd1da965dcaefaabdf821c4}{IMU}}(1, \mbox{\hyperlink{namespaceokapi_abc16400b91bea99f326802bad79f9c99a9dd4e461268c8034f5c8564e155c67a6}{IMUAxes::x}});}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em iport} & The port number in the range {\ttfamily \mbox{[}1, 21\mbox{]}}. \\
+\hline
+{\em iaxis} & The axis of the inertial sensor to measure, default {\ttfamily \mbox{\hyperlink{namespaceokapi_abc16400b91bea99f326802bad79f9c99afbade9e36a3f36d3d676c1b808451dd7}{IMUAxes\+::z}}}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1IMU_aaab7c59addb969843cc9549bcd4bd5ea}\label{classokapi_1_1IMU_aaab7c59addb969843cc9549bcd4bd5ea}} 
+\index{okapi::IMU@{okapi::IMU}!calibrate@{calibrate}}
+\index{calibrate@{calibrate}!okapi::IMU@{okapi::IMU}}
+\doxysubsubsection{\texorpdfstring{calibrate()}{calibrate()}}
+{\footnotesize\ttfamily std\+::int32\+\_\+t okapi\+::\+IMU\+::calibrate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calibrate the \mbox{\hyperlink{classokapi_1_1IMU}{IMU}}. Resets the rotation value to zero. Calibration is expected to take two seconds, but is bounded to five seconds.
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily 1} or {\ttfamily PROS\+\_\+\+ERR}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1IMU_a7ae196ae818efa5bc2a47afb0dfd84fd}\label{classokapi_1_1IMU_a7ae196ae818efa5bc2a47afb0dfd84fd}} 
+\index{okapi::IMU@{okapi::IMU}!controllerGet@{controllerGet}}
+\index{controllerGet@{controllerGet}!okapi::IMU@{okapi::IMU}}
+\doxysubsubsection{\texorpdfstring{controllerGet()}{controllerGet()}}
+{\footnotesize\ttfamily double okapi\+::\+IMU\+::controller\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the sensor value for use in a control loop. This method might be automatically called in another thread by the controller.
+
+\begin{DoxyReturn}{Returns}
+The current sensor value or {\ttfamily PROS\+\_\+\+ERR}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1ControllerInput_a3c6c86d897983f367928a93890551e17}{okapi\+::\+Controller\+Input$<$ double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1IMU_ab4f006169b21d7280980c14200986f02}\label{classokapi_1_1IMU_ab4f006169b21d7280980c14200986f02}} 
+\index{okapi::IMU@{okapi::IMU}!get@{get}}
+\index{get@{get}!okapi::IMU@{okapi::IMU}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily double okapi\+::\+IMU\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the current rotation about the configured axis.
+
+\begin{DoxyReturn}{Returns}
+The current sensor value or {\ttfamily PROS\+\_\+\+ERR}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1RotarySensor_ac5534dc6c3bcbd8ea2f4e54a04cda734}{okapi\+::\+Rotary\+Sensor}}.
+
+\mbox{\Hypertarget{classokapi_1_1IMU_acf02aac5308af0eff7e7a3e780dacbdf}\label{classokapi_1_1IMU_acf02aac5308af0eff7e7a3e780dacbdf}} 
+\index{okapi::IMU@{okapi::IMU}!getAcceleration@{getAcceleration}}
+\index{getAcceleration@{getAcceleration}!okapi::IMU@{okapi::IMU}}
+\doxysubsubsection{\texorpdfstring{getAcceleration()}{getAcceleration()}}
+{\footnotesize\ttfamily double okapi\+::\+IMU\+::get\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the current acceleration along the configured axis.
+
+\begin{DoxyReturn}{Returns}
+The current sensor value or {\ttfamily PROS\+\_\+\+ERR}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1IMU_af28ffacddf2490f27eb5337dda85ebda}\label{classokapi_1_1IMU_af28ffacddf2490f27eb5337dda85ebda}} 
+\index{okapi::IMU@{okapi::IMU}!getRemapped@{getRemapped}}
+\index{getRemapped@{getRemapped}!okapi::IMU@{okapi::IMU}}
+\doxysubsubsection{\texorpdfstring{getRemapped()}{getRemapped()}}
+{\footnotesize\ttfamily double okapi\+::\+IMU\+::get\+Remapped (\begin{DoxyParamCaption}\item[{double}]{iupper\+Bound = {\ttfamily 1800},  }\item[{double}]{ilower\+Bound = {\ttfamily -\/1800} }\end{DoxyParamCaption}) const}
+
+Get the current sensor value remapped into the target range ({\ttfamily \mbox{[}-\/1800, 1800\mbox{]}} by default).
+
+
+\begin{DoxyParams}{Parameters}
+{\em iupper\+Bound} & The upper bound of the range. \\
+\hline
+{\em ilower\+Bound} & The lower bound of the range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The remapped sensor value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1IMU_aa0da8d98a5b6e7c1ca172b99b337c8c6}\label{classokapi_1_1IMU_aa0da8d98a5b6e7c1ca172b99b337c8c6}} 
+\index{okapi::IMU@{okapi::IMU}!isCalibrating@{isCalibrating}}
+\index{isCalibrating@{isCalibrating}!okapi::IMU@{okapi::IMU}}
+\doxysubsubsection{\texorpdfstring{isCalibrating()}{isCalibrating()}}
+{\footnotesize\ttfamily bool okapi\+::\+IMU\+::is\+Calibrating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Whether the \mbox{\hyperlink{classokapi_1_1IMU}{IMU}} is calibrating. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1IMU_adc26013f851228b91483efc201ff6430}\label{classokapi_1_1IMU_adc26013f851228b91483efc201ff6430}} 
+\index{okapi::IMU@{okapi::IMU}!readAngle@{readAngle}}
+\index{readAngle@{readAngle}!okapi::IMU@{okapi::IMU}}
+\doxysubsubsection{\texorpdfstring{readAngle()}{readAngle()}}
+{\footnotesize\ttfamily double okapi\+::\+IMU\+::read\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Get the current rotation about the configured axis. The internal offset is not accounted for or modified. This just reads from the sensor.
+
+\begin{DoxyReturn}{Returns}
+The current sensor value or {\ttfamily PROS\+\_\+\+ERR}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1IMU_a1b5ba91b1eaa8520cc4a4154be382ddf}\label{classokapi_1_1IMU_a1b5ba91b1eaa8520cc4a4154be382ddf}} 
+\index{okapi::IMU@{okapi::IMU}!reset@{reset}}
+\index{reset@{reset}!okapi::IMU@{okapi::IMU}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::int32\+\_\+t okapi\+::\+IMU\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the rotation value to zero.
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily 1} or {\ttfamily PROS\+\_\+\+ERR}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1ContinuousRotarySensor_ae7268b0603097ac2d93a67e4fefa43e0}{okapi\+::\+Continuous\+Rotary\+Sensor}}.
+
+\mbox{\Hypertarget{classokapi_1_1IMU_a233ed21c87990e6a30191ed401f9444a}\label{classokapi_1_1IMU_a233ed21c87990e6a30191ed401f9444a}} 
+\index{okapi::IMU@{okapi::IMU}!reset@{reset}}
+\index{reset@{reset}!okapi::IMU@{okapi::IMU}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::int32\+\_\+t okapi\+::\+IMU\+::reset (\begin{DoxyParamCaption}\item[{double}]{inew\+Angle }\end{DoxyParamCaption})}
+
+Resets rotation value to desired value For example, {\ttfamily reset(0)} will reset the sensor to zero. But {\ttfamily reset(90)} will reset the sensor to 90 degrees.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inew\+Angle} & desired reset value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 1} or {\ttfamily PROS\+\_\+\+ERR}. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classokapi_1_1IMU_ab73270c99a046eec6a67e869facf8439}\label{classokapi_1_1IMU_ab73270c99a046eec6a67e869facf8439}} 
+\index{okapi::IMU@{okapi::IMU}!axis@{axis}}
+\index{axis@{axis}!okapi::IMU@{okapi::IMU}}
+\doxysubsubsection{\texorpdfstring{axis}{axis}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceokapi_abc16400b91bea99f326802bad79f9c99}{IMUAxes}} okapi\+::\+IMU\+::axis\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classokapi_1_1IMU_a2ffd84eaa0c0cf2add46335a7528d1f0}\label{classokapi_1_1IMU_a2ffd84eaa0c0cf2add46335a7528d1f0}} 
+\index{okapi::IMU@{okapi::IMU}!offset@{offset}}
+\index{offset@{offset}!okapi::IMU@{okapi::IMU}}
+\doxysubsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily double okapi\+::\+IMU\+::offset = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classokapi_1_1IMU_a04786ce1b31d5e2275b743cbf1ac196a}\label{classokapi_1_1IMU_a04786ce1b31d5e2275b743cbf1ac196a}} 
+\index{okapi::IMU@{okapi::IMU}!port@{port}}
+\index{port@{port}!okapi::IMU@{okapi::IMU}}
+\doxysubsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily std\+::uint8\+\_\+t okapi\+::\+IMU\+::port\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/impl/device/rotarysensor/\mbox{\hyperlink{IMU_8hpp}{IMU.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,325 @@
+\hypertarget{classsquiggles_1_1SplineGenerator}{}\doxysection{squiggles\+::Spline\+Generator Class Reference}
+\label{classsquiggles_1_1SplineGenerator}\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+
+
+{\ttfamily \#include $<$spline.\+hpp$>$}
+
+
+
+Collaboration diagram for squiggles\+::Spline\+Generator\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1ConstrainedState}{Constrained\+State}}
+\item 
+struct \mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1GeneratedPoint}{Generated\+Point}}
+\item 
+struct \mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1GeneratedVector}{Generated\+Vector}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsquiggles_1_1SplineGenerator_ac5d2f525f3a2b3c25509f2dbe224c5f2}{Spline\+Generator}} (\mbox{\hyperlink{structsquiggles_1_1Constraints}{Constraints}} iconstraints, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsquiggles_1_1PhysicalModel}{Physical\+Model}} $>$ imodel=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{classsquiggles_1_1PassthroughModel}{Passthrough\+Model}} $>$(), double idt=0.\+1)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} $>$ \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a01bb3fe9ed1d70e3e731eb429bc60580}{generate}} (std\+::vector$<$ \mbox{\hyperlink{classsquiggles_1_1Pose}{Pose}} $>$ iwaypoints, bool fast=false)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} $>$ \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a35dd016a68f8bb49b0db4c2ba86d3d8e}{generate}} (std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{classsquiggles_1_1Pose}{Pose}} $>$ iwaypoints, bool fast=false)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} $>$ \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a48e0c6b4ad48ee6812d3a52c3fd33b31}{generate}} (std\+::vector$<$ \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} $>$ iwaypoints)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} $>$ \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a8017fbdffbe7fc4e1af8c87e0ca45ffb}{generate}} (std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} $>$ iwaypoints)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1GeneratedVector}{Generated\+Vector}} $>$ \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a2c168c790783f8a12c955b8fbee618f1}{gen\+\_\+single\+\_\+raw\+\_\+path}} (\mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} start, \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} end, int duration, double start\+\_\+vel, double end\+\_\+vel)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1GeneratedPoint}{Generated\+Point}} $>$ \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_acb179a4ca318e2498a6a9f15529a5675}{gradient\+\_\+descent}} (\mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} \&start, \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} \&end, bool fast)
+\item 
+{\footnotesize template$<$class Iter $>$ }\\std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} $>$ \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_aa233f271ca8ad2c702ff95579e2487ec}{\+\_\+generate}} (Iter start, Iter end, bool fast)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1GeneratedPoint}{Generated\+Point}} $>$ \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a0a481b1b60464202e3d3b043a096e5db}{gen\+\_\+raw\+\_\+path}} (\mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} \&start, \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} \&end, bool fast)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} $>$ \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a79006d9c5b661accdbfad1b9bb62f115}{parameterize}} (const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} start, const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} end, const std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1GeneratedPoint}{Generated\+Point}} $>$ \&raw\+\_\+path, const double preferred\+\_\+start\+\_\+vel, const double preferred\+\_\+end\+\_\+vel, const double start\+\_\+time)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} $>$ \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_ad1fc929a5c9bb4423c1533a9957f2bb2}{integrate\+\_\+constrained\+\_\+states}} (std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1ConstrainedState}{Constrained\+State}} $>$ constrained\+States)
+\item 
+\mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a0c5db60986a2164fff9e8f5493b8d0ad}{get\+\_\+point\+\_\+at\+\_\+time}} (const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} start, const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} end, std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} $>$ points, double t)
+\item 
+\mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a3434f7f1e76ab3f04600a24eb26eb974}{lerp\+\_\+point}} (\mbox{\hyperlink{classsquiggles_1_1QuinticPolynomial}{Quintic\+Polynomial}} x\+\_\+qp, \mbox{\hyperlink{classsquiggles_1_1QuinticPolynomial}{Quintic\+Polynomial}} y\+\_\+qp, \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} start, \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} end, double i)
+\item 
+\mbox{\hyperlink{classsquiggles_1_1QuinticPolynomial}{Quintic\+Polynomial}} \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_ad2a455b8de7de0557b13b0a08932d355}{get\+\_\+x\+\_\+spline}} (const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} start, const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} end, const double duration)
+\item 
+\mbox{\hyperlink{classsquiggles_1_1QuinticPolynomial}{Quintic\+Polynomial}} \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a9703e81e1eac0dafc5ae10d5ac16c2a7}{get\+\_\+y\+\_\+spline}} (const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} start, const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} end, const double duration)
+\item 
+void \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a5d7f0823266d56de66709a603d4e3c5d}{enforce\+\_\+accel\+\_\+lims}} (\mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1ConstrainedState}{Constrained\+State}} $\ast$state)
+\item 
+void \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a8c1d89a1400c7c982cff9f4671dd041e}{forward\+\_\+pass}} (\mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1ConstrainedState}{Constrained\+State}} $\ast$predecessor, \mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1ConstrainedState}{Constrained\+State}} $\ast$successor)
+\item 
+void \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_ac11222b1179dc05ae2e58d350e4dcd99}{backward\+\_\+pass}} (\mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1ConstrainedState}{Constrained\+State}} $\ast$predecessor, \mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1ConstrainedState}{Constrained\+State}} $\ast$successor)
+\item 
+double \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_ad2feec052415c1a0121ddf9b3fe9e132}{vf}} (double vi, double a, double ds)
+\item 
+double \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a2c7aac564c4b791cc9c0ec002a293e7c}{ai}} (double \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_ad2feec052415c1a0121ddf9b3fe9e132}{vf}}, double vi, double s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a248e2852fd8abf4742301719ad50e037}{K\+\_\+\+DEFAULT\+\_\+\+VEL}} = 1.\+0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr double \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_abba5aa10a5f0af89062cc966293d4e1c}{K\+\_\+\+EPSILON}} = 1e-\/5
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structsquiggles_1_1Constraints}{Constraints}} \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a22f2a2cf89bbea8f47e913f437c380c3}{constraints}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsquiggles_1_1PhysicalModel}{Physical\+Model}} $>$ \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_ab5c7e06ff0ec4a3d989dc1e741894336}{model}}
+\item 
+double \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a84c9d030b28469be3b3021367620414e}{dt}}
+\item 
+const int \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_a414d2f23ba6fa351d94ac24d2e391b81}{T\+\_\+\+MIN}} = 2
+\item 
+const int \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_ac52ec9f4290490f1ae37b7d59290656b}{T\+\_\+\+MAX}} = 15
+\item 
+const int \mbox{\hyperlink{classsquiggles_1_1SplineGenerator_aebc810d00d58527ca8066f2739090641}{MAX\+\_\+\+GRAD\+\_\+\+DESCENT\+\_\+\+ITERATIONS}} = 10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_ac5d2f525f3a2b3c25509f2dbe224c5f2}\label{classsquiggles_1_1SplineGenerator_ac5d2f525f3a2b3c25509f2dbe224c5f2}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!SplineGenerator@{SplineGenerator}}
+\index{SplineGenerator@{SplineGenerator}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{SplineGenerator()}{SplineGenerator()}}
+{\footnotesize\ttfamily squiggles\+::\+Spline\+Generator\+::\+Spline\+Generator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsquiggles_1_1Constraints}{Constraints}}}]{iconstraints,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsquiggles_1_1PhysicalModel}{Physical\+Model}} $>$}]{imodel = {\ttfamily std\+:\+:make\+\_\+shared$<$~\mbox{\hyperlink{classsquiggles_1_1PassthroughModel}{Passthrough\+Model}}~$>$()},  }\item[{double}]{idt = {\ttfamily 0.1} }\end{DoxyParamCaption})}
+
+Generates curves that match the given motion constraints.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iconstraints} & The maximum allowable values for the robot\textquotesingle{}s motion. \\
+\hline
+{\em imodel} & The robot\textquotesingle{}s physical characteristics and constraints \\
+\hline
+{\em idt} & The difference in time in seconds between each state for the generated paths. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_aa233f271ca8ad2c702ff95579e2487ec}\label{classsquiggles_1_1SplineGenerator_aa233f271ca8ad2c702ff95579e2487ec}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!\_generate@{\_generate}}
+\index{\_generate@{\_generate}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{\_generate()}{\_generate()}}
+{\footnotesize\ttfamily template$<$class Iter $>$ \\
+std\+::vector$<$\mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}}$>$ squiggles\+::\+Spline\+Generator\+::\+\_\+generate (\begin{DoxyParamCaption}\item[{Iter}]{start,  }\item[{Iter}]{end,  }\item[{bool}]{fast }\end{DoxyParamCaption})}
+
+The actual function called by the \char`\"{}generate\char`\"{} functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & An iterator pointing to the first \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} in the path \\
+\hline
+{\em end} & An iterator pointting to the last \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} in the path\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The points from each path concatenated together 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a2c7aac564c4b791cc9c0ec002a293e7c}\label{classsquiggles_1_1SplineGenerator_a2c7aac564c4b791cc9c0ec002a293e7c}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!ai@{ai}}
+\index{ai@{ai}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{ai()}{ai()}}
+{\footnotesize\ttfamily double squiggles\+::\+Spline\+Generator\+::ai (\begin{DoxyParamCaption}\item[{double}]{vf,  }\item[{double}]{vi,  }\item[{double}]{s }\end{DoxyParamCaption})}
+
+Calculates the initial acceleration needed to match the segments\textquotesingle{} velocities. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_ac11222b1179dc05ae2e58d350e4dcd99}\label{classsquiggles_1_1SplineGenerator_ac11222b1179dc05ae2e58d350e4dcd99}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!backward\_pass@{backward\_pass}}
+\index{backward\_pass@{backward\_pass}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{backward\_pass()}{backward\_pass()}}
+{\footnotesize\ttfamily void squiggles\+::\+Spline\+Generator\+::backward\+\_\+pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1ConstrainedState}{Constrained\+State}} $\ast$}]{predecessor,  }\item[{\mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1ConstrainedState}{Constrained\+State}} $\ast$}]{successor }\end{DoxyParamCaption})}
+
+Imposes the motion profile constraints on a segment of the path from the perspective of iterating backwards through the path. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a5d7f0823266d56de66709a603d4e3c5d}\label{classsquiggles_1_1SplineGenerator_a5d7f0823266d56de66709a603d4e3c5d}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!enforce\_accel\_lims@{enforce\_accel\_lims}}
+\index{enforce\_accel\_lims@{enforce\_accel\_lims}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{enforce\_accel\_lims()}{enforce\_accel\_lims()}}
+{\footnotesize\ttfamily void squiggles\+::\+Spline\+Generator\+::enforce\+\_\+accel\+\_\+lims (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1ConstrainedState}{Constrained\+State}} $\ast$}]{state }\end{DoxyParamCaption})}
+
+Applies the general constraints and model constraints to the given state. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a8c1d89a1400c7c982cff9f4671dd041e}\label{classsquiggles_1_1SplineGenerator_a8c1d89a1400c7c982cff9f4671dd041e}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!forward\_pass@{forward\_pass}}
+\index{forward\_pass@{forward\_pass}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{forward\_pass()}{forward\_pass()}}
+{\footnotesize\ttfamily void squiggles\+::\+Spline\+Generator\+::forward\+\_\+pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1ConstrainedState}{Constrained\+State}} $\ast$}]{predecessor,  }\item[{\mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1ConstrainedState}{Constrained\+State}} $\ast$}]{successor }\end{DoxyParamCaption})}
+
+Imposes the motion profile constraints on a segment of the path from the perspective of iterating forwards through the path. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a0a481b1b60464202e3d3b043a096e5db}\label{classsquiggles_1_1SplineGenerator_a0a481b1b60464202e3d3b043a096e5db}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!gen\_raw\_path@{gen\_raw\_path}}
+\index{gen\_raw\_path@{gen\_raw\_path}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{gen\_raw\_path()}{gen\_raw\_path()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1GeneratedPoint}{Generated\+Point}}$>$ squiggles\+::\+Spline\+Generator\+::gen\+\_\+raw\+\_\+path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} \&}]{start,  }\item[{\mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} \&}]{end,  }\item[{bool}]{fast }\end{DoxyParamCaption})}
+
+Performs the \char`\"{}naive\char`\"{} generation step.
+
+This step calculates the spline polynomials that fit within the \mbox{\hyperlink{classsquiggles_1_1SplineGenerator}{Spline\+Generator}}\textquotesingle{}s acceleration and jerk constraints and returns the points that form the curve. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a2c168c790783f8a12c955b8fbee618f1}\label{classsquiggles_1_1SplineGenerator_a2c168c790783f8a12c955b8fbee618f1}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!gen\_single\_raw\_path@{gen\_single\_raw\_path}}
+\index{gen\_single\_raw\_path@{gen\_single\_raw\_path}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{gen\_single\_raw\_path()}{gen\_single\_raw\_path()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1GeneratedVector}{Generated\+Vector}}$>$ squiggles\+::\+Spline\+Generator\+::gen\+\_\+single\+\_\+raw\+\_\+path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}}}]{start,  }\item[{\mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}}}]{end,  }\item[{int}]{duration,  }\item[{double}]{start\+\_\+vel,  }\item[{double}]{end\+\_\+vel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a8017fbdffbe7fc4e1af8c87e0ca45ffb}\label{classsquiggles_1_1SplineGenerator_a8017fbdffbe7fc4e1af8c87e0ca45ffb}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!generate@{generate}}
+\index{generate@{generate}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}}$>$ squiggles\+::\+Spline\+Generator\+::generate (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} $>$}]{iwaypoints }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a35dd016a68f8bb49b0db4c2ba86d3d8e}\label{classsquiggles_1_1SplineGenerator_a35dd016a68f8bb49b0db4c2ba86d3d8e}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!generate@{generate}}
+\index{generate@{generate}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}}$>$ squiggles\+::\+Spline\+Generator\+::generate (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{classsquiggles_1_1Pose}{Pose}} $>$}]{iwaypoints,  }\item[{bool}]{fast = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a48e0c6b4ad48ee6812d3a52c3fd33b31}\label{classsquiggles_1_1SplineGenerator_a48e0c6b4ad48ee6812d3a52c3fd33b31}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!generate@{generate}}
+\index{generate@{generate}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}}$>$ squiggles\+::\+Spline\+Generator\+::generate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} $>$}]{iwaypoints }\end{DoxyParamCaption})}
+
+Creates a motion profiled path between the given waypoints.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iwaypoints} & The list of vectors that the robot should reach along the path.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A series of robot states defining a path between the vectors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a01bb3fe9ed1d70e3e731eb429bc60580}\label{classsquiggles_1_1SplineGenerator_a01bb3fe9ed1d70e3e731eb429bc60580}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!generate@{generate}}
+\index{generate@{generate}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}}$>$ squiggles\+::\+Spline\+Generator\+::generate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classsquiggles_1_1Pose}{Pose}} $>$}]{iwaypoints,  }\item[{bool}]{fast = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Creates a motion profiled path between the given waypoints.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iwaypoints} & The list of poses that the robot should reach along the path. \\
+\hline
+{\em fast} & If true, the path optimization process will stop as soon as the constraints are met. If false, the optimizer will find the smoothest possible path between the points.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A series of robot states defining a path between the poses. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a0c5db60986a2164fff9e8f5493b8d0ad}\label{classsquiggles_1_1SplineGenerator_a0c5db60986a2164fff9e8f5493b8d0ad}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!get\_point\_at\_time@{get\_point\_at\_time}}
+\index{get\_point\_at\_time@{get\_point\_at\_time}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{get\_point\_at\_time()}{get\_point\_at\_time()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} squiggles\+::\+Spline\+Generator\+::get\+\_\+point\+\_\+at\+\_\+time (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}}}]{start,  }\item[{const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}}}]{end,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} $>$}]{points,  }\item[{double}]{t }\end{DoxyParamCaption})}
+
+Finds the \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} on the profiled curve for the given timestamp.
+
+This with interpolate between points on the curve if a point with an exact matching timestamp is not found. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_ad2a455b8de7de0557b13b0a08932d355}\label{classsquiggles_1_1SplineGenerator_ad2a455b8de7de0557b13b0a08932d355}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!get\_x\_spline@{get\_x\_spline}}
+\index{get\_x\_spline@{get\_x\_spline}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{get\_x\_spline()}{get\_x\_spline()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsquiggles_1_1QuinticPolynomial}{Quintic\+Polynomial}} squiggles\+::\+Spline\+Generator\+::get\+\_\+x\+\_\+spline (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}}}]{start,  }\item[{const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}}}]{end,  }\item[{const double}]{duration }\end{DoxyParamCaption})}
+
+Returns the spline curve for the given control vectors and path duration. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a9703e81e1eac0dafc5ae10d5ac16c2a7}\label{classsquiggles_1_1SplineGenerator_a9703e81e1eac0dafc5ae10d5ac16c2a7}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!get\_y\_spline@{get\_y\_spline}}
+\index{get\_y\_spline@{get\_y\_spline}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{get\_y\_spline()}{get\_y\_spline()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsquiggles_1_1QuinticPolynomial}{Quintic\+Polynomial}} squiggles\+::\+Spline\+Generator\+::get\+\_\+y\+\_\+spline (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}}}]{start,  }\item[{const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}}}]{end,  }\item[{const double}]{duration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_acb179a4ca318e2498a6a9f15529a5675}\label{classsquiggles_1_1SplineGenerator_acb179a4ca318e2498a6a9f15529a5675}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!gradient\_descent@{gradient\_descent}}
+\index{gradient\_descent@{gradient\_descent}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{gradient\_descent()}{gradient\_descent()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1GeneratedPoint}{Generated\+Point}}$>$ squiggles\+::\+Spline\+Generator\+::gradient\+\_\+descent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} \&}]{start,  }\item[{\mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}} \&}]{end,  }\item[{bool}]{fast }\end{DoxyParamCaption})}
+
+Runs a Gradient Descent algorithm to minimize the linear acceleration, linear jerk, and curvature for the generated path.
+
+This is used when there is not a start/end velocity specified for a given path. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_ad1fc929a5c9bb4423c1533a9957f2bb2}\label{classsquiggles_1_1SplineGenerator_ad1fc929a5c9bb4423c1533a9957f2bb2}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!integrate\_constrained\_states@{integrate\_constrained\_states}}
+\index{integrate\_constrained\_states@{integrate\_constrained\_states}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{integrate\_constrained\_states()}{integrate\_constrained\_states()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}}$>$ squiggles\+::\+Spline\+Generator\+::integrate\+\_\+constrained\+\_\+states (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1ConstrainedState}{Constrained\+State}} $>$}]{constrained\+States }\end{DoxyParamCaption})}
+
+Finds the new timestamps for each point along the curve based on the motion profile. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a3434f7f1e76ab3f04600a24eb26eb974}\label{classsquiggles_1_1SplineGenerator_a3434f7f1e76ab3f04600a24eb26eb974}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!lerp\_point@{lerp\_point}}
+\index{lerp\_point@{lerp\_point}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{lerp\_point()}{lerp\_point()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}} squiggles\+::\+Spline\+Generator\+::lerp\+\_\+point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsquiggles_1_1QuinticPolynomial}{Quintic\+Polynomial}}}]{x\+\_\+qp,  }\item[{\mbox{\hyperlink{classsquiggles_1_1QuinticPolynomial}{Quintic\+Polynomial}}}]{y\+\_\+qp,  }\item[{\mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}}}]{start,  }\item[{\mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}}}]{end,  }\item[{double}]{i }\end{DoxyParamCaption})}
+
+Linearly interpolates between points along the profiled curve. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a79006d9c5b661accdbfad1b9bb62f115}\label{classsquiggles_1_1SplineGenerator_a79006d9c5b661accdbfad1b9bb62f115}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!parameterize@{parameterize}}
+\index{parameterize@{parameterize}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{parameterize()}{parameterize()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structsquiggles_1_1ProfilePoint}{Profile\+Point}}$>$ squiggles\+::\+Spline\+Generator\+::parameterize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}}}]{start,  }\item[{const \mbox{\hyperlink{classsquiggles_1_1ControlVector}{Control\+Vector}}}]{end,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1SplineGenerator_1_1GeneratedPoint}{Generated\+Point}} $>$ \&}]{raw\+\_\+path,  }\item[{const double}]{preferred\+\_\+start\+\_\+vel,  }\item[{const double}]{preferred\+\_\+end\+\_\+vel,  }\item[{const double}]{start\+\_\+time }\end{DoxyParamCaption})}
+
+Imposes a linear motion profile on the raw path.
+
+This step creates the velocity and acceleration values to command the robot at each point along the curve. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_ad2feec052415c1a0121ddf9b3fe9e132}\label{classsquiggles_1_1SplineGenerator_ad2feec052415c1a0121ddf9b3fe9e132}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!vf@{vf}}
+\index{vf@{vf}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{vf()}{vf()}}
+{\footnotesize\ttfamily double squiggles\+::\+Spline\+Generator\+::vf (\begin{DoxyParamCaption}\item[{double}]{vi,  }\item[{double}]{a,  }\item[{double}]{ds }\end{DoxyParamCaption})}
+
+Calculates the final velocity for a path segment. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a22f2a2cf89bbea8f47e913f437c380c3}\label{classsquiggles_1_1SplineGenerator_a22f2a2cf89bbea8f47e913f437c380c3}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!constraints@{constraints}}
+\index{constraints@{constraints}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{constraints}{constraints}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsquiggles_1_1Constraints}{Constraints}} squiggles\+::\+Spline\+Generator\+::constraints\hspace{0.3cm}{\ttfamily [protected]}}
+
+The maximum allowable values for the robot\textquotesingle{}s motion. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a84c9d030b28469be3b3021367620414e}\label{classsquiggles_1_1SplineGenerator_a84c9d030b28469be3b3021367620414e}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!dt@{dt}}
+\index{dt@{dt}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{dt}{dt}}
+{\footnotesize\ttfamily double squiggles\+::\+Spline\+Generator\+::dt\hspace{0.3cm}{\ttfamily [protected]}}
+
+The time difference between each value in the generated path. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a248e2852fd8abf4742301719ad50e037}\label{classsquiggles_1_1SplineGenerator_a248e2852fd8abf4742301719ad50e037}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!K\_DEFAULT\_VEL@{K\_DEFAULT\_VEL}}
+\index{K\_DEFAULT\_VEL@{K\_DEFAULT\_VEL}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{K\_DEFAULT\_VEL}{K\_DEFAULT\_VEL}}
+{\footnotesize\ttfamily const double squiggles\+::\+Spline\+Generator\+::\+K\+\_\+\+DEFAULT\+\_\+\+VEL = 1.\+0}
+
+This is factor is used to create a \char`\"{}dummy velocity\char`\"{} in the initial path generation step one or both of the preferred start or end velocities is zero. The velocity will be replaced with the preferred start/end velocity in parameterization but a nonzero velocity is needed for the spline calculation.
+
+This was 1.\+2 in the WPILib example but that large of a value seems to create wild paths, 0.\+12 worked better in testing with VEX-\/sized paths. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_abba5aa10a5f0af89062cc966293d4e1c}\label{classsquiggles_1_1SplineGenerator_abba5aa10a5f0af89062cc966293d4e1c}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!K\_EPSILON@{K\_EPSILON}}
+\index{K\_EPSILON@{K\_EPSILON}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{K\_EPSILON}{K\_EPSILON}}
+{\footnotesize\ttfamily constexpr double squiggles\+::\+Spline\+Generator\+::\+K\+\_\+\+EPSILON = 1e-\/5\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+Values that are closer to each other than this value are considered equal. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_aebc810d00d58527ca8066f2739090641}\label{classsquiggles_1_1SplineGenerator_aebc810d00d58527ca8066f2739090641}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!MAX\_GRAD\_DESCENT\_ITERATIONS@{MAX\_GRAD\_DESCENT\_ITERATIONS}}
+\index{MAX\_GRAD\_DESCENT\_ITERATIONS@{MAX\_GRAD\_DESCENT\_ITERATIONS}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{MAX\_GRAD\_DESCENT\_ITERATIONS}{MAX\_GRAD\_DESCENT\_ITERATIONS}}
+{\footnotesize\ttfamily const int squiggles\+::\+Spline\+Generator\+::\+MAX\+\_\+\+GRAD\+\_\+\+DESCENT\+\_\+\+ITERATIONS = 10\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_ab5c7e06ff0ec4a3d989dc1e741894336}\label{classsquiggles_1_1SplineGenerator_ab5c7e06ff0ec4a3d989dc1e741894336}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!model@{model}}
+\index{model@{model}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classsquiggles_1_1PhysicalModel}{Physical\+Model}}$>$ squiggles\+::\+Spline\+Generator\+::model\hspace{0.3cm}{\ttfamily [protected]}}
+
+Defines the physical structure of the robot and translates the linear kinematics to wheel velocities. \mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_ac52ec9f4290490f1ae37b7d59290656b}\label{classsquiggles_1_1SplineGenerator_ac52ec9f4290490f1ae37b7d59290656b}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!T\_MAX@{T\_MAX}}
+\index{T\_MAX@{T\_MAX}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{T\_MAX}{T\_MAX}}
+{\footnotesize\ttfamily const int squiggles\+::\+Spline\+Generator\+::\+T\+\_\+\+MAX = 15\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsquiggles_1_1SplineGenerator_a414d2f23ba6fa351d94ac24d2e391b81}\label{classsquiggles_1_1SplineGenerator_a414d2f23ba6fa351d94ac24d2e391b81}} 
+\index{squiggles::SplineGenerator@{squiggles::SplineGenerator}!T\_MIN@{T\_MIN}}
+\index{T\_MIN@{T\_MIN}!squiggles::SplineGenerator@{squiggles::SplineGenerator}}
+\doxysubsubsection{\texorpdfstring{T\_MIN}{T\_MIN}}
+{\footnotesize\ttfamily const int squiggles\+::\+Spline\+Generator\+::\+T\+\_\+\+MIN = 2\hspace{0.3cm}{\ttfamily [protected]}}
+
+The minimum and maximum durations for a path to take. A larger range allows for longer possible paths at the expense of a longer path generation time. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/squiggles/\mbox{\hyperlink{spline_8hpp}{spline.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,446 @@
+\hypertarget{optical_8h}{}\doxysection{include/pros/optical.h File Reference}
+\label{optical_8h}\index{include/pros/optical.h@{include/pros/optical.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\newline
+Include dependency graph for optical.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structoptical__rgb__s}{optical\+\_\+rgb\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{structoptical__raw__s}{optical\+\_\+raw\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{structoptical__gesture__s}{optical\+\_\+gesture\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{optical_8h_aab6cb3487966170cc22fde92d14d9038}{OPT\+\_\+\+GESTURE\+\_\+\+ERR}}~(INT8\+\_\+\+MAX)
+\item 
+\#define \mbox{\hyperlink{optical_8h_ab88e357639799c76328d203e70790c93}{OPT\+\_\+\+COUNT\+\_\+\+ERR}}~(INT16\+\_\+\+MAX)
+\item 
+\#define \mbox{\hyperlink{optical_8h_aa823a64e7c6f53231133b91707813aee}{OPT\+\_\+\+TIME\+\_\+\+ERR}}~\mbox{\hyperlink{error_8h_a8748a4dfbe487cedaafa15f1ff7f2f38}{PROS\+\_\+\+ERR}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409}{optical\+\_\+direction\+\_\+e}} \mbox{\hyperlink{optical_8h_a38b3e88bb4660691e969747e1b9a3aa1}{optical\+\_\+direction\+\_\+e\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structoptical__rgb__s}{optical\+\_\+rgb\+\_\+s}} \mbox{\hyperlink{optical_8h_a92ca285b24403c60629f59ac1d50f258}{optical\+\_\+rgb\+\_\+s\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structoptical__raw__s}{optical\+\_\+raw\+\_\+s}} \mbox{\hyperlink{optical_8h_aa67946ca1f0e8edbafb20138dcdc055a}{optical\+\_\+raw\+\_\+s\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structoptical__gesture__s}{optical\+\_\+gesture\+\_\+s}} \mbox{\hyperlink{optical_8h_ae21a91dcbc09885f53290bf0c6fce48a}{optical\+\_\+gesture\+\_\+s\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409}{optical\+\_\+direction\+\_\+e}} \{ \newline
+\mbox{\hyperlink{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409acbe9c605984148d16737225356e8bc89}{NO\+\_\+\+GESTURE}} = 0
+, \mbox{\hyperlink{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409aba595d8bca8bc5e67c37c0a9d89becfa}{UP}} = 1
+, \mbox{\hyperlink{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409a9b0b4a95b99523966e0e34ffdadac9da}{DOWN}} = 2
+, \mbox{\hyperlink{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409aec8379af7490bb9eaaf579cf17876f38}{RIGHT}} = 3
+, \newline
+\mbox{\hyperlink{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409adb45120aafd37a973140edee24708065}{LEFT}} = 4
+, \mbox{\hyperlink{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409a2fd6f336d08340583bd620a7f5694c90}{ERROR}} = PROS\+\_\+\+ERR
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{optical_8h_a7bc39359b98490f8beb85f9558045da3}{optical\+\_\+get\+\_\+hue}} (uint8\+\_\+t port)
+\item 
+double \mbox{\hyperlink{optical_8h_ad6c4881f66bf8e11443960c80f5cd1a7}{optical\+\_\+get\+\_\+saturation}} (uint8\+\_\+t port)
+\item 
+double \mbox{\hyperlink{optical_8h_a0bd55d52ba8510b29a94798c6a822277}{optical\+\_\+get\+\_\+brightness}} (uint8\+\_\+t port)
+\item 
+int32\+\_\+t \mbox{\hyperlink{optical_8h_ae994d8927c55a38e28bad644162d023e}{optical\+\_\+get\+\_\+proximity}} (uint8\+\_\+t port)
+\item 
+int32\+\_\+t \mbox{\hyperlink{optical_8h_a6940ebdc45c2ad8baeba8f3ed03a1c49}{optical\+\_\+set\+\_\+led\+\_\+pwm}} (uint8\+\_\+t port, uint8\+\_\+t value)
+\item 
+int32\+\_\+t \mbox{\hyperlink{optical_8h_a0698dd880d93b1a0526c37b5fa1d821f}{optical\+\_\+get\+\_\+led\+\_\+pwm}} (uint8\+\_\+t port)
+\item 
+\mbox{\hyperlink{optical_8h_a92ca285b24403c60629f59ac1d50f258}{optical\+\_\+rgb\+\_\+s\+\_\+t}} \mbox{\hyperlink{optical_8h_ae4110d56540b4adab05035a1548006bc}{optical\+\_\+get\+\_\+rgb}} (uint8\+\_\+t port)
+\item 
+\mbox{\hyperlink{optical_8h_aa67946ca1f0e8edbafb20138dcdc055a}{optical\+\_\+raw\+\_\+s\+\_\+t}} \mbox{\hyperlink{optical_8h_a6f5093964e9b3f9e54c0012ef00995d1}{optical\+\_\+get\+\_\+raw}} (uint8\+\_\+t port)
+\item 
+\mbox{\hyperlink{optical_8h_a38b3e88bb4660691e969747e1b9a3aa1}{optical\+\_\+direction\+\_\+e\+\_\+t}} \mbox{\hyperlink{optical_8h_a7b21a7dd3160eb631a3d9ebf25665915}{optical\+\_\+get\+\_\+gesture}} (uint8\+\_\+t port)
+\item 
+\mbox{\hyperlink{optical_8h_ae21a91dcbc09885f53290bf0c6fce48a}{optical\+\_\+gesture\+\_\+s\+\_\+t}} \mbox{\hyperlink{optical_8h_ae1733ccc289ade9fa245fb5c534c013e}{optical\+\_\+get\+\_\+gesture\+\_\+raw}} (uint8\+\_\+t port)
+\item 
+int32\+\_\+t \mbox{\hyperlink{optical_8h_a324ddd80497cbe987d3949084ff4ddd3}{optical\+\_\+enable\+\_\+gesture}} (uint8\+\_\+t port)
+\item 
+int32\+\_\+t \mbox{\hyperlink{optical_8h_a2c5b423cfe1d874793251c17e937ab61}{optical\+\_\+disable\+\_\+gesture}} (uint8\+\_\+t port)
+\item 
+double \mbox{\hyperlink{optical_8h_a3f220131e31e853ac60e8a2d538c1cd0}{optical\+\_\+get\+\_\+integration\+\_\+time}} (uint8\+\_\+t port)
+\item 
+int32\+\_\+t \mbox{\hyperlink{optical_8h_a3324e1d905e563cbd353cc88ce5a4c8d}{optical\+\_\+set\+\_\+integration\+\_\+time}} (uint8\+\_\+t port, double time)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains prototypes for functions related to the VEX Optical sensor.
+
+Visit \href{https://pros.cs.purdue.edu/v5/tutorials/topical/imu.html}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/imu.\+html}} to learn more.
+
+This file should not be modified by users, since it gets replaced whenever a kernel upgrade occurs.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2023, Purdue University ACM SIGBots.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{optical_8h_ab88e357639799c76328d203e70790c93}\label{optical_8h_ab88e357639799c76328d203e70790c93}} 
+\index{optical.h@{optical.h}!OPT\_COUNT\_ERR@{OPT\_COUNT\_ERR}}
+\index{OPT\_COUNT\_ERR@{OPT\_COUNT\_ERR}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{OPT\_COUNT\_ERR}{OPT\_COUNT\_ERR}}
+{\footnotesize\ttfamily \#define OPT\+\_\+\+COUNT\+\_\+\+ERR~(INT16\+\_\+\+MAX)}
+
+\mbox{\Hypertarget{optical_8h_aab6cb3487966170cc22fde92d14d9038}\label{optical_8h_aab6cb3487966170cc22fde92d14d9038}} 
+\index{optical.h@{optical.h}!OPT\_GESTURE\_ERR@{OPT\_GESTURE\_ERR}}
+\index{OPT\_GESTURE\_ERR@{OPT\_GESTURE\_ERR}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{OPT\_GESTURE\_ERR}{OPT\_GESTURE\_ERR}}
+{\footnotesize\ttfamily \#define OPT\+\_\+\+GESTURE\+\_\+\+ERR~(INT8\+\_\+\+MAX)}
+
+\mbox{\Hypertarget{optical_8h_aa823a64e7c6f53231133b91707813aee}\label{optical_8h_aa823a64e7c6f53231133b91707813aee}} 
+\index{optical.h@{optical.h}!OPT\_TIME\_ERR@{OPT\_TIME\_ERR}}
+\index{OPT\_TIME\_ERR@{OPT\_TIME\_ERR}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{OPT\_TIME\_ERR}{OPT\_TIME\_ERR}}
+{\footnotesize\ttfamily \#define OPT\+\_\+\+TIME\+\_\+\+ERR~\mbox{\hyperlink{error_8h_a8748a4dfbe487cedaafa15f1ff7f2f38}{PROS\+\_\+\+ERR}}}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{optical_8h_a38b3e88bb4660691e969747e1b9a3aa1}\label{optical_8h_a38b3e88bb4660691e969747e1b9a3aa1}} 
+\index{optical.h@{optical.h}!optical\_direction\_e\_t@{optical\_direction\_e\_t}}
+\index{optical\_direction\_e\_t@{optical\_direction\_e\_t}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_direction\_e\_t}{optical\_direction\_e\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409}{optical\+\_\+direction\+\_\+e}} \mbox{\hyperlink{optical_8h_a38b3e88bb4660691e969747e1b9a3aa1}{optical\+\_\+direction\+\_\+e\+\_\+t}}}
+
+\mbox{\Hypertarget{optical_8h_ae21a91dcbc09885f53290bf0c6fce48a}\label{optical_8h_ae21a91dcbc09885f53290bf0c6fce48a}} 
+\index{optical.h@{optical.h}!optical\_gesture\_s\_t@{optical\_gesture\_s\_t}}
+\index{optical\_gesture\_s\_t@{optical\_gesture\_s\_t}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_gesture\_s\_t}{optical\_gesture\_s\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structoptical__gesture__s}{optical\+\_\+gesture\+\_\+s}} \mbox{\hyperlink{optical_8h_ae21a91dcbc09885f53290bf0c6fce48a}{optical\+\_\+gesture\+\_\+s\+\_\+t}}}
+
+\mbox{\Hypertarget{optical_8h_aa67946ca1f0e8edbafb20138dcdc055a}\label{optical_8h_aa67946ca1f0e8edbafb20138dcdc055a}} 
+\index{optical.h@{optical.h}!optical\_raw\_s\_t@{optical\_raw\_s\_t}}
+\index{optical\_raw\_s\_t@{optical\_raw\_s\_t}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_raw\_s\_t}{optical\_raw\_s\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structoptical__raw__s}{optical\+\_\+raw\+\_\+s}} \mbox{\hyperlink{optical_8h_aa67946ca1f0e8edbafb20138dcdc055a}{optical\+\_\+raw\+\_\+s\+\_\+t}}}
+
+\mbox{\Hypertarget{optical_8h_a92ca285b24403c60629f59ac1d50f258}\label{optical_8h_a92ca285b24403c60629f59ac1d50f258}} 
+\index{optical.h@{optical.h}!optical\_rgb\_s\_t@{optical\_rgb\_s\_t}}
+\index{optical\_rgb\_s\_t@{optical\_rgb\_s\_t}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_rgb\_s\_t}{optical\_rgb\_s\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structoptical__rgb__s}{optical\+\_\+rgb\+\_\+s}} \mbox{\hyperlink{optical_8h_a92ca285b24403c60629f59ac1d50f258}{optical\+\_\+rgb\+\_\+s\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409}\label{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409}} 
+\index{optical.h@{optical.h}!optical\_direction\_e@{optical\_direction\_e}}
+\index{optical\_direction\_e@{optical\_direction\_e}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_direction\_e}{optical\_direction\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409}{optical\+\_\+direction\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_GESTURE@{NO\_GESTURE}!optical.h@{optical.h}}\index{optical.h@{optical.h}!NO\_GESTURE@{NO\_GESTURE}}}\mbox{\Hypertarget{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409acbe9c605984148d16737225356e8bc89}\label{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409acbe9c605984148d16737225356e8bc89}} 
+NO\+\_\+\+GESTURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!optical.h@{optical.h}}\index{optical.h@{optical.h}!UP@{UP}}}\mbox{\Hypertarget{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409aba595d8bca8bc5e67c37c0a9d89becfa}\label{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409aba595d8bca8bc5e67c37c0a9d89becfa}} 
+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOWN@{DOWN}!optical.h@{optical.h}}\index{optical.h@{optical.h}!DOWN@{DOWN}}}\mbox{\Hypertarget{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409a9b0b4a95b99523966e0e34ffdadac9da}\label{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409a9b0b4a95b99523966e0e34ffdadac9da}} 
+DOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!optical.h@{optical.h}}\index{optical.h@{optical.h}!RIGHT@{RIGHT}}}\mbox{\Hypertarget{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409aec8379af7490bb9eaaf579cf17876f38}\label{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409aec8379af7490bb9eaaf579cf17876f38}} 
+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!optical.h@{optical.h}}\index{optical.h@{optical.h}!LEFT@{LEFT}}}\mbox{\Hypertarget{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409adb45120aafd37a973140edee24708065}\label{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409adb45120aafd37a973140edee24708065}} 
+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR@{ERROR}!optical.h@{optical.h}}\index{optical.h@{optical.h}!ERROR@{ERROR}}}\mbox{\Hypertarget{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409a2fd6f336d08340583bd620a7f5694c90}\label{optical_8h_a656ac13ffc5dd8f7289b47ac1a019409a2fd6f336d08340583bd620a7f5694c90}} 
+ERROR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{optical_8h_a2c5b423cfe1d874793251c17e937ab61}\label{optical_8h_a2c5b423cfe1d874793251c17e937ab61}} 
+\index{optical.h@{optical.h}!optical\_disable\_gesture@{optical\_disable\_gesture}}
+\index{optical\_disable\_gesture@{optical\_disable\_gesture}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_disable\_gesture()}{optical\_disable\_gesture()}}
+{\footnotesize\ttfamily int32\+\_\+t optical\+\_\+disable\+\_\+gesture (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Disable gesture detection on the sensor
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation is successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{optical_8h_a324ddd80497cbe987d3949084ff4ddd3}\label{optical_8h_a324ddd80497cbe987d3949084ff4ddd3}} 
+\index{optical.h@{optical.h}!optical\_enable\_gesture@{optical\_enable\_gesture}}
+\index{optical\_enable\_gesture@{optical\_enable\_gesture}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_enable\_gesture()}{optical\_enable\_gesture()}}
+{\footnotesize\ttfamily int32\+\_\+t optical\+\_\+enable\+\_\+gesture (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Enable gesture detection on the sensor
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation is successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{optical_8h_a0bd55d52ba8510b29a94798c6a822277}\label{optical_8h_a0bd55d52ba8510b29a94798c6a822277}} 
+\index{optical.h@{optical.h}!optical\_get\_brightness@{optical\_get\_brightness}}
+\index{optical\_get\_brightness@{optical\_get\_brightness}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_get\_brightness()}{optical\_get\_brightness()}}
+{\footnotesize\ttfamily double optical\+\_\+get\+\_\+brightness (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get the detected color brightness
+
+This is not available if gestures are being detected. Brightness has a range of 0 to 1.\+0
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+brightness value if the operation was successful or PROS\+\_\+\+ERR\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{optical_8h_a7b21a7dd3160eb631a3d9ebf25665915}\label{optical_8h_a7b21a7dd3160eb631a3d9ebf25665915}} 
+\index{optical.h@{optical.h}!optical\_get\_gesture@{optical\_get\_gesture}}
+\index{optical\_get\_gesture@{optical\_get\_gesture}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_get\_gesture()}{optical\_get\_gesture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{optical_8h_a38b3e88bb4660691e969747e1b9a3aa1}{optical\+\_\+direction\+\_\+e\+\_\+t}} optical\+\_\+get\+\_\+gesture (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get the most recent gesture data from the sensor
+
+Gestures will be cleared after 500mS
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+gesture value if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{optical_8h_ae1733ccc289ade9fa245fb5c534c013e}\label{optical_8h_ae1733ccc289ade9fa245fb5c534c013e}} 
+\index{optical.h@{optical.h}!optical\_get\_gesture\_raw@{optical\_get\_gesture\_raw}}
+\index{optical\_get\_gesture\_raw@{optical\_get\_gesture\_raw}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_get\_gesture\_raw()}{optical\_get\_gesture\_raw()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{optical_8h_ae21a91dcbc09885f53290bf0c6fce48a}{optical\+\_\+gesture\+\_\+s\+\_\+t}} optical\+\_\+get\+\_\+gesture\+\_\+raw (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get the most recent raw gesture data from the sensor
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+gesture value if the operation was successful or an optical\+\_\+gesture\+\_\+s\+\_\+t with all fields set to PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{optical_8h_a7bc39359b98490f8beb85f9558045da3}\label{optical_8h_a7bc39359b98490f8beb85f9558045da3}} 
+\index{optical.h@{optical.h}!optical\_get\_hue@{optical\_get\_hue}}
+\index{optical\_get\_hue@{optical\_get\_hue}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_get\_hue()}{optical\_get\_hue()}}
+{\footnotesize\ttfamily double optical\+\_\+get\+\_\+hue (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get the detected color hue
+
+This is not available if gestures are being detected. Hue has a range of 0 to 359.\+999
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hue value if the operation was successful or PROS\+\_\+\+ERR\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{optical_8h_a3f220131e31e853ac60e8a2d538c1cd0}\label{optical_8h_a3f220131e31e853ac60e8a2d538c1cd0}} 
+\index{optical.h@{optical.h}!optical\_get\_integration\_time@{optical\_get\_integration\_time}}
+\index{optical\_get\_integration\_time@{optical\_get\_integration\_time}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_get\_integration\_time()}{optical\_get\_integration\_time()}}
+{\footnotesize\ttfamily double optical\+\_\+get\+\_\+integration\+\_\+time (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get integration time (update rate) of the optical sensor in milliseconds, with minimum time being
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integration time in milliseconds if the operation is successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{optical_8h_a0698dd880d93b1a0526c37b5fa1d821f}\label{optical_8h_a0698dd880d93b1a0526c37b5fa1d821f}} 
+\index{optical.h@{optical.h}!optical\_get\_led\_pwm@{optical\_get\_led\_pwm}}
+\index{optical\_get\_led\_pwm@{optical\_get\_led\_pwm}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_get\_led\_pwm()}{optical\_get\_led\_pwm()}}
+{\footnotesize\ttfamily int32\+\_\+t optical\+\_\+get\+\_\+led\+\_\+pwm (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get the pwm value of the White LED
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+LED pwm value that ranges from 0 to 100 if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{optical_8h_ae994d8927c55a38e28bad644162d023e}\label{optical_8h_ae994d8927c55a38e28bad644162d023e}} 
+\index{optical.h@{optical.h}!optical\_get\_proximity@{optical\_get\_proximity}}
+\index{optical\_get\_proximity@{optical\_get\_proximity}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_get\_proximity()}{optical\_get\_proximity()}}
+{\footnotesize\ttfamily int32\+\_\+t optical\+\_\+get\+\_\+proximity (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get the detected proximity value
+
+This is not available if gestures are being detected. proximity has a range of 0 to 255.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+poximity value if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{optical_8h_a6f5093964e9b3f9e54c0012ef00995d1}\label{optical_8h_a6f5093964e9b3f9e54c0012ef00995d1}} 
+\index{optical.h@{optical.h}!optical\_get\_raw@{optical\_get\_raw}}
+\index{optical\_get\_raw@{optical\_get\_raw}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_get\_raw()}{optical\_get\_raw()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{optical_8h_aa67946ca1f0e8edbafb20138dcdc055a}{optical\+\_\+raw\+\_\+s\+\_\+t}} optical\+\_\+get\+\_\+raw (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get the raw, unprocessed RGBC data from the sensor
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+raw rgb value if the operation was successful or an optical\+\_\+raw\+\_\+s\+\_\+t with all fields set to PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{optical_8h_ae4110d56540b4adab05035a1548006bc}\label{optical_8h_ae4110d56540b4adab05035a1548006bc}} 
+\index{optical.h@{optical.h}!optical\_get\_rgb@{optical\_get\_rgb}}
+\index{optical\_get\_rgb@{optical\_get\_rgb}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_get\_rgb()}{optical\_get\_rgb()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{optical_8h_a92ca285b24403c60629f59ac1d50f258}{optical\+\_\+rgb\+\_\+s\+\_\+t}} optical\+\_\+get\+\_\+rgb (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get the processed RGBC data from the sensor
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+rgb value if the operation was successful or an optical\+\_\+rgb\+\_\+s\+\_\+t with all fields set to PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{optical_8h_ad6c4881f66bf8e11443960c80f5cd1a7}\label{optical_8h_ad6c4881f66bf8e11443960c80f5cd1a7}} 
+\index{optical.h@{optical.h}!optical\_get\_saturation@{optical\_get\_saturation}}
+\index{optical\_get\_saturation@{optical\_get\_saturation}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_get\_saturation()}{optical\_get\_saturation()}}
+{\footnotesize\ttfamily double optical\+\_\+get\+\_\+saturation (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get the detected color saturation
+
+This is not available if gestures are being detected. Saturation has a range of 0 to 1.\+0
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+saturation value if the operation was successful or PROS\+\_\+\+ERR\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{optical_8h_a3324e1d905e563cbd353cc88ce5a4c8d}\label{optical_8h_a3324e1d905e563cbd353cc88ce5a4c8d}} 
+\index{optical.h@{optical.h}!optical\_set\_integration\_time@{optical\_set\_integration\_time}}
+\index{optical\_set\_integration\_time@{optical\_set\_integration\_time}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_set\_integration\_time()}{optical\_set\_integration\_time()}}
+{\footnotesize\ttfamily int32\+\_\+t optical\+\_\+set\+\_\+integration\+\_\+time (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{double}]{time }\end{DoxyParamCaption})}
+
+Set integration time (update rate) of the optical sensor in milliseconds.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+{\em time} & The desired integration time in milliseconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation is successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{optical_8h_a6940ebdc45c2ad8baeba8f3ed03a1c49}\label{optical_8h_a6940ebdc45c2ad8baeba8f3ed03a1c49}} 
+\index{optical.h@{optical.h}!optical\_set\_led\_pwm@{optical\_set\_led\_pwm}}
+\index{optical\_set\_led\_pwm@{optical\_set\_led\_pwm}!optical.h@{optical.h}}
+\doxysubsubsection{\texorpdfstring{optical\_set\_led\_pwm()}{optical\_set\_led\_pwm()}}
+{\footnotesize\ttfamily int32\+\_\+t optical\+\_\+set\+\_\+led\+\_\+pwm (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+Set the pwm value of the White LED
+
+value that ranges from 0 to 100
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Optical Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Optical Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation is successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}

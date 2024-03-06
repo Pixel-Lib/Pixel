@@ -1,0 +1,85 @@
+\hypertarget{classpros_1_1ADIAnalogOut}{}\doxysection{pros\+::ADIAnalog\+Out Class Reference}
+\label{classpros_1_1ADIAnalogOut}\index{pros::ADIAnalogOut@{pros::ADIAnalogOut}}
+
+
+{\ttfamily \#include $<$adi.\+hpp$>$}
+
+
+
+Inheritance diagram for pros\+::ADIAnalog\+Out\+:
+% FIG 0
+
+
+Collaboration diagram for pros\+::ADIAnalog\+Out\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpros_1_1ADIAnalogOut_a3bcce769569c1bbd163ea450dc5e88b8}{ADIAnalog\+Out}} (std\+::uint8\+\_\+t adi\+\_\+port)
+\item 
+\mbox{\hyperlink{classpros_1_1ADIAnalogOut_ab34d7eecf882afe931e87094608ee947}{ADIAnalog\+Out}} (\mbox{\hyperlink{namespacepros_ad92209ebde1c7c68f67dde8f51c110a1}{ext\+\_\+adi\+\_\+port\+\_\+pair\+\_\+t}} port\+\_\+pair)
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{classpros_1_1ADIAnalogOut_ae6711117fbceb3bb6e3602c4ef63aff1}{set\+\_\+value}} (std\+::int32\+\_\+t value) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpros_1_1ADIAnalogOut_a3bcce769569c1bbd163ea450dc5e88b8}\label{classpros_1_1ADIAnalogOut_a3bcce769569c1bbd163ea450dc5e88b8}} 
+\index{pros::ADIAnalogOut@{pros::ADIAnalogOut}!ADIAnalogOut@{ADIAnalogOut}}
+\index{ADIAnalogOut@{ADIAnalogOut}!pros::ADIAnalogOut@{pros::ADIAnalogOut}}
+\doxysubsubsection{\texorpdfstring{ADIAnalogOut()}{ADIAnalogOut()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily pros\+::\+ADIAnalog\+Out\+::\+ADIAnalog\+Out (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{adi\+\_\+port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Configures an ADI port to act as an Analog Output.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ Either the ADI port value or the smart port value is not within its valid range (ADI port\+: 1-\/8, \textquotesingle{}a\textquotesingle{}-\/\textquotesingle{}h\textquotesingle{}, or \textquotesingle{}A\textquotesingle{}-\/\textquotesingle{}H\textquotesingle{}; smart port\+: 1-\/21).
+
+
+\begin{DoxyParams}{Parameters}
+{\em adi\+\_\+port} & The ADI port number (from 1-\/8, \textquotesingle{}a\textquotesingle{}-\/\textquotesingle{}h\textquotesingle{}, \textquotesingle{}A\textquotesingle{}-\/\textquotesingle{}H\textquotesingle{}) to configure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpros_1_1ADIAnalogOut_ab34d7eecf882afe931e87094608ee947}\label{classpros_1_1ADIAnalogOut_ab34d7eecf882afe931e87094608ee947}} 
+\index{pros::ADIAnalogOut@{pros::ADIAnalogOut}!ADIAnalogOut@{ADIAnalogOut}}
+\index{ADIAnalogOut@{ADIAnalogOut}!pros::ADIAnalogOut@{pros::ADIAnalogOut}}
+\doxysubsubsection{\texorpdfstring{ADIAnalogOut()}{ADIAnalogOut()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily pros\+::\+ADIAnalog\+Out\+::\+ADIAnalog\+Out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacepros_ad92209ebde1c7c68f67dde8f51c110a1}{ext\+\_\+adi\+\_\+port\+\_\+pair\+\_\+t}}}]{port\+\_\+pair }\end{DoxyParamCaption})}
+
+Configures an ADI port on an adi\+\_\+expander to act as an Analog Output.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ Either the ADI port value or the smart port value is not within its valid range (ADI port\+: 1-\/8, \textquotesingle{}a\textquotesingle{}-\/\textquotesingle{}h\textquotesingle{}, or \textquotesingle{}A\textquotesingle{}-\/\textquotesingle{}H\textquotesingle{}; smart port\+: 1-\/21).
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+\_\+pair} & The pair of the smart port number (from 1-\/22) and the ADI port number (from 1-\/8, \textquotesingle{}a\textquotesingle{}-\/\textquotesingle{}h\textquotesingle{}, \textquotesingle{}A\textquotesingle{}-\/\textquotesingle{}H\textquotesingle{}) to configure \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpros_1_1ADIAnalogOut_ae6711117fbceb3bb6e3602c4ef63aff1}\label{classpros_1_1ADIAnalogOut_ae6711117fbceb3bb6e3602c4ef63aff1}} 
+\index{pros::ADIAnalogOut@{pros::ADIAnalogOut}!set\_value@{set\_value}}
+\index{set\_value@{set\_value}!pros::ADIAnalogOut@{pros::ADIAnalogOut}}
+\doxysubsubsection{\texorpdfstring{set\_value()}{set\_value()}}
+{\footnotesize\ttfamily std\+::int32\+\_\+t pros\+::\+ADIPort\+::set\+\_\+value}
+
+Sets the value for the given ADI port.
+
+This only works on ports configured as outputs, and the behavior will change depending on the configuration of the port.
+
+This function uses the following values of errno when an error state is reached\+: ENODEV -\/ The port is not configured as an analog output
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to set the ADI port to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/pros/\mbox{\hyperlink{adi_8hpp}{adi.\+hpp}}\end{DoxyCompactItemize}

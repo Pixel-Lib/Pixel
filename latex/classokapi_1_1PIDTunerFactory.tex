@@ -1,0 +1,33 @@
+\hypertarget{classokapi_1_1PIDTunerFactory}{}\doxysection{okapi\+::PIDTuner\+Factory Class Reference}
+\label{classokapi_1_1PIDTunerFactory}\index{okapi::PIDTunerFactory@{okapi::PIDTunerFactory}}
+
+
+{\ttfamily \#include $<$pid\+Tuner\+Factory.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classokapi_1_1PIDTuner}{PIDTuner}} \mbox{\hyperlink{classokapi_1_1PIDTunerFactory_a3652419c9d0629fdf422249e8dfb02a0}{create}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerInput}{Controller\+Input}}$<$ double $>$$>$ \&iinput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerOutput}{Controller\+Output}}$<$ double $>$$>$ \&ioutput, QTime itimeout, std\+::int32\+\_\+t igoal, double ik\+PMin, double ik\+PMax, double ik\+IMin, double ik\+IMax, double ik\+DMin, double ik\+DMax, std\+::int32\+\_\+t inum\+Iterations=5, std\+::int32\+\_\+t inum\+Particles=16, double ik\+Settle=1, double ik\+ITAE=2, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1Logger}{Logger}} $>$ \&ilogger=\mbox{\hyperlink{classokapi_1_1Logger_a70bc25e46e50059ef047c9cbfd8bef3a}{Logger\+::get\+Default\+Logger}}())
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1PIDTuner}{PIDTuner}} $>$ \mbox{\hyperlink{classokapi_1_1PIDTunerFactory_a88ffdbb76e4f2cd71d48a6af7469921c}{create\+Ptr}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerInput}{Controller\+Input}}$<$ double $>$$>$ \&iinput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerOutput}{Controller\+Output}}$<$ double $>$$>$ \&ioutput, QTime itimeout, std\+::int32\+\_\+t igoal, double ik\+PMin, double ik\+PMax, double ik\+IMin, double ik\+IMax, double ik\+DMin, double ik\+DMax, std\+::int32\+\_\+t inum\+Iterations=5, std\+::int32\+\_\+t inum\+Particles=16, double ik\+Settle=1, double ik\+ITAE=2, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1Logger}{Logger}} $>$ \&ilogger=\mbox{\hyperlink{classokapi_1_1Logger_a70bc25e46e50059ef047c9cbfd8bef3a}{Logger\+::get\+Default\+Logger}}())
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1PIDTunerFactory_a3652419c9d0629fdf422249e8dfb02a0}\label{classokapi_1_1PIDTunerFactory_a3652419c9d0629fdf422249e8dfb02a0}} 
+\index{okapi::PIDTunerFactory@{okapi::PIDTunerFactory}!create@{create}}
+\index{create@{create}!okapi::PIDTunerFactory@{okapi::PIDTunerFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classokapi_1_1PIDTuner}{PIDTuner}} okapi\+::\+PIDTuner\+Factory\+::create (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerInput}{Controller\+Input}}$<$ double $>$$>$ \&}]{iinput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerOutput}{Controller\+Output}}$<$ double $>$$>$ \&}]{ioutput,  }\item[{QTime}]{itimeout,  }\item[{std\+::int32\+\_\+t}]{igoal,  }\item[{double}]{ik\+PMin,  }\item[{double}]{ik\+PMax,  }\item[{double}]{ik\+IMin,  }\item[{double}]{ik\+IMax,  }\item[{double}]{ik\+DMin,  }\item[{double}]{ik\+DMax,  }\item[{std\+::int32\+\_\+t}]{inum\+Iterations = {\ttfamily 5},  }\item[{std\+::int32\+\_\+t}]{inum\+Particles = {\ttfamily 16},  }\item[{double}]{ik\+Settle = {\ttfamily 1},  }\item[{double}]{ik\+ITAE = {\ttfamily 2},  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1Logger}{Logger}} $>$ \&}]{ilogger = {\ttfamily \mbox{\hyperlink{classokapi_1_1Logger_a70bc25e46e50059ef047c9cbfd8bef3a}{Logger\+::get\+Default\+Logger}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classokapi_1_1PIDTunerFactory_a88ffdbb76e4f2cd71d48a6af7469921c}\label{classokapi_1_1PIDTunerFactory_a88ffdbb76e4f2cd71d48a6af7469921c}} 
+\index{okapi::PIDTunerFactory@{okapi::PIDTunerFactory}!createPtr@{createPtr}}
+\index{createPtr@{createPtr}!okapi::PIDTunerFactory@{okapi::PIDTunerFactory}}
+\doxysubsubsection{\texorpdfstring{createPtr()}{createPtr()}}
+{\footnotesize\ttfamily static std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classokapi_1_1PIDTuner}{PIDTuner}}$>$ okapi\+::\+PIDTuner\+Factory\+::create\+Ptr (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerInput}{Controller\+Input}}$<$ double $>$$>$ \&}]{iinput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerOutput}{Controller\+Output}}$<$ double $>$$>$ \&}]{ioutput,  }\item[{QTime}]{itimeout,  }\item[{std\+::int32\+\_\+t}]{igoal,  }\item[{double}]{ik\+PMin,  }\item[{double}]{ik\+PMax,  }\item[{double}]{ik\+IMin,  }\item[{double}]{ik\+IMax,  }\item[{double}]{ik\+DMin,  }\item[{double}]{ik\+DMax,  }\item[{std\+::int32\+\_\+t}]{inum\+Iterations = {\ttfamily 5},  }\item[{std\+::int32\+\_\+t}]{inum\+Particles = {\ttfamily 16},  }\item[{double}]{ik\+Settle = {\ttfamily 1},  }\item[{double}]{ik\+ITAE = {\ttfamily 2},  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1Logger}{Logger}} $>$ \&}]{ilogger = {\ttfamily \mbox{\hyperlink{classokapi_1_1Logger_a70bc25e46e50059ef047c9cbfd8bef3a}{Logger\+::get\+Default\+Logger}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/impl/control/util/\mbox{\hyperlink{pidTunerFactory_8hpp}{pid\+Tuner\+Factory.\+hpp}}\end{DoxyCompactItemize}

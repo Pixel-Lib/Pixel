@@ -1,0 +1,102 @@
+\hypertarget{structsquiggles_1_1Constraints}{}\doxysection{squiggles\+::Constraints Struct Reference}
+\label{structsquiggles_1_1Constraints}\index{squiggles::Constraints@{squiggles::Constraints}}
+
+
+{\ttfamily \#include $<$constraints.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structsquiggles_1_1Constraints_aabba931956d0fcc406711b57c7e95831}{Constraints}} (double imax\+\_\+vel, double imax\+\_\+accel=std\+::numeric\+\_\+limits$<$ double $>$\+::max(), double imax\+\_\+jerk=std\+::numeric\+\_\+limits$<$ double $>$\+::max(), double imax\+\_\+curvature=1000, double imin\+\_\+accel=std\+::nan(\char`\"{}\char`\"{}))
+\item 
+std\+::string \mbox{\hyperlink{structsquiggles_1_1Constraints_a7da4a97b03ccff1d056d077763b4c913}{to\+\_\+string}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{structsquiggles_1_1Constraints_a47eeb9f724e76fd70585a713ad71ad5b}{max\+\_\+vel}}
+\item 
+double \mbox{\hyperlink{structsquiggles_1_1Constraints_a429a9e7ddecc19121d00e45f63923a40}{max\+\_\+accel}}
+\item 
+double \mbox{\hyperlink{structsquiggles_1_1Constraints_a47f745806cd0585cfb774ca44d987d4a}{max\+\_\+jerk}}
+\item 
+double \mbox{\hyperlink{structsquiggles_1_1Constraints_a39d23a6bcb6cb82ed1c46b1a3d7964fb}{min\+\_\+accel}}
+\item 
+double \mbox{\hyperlink{structsquiggles_1_1Constraints_af6b7cafec8d29b64833211ab0574a54d}{max\+\_\+curvature}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structsquiggles_1_1Constraints_aabba931956d0fcc406711b57c7e95831}\label{structsquiggles_1_1Constraints_aabba931956d0fcc406711b57c7e95831}} 
+\index{squiggles::Constraints@{squiggles::Constraints}!Constraints@{Constraints}}
+\index{Constraints@{Constraints}!squiggles::Constraints@{squiggles::Constraints}}
+\doxysubsubsection{\texorpdfstring{Constraints()}{Constraints()}}
+{\footnotesize\ttfamily squiggles\+::\+Constraints\+::\+Constraints (\begin{DoxyParamCaption}\item[{double}]{imax\+\_\+vel,  }\item[{double}]{imax\+\_\+accel = {\ttfamily std\+:\+:numeric\+\_\+limits$<$double$>$\+:\+:max()},  }\item[{double}]{imax\+\_\+jerk = {\ttfamily std\+:\+:numeric\+\_\+limits$<$double$>$\+:\+:max()},  }\item[{double}]{imax\+\_\+curvature = {\ttfamily 1000},  }\item[{double}]{imin\+\_\+accel = {\ttfamily std\+:\+:nan(\char`\"{}\char`\"{})} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Defines the motion constraints for a path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+\_\+vel} & The maximum allowable velocity for the robot in meters per second. \\
+\hline
+{\em imax\+\_\+accel} & The maximum allowable acceleration for the robot in meters per second per second. \\
+\hline
+{\em imax\+\_\+jerk} & The maximum allowable jerk for the robot in meters per second per second per second (m/s$^\wedge$3). \\
+\hline
+{\em imax\+\_\+curvature} & The maximum allowable change in heading in radians per second. This is not set to the numeric limits by default as that will allow for wild paths. \\
+\hline
+{\em imin\+\_\+accel} & The minimum allowable acceleration for the robot in meters per second per second. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structsquiggles_1_1Constraints_a7da4a97b03ccff1d056d077763b4c913}\label{structsquiggles_1_1Constraints_a7da4a97b03ccff1d056d077763b4c913}} 
+\index{squiggles::Constraints@{squiggles::Constraints}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!squiggles::Constraints@{squiggles::Constraints}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily std\+::string squiggles\+::\+Constraints\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Serializes the \mbox{\hyperlink{structsquiggles_1_1Constraints}{Constraints}} data for debugging.
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{structsquiggles_1_1Constraints}{Constraints}} data. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structsquiggles_1_1Constraints_a429a9e7ddecc19121d00e45f63923a40}\label{structsquiggles_1_1Constraints_a429a9e7ddecc19121d00e45f63923a40}} 
+\index{squiggles::Constraints@{squiggles::Constraints}!max\_accel@{max\_accel}}
+\index{max\_accel@{max\_accel}!squiggles::Constraints@{squiggles::Constraints}}
+\doxysubsubsection{\texorpdfstring{max\_accel}{max\_accel}}
+{\footnotesize\ttfamily double squiggles\+::\+Constraints\+::max\+\_\+accel}
+
+\mbox{\Hypertarget{structsquiggles_1_1Constraints_af6b7cafec8d29b64833211ab0574a54d}\label{structsquiggles_1_1Constraints_af6b7cafec8d29b64833211ab0574a54d}} 
+\index{squiggles::Constraints@{squiggles::Constraints}!max\_curvature@{max\_curvature}}
+\index{max\_curvature@{max\_curvature}!squiggles::Constraints@{squiggles::Constraints}}
+\doxysubsubsection{\texorpdfstring{max\_curvature}{max\_curvature}}
+{\footnotesize\ttfamily double squiggles\+::\+Constraints\+::max\+\_\+curvature}
+
+\mbox{\Hypertarget{structsquiggles_1_1Constraints_a47f745806cd0585cfb774ca44d987d4a}\label{structsquiggles_1_1Constraints_a47f745806cd0585cfb774ca44d987d4a}} 
+\index{squiggles::Constraints@{squiggles::Constraints}!max\_jerk@{max\_jerk}}
+\index{max\_jerk@{max\_jerk}!squiggles::Constraints@{squiggles::Constraints}}
+\doxysubsubsection{\texorpdfstring{max\_jerk}{max\_jerk}}
+{\footnotesize\ttfamily double squiggles\+::\+Constraints\+::max\+\_\+jerk}
+
+\mbox{\Hypertarget{structsquiggles_1_1Constraints_a47eeb9f724e76fd70585a713ad71ad5b}\label{structsquiggles_1_1Constraints_a47eeb9f724e76fd70585a713ad71ad5b}} 
+\index{squiggles::Constraints@{squiggles::Constraints}!max\_vel@{max\_vel}}
+\index{max\_vel@{max\_vel}!squiggles::Constraints@{squiggles::Constraints}}
+\doxysubsubsection{\texorpdfstring{max\_vel}{max\_vel}}
+{\footnotesize\ttfamily double squiggles\+::\+Constraints\+::max\+\_\+vel}
+
+\mbox{\Hypertarget{structsquiggles_1_1Constraints_a39d23a6bcb6cb82ed1c46b1a3d7964fb}\label{structsquiggles_1_1Constraints_a39d23a6bcb6cb82ed1c46b1a3d7964fb}} 
+\index{squiggles::Constraints@{squiggles::Constraints}!min\_accel@{min\_accel}}
+\index{min\_accel@{min\_accel}!squiggles::Constraints@{squiggles::Constraints}}
+\doxysubsubsection{\texorpdfstring{min\_accel}{min\_accel}}
+{\footnotesize\ttfamily double squiggles\+::\+Constraints\+::min\+\_\+accel}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/squiggles/\mbox{\hyperlink{constraints_8hpp}{constraints.\+hpp}}\end{DoxyCompactItemize}

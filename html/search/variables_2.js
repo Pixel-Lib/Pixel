@@ -1,5 +1,24 @@
 var searchData=
 [
-  ['preverror_41',['prevError',['../classpxl_1_1PID.html#a595772c3fa362c37d5f268324cecf087',1,'pxl::PID']]],
-  ['proportional_42',['proportional',['../classpxl_1_1PID.html#a57cd4191dfb990c59e79cf487661c1ef',1,'pxl::PID']]]
+  ['baked_5fdate_5361',['baked_date',['../misc_8h.html#a53280163169348b8429c14c340a7c2b3',1,'misc.h']]],
+  ['baked_5ftime_5362',['baked_time',['../misc_8h.html#a33aa244a3bbfcc84286cfa8999805cf2',1,'misc.h']]],
+  ['bar_5363',['bar',['../namespaceokapi.html#a0b54d28853182078db748ab94cb8cd45',1,'okapi']]],
+  ['best_5364',['best',['../structokapi_1_1PIDTuner_1_1Particle.html#a5b52868df1aae1367f6ec138e2494e09',1,'okapi::PIDTuner::Particle']]],
+  ['besterror_5365',['bestError',['../structokapi_1_1PIDTuner_1_1ParticleSet.html#aa81c4efddb45291d23eb13593bee6d25',1,'okapi::PIDTuner::ParticleSet']]],
+  ['beta_5366',['beta',['../classokapi_1_1DemaFilter.html#ae3ed95c39828a178e68dd72078ddbfcc',1,'okapi::DemaFilter']]],
+  ['bg_5367',['bg',['../structlv__theme__t.html#af35fd6df23d67ca02e2183691bfddc4a',1,'lv_theme_t']]],
+  ['blue_5368',['blue',['../unionlv__color16__t.html#a0c3cfa9a2070029d502140f5e23b8a46',1,'lv_color16_t::blue()'],['../unionlv__color1__t.html#aab1e82f0cd269b6831d6245aad779664',1,'lv_color1_t::blue()'],['../structoptical__raw__s.html#a5c7f4ad7c1c135bf2d82b716749158fe',1,'optical_raw_s::blue()'],['../unionlv__color8__t.html#a13f6fe7fdd8d49b75e06a022146464e3',1,'lv_color8_t::blue()'],['../unionlv__color32__t.html#a3dfb38a077f62e782d1c63350584f6bb',1,'lv_color32_t::blue()'],['../structoptical__rgb__s.html#a9a0eec3df79666974b6b0425773fd407',1,'optical_rgb_s::blue()']]],
+  ['body_5369',['body',['../structlv__style__t.html#a32c712854bd52fd59a61dc520b0e3f76',1,'lv_style_t']]],
+  ['border_5370',['border',['../structlv__style__t.html#a47048b22d68020680ae1adf1f2fc033e',1,'lv_style_t']]],
+  ['bottomleft_5371',['bottomLeft',['../structokapi_1_1ChassisControllerBuilder_1_1XDriveMotors.html#a27a5a11d1eed23ad7f2520ef9d49dfba',1,'okapi::ChassisControllerBuilder::XDriveMotors']]],
+  ['bottomleftmotor_5372',['bottomLeftMotor',['../classokapi_1_1XDriveModel.html#ac4c184a14b3431a1dda1136ca1133400',1,'okapi::XDriveModel']]],
+  ['bottomright_5373',['bottomRight',['../structokapi_1_1ChassisControllerBuilder_1_1XDriveMotors.html#ad121cb239a6c4c210e7332ded7a9483c',1,'okapi::ChassisControllerBuilder::XDriveMotors']]],
+  ['bottomrightmotor_5374',['bottomRightMotor',['../classokapi_1_1XDriveModel.html#a43ba3ac3a9750895b2bfd5b8c121ca7e',1,'okapi::XDriveModel']]],
+  ['bpp_5375',['bpp',['../struct__lv__font__struct.html#a9978847adaa97245112300b8cfa08f6b',1,'_lv_font_struct']]],
+  ['brightness_5376',['brightness',['../structoptical__rgb__s.html#aacd1b6bdfe9453c7b27e5bae2c0d5e12',1,'optical_rgb_s']]],
+  ['btn_5377',['btn',['../structlv__indev__data__t.html#a70a6c99a31cf3f7d72f930f509e437c5',1,'lv_indev_data_t::btn()'],['../classokapi_1_1ControllerButton.html#aec7d466c709dac6876d8f27245afde1e',1,'okapi::ControllerButton::btn()']]],
+  ['btn_5fcontainer_5378',['btn_container',['../structlcd__s.html#a5b02408bab493ec0b9feca4042028fe1',1,'lcd_s']]],
+  ['btn_5fpoints_5379',['btn_points',['../struct__lv__indev__t.html#aa7c40dc6d671c802427db39a7181237b',1,'_lv_indev_t']]],
+  ['btns_5380',['btns',['../structlcd__s.html#a66110a1c094e205651c998dfa28a57ff',1,'lcd_s']]],
+  ['buttonarray_5381',['buttonArray',['../classokapi_1_1Controller.html#a687a8678fd01b6d62f013b96c1cac6e4',1,'okapi::Controller']]]
 ];

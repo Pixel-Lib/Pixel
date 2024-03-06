@@ -1,0 +1,110 @@
+\hypertarget{distance_8h}{}\doxysection{include/pros/distance.h File Reference}
+\label{distance_8h}\index{include/pros/distance.h@{include/pros/distance.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for distance.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{distance_8h_ab4cb1d841e58e00e5edd41938a8c092e}{distance\+\_\+get}} (uint8\+\_\+t port)
+\item 
+int32\+\_\+t \mbox{\hyperlink{distance_8h_aa5798a7ff72cca64849c53fe234be48c}{distance\+\_\+get\+\_\+confidence}} (uint8\+\_\+t port)
+\item 
+int32\+\_\+t \mbox{\hyperlink{distance_8h_aa164bb05efff52ecde5c5814386f0886}{distance\+\_\+get\+\_\+object\+\_\+size}} (uint8\+\_\+t port)
+\item 
+double \mbox{\hyperlink{distance_8h_acf7ee5c92abe5ad5999b973bb6bfa7fa}{distance\+\_\+get\+\_\+object\+\_\+velocity}} (uint8\+\_\+t port)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains prototypes for functions related to the VEX Distance sensor.
+
+Visit \href{https://pros.cs.purdue.edu/v5/tutorials/topical/distance.html}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/distance.\+html}} to learn more.
+
+This file should not be modified by users, since it gets replaced whenever a kernel upgrade occurs.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2023, Purdue University ACM SIGBots.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{distance_8h_ab4cb1d841e58e00e5edd41938a8c092e}\label{distance_8h_ab4cb1d841e58e00e5edd41938a8c092e}} 
+\index{distance.h@{distance.h}!distance\_get@{distance\_get}}
+\index{distance\_get@{distance\_get}!distance.h@{distance.h}}
+\doxysubsubsection{\texorpdfstring{distance\_get()}{distance\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t distance\+\_\+get (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get the currently measured distance from the sensor in mm
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Distance Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Distance Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance value or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{distance_8h_aa5798a7ff72cca64849c53fe234be48c}\label{distance_8h_aa5798a7ff72cca64849c53fe234be48c}} 
+\index{distance.h@{distance.h}!distance\_get\_confidence@{distance\_get\_confidence}}
+\index{distance\_get\_confidence@{distance\_get\_confidence}!distance.h@{distance.h}}
+\doxysubsubsection{\texorpdfstring{distance\_get\_confidence()}{distance\_get\_confidence()}}
+{\footnotesize\ttfamily int32\+\_\+t distance\+\_\+get\+\_\+confidence (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get the confidence in the distance reading
+
+This is a value that has a range of 0 to 63. 63 means high confidence, lower values imply less confidence. Confidence is only available when distance is $>$ 200mm (the value 10 is returned in this scenario).
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Distance Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Distance Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The confidence value or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{distance_8h_aa164bb05efff52ecde5c5814386f0886}\label{distance_8h_aa164bb05efff52ecde5c5814386f0886}} 
+\index{distance.h@{distance.h}!distance\_get\_object\_size@{distance\_get\_object\_size}}
+\index{distance\_get\_object\_size@{distance\_get\_object\_size}!distance.h@{distance.h}}
+\doxysubsubsection{\texorpdfstring{distance\_get\_object\_size()}{distance\_get\_object\_size()}}
+{\footnotesize\ttfamily int32\+\_\+t distance\+\_\+get\+\_\+object\+\_\+size (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get the current guess at relative object size
+
+This is a value that has a range of 0 to 400. A 18\char`\"{} x 30\char`\"{} grey card will return a value of approximately 75 in typical room lighting.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Distance Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Distance Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size value or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{distance_8h_acf7ee5c92abe5ad5999b973bb6bfa7fa}\label{distance_8h_acf7ee5c92abe5ad5999b973bb6bfa7fa}} 
+\index{distance.h@{distance.h}!distance\_get\_object\_velocity@{distance\_get\_object\_velocity}}
+\index{distance\_get\_object\_velocity@{distance\_get\_object\_velocity}!distance.h@{distance.h}}
+\doxysubsubsection{\texorpdfstring{distance\_get\_object\_velocity()}{distance\_get\_object\_velocity()}}
+{\footnotesize\ttfamily double distance\+\_\+get\+\_\+object\+\_\+velocity (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+Get the object velocity in m/s
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an Distance Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 Distance Sensor port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The velocity value or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}

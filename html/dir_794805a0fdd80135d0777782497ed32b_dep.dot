@@ -1,0 +1,11 @@
+digraph "include/okapi/impl/filter" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_9ca976e092481eb07e9003022e88f298 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="impl" fontname="Helvetica", fontsize="10", URL="dir_9ca976e092481eb07e9003022e88f298.html"]
+  dir_794805a0fdd80135d0777782497ed32b [shape=box, label="filter", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_794805a0fdd80135d0777782497ed32b.html"];
+  }
+  dir_63ebd08b8cf71fd366bf0de4231ab7e6 [shape=box label="api" fillcolor="white" style="filled" color="red" URL="dir_63ebd08b8cf71fd366bf0de4231ab7e6.html"];
+  dir_794805a0fdd80135d0777782497ed32b->dir_63ebd08b8cf71fd366bf0de4231ab7e6 [headlabel="1", labeldistance=1.5 headhref="dir_000038_000011.html"];
+}

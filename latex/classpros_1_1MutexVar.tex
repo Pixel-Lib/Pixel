@@ -1,0 +1,114 @@
+\hypertarget{classpros_1_1MutexVar}{}\doxysection{pros\+::Mutex\+Var$<$ Var $>$ Class Template Reference}
+\label{classpros_1_1MutexVar}\index{pros::MutexVar$<$ Var $>$@{pros::MutexVar$<$ Var $>$}}
+
+
+{\ttfamily \#include $<$rtos.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\\mbox{\hyperlink{classpros_1_1MutexVar_a6832651cddecd087c0c77daf847f7b35}{Mutex\+Var}} (Args \&\&...args)
+\item 
+std\+::optional$<$ \mbox{\hyperlink{classpros_1_1MutexVarLock}{Mutex\+Var\+Lock}}$<$ Var $>$ $>$ \mbox{\hyperlink{classpros_1_1MutexVar_aa0fd1a316f092c2a4446328b30873361}{try\+\_\+lock}} (std\+::uint32\+\_\+t timeout)
+\item 
+{\footnotesize template$<$typename Rep , typename Period $>$ }\\std\+::optional$<$ \mbox{\hyperlink{classpros_1_1MutexVarLock}{Mutex\+Var\+Lock}}$<$ Var $>$ $>$ \mbox{\hyperlink{classpros_1_1MutexVar_aee8e29d381f2338abe2d07d3f7d4812b}{try\+\_\+lock}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&rel\+\_\+time)
+\item 
+\mbox{\hyperlink{classpros_1_1MutexVarLock}{Mutex\+Var\+Lock}}$<$ Var $>$ \mbox{\hyperlink{classpros_1_1MutexVar_a61c4a782478a30cc7cee04b6829fd6e6}{lock}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpros_1_1Mutex}{Mutex}} \mbox{\hyperlink{classpros_1_1MutexVar_ab4f7aa711a7db8dc3b1e08c4150f78c6}{mutex}}
+\item 
+Var \mbox{\hyperlink{classpros_1_1MutexVar_a75722dc2a28fe921d8070efd5e281b8e}{var}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpros_1_1MutexVar_a6832651cddecd087c0c77daf847f7b35}\label{classpros_1_1MutexVar_a6832651cddecd087c0c77daf847f7b35}} 
+\index{pros::MutexVar$<$ Var $>$@{pros::MutexVar$<$ Var $>$}!MutexVar@{MutexVar}}
+\index{MutexVar@{MutexVar}!pros::MutexVar$<$ Var $>$@{pros::MutexVar$<$ Var $>$}}
+\doxysubsubsection{\texorpdfstring{MutexVar()}{MutexVar()}}
+{\footnotesize\ttfamily template$<$typename Var $>$ \\
+template$<$typename... Args$>$ \\
+\mbox{\hyperlink{classpros_1_1MutexVar}{pros\+::\+Mutex\+Var}}$<$ Var $>$\+::\mbox{\hyperlink{classpros_1_1MutexVar}{Mutex\+Var}} (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates a mutex-\/protected variable which is initialized with the given constructor arguments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & The arguments to provide to the Var constructor. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpros_1_1MutexVar_a61c4a782478a30cc7cee04b6829fd6e6}\label{classpros_1_1MutexVar_a61c4a782478a30cc7cee04b6829fd6e6}} 
+\index{pros::MutexVar$<$ Var $>$@{pros::MutexVar$<$ Var $>$}!lock@{lock}}
+\index{lock@{lock}!pros::MutexVar$<$ Var $>$@{pros::MutexVar$<$ Var $>$}}
+\doxysubsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily template$<$typename Var $>$ \\
+\mbox{\hyperlink{classpros_1_1MutexVarLock}{Mutex\+Var\+Lock}}$<$Var$>$ \mbox{\hyperlink{classpros_1_1MutexVar}{pros\+::\+Mutex\+Var}}$<$ Var $>$\+::lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Lock the mutex-\/protected variable, waiting indefinitely.
+
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{classpros_1_1MutexVarLock}{Mutex\+Var\+Lock}} providing access to the protected variable. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1MutexVar_aee8e29d381f2338abe2d07d3f7d4812b}\label{classpros_1_1MutexVar_aee8e29d381f2338abe2d07d3f7d4812b}} 
+\index{pros::MutexVar$<$ Var $>$@{pros::MutexVar$<$ Var $>$}!try\_lock@{try\_lock}}
+\index{try\_lock@{try\_lock}!pros::MutexVar$<$ Var $>$@{pros::MutexVar$<$ Var $>$}}
+\doxysubsubsection{\texorpdfstring{try\_lock()}{try\_lock()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Var $>$ \\
+template$<$typename Rep , typename Period $>$ \\
+std\+::optional$<$\mbox{\hyperlink{classpros_1_1MutexVarLock}{Mutex\+Var\+Lock}}$<$Var$>$ $>$ \mbox{\hyperlink{classpros_1_1MutexVar}{pros\+::\+Mutex\+Var}}$<$ Var $>$\+::try\+\_\+lock (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::duration$<$ Rep, Period $>$ \&}]{rel\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Try to lock the mutex-\/protected variable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & Time to wait before the mutex becomes available. A timeout of 0 can be used to poll the mutex.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::optional which contains a \mbox{\hyperlink{classpros_1_1MutexVarLock}{Mutex\+Var\+Lock}} providing access to the protected variable if locking is successful. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1MutexVar_aa0fd1a316f092c2a4446328b30873361}\label{classpros_1_1MutexVar_aa0fd1a316f092c2a4446328b30873361}} 
+\index{pros::MutexVar$<$ Var $>$@{pros::MutexVar$<$ Var $>$}!try\_lock@{try\_lock}}
+\index{try\_lock@{try\_lock}!pros::MutexVar$<$ Var $>$@{pros::MutexVar$<$ Var $>$}}
+\doxysubsubsection{\texorpdfstring{try\_lock()}{try\_lock()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Var $>$ \\
+std\+::optional$<$\mbox{\hyperlink{classpros_1_1MutexVarLock}{Mutex\+Var\+Lock}}$<$Var$>$ $>$ \mbox{\hyperlink{classpros_1_1MutexVar}{pros\+::\+Mutex\+Var}}$<$ Var $>$\+::try\+\_\+lock (\begin{DoxyParamCaption}\item[{std\+::uint32\+\_\+t}]{timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Try to lock the mutex-\/protected variable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & Time to wait before the mutex becomes available, in milliseconds. A timeout of 0 can be used to poll the mutex.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::optional which contains a \mbox{\hyperlink{classpros_1_1MutexVarLock}{Mutex\+Var\+Lock}} providing access to the protected variable if locking is successful. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpros_1_1MutexVar_ab4f7aa711a7db8dc3b1e08c4150f78c6}\label{classpros_1_1MutexVar_ab4f7aa711a7db8dc3b1e08c4150f78c6}} 
+\index{pros::MutexVar$<$ Var $>$@{pros::MutexVar$<$ Var $>$}!mutex@{mutex}}
+\index{mutex@{mutex}!pros::MutexVar$<$ Var $>$@{pros::MutexVar$<$ Var $>$}}
+\doxysubsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily template$<$typename Var $>$ \\
+\mbox{\hyperlink{classpros_1_1Mutex}{Mutex}} \mbox{\hyperlink{classpros_1_1MutexVar}{pros\+::\+Mutex\+Var}}$<$ Var $>$\+::mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpros_1_1MutexVar_a75722dc2a28fe921d8070efd5e281b8e}\label{classpros_1_1MutexVar_a75722dc2a28fe921d8070efd5e281b8e}} 
+\index{pros::MutexVar$<$ Var $>$@{pros::MutexVar$<$ Var $>$}!var@{var}}
+\index{var@{var}!pros::MutexVar$<$ Var $>$@{pros::MutexVar$<$ Var $>$}}
+\doxysubsubsection{\texorpdfstring{var}{var}}
+{\footnotesize\ttfamily template$<$typename Var $>$ \\
+Var \mbox{\hyperlink{classpros_1_1MutexVar}{pros\+::\+Mutex\+Var}}$<$ Var $>$\+::var\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/pros/\mbox{\hyperlink{rtos_8hpp}{rtos.\+hpp}}\end{DoxyCompactItemize}

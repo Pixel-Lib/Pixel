@@ -1,0 +1,145 @@
+\hypertarget{classokapi_1_1ADIEncoder}{}\doxysection{okapi\+::ADIEncoder Class Reference}
+\label{classokapi_1_1ADIEncoder}\index{okapi::ADIEncoder@{okapi::ADIEncoder}}
+
+
+{\ttfamily \#include $<$adi\+Encoder.\+hpp$>$}
+
+
+
+Inheritance diagram for okapi\+::ADIEncoder\+:
+% FIG 0
+
+
+Collaboration diagram for okapi\+::ADIEncoder\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1ADIEncoder_ae60daf46ded27335225cc9b6522054c6}{ADIEncoder}} (std\+::uint8\+\_\+t iport\+Top, std\+::uint8\+\_\+t iport\+Bottom, bool ireversed=false)
+\item 
+\mbox{\hyperlink{classokapi_1_1ADIEncoder_a3c787653891571eee49b748ec6e9c335}{ADIEncoder}} (std\+::tuple$<$ std\+::uint8\+\_\+t, std\+::uint8\+\_\+t, std\+::uint8\+\_\+t $>$ iports, bool ireversed=false)
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1ADIEncoder_a81367f0445610abc89cd4f69d6116c69}{get}} () const override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1ADIEncoder_abe5504f12e2dccd208225b90d47b54c8}{reset}} () override
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1ADIEncoder_a2804bb2b1cb5ff2063f0146230a6edf3}{controller\+Get}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ext__adi_8h_a819f455cfd280a0a3f2489ee88aa19ac}{pros\+::c\+::ext\+\_\+adi\+\_\+encoder\+\_\+t}} \mbox{\hyperlink{classokapi_1_1ADIEncoder_a7928909b92524c2f26c361345279c953}{enc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1ADIEncoder_ae60daf46ded27335225cc9b6522054c6}\label{classokapi_1_1ADIEncoder_ae60daf46ded27335225cc9b6522054c6}} 
+\index{okapi::ADIEncoder@{okapi::ADIEncoder}!ADIEncoder@{ADIEncoder}}
+\index{ADIEncoder@{ADIEncoder}!okapi::ADIEncoder@{okapi::ADIEncoder}}
+\doxysubsubsection{\texorpdfstring{ADIEncoder()}{ADIEncoder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily okapi\+::\+ADIEncoder\+::\+ADIEncoder (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{iport\+Top,  }\item[{std\+::uint8\+\_\+t}]{iport\+Bottom,  }\item[{bool}]{ireversed = {\ttfamily false} }\end{DoxyParamCaption})}
+
+An encoder in an ADI port.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} \mbox{\hyperlink{classokapi_1_1ADIEncoder_a7928909b92524c2f26c361345279c953}{enc}} = \mbox{\hyperlink{classokapi_1_1ADIEncoder_ae60daf46ded27335225cc9b6522054c6}{ADIEncoder}}(\textcolor{charliteral}{'A'}, \textcolor{charliteral}{'B'}, \textcolor{keyword}{false});}
+\DoxyCodeLine{\textcolor{keyword}{auto} reversedEnc = \mbox{\hyperlink{classokapi_1_1ADIEncoder_ae60daf46ded27335225cc9b6522054c6}{ADIEncoder}}(\textcolor{charliteral}{'A'}, \textcolor{charliteral}{'B'}, \textcolor{keyword}{true});}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em iport\+Top} & The \char`\"{}top\char`\"{} wire from the encoder with the removable cover side up. This must be in port {\ttfamily 1}, {\ttfamily 3}, {\ttfamily 5}, or {\ttfamily 7} ({\ttfamily A}, {\ttfamily C}, {\ttfamily E}, or {\ttfamily G}). \\
+\hline
+{\em iport\+Bottom} & The \char`\"{}bottom\char`\"{} wire from the encoder. This must be in port {\ttfamily 2}, {\ttfamily 4}, {\ttfamily 6}, or {\ttfamily 8} ({\ttfamily B}, {\ttfamily D}, {\ttfamily F}, or {\ttfamily H}). \\
+\hline
+{\em ireversed} & Whether the encoder is reversed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1ADIEncoder_a3c787653891571eee49b748ec6e9c335}\label{classokapi_1_1ADIEncoder_a3c787653891571eee49b748ec6e9c335}} 
+\index{okapi::ADIEncoder@{okapi::ADIEncoder}!ADIEncoder@{ADIEncoder}}
+\index{ADIEncoder@{ADIEncoder}!okapi::ADIEncoder@{okapi::ADIEncoder}}
+\doxysubsubsection{\texorpdfstring{ADIEncoder()}{ADIEncoder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily okapi\+::\+ADIEncoder\+::\+ADIEncoder (\begin{DoxyParamCaption}\item[{std\+::tuple$<$ std\+::uint8\+\_\+t, std\+::uint8\+\_\+t, std\+::uint8\+\_\+t $>$}]{iports,  }\item[{bool}]{ireversed = {\ttfamily false} }\end{DoxyParamCaption})}
+
+An encoder in an ADI port.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} \mbox{\hyperlink{classokapi_1_1ADIEncoder_a7928909b92524c2f26c361345279c953}{enc}} = \mbox{\hyperlink{classokapi_1_1ADIEncoder_ae60daf46ded27335225cc9b6522054c6}{ADIEncoder}}(\{1, \textcolor{charliteral}{'A'}, \textcolor{charliteral}{'B'}\}, \textcolor{keyword}{false});}
+\DoxyCodeLine{\textcolor{keyword}{auto} reversedEnc = \mbox{\hyperlink{classokapi_1_1ADIEncoder_ae60daf46ded27335225cc9b6522054c6}{ADIEncoder}}(\{1, \textcolor{charliteral}{'A'}, \textcolor{charliteral}{'B'}\}, \textcolor{keyword}{true});}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em iports} & The ports the encoder is plugged in to in the order {\ttfamily \{smart port, top port, bottom port\}}. The smart port is the smart port number ({\ttfamily \mbox{[}1, 21\mbox{]}}). The top port is the \char`\"{}top\char`\"{} wire from the encoder with the removable cover side up. This must be in port {\ttfamily 1}, {\ttfamily 3}, {\ttfamily 5}, or {\ttfamily 7} ({\ttfamily A}, {\ttfamily C}, {\ttfamily E}, or {\ttfamily G}). The bottom port is the \char`\"{}bottom\char`\"{} wire from the encoder. This must be in port {\ttfamily 2}, {\ttfamily 4}, {\ttfamily 6}, or {\ttfamily 8} ({\ttfamily B}, {\ttfamily D}, {\ttfamily F}, or {\ttfamily H}). \\
+\hline
+{\em ireversed} & Whether the encoder is reversed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1ADIEncoder_a2804bb2b1cb5ff2063f0146230a6edf3}\label{classokapi_1_1ADIEncoder_a2804bb2b1cb5ff2063f0146230a6edf3}} 
+\index{okapi::ADIEncoder@{okapi::ADIEncoder}!controllerGet@{controllerGet}}
+\index{controllerGet@{controllerGet}!okapi::ADIEncoder@{okapi::ADIEncoder}}
+\doxysubsubsection{\texorpdfstring{controllerGet()}{controllerGet()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+ADIEncoder\+::controller\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the sensor value for use in a control loop. This method might be automatically called in another thread by the controller.
+
+\begin{DoxyReturn}{Returns}
+the current sensor value, or {\ttfamily PROS\+\_\+\+ERR} on a failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1ControllerInput_a3c6c86d897983f367928a93890551e17}{okapi\+::\+Controller\+Input$<$ double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1ADIEncoder_a81367f0445610abc89cd4f69d6116c69}\label{classokapi_1_1ADIEncoder_a81367f0445610abc89cd4f69d6116c69}} 
+\index{okapi::ADIEncoder@{okapi::ADIEncoder}!get@{get}}
+\index{get@{get}!okapi::ADIEncoder@{okapi::ADIEncoder}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+ADIEncoder\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the current sensor value.
+
+\begin{DoxyReturn}{Returns}
+the current sensor value, or {\ttfamily PROS\+\_\+\+ERR} on a failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1RotarySensor_ac5534dc6c3bcbd8ea2f4e54a04cda734}{okapi\+::\+Rotary\+Sensor}}.
+
+\mbox{\Hypertarget{classokapi_1_1ADIEncoder_abe5504f12e2dccd208225b90d47b54c8}\label{classokapi_1_1ADIEncoder_abe5504f12e2dccd208225b90d47b54c8}} 
+\index{okapi::ADIEncoder@{okapi::ADIEncoder}!reset@{reset}}
+\index{reset@{reset}!okapi::ADIEncoder@{okapi::ADIEncoder}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+ADIEncoder\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensor to zero.
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily 1} on success, {\ttfamily PROS\+\_\+\+ERR} on fail 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1ContinuousRotarySensor_ae7268b0603097ac2d93a67e4fefa43e0}{okapi\+::\+Continuous\+Rotary\+Sensor}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classokapi_1_1ADIEncoder_a7928909b92524c2f26c361345279c953}\label{classokapi_1_1ADIEncoder_a7928909b92524c2f26c361345279c953}} 
+\index{okapi::ADIEncoder@{okapi::ADIEncoder}!enc@{enc}}
+\index{enc@{enc}!okapi::ADIEncoder@{okapi::ADIEncoder}}
+\doxysubsubsection{\texorpdfstring{enc}{enc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ext__adi_8h_a819f455cfd280a0a3f2489ee88aa19ac}{pros\+::c\+::ext\+\_\+adi\+\_\+encoder\+\_\+t}} okapi\+::\+ADIEncoder\+::enc\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/impl/device/rotarysensor/\mbox{\hyperlink{adiEncoder_8hpp}{adi\+Encoder.\+hpp}}\end{DoxyCompactItemize}

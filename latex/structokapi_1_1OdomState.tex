@@ -1,0 +1,122 @@
+\hypertarget{structokapi_1_1OdomState}{}\doxysection{okapi\+::Odom\+State Struct Reference}
+\label{structokapi_1_1OdomState}\index{okapi::OdomState@{okapi::OdomState}}
+
+
+{\ttfamily \#include $<$odom\+State.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structokapi_1_1OdomState_a5c7103ec3764cf944a704e977fe1398c}{str}} (QLength idistance\+Unit, QAngle iangle\+Unit) const
+\item 
+std\+::string \mbox{\hyperlink{structokapi_1_1OdomState_a0feae04e9707999ce72e6b948c1cbe64}{str}} (QLength idistance\+Unit=\mbox{\hyperlink{namespaceokapi_a59563b3d4b18633f1c8d852e2932d1db}{meter}}, std\+::string dist\+Unit\+Name=\char`\"{}\+\_\+m\char`\"{}, QAngle iangle\+Unit=\mbox{\hyperlink{namespaceokapi_a62211562b2e637742bd6e64748802211}{degree}}, std\+::string angle\+Unit\+Name=\char`\"{}\+\_\+deg\char`\"{}) const
+\item 
+bool \mbox{\hyperlink{structokapi_1_1OdomState_a17668afbbe39bcc745233a679aa917de}{operator==}} (const \mbox{\hyperlink{structokapi_1_1OdomState}{Odom\+State}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{structokapi_1_1OdomState_a961501c808d8818e959ba111baf7f359}{operator!=}} (const \mbox{\hyperlink{structokapi_1_1OdomState}{Odom\+State}} \&rhs) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QLength \mbox{\hyperlink{structokapi_1_1OdomState_a53fbbb483d5073e703517745d769eb45}{x}} \{0\+\_\+m\}
+\item 
+QLength \mbox{\hyperlink{structokapi_1_1OdomState_afcb08739959ad3afb7941a0bd59bcbb6}{y}} \{0\+\_\+m\}
+\item 
+QAngle \mbox{\hyperlink{structokapi_1_1OdomState_a7d9c4f949e7ce0dd000c08318e61b921}{theta}} \{0\+\_\+deg\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structokapi_1_1OdomState_a961501c808d8818e959ba111baf7f359}\label{structokapi_1_1OdomState_a961501c808d8818e959ba111baf7f359}} 
+\index{okapi::OdomState@{okapi::OdomState}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!okapi::OdomState@{okapi::OdomState}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool okapi\+::\+Odom\+State\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structokapi_1_1OdomState}{Odom\+State}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structokapi_1_1OdomState_a17668afbbe39bcc745233a679aa917de}\label{structokapi_1_1OdomState_a17668afbbe39bcc745233a679aa917de}} 
+\index{okapi::OdomState@{okapi::OdomState}!operator==@{operator==}}
+\index{operator==@{operator==}!okapi::OdomState@{okapi::OdomState}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool okapi\+::\+Odom\+State\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structokapi_1_1OdomState}{Odom\+State}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structokapi_1_1OdomState_a5c7103ec3764cf944a704e977fe1398c}\label{structokapi_1_1OdomState_a5c7103ec3764cf944a704e977fe1398c}} 
+\index{okapi::OdomState@{okapi::OdomState}!str@{str}}
+\index{str@{str}!okapi::OdomState@{okapi::OdomState}}
+\doxysubsubsection{\texorpdfstring{str()}{str()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string okapi\+::\+Odom\+State\+::str (\begin{DoxyParamCaption}\item[{QLength}]{idistance\+Unit,  }\item[{QAngle}]{iangle\+Unit }\end{DoxyParamCaption}) const}
+
+Get a string for the current odometry state (optionally with the specified units).
+
+Examples\+:
+\begin{DoxyItemize}
+\item {\ttfamily Odom\+State\+::str(1\+\_\+m, 1\+\_\+deg)}\+: The default (no arguments specified).
+\item {\ttfamily Odom\+State\+::str(1\+\_\+tile, 1\+\_\+radian)}\+: distance tiles and angle radians.
+\end{DoxyItemize}
+
+Throws std\+::domain\+\_\+error if the units passed are undefined.
+
+
+\begin{DoxyParams}{Parameters}
+{\em idistance\+Unit} & The units you want your distance to be in. This must be an exact, predefined QLength (such as foot, meter, inch, tile etc.). \\
+\hline
+{\em iangle\+Unit} & The units you want your angle to be in. This must be an exact, predefined QAngle (degree or radian). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representing the state. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structokapi_1_1OdomState_a0feae04e9707999ce72e6b948c1cbe64}\label{structokapi_1_1OdomState_a0feae04e9707999ce72e6b948c1cbe64}} 
+\index{okapi::OdomState@{okapi::OdomState}!str@{str}}
+\index{str@{str}!okapi::OdomState@{okapi::OdomState}}
+\doxysubsubsection{\texorpdfstring{str()}{str()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string okapi\+::\+Odom\+State\+::str (\begin{DoxyParamCaption}\item[{QLength}]{idistance\+Unit = {\ttfamily \mbox{\hyperlink{namespaceokapi_a59563b3d4b18633f1c8d852e2932d1db}{meter}}},  }\item[{std\+::string}]{dist\+Unit\+Name = {\ttfamily \char`\"{}\+\_\+m\char`\"{}},  }\item[{QAngle}]{iangle\+Unit = {\ttfamily \mbox{\hyperlink{namespaceokapi_a62211562b2e637742bd6e64748802211}{degree}}},  }\item[{std\+::string}]{angle\+Unit\+Name = {\ttfamily \char`\"{}\+\_\+deg\char`\"{}} }\end{DoxyParamCaption}) const}
+
+Get a string for the current odometry state (optionally with the specified units).
+
+Examples\+:
+\begin{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{structokapi_1_1OdomState_a5c7103ec3764cf944a704e977fe1398c}{Odom\+State\+::str}}(1\+\_\+m, \char`\"{}\+\_\+m\char`\"{}, 1\+\_\+deg, \char`\"{}\+\_\+deg\char`\"{})}\+: The default (no arguments specified), prints in meters and degrees.
+\item {\ttfamily \mbox{\hyperlink{structokapi_1_1OdomState_a5c7103ec3764cf944a704e977fe1398c}{Odom\+State\+::str}}(1\+\_\+in, \char`\"{}\+\_\+in\char`\"{}, 1\+\_\+deg, \char`\"{}\+\_\+deg\char`\"{})} or {\ttfamily \mbox{\hyperlink{structokapi_1_1OdomState_a5c7103ec3764cf944a704e977fe1398c}{Odom\+State\+::str}}(1\+\_\+in, \char`\"{}\textbackslash{}\char`\"{}\char`\"{}, 1\+\_\+deg, \char`\"{}°"{})}\+: to print values in inches and degrees with different suffixes.
+\item {\ttfamily \mbox{\hyperlink{structokapi_1_1OdomState_a5c7103ec3764cf944a704e977fe1398c}{Odom\+State\+::str}}(6\+\_\+tile / 100, \char`\"{}\%\char`\"{}, 360\+\_\+deg / 100, \char`\"{}\%\char`\"{})} to get the distance values in \% of the vex field, and angle values in \% of a full rotation.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em idistance\+Unit} & The units you want your distance to be in. The x or y position will be output in multiples of this length. \\
+\hline
+{\em dist\+Unit\+Name} & The suffix you as your distance unit. \\
+\hline
+{\em iangle\+Unit} & The units you want your angle to be in. The angle will be output in multiples of this unit. \\
+\hline
+{\em angle\+Unit\+Name} & The suffix you want as your angle unit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representing the state. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structokapi_1_1OdomState_a7d9c4f949e7ce0dd000c08318e61b921}\label{structokapi_1_1OdomState_a7d9c4f949e7ce0dd000c08318e61b921}} 
+\index{okapi::OdomState@{okapi::OdomState}!theta@{theta}}
+\index{theta@{theta}!okapi::OdomState@{okapi::OdomState}}
+\doxysubsubsection{\texorpdfstring{theta}{theta}}
+{\footnotesize\ttfamily QAngle okapi\+::\+Odom\+State\+::theta \{0\+\_\+deg\}}
+
+\mbox{\Hypertarget{structokapi_1_1OdomState_a53fbbb483d5073e703517745d769eb45}\label{structokapi_1_1OdomState_a53fbbb483d5073e703517745d769eb45}} 
+\index{okapi::OdomState@{okapi::OdomState}!x@{x}}
+\index{x@{x}!okapi::OdomState@{okapi::OdomState}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily QLength okapi\+::\+Odom\+State\+::x \{0\+\_\+m\}}
+
+\mbox{\Hypertarget{structokapi_1_1OdomState_afcb08739959ad3afb7941a0bd59bcbb6}\label{structokapi_1_1OdomState_afcb08739959ad3afb7941a0bd59bcbb6}} 
+\index{okapi::OdomState@{okapi::OdomState}!y@{y}}
+\index{y@{y}!okapi::OdomState@{okapi::OdomState}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily QLength okapi\+::\+Odom\+State\+::y \{0\+\_\+m\}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/api/odometry/\mbox{\hyperlink{odomState_8hpp}{odom\+State.\+hpp}}\end{DoxyCompactItemize}

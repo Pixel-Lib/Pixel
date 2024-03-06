@@ -1,0 +1,128 @@
+\hypertarget{classokapi_1_1Potentiometer}{}\doxysection{okapi\+::Potentiometer Class Reference}
+\label{classokapi_1_1Potentiometer}\index{okapi::Potentiometer@{okapi::Potentiometer}}
+
+
+{\ttfamily \#include $<$potentiometer.\+hpp$>$}
+
+
+
+Inheritance diagram for okapi\+::Potentiometer\+:
+% FIG 0
+
+
+Collaboration diagram for okapi\+::Potentiometer\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1Potentiometer_a1e528bdba36d41f3698f3f451d2a2510}{Potentiometer}} (std\+::uint8\+\_\+t iport)
+\item 
+\mbox{\hyperlink{classokapi_1_1Potentiometer_ad29caceddb0dc759232eca2691a05d9f}{Potentiometer}} (std\+::pair$<$ std\+::uint8\+\_\+t, std\+::uint8\+\_\+t $>$ iports)
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1Potentiometer_a01b14deaf2f6ceca7a6333d36fe196bb}{get}} () const override
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1Potentiometer_a101d54c5316fefece10636daf9f9c995}{controller\+Get}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::uint8\+\_\+t \mbox{\hyperlink{classokapi_1_1Potentiometer_a0fed920f62b16281a7c73fa109faba3d}{smart\+Port}}
+\item 
+std\+::uint8\+\_\+t \mbox{\hyperlink{classokapi_1_1Potentiometer_ade12a9942bf6fd83f43e38f22ed210d3}{port}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1Potentiometer_a1e528bdba36d41f3698f3f451d2a2510}\label{classokapi_1_1Potentiometer_a1e528bdba36d41f3698f3f451d2a2510}} 
+\index{okapi::Potentiometer@{okapi::Potentiometer}!Potentiometer@{Potentiometer}}
+\index{Potentiometer@{Potentiometer}!okapi::Potentiometer@{okapi::Potentiometer}}
+\doxysubsubsection{\texorpdfstring{Potentiometer()}{Potentiometer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily okapi\+::\+Potentiometer\+::\+Potentiometer (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{iport }\end{DoxyParamCaption})}
+
+A potentiometer in an ADI port.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} pot = \mbox{\hyperlink{classokapi_1_1Potentiometer_a1e528bdba36d41f3698f3f451d2a2510}{Potentiometer}}(\textcolor{charliteral}{'A'});}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em iport} & The ADI port number ({\ttfamily \mbox{[}1, 8\mbox{]}}, {\ttfamily \mbox{[}a, h\mbox{]}}, {\ttfamily \mbox{[}A, H\mbox{]}}). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1Potentiometer_ad29caceddb0dc759232eca2691a05d9f}\label{classokapi_1_1Potentiometer_ad29caceddb0dc759232eca2691a05d9f}} 
+\index{okapi::Potentiometer@{okapi::Potentiometer}!Potentiometer@{Potentiometer}}
+\index{Potentiometer@{Potentiometer}!okapi::Potentiometer@{okapi::Potentiometer}}
+\doxysubsubsection{\texorpdfstring{Potentiometer()}{Potentiometer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily okapi\+::\+Potentiometer\+::\+Potentiometer (\begin{DoxyParamCaption}\item[{std\+::pair$<$ std\+::uint8\+\_\+t, std\+::uint8\+\_\+t $>$}]{iports }\end{DoxyParamCaption})}
+
+A potentiometer in an ADI port.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} pot = \mbox{\hyperlink{classokapi_1_1Potentiometer_a1e528bdba36d41f3698f3f451d2a2510}{Potentiometer}}(\{1, \textcolor{charliteral}{'A'}\});}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em iports} & The ports the potentiometer is plugged in to in the order {\ttfamily \{smart port, potentiometer port\}}. The smart port is the smart port number ({\ttfamily \mbox{[}1, 21\mbox{]}}). The potentiometer port is the ADI port number ({\ttfamily \mbox{[}1, 8\mbox{]}}, {\ttfamily \mbox{[}a, h\mbox{]}}, {\ttfamily \mbox{[}A, H\mbox{]}}). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1Potentiometer_a101d54c5316fefece10636daf9f9c995}\label{classokapi_1_1Potentiometer_a101d54c5316fefece10636daf9f9c995}} 
+\index{okapi::Potentiometer@{okapi::Potentiometer}!controllerGet@{controllerGet}}
+\index{controllerGet@{controllerGet}!okapi::Potentiometer@{okapi::Potentiometer}}
+\doxysubsubsection{\texorpdfstring{controllerGet()}{controllerGet()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+Potentiometer\+::controller\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the sensor value for use in a control loop. This method might be automatically called in another thread by the controller.
+
+\begin{DoxyReturn}{Returns}
+the current sensor value, or {\ttfamily PROS\+\_\+\+ERR} on a failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1ControllerInput_a3c6c86d897983f367928a93890551e17}{okapi\+::\+Controller\+Input$<$ double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1Potentiometer_a01b14deaf2f6ceca7a6333d36fe196bb}\label{classokapi_1_1Potentiometer_a01b14deaf2f6ceca7a6333d36fe196bb}} 
+\index{okapi::Potentiometer@{okapi::Potentiometer}!get@{get}}
+\index{get@{get}!okapi::Potentiometer@{okapi::Potentiometer}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+Potentiometer\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the current sensor value.
+
+\begin{DoxyReturn}{Returns}
+the current sensor value, or {\ttfamily PROS\+\_\+\+ERR} on a failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1RotarySensor_ac5534dc6c3bcbd8ea2f4e54a04cda734}{okapi\+::\+Rotary\+Sensor}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classokapi_1_1Potentiometer_ade12a9942bf6fd83f43e38f22ed210d3}\label{classokapi_1_1Potentiometer_ade12a9942bf6fd83f43e38f22ed210d3}} 
+\index{okapi::Potentiometer@{okapi::Potentiometer}!port@{port}}
+\index{port@{port}!okapi::Potentiometer@{okapi::Potentiometer}}
+\doxysubsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily std\+::uint8\+\_\+t okapi\+::\+Potentiometer\+::port\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classokapi_1_1Potentiometer_a0fed920f62b16281a7c73fa109faba3d}\label{classokapi_1_1Potentiometer_a0fed920f62b16281a7c73fa109faba3d}} 
+\index{okapi::Potentiometer@{okapi::Potentiometer}!smartPort@{smartPort}}
+\index{smartPort@{smartPort}!okapi::Potentiometer@{okapi::Potentiometer}}
+\doxysubsubsection{\texorpdfstring{smartPort}{smartPort}}
+{\footnotesize\ttfamily std\+::uint8\+\_\+t okapi\+::\+Potentiometer\+::smart\+Port\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/impl/device/rotarysensor/\mbox{\hyperlink{potentiometer_8hpp}{potentiometer.\+hpp}}\end{DoxyCompactItemize}

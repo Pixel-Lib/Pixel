@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['g_5481',['G',['../namespaceokapi.html#a6e00ff72f863a56a3fc99ca94f106a5a',1,'okapi']]],
+  ['gains_5482',['gains',['../classokapi_1_1AsyncVelControllerBuilder.html#a29d0f3a0a1c0ea3edfb28aeb1b5da87d',1,'okapi::AsyncVelControllerBuilder::gains()'],['../classokapi_1_1AsyncPosControllerBuilder.html#a69a73a5efa9aa583b4e1558a979c0371',1,'okapi::AsyncPosControllerBuilder::gains()']]],
+  ['gearratio_5483',['gearRatio',['../classpxl_1_1TrackingWheel.html#a96fab08899775989173600c8d614770e',1,'pxl::TrackingWheel']]],
+  ['gearset_5484',['gearset',['../classokapi_1_1ChassisControllerBuilder.html#a7fd82a0f66755a69f05085ad0adacf94',1,'okapi::ChassisControllerBuilder']]],
+  ['gearsetratiopair_5485',['gearsetRatioPair',['../classokapi_1_1ChassisControllerIntegrated.html#a24178f28a3d581242235e5150618b148',1,'okapi::ChassisControllerIntegrated::gearsetRatioPair()'],['../classokapi_1_1ChassisControllerPID.html#a9ad9dd6347f6c32cbe515a6c926570be',1,'okapi::ChassisControllerPID::gearsetRatioPair()']]],
+  ['gearsetsetbyuser_5486',['gearsetSetByUser',['../classokapi_1_1AsyncPosControllerBuilder.html#a53969affafb0827f4ebe0cdee6c790c8',1,'okapi::AsyncPosControllerBuilder::gearsetSetByUser()'],['../classokapi_1_1AsyncVelControllerBuilder.html#af83eecbea45078388ba1e9445465cc89',1,'okapi::AsyncVelControllerBuilder::gearsetSetByUser()']]],
+  ['get_5fbitmap_5487',['get_bitmap',['../struct__lv__font__struct.html#ad9fd5e7ab1fbaa989e59f1c14be095bc',1,'_lv_font_struct']]],
+  ['get_5fwidth_5488',['get_width',['../struct__lv__font__struct.html#a324c0c8f3f7b453e40beb52da3366adb',1,'_lv_font_struct']]],
+  ['glass_5489',['glass',['../structlv__style__t.html#aae8f1e70a0a03f920a2a00534d31f600',1,'lv_style_t']]],
+  ['glyph_5fbitmap_5490',['glyph_bitmap',['../struct__lv__font__struct.html#a4f93ed5fdc6fc0adf474cf07d7b006d8',1,'_lv_font_struct']]],
+  ['glyph_5fcnt_5491',['glyph_cnt',['../struct__lv__font__struct.html#a7ad262ff6610ba067fae600ae7c3fcbc',1,'_lv_font_struct']]],
+  ['glyph_5fdsc_5492',['glyph_dsc',['../struct__lv__font__struct.html#a6d208d451ea1b6d6cd3015274bbf3a4d',1,'_lv_font_struct']]],
+  ['glyph_5fdsc_5findex_5493',['glyph_dsc_index',['../structlv__font__unicode__map__t.html#a74abd7b7037bbafd86df6c34bbb2ca20',1,'lv_font_unicode_map_t']]],
+  ['glyph_5findex_5494',['glyph_index',['../structlv__font__glyph__dsc__t.html#ab47507de5dbd699d9cf0dbfeb8210068',1,'lv_font_glyph_dsc_t']]],
+  ['goal_5495',['goal',['../classokapi_1_1PIDTuner.html#ab93cfb26d55a413ed1dbe4a3b3a4b593',1,'okapi::PIDTuner']]],
+  ['gps_5fstatus_5fs_5ft_5496',['gps_status_s_t',['../gps_8h.html#a0bebcb6a5be6dc96c165711cbe710aea',1,'gps.h']]],
+  ['grad_5fcolor_5497',['grad_color',['../structlv__style__t.html#a48db3d673d443b998bc8b531d201f46d',1,'lv_style_t']]],
+  ['gramme_5498',['gramme',['../namespaceokapi.html#a494f6de7e44c5a31663ff887d5dc73fb',1,'okapi']]],
+  ['gravity_5499',['gravity',['../namespaceokapi.html#a35009d9782cfcf5a519ff7d8fc39f86f',1,'okapi']]],
+  ['green_5500',['green',['../unionlv__color1__t.html#a842588a68947b7c67e7e568740982c36',1,'lv_color1_t::green()'],['../unionlv__color8__t.html#a77f8631c3f09bbf7f6d96c8415085517',1,'lv_color8_t::green()'],['../unionlv__color16__t.html#a229d888dcd846712eb78010a4938d39d',1,'lv_color16_t::green()'],['../unionlv__color32__t.html#a7951b7863d314fab2ddf29df169bd483',1,'lv_color32_t::green()'],['../structoptical__rgb__s.html#a8bfbeab962d78b6a4c0bee692bfd744e',1,'optical_rgb_s::green()'],['../structoptical__raw__s.html#a1eda2f482d5a7b7e89fd43a67d794972',1,'optical_raw_s::green()']]],
+  ['group_5501',['group',['../struct__lv__indev__t.html#abe81eefe10ba7f66ff9ffe3a48db3a31',1,'_lv_indev_t']]],
+  ['gyro_5502',['gyro',['../classokapi_1_1ADIGyro.html#a2f304435a02b7c9e7b6f839e7f1b355a',1,'okapi::ADIGyro']]]
+];

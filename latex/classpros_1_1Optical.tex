@@ -1,0 +1,301 @@
+\hypertarget{classpros_1_1Optical}{}\doxysection{pros\+::Optical Class Reference}
+\label{classpros_1_1Optical}\index{pros::Optical@{pros::Optical}}
+
+
+{\ttfamily \#include $<$optical.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpros_1_1Optical_ad68c06db5c979e842ace754b6bb4db2e}{Optical}} (const std\+::uint8\+\_\+t port)
+\item 
+\mbox{\hyperlink{classpros_1_1Optical_a1e8796596115af297036f1cedc5e0374}{Optical}} (std\+::uint8\+\_\+t port, double time)
+\item 
+virtual double \mbox{\hyperlink{classpros_1_1Optical_a071c596264e75fc3e6336e702a615093}{get\+\_\+hue}} ()
+\item 
+virtual double \mbox{\hyperlink{classpros_1_1Optical_aacd23a44ffeee77f204d614b2649f33c}{get\+\_\+saturation}} ()
+\item 
+virtual double \mbox{\hyperlink{classpros_1_1Optical_ab1595b709c0bc81b4a0ba1f663956e6d}{get\+\_\+brightness}} ()
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classpros_1_1Optical_a12dbc7cc652a0eb36d027967ee296319}{get\+\_\+proximity}} ()
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classpros_1_1Optical_ad43e2567958666e0ec6b58099ad98018}{set\+\_\+led\+\_\+pwm}} (uint8\+\_\+t value)
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classpros_1_1Optical_a9e747f0ccdc3cd2c763cda580209e7ec}{get\+\_\+led\+\_\+pwm}} ()
+\item 
+virtual \mbox{\hyperlink{optical_8h_a92ca285b24403c60629f59ac1d50f258}{pros\+::c\+::optical\+\_\+rgb\+\_\+s\+\_\+t}} \mbox{\hyperlink{classpros_1_1Optical_a3a7c8a93c52c7fd8b3519efb0e081d4b}{get\+\_\+rgb}} ()
+\item 
+virtual \mbox{\hyperlink{optical_8h_aa67946ca1f0e8edbafb20138dcdc055a}{pros\+::c\+::optical\+\_\+raw\+\_\+s\+\_\+t}} \mbox{\hyperlink{classpros_1_1Optical_af9bbd504a220ab69c27135dc5678e3b9}{get\+\_\+raw}} ()
+\item 
+virtual \mbox{\hyperlink{optical_8h_a38b3e88bb4660691e969747e1b9a3aa1}{pros\+::c\+::optical\+\_\+direction\+\_\+e\+\_\+t}} \mbox{\hyperlink{classpros_1_1Optical_a995994da43add152c37371726c90a204}{get\+\_\+gesture}} ()
+\item 
+virtual \mbox{\hyperlink{optical_8h_ae21a91dcbc09885f53290bf0c6fce48a}{pros\+::c\+::optical\+\_\+gesture\+\_\+s\+\_\+t}} \mbox{\hyperlink{classpros_1_1Optical_a8f46eb5b13f365654703642aef20ff67}{get\+\_\+gesture\+\_\+raw}} ()
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classpros_1_1Optical_a9b9066c9e8b33b369719debb6f41ae9b}{enable\+\_\+gesture}} ()
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classpros_1_1Optical_a94e4afc49338cd94ecaf8ecbd6d4cbbd}{disable\+\_\+gesture}} ()
+\item 
+double \mbox{\hyperlink{classpros_1_1Optical_afe7357c87c4d818419a5a904c59106b8}{get\+\_\+integration\+\_\+time}} ()
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{classpros_1_1Optical_af08058e462f654a5681bf911c99e1cd8}{set\+\_\+integration\+\_\+time}} (double time)
+\item 
+virtual std\+::uint8\+\_\+t \mbox{\hyperlink{classpros_1_1Optical_abc5660eac41fdccb92c2f0e6fd3d2962}{get\+\_\+port}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::uint8\+\_\+t \mbox{\hyperlink{classpros_1_1Optical_ad31bb76e737793ad955e766df4d6043d}{\+\_\+port}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpros_1_1Optical_ad68c06db5c979e842ace754b6bb4db2e}\label{classpros_1_1Optical_ad68c06db5c979e842ace754b6bb4db2e}} 
+\index{pros::Optical@{pros::Optical}!Optical@{Optical}}
+\index{Optical@{Optical}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{Optical()}{Optical()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily pros\+::\+Optical\+::\+Optical (\begin{DoxyParamCaption}\item[{const std\+::uint8\+\_\+t}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor object for the given port.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpros_1_1Optical_a1e8796596115af297036f1cedc5e0374}\label{classpros_1_1Optical_a1e8796596115af297036f1cedc5e0374}} 
+\index{pros::Optical@{pros::Optical}!Optical@{Optical}}
+\index{Optical@{Optical}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{Optical()}{Optical()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily pros\+::\+Optical\+::\+Optical (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{port,  }\item[{double}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpros_1_1Optical_a94e4afc49338cd94ecaf8ecbd6d4cbbd}\label{classpros_1_1Optical_a94e4afc49338cd94ecaf8ecbd6d4cbbd}} 
+\index{pros::Optical@{pros::Optical}!disable\_gesture@{disable\_gesture}}
+\index{disable\_gesture@{disable\_gesture}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{disable\_gesture()}{disable\_gesture()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t pros\+::\+Optical\+::disable\+\_\+gesture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Disable gesture detection on the sensor
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+\begin{DoxyReturn}{Returns}
+1 if the operation is successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_a9b9066c9e8b33b369719debb6f41ae9b}\label{classpros_1_1Optical_a9b9066c9e8b33b369719debb6f41ae9b}} 
+\index{pros::Optical@{pros::Optical}!enable\_gesture@{enable\_gesture}}
+\index{enable\_gesture@{enable\_gesture}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{enable\_gesture()}{enable\_gesture()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t pros\+::\+Optical\+::enable\+\_\+gesture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Enable gesture detection on the sensor
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+\begin{DoxyReturn}{Returns}
+1 if the operation is successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_ab1595b709c0bc81b4a0ba1f663956e6d}\label{classpros_1_1Optical_ab1595b709c0bc81b4a0ba1f663956e6d}} 
+\index{pros::Optical@{pros::Optical}!get\_brightness@{get\_brightness}}
+\index{get\_brightness@{get\_brightness}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{get\_brightness()}{get\_brightness()}}
+{\footnotesize\ttfamily virtual double pros\+::\+Optical\+::get\+\_\+brightness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the detected color brightness
+
+This is not available if gestures are being detected. Brightness has a range of 0 to 1.\+0
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+\begin{DoxyReturn}{Returns}
+brightness value if the operation was successful or PROS\+\_\+\+ERR\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_a995994da43add152c37371726c90a204}\label{classpros_1_1Optical_a995994da43add152c37371726c90a204}} 
+\index{pros::Optical@{pros::Optical}!get\_gesture@{get\_gesture}}
+\index{get\_gesture@{get\_gesture}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{get\_gesture()}{get\_gesture()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{optical_8h_a38b3e88bb4660691e969747e1b9a3aa1}{pros\+::c\+::optical\+\_\+direction\+\_\+e\+\_\+t}} pros\+::\+Optical\+::get\+\_\+gesture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the most recent gesture data from the sensor
+
+Gestures will be cleared after 500mS 0 = no gesture 1 = up (towards cable) 2 = down 3 = right 4 = left
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+\begin{DoxyReturn}{Returns}
+gesture value if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_a8f46eb5b13f365654703642aef20ff67}\label{classpros_1_1Optical_a8f46eb5b13f365654703642aef20ff67}} 
+\index{pros::Optical@{pros::Optical}!get\_gesture\_raw@{get\_gesture\_raw}}
+\index{get\_gesture\_raw@{get\_gesture\_raw}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{get\_gesture\_raw()}{get\_gesture\_raw()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{optical_8h_ae21a91dcbc09885f53290bf0c6fce48a}{pros\+::c\+::optical\+\_\+gesture\+\_\+s\+\_\+t}} pros\+::\+Optical\+::get\+\_\+gesture\+\_\+raw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the most recent raw gesture data from the sensor
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+\begin{DoxyReturn}{Returns}
+gesture value if the operation was successful or an optical\+\_\+gesture\+\_\+s\+\_\+t with all fields set to PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_a071c596264e75fc3e6336e702a615093}\label{classpros_1_1Optical_a071c596264e75fc3e6336e702a615093}} 
+\index{pros::Optical@{pros::Optical}!get\_hue@{get\_hue}}
+\index{get\_hue@{get\_hue}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{get\_hue()}{get\_hue()}}
+{\footnotesize\ttfamily virtual double pros\+::\+Optical\+::get\+\_\+hue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the detected color hue
+
+This is not available if gestures are being detected. Hue has a range of 0 to 359.\+999
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+\begin{DoxyReturn}{Returns}
+hue value if the operation was successful or PROS\+\_\+\+ERR\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_afe7357c87c4d818419a5a904c59106b8}\label{classpros_1_1Optical_afe7357c87c4d818419a5a904c59106b8}} 
+\index{pros::Optical@{pros::Optical}!get\_integration\_time@{get\_integration\_time}}
+\index{get\_integration\_time@{get\_integration\_time}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{get\_integration\_time()}{get\_integration\_time()}}
+{\footnotesize\ttfamily double pros\+::\+Optical\+::get\+\_\+integration\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Set integration time (update rate) of the optical sensor in milliseconds, with minimum time being 3 ms and maximum time being 712 ms. Default is 100 ms, with the optical sensor communciating with the V5 brain every 20 ms.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+\begin{DoxyReturn}{Returns}
+1 if the operation is successful or PROS\+\_\+\+ERR\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_a9e747f0ccdc3cd2c763cda580209e7ec}\label{classpros_1_1Optical_a9e747f0ccdc3cd2c763cda580209e7ec}} 
+\index{pros::Optical@{pros::Optical}!get\_led\_pwm@{get\_led\_pwm}}
+\index{get\_led\_pwm@{get\_led\_pwm}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{get\_led\_pwm()}{get\_led\_pwm()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t pros\+::\+Optical\+::get\+\_\+led\+\_\+pwm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the pwm value of the White LED on the sensor
+
+value that ranges from 0 to 100
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+\begin{DoxyReturn}{Returns}
+LED pwm value if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_abc5660eac41fdccb92c2f0e6fd3d2962}\label{classpros_1_1Optical_abc5660eac41fdccb92c2f0e6fd3d2962}} 
+\index{pros::Optical@{pros::Optical}!get\_port@{get\_port}}
+\index{get\_port@{get\_port}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{get\_port()}{get\_port()}}
+{\footnotesize\ttfamily virtual std\+::uint8\+\_\+t pros\+::\+Optical\+::get\+\_\+port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the port number of the \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor.
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor\textquotesingle{}s port number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_a12dbc7cc652a0eb36d027967ee296319}\label{classpros_1_1Optical_a12dbc7cc652a0eb36d027967ee296319}} 
+\index{pros::Optical@{pros::Optical}!get\_proximity@{get\_proximity}}
+\index{get\_proximity@{get\_proximity}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{get\_proximity()}{get\_proximity()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t pros\+::\+Optical\+::get\+\_\+proximity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the detected proximity value
+
+This is not available if gestures are being detected. proximity has a range of 0 to 255.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+\begin{DoxyReturn}{Returns}
+poximity value if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_af9bbd504a220ab69c27135dc5678e3b9}\label{classpros_1_1Optical_af9bbd504a220ab69c27135dc5678e3b9}} 
+\index{pros::Optical@{pros::Optical}!get\_raw@{get\_raw}}
+\index{get\_raw@{get\_raw}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{get\_raw()}{get\_raw()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{optical_8h_aa67946ca1f0e8edbafb20138dcdc055a}{pros\+::c\+::optical\+\_\+raw\+\_\+s\+\_\+t}} pros\+::\+Optical\+::get\+\_\+raw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the raw un-\/processed RGBC data from the sensor
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+\begin{DoxyReturn}{Returns}
+raw rgb value if the operation was successful or an optical\+\_\+raw\+\_\+s\+\_\+t with all fields set to PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_a3a7c8a93c52c7fd8b3519efb0e081d4b}\label{classpros_1_1Optical_a3a7c8a93c52c7fd8b3519efb0e081d4b}} 
+\index{pros::Optical@{pros::Optical}!get\_rgb@{get\_rgb}}
+\index{get\_rgb@{get\_rgb}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{get\_rgb()}{get\_rgb()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{optical_8h_a92ca285b24403c60629f59ac1d50f258}{pros\+::c\+::optical\+\_\+rgb\+\_\+s\+\_\+t}} pros\+::\+Optical\+::get\+\_\+rgb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the processed RGBC data from the sensor
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+\begin{DoxyReturn}{Returns}
+rgb value if the operation was successful or an optical\+\_\+rgb\+\_\+s\+\_\+t with all fields set to PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_aacd23a44ffeee77f204d614b2649f33c}\label{classpros_1_1Optical_aacd23a44ffeee77f204d614b2649f33c}} 
+\index{pros::Optical@{pros::Optical}!get\_saturation@{get\_saturation}}
+\index{get\_saturation@{get\_saturation}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{get\_saturation()}{get\_saturation()}}
+{\footnotesize\ttfamily virtual double pros\+::\+Optical\+::get\+\_\+saturation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the detected color saturation
+
+This is not available if gestures are being detected. Saturation has a range of 0 to 1.\+0
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+\begin{DoxyReturn}{Returns}
+saturation value if the operation was successful or PROS\+\_\+\+ERR\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_af08058e462f654a5681bf911c99e1cd8}\label{classpros_1_1Optical_af08058e462f654a5681bf911c99e1cd8}} 
+\index{pros::Optical@{pros::Optical}!set\_integration\_time@{set\_integration\_time}}
+\index{set\_integration\_time@{set\_integration\_time}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{set\_integration\_time()}{set\_integration\_time()}}
+{\footnotesize\ttfamily std\+::int32\+\_\+t pros\+::\+Optical\+::set\+\_\+integration\+\_\+time (\begin{DoxyParamCaption}\item[{double}]{time }\end{DoxyParamCaption})}
+
+Get integration time (update rate) of the optical sensor in milliseconds.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & The desired integration time in milliseconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integration time in milliseconds if the operation is successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1Optical_ad43e2567958666e0ec6b58099ad98018}\label{classpros_1_1Optical_ad43e2567958666e0ec6b58099ad98018}} 
+\index{pros::Optical@{pros::Optical}!set\_led\_pwm@{set\_led\_pwm}}
+\index{set\_led\_pwm@{set\_led\_pwm}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{set\_led\_pwm()}{set\_led\_pwm()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t pros\+::\+Optical\+::set\+\_\+led\+\_\+pwm (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the pwm value of the White LED on the sensor
+
+value that ranges from 0 to 100
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \mbox{\hyperlink{classpros_1_1Optical}{Optical}} Sensor
+
+\begin{DoxyReturn}{Returns}
+The Error code encountered 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpros_1_1Optical_ad31bb76e737793ad955e766df4d6043d}\label{classpros_1_1Optical_ad31bb76e737793ad955e766df4d6043d}} 
+\index{pros::Optical@{pros::Optical}!\_port@{\_port}}
+\index{\_port@{\_port}!pros::Optical@{pros::Optical}}
+\doxysubsubsection{\texorpdfstring{\_port}{\_port}}
+{\footnotesize\ttfamily const std\+::uint8\+\_\+t pros\+::\+Optical\+::\+\_\+port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/pros/\mbox{\hyperlink{optical_8hpp}{optical.\+hpp}}\end{DoxyCompactItemize}

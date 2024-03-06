@@ -1,0 +1,98 @@
+\hypertarget{classokapi_1_1OffsetableControllerInput}{}\doxysection{okapi\+::Offsetable\+Controller\+Input Class Reference}
+\label{classokapi_1_1OffsetableControllerInput}\index{okapi::OffsetableControllerInput@{okapi::OffsetableControllerInput}}
+
+
+{\ttfamily \#include $<$offsettable\+Controller\+Input.\+hpp$>$}
+
+
+
+Inheritance diagram for okapi\+::Offsetable\+Controller\+Input\+:
+% FIG 0
+
+
+Collaboration diagram for okapi\+::Offsetable\+Controller\+Input\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1OffsetableControllerInput_ac29065910ac48f3020638164812088e0}{Offsetable\+Controller\+Input}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerInput}{Controller\+Input}}$<$ double $>$$>$ \&iinput)
+\item 
+virtual \mbox{\hyperlink{classokapi_1_1OffsetableControllerInput_aa8c41fd9688d2e81cbdce1bb44090b56}{$\sim$\+Offsetable\+Controller\+Input}} ()
+\item 
+double \mbox{\hyperlink{classokapi_1_1OffsetableControllerInput_af51f93ac176113930ed07ee7b2b9b269}{controller\+Get}} () override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1OffsetableControllerInput_a06fe34d0199d79276d6b0590109bc8b5}{tare\+Position}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerInput}{Controller\+Input}}$<$ double $>$ $>$ \mbox{\hyperlink{classokapi_1_1OffsetableControllerInput_a3909fcdd8f3605a0620473ba2ee0eb09}{input}}
+\item 
+double \mbox{\hyperlink{classokapi_1_1OffsetableControllerInput_a72b271a3893001de700d28256c5fbcd5}{offset}} \{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1OffsetableControllerInput_ac29065910ac48f3020638164812088e0}\label{classokapi_1_1OffsetableControllerInput_ac29065910ac48f3020638164812088e0}} 
+\index{okapi::OffsetableControllerInput@{okapi::OffsetableControllerInput}!OffsetableControllerInput@{OffsetableControllerInput}}
+\index{OffsetableControllerInput@{OffsetableControllerInput}!okapi::OffsetableControllerInput@{okapi::OffsetableControllerInput}}
+\doxysubsubsection{\texorpdfstring{OffsetableControllerInput()}{OffsetableControllerInput()}}
+{\footnotesize\ttfamily okapi\+::\+Offsetable\+Controller\+Input\+::\+Offsetable\+Controller\+Input (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ControllerInput}{Controller\+Input}}$<$ double $>$$>$ \&}]{iinput }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+A \mbox{\hyperlink{classokapi_1_1ControllerInput}{Controller\+Input}} which can be tared to change the zero position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iinput} & The \mbox{\hyperlink{classokapi_1_1ControllerInput}{Controller\+Input}} to reference. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1OffsetableControllerInput_aa8c41fd9688d2e81cbdce1bb44090b56}\label{classokapi_1_1OffsetableControllerInput_aa8c41fd9688d2e81cbdce1bb44090b56}} 
+\index{okapi::OffsetableControllerInput@{okapi::OffsetableControllerInput}!````~OffsetableControllerInput@{$\sim$OffsetableControllerInput}}
+\index{````~OffsetableControllerInput@{$\sim$OffsetableControllerInput}!okapi::OffsetableControllerInput@{okapi::OffsetableControllerInput}}
+\doxysubsubsection{\texorpdfstring{$\sim$OffsetableControllerInput()}{~OffsetableControllerInput()}}
+{\footnotesize\ttfamily virtual okapi\+::\+Offsetable\+Controller\+Input\+::$\sim$\+Offsetable\+Controller\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1OffsetableControllerInput_af51f93ac176113930ed07ee7b2b9b269}\label{classokapi_1_1OffsetableControllerInput_af51f93ac176113930ed07ee7b2b9b269}} 
+\index{okapi::OffsetableControllerInput@{okapi::OffsetableControllerInput}!controllerGet@{controllerGet}}
+\index{controllerGet@{controllerGet}!okapi::OffsetableControllerInput@{okapi::OffsetableControllerInput}}
+\doxysubsubsection{\texorpdfstring{controllerGet()}{controllerGet()}}
+{\footnotesize\ttfamily double okapi\+::\+Offsetable\+Controller\+Input\+::controller\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the sensor value for use in a control loop. This method might be automatically called in another thread by the controller.
+
+\begin{DoxyReturn}{Returns}
+the current sensor value, or PROS\+\_\+\+ERR on a failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1ControllerInput_a3c6c86d897983f367928a93890551e17}{okapi\+::\+Controller\+Input$<$ double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1OffsetableControllerInput_a06fe34d0199d79276d6b0590109bc8b5}\label{classokapi_1_1OffsetableControllerInput_a06fe34d0199d79276d6b0590109bc8b5}} 
+\index{okapi::OffsetableControllerInput@{okapi::OffsetableControllerInput}!tarePosition@{tarePosition}}
+\index{tarePosition@{tarePosition}!okapi::OffsetableControllerInput@{okapi::OffsetableControllerInput}}
+\doxysubsubsection{\texorpdfstring{tarePosition()}{tarePosition()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Offsetable\+Controller\+Input\+::tare\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the \char`\"{}absolute\char`\"{} zero position of this controller input to its current position. This does nothing if the underlying controller input returns PROS\+\_\+\+ERR. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classokapi_1_1OffsetableControllerInput_a3909fcdd8f3605a0620473ba2ee0eb09}\label{classokapi_1_1OffsetableControllerInput_a3909fcdd8f3605a0620473ba2ee0eb09}} 
+\index{okapi::OffsetableControllerInput@{okapi::OffsetableControllerInput}!input@{input}}
+\index{input@{input}!okapi::OffsetableControllerInput@{okapi::OffsetableControllerInput}}
+\doxysubsubsection{\texorpdfstring{input}{input}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classokapi_1_1ControllerInput}{Controller\+Input}}$<$double$>$ $>$ okapi\+::\+Offsetable\+Controller\+Input\+::input\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classokapi_1_1OffsetableControllerInput_a72b271a3893001de700d28256c5fbcd5}\label{classokapi_1_1OffsetableControllerInput_a72b271a3893001de700d28256c5fbcd5}} 
+\index{okapi::OffsetableControllerInput@{okapi::OffsetableControllerInput}!offset@{offset}}
+\index{offset@{offset}!okapi::OffsetableControllerInput@{okapi::OffsetableControllerInput}}
+\doxysubsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily double okapi\+::\+Offsetable\+Controller\+Input\+::offset \{0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/api/control/\mbox{\hyperlink{offsettableControllerInput_8hpp}{offsettable\+Controller\+Input.\+hpp}}\end{DoxyCompactItemize}

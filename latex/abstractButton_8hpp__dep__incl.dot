@@ -1,0 +1,19 @@
+digraph "include/okapi/api/device/button/abstractButton.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="include/okapi/api/device\l/button/abstractButton.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="include/okapi/api/device\l/button/buttonBase.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$buttonBase_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="include/okapi/impl\l/device/button/adiButton.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$adiButton_8hpp.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="include/okapi/api.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$okapi_2api_8hpp.html",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="include/okapi/impl\l/device/button/controllerButton.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$controllerButton_8hpp.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="include/okapi/impl\l/device/controller.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$controller_8hpp.html",tooltip=" "];
+  Node6 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

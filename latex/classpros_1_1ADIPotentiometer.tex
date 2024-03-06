@@ -1,0 +1,137 @@
+\hypertarget{classpros_1_1ADIPotentiometer}{}\doxysection{pros\+::ADIPotentiometer Class Reference}
+\label{classpros_1_1ADIPotentiometer}\index{pros::ADIPotentiometer@{pros::ADIPotentiometer}}
+
+
+{\ttfamily \#include $<$adi.\+hpp$>$}
+
+
+
+Inheritance diagram for pros\+::ADIPotentiometer\+:
+% FIG 0
+
+
+Collaboration diagram for pros\+::ADIPotentiometer\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpros_1_1ADIPotentiometer_a6697538534e50dcd08a44a8ab12c68a9}{ADIPotentiometer}} (std\+::uint8\+\_\+t adi\+\_\+port, \mbox{\hyperlink{adi_8h_ac3036e040a3f1ccf29abd64ebfe2fd9a}{adi\+\_\+potentiometer\+\_\+type\+\_\+e\+\_\+t}} potentiometer\+\_\+type=\mbox{\hyperlink{adi_8h_a7034f9d1751c13d2c874a8ab2cad7cb4a5cce3fb6b2c38616774bb4c71492053b}{E\+\_\+\+ADI\+\_\+\+POT\+\_\+\+EDR}})
+\item 
+\mbox{\hyperlink{classpros_1_1ADIPotentiometer_a314e5cb69f46cb3ced9fd575a27b330c}{ADIPotentiometer}} (\mbox{\hyperlink{namespacepros_ad92209ebde1c7c68f67dde8f51c110a1}{ext\+\_\+adi\+\_\+port\+\_\+pair\+\_\+t}} port\+\_\+pair, \mbox{\hyperlink{adi_8h_ac3036e040a3f1ccf29abd64ebfe2fd9a}{adi\+\_\+potentiometer\+\_\+type\+\_\+e\+\_\+t}} potentiometer\+\_\+type=\mbox{\hyperlink{adi_8h_a7034f9d1751c13d2c874a8ab2cad7cb4a5cce3fb6b2c38616774bb4c71492053b}{E\+\_\+\+ADI\+\_\+\+POT\+\_\+\+EDR}})
+\item 
+double \mbox{\hyperlink{classpros_1_1ADIPotentiometer_aae564091e1ba0431a94d3c54a9929ae8}{get\+\_\+angle}} () const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{classpros_1_1ADIPotentiometer_a5dd6d7fbe34962cf1266ea23e8b11203}{get\+\_\+value}} () const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{classpros_1_1ADIPotentiometer_a34d8e3397bb791028316c7493b7c6155}{calibrate}} () const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{classpros_1_1ADIPotentiometer_adda72f68c563fc1b67a1124a27ce256e}{get\+\_\+value\+\_\+calibrated}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpros_1_1ADIPotentiometer_a6697538534e50dcd08a44a8ab12c68a9}\label{classpros_1_1ADIPotentiometer_a6697538534e50dcd08a44a8ab12c68a9}} 
+\index{pros::ADIPotentiometer@{pros::ADIPotentiometer}!ADIPotentiometer@{ADIPotentiometer}}
+\index{ADIPotentiometer@{ADIPotentiometer}!pros::ADIPotentiometer@{pros::ADIPotentiometer}}
+\doxysubsubsection{\texorpdfstring{ADIPotentiometer()}{ADIPotentiometer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily pros\+::\+ADIPotentiometer\+::\+ADIPotentiometer (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{adi\+\_\+port,  }\item[{\mbox{\hyperlink{adi_8h_ac3036e040a3f1ccf29abd64ebfe2fd9a}{adi\+\_\+potentiometer\+\_\+type\+\_\+e\+\_\+t}}}]{potentiometer\+\_\+type = {\ttfamily \mbox{\hyperlink{adi_8h_a7034f9d1751c13d2c874a8ab2cad7cb4a5cce3fb6b2c38616774bb4c71492053b}{E\+\_\+\+ADI\+\_\+\+POT\+\_\+\+EDR}}} }\end{DoxyParamCaption})}
+
+Configures an ADI port to act as a Potentiometer.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ Either the ADI port value or the smart port value is not within its valid range (ADI port\+: 1-\/8, \textquotesingle{}a\textquotesingle{}-\/\textquotesingle{}h\textquotesingle{}, or \textquotesingle{}A\textquotesingle{}-\/\textquotesingle{}H\textquotesingle{}; smart port\+: 1-\/21).
+
+
+\begin{DoxyParams}{Parameters}
+{\em adi\+\_\+port} & The ADI port number (from 1-\/8, \textquotesingle{}a\textquotesingle{}-\/\textquotesingle{}h\textquotesingle{}, \textquotesingle{}A\textquotesingle{}-\/\textquotesingle{}H\textquotesingle{}) to configure \\
+\hline
+{\em potentiometer\+\_\+type} & An adi\+\_\+potentiometer\+\_\+type\+\_\+e\+\_\+t enum value specifying the potentiometer version type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpros_1_1ADIPotentiometer_a314e5cb69f46cb3ced9fd575a27b330c}\label{classpros_1_1ADIPotentiometer_a314e5cb69f46cb3ced9fd575a27b330c}} 
+\index{pros::ADIPotentiometer@{pros::ADIPotentiometer}!ADIPotentiometer@{ADIPotentiometer}}
+\index{ADIPotentiometer@{ADIPotentiometer}!pros::ADIPotentiometer@{pros::ADIPotentiometer}}
+\doxysubsubsection{\texorpdfstring{ADIPotentiometer()}{ADIPotentiometer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily pros\+::\+ADIPotentiometer\+::\+ADIPotentiometer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacepros_ad92209ebde1c7c68f67dde8f51c110a1}{ext\+\_\+adi\+\_\+port\+\_\+pair\+\_\+t}}}]{port\+\_\+pair,  }\item[{\mbox{\hyperlink{adi_8h_ac3036e040a3f1ccf29abd64ebfe2fd9a}{adi\+\_\+potentiometer\+\_\+type\+\_\+e\+\_\+t}}}]{potentiometer\+\_\+type = {\ttfamily \mbox{\hyperlink{adi_8h_a7034f9d1751c13d2c874a8ab2cad7cb4a5cce3fb6b2c38616774bb4c71492053b}{E\+\_\+\+ADI\+\_\+\+POT\+\_\+\+EDR}}} }\end{DoxyParamCaption})}
+
+Configures an ADI port on an adi\+\_\+expander to act as a Potentiometer.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ Either the ADI port value or the smart port value is not within its valid range (ADI port\+: 1-\/8, \textquotesingle{}a\textquotesingle{}-\/\textquotesingle{}h\textquotesingle{}, or \textquotesingle{}A\textquotesingle{}-\/\textquotesingle{}H\textquotesingle{}; smart port\+: 1-\/21).
+
+
+\begin{DoxyParams}{Parameters}
+{\em adi\+\_\+port} & The pair of the smart port number (from 1-\/22) and the ADI port number (from 1-\/8, \textquotesingle{}a\textquotesingle{}-\/\textquotesingle{}h\textquotesingle{}, \textquotesingle{}A\textquotesingle{}-\/\textquotesingle{}H\textquotesingle{}) to configure \\
+\hline
+{\em potentiometer\+\_\+type} & An adi\+\_\+potentiometer\+\_\+type\+\_\+e\+\_\+t enum value specifying the potentiometer version type \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpros_1_1ADIPotentiometer_a34d8e3397bb791028316c7493b7c6155}\label{classpros_1_1ADIPotentiometer_a34d8e3397bb791028316c7493b7c6155}} 
+\index{pros::ADIPotentiometer@{pros::ADIPotentiometer}!calibrate@{calibrate}}
+\index{calibrate@{calibrate}!pros::ADIPotentiometer@{pros::ADIPotentiometer}}
+\doxysubsubsection{\texorpdfstring{calibrate()}{calibrate()}}
+{\footnotesize\ttfamily std\+::int32\+\_\+t pros\+::\+ADIAnalog\+In\+::calibrate}
+
+Calibrates the potentiometer on the specified port and returns the new calibration value.
+
+This method assumes that the potentiometer value is not actively changing at this time and computes an average from approximately 500 samples, 1 ms apart, for a 0.\+5 s period of calibration. The average value thus calculated is returned and stored for later calls to the \mbox{\hyperlink{classpros_1_1ADIPotentiometer_adda72f68c563fc1b67a1124a27ce256e}{pros\+::\+ADIPotentiometer\+::get\+\_\+value\+\_\+calibrated()}} function. This function will return the difference between this value and the current sensor value when called.
+
+Do not use this function when the potentiometer value might be unstable (rotating the potentiometer)
+
+This function uses the following values of errno when an error state is reached\+: ENODEV -\/ The port is not configured as a potentiometer
+
+\begin{DoxyReturn}{Returns}
+The average potentiometer value computed by this function 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1ADIPotentiometer_aae564091e1ba0431a94d3c54a9929ae8}\label{classpros_1_1ADIPotentiometer_aae564091e1ba0431a94d3c54a9929ae8}} 
+\index{pros::ADIPotentiometer@{pros::ADIPotentiometer}!get\_angle@{get\_angle}}
+\index{get\_angle@{get\_angle}!pros::ADIPotentiometer@{pros::ADIPotentiometer}}
+\doxysubsubsection{\texorpdfstring{get\_angle()}{get\_angle()}}
+{\footnotesize\ttfamily double pros\+::\+ADIPotentiometer\+::get\+\_\+angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the current potentiometer angle in tenths of a degree.
+
+The original potentiometer rotates 250 degrees thus returning an angle between 0-\/250 degrees. Potentiometer V2 rotates 330 degrees thus returning an angle between 0-\/330 degrees.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of ADI Ports EADDRINUSE -\/ The port is not configured as a potentiometer
+
+\begin{DoxyReturn}{Returns}
+The potentiometer angle in degrees. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1ADIPotentiometer_a5dd6d7fbe34962cf1266ea23e8b11203}\label{classpros_1_1ADIPotentiometer_a5dd6d7fbe34962cf1266ea23e8b11203}} 
+\index{pros::ADIPotentiometer@{pros::ADIPotentiometer}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!pros::ADIPotentiometer@{pros::ADIPotentiometer}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily std\+::int32\+\_\+t pros\+::\+ADIPort\+::get\+\_\+value}
+
+Gets the 12-\/bit value of the specified port.
+
+The value returned is undefined if the analog pin has been switched to a different mode.
+
+This function uses the following values of errno when an error state is reached\+: ENODEV -\/ The port is not configured as a potentiometer
+
+\begin{DoxyReturn}{Returns}
+The analog sensor value, where a value of 0 reflects an input voltage of nearly 0 V and a value of 4095 reflects an input voltage of nearly 5 V 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpros_1_1ADIPotentiometer_adda72f68c563fc1b67a1124a27ce256e}\label{classpros_1_1ADIPotentiometer_adda72f68c563fc1b67a1124a27ce256e}} 
+\index{pros::ADIPotentiometer@{pros::ADIPotentiometer}!get\_value\_calibrated@{get\_value\_calibrated}}
+\index{get\_value\_calibrated@{get\_value\_calibrated}!pros::ADIPotentiometer@{pros::ADIPotentiometer}}
+\doxysubsubsection{\texorpdfstring{get\_value\_calibrated()}{get\_value\_calibrated()}}
+{\footnotesize\ttfamily std\+::int32\+\_\+t pros\+::\+ADIAnalog\+In\+::get\+\_\+value\+\_\+calibrated}
+
+Gets the 12 bit calibrated value of a potentiometer port.
+
+The \mbox{\hyperlink{classpros_1_1ADIPotentiometer_a34d8e3397bb791028316c7493b7c6155}{pros\+::\+ADIPotentiometer\+::calibrate()}} function must be run first.
+
+This function uses the following values of errno when an error state is reached\+: ENODEV -\/ The port is not configured as a potentiometer
+
+\begin{DoxyReturn}{Returns}
+The difference of the potentiometer value from its calibrated default from -\/4095 to 4095 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/pros/\mbox{\hyperlink{adi_8hpp}{adi.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,64 @@
+\hypertarget{classsquiggles_1_1PassthroughModel}{}\doxysection{squiggles\+::Passthrough\+Model Class Reference}
+\label{classsquiggles_1_1PassthroughModel}\index{squiggles::PassthroughModel@{squiggles::PassthroughModel}}
+
+
+{\ttfamily \#include $<$passthroughmodel.\+hpp$>$}
+
+
+
+Inheritance diagram for squiggles\+::Passthrough\+Model\+:
+% FIG 0
+
+
+Collaboration diagram for squiggles\+::Passthrough\+Model\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsquiggles_1_1PassthroughModel_aa40342dd27bf9b3ea0665d4f56b275d3}{Passthrough\+Model}} ()=default
+\item 
+\mbox{\hyperlink{structsquiggles_1_1Constraints}{Constraints}} \mbox{\hyperlink{classsquiggles_1_1PassthroughModel_a885b914e51e2c1016b58389752150a69}{constraints}} (\mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]}\mbox{]} const \mbox{\hyperlink{classsquiggles_1_1Pose}{Pose}} pose, \mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]}\mbox{]} double curvature, double vel) override
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsquiggles_1_1PassthroughModel_acce4b962da92d1a94c3f0998f6152f27}{linear\+\_\+to\+\_\+wheel\+\_\+vels}} (\mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]}\mbox{]} double lin\+\_\+vel, \mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]}\mbox{]} double curvature) override
+\item 
+std\+::string \mbox{\hyperlink{classsquiggles_1_1PassthroughModel_aa774b8955998214baadfa017c7b9976c}{to\+\_\+string}} () const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsquiggles_1_1PassthroughModel_aa40342dd27bf9b3ea0665d4f56b275d3}\label{classsquiggles_1_1PassthroughModel_aa40342dd27bf9b3ea0665d4f56b275d3}} 
+\index{squiggles::PassthroughModel@{squiggles::PassthroughModel}!PassthroughModel@{PassthroughModel}}
+\index{PassthroughModel@{PassthroughModel}!squiggles::PassthroughModel@{squiggles::PassthroughModel}}
+\doxysubsubsection{\texorpdfstring{PassthroughModel()}{PassthroughModel()}}
+{\footnotesize\ttfamily squiggles\+::\+Passthrough\+Model\+::\+Passthrough\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Defines a Physical Model that imposes no constraints of its own. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsquiggles_1_1PassthroughModel_a885b914e51e2c1016b58389752150a69}\label{classsquiggles_1_1PassthroughModel_a885b914e51e2c1016b58389752150a69}} 
+\index{squiggles::PassthroughModel@{squiggles::PassthroughModel}!constraints@{constraints}}
+\index{constraints@{constraints}!squiggles::PassthroughModel@{squiggles::PassthroughModel}}
+\doxysubsubsection{\texorpdfstring{constraints()}{constraints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsquiggles_1_1Constraints}{Constraints}} squiggles\+::\+Passthrough\+Model\+::constraints (\begin{DoxyParamCaption}\item[{\mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]} \mbox{]} const \mbox{\hyperlink{classsquiggles_1_1Pose}{Pose}}}]{pose,  }\item[{\mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]} \mbox{]} double}]{curvature,  }\item[{double}]{vel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+\mbox{\Hypertarget{classsquiggles_1_1PassthroughModel_acce4b962da92d1a94c3f0998f6152f27}\label{classsquiggles_1_1PassthroughModel_acce4b962da92d1a94c3f0998f6152f27}} 
+\index{squiggles::PassthroughModel@{squiggles::PassthroughModel}!linear\_to\_wheel\_vels@{linear\_to\_wheel\_vels}}
+\index{linear\_to\_wheel\_vels@{linear\_to\_wheel\_vels}!squiggles::PassthroughModel@{squiggles::PassthroughModel}}
+\doxysubsubsection{\texorpdfstring{linear\_to\_wheel\_vels()}{linear\_to\_wheel\_vels()}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ squiggles\+::\+Passthrough\+Model\+::linear\+\_\+to\+\_\+wheel\+\_\+vels (\begin{DoxyParamCaption}\item[{\mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]} \mbox{]} double}]{lin\+\_\+vel,  }\item[{\mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]} \mbox{]} double}]{curvature }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+\mbox{\Hypertarget{classsquiggles_1_1PassthroughModel_aa774b8955998214baadfa017c7b9976c}\label{classsquiggles_1_1PassthroughModel_aa774b8955998214baadfa017c7b9976c}} 
+\index{squiggles::PassthroughModel@{squiggles::PassthroughModel}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!squiggles::PassthroughModel@{squiggles::PassthroughModel}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily std\+::string squiggles\+::\+Passthrough\+Model\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classsquiggles_1_1PhysicalModel_a424f090d9145d93cd310d705cf68a2b9}{squiggles\+::\+Physical\+Model}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/squiggles/physicalmodel/\mbox{\hyperlink{passthroughmodel_8hpp}{passthroughmodel.\+hpp}}\end{DoxyCompactItemize}

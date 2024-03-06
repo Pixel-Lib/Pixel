@@ -1,0 +1,21 @@
+digraph "lcd_s"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="lcd_s",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" btn_container\nbtns\nframe\nlcd_text\nscreen" ];
+  Node2 [label="_lv_obj_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct__lv__obj__t.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" style_p" ];
+  Node3 [label="lv_style_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structlv__style__t.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" font" ];
+  Node4 [label="_lv_font_struct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct__lv__font__struct.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" glyph_dsc" ];
+  Node5 [label="lv_font_glyph_dsc_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structlv__font__glyph__dsc__t.html",tooltip=" "];
+  Node4 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" next_page" ];
+  Node2 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" design_func\npar\nsignal_func" ];
+  Node6 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" coords" ];
+  Node6 [label="lv_area_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structlv__area__t.html",tooltip=" "];
+  Node7 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" child_ll" ];
+  Node7 [label="lv_ll_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structlv__ll__t.html",tooltip=" "];
+}

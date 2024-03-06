@@ -1,7 +1,26 @@
 var searchData=
 [
-  ['kd_37',['kD',['../classpxl_1_1PID.html#afe9ddbcc8e1feddcedb007e362ad5315',1,'pxl::PID']]],
-  ['ki_38',['kI',['../classpxl_1_1PID.html#ad607152a2e13242f8f611b2596bdccce',1,'pxl::PID']]],
-  ['kp_39',['kP',['../classpxl_1_1PID.html#adef18b6e2b86a67f7e4b764aac8b30d6',1,'pxl::PID']]],
-  ['kp_5fd_40',['kP_d',['../classpxl_1_1PID.html#a9d54dbc30b82357a73f24e3e91d7ecf0',1,'pxl::PID']]]
+  ['a0_5338',['a0',['../classsquiggles_1_1QuinticPolynomial.html#a34483abcd69f4dc0c991136cab3555ff',1,'squiggles::QuinticPolynomial']]],
+  ['a1_5339',['a1',['../classsquiggles_1_1QuinticPolynomial.html#a4813f19606b59c1244ec2bdb576f2c4d',1,'squiggles::QuinticPolynomial']]],
+  ['a2_5340',['a2',['../classsquiggles_1_1QuinticPolynomial.html#a1895af9bbd13f104d5fda1ceca70b84a',1,'squiggles::QuinticPolynomial']]],
+  ['a3_5341',['a3',['../classsquiggles_1_1QuinticPolynomial.html#aa0d641db528e575537ad564aa1bb6ce4',1,'squiggles::QuinticPolynomial']]],
+  ['a4_5342',['a4',['../classsquiggles_1_1QuinticPolynomial.html#aaef0963a021f89264113a50b373aae72',1,'squiggles::QuinticPolynomial']]],
+  ['a5_5343',['a5',['../classsquiggles_1_1QuinticPolynomial.html#a78c130592337e69216e3c25b1f65f249',1,'squiggles::QuinticPolynomial']]],
+  ['accel_5344',['accel',['../classokapi_1_1FlywheelSimulator.html#ae5fbfc008c5202fa9557087594d99e2b',1,'okapi::FlywheelSimulator::accel()'],['../classokapi_1_1VelMath.html#abe73288852f21916155e04266faea8b7',1,'okapi::VelMath::accel()'],['../classsquiggles_1_1ControlVector.html#a6a2b80b2ebdfa8a8a911cda23f43e43f',1,'squiggles::ControlVector::accel()'],['../structsquiggles_1_1SplineGenerator_1_1GeneratedVector.html#a39814d37c664eae706df0a6bc545d335',1,'squiggles::SplineGenerator::GeneratedVector::accel()']]],
+  ['act_5fobj_5345',['act_obj',['../struct__lv__indev__proc__t.html#a418af1d0a3452e6c97d22f6a690c2927',1,'_lv_indev_proc_t']]],
+  ['act_5fpoint_5346',['act_point',['../struct__lv__indev__proc__t.html#a07c31da6ce2d8bf13495979a4cfde167',1,'_lv_indev_proc_t']]],
+  ['actionpoint_5347',['actionPoint',['../structpxl_1_1ActionFuncTuple.html#ac4f8fb029f751678ee006a8352d5b915',1,'pxl::ActionFuncTuple']]],
+  ['adiupdaterate_5348',['adiUpdateRate',['../namespaceokapi.html#abf765c88ac34df87d378fb66ea5fd20c',1,'okapi']]],
+  ['alpha_5349',['alpha',['../classokapi_1_1EmaFilter.html#abaf5500df98574b5bf6f8d9a8a4331b5',1,'okapi::EmaFilter::alpha()'],['../unionlv__color32__t.html#a5519a07b8b8d309f06683f2110d0c8e0',1,'lv_color32_t::alpha()'],['../classokapi_1_1DemaFilter.html#ab28fcb9de16e8df8c510e42b6be99323',1,'okapi::DemaFilter::alpha()']]],
+  ['always_5fzero_5350',['always_zero',['../structlv__img__header__t.html#a2500e38eea0424cf5639521e4cd36f74',1,'lv_img_header_t']]],
+  ['angle_5351',['angle',['../classokapi_1_1FlywheelSimulator.html#ab52c0add6fc410b93ce91ff29bf3c85b',1,'okapi::FlywheelSimulator']]],
+  ['anglefilter_5352',['angleFilter',['../classokapi_1_1ChassisControllerBuilder.html#a858691f337b15633addeaa74c5216781',1,'okapi::ChassisControllerBuilder']]],
+  ['anglegains_5353',['angleGains',['../classokapi_1_1ChassisControllerBuilder.html#a5132d236df76456df79e5b86bbf03a3a',1,'okapi::ChassisControllerBuilder']]],
+  ['anglepid_5354',['anglePid',['../classokapi_1_1ChassisControllerPID.html#a22677f191a4014e51f4f133d56d3bc76',1,'okapi::ChassisControllerPID']]],
+  ['asynctask_5355',['asyncTask',['../classpxl_1_1aSync.html#a7b29b766fb11c03d2d1ca42d6ecb05d9',1,'pxl::aSync']]],
+  ['attargetderivative_5356',['atTargetDerivative',['../classokapi_1_1SettledUtil.html#a972febaf6427ee6ea67d007da2ffbf0a',1,'okapi::SettledUtil::atTargetDerivative()'],['../classokapi_1_1ConfigurableTimeUtilFactory.html#ae4fe58bdb6059a1ed09bc8e4d783b541',1,'okapi::ConfigurableTimeUtilFactory::atTargetDerivative()']]],
+  ['attargeterror_5357',['atTargetError',['../classokapi_1_1SettledUtil.html#ae90caf556f0702edea6c86bd6e9a888f',1,'okapi::SettledUtil::atTargetError()'],['../classokapi_1_1ConfigurableTimeUtilFactory.html#a64f79819309afe2823e8b100d62fe3d8',1,'okapi::ConfigurableTimeUtilFactory::atTargetError()']]],
+  ['attargettime_5358',['atTargetTime',['../classokapi_1_1SettledUtil.html#a723f415c2860413c22b8467db4a55586',1,'okapi::SettledUtil::atTargetTime()'],['../classokapi_1_1ConfigurableTimeUtilFactory.html#a8c4ffcc41b7f8e1f2e0d5690bb6cfc8b',1,'okapi::ConfigurableTimeUtilFactory::atTargetTime()']]],
+  ['attargettimer_5359',['atTargetTimer',['../classokapi_1_1SettledUtil.html#aebaa16b34b04ee6c7938418f83d47e56',1,'okapi::SettledUtil']]],
+  ['axis_5360',['axis',['../classokapi_1_1IMU.html#ab73270c99a046eec6a67e869facf8439',1,'okapi::IMU']]]
 ];

@@ -1,0 +1,11 @@
+digraph "src/pxl/drivebase" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_87a857eff530ad659c1a04633acb58d5 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="pxl" fontname="Helvetica", fontsize="10", URL="dir_87a857eff530ad659c1a04633acb58d5.html"]
+  dir_e919bc17ba6dd875156a1492c2b92224 [shape=box, label="drivebase", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_e919bc17ba6dd875156a1492c2b92224.html"];
+  }
+  dir_d44c64559bbebec7f509842c48db8b23 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
+  dir_e919bc17ba6dd875156a1492c2b92224->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="11", labeldistance=1.5 headhref="dir_000049_000000.html"];
+}

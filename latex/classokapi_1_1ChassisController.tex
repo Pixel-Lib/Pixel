@@ -1,0 +1,347 @@
+\hypertarget{classokapi_1_1ChassisController}{}\doxysection{okapi\+::Chassis\+Controller Class Reference}
+\label{classokapi_1_1ChassisController}\index{okapi::ChassisController@{okapi::ChassisController}}
+
+
+{\ttfamily \#include $<$chassis\+Controller.\+hpp$>$}
+
+
+
+Inheritance diagram for okapi\+::Chassis\+Controller\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1ChassisController_a8a4a431cb9da03a1c84e600dc0e31333}{Chassis\+Controller}} ()=default
+\item 
+virtual \mbox{\hyperlink{classokapi_1_1ChassisController_a886a1cfbd9430fb2fbe177bc4d4ab392}{$\sim$\+Chassis\+Controller}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1ChassisController_a6d5b69139dfa8b814d05c74c22bcaa43}{move\+Distance}} (QLength itarget)=0
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1ChassisController_a7d0747474b5c27bbc987eb31ec80da5f}{move\+Raw}} (double itarget)=0
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1ChassisController_a67a17268b871a4f1ae74d67891cbf5dd}{move\+Distance\+Async}} (QLength itarget)=0
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1ChassisController_ad05b6ec70254b51bc2a8dc78c69fe0f9}{move\+Raw\+Async}} (double itarget)=0
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1ChassisController_aab12308b3fad6793c007d7a33730a3f7}{turn\+Angle}} (QAngle ideg\+Target)=0
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1ChassisController_ae521f7f79302cc5cae505b1a59c72567}{turn\+Raw}} (double ideg\+Target)=0
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1ChassisController_a87fc1f88bf06340d8f022a8c185b5e87}{turn\+Angle\+Async}} (QAngle ideg\+Target)=0
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1ChassisController_afe237940671dc8c0a47b18ddd2855fff}{turn\+Raw\+Async}} (double ideg\+Target)=0
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1ChassisController_a37ae36ec8936272eb31e3baed7eed417}{set\+Turns\+Mirrored}} (bool ishould\+Mirror)=0
+\item 
+virtual bool \mbox{\hyperlink{classokapi_1_1ChassisController_af243e988026a00840a27db92c7b6e41f}{is\+Settled}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1ChassisController_a01ed4e0eb7332cc149228387bbf1e91c}{wait\+Until\+Settled}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1ChassisController_ac67edbbbe1c8480c4503b9875a3719cd}{stop}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1ChassisController_a973c79ed60f4b0a25fe5273ba4146427}{set\+Max\+Velocity}} (double imax\+Velocity)=0
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1ChassisController_a3306e5e19cafb3d231edcfef23c36e3e}{get\+Max\+Velocity}} () const =0
+\item 
+virtual \mbox{\hyperlink{classokapi_1_1ChassisScales}{Chassis\+Scales}} \mbox{\hyperlink{classokapi_1_1ChassisController_a0a8e32fc7adad8567f550954505aaa06}{get\+Chassis\+Scales}} () const =0
+\item 
+virtual \mbox{\hyperlink{structokapi_1_1AbstractMotor_1_1GearsetRatioPair}{Abstract\+Motor\+::\+Gearset\+Ratio\+Pair}} \mbox{\hyperlink{classokapi_1_1ChassisController_aa19351888b997d4a6596dac24520ebff}{get\+Gearset\+Ratio\+Pair}} () const =0
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1ChassisModel}{Chassis\+Model}} $>$ \mbox{\hyperlink{classokapi_1_1ChassisController_a1971d4b54b61718437824c026aca53c9}{get\+Model}} ()=0
+\item 
+virtual \mbox{\hyperlink{classokapi_1_1ChassisModel}{Chassis\+Model}} \& \mbox{\hyperlink{classokapi_1_1ChassisController_a239802eda7e4317a65d1a04994f7b97e}{model}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1ChassisController_a8a4a431cb9da03a1c84e600dc0e31333}\label{classokapi_1_1ChassisController_a8a4a431cb9da03a1c84e600dc0e31333}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!ChassisController@{ChassisController}}
+\index{ChassisController@{ChassisController}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{ChassisController()}{ChassisController()}}
+{\footnotesize\ttfamily okapi\+::\+Chassis\+Controller\+::\+Chassis\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [default]}}
+
+A \mbox{\hyperlink{classokapi_1_1ChassisController}{Chassis\+Controller}} adds a closed-\/loop layer on top of a \mbox{\hyperlink{classokapi_1_1ChassisModel}{Chassis\+Model}}. move\+Distance and turn\+Angle both use closed-\/loop control to move the robot. There are passthrough functions for everything defined in \mbox{\hyperlink{classokapi_1_1ChassisModel}{Chassis\+Model}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imodel} & underlying \mbox{\hyperlink{classokapi_1_1ChassisModel}{Chassis\+Model}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1ChassisController_a886a1cfbd9430fb2fbe177bc4d4ab392}\label{classokapi_1_1ChassisController_a886a1cfbd9430fb2fbe177bc4d4ab392}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!````~ChassisController@{$\sim$ChassisController}}
+\index{````~ChassisController@{$\sim$ChassisController}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{$\sim$ChassisController()}{~ChassisController()}}
+{\footnotesize\ttfamily virtual okapi\+::\+Chassis\+Controller\+::$\sim$\+Chassis\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1ChassisController_a0a8e32fc7adad8567f550954505aaa06}\label{classokapi_1_1ChassisController_a0a8e32fc7adad8567f550954505aaa06}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!getChassisScales@{getChassisScales}}
+\index{getChassisScales@{getChassisScales}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{getChassisScales()}{getChassisScales()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classokapi_1_1ChassisScales}{Chassis\+Scales}} okapi\+::\+Chassis\+Controller\+::get\+Chassis\+Scales (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the \mbox{\hyperlink{classokapi_1_1ChassisScales}{Chassis\+Scales}}. 
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_afa07913b30d47c790fcdce8c2b85a468}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_a75f4e1b26f2440ac4066fd740dee7b13}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_a6bbab5d22753736b0507d5fd4deb3982}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_aa19351888b997d4a6596dac24520ebff}\label{classokapi_1_1ChassisController_aa19351888b997d4a6596dac24520ebff}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!getGearsetRatioPair@{getGearsetRatioPair}}
+\index{getGearsetRatioPair@{getGearsetRatioPair}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{getGearsetRatioPair()}{getGearsetRatioPair()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structokapi_1_1AbstractMotor_1_1GearsetRatioPair}{Abstract\+Motor\+::\+Gearset\+Ratio\+Pair}} okapi\+::\+Chassis\+Controller\+::get\+Gearset\+Ratio\+Pair (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the Gearset\+Ratio\+Pair. 
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_a6912dbe99776f79fb3a6990e2fbea2ff}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_a50673f2911c969e2f6e89b02a29ce582}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_a42cab9878235cdb4bea46e69f7ccd75d}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_a3306e5e19cafb3d231edcfef23c36e3e}\label{classokapi_1_1ChassisController_a3306e5e19cafb3d231edcfef23c36e3e}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!getMaxVelocity@{getMaxVelocity}}
+\index{getMaxVelocity@{getMaxVelocity}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{getMaxVelocity()}{getMaxVelocity()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+Chassis\+Controller\+::get\+Max\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The maximum velocity in RPM \mbox{[}0-\/600\mbox{]}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_a92b9ca10cd10b8b41904a2bcab7e88e5}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_a34cffe02f0b3fe0636a3f91741cc1dde}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_aa19ac09d42b09100e49e77c82ab1e05b}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_a1971d4b54b61718437824c026aca53c9}\label{classokapi_1_1ChassisController_a1971d4b54b61718437824c026aca53c9}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!getModel@{getModel}}
+\index{getModel@{getModel}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{getModel()}{getModel()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classokapi_1_1ChassisModel}{Chassis\+Model}}$>$ okapi\+::\+Chassis\+Controller\+::get\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The internal \mbox{\hyperlink{classokapi_1_1ChassisModel}{Chassis\+Model}}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_a4b39cb1238d4f6917aee15c5c89ec63e}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_a77561b0be264c435ce34860eaa84ebb0}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_afe16d0db385891d98f28328c0677d53f}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_af243e988026a00840a27db92c7b6e41f}\label{classokapi_1_1ChassisController_af243e988026a00840a27db92c7b6e41f}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!isSettled@{isSettled}}
+\index{isSettled@{isSettled}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{isSettled()}{isSettled()}}
+{\footnotesize\ttfamily virtual bool okapi\+::\+Chassis\+Controller\+::is\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Checks whether the internal controllers are currently settled.
+
+\begin{DoxyReturn}{Returns}
+Whether this \mbox{\hyperlink{classokapi_1_1ChassisController}{Chassis\+Controller}} is settled. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_ab6ddd200dc7a08a8e0dc95826ee9c36e}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_a569b10d6af973e338ec27bd9e8d69a5d}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_aa1eb8a819454c89497432a846577053e}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_a239802eda7e4317a65d1a04994f7b97e}\label{classokapi_1_1ChassisController_a239802eda7e4317a65d1a04994f7b97e}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!model@{model}}
+\index{model@{model}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{model()}{model()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classokapi_1_1ChassisModel}{Chassis\+Model}}\& okapi\+::\+Chassis\+Controller\+::model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The internal \mbox{\hyperlink{classokapi_1_1ChassisModel}{Chassis\+Model}}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_a4f42072c46111dc15c2199cfba80a708}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_ac784d13d15c41f7405356adb02323765}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_a9e240fe9a4889275c359476d6037cf98}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_a6d5b69139dfa8b814d05c74c22bcaa43}\label{classokapi_1_1ChassisController_a6d5b69139dfa8b814d05c74c22bcaa43}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!moveDistance@{moveDistance}}
+\index{moveDistance@{moveDistance}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{moveDistance()}{moveDistance()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Chassis\+Controller\+::move\+Distance (\begin{DoxyParamCaption}\item[{QLength}]{itarget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Drives the robot straight for a distance (using closed-\/loop control).
+
+
+\begin{DoxyParams}{Parameters}
+{\em itarget} & distance to travel \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_a3143bc60f72ab8ff8f63aad9a810a1c6}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_ab5f0409c6add9b1c3b176b61643de067}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_aa9af3fb56afdb940f92bd8016ef63925}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_a67a17268b871a4f1ae74d67891cbf5dd}\label{classokapi_1_1ChassisController_a67a17268b871a4f1ae74d67891cbf5dd}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!moveDistanceAsync@{moveDistanceAsync}}
+\index{moveDistanceAsync@{moveDistanceAsync}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{moveDistanceAsync()}{moveDistanceAsync()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Chassis\+Controller\+::move\+Distance\+Async (\begin{DoxyParamCaption}\item[{QLength}]{itarget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets the target distance for the robot to drive straight (using closed-\/loop control).
+
+
+\begin{DoxyParams}{Parameters}
+{\em itarget} & distance to travel \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_a61ca0d303fcbfd08932157af9adbbb12}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_affad4aa1b0bd54db728ac600493a6c4c}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_afc97bc450a090d91b57bc6353b4a6972}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_a7d0747474b5c27bbc987eb31ec80da5f}\label{classokapi_1_1ChassisController_a7d0747474b5c27bbc987eb31ec80da5f}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!moveRaw@{moveRaw}}
+\index{moveRaw@{moveRaw}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{moveRaw()}{moveRaw()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Chassis\+Controller\+::move\+Raw (\begin{DoxyParamCaption}\item[{double}]{itarget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Drives the robot straight for a distance (using closed-\/loop control).
+
+
+\begin{DoxyParams}{Parameters}
+{\em itarget} & distance to travel in motor degrees \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_a21123336d2f2cb2fcd8c42db309c9f6c}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_ad5758e465db565299c44a0e4dab56451}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_a5feffd32d60a2b56d07f0d97ad218a49}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_ad05b6ec70254b51bc2a8dc78c69fe0f9}\label{classokapi_1_1ChassisController_ad05b6ec70254b51bc2a8dc78c69fe0f9}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!moveRawAsync@{moveRawAsync}}
+\index{moveRawAsync@{moveRawAsync}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{moveRawAsync()}{moveRawAsync()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Chassis\+Controller\+::move\+Raw\+Async (\begin{DoxyParamCaption}\item[{double}]{itarget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets the target distance for the robot to drive straight (using closed-\/loop control).
+
+
+\begin{DoxyParams}{Parameters}
+{\em itarget} & distance to travel in motor degrees \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_aec3f30b75ae403601de320a5b376ef0a}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_ae330335f22140fc4daa062fb1e68ffb0}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_a6a686449818623cb9a3bb0efef73872f}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_a973c79ed60f4b0a25fe5273ba4146427}\label{classokapi_1_1ChassisController_a973c79ed60f4b0a25fe5273ba4146427}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Chassis\+Controller\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{double}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets a new maximum velocity in RPM \mbox{[}0-\/600\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_affec1fead5eb3f3f2da197ecb72243fd}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_a460500469efac5015feac674b57948c0}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_a9cf06cccbb0389607f953aac5a29238c}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_a37ae36ec8936272eb31e3baed7eed417}\label{classokapi_1_1ChassisController_a37ae36ec8936272eb31e3baed7eed417}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!setTurnsMirrored@{setTurnsMirrored}}
+\index{setTurnsMirrored@{setTurnsMirrored}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{setTurnsMirrored()}{setTurnsMirrored()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Chassis\+Controller\+::set\+Turns\+Mirrored (\begin{DoxyParamCaption}\item[{bool}]{ishould\+Mirror }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets whether turns should be mirrored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ishould\+Mirror} & whether turns should be mirrored \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_aed92ba0b7a9fc15bf645f3789e8598ae}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_a1e68419f6e695fd35576a6d886618741}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_a37d538f92439644efa50a226c3cefd6d}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_ac67edbbbe1c8480c4503b9875a3719cd}\label{classokapi_1_1ChassisController_ac67edbbbe1c8480c4503b9875a3719cd}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!stop@{stop}}
+\index{stop@{stop}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Chassis\+Controller\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Interrupts the current movement to stop the robot. 
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_af6a98415e2c4e17dfec77e215efb1a41}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_a852462fc20fb2322bbb3fd984b01a121}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_aab2f5d5cfb8ad96bd32be26a5a4e7113}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_aab12308b3fad6793c007d7a33730a3f7}\label{classokapi_1_1ChassisController_aab12308b3fad6793c007d7a33730a3f7}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!turnAngle@{turnAngle}}
+\index{turnAngle@{turnAngle}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{turnAngle()}{turnAngle()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Chassis\+Controller\+::turn\+Angle (\begin{DoxyParamCaption}\item[{QAngle}]{ideg\+Target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Turns the robot clockwise in place (using closed-\/loop control).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ideg\+Target} & angle to turn for \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_a4ba07ac4bea9ff2d8aea30be72f6a0ea}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_a56aae5a15daa9ed81963dd48fce69535}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_a3c2ae782167fd9c6b27d637563e3a066}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_a87fc1f88bf06340d8f022a8c185b5e87}\label{classokapi_1_1ChassisController_a87fc1f88bf06340d8f022a8c185b5e87}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!turnAngleAsync@{turnAngleAsync}}
+\index{turnAngleAsync@{turnAngleAsync}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{turnAngleAsync()}{turnAngleAsync()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Chassis\+Controller\+::turn\+Angle\+Async (\begin{DoxyParamCaption}\item[{QAngle}]{ideg\+Target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets the target angle for the robot to turn clockwise in place (using closed-\/loop control).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ideg\+Target} & angle to turn for \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_a18d748097a7938e3102638d17be54c76}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_a391c12c7b3cb5461cd28c4aebc4aeab0}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_a773a99fe7a1540da856ad6b6008ba24f}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_ae521f7f79302cc5cae505b1a59c72567}\label{classokapi_1_1ChassisController_ae521f7f79302cc5cae505b1a59c72567}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!turnRaw@{turnRaw}}
+\index{turnRaw@{turnRaw}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{turnRaw()}{turnRaw()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Chassis\+Controller\+::turn\+Raw (\begin{DoxyParamCaption}\item[{double}]{ideg\+Target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Turns the robot clockwise in place (using closed-\/loop control).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ideg\+Target} & angle to turn for in motor degrees \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_a2546087ed9bf13794235509bc8a2503f}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_ae844b8a8472b0d8445a0ce6b0290af8a}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_a42801c5f37d892f8410af8c672387da8}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_afe237940671dc8c0a47b18ddd2855fff}\label{classokapi_1_1ChassisController_afe237940671dc8c0a47b18ddd2855fff}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!turnRawAsync@{turnRawAsync}}
+\index{turnRawAsync@{turnRawAsync}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{turnRawAsync()}{turnRawAsync()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Chassis\+Controller\+::turn\+Raw\+Async (\begin{DoxyParamCaption}\item[{double}]{ideg\+Target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets the target angle for the robot to turn clockwise in place (using closed-\/loop control).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ideg\+Target} & angle to turn for in motor degrees \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_a3a69b57e67a178c2fdafbe31f64e44b4}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_a049d84fa3894762bb89824ea279c5836}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_a753e4fbe3ca152c5d1ba544e26c93e92}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+\mbox{\Hypertarget{classokapi_1_1ChassisController_a01ed4e0eb7332cc149228387bbf1e91c}\label{classokapi_1_1ChassisController_a01ed4e0eb7332cc149228387bbf1e91c}} 
+\index{okapi::ChassisController@{okapi::ChassisController}!waitUntilSettled@{waitUntilSettled}}
+\index{waitUntilSettled@{waitUntilSettled}!okapi::ChassisController@{okapi::ChassisController}}
+\doxysubsubsection{\texorpdfstring{waitUntilSettled()}{waitUntilSettled()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Chassis\+Controller\+::wait\+Until\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Delays until the currently executing movement completes. 
+
+Implemented in \mbox{\hyperlink{classokapi_1_1DefaultOdomChassisController_a44599379129060bdb44e6f603ee5777b}{okapi\+::\+Default\+Odom\+Chassis\+Controller}}, \mbox{\hyperlink{classokapi_1_1ChassisControllerPID_a964cc8132bfa76492df0ee06aadb255a}{okapi\+::\+Chassis\+Controller\+PID}}, and \mbox{\hyperlink{classokapi_1_1ChassisControllerIntegrated_a2af994f5ddc68a48d7692fd16ca590c0}{okapi\+::\+Chassis\+Controller\+Integrated}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/okapi/api/chassis/controller/\mbox{\hyperlink{chassisController_8hpp}{chassis\+Controller.\+hpp}}\end{DoxyCompactItemize}
