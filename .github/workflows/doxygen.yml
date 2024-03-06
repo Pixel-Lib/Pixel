@@ -9,10 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Cache Doxygen
+      uses: actions/cache@v2
+      with:
+        path: ~/doxygen
+        key: ${{ runner.os }}-doxygen-${{ hashFiles('**/Doxyfile') }}
     - name: Install Doxygen
-      run: sudo apt-get install doxygen
+      run: |
+        if [ ! -d "~/doxygen" ]; then
+          sudo apt-get install doxygen
+        fi
     - name: Generate Doxygen
-      run: doxygen Doxyfile
+      run: |
+        doxygen Doxyfile || exit 1
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
