@@ -12,3 +12,13 @@ document.querySelectorAll('.navbar a').forEach((tab) => {
         event.target.classList.add('active');
     });
 });
+
+// Add a function to add a smooth scrolling effect when clicking on a navbar link
+document.querySelectorAll('.navbar a').forEach((link) => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+        document.querySelector(event.target.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
