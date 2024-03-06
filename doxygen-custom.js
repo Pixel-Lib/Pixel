@@ -69,7 +69,7 @@ function toggleTheme() {
 }
 
 // Add event listener to theme switch button
-document.getElementById('theme-switch').addEventListener('click', toggleTheme);
+document.getElementById('theme-switcher').addEventListener('click', toggleTheme);
 
 // Set initial theme based on system preference
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
