@@ -28,12 +28,9 @@
 
 /* Use CSS variables for colors */
 body {
-    background: linear-gradient(45deg, var(--color-orange) 25%, transparent 25%) -50px 0,
-                linear-gradient(-45deg, var(--color-orange) 25%, transparent 25%) -50px 0,
-                linear-gradient(45deg, transparent 75%, var(--color-blue) 75%) 50px 0,
-                linear-gradient(-45deg, transparent 75%, var(--color-blue) 75%) 50px 0;
-    background-size: 100px 100px;
-    animation: moveBackground 4s linear infinite;
+    background: linear-gradient(135deg, var(--color-orange) 10%, var(--color-blue) 90%);
+    background-size: cover;
+    animation: moveBackground 10s ease infinite;
     color: var(--color-foreground);
     font-family: 'Helvetica Neue', sans-serif;
     line-height: 1.6;
@@ -41,10 +38,13 @@ body {
 
 @keyframes moveBackground {
     0% {
-        background-position: 0 0, 0 0, 0 0, 0 0;
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 0;
     }
     100% {
-        background-position: 100px 100px, 100px 100px, 100px 100px, 100px 100px;
+        background-position: 0 0;
     }
 }
 
