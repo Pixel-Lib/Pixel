@@ -1,6 +1,40 @@
+/* Atom One Dark Theme Colors */
+:root {
+    --color-background-dark: #282c34;
+    --color-foreground-dark: #abb2bf;
+    --color-comment-dark: #5c6370;
+    --color-red-dark: #e06c75;
+    --color-orange-dark: #d19a66;
+    --color-yellow-dark: #e5c07b;
+    --color-green-dark: #98c379;
+    --color-cyan-dark: #56b6c2;
+    --color-blue-dark: #61afef;
+    --color-purple-dark: #c678dd;
+}
+
+/* Atom One Light Theme Colors */
+:root {
+    --color-background-light: #fafafa;
+    --color-foreground-light: #383a42;
+    --color-comment-light: #a0a1a7;
+    --color-red-light: #e45649;
+    --color-orange-light: #ca1243;
+    --color-yellow-light: #c18401;
+    --color-green-light: #50a14f;
+    --color-cyan-light: #0184bc;
+    --color-blue-light: #4078f2;
+    --color-purple-light: #a626a4;
+}
+
+/* Use CSS variables for colors */
+body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+}
+
 /* Change the layout of the headers */
 h1, h2, h3, h4, h5, h6 {
-    color: #f47c20; /* Orange color from your website */
+    color: var(--color-orange); /* Orange color from Atom One Dark */
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 300;
     letter-spacing: 0.1em;
@@ -13,13 +47,13 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-around;
     padding: 20px;
-    background-color: #2c3e50; /* Dark blue color from your website */
+    background-color: var(--color-background); /* Dark blue color from Atom One Dark */
     position: fixed; /* Make navbar fixed at the top */
     width: 100%; /* Full width */
 }
 
 .navbar a {
-    color: #ecf0f1; /* Light gray color from your website */
+    color: var(--color-foreground); /* Light gray color from Atom One Dark */
     text-decoration: none;
     font-size: 1.2em;
 }

@@ -30,3 +30,36 @@ document.querySelectorAll('.dropdown-toggle').forEach((dropdown) => {
         event.target.nextElementSibling.classList.toggle('show');
     });
 });
+
+// Function to switch to dark mode
+function switchToDarkMode() {
+    document.documentElement.style.setProperty('--color-background', 'var(--color-background-dark)');
+    document.documentElement.style.setProperty('--color-foreground', 'var(--color-foreground-dark)');
+    // ... rest of color variables ...
+}
+
+// Function to switch to light mode
+function switchToLightMode() {
+    document.documentElement.style.setProperty('--color-background', 'var(--color-background-light)');
+    document.documentElement.style.setProperty('--color-foreground', 'var(--color-foreground-light)');
+    // ... rest of color variables ...
+}
+
+// Function to toggle between dark and light mode
+function toggleTheme() {
+    if (document.documentElement.style.getPropertyValue('--color-background') === 'var(--color-background-dark)') {
+        switchToLightMode();
+    } else {
+        switchToDarkMode();
+    }
+}
+
+// Add event listener to theme switch button
+document.getElementById('theme-switch').addEventListener('click', toggleTheme);
+
+// Set initial theme based on system preference
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    switchToDarkMode();
+} else {
+    switchToLightMode();
+}
