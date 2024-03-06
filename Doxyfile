@@ -15,3 +15,4 @@ EXTRACT_STATIC         = YES
 FILE_PATTERNS          = *.cpp *.hpp *.h
 HTML_EXTRA_STYLESHEET  = docs/doxygen-style.css
 HTML_EXTRA_FILES       = docs/doxygen-custom.js
+HTML_HEADER            = docs/doxygen-header.html
