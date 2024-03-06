@@ -1,31 +1,5 @@
 var searchData=
 [
-  ['chassiscontroller_3503',['ChassisController',['../classokapi_1_1ChassisController.html',1,'okapi']]],
-  ['chassiscontrollerbuilder_3504',['ChassisControllerBuilder',['../classokapi_1_1ChassisControllerBuilder.html',1,'okapi']]],
-  ['chassiscontrollerintegrated_3505',['ChassisControllerIntegrated',['../classokapi_1_1ChassisControllerIntegrated.html',1,'okapi']]],
-  ['chassiscontrollerpid_3506',['ChassisControllerPID',['../classokapi_1_1ChassisControllerPID.html',1,'okapi']]],
-  ['chassismodel_3507',['ChassisModel',['../classokapi_1_1ChassisModel.html',1,'okapi']]],
-  ['chassisscales_3508',['ChassisScales',['../classokapi_1_1ChassisScales.html',1,'okapi']]],
-  ['clock_3509',['Clock',['../structpros_1_1Clock.html',1,'pros']]],
-  ['closedloopcontroller_3510',['ClosedLoopController',['../classokapi_1_1ClosedLoopController.html',1,'okapi']]],
-  ['composablefilter_3511',['ComposableFilter',['../classokapi_1_1ComposableFilter.html',1,'okapi']]],
-  ['configurabletimeutilfactory_3512',['ConfigurableTimeUtilFactory',['../classokapi_1_1ConfigurableTimeUtilFactory.html',1,'okapi']]],
-  ['constrainedstate_3513',['ConstrainedState',['../structsquiggles_1_1SplineGenerator_1_1ConstrainedState.html',1,'squiggles::SplineGenerator']]],
-  ['constraints_3514',['Constraints',['../structsquiggles_1_1Constraints.html',1,'squiggles']]],
-  ['continuousrotarysensor_3515',['ContinuousRotarySensor',['../classokapi_1_1ContinuousRotarySensor.html',1,'okapi']]],
-  ['controller_3516',['Controller',['../classokapi_1_1Controller.html',1,'okapi::Controller'],['../classpros_1_1Controller.html',1,'pros::Controller']]],
-  ['controllerbutton_3517',['ControllerButton',['../classokapi_1_1ControllerButton.html',1,'okapi']]],
-  ['controllerinput_3518',['ControllerInput',['../classokapi_1_1ControllerInput.html',1,'okapi']]],
-  ['controllerinput_3c_20bool_20_3e_3519',['ControllerInput&lt; bool &gt;',['../classokapi_1_1ControllerInput.html',1,'okapi']]],
-  ['controllerinput_3c_20double_20_3e_3520',['ControllerInput&lt; double &gt;',['../classokapi_1_1ControllerInput.html',1,'okapi']]],
-  ['controlleroutput_3521',['ControllerOutput',['../classokapi_1_1ControllerOutput.html',1,'okapi']]],
-  ['controlleroutput_3c_20double_20_3e_3522',['ControllerOutput&lt; double &gt;',['../classokapi_1_1ControllerOutput.html',1,'okapi']]],
-  ['controlleroutput_3c_20input_20_3e_3523',['ControllerOutput&lt; Input &gt;',['../classokapi_1_1ControllerOutput.html',1,'okapi']]],
-  ['controllerrunner_3524',['ControllerRunner',['../classokapi_1_1ControllerRunner.html',1,'okapi']]],
-  ['controllerrunnerfactory_3525',['ControllerRunnerFactory',['../classokapi_1_1ControllerRunnerFactory.html',1,'okapi']]],
-  ['controllerutil_3526',['ControllerUtil',['../classokapi_1_1ControllerUtil.html',1,'okapi']]],
-  ['controlvector_3527',['ControlVector',['../classsquiggles_1_1ControlVector.html',1,'squiggles']]],
-  ['coord_3528',['Coord',['../classpxl_1_1Coord.html',1,'pxl']]],
-  ['crossplatformmutex_3529',['CrossplatformMutex',['../classCrossplatformMutex.html',1,'']]],
-  ['crossplatformthread_3530',['CrossplatformThread',['../classCrossplatformThread.html',1,'']]]
+  ['exit_5fconditions_155',['exit_conditions',['../classpxl_1_1exit__conditions.html',1,'pxl']]],
+  ['extendeddrivetrain_156',['ExtendedDrivetrain',['../classpxl_1_1ExtendedDrivetrain.html',1,'pxl']]]
 ];

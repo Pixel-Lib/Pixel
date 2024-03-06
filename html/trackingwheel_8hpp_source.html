@@ -13,7 +13,6 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="doxygen-style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Pixel
    </div>
@@ -79,9 +77,9 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;main.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;math.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pxl_2timer_8hpp.html">pxl/timer.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="timer_8hpp.html">pxl/timer.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="util_8hpp.html">pxl/util.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepxl.html">pxl</a> {</div>
@@ -89,13 +87,13 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classpxl_1_1TrackingWheel.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classpxl_1_1TrackingWheel.html">TrackingWheel</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">// Constructor with encoder</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classpxl_1_1TrackingWheel.html#ae9ea834fd9c5426ce2c72709166cf8aa">TrackingWheel</a>(<a class="code" href="classpros_1_1ADIEncoder.html">pros::ADIEncoder</a> *<a class="code" href="classpxl_1_1TrackingWheel.html#a8987beaf2ecf945cb40bf563e233d144">encoder</a>, <span class="keywordtype">float</span> wheelDiameter, <span class="keywordtype">float</span> <a class="code" href="classpxl_1_1TrackingWheel.html#abed254f7a1ac5f2ec415e864766c2563">distance</a>, <span class="keywordtype">float</span> <a class="code" href="classpxl_1_1TrackingWheel.html#a96fab08899775989173600c8d614770e">gearRatio</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classpxl_1_1TrackingWheel.html#ae9ea834fd9c5426ce2c72709166cf8aa">TrackingWheel</a>(pros::ADIEncoder *<a class="code" href="classpxl_1_1TrackingWheel.html#a8987beaf2ecf945cb40bf563e233d144">encoder</a>, <span class="keywordtype">float</span> wheelDiameter, <span class="keywordtype">float</span> <a class="code" href="classpxl_1_1TrackingWheel.html#abed254f7a1ac5f2ec415e864766c2563">distance</a>, <span class="keywordtype">float</span> <a class="code" href="classpxl_1_1TrackingWheel.html#a96fab08899775989173600c8d614770e">gearRatio</a>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// Constructor with rotation sensor</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classpxl_1_1TrackingWheel.html#ae9ea834fd9c5426ce2c72709166cf8aa">TrackingWheel</a>(<a class="code" href="classpros_1_1Rotation.html">pros::Rotation</a> *<a class="code" href="classpxl_1_1TrackingWheel.html#acb1dcd5717522cf35cb10b4be2821be4">rotation</a>, <span class="keywordtype">float</span> wheelDiameter, <span class="keywordtype">float</span> <a class="code" href="classpxl_1_1TrackingWheel.html#abed254f7a1ac5f2ec415e864766c2563">distance</a>, <span class="keywordtype">float</span> <a class="code" href="classpxl_1_1TrackingWheel.html#a96fab08899775989173600c8d614770e">gearRatio</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classpxl_1_1TrackingWheel.html#ae9ea834fd9c5426ce2c72709166cf8aa">TrackingWheel</a>(pros::Rotation *<a class="code" href="classpxl_1_1TrackingWheel.html#acb1dcd5717522cf35cb10b4be2821be4">rotation</a>, <span class="keywordtype">float</span> wheelDiameter, <span class="keywordtype">float</span> <a class="code" href="classpxl_1_1TrackingWheel.html#abed254f7a1ac5f2ec415e864766c2563">distance</a>, <span class="keywordtype">float</span> <a class="code" href="classpxl_1_1TrackingWheel.html#a96fab08899775989173600c8d614770e">gearRatio</a>);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">// Constructor with motor group</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classpxl_1_1TrackingWheel.html#ae9ea834fd9c5426ce2c72709166cf8aa">TrackingWheel</a>(<a class="code" href="classpros_1_1Motor__Group.html">pros::MotorGroup</a> *<a class="code" href="classpxl_1_1TrackingWheel.html#acd951972355bea5863f875ca0941ba6a">motors</a>, <span class="keywordtype">float</span> wheelDiameter, <span class="keywordtype">float</span> <a class="code" href="classpxl_1_1TrackingWheel.html#abed254f7a1ac5f2ec415e864766c2563">distance</a>, <span class="keywordtype">float</span> <a class="code" href="classpxl_1_1TrackingWheel.html#a5578ffe547c1ec8711c751d61ebb8a23">rpm</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classpxl_1_1TrackingWheel.html#ae9ea834fd9c5426ce2c72709166cf8aa">TrackingWheel</a>(pros::MotorGroup *<a class="code" href="classpxl_1_1TrackingWheel.html#acd951972355bea5863f875ca0941ba6a">motors</a>, <span class="keywordtype">float</span> wheelDiameter, <span class="keywordtype">float</span> <a class="code" href="classpxl_1_1TrackingWheel.html#abed254f7a1ac5f2ec415e864766c2563">distance</a>, <span class="keywordtype">float</span> <a class="code" href="classpxl_1_1TrackingWheel.html#a5578ffe547c1ec8711c751d61ebb8a23">rpm</a>);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// Reset the optocal encoder measurement</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classpxl_1_1TrackingWheel.html#aa9d1586ec8052d2340ff34f3fc1c5136">reset</a>();</div>
@@ -123,9 +121,6 @@ $(function() {
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}  <span class="comment">// namespace pxl</span></div>
-<div class="ttc" id="aclasspros_1_1ADIEncoder_html"><div class="ttname"><a href="classpros_1_1ADIEncoder.html">pros::ADIEncoder</a></div><div class="ttdef"><b>Definition:</b> adi.hpp:467</div></div>
-<div class="ttc" id="aclasspros_1_1Motor__Group_html"><div class="ttname"><a href="classpros_1_1Motor__Group.html">pros::Motor_Group</a></div><div class="ttdef"><b>Definition:</b> motors.hpp:860</div></div>
-<div class="ttc" id="aclasspros_1_1Rotation_html"><div class="ttname"><a href="classpros_1_1Rotation.html">pros::Rotation</a></div><div class="ttdef"><b>Definition:</b> rotation.hpp:26</div></div>
 <div class="ttc" id="aclasspxl_1_1TrackingWheel_html"><div class="ttname"><a href="classpxl_1_1TrackingWheel.html">pxl::TrackingWheel</a></div><div class="ttdef"><b>Definition:</b> trackingwheel.hpp:20</div></div>
 <div class="ttc" id="aclasspxl_1_1TrackingWheel_html_a0969c09b1bb445d0ef24a4eb59743ccd"><div class="ttname"><a href="classpxl_1_1TrackingWheel.html#a0969c09b1bb445d0ef24a4eb59743ccd">pxl::TrackingWheel::getDistanceTraveled</a></div><div class="ttdeci">float getDistanceTraveled()</div><div class="ttdef"><b>Definition:</b> trackingwheel.cpp:36</div></div>
 <div class="ttc" id="aclasspxl_1_1TrackingWheel_html_a3f855fdbca546ca85e911f40f16eb0ba"><div class="ttname"><a href="classpxl_1_1TrackingWheel.html#a3f855fdbca546ca85e911f40f16eb0ba">pxl::TrackingWheel::getOffset</a></div><div class="ttdeci">float getOffset()</div><div class="ttdef"><b>Definition:</b> trackingwheel.cpp:68</div></div>
@@ -141,14 +136,13 @@ $(function() {
 <div class="ttc" id="aclasspxl_1_1TrackingWheel_html_ad84e3f65f1d25eab6f8790761a42de82"><div class="ttname"><a href="classpxl_1_1TrackingWheel.html#ad84e3f65f1d25eab6f8790761a42de82">pxl::TrackingWheel::lastAngle</a></div><div class="ttdeci">float lastAngle</div><div class="ttdef"><b>Definition:</b> trackingwheel.hpp:53</div></div>
 <div class="ttc" id="aclasspxl_1_1TrackingWheel_html_ae9ea834fd9c5426ce2c72709166cf8aa"><div class="ttname"><a href="classpxl_1_1TrackingWheel.html#ae9ea834fd9c5426ce2c72709166cf8aa">pxl::TrackingWheel::TrackingWheel</a></div><div class="ttdeci">TrackingWheel(pros::ADIEncoder *encoder, float wheelDiameter, float distance, float gearRatio)</div><div class="ttdef"><b>Definition:</b> trackingwheel.cpp:19</div></div>
 <div class="ttc" id="aclasspxl_1_1TrackingWheel_html_af337d8abfaa24b0a88a7917dbb7d321f"><div class="ttname"><a href="classpxl_1_1TrackingWheel.html#af337d8abfaa24b0a88a7917dbb7d321f">pxl::TrackingWheel::getType</a></div><div class="ttdeci">int getType()</div><div class="ttdef"><b>Definition:</b> trackingwheel.cpp:71</div></div>
-<div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div></div>
 <div class="ttc" id="anamespacepxl_html"><div class="ttname"><a href="namespacepxl.html">pxl</a></div><div class="ttdef"><b>Definition:</b> aSync.hpp:12</div></div>
-<div class="ttc" id="apxl_2timer_8hpp_html"><div class="ttname"><a href="pxl_2timer_8hpp.html">timer.hpp</a></div></div>
+<div class="ttc" id="atimer_8hpp_html"><div class="ttname"><a href="timer_8hpp.html">timer.hpp</a></div></div>
 <div class="ttc" id="autil_8hpp_html"><div class="ttname"><a href="util_8hpp.html">util.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 07:13:34 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Mar 6 2024 07:29:08 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

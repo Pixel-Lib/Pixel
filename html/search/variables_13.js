@@ -1,30 +1,4 @@
 var searchData=
 [
-  ['s_5802',['s',['../structlv__color__hsv__t.html#ad95e4cc269ea11bf20f2e56e8dd92037',1,'lv_color_hsv_t']]],
-  ['sampletime_5803',['sampleTime',['../classokapi_1_1IterativePosPIDController.html#a336e78abe2cf481b2c8f7a389cdd26fb',1,'okapi::IterativePosPIDController::sampleTime()'],['../classokapi_1_1VelMath.html#a015a781b3f7f454f24b1a86a43a9a76d',1,'okapi::VelMath::sampleTime()'],['../classokapi_1_1IterativeVelPIDController.html#a2026bfca681440317f7438015cd5e8b6',1,'okapi::IterativeVelPIDController::sampleTime()']]],
-  ['scales_5804',['scales',['../classokapi_1_1ChassisControllerIntegrated.html#af833eeaa8569585c7f44280261c46521',1,'okapi::ChassisControllerIntegrated::scales()'],['../classokapi_1_1ChassisControllerPID.html#acecccb0badc5500ab3220b446eb36f1b',1,'okapi::ChassisControllerPID::scales()'],['../classokapi_1_1AsyncMotionProfileController.html#aad6f433eebbc0f7dff98cd3f258981a4',1,'okapi::AsyncMotionProfileController::scales()'],['../classokapi_1_1AsyncMotionProfileControllerBuilder.html#a5e843444c5ef3e9316a28ca7db5ab10d',1,'okapi::AsyncMotionProfileControllerBuilder::scales()']]],
-  ['screen_5805',['screen',['../structlcd__s.html#ae9982890a610a39d2a2c6986652d96fc',1,'lcd_s']]],
-  ['sec_5806',['sec',['../structtime__s__t.html#ac331455646d2ae3b6ef3672bb34f154d',1,'time_s_t']]],
-  ['sec_5fhund_5807',['sec_hund',['../structtime__s__t.html#a5c9fdbfdbd365798a0aadf8602e645b0',1,'time_s_t']]],
-  ['sensor_5808',['sensor',['../classokapi_1_1AsyncVelControllerBuilder.html#af2a4314fbfff5ca2e14cc00688ba3663',1,'okapi::AsyncVelControllerBuilder::sensor()'],['../classokapi_1_1AsyncPosControllerBuilder.html#a7863e4cdd84a2272e950782e97a9d81c',1,'okapi::AsyncPosControllerBuilder::sensor()']]],
-  ['sensors_5809',['sensors',['../classpxl_1_1Drivebase.html#a728c5496401d6b53e263e4c522c720f9',1,'pxl::Drivebase']]],
-  ['sensorssetbyuser_5810',['sensorsSetByUser',['../classokapi_1_1ChassisControllerBuilder.html#a82c45aeb7427b1ddaca0f2ff2edbcf3f',1,'okapi::ChassisControllerBuilder::sensorsSetByUser()'],['../classokapi_1_1AsyncPosControllerBuilder.html#ab46ebc95361486cf59aa0969706b693e',1,'okapi::AsyncPosControllerBuilder::sensorsSetByUser()'],['../classokapi_1_1AsyncVelControllerBuilder.html#a58c3ab747c8b20bf31b8ceeab854faf4',1,'okapi::AsyncVelControllerBuilder::sensorsSetByUser()']]],
-  ['settledutil_5811',['settledUtil',['../classokapi_1_1AsyncPosIntegratedController.html#a3d8f6b2fc0cc4019742de861b0e42d60',1,'okapi::AsyncPosIntegratedController::settledUtil()'],['../classokapi_1_1AsyncVelIntegratedController.html#aa9890eed087ca10be20b6fc3936508b9',1,'okapi::AsyncVelIntegratedController::settledUtil()'],['../classokapi_1_1IterativePosPIDController.html#ada52e35922bbe26a1fd464547800d56f',1,'okapi::IterativePosPIDController::settledUtil()'],['../classokapi_1_1IterativeVelPIDController.html#af37e9751a7e976232074b855efefa06b',1,'okapi::IterativeVelPIDController::settledUtil()']]],
-  ['settledutilsupplier_5812',['settledUtilSupplier',['../classokapi_1_1TimeUtil.html#aab5bc0e4f9c14b511c53211f2374fa1b',1,'okapi::TimeUtil']]],
-  ['shadow_5813',['shadow',['../structlv__style__t.html#a8d365c90b86801372f946c844b10c69a',1,'lv_style_t']]],
-  ['shouldresetoncross_5814',['shouldResetOnCross',['../classokapi_1_1IterativePosPIDController.html#af64cc9a0bca1738b49a3f9d6e84b010a',1,'okapi::IterativePosPIDController']]],
-  ['signal_5ffunc_5815',['signal_func',['../struct__lv__obj__t.html#a67dfa50ddb472550147245d920ecf0e3',1,'_lv_obj_t']]],
-  ['skidsteermotors_5816',['skidSteerMotors',['../classokapi_1_1ChassisControllerBuilder.html#a7cdc148f76862392b61422bf29a4c950',1,'okapi::ChassisControllerBuilder']]],
-  ['smartport_5817',['smartPort',['../classokapi_1_1ADIButton.html#a6fd70c72855ac9e2272767b25a6b86e4',1,'okapi::ADIButton::smartPort()'],['../classokapi_1_1ADIMotor.html#ae6d156583d4fc3b809577ff26a7c7252',1,'okapi::ADIMotor::smartPort()'],['../classokapi_1_1Potentiometer.html#a0fed920f62b16281a7c73fa109faba3d',1,'okapi::Potentiometer::smartPort()']]],
-  ['ssactive_5818',['SSActive',['../structpxl_1_1stand__still.html#a7910d69b391ab17e343c6a1fc3c239fe',1,'pxl::stand_still']]],
-  ['ssactive_5ft_5819',['SSActive_t',['../structpxl_1_1stand__still.html#a2e22ef96a55aa3ae1bfb8c330c06f580',1,'pxl::stand_still']]],
-  ['ssmaxcount_5flateral_5820',['SSMaxCount_lateral',['../structpxl_1_1stand__still.html#a0abbaf232fde9b5b7a0257c286f8b2cc',1,'pxl::stand_still']]],
-  ['ssmaxcount_5fturn_5821',['SSMaxCount_turn',['../structpxl_1_1stand__still.html#a2ab6b4a801543c057a625baa08a95345',1,'pxl::stand_still']]],
-  ['start_5ftime_5822',['start_time',['../classpxl_1_1Timer.html#a600743692bb612a84fdb826e9ad76a90',1,'pxl::Timer']]],
-  ['state_5823',['state',['../structlv__indev__data__t.html#aed0de26ed88301e92bc3d95020a9893b',1,'lv_indev_data_t::state()'],['../struct__lv__indev__proc__t.html#a993ced14d531f55381346cebf8a978d8',1,'_lv_indev_proc_t::state()'],['../classokapi_1_1TwoEncoderOdometry.html#af71ceb13a03677b4a0048ad905c97f10',1,'okapi::TwoEncoderOdometry::state()']]],
-  ['statemode_5824',['stateMode',['../classokapi_1_1ChassisControllerBuilder.html#a005e5a409f953b868803be52662e943a',1,'okapi::ChassisControllerBuilder']]],
-  ['stone_5825',['stone',['../namespaceokapi.html#a023f7a7c757c8d9f08eebc0d94733fcf',1,'okapi']]],
-  ['stop_5ftime_5826',['stop_time',['../classpxl_1_1Timer.html#ace66b1d56527b18ba9939cfe9f1faeab',1,'pxl::Timer']]],
-  ['straight_5827',['straight',['../classokapi_1_1ChassisScales.html#aaf1ec10f7cfa955d6d8eaa2b16dd345f',1,'okapi::ChassisScales']]],
-  ['style_5fp_5828',['style_p',['../struct__lv__obj__t.html#aae8e88ef15ba4eedf3150eb5d1ae7021',1,'_lv_obj_t']]]
+  ['y_299',['y',['../classpxl_1_1Coord.html#a8d4004151f08e16de5f5e4b722104fea',1,'pxl::Coord']]]
 ];

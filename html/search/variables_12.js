@@ -1,26 +1,4 @@
 var searchData=
 [
-  ['r_5779',['R',['../classokapi_1_1EKFFilter.html#acadc8bcf0ad09e43e86634e4c02f18ab',1,'okapi::EKFFilter']]],
-  ['radiantodegree_5780',['radianToDegree',['../namespaceokapi.html#aa1f1932af0b3ec79171c302a2ed2349e',1,'okapi']]],
-  ['radius_5781',['radius',['../structlv__style__t.html#a4562ec9b4de4174dce2d8e6644ae02bf',1,'lv_style_t']]],
-  ['radps_5782',['radps',['../namespaceokapi.html#aec15098b7cc08fb5c6c99faa058a1f72',1,'okapi']]],
-  ['rate_5783',['rate',['../classokapi_1_1ControllerRunner.html#ac3c13044655d54c89e5bb14b1c6bc5f6',1,'okapi::ControllerRunner::rate()'],['../classokapi_1_1TwoEncoderOdometry.html#ab7a5560fc195efa2782c266a37ca844f',1,'okapi::TwoEncoderOdometry::rate()']]],
-  ['ratesupplier_5784',['rateSupplier',['../classokapi_1_1AsyncWrapper.html#ad758e3e7e99f65dc9f2c97312a6e7483',1,'okapi::AsyncWrapper::rateSupplier()'],['../classokapi_1_1TimeUtil.html#afdd2a5ab8f268868daf26ecd74580983',1,'okapi::TimeUtil::rateSupplier()']]],
-  ['ratio_5785',['ratio',['../classokapi_1_1AsyncWrapper.html#a2fbcaacada8d9de5111d7c420a4a4635',1,'okapi::AsyncWrapper::ratio()'],['../structokapi_1_1AbstractMotor_1_1GearsetRatioPair.html#a4a8e2e226cf3171194616b125ead58cb',1,'okapi::AbstractMotor::GearsetRatioPair::ratio()']]],
-  ['rdata_5786',['rdata',['../structoptical__gesture__s.html#ac404b4408927339239195adb46bbb490',1,'optical_gesture_s']]],
-  ['read_5787',['read',['../structlv__indev__drv__t.html#a7533fbc36bd2982872e3b6a3ea03a8d0',1,'lv_indev_drv_t']]],
-  ['red_5788',['red',['../unionlv__color32__t.html#a7e62d507ce57ce35236017591fab3224',1,'lv_color32_t::red()'],['../structoptical__raw__s.html#a487591430aeb420137f6b011b5b6a885',1,'optical_raw_s::red()'],['../structoptical__rgb__s.html#a015a92833fa4a716bcbf13e861ab28ec',1,'optical_rgb_s::red()'],['../unionlv__color16__t.html#a0040e16563df0dd2d1f052e8cac9a980',1,'lv_color16_t::red()'],['../unionlv__color8__t.html#abed658f0eaf8cee7278869ad88246d68',1,'lv_color8_t::red()'],['../unionlv__color1__t.html#a43b5e095f8632b825693462b85b22132',1,'lv_color1_t::red()']]],
-  ['release_5fcount_5789',['release_count',['../structscreen__touch__status__s.html#af8e2122b4c9363c2e6f4666285bee71d',1,'screen_touch_status_s']]],
-  ['repeatmark_5790',['repeatMark',['../classokapi_1_1AbstractTimer.html#ae3d1fd628749051d0b90b066bccd4e2b',1,'okapi::AbstractTimer']]],
-  ['reserved_5791',['reserved',['../structlv__img__header__t.html#a7cf6525f2cb39346f5438973c489bf89',1,'lv_img_header_t']]],
-  ['reset_5fquery_5792',['reset_query',['../struct__lv__indev__proc__t.html#ab7a4b61acd0befd72fd772d2e51704f5',1,'_lv_indev_proc_t']]],
-  ['reversed_5793',['reversed',['../classokapi_1_1ADIMotor.html#ac9746408ff711b8926b9dcd3af73c52d',1,'okapi::ADIMotor::reversed()'],['../classokapi_1_1RotationSensor.html#a6966e0c84044ff4c1a9392a1ae4898a5',1,'okapi::RotationSensor::reversed()'],['../classokapi_1_1Motor.html#ad5d21f1324cc2dc887075eb11c38149d',1,'okapi::Motor::reversed()'],['../classokapi_1_1IntegratedEncoder.html#a7a354457ac0f976c9aab65c73070c0ee',1,'okapi::IntegratedEncoder::reversed()']]],
-  ['right_5794',['right',['../structokapi_1_1ChassisControllerBuilder_1_1SkidSteerMotors.html#ac8d7573a360e0e2825f475d0b76f7046',1,'okapi::ChassisControllerBuilder::SkidSteerMotors::right()'],['../structokapi_1_1ChassisControllerBuilder_1_1HDriveMotors.html#ad3a2730169d08d518f0ee09cd071e7ad',1,'okapi::ChassisControllerBuilder::HDriveMotors::right()']]],
-  ['rightcontroller_5795',['rightController',['../classokapi_1_1ChassisControllerIntegrated.html#a830da9ca0c53fcf7d85f37f48489be90',1,'okapi::ChassisControllerIntegrated']]],
-  ['rightmotors_5796',['rightMotors',['../classpxl_1_1Drivetrain.html#a6344bb88ae3424a089fb1d83d04a5537',1,'pxl::Drivetrain']]],
-  ['rightsensor_5797',['rightSensor',['../classokapi_1_1HDriveModel.html#ae9b0edfd8c1dd284f9bd945f1d8cf7e5',1,'okapi::HDriveModel::rightSensor()'],['../classokapi_1_1SkidSteerModel.html#a35b26b12648944bb561e7978468fd679',1,'okapi::SkidSteerModel::rightSensor()'],['../classokapi_1_1XDriveModel.html#ab50a3276501ce448d46415361f8a422f',1,'okapi::XDriveModel::rightSensor()'],['../classokapi_1_1ChassisControllerBuilder.html#a4d6c6037aa312ed880d5d7d618a38eaa',1,'okapi::ChassisControllerBuilder::rightSensor()']]],
-  ['rightsidemotor_5798',['rightSideMotor',['../classokapi_1_1HDriveModel.html#aaaa5ce8d4b5dd4aaa7b09b4e3ba1d08f',1,'okapi::HDriveModel::rightSideMotor()'],['../classokapi_1_1SkidSteerModel.html#a858a234f53f66803c7a498e69c86032b',1,'okapi::SkidSteerModel::rightSideMotor()']]],
-  ['rotation_5799',['rotation',['../classpxl_1_1TrackingWheel.html#acb1dcd5717522cf35cb10b4be2821be4',1,'pxl::TrackingWheel']]],
-  ['rounded_5800',['rounded',['../structlv__style__t.html#aaf306fbee4215629db8ff5fb6809cf1a',1,'lv_style_t']]],
-  ['rpm_5801',['rpm',['../classpxl_1_1Drivetrain.html#a3a13181dc7d479fdb4c5e28d79249371',1,'pxl::Drivetrain::rpm()'],['../classpxl_1_1TrackingWheel.html#a5578ffe547c1ec8711c751d61ebb8a23',1,'pxl::TrackingWheel::rpm()'],['../namespaceokapi.html#a44d420085fe3c46220da4b11e5827453',1,'okapi::rpm()']]]
+  ['x_298',['x',['../classpxl_1_1Coord.html#a0e13da815158aae4c34357cb5b8b2ea6',1,'pxl::Coord']]]
 ];

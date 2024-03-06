@@ -1,20 +1,6 @@
 var searchData=
 [
-  ['feedback_5464',['feedback',['../struct__lv__indev__t.html#a6ba8bca6f5ef2042567d83d937fc98d7',1,'_lv_indev_t']]],
-  ['fill_5ffp_5465',['fill_fp',['../lv__draw_8h.html#a46e4758d2080d0124e22933925509447',1,'lv_draw.h']]],
-  ['filter_5466',['filter',['../classokapi_1_1FilteredControllerInput.html#abe6797c377795f6bf995053bbb46c870',1,'okapi::FilteredControllerInput::filter()'],['../classokapi_1_1VelMath.html#ab100cf49e925d37139d5bf4c4aca87d0',1,'okapi::VelMath::filter()'],['../classokapi_1_1ADIUltrasonic.html#aa2537c5ffc44d18838b0710af72bf338',1,'okapi::ADIUltrasonic::filter()'],['../classokapi_1_1DistanceSensor.html#a39a1c8b3be58cf987935e3d67f691ba3',1,'okapi::DistanceSensor::filter()'],['../classokapi_1_1OpticalSensor.html#a0967cfc6dc3536b8b42550891447b6c6',1,'okapi::OpticalSensor::filter()'],['../structmotor__pid__full__s.html#af6f15fc8e1a49098f69aba255a3b21c6',1,'motor_pid_full_s::filter()'],['../motors_8h.html#a662af1e27686868b9fc7c05abaccfab4',1,'filter():&#160;motors.h']]],
-  ['filters_5467',['filters',['../classokapi_1_1ComposableFilter.html#a83da1d231c702e8db79557a2b458fc90',1,'okapi::ComposableFilter']]],
-  ['firstcalled_5468',['firstCalled',['../classokapi_1_1AbstractTimer.html#ace6c48ceaa4736cca3d34345fc8a9f5b',1,'okapi::AbstractTimer']]],
-  ['font_5469',['font',['../structlv__style__t.html#afe8cfa5187472a3c7542e4c5e1cb234b',1,'lv_style_t']]],
-  ['foot_5470',['foot',['../namespaceokapi.html#a76974d5bf7ed9473b2d59153894a8587',1,'okapi']]],
-  ['foot2_5471',['foot2',['../namespaceokapi.html#a30332192fb24d5d1f81883969ec4878a',1,'okapi']]],
-  ['foot3_5472',['foot3',['../namespaceokapi.html#a287daabad9e16ca8503cbadba7dde50c',1,'okapi']]],
-  ['footpound_5473',['footPound',['../namespaceokapi.html#a2312145f0a7f17b0a275289bfd369308',1,'okapi']]],
-  ['frag_5fpct_5474',['frag_pct',['../structlv__mem__monitor__t.html#a68d42298e5029f634e5a19f27fa7da2e',1,'lv_mem_monitor_t']]],
-  ['frame_5475',['frame',['../structlcd__s.html#a5067b029a06de4122b9629596a96ab2a',1,'lcd_s']]],
-  ['free_5fbiggest_5fsize_5476',['free_biggest_size',['../structlv__mem__monitor__t.html#a2e415ca957da17290eb8055dc0c89982',1,'lv_mem_monitor_t']]],
-  ['free_5fcnt_5477',['free_cnt',['../structlv__mem__monitor__t.html#a46dc7a9d497afe396db3f3da455c15a1',1,'lv_mem_monitor_t']]],
-  ['free_5fsize_5478',['free_size',['../structlv__mem__monitor__t.html#a27adcfe2602ed3d9f91cab48e3b789fd',1,'lv_mem_monitor_t']]],
-  ['full_5479',['full',['../unionlv__color8__t.html#a6f95b496bba6bb7b79d7322551219ba7',1,'lv_color8_t::full()'],['../unionlv__color16__t.html#a1ca6c661db8e7551e95792af824f6403',1,'lv_color16_t::full()'],['../unionlv__color32__t.html#a724212bffcd824d555e7842b4d3a88c6',1,'lv_color32_t::full()'],['../unionlv__color1__t.html#ab0765bc623f863cc7d1cb39381fc3509',1,'lv_color1_t::full()']]],
-  ['func_5480',['func',['../classokapi_1_1Supplier.html#aad4dde721930a73ed5077011bab8203c',1,'okapi::Supplier::func()'],['../structpxl_1_1ActionFuncTuple.html#ae34e5329c385772bd1f90a7a168763cc',1,'pxl::ActionFuncTuple::func()']]]
+  ['horizontal1_259',['horizontal1',['../structpxl_1_1OdomSensors.html#a2dd0628c215af361c4922bca0fde254c',1,'pxl::OdomSensors']]],
+  ['horizontal2_260',['horizontal2',['../structpxl_1_1OdomSensors.html#a71ae35001131c6b72e944509abfeb41b',1,'pxl::OdomSensors']]],
+  ['horizontals_261',['horizontals',['../classpxl_1_1Odom.html#a583a89074d5f9da5b7722fc471a49f41',1,'pxl::Odom']]]
 ];

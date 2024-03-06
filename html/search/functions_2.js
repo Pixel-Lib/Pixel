@@ -1,22 +1,7 @@
 var searchData=
 [
-  ['backward_5fpass_4021',['backward_pass',['../classsquiggles_1_1SplineGenerator.html#ac11222b1179dc05ae2e58d350e4dcd99',1,'squiggles::SplineGenerator']]],
-  ['battery_5fget_5fcapacity_4022',['battery_get_capacity',['../misc_8h.html#ae692171cfb44885421dc1ef873701e05',1,'misc.h']]],
-  ['battery_5fget_5fcurrent_4023',['battery_get_current',['../misc_8h.html#a20e84af87727a57282efd63cf76c8e78',1,'misc.h']]],
-  ['battery_5fget_5ftemperature_4024',['battery_get_temperature',['../misc_8h.html#a60d32e15ea7ab1b2d7fa6b63c44a5027',1,'misc.h']]],
-  ['battery_5fget_5fvoltage_4025',['battery_get_voltage',['../misc_8h.html#a3e2a84e664eb602bd21a481259a94f56',1,'misc.h']]],
-  ['booltosign_4026',['boolToSign',['../namespaceokapi.html#a8b21920388594f5d7da116069741deb4',1,'okapi']]],
-  ['brake_4027',['brake',['../classpros_1_1Motor.html#ac56dca42bbddd3c7bc9fa382eab1fdf0',1,'pros::Motor::brake()'],['../classpros_1_1Motor__Group.html#ad77dbd809c6e6a08342cac49198da5f4',1,'pros::Motor_Group::brake()']]],
-  ['build_4028',['build',['../classokapi_1_1AsyncVelControllerBuilder.html#aafa13f7cec734a343a59866e921d8a5d',1,'okapi::AsyncVelControllerBuilder::build()'],['../classokapi_1_1AsyncPosControllerBuilder.html#aeb968e182b805b392bfb69e2e137003f',1,'okapi::AsyncPosControllerBuilder::build()'],['../classokapi_1_1ChassisControllerBuilder.html#a5c1a33d63984e32162b08d6121bb8f55',1,'okapi::ChassisControllerBuilder::build()']]],
-  ['buildapic_4029',['buildAPIC',['../classokapi_1_1AsyncPosControllerBuilder.html#acc496bb0ac469f3755172cd795f4bcdb',1,'okapi::AsyncPosControllerBuilder']]],
-  ['buildappc_4030',['buildAPPC',['../classokapi_1_1AsyncPosControllerBuilder.html#a68dcd7a06e50faf9ac10a01a3151a3db',1,'okapi::AsyncPosControllerBuilder']]],
-  ['buildavic_4031',['buildAVIC',['../classokapi_1_1AsyncVelControllerBuilder.html#aed338dc0f2a077432e06a85327c9c9d7',1,'okapi::AsyncVelControllerBuilder']]],
-  ['buildavpc_4032',['buildAVPC',['../classokapi_1_1AsyncVelControllerBuilder.html#a49958dcc841de4c6f836493a249d750a',1,'okapi::AsyncVelControllerBuilder']]],
-  ['buildcci_4033',['buildCCI',['../classokapi_1_1ChassisControllerBuilder.html#af49ee3597e5cb4e5b3129be5e338f94d',1,'okapi::ChassisControllerBuilder']]],
-  ['buildccpid_4034',['buildCCPID',['../classokapi_1_1ChassisControllerBuilder.html#a06a142e0d6d5e096e6a856f559ff905b',1,'okapi::ChassisControllerBuilder']]],
-  ['builddocc_4035',['buildDOCC',['../classokapi_1_1ChassisControllerBuilder.html#aec0444a8ef1cbfd436fae729accc05f9',1,'okapi::ChassisControllerBuilder']]],
-  ['buildlinearmotionprofilecontroller_4036',['buildLinearMotionProfileController',['../classokapi_1_1AsyncMotionProfileControllerBuilder.html#a42b8a243aa7f5a5a9989c37175e0eab9',1,'okapi::AsyncMotionProfileControllerBuilder']]],
-  ['buildmotionprofilecontroller_4037',['buildMotionProfileController',['../classokapi_1_1AsyncMotionProfileControllerBuilder.html#aa66b2ab367516725761a0070ab85c0bc',1,'okapi::AsyncMotionProfileControllerBuilder']]],
-  ['buildodometry_4038',['buildOdometry',['../classokapi_1_1ChassisControllerBuilder.html#ad1a033fbe6d59d8f5bcd947f37cc2d56',1,'okapi::ChassisControllerBuilder']]],
-  ['buttonbase_4039',['ButtonBase',['../classokapi_1_1ButtonBase.html#a6327e273244bac5ca425f23999807849',1,'okapi::ButtonBase']]]
+  ['degtorad_198',['degToRad',['../namespacepxl.html#a092e7e57e83f9d3a78fe9ffcf940cef8',1,'pxl']]],
+  ['distance_199',['distance',['../classpxl_1_1Coord.html#afa78aa9b2e87a58802654f51503ebae0',1,'pxl::Coord']]],
+  ['drivebase_200',['Drivebase',['../classpxl_1_1Drivebase.html#a25d0e673e2558ca46d81f21ea81714ca',1,'pxl::Drivebase']]],
+  ['drivetrain_201',['Drivetrain',['../classpxl_1_1Drivetrain.html#aede2e8ef67b2ae3fd1fde91cb924e3ee',1,'pxl::Drivetrain']]]
 ];

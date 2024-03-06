@@ -6,12 +6,8 @@ digraph "pxl::Drivebase"
   Node1 [label="pxl::Drivebase",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" drivetrain" ,fontname="Helvetica"];
   Node2 [label="pxl::Drivetrain",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1Drivetrain.html",tooltip=" "];
-  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" leftMotors\nrightMotors" ,fontname="Helvetica"];
-  Node3 [label="pros::Motor_Group",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpros_1_1Motor__Group.html",tooltip=" "];
-  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" odomSensors\nsensors" ,fontname="Helvetica"];
-  Node4 [label="pxl::OdomSensors",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structpxl_1_1OdomSensors.html",tooltip=" "];
-  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" imu" ,fontname="Helvetica"];
-  Node5 [label="pros::Imu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpros_1_1Imu.html",tooltip=" "];
-  Node6 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" horizontal1\nhorizontal2\nvertical1\nvertical2" ,fontname="Helvetica"];
-  Node6 [label="pxl::TrackingWheel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1TrackingWheel.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" odomSensors\nsensors" ,fontname="Helvetica"];
+  Node3 [label="pxl::OdomSensors",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structpxl_1_1OdomSensors.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" horizontal1\nhorizontal2\nvertical1\nvertical2" ,fontname="Helvetica"];
+  Node4 [label="pxl::TrackingWheel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1TrackingWheel.html",tooltip=" "];
 }

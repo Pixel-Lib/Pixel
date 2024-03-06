@@ -1,13 +1,10 @@
 var searchData=
 [
-  ['n_5fsize_5709',['n_size',['../structlv__ll__t.html#a8dbe5afd50ad7e26e8035330f811cb57',1,'lv_ll_t']]],
-  ['newmovement_5710',['newMovement',['../classokapi_1_1ChassisControllerPID.html#ad83f673aa55a0d76854421ba49716e00',1,'okapi::ChassisControllerPID']]],
-  ['newticks_5711',['newTicks',['../classokapi_1_1TwoEncoderOdometry.html#a501958376980a769fc33669480676aaa',1,'okapi::TwoEncoderOdometry']]],
-  ['newton_5712',['newton',['../namespaceokapi.html#a66d91011ac90f25dc5e518f092cc5a74',1,'okapi']]],
-  ['newtonmeter_5713',['newtonMeter',['../namespaceokapi.html#a3d685da47b39ff4bdf1936c2e12076ee',1,'okapi']]],
-  ['next_5714',['next',['../struct__disp__t.html#affd9c2d4529dff85b079189219d97d1c',1,'_disp_t::next()'],['../struct__lv__indev__t.html#a79b395b9d7d45b376a14b2e0be430ff0',1,'_lv_indev_t::next()']]],
-  ['next_5fpage_5715',['next_page',['../struct__lv__font__struct.html#a9f97a49208cd93e0f93a51aff3a8c8bb',1,'_lv_font_struct']]],
-  ['normalturns_5716',['normalTurns',['../classokapi_1_1ChassisControllerIntegrated.html#a76f6d35c280f998a9d8af013e9131f90',1,'okapi::ChassisControllerIntegrated::normalTurns()'],['../classokapi_1_1ChassisControllerPID.html#a12fdde8486bd712e728b8e538a640387',1,'okapi::ChassisControllerPID::normalTurns()']]],
-  ['numiterations_5717',['numIterations',['../classokapi_1_1PIDTuner.html#ad37777a3d7646873c2384e40a567c2db',1,'okapi::PIDTuner']]],
-  ['numparticles_5718',['numParticles',['../classokapi_1_1PIDTuner.html#ae95d28fbed3acea4722a8f24a15d7d0b',1,'okapi::PIDTuner']]]
+  ['sensors_284',['sensors',['../classpxl_1_1Drivebase.html#a728c5496401d6b53e263e4c522c720f9',1,'pxl::Drivebase']]],
+  ['ssactive_285',['SSActive',['../structpxl_1_1stand__still.html#a7910d69b391ab17e343c6a1fc3c239fe',1,'pxl::stand_still']]],
+  ['ssactive_5ft_286',['SSActive_t',['../structpxl_1_1stand__still.html#a2e22ef96a55aa3ae1bfb8c330c06f580',1,'pxl::stand_still']]],
+  ['ssmaxcount_5flateral_287',['SSMaxCount_lateral',['../structpxl_1_1stand__still.html#a0abbaf232fde9b5b7a0257c286f8b2cc',1,'pxl::stand_still']]],
+  ['ssmaxcount_5fturn_288',['SSMaxCount_turn',['../structpxl_1_1stand__still.html#a2ab6b4a801543c057a625baa08a95345',1,'pxl::stand_still']]],
+  ['start_5ftime_289',['start_time',['../classpxl_1_1Timer.html#a600743692bb612a84fdb826e9ad76a90',1,'pxl::Timer']]],
+  ['stop_5ftime_290',['stop_time',['../classpxl_1_1Timer.html#ace66b1d56527b18ba9939cfe9f1faeab',1,'pxl::Timer']]]
 ];
