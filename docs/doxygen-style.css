@@ -1,10 +1,11 @@
 /* Change the layout of the headers */
 h1, h2, h3, h4, h5, h6 {
-    color: #333;
+    color: #f47c20; /* Orange color from your website */
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 300;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    text-align: center; /* Center align headers */
 }
 
 /* Change the layout of the tabs */
@@ -12,11 +13,13 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-around;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #2c3e50; /* Dark blue color from your website */
+    position: fixed; /* Make navbar fixed at the top */
+    width: 100%; /* Full width */
 }
 
 .navbar a {
-    color: #333;
+    color: #ecf0f1; /* Light gray color from your website */
     text-decoration: none;
     font-size: 1.2em;
 }
