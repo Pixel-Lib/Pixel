@@ -8,20 +8,28 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
     - uses: actions/checkout@v2
+
     - name: Cache Doxygen
       uses: actions/cache@v2
       with:
         path: ~/doxygen
-        key: ${{ runner.os }}-doxygen-${{ hashFiles('**/Doxyfile') }}
+        key: ${{ runner.os }}-doxygen-${{ hashFiles('**/Doxyfile') }}-${{ steps.date.outputs.date }}
+
     - name: Install Doxygen
       run: |
         if [ ! -d "~/doxygen" ]; then
           sudo apt-get install doxygen
         fi
+
     - name: Generate Doxygen
       run: |
         doxygen Doxyfile || exit 1
+
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:

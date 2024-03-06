@@ -13,6 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Get Date
+        id: get-date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.npm
+          key: ${{ runner.os }}-dependencies-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-dependencies-${{ steps.get-date.outputs.date }}-
+            ${{ runner.os }}-dependencies-
+            ${{ runner.os }}-
       - name: Get short SHA
         id: short-sha
         run: |
