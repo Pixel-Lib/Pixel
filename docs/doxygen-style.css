@@ -1,0 +1,14 @@
+/* Change the background color of the body */
+body {
+    background-color: #f0f0f0;
+}
+
+/* Change the font of the text */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {
+    font-family: Arial, sans-serif;
+}
+
+/* Change the color of the headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
