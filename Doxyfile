@@ -1,16 +1,6 @@
 PROJECT_NAME           = "Pixel"
 INPUT                  = include/pxl src/pxl
-RECURSIVE              = YES
 OUTPUT_DIRECTORY       = doc
 GENERATE_HTML          = YES
-HTML_COLORSTYLE_HUE    = 220    # Change the hue to a cooler color
-HTML_COLORSTYLE_SAT    = 120    # Increase the saturation for a more vibrant look
-HTML_COLORSTYLE_GAMMA  = 80     # Decrease the gamma for a darker look
-HTML_TIMESTAMP         = YES
-HTML_DYNAMIC_SECTIONS  = YES
-GENERATE_LATEX         = YES
-EXTRACT_ALL            = YES
-EXTRACT_PRIVATE        = YES
-EXTRACT_STATIC         = YES
 FILE_PATTERNS          = *.cpp *.hpp *.h
 HTML_EXTRA_STYLESHEET  = docs/doxygen-style.css
