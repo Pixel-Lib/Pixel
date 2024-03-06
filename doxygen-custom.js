@@ -35,14 +35,28 @@ document.querySelectorAll('.dropdown-toggle').forEach((dropdown) => {
 function switchToDarkMode() {
     document.documentElement.style.setProperty('--color-background', 'var(--color-background-dark)');
     document.documentElement.style.setProperty('--color-foreground', 'var(--color-foreground-dark)');
-    // ... rest of color variables ...
+    document.documentElement.style.setProperty('--color-comment', 'var(--color-comment-dark)');
+    document.documentElement.style.setProperty('--color-red', 'var(--color-red-dark)');
+    document.documentElement.style.setProperty('--color-orange', 'var(--color-orange-dark)');
+    document.documentElement.style.setProperty('--color-yellow', 'var(--color-yellow-dark)');
+    document.documentElement.style.setProperty('--color-green', 'var(--color-green-dark)');
+    document.documentElement.style.setProperty('--color-cyan', 'var(--color-cyan-dark)');
+    document.documentElement.style.setProperty('--color-blue', 'var(--color-blue-dark)');
+    document.documentElement.style.setProperty('--color-purple', 'var(--color-purple-dark)');
 }
 
 // Function to switch to light mode
 function switchToLightMode() {
     document.documentElement.style.setProperty('--color-background', 'var(--color-background-light)');
     document.documentElement.style.setProperty('--color-foreground', 'var(--color-foreground-light)');
-    // ... rest of color variables ...
+    document.documentElement.style.setProperty('--color-comment', 'var(--color-comment-light)');
+    document.documentElement.style.setProperty('--color-red', 'var(--color-red-light)');
+    document.documentElement.style.setProperty('--color-orange', 'var(--color-orange-light)');
+    document.documentElement.style.setProperty('--color-yellow', 'var(--color-yellow-light)');
+    document.documentElement.style.setProperty('--color-green', 'var(--color-green-light)');
+    document.documentElement.style.setProperty('--color-cyan', 'var(--color-cyan-light)');
+    document.documentElement.style.setProperty('--color-blue', 'var(--color-blue-light)');
+    document.documentElement.style.setProperty('--color-purple', 'var(--color-purple-light)');
 }
 
 // Function to toggle between dark and light mode
