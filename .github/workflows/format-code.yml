@@ -15,15 +15,20 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
     - name: Cache clang-format
       uses: actions/cache@v2
       with:
-        path: ~/.cache/clang-format
-        key: ${{ runner.os }}-clang-format-${{ hashFiles('**/format-code.yml') }}
+        path: /usr/lib/llvm-10/bin/clang-format
+        key: ${{ runner.os }}-clang-format-${{ steps.date.outputs.date }}
+        restore-keys: ${{ runner.os }}-clang-format-
 
     - name: Install clang-format
       run: |
-        if [ ! -d "~/.cache/clang-format" ]; then
+        if [ ! -f /usr/lib/llvm-10/bin/clang-format ]; then
           sudo apt-get install -y clang-format
         fi
 
