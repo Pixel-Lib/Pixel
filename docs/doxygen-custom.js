@@ -33,35 +33,19 @@ document.querySelectorAll('.dropdown-toggle').forEach((dropdown) => {
 
 // Function to switch to dark mode
 function switchToDarkMode() {
-    document.documentElement.style.setProperty('--color-background', 'var(--color-background-dark)');
-    document.documentElement.style.setProperty('--color-foreground', 'var(--color-foreground-dark)');
-    document.documentElement.style.setProperty('--color-comment', 'var(--color-comment-dark)');
-    document.documentElement.style.setProperty('--color-red', 'var(--color-red-dark)');
-    document.documentElement.style.setProperty('--color-orange', 'var(--color-orange-dark)');
-    document.documentElement.style.setProperty('--color-yellow', 'var(--color-yellow-dark)');
-    document.documentElement.style.setProperty('--color-green', 'var(--color-green-dark)');
-    document.documentElement.style.setProperty('--color-cyan', 'var(--color-cyan-dark)');
-    document.documentElement.style.setProperty('--color-blue', 'var(--color-blue-dark)');
-    document.documentElement.style.setProperty('--color-purple', 'var(--color-purple-dark)');
+    document.documentElement.classList.remove('light');
+    document.documentElement.classList.add('dark');
 }
 
 // Function to switch to light mode
 function switchToLightMode() {
-    document.documentElement.style.setProperty('--color-background', 'var(--color-background-light)');
-    document.documentElement.style.setProperty('--color-foreground', 'var(--color-foreground-light)');
-    document.documentElement.style.setProperty('--color-comment', 'var(--color-comment-light)');
-    document.documentElement.style.setProperty('--color-red', 'var(--color-red-light)');
-    document.documentElement.style.setProperty('--color-orange', 'var(--color-orange-light)');
-    document.documentElement.style.setProperty('--color-yellow', 'var(--color-yellow-light)');
-    document.documentElement.style.setProperty('--color-green', 'var(--color-green-light)');
-    document.documentElement.style.setProperty('--color-cyan', 'var(--color-cyan-light)');
-    document.documentElement.style.setProperty('--color-blue', 'var(--color-blue-light)');
-    document.documentElement.style.setProperty('--color-purple', 'var(--color-purple-light)');
+    document.documentElement.classList.remove('dark');
+    document.documentElement.classList.add('light');
 }
 
 // Function to toggle between dark and light mode
 function toggleTheme() {
-    if (document.documentElement.style.getPropertyValue('--color-background') === 'var(--color-background-dark)') {
+    if (document.documentElement.classList.contains('dark')) {
         switchToLightMode();
     } else {
         switchToDarkMode();
@@ -69,14 +53,7 @@ function toggleTheme() {
 }
 
 // Add event listener to theme switch button
-document.getElementById('theme-switcher').addEventListener('click', function() {
-    var link = document.querySelector("link[href='doxygen-style.css']");
-    if (link.getAttribute('href') == 'doxygen-style.css') {
-        link.setAttribute('href', 'doxygen-dark-style.css');
-    } else {
-        link.setAttribute('href', 'doxygen-style.css');
-    }
-});
+document.getElementById('theme-switcher').addEventListener('click', toggleTheme);
 
 // Set initial theme based on system preference
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
