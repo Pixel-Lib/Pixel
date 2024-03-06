@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['coord_152',['Coord',['../classpxl_1_1Coord.html',1,'pxl']]]
+  ['objecttracker_23',['ObjectTracker',['../classpxl_1_1ObjectTracker.html',1,'pxl']]]
 ];

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['actionfunctuple_189',['ActionFuncTuple',['../structpxl_1_1ActionFuncTuple.html#a40bb34447d8b836d9344ae0a2e9be3f6',1,'pxl::ActionFuncTuple']]],
-  ['addonaction_190',['addOnAction',['../classpxl_1_1Drivetrain.html#a64f33ccd04d72ab2a02f38ca5ee8cb5d',1,'pxl::Drivetrain']]],
-  ['angle_191',['angle',['../classpxl_1_1Coord.html#a99d21128714c9d65601c0fefc783438c',1,'pxl::Coord']]],
-  ['angleerror_192',['angleError',['../namespacepxl.html#a26c76428239cd4f5adbb23aff8cd6384',1,'pxl']]],
-  ['avg_193',['avg',['../namespacepxl.html#a1400e5c065d0e56c9cfc4d7998ab0a4f',1,'pxl']]]
+  ['get_5felapsed_5ftime_26',['get_elapsed_time',['../classpxl_1_1Timer.html#a31109e2bbe4fa62e3f3a1bcefd63265a',1,'pxl::Timer']]],
+  ['get_5ftime_5fleft_27',['get_time_left',['../classpxl_1_1Timer.html#a5238c28c9354c59b4d31a83cfca15b71',1,'pxl::Timer']]],
+  ['geterror_28',['getError',['../classpxl_1_1PID.html#afab80d4bcb2c24d8d05dca451c57f81b',1,'pxl::PID']]]
 ];

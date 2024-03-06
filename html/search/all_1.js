@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['calcdeltatheta_11',['calcDeltaTheta',['../classpxl_1_1Odom.html#a380828e0d450f4f61a0188eb52af511e',1,'pxl::Odom::calcDeltaTheta(std::vector&lt; std::shared_ptr&lt; pros::IMU &gt;&gt; &amp;imu, bool update=true)'],['../classpxl_1_1Odom.html#ae3dbd0d3ab06623505e424056e8c5de7',1,'pxl::Odom::calcDeltaTheta(TrackingWheel &amp;tracker1, TrackingWheel &amp;tracker2)']]],
-  ['calibrate_12',['calibrate',['../classpxl_1_1Drivebase.html#a7dab3179284fcf3d5d5df4c5a3e0a54c',1,'pxl::Drivebase::calibrate()'],['../classpxl_1_1Odom.html#a11b4f0251d39de3167c89d59466b8524',1,'pxl::Odom::calibrate()']]],
-  ['calibrateimu_13',['calibrateIMU',['../classpxl_1_1Drivebase.html#af40956ce1b817eca0b6457171235dbd1',1,'pxl::Drivebase']]],
-  ['called_14',['called',['../structpxl_1_1ActionFuncTuple.html#aaedbeab6ec75482b759c7660996a7f58',1,'pxl::ActionFuncTuple']]],
-  ['coord_15',['Coord',['../classpxl_1_1Coord.html#afc1f9aefc5bbd25daf9ac43589e0153a',1,'pxl::Coord::Coord()'],['../classpxl_1_1Coord.html',1,'pxl::Coord']]],
-  ['coord_2ecpp_16',['coord.cpp',['../coord_8cpp.html',1,'']]],
-  ['coord_2ehpp_17',['coord.hpp',['../coord_8hpp.html',1,'']]]
+  ['get_5felapsed_5ftime_2',['get_elapsed_time',['../classpxl_1_1Timer.html#a31109e2bbe4fa62e3f3a1bcefd63265a',1,'pxl::Timer']]],
+  ['get_5ftime_5fleft_3',['get_time_left',['../classpxl_1_1Timer.html#a5238c28c9354c59b4d31a83cfca15b71',1,'pxl::Timer']]],
+  ['geterror_4',['getError',['../classpxl_1_1PID.html#afab80d4bcb2c24d8d05dca451c57f81b',1,'pxl::PID']]]
 ];
