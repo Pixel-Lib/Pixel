@@ -1,29 +1,29 @@
 /* Atom One Dark Theme Colors */
-:root {
-    --color-background-dark: #282c34;
-    --color-foreground-dark: #abb2bf;
-    --color-comment-dark: #5c6370;
-    --color-red-dark: #e06c75;
-    --color-orange-dark: #d19a66;
-    --color-yellow-dark: #e5c07b;
-    --color-green-dark: #98c379;
-    --color-cyan-dark: #56b6c2;
-    --color-blue-dark: #61afef;
-    --color-purple-dark: #c678dd;
+:root.dark {
+    --color-background: #282c34;
+    --color-foreground: #abb2bf;
+    --color-comment: #5c6370;
+    --color-red: #e06c75;
+    --color-orange: #d19a66;
+    --color-yellow: #e5c07b;
+    --color-green: #98c379;
+    --color-cyan: #56b6c2;
+    --color-blue: #61afef;
+    --color-purple: #c678dd;
 }
 
 /* Atom One Light Theme Colors */
-:root {
-    --color-background-light: #fafafa;
-    --color-foreground-light: #383a42;
-    --color-comment-light: #a0a1a7;
-    --color-red-light: #e45649;
-    --color-orange-light: #ca1243;
-    --color-yellow-light: #c18401;
-    --color-green-light: #50a14f;
-    --color-cyan-light: #0184bc;
-    --color-blue-light: #4078f2;
-    --color-purple-light: #a626a4;
+:root.light {
+    --color-background: #fafafa;
+    --color-foreground: #383a42;
+    --color-comment: #a0a1a7;
+    --color-red: #e45649;
+    --color-orange: #ca1243;
+    --color-yellow: #c18401;
+    --color-green: #50a14f;
+    --color-cyan: #0184bc;
+    --color-blue: #4078f2;
+    --color-purple: #a626a4;
 }
 
 /* Use CSS variables for colors */
