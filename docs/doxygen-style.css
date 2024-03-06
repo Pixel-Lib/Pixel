@@ -30,16 +30,18 @@
 body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
 }
 
 /* Change the layout of the headers */
 h1, h2, h3, h4, h5, h6 {
-    color: var(--color-orange); /* Orange color from Atom One Dark */
-    font-family: 'Helvetica Neue', sans-serif;
+    color: var(--color-orange);
     font-weight: 300;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    text-align: center; /* Center align headers */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* Change the layout of the tabs */
@@ -47,13 +49,19 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-around;
     padding: 20px;
-    background-color: var(--color-background); /* Dark blue color from Atom One Dark */
-    position: fixed; /* Make navbar fixed at the top */
-    width: 100%; /* Full width */
+    background-color: var(--color-background);
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
 }
 
 .navbar a {
-    color: var(--color-foreground); /* Light gray color from Atom One Dark */
+    color: var(--color-foreground);
     text-decoration: none;
     font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--color-blue);
 }
