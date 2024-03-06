@@ -15,8 +15,17 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Cache clang-format
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/clang-format
+        key: ${{ runner.os }}-clang-format-${{ hashFiles('**/format-code.yml') }}
+
     - name: Install clang-format
-      run: sudo apt-get install -y clang-format
+      run: |
+        if [ ! -d "~/.cache/clang-format" ]; then
+          sudo apt-get install -y clang-format
+        fi
 
     - name: Check for changes in .cpp, .hpp, .h files
       id: check-changes
