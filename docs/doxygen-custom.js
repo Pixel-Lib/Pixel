@@ -69,7 +69,14 @@ function toggleTheme() {
 }
 
 // Add event listener to theme switch button
-document.getElementById('theme-switcher').addEventListener('click', toggleTheme);
+document.getElementById('theme-switcher').addEventListener('click', function() {
+    var link = document.querySelector("link[href='doxygen-style.css']");
+    if (link.getAttribute('href') == 'doxygen-style.css') {
+        link.setAttribute('href', 'doxygen-dark-style.css');
+    } else {
+        link.setAttribute('href', 'doxygen-style.css');
+    }
+});
 
 // Set initial theme based on system preference
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
