@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #444;
+}
+
+a {
+    color: #0066cc;
+}
+
+a:hover {
+    color: #0055b8;
+}
+
+.header {
+    background-color: #333;
+    color: #f0f0f0;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: #333;
+    color: #f0f0f0;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.code {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
