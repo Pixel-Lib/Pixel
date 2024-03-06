@@ -32,4 +32,5 @@ float angleError(float angle1, float angle2, bool radians) {
 
 float ema(float current, float previous, float smooth) { return (current * smooth) + (previous * (1 - smooth)); }
 
+
 }  // namespace pxl
