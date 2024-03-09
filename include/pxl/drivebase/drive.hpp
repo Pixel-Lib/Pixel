@@ -10,6 +10,7 @@
 #include "pxl/drivebase/trackingwheel.hpp"
 #include "pxl/parametrics/pose.hpp"
 #include "pxl/pid.hpp"
+#include "pxl/movements/movements.hpp"
 
 namespace pxl {
 struct OdomSensors {
@@ -74,6 +75,7 @@ class Drivebase {
         Drivetrain drivetrain;
         OdomSensors sensors;
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
+        Movement movement;
 };
 
 };  // namespace pxl
