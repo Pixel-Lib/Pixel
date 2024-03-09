@@ -1,8 +1,7 @@
 #include <vector>
 #include <utility>
+namespace pxl {
 
-class Regression {
-public:
     // Define a pair of doubles as a Point
     typedef std::pair<double, double> Point;
 
@@ -42,4 +41,4 @@ public:
 
         return std::make_pair(m, b);
     }
-};
+}

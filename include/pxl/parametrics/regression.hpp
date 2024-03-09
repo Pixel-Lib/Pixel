@@ -1,7 +1,7 @@
 
 #include <vector>
 #include <utility>
-
+namespace pxl {
 class Regression {
 public:
     // Define a pair of doubles as a Point
@@ -17,3 +17,4 @@ public:
     std::pair<double, double> functionFitter(const std::vector<Point>& points, double lambda);
 };
 
+}
