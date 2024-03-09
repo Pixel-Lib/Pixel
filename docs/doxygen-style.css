@@ -1,81 +1,55 @@
-/* Atom One Dark Theme Colors */
-:root.dark {
-    --color-background: #282c34;
-    --color-foreground: #abb2bf;
-    --color-comment: #5c6370;
-    --color-red: #e06c75;
-    --color-orange: #d19a66;
-    --color-yellow: #e5c07b;
-    --color-green: #98c379;
-    --color-cyan: #56b6c2;
-    --color-blue: #61afef;
-    --color-purple: #c678dd;
+.hexagon {
+    width: 30px;
+    height: 17.32px;
+    background-color: var(--color-blue);
+    position: relative;
+    animation: float 5s infinite ease-in-out;
 }
 
-/* Atom One Light Theme Colors */
-:root.light {
-    --color-background: #fafafa;
-    --color-foreground: #383a42;
-    --color-comment: #a0a1a7;
-    --color-red: #e45649;
-    --color-orange: #ca1243;
-    --color-yellow: #c18401;
-    --color-green: #50a14f;
-    --color-cyan: #0184bc;
-    --color-blue: #4078f2;
-    --color-purple: #a626a4;
+.hexagon:before,
+.hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
 }
 
-/* Use CSS variables for colors */
-body {
-    background: linear-gradient(135deg, var(--color-orange) 10%, var(--color-blue) 90%);
-    background-size: cover;
-    animation: moveBackground 10s ease infinite;
-    color: var(--color-foreground);
-    font-family: 'Helvetica Neue', sans-serif;
-    line-height: 1.6;
+.hexagon:before {
+    bottom: 100%;
+    border-bottom: 8.66px solid var(--color-blue);
 }
 
-@keyframes moveBackground {
-    0% {
-        background-position: 0 0;
+.hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 8.66px solid var(--color-blue);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
     }
     50% {
-        background-position: 100% 0;
-    }
-    100% {
-        background-position: 0 0;
+        transform: translateY(-20px);
     }
 }
 
-/* Change the layout of the headers */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--color-orange);
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+.pixel {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f, 0 0 20px #00f;
+    font-size: 30px;
     text-align: center;
-    margin-bottom: 20px;
+    animation: glow 2s infinite, wave 3s infinite;
 }
 
-/* Change the layout of the tabs */
-.navbar {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    background-color: var(--color-background);
-    position: fixed;
-    width: 100%;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f, 0 0 20px #00f; }
+    50% { text-shadow: 0 0 5px #f00, 0 0 10px #f00, 0 0 15px #f00, 0 0 20px #f00; }
 }
 
-.navbar a {
-    color: var(--color-foreground);
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-    color: var(--color-blue);
+@keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
