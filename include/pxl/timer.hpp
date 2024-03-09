@@ -20,11 +20,8 @@ class Timer {
 
         /**
          * The stop function sets the start time of the timer to -1.
-         *
-         * @param start_time Optional` parameter to define the start time of the
-         * timer.
          */
-        void stop(uint32_t start_time = -1);
+        void stop();
 
         /**
          * `get_elapsed_time` calculates the elapsed time since the timer was
@@ -45,6 +42,7 @@ class Timer {
          * is not set.
          */
         uint32_t get_time_left();
+
         /**
          * Returns true if the time left on the timer is 0.
          *
@@ -53,8 +51,23 @@ class Timer {
          */
         bool isDone();
 
+        /**
+         * Returns true if the timer is running.
+         *
+         * @return  a boolean value indicating whether the timer is running or
+         * not.
+         */
+        bool isRunning();
+
     private:
+        /**
+         * The start time of the timer in milliseconds.
+         */
         uint32_t start_time;
+
+        /**
+         * The stop time of the timer in milliseconds.
+         */
         uint32_t stop_time;
 };
 }  // namespace pxl
