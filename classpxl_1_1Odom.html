@@ -76,6 +76,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>The <a class="el" href="classpxl_1_1Odom.html" title="The Odom class represents an odometry system that tracks the robot&#39;s position and orientation.">Odom</a> class represents an odometry system that tracks the robot's position and orientation.  
+ <a href="classpxl_1_1Odom.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="odom_8hpp_source.html">odom.hpp</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for pxl::Odom:</div>
@@ -88,12 +91,16 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d431b27727093276f854509297768e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#a1d431b27727093276f854509297768e3">Odom</a> (std::vector&lt; std::unique_ptr&lt; <a class="el" href="classpxl_1_1TrackingWheel.html">TrackingWheel</a> &gt;&gt; &amp;<a class="el" href="classpxl_1_1Odom.html#a147f2b027ea20a520998a7748a2c9d4a">verticals</a>, std::vector&lt; std::unique_ptr&lt; <a class="el" href="classpxl_1_1TrackingWheel.html">TrackingWheel</a> &gt;&gt; &amp;<a class="el" href="classpxl_1_1Odom.html#a583a89074d5f9da5b7722fc471a49f41">horizontals</a>, std::vector&lt; std::unique_ptr&lt; <a class="el" href="classpxl_1_1TrackingWheel.html">TrackingWheel</a> &gt;&gt; &amp;<a class="el" href="classpxl_1_1Odom.html#a25a62f0a15b5fabf52b8896d97a5016d">drivetrain</a>, std::vector&lt; std::shared_ptr&lt; pros::IMU &gt;&gt; &amp;<a class="el" href="classpxl_1_1Odom.html#a42fb961578d4d980af5531b570c7f43d">imu</a>)</td></tr>
+<tr class="memdesc:a1d431b27727093276f854509297768e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="classpxl_1_1Odom.html" title="The Odom class represents an odometry system that tracks the robot&#39;s position and orientation.">Odom</a> object with the specified tracking wheels and IMUs.  <a href="classpxl_1_1Odom.html#a1d431b27727093276f854509297768e3">More...</a><br /></td></tr>
 <tr class="separator:a1d431b27727093276f854509297768e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa32e3e3b6d2871ad8bf394267b83753"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#aaa32e3e3b6d2871ad8bf394267b83753">init</a> ()</td></tr>
+<tr class="memdesc:aaa32e3e3b6d2871ad8bf394267b83753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the odometry system.  <a href="classpxl_1_1Odom.html#aaa32e3e3b6d2871ad8bf394267b83753">More...</a><br /></td></tr>
 <tr class="separator:aaa32e3e3b6d2871ad8bf394267b83753"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11b4f0251d39de3167c89d59466b8524"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#a11b4f0251d39de3167c89d59466b8524">calibrate</a> (bool calibrateIMUs=true)</td></tr>
+<tr class="memdesc:a11b4f0251d39de3167c89d59466b8524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calibrates the odometry system.  <a href="classpxl_1_1Odom.html#a11b4f0251d39de3167c89d59466b8524">More...</a><br /></td></tr>
 <tr class="separator:a11b4f0251d39de3167c89d59466b8524"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a464b30a97f57c9de25bff0ffada5302b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#a464b30a97f57c9de25bff0ffada5302b">update</a> ()</td></tr>
+<tr class="memdesc:a464b30a97f57c9de25bff0ffada5302b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the odometry system by calculating the robot's position and orientation.  <a href="classpxl_1_1Odom.html#a464b30a97f57c9de25bff0ffada5302b">More...</a><br /></td></tr>
 <tr class="separator:a464b30a97f57c9de25bff0ffada5302b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -120,7 +127,11 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a208a6d622031e9a15c0782e3e5a2c9fa"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#a208a6d622031e9a15c0782e3e5a2c9fa">lastAngle</a> = 0</td></tr>
 <tr class="separator:a208a6d622031e9a15c0782e3e5a2c9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classpxl_1_1Odom.html" title="The Odom class represents an odometry system that tracks the robot&#39;s position and orientation.">Odom</a> class represents an odometry system that tracks the robot's position and orientation. </p>
+<p>The <a class="el" href="classpxl_1_1Odom.html" title="The Odom class represents an odometry system that tracks the robot&#39;s position and orientation.">Odom</a> class uses a combination of tracking wheels and IMUs (Inertial Measurement Units) to calculate the robot's position and orientation on the field. It provides methods for initialization, calibration, and updating the odometry values.</p>
+<p>The <a class="el" href="classpxl_1_1Odom.html" title="The Odom class represents an odometry system that tracks the robot&#39;s position and orientation.">Odom</a> class represents an odometry system that tracks the robot's position and orientation. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1d431b27727093276f854509297768e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d431b27727093276f854509297768e3">&#9670;&nbsp;</a></span>Odom()</h2>
 
@@ -158,6 +169,17 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs an <a class="el" href="classpxl_1_1Odom.html" title="The Odom class represents an odometry system that tracks the robot&#39;s position and orientation.">Odom</a> object with the specified tracking wheels and IMUs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">verticals</td><td>A vector of unique pointers to vertical tracking wheels. </td></tr>
+    <tr><td class="paramname">horizontals</td><td>A vector of unique pointers to horizontal tracking wheels. </td></tr>
+    <tr><td class="paramname">drivetrain</td><td>A vector of unique pointers to drivetrain tracking wheels. </td></tr>
+    <tr><td class="paramname">imu</td><td>A vector of shared pointers to IMUs. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -250,6 +272,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Calibrates the odometry system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">calibrateIMUs</td><td>Specifies whether to calibrate the IMUs. Default is true. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aaa32e3e3b6d2871ad8bf394267b83753"></a>
@@ -267,6 +297,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initializes the odometry system. </p>
+
 </div>
 </div>
 <a id="a464b30a97f57c9de25bff0ffada5302b"></a>
@@ -283,6 +315,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Updates the odometry system by calculating the robot's position and orientation. </p>
 
 </div>
 </div>

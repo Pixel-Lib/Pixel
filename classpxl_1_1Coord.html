@@ -75,6 +75,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Represents a coordinate in 2D space.  
+ <a href="classpxl_1_1Coord.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="coord_8hpp_source.html">coord.hpp</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for pxl::Coord:</div>
@@ -87,6 +90,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afc1f9aefc5bbd25daf9ac43589e0153a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Coord.html#afc1f9aefc5bbd25daf9ac43589e0153a">Coord</a> (float <a class="el" href="classpxl_1_1Coord.html#a0e13da815158aae4c34357cb5b8b2ea6">x</a>, float <a class="el" href="classpxl_1_1Coord.html#a8d4004151f08e16de5f5e4b722104fea">y</a>)</td></tr>
+<tr class="memdesc:afc1f9aefc5bbd25daf9ac43589e0153a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classpxl_1_1Coord.html" title="Represents a coordinate in 2D space.">Coord</a> object with the given x and y coordinates.  <a href="classpxl_1_1Coord.html#afc1f9aefc5bbd25daf9ac43589e0153a">More...</a><br /></td></tr>
 <tr class="separator:afc1f9aefc5bbd25daf9ac43589e0153a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee39dfada5e879a728d0999a3c6e1ff9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Coord.html#aee39dfada5e879a728d0999a3c6e1ff9">operator+</a> (const <a class="el" href="classpxl_1_1Coord.html">Coord</a> &amp;other) const</td></tr>
 <tr class="separator:aee39dfada5e879a728d0999a3c6e1ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -101,12 +105,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9eaae4f8bcc18bfd92232f17bc9edc16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Coord.html">Coord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Coord.html#a9eaae4f8bcc18bfd92232f17bc9edc16">operator+=</a> (const <a class="el" href="classpxl_1_1Coord.html">Coord</a> &amp;other)</td></tr>
 <tr class="separator:a9eaae4f8bcc18bfd92232f17bc9edc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a653a51dc4d0507336de4dbcb330a0979"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Coord.html#a653a51dc4d0507336de4dbcb330a0979">lerp</a> (<a class="el" href="classpxl_1_1Coord.html">Coord</a> other, float t) const</td></tr>
+<tr class="memdesc:a653a51dc4d0507336de4dbcb330a0979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs linear interpolation between this coordinate and another coordinate.  <a href="classpxl_1_1Coord.html#a653a51dc4d0507336de4dbcb330a0979">More...</a><br /></td></tr>
 <tr class="separator:a653a51dc4d0507336de4dbcb330a0979"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa78aa9b2e87a58802654f51503ebae0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Coord.html#afa78aa9b2e87a58802654f51503ebae0">distance</a> (const <a class="el" href="classpxl_1_1Coord.html">Coord</a> &amp;other) const</td></tr>
+<tr class="memdesc:afa78aa9b2e87a58802654f51503ebae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the Euclidean distance between this coordinate and another coordinate.  <a href="classpxl_1_1Coord.html#afa78aa9b2e87a58802654f51503ebae0">More...</a><br /></td></tr>
 <tr class="separator:afa78aa9b2e87a58802654f51503ebae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99d21128714c9d65601c0fefc783438c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Coord.html#a99d21128714c9d65601c0fefc783438c">angle</a> (const <a class="el" href="classpxl_1_1Coord.html">Coord</a> &amp;other) const</td></tr>
+<tr class="memdesc:a99d21128714c9d65601c0fefc783438c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the angle between this coordinate and another coordinate.  <a href="classpxl_1_1Coord.html#a99d21128714c9d65601c0fefc783438c">More...</a><br /></td></tr>
 <tr class="separator:a99d21128714c9d65601c0fefc783438c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f45c86775fbd36346f23f9f7ab0756d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Coord.html#a9f45c86775fbd36346f23f9f7ab0756d">rotate</a> (float <a class="el" href="classpxl_1_1Coord.html#a99d21128714c9d65601c0fefc783438c">angle</a>) const</td></tr>
+<tr class="memdesc:a9f45c86775fbd36346f23f9f7ab0756d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates this coordinate around the origin by the specified angle.  <a href="classpxl_1_1Coord.html#a9f45c86775fbd36346f23f9f7ab0756d">More...</a><br /></td></tr>
 <tr class="separator:a9f45c86775fbd36346f23f9f7ab0756d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -116,7 +124,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a8d4004151f08e16de5f5e4b722104fea"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Coord.html#a8d4004151f08e16de5f5e4b722104fea">y</a></td></tr>
 <tr class="separator:a8d4004151f08e16de5f5e4b722104fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a coordinate in 2D space. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afc1f9aefc5bbd25daf9ac43589e0153a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc1f9aefc5bbd25daf9ac43589e0153a">&#9670;&nbsp;</a></span>Coord()</h2>
 
@@ -151,6 +161,15 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructs a <a class="el" href="classpxl_1_1Coord.html" title="Represents a coordinate in 2D space.">Coord</a> object with the given x and y coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x coordinate. </td></tr>
+    <tr><td class="paramname">y</td><td>The y coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -170,6 +189,15 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Calculates the angle between this coordinate and another coordinate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The angle (in radians) between the two coordinates. </dd></dl>
+
 </div>
 </div>
 <a id="afa78aa9b2e87a58802654f51503ebae0"></a>
@@ -187,6 +215,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Calculates the Euclidean distance between this coordinate and another coordinate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The distance between the two coordinates. </dd></dl>
 
 </div>
 </div>
@@ -215,6 +252,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Performs linear interpolation between this coordinate and another coordinate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other coordinate to interpolate towards. </td></tr>
+    <tr><td class="paramname">t</td><td>The interpolation factor (between 0 and 1). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The interpolated coordinate. </dd></dl>
 
 </div>
 </div>
@@ -341,6 +388,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Rotates this coordinate around the origin by the specified angle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">angle</td><td>The angle (in radians) to rotate by. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The rotated coordinate. </dd></dl>
 
 </div>
 </div>
