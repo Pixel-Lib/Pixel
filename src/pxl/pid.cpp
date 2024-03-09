@@ -34,6 +34,13 @@ class PID {
             prevError = 0;
         }
 
+        // Member function to set coefficients
+        void setConstants(float kP, float kI, float kD) {
+            this->kP = kP;
+            this->kD = kD;
+            this->kI = kI;
+        }
+
     protected:
         // Member variables
         float kP;
