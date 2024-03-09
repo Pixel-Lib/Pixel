@@ -1,6 +1,7 @@
 #include <vector>
 #include <utility>
 #include "pxl/parametrics/regression.hpp"
+#include "pxl/util.hpp"
 
 namespace pxl {
 
@@ -14,14 +15,7 @@ namespace pxl {
     Regression::Regression(std::vector<Point>& points) 
     : points(points) {}
 
-        // Function to calculate the mean of a vector
-        double mean(const std::vector<double>& v) {
-            double sum = 0.0;
-            for (double num : v) {
-                sum += num;
-            }
-            return sum / v.size();
-        }
+
 
         // Function to calculate the dot product of two vectors
         double dotProduct(const std::vector<double>& v1, const std::vector<double>& v2) {
@@ -42,8 +36,8 @@ std::pair<double, double> Ridge() {
         y[i] = points[i].second;
     }
 
-    double xMean = mean(x);
-    double yMean = mean(y);
+    double xMean = pxl::avg(x);
+    double yMean = pxl::avg(y);
 
     double xDotY = dotProduct(x, y);
     double xDotX = dotProduct(x, x);
