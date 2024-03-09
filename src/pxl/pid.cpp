@@ -1,9 +1,16 @@
 #include "pxl/util.hpp"
-#include "pid.hpp"
+#include "pxl/pid.hpp"
 
 namespace pxl {
-    // Constructor
+    // Constructor for a generic PID controller
     PID::PID(float kP, float kI, float kD) : kP(kP), kI(kI), kD(kD) {}
+
+    // Constructor for a lateral PID controller
+    PID::PID(float kP, float kI, float kD, float kP_d) : kP(kP), kI(kI), kD(kD), kP_d(kP_d) {}
+
+    // Constructor for a lateral PID controller with integralMAX
+    PID::PID(float kP, float kI, float kD, float kP_d, float integralMAX)
+            : kP(kP), kI(kI), kD(kD), kP_d(kP_d), integralMAX(integralMAX) {}
 
     // Member function to update PID
     float PID::update(const float error) {
@@ -29,4 +36,4 @@ namespace pxl {
         integral = 0;
         prevError = 0;
     }
-}  // namespace pxl
+}
