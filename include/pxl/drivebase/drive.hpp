@@ -61,7 +61,7 @@ class ExtendedDrivetrain {
  * 
  * The Drivebase class provides methods to control the drivetrain.
  */
-class Drivebase {
+class Drivebase : public Movement {
     public:
         bool isDriverControl();
         Drivebase(Drivetrain drivetrain, OdomSensors sensors);
@@ -75,7 +75,6 @@ class Drivebase {
         Drivetrain drivetrain;
         OdomSensors sensors;
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
-        Movement movement;
 };
 
 };  // namespace pxl
