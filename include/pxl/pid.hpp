@@ -18,16 +18,10 @@ namespace pxl {
 class PID {
     public:
         /**
-         *PID class constructors
+         * @brief Constructor for a generic PID controller.
          *
-         *Users can create multiple PID instants and name them to their choosing and
-         *use the PID muatator to change their gain values
-         */
-        /**
-         * @brief Constructor for a genaric PID controller.
-         *
-         * Users can create multiple PID instants and name them to their choosing
-         * and use the PID muatator to change their gain values
+         * Users can create multiple PID instances and name them to their choosing
+         * and use the PID mutator to change their gain values
          *
          * @param kP The proportional gain.
          * @param kI The integral gain.
@@ -38,15 +32,11 @@ class PID {
         /**
          * @brief Constructor for a lateral PID controller.
          *
-         * Users can create multiple PID instants and name them to their choosing
-         * and use the PID muatator to change their gain values
-         *
          * @param kP   The proportional gain.
          * @param kI   The integral gain.
          * @param kD   The derivative gain.
-         * @param kP_d The porportinal drift gain
+         * @param kP_d The proportional drift gain
          */
-
         PID(float kP, float kI, float kD, float kP_d) : kP(kP), kI(kI), kD(kD), kP_d(kP_d) {}
 
         /**
@@ -55,10 +45,9 @@ class PID {
          * @param kP          The proportional gain.
          * @param kI          The integral gain.
          * @param kD          The derivative gain.
-         * @param kP_d        The porportinal drift gain
+         * @param kP_d        The proportional drift gain
          * @param integralMAX The max value to clamp integral to
          */
-
         PID(float kP, float kI, float kD, float kP_d, float integralMAX)
             : kP(kP), kI(kI), kD(kD), kP_d(kP_d), integralMAX(integralMAX) {}
 
@@ -76,7 +65,7 @@ class PID {
         /**
          * @brief Accessor function for Error
          *
-         * This function returns the current value of the error varible
+         * This function returns the current value of the error variable
          *
          * @return The current error of the PID class instance
          */
@@ -107,7 +96,7 @@ class PID {
         float kD;
 
         /**
-         * The porportinal drift gain (kP_d)
+         * The proportional drift gain (kP_d)
          */
         float kP_d;
 
@@ -121,7 +110,8 @@ class PID {
          */
         float integral = 0;
 
-        /* The derivative term of the PID controller.
+        /**
+         * The derivative term of the PID controller.
          */
         float derivative = 0;
 
@@ -141,6 +131,14 @@ class PID {
          */
         std::chrono::time_point<std::chrono::system_clock> prevTime;
 
+        /**
+         * @brief Updates the integral term of the PID controller.
+         *
+         * @param error The current error value.
+         * @param lastError The previous error value.
+         * @param activeDistance The active distance for the PID controller.
+         * @param integral The integral term of the PID controller.
+         */
         void updateIntegral(float error, float lastError, float activeDistance, float &integral);
 };
 
