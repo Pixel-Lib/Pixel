@@ -4,7 +4,7 @@
 
 namespace pxl {
 /**
- * @brief The `pxl` namespace contains classes and functions related to the Pixel library.
+ * @brief The `Pose` class contains classes and functions related to (x, y, theta) coordinates.
  */
 class Pose : public pxl::Coord {
     public:
