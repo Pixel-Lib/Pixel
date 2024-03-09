@@ -27,7 +27,7 @@ class PID {
          * @param kI The integral gain.
          * @param kD The derivative gain.
          */
-        PID(float kP, float kI, float kD) : kP(kP), kI(kI), kD(kD) {}
+        PID(float kP, float kI, float kD) ;
 
         /**
          * @brief Constructor for a lateral PID controller.
