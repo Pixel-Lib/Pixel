@@ -55,6 +55,11 @@ class ExtendedDrivetrain {
         float verticalTrackWidth;
 };
 
+/**
+ * @brief The Drivebase class represents the base of a robot's drivetrain.
+ * 
+ * The Drivebase class provides methods to control the drivetrain.
+ */
 class Drivebase {
     public:
         bool isDriverControl();
