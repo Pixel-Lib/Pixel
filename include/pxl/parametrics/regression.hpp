@@ -14,7 +14,7 @@ public:
     double dotProduct(const std::vector<double>& v1, const std::vector<double>& v2);
 
     // Function to fit a function through the coordinates using ridge regression
-    std::pair<double, double> functionFitter(const std::vector<Point>& points, double lambda);
+    std::pair<double, double> Ridge(const std::vector<Point>& points, double lambda);
 };
 
 }

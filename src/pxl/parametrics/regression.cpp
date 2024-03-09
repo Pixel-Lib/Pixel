@@ -1,5 +1,6 @@
 #include <vector>
 #include <utility>
+#include "pxl/parametrics/regression.hpp"
 namespace pxl {
 
     // Define a pair of doubles as a Point
@@ -24,7 +25,7 @@ namespace pxl {
     }
 
     // Function to fit a function through the coordinates using ridge regression
-    std::pair<double, double> functionFitter(const std::vector<Point>& points, double lambda) {
+    std::pair<double, double> Ridge(const std::vector<Point>& points, double lambda) {
         std::vector<double> x(points.size());
         std::vector<double> y(points.size());
 
