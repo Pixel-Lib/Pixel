@@ -8,5 +8,6 @@ class Movement {
         //* Drive drive;
         //* Turn turn;
         // Add other movement methods here
+        friend class Drivebase; // Make Drivebase a friend of Movement
 };
 }
