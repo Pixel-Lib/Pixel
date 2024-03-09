@@ -37,7 +37,7 @@ class PID {
          * @param kD   The derivative gain.
          * @param kP_d The proportional drift gain
          */
-        PID(float kP, float kI, float kD, float kP_d) : kP(kP), kI(kI), kD(kD), kP_d(kP_d) {}
+        PID(float kP, float kI, float kD, float kP_d) ;
 
         /**
          * @brief Constructor for a lateral PID controller.
@@ -48,8 +48,7 @@ class PID {
          * @param kP_d        The proportional drift gain
          * @param integralMAX The max value to clamp integral to
          */
-        PID(float kP, float kI, float kD, float kP_d, float integralMAX)
-            : kP(kP), kI(kI), kD(kD), kP_d(kP_d), integralMAX(integralMAX) {}
+        PID(float kP, float kI, float kD, float kP_d, float integralMAX);
 
         /**
          * @brief the PID controller output based on the current error.
