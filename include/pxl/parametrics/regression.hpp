@@ -17,8 +17,7 @@ namespace pxl {
         // Constructor for the Regression class
         Regression(std::vector<Point>& points);
 
-        // Function to calculate the mean of a vector
-        double mean(const std::vector<double>& v);
+
 
         // Function to calculate the dot product of two vectors
         double dotProduct(const std::vector<double>& v1, const std::vector<double>& v2);
