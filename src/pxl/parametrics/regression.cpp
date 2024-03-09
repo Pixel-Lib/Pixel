@@ -11,9 +11,8 @@ namespace pxl {
         double lambda;
 
         // Constructor for the Regression class
-    Regression::Regression(std::vector<Point>& points, double lambda) 
-    : points(points), 
-      lambda(lambda) {}
+    Regression::Regression(std::vector<Point>& points) 
+    : points(points) {}
 
         // Function to calculate the mean of a vector
         double mean(const std::vector<double>& v) {
@@ -34,27 +33,30 @@ namespace pxl {
         }
 
         // Function to fit a function through the coordinates using ridge regression
-        std::pair<double, double> Ridge() {
-            std::vector<double> x(points.size());
-            std::vector<double> y(points.size());
+std::pair<double, double> Ridge() {
+    std::vector<double> x(points.size());
+    std::vector<double> y(points.size());
 
-            for (int i = 0; i < points.size(); i++) {
-                x[i] = points[i].first;
-                y[i] = points[i].second;
-            }
+    for (int i = 0; i < points.size(); i++) {
+        x[i] = points[i].first;
+        y[i] = points[i].second;
+    }
 
-            double xMean = mean(x);
-            double yMean = mean(y);
+    double xMean = mean(x);
+    double yMean = mean(y);
 
-            double xDotY = dotProduct(x, y);
-            double xDotX = dotProduct(x, x);
-            double n = points.size();
+    double xDotY = dotProduct(x, y);
+    double xDotX = dotProduct(x, x);
+    double n = points.size();
 
-            double m = (xDotY - n * xMean * yMean) / (xDotX - n * xMean * xMean + lambda);
-            double b = yMean - m * xMean;
+    // Calculate lambda as 1% of the sum of squares of x
+    lambda = 0.01 * xDotX;
 
-            return std::make_pair(m, b);
-        }
+    double m = (xDotY - n * xMean * yMean) / (xDotX - n * xMean * xMean + lambda);
+    double b = yMean - m * xMean;
+
+    return std::make_pair(m, b);
+}
 
         double predict(double x) {
             std::pair<double, double> coefficients = Ridge();

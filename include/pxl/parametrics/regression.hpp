@@ -12,11 +12,10 @@ namespace pxl {
     class Regression {
     private:
         std::vector<Point> points;
-        double lambda;
 
     public:
         // Constructor for the Regression class
-        Regression(std::vector<Point>& points, double lambda);
+        Regression(std::vector<Point>& points);
 
         // Function to calculate the mean of a vector
         double mean(const std::vector<double>& v);
