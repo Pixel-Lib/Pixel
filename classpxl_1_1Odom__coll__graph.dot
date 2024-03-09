@@ -5,7 +5,7 @@ digraph "pxl::Odom"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="pxl::Odom",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The Odom class represents an odometry system that tracks the robot's position and orientation."];
   Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pose" ,fontname="Helvetica"];
-  Node2 [label="pxl::Pose",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1Pose.html",tooltip="The pxl namespace contains classes and functions related to the Pixel library."];
+  Node2 [label="pxl::Pose",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1Pose.html",tooltip="The Pose class contains classes and functions related to (x, y, theta) coordinates."];
   Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="pxl::Coord",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1Coord.html",tooltip="Represents a coordinate in 2D space."];
 }
