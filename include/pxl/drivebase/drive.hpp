@@ -75,6 +75,7 @@ class Drivebase : public Movement {
         Drivetrain drivetrain;
         OdomSensors sensors;
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
+        friend class Movement;
 };
 
 };  // namespace pxl
