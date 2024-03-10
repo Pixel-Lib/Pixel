@@ -69,9 +69,12 @@ void Drivebase::calibrate(bool calibrateImu) {
                                                    drivetrain.trackWidth / 2, drivetrain.rpm);
     sensors.vertical1->reset();
     sensors.vertical2->reset();
+
     if (sensors.horizontal1 != nullptr) sensors.horizontal1->reset();
     if (sensors.horizontal2 != nullptr) sensors.horizontal2->reset();
+
     setSensors(sensors);
+    
     // rumble to controller to indicate success
     pros::c::controller_rumble(pros::E_CONTROLLER_MASTER, ".");
 }
