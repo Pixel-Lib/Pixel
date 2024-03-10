@@ -10,8 +10,8 @@ namespace pxl {
         return pid.update(this->error = error);
     }
 
-    bool seekingcontroller::isExit(float error) {
-         if (timer.get_elapsed_time()>=globalTimeout || timer.get_elapsed_time()>=regression.predict(this->error)) return true; return false;
-    }
+bool seekingcontroller::isExit(float error) {
+    return (timer.get_elapsed_time() >= globalTimeout || timer.get_elapsed_time() >= regression.predict(this->error)) ? true : false;
+}
 
 }
