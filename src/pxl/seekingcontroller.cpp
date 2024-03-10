@@ -19,7 +19,7 @@ namespace pxl {
         timer.start();
     }
 
-bool SeekingController::isExit(float error) {
+bool SeekingController::getExit(float error) {
     return (timer.get_elapsed_time()>=globalTimeout||timer.get_elapsed_time()>=regression.predict(this->error))?true:false;
 }
 

@@ -11,7 +11,7 @@ public:
 
     float update(float error);
 void timerStart();
-    bool isExit(float error);
+    bool getExit(float error);
 private:
 PID pid;
 Regression regression;
