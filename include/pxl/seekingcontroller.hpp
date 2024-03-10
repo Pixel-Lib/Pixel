@@ -9,7 +9,7 @@ public:
     SeekingController(PID pid, Regression regression, float globalTimeout);
 
     float update(float error);
-
+void timerStart();
     bool isExit(float error);
 private:
 PID pid;
