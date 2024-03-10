@@ -7,7 +7,9 @@ class Drive_ {
     void Drive(float target, float timeout);
     private:
     struct Params{
-        
+        float minSpeed = 0;
+        float maxSpeed = 127;
+        float slew = NAN;
     }; };
     
 }
