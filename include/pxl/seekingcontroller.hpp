@@ -9,11 +9,14 @@ public:
     seekingcontroller(PID pid, Regression regression, float globalTimeout);
 
     float update(float error);
+
+    bool isExit(float error);
 private:
 PID pid;
 Regression regression;
 float globalTimeout;
 float error;
+pxl::Timer timer;
 };
 
 }
