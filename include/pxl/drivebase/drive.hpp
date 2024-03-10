@@ -69,7 +69,7 @@ class Drivebase : public Movement {
         void setSensors(OdomSensors sensors);
         void calibrate(bool calibrateIMU);
 
-        void move_to_pose(Pose pose);
+
 
     private:
         Drivetrain drivetrain;
