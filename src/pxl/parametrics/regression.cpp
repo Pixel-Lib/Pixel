@@ -18,7 +18,7 @@ namespace pxl {
 
 
         // Function to calculate the dot product of two vectors
-        double dotProduct(const std::vector<double>& v1, const std::vector<double>& v2) {
+        double Regression::dotProduct(const std::vector<double>& v1, const std::vector<double>& v2) {
             double product = 0.0;
             for (int i = 0; i < v1.size(); i++) {
                 product += v1[i] * v2[i];
@@ -27,7 +27,7 @@ namespace pxl {
         }
 
         // Function to fit a function through the coordinates using ridge regression
-std::pair<double, double> Ridge() {
+std::pair<double, double> Regression::Ridge() {
     std::vector<double> x(points.size());
     std::vector<double> y(points.size());
 
@@ -52,7 +52,7 @@ std::pair<double, double> Ridge() {
     return std::make_pair(m, b);
 }
 
-        double predict(double x) {
+        double Regression::predict(double x) {
             std::pair<double, double> coefficients = Ridge();
             double m = coefficients.first;
             double b = coefficients.second;

@@ -8,9 +8,11 @@
 #include "pxl/aSync.hpp"
 #include "pxl/drivebase/odom.hpp"
 #include "pxl/drivebase/trackingwheel.hpp"
+// #include "pxl/movements/drive.hpp"
 #include "pxl/parametrics/pose.hpp"
+#include "pxl/drivebase/drive.hpp" // Add this line to include the 'Drivebase' class
+
 #include "pxl/pid.hpp"
-#include "pxl/movements/movements.hpp"
 #include "pxl/seekingcontroller.hpp"
 
 namespace pxl {
@@ -62,7 +64,7 @@ class ExtendedDrivetrain {
  * 
  * The Drivebase class provides methods to control the drivetrain.
  */
-class Drivebase : public Movement {
+class Drivebase  {
     public:
         bool isDriverControl();
         Drivebase(Drivetrain drivetrain, OdomSensors sensors, SeekingController linearController, SeekingController angularController);
@@ -78,7 +80,7 @@ class Drivebase : public Movement {
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         SeekingController linearController;
         SeekingController angularController;
-        friend class Movement;
+        friend class Drive_;
 };
 
 };  // namespace pxl
