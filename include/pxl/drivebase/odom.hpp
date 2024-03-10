@@ -53,6 +53,12 @@ class Odom {
          * @brief Updates the odometry system by calculating the robot's position and orientation.
          */
         void update();
+/**
+ * @brief Get the `Pose` of the robot
+ * 
+ * @param radians 
+ */
+        Pose getPose(bool radians = false);
 
     private:
         std::vector<std::unique_ptr<TrackingWheel>> verticals;  // Vector of unique pointers to vertical tracking wheels
