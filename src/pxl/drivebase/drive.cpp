@@ -74,11 +74,11 @@ void Drivebase::calibrate(bool calibrateImu) {
     if (sensors.horizontal2 != nullptr) sensors.horizontal2->reset();
 
     setSensors(sensors);
-    
+
     // rumble to controller to indicate success
     pros::c::controller_rumble(pros::E_CONTROLLER_MASTER, ".");
 }
 
-void Drivebase::move_to_pose(Pose pose) {}
+
 
 }  // namespace pxl
