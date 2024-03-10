@@ -4,7 +4,7 @@
 namespace pxl {
 
     seekingcontroller::seekingcontroller(PID pid, Regression regression, float globalTimeout) 
-        : pid(pid), regression(regression), globalTimeout(globalTimeout), error(0) { timer.start();}
+        : pid(pid), regression(regression), globalTimeout(globalTimeout) { timer.start();}
 
     float seekingcontroller::update(float error) {
         return pid.update(this->error = error);
