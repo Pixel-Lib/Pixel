@@ -1,4 +1,5 @@
 #include "pxl/drivebase/drive.hpp"
+#include "pxl/seekingcontroller.hpp"
 
 namespace pxl {
 pxl::OdomSensors::OdomSensors(TrackingWheel *vertical1, TrackingWheel *vertical2, TrackingWheel *horizontal1,
@@ -11,7 +12,7 @@ pxl::Drivetrain::Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *righ
       trackWidth(trackWidth),
       wheelDiameter(wheelDiameter),
       rpm(rpm) {}
-pxl::Drivebase::Drivebase(Drivetrain drivetrain, OdomSensors sensors) : drivetrain(drivetrain), sensors(sensors) {}
+pxl::Drivebase::Drivebase(Drivetrain drivetrain, OdomSensors sensors, SeekingController linearController, SeekingController angularController) : drivetrain(drivetrain), sensors(sensors), linearController(linearController), angularController(angularController) {}
 
 void pxl::Drivebase::calibrateIMU(OdomSensors sensors) {
     for (int attempt = 1; attempt <= 5 && !isDriverControl(); attempt++) {

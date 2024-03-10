@@ -11,6 +11,7 @@
 #include "pxl/parametrics/pose.hpp"
 #include "pxl/pid.hpp"
 #include "pxl/movements/movements.hpp"
+#include "pxl/seekingcontroller.hpp"
 
 namespace pxl {
 struct OdomSensors {
@@ -64,7 +65,7 @@ class ExtendedDrivetrain {
 class Drivebase : public Movement {
     public:
         bool isDriverControl();
-        Drivebase(Drivetrain drivetrain, OdomSensors sensors);
+        Drivebase(Drivetrain drivetrain, OdomSensors sensors, SeekingController linearController, SeekingController angularController);
         void calibrateIMU(OdomSensors sensors);
         void setSensors(OdomSensors sensors);
         void calibrate(bool calibrateIMU);
@@ -75,6 +76,8 @@ class Drivebase : public Movement {
         Drivetrain drivetrain;
         OdomSensors sensors;
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
+        SeekingController linearController;
+        SeekingController angularController;
         friend class Movement;
 };
 

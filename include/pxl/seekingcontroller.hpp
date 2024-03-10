@@ -4,9 +4,9 @@
 #include "pxl/parametrics/regression.hpp"
 
 namespace pxl {
-class seekingcontroller {
+class SeekingController {
 public:
-    seekingcontroller(PID pid, Regression regression, float globalTimeout);
+    SeekingController(PID pid, Regression regression, float globalTimeout);
 
     float update(float error);
 
