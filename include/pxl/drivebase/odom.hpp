@@ -6,7 +6,6 @@
 
 #include "math.h"
 #include "pros/imu.hpp"
-#include "pxl/drivebase/drive.hpp"
 #include "pxl/drivebase/trackingwheel.hpp"
 #include "pxl/parametrics/pose.hpp"
 #include "pxl/timer.hpp"
@@ -19,9 +18,6 @@ namespace pxl {
  * The Odom class uses a combination of tracking wheels and IMUs (Inertial Measurement Units) to calculate
  * the robot's position and orientation on the field. It provides methods for initialization, calibration,
  * and updating the odometry values.
- */
-/**
- * @brief The Odom class represents an odometry system that tracks the robot's position and orientation.
  */
 class Odom {
     public:
@@ -36,7 +32,7 @@ class Odom {
         Odom(std::vector<std::unique_ptr<TrackingWheel>> &verticals,
              std::vector<std::unique_ptr<TrackingWheel>> &horizontals,
              std::vector<std::unique_ptr<TrackingWheel>> &drivetrain, std::vector<std::shared_ptr<pros::IMU>> &imu);
-
+    Odom() = default; 
         /**
          * @brief Initializes the odometry system.
          */
