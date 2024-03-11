@@ -148,4 +148,6 @@ template <typename T> T avg(const std::vector<T> &vec) {
     return sum / vec.size();
 }
 
+std::pair<float,float> normalize(float lateralOut, float angularOut, float maxSpeed);
+
 }  // namespace pxl

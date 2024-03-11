@@ -31,5 +31,12 @@ float angleError(float angle1, float angle2, bool radians) {
 }
 
 float ema(float current, float previous, float smooth) { return (current * smooth) + (previous * (1 - smooth)); }
-
+std::pair<float, float> normalize(float lateralOut, float angularOut, float maxSpeed) {
+    float leftPower = lateralOut + angularOut;
+    float rightPower = lateralOut - angularOut;
+    const float ratio = std::max(std::fabs(leftPower), std::fabs(rightPower)) / maxSpeed;
+    leftPower = (ratio > 1) ? leftPower / ratio : leftPower;
+    rightPower = (ratio > 1) ? rightPower / ratio : rightPower;
+    return std::make_pair(leftPower, rightPower);
+}
 }  // namespace pxl
