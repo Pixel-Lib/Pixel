@@ -13,8 +13,8 @@ namespace pxl{
             pros::delay(10);
             return;
         }
-        // Pose targetPose = ;
-        drivebase.drivetrain.leftMotors->get_positions();
+        Pose targetPose = drivebase.odom.getPose();
+        targetPose = targetPose.rotate(drivebase.odom.getPose().theta);
     }
 
 }
