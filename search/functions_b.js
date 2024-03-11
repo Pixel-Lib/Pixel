@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['timeout_292',['timeOut',['../structpxl_1_1global__timeOuts.html#ab5e12730b5dbe0ec68445fb54ea3527e',1,'pxl::global_timeOuts']]],
-  ['timer_293',['Timer',['../classpxl_1_1Timer.html#aeb4beb0950dfff5349812cdd80c19952',1,'pxl::Timer']]],
-  ['timerstart_294',['timerStart',['../classpxl_1_1SeekingController.html#a5abeded2924d0eaa5edf94d6e92a59bc',1,'pxl::SeekingController']]],
-  ['trackingwheel_295',['TrackingWheel',['../classpxl_1_1TrackingWheel.html#ae9ea834fd9c5426ce2c72709166cf8aa',1,'pxl::TrackingWheel::TrackingWheel(pros::ADIEncoder *encoder, float wheelDiameter, float distance, float gearRatio)'],['../classpxl_1_1TrackingWheel.html#a6d7ff1de0869cb20c059615971de4a6b',1,'pxl::TrackingWheel::TrackingWheel(pros::Rotation *rotation, float wheelDiameter, float distance, float gearRatio)'],['../classpxl_1_1TrackingWheel.html#a06d820d7bd0ee7ac4a227b1fe1620d22',1,'pxl::TrackingWheel::TrackingWheel(pros::MotorGroup *motors, float wheelDiameter, float distance, float rpm)']]]
+  ['seekingcontroller_286',['SeekingController',['../classpxl_1_1SeekingController.html#a88f5dc415b75a7b39d9ed7622f3292b3',1,'pxl::SeekingController']]],
+  ['setconstants_287',['setConstants',['../classpxl_1_1Drivetrain.html#ab51f21697996f75f03f41d2e6078c89e',1,'pxl::Drivetrain']]],
+  ['setsensors_288',['setSensors',['../classpxl_1_1Drivebase.html#a0392a5b4cca4cfba1bf649ff36380446',1,'pxl::Drivebase']]],
+  ['setstandstill_289',['setStandStill',['../structpxl_1_1stand__still.html#ae8204f83178b92b936dff72c17591d8d',1,'pxl::stand_still']]],
+  ['sgn_290',['sgn',['../namespacepxl.html#afa79c20911ee3116206f645a9e1e3ed0',1,'pxl']]],
+  ['slew_291',['slew',['../namespacepxl.html#aef4d585e132a7669441e66bd34be8f11',1,'pxl']]],
+  ['start_292',['start',['../classpxl_1_1Timer.html#a83a51e3476cdc86dfbbffd15260812c4',1,'pxl::Timer']]],
+  ['stop_293',['stop',['../classpxl_1_1Timer.html#a613935d6032016e937848b8493283ea8',1,'pxl::Timer']]]
 ];
