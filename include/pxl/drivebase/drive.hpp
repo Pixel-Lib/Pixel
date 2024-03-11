@@ -9,9 +9,8 @@
 #include "pxl/drivebase/odom.hpp"
 #include "pxl/drivebase/trackingwheel.hpp"
 // #include "pxl/movements/drive.hpp"
+#include "pxl/drivebase/drive.hpp"  // Add this line to include the 'Drivebase' class
 #include "pxl/parametrics/pose.hpp"
-#include "pxl/drivebase/drive.hpp" // Add this line to include the 'Drivebase' class
-
 #include "pxl/pid.hpp"
 #include "pxl/seekingcontroller.hpp"
 
@@ -61,18 +60,17 @@ class ExtendedDrivetrain {
 
 /**
  * @brief The Drivebase class represents the base of a robot's drivetrain.
- * 
+ *
  * The Drivebase class provides methods to control the drivetrain.
  */
-class Drivebase  {
+class Drivebase {
     public:
         bool isDriverControl();
-        Drivebase(Drivetrain drivetrain, OdomSensors sensors, SeekingController linearController, SeekingController angularController);
+        Drivebase(Drivetrain drivetrain, OdomSensors sensors, SeekingController linearController,
+                  SeekingController angularController);
         void calibrateIMU(OdomSensors sensors);
         Odom setSensors(OdomSensors sensors);
         void calibrate(bool calibrateIMU);
-
-
 
     private:
         Drivetrain drivetrain;
