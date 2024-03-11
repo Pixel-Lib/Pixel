@@ -37,7 +37,7 @@ bool Drivebase::isDriverControl() {
     return pros::competition::is_connected() && !pros::competition::is_autonomous()
            && !pros::competition::is_disabled();
 }
-void Drivebase::setSensors(OdomSensors sensors) {
+Odom Drivebase::setSensors(OdomSensors sensors) {
     std::vector<std::unique_ptr<TrackingWheel>> Verticals;
     std::vector<std::unique_ptr<TrackingWheel>> Horizontals;
     std::vector<std::unique_ptr<TrackingWheel>> drive;
@@ -56,7 +56,8 @@ void Drivebase::setSensors(OdomSensors sensors) {
     drive.push_back(std::make_unique<TrackingWheel>(drivetrain.leftMotors, drivetrain.wheelDiameter,
                                                     drivetrain.trackWidth / 2, drivetrain.rpm));
     pxl::Odom odom(Verticals, Horizontals, drive, imu);
-    odom.init();
+    return odom;
+    // odom.init();
 }
 void Drivebase::calibrate(bool calibrateImu) {
     // calibrate the IMU if it exists and the user doesn't specify otherwise
@@ -74,7 +75,8 @@ void Drivebase::calibrate(bool calibrateImu) {
     if (sensors.horizontal1 != nullptr) sensors.horizontal1->reset();
     if (sensors.horizontal2 != nullptr) sensors.horizontal2->reset();
 
-    setSensors(sensors);
+    odom = setSensors(sensors);
+    odom.init();
 
     // rumble to controller to indicate success
     pros::c::controller_rumble(pros::E_CONTROLLER_MASTER, ".");

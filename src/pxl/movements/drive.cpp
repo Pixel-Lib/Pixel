@@ -3,6 +3,7 @@
 #include "pros/misc.hpp"
 #include "pxl/drivebase/drive.hpp"
 #include "pxl/parametrics/pose.hpp"
+#include "pxl/drivebase/odom.hpp"
 // TODO drivebase.drivetrain.leftMotors->move(127);
 namespace pxl{
     void Drive_::Drive(float target, float timeout, Params* params, bool async){
@@ -12,7 +13,8 @@ namespace pxl{
             pros::delay(10);
             return;
         }
-        Pose targetPose = Pose(0,0,0);
+        // Pose targetPose = ;
+        drivebase.drivetrain.leftMotors->get_positions();
     }
 
 }

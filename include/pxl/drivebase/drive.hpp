@@ -69,7 +69,7 @@ class Drivebase  {
         bool isDriverControl();
         Drivebase(Drivetrain drivetrain, OdomSensors sensors, SeekingController linearController, SeekingController angularController);
         void calibrateIMU(OdomSensors sensors);
-        void setSensors(OdomSensors sensors);
+        Odom setSensors(OdomSensors sensors);
         void calibrate(bool calibrateIMU);
 
 
@@ -80,6 +80,7 @@ class Drivebase  {
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         SeekingController linearController;
         SeekingController angularController;
+        Odom odom;
         friend class Drive_;
 };
 

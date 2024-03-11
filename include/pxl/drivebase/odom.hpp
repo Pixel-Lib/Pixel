@@ -32,6 +32,10 @@ class Odom {
         Odom(std::vector<std::unique_ptr<TrackingWheel>> &verticals,
              std::vector<std::unique_ptr<TrackingWheel>> &horizontals,
              std::vector<std::unique_ptr<TrackingWheel>> &drivetrain, std::vector<std::shared_ptr<pros::IMU>> &imu);
+             /**
+              * @brief Construct a new empty Odom object
+              * 
+              */
     Odom() = default; 
         /**
          * @brief Initializes the odometry system.
