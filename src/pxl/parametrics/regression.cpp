@@ -28,8 +28,8 @@ namespace pxl {
 
         // Function to fit a function through the coordinates using ridge regression
 std::pair<double, double> Regression::Ridge() {
-    std::vector<double> x(points.size());
-    std::vector<double> y(points.size());
+    std::vector<double> x(this->points.size());
+    std::vector<double> y(this->points.size());
 
     for (int i = 0; i < points.size(); i++) {
         x[i] = points[i].first;
@@ -39,9 +39,9 @@ std::pair<double, double> Regression::Ridge() {
     double xMean = pxl::avg(x);
     double yMean = pxl::avg(y);
 
-    double xDotY = dotProduct(x, y);
-    double xDotX = dotProduct(x, x);
-    double n = points.size();
+    double xDotY = this->dotProduct(x, y);
+    double xDotX = this->dotProduct(x, x);
+    double n = this->points.size();
 
     // Calculate lambda as 1% of the sum of squares of x
     lambda = 0.01 * xDotX;
