@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['maxstepdistance_5ft_66',['maxStepDistance_t',['../structpxl_1_1stand__still.html#adf229f1d4685b80b026413c55891d4a5',1,'pxl::stand_still']]],
-  ['maxstepturn_5fd_67',['maxStepTurn_d',['../structpxl_1_1stand__still.html#af85308a352dc2247ee02d5b1125d21be',1,'pxl::stand_still']]],
-  ['motors_68',['motors',['../classpxl_1_1TrackingWheel.html#acd951972355bea5863f875ca0941ba6a',1,'pxl::TrackingWheel']]],
-  ['move_5fto_5fpose_69',['move_to_pose',['../classpxl_1_1Drivebase.html#a710331a104ee84dfaf6ee1d684723dc1',1,'pxl::Drivebase']]],
-  ['movement_5ftype_70',['movement_Type',['../namespacepxl.html#afd77ac6809a811ca911fe64f4e47410c',1,'pxl']]]
+  ['maxspeed_79',['maxSpeed',['../structpxl_1_1Drive___1_1Params.html#a64f379505d7110f6e9dbbf91df2ecdb6',1,'pxl::Drive_::Params']]],
+  ['maxstepdistance_5ft_80',['maxStepDistance_t',['../structpxl_1_1stand__still.html#adf229f1d4685b80b026413c55891d4a5',1,'pxl::stand_still']]],
+  ['maxstepturn_5fd_81',['maxStepTurn_d',['../structpxl_1_1stand__still.html#af85308a352dc2247ee02d5b1125d21be',1,'pxl::stand_still']]],
+  ['minspeed_82',['minSpeed',['../structpxl_1_1Drive___1_1Params.html#a9c8aaf8f245b7d82a1120e4ab2ba8226',1,'pxl::Drive_::Params']]],
+  ['motors_83',['motors',['../classpxl_1_1TrackingWheel.html#acd951972355bea5863f875ca0941ba6a',1,'pxl::TrackingWheel']]],
+  ['movement_5ftype_84',['movement_Type',['../namespacepxl.html#afd77ac6809a811ca911fe64f4e47410c',1,'pxl']]]
 ];

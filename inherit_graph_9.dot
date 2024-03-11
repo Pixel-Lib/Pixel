@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="pxl::Odom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1Odom.html",tooltip="The Odom class represents an odometry system that tracks the robot's position and orientation."];
+  Node0 [label="pxl::global_timeOuts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structpxl_1_1global__timeOuts.html",tooltip=" "];
 }

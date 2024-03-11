@@ -1,0 +1,11 @@
+digraph "src/pxl/movements" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_87a857eff530ad659c1a04633acb58d5 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="pxl" fontname="Helvetica", fontsize="10", URL="dir_87a857eff530ad659c1a04633acb58d5.html"]
+  dir_da6b542a4b13fc055b1c444658d69961 [shape=box, label="movements", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_da6b542a4b13fc055b1c444658d69961.html"];
+  }
+  dir_d44c64559bbebec7f509842c48db8b23 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
+  dir_da6b542a4b13fc055b1c444658d69961->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="4", labeldistance=1.5 headhref="dir_000008_000000.html"];
+}

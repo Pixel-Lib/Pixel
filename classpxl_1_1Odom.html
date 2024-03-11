@@ -93,6 +93,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d431b27727093276f854509297768e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#a1d431b27727093276f854509297768e3">Odom</a> (std::vector&lt; std::unique_ptr&lt; <a class="el" href="classpxl_1_1TrackingWheel.html">TrackingWheel</a> &gt;&gt; &amp;<a class="el" href="classpxl_1_1Odom.html#a147f2b027ea20a520998a7748a2c9d4a">verticals</a>, std::vector&lt; std::unique_ptr&lt; <a class="el" href="classpxl_1_1TrackingWheel.html">TrackingWheel</a> &gt;&gt; &amp;<a class="el" href="classpxl_1_1Odom.html#a583a89074d5f9da5b7722fc471a49f41">horizontals</a>, std::vector&lt; std::unique_ptr&lt; <a class="el" href="classpxl_1_1TrackingWheel.html">TrackingWheel</a> &gt;&gt; &amp;<a class="el" href="classpxl_1_1Odom.html#a25a62f0a15b5fabf52b8896d97a5016d">drivetrain</a>, std::vector&lt; std::shared_ptr&lt; pros::IMU &gt;&gt; &amp;<a class="el" href="classpxl_1_1Odom.html#a42fb961578d4d980af5531b570c7f43d">imu</a>)</td></tr>
 <tr class="memdesc:a1d431b27727093276f854509297768e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="classpxl_1_1Odom.html" title="The Odom class represents an odometry system that tracks the robot&#39;s position and orientation.">Odom</a> object with the specified tracking wheels and IMUs.  <a href="classpxl_1_1Odom.html#a1d431b27727093276f854509297768e3">More...</a><br /></td></tr>
 <tr class="separator:a1d431b27727093276f854509297768e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cfb4288b37d6e62e6275b79a0ac20e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#a0cfb4288b37d6e62e6275b79a0ac20e5">Odom</a> ()=default</td></tr>
+<tr class="memdesc:a0cfb4288b37d6e62e6275b79a0ac20e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new empty <a class="el" href="classpxl_1_1Odom.html" title="The Odom class represents an odometry system that tracks the robot&#39;s position and orientation.">Odom</a> object.  <a href="classpxl_1_1Odom.html#a0cfb4288b37d6e62e6275b79a0ac20e5">More...</a><br /></td></tr>
+<tr class="separator:a0cfb4288b37d6e62e6275b79a0ac20e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa32e3e3b6d2871ad8bf394267b83753"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#aaa32e3e3b6d2871ad8bf394267b83753">init</a> ()</td></tr>
 <tr class="memdesc:aaa32e3e3b6d2871ad8bf394267b83753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the odometry system.  <a href="classpxl_1_1Odom.html#aaa32e3e3b6d2871ad8bf394267b83753">More...</a><br /></td></tr>
 <tr class="separator:aaa32e3e3b6d2871ad8bf394267b83753"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -102,6 +105,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a464b30a97f57c9de25bff0ffada5302b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#a464b30a97f57c9de25bff0ffada5302b">update</a> ()</td></tr>
 <tr class="memdesc:a464b30a97f57c9de25bff0ffada5302b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the odometry system by calculating the robot's position and orientation.  <a href="classpxl_1_1Odom.html#a464b30a97f57c9de25bff0ffada5302b">More...</a><br /></td></tr>
 <tr class="separator:a464b30a97f57c9de25bff0ffada5302b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a6693e100fa8266d66c35088df2ae41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Pose.html">Pose</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#a2a6693e100fa8266d66c35088df2ae41">getPose</a> (bool radians=false)</td></tr>
+<tr class="memdesc:a2a6693e100fa8266d66c35088df2ae41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <code><a class="el" href="classpxl_1_1Pose.html" title="The Pose class contains classes and functions related to (x, y, theta) coordinates.">Pose</a></code> of the robot.  <a href="classpxl_1_1Odom.html#a2a6693e100fa8266d66c35088df2ae41">More...</a><br /></td></tr>
+<tr class="separator:a2a6693e100fa8266d66c35088df2ae41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -129,11 +135,10 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classpxl_1_1Odom.html" title="The Odom class represents an odometry system that tracks the robot&#39;s position and orientation.">Odom</a> class represents an odometry system that tracks the robot's position and orientation. </p>
-<p>The <a class="el" href="classpxl_1_1Odom.html" title="The Odom class represents an odometry system that tracks the robot&#39;s position and orientation.">Odom</a> class uses a combination of tracking wheels and IMUs (Inertial Measurement Units) to calculate the robot's position and orientation on the field. It provides methods for initialization, calibration, and updating the odometry values.</p>
-<p>The <a class="el" href="classpxl_1_1Odom.html" title="The Odom class represents an odometry system that tracks the robot&#39;s position and orientation.">Odom</a> class represents an odometry system that tracks the robot's position and orientation. </p>
+<p>The <a class="el" href="classpxl_1_1Odom.html" title="The Odom class represents an odometry system that tracks the robot&#39;s position and orientation.">Odom</a> class uses a combination of tracking wheels and IMUs (Inertial Measurement Units) to calculate the robot's position and orientation on the field. It provides methods for initialization, calibration, and updating the odometry values. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1d431b27727093276f854509297768e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d431b27727093276f854509297768e3">&#9670;&nbsp;</a></span>Odom()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d431b27727093276f854509297768e3">&#9670;&nbsp;</a></span>Odom() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,6 +185,33 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a0cfb4288b37d6e62e6275b79a0ac20e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cfb4288b37d6e62e6275b79a0ac20e5">&#9670;&nbsp;</a></span>Odom() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pxl::Odom::Odom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new empty <a class="el" href="classpxl_1_1Odom.html" title="The Odom class represents an odometry system that tracks the robot&#39;s position and orientation.">Odom</a> object. </p>
 
 </div>
 </div>
@@ -276,6 +308,32 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">calibrateIMUs</td><td>Specifies whether to calibrate the IMUs. Default is true. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2a6693e100fa8266d66c35088df2ae41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a6693e100fa8266d66c35088df2ae41">&#9670;&nbsp;</a></span>getPose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpxl_1_1Pose.html">Pose</a> pxl::Odom::getPose </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>radians</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the <code><a class="el" href="classpxl_1_1Pose.html" title="The Pose class contains classes and functions related to (x, y, theta) coordinates.">Pose</a></code> of the robot. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radians</td><td></td></tr>
   </table>
   </dd>
 </dl>

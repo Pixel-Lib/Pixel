@@ -64,8 +64,10 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">pxl Namespace Reference</div>  </div>
 </div><!--header-->
@@ -100,6 +102,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1TrackingWheel.html">TrackingWheel</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a tracking wheel used for measuring distance traveled by a robot.  <a href="classpxl_1_1TrackingWheel.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drive__.html">Drive_</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1ObjectTracker.html">ObjectTracker</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Coord.html">Coord</a></td></tr>
@@ -108,11 +112,20 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Pose.html">Pose</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <code><a class="el" href="classpxl_1_1Pose.html" title="The Pose class contains classes and functions related to (x, y, theta) coordinates.">Pose</a></code> class contains classes and functions related to (x, y, theta) coordinates.  <a href="classpxl_1_1Pose.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Regression.html">Regression</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1PID.html">PID</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class representing a Proportional-Integral-Derivative (<a class="el" href="classpxl_1_1PID.html" title="A class representing a Proportional-Integral-Derivative (PID) controller.">PID</a>) controller.  <a href="classpxl_1_1PID.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html">SeekingController</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Timer.html">Timer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ab5bc9b30decc2a75068db7091e3b42ea"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepxl.html#ab5bc9b30decc2a75068db7091e3b42ea">Point</a></td></tr>
+<tr class="separator:ab5bc9b30decc2a75068db7091e3b42ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -169,7 +182,29 @@ Functions</h2></td></tr>
 <tr class="separator:a1400e5c065d0e56c9cfc4d7998ab0a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68b10b21d74b18d39d19169ef013e4d6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepxl.html#a68b10b21d74b18d39d19169ef013e4d6">getCurvature</a> (<a class="el" href="classpxl_1_1Pose.html">Pose</a> <a class="el" href="namespacepxl.html#a0701b37c7456e2154050add8257094c0a41319fa3d0af6570af134c7465a45916">pose</a>, <a class="el" href="classpxl_1_1Pose.html">Pose</a> other)</td></tr>
 <tr class="separator:a68b10b21d74b18d39d19169ef013e4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aad38827868db8057b94631c6e15d15da"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacepxl.html#ab5bc9b30decc2a75068db7091e3b42ea">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepxl.html#aad38827868db8057b94631c6e15d15da">points</a></td></tr>
+<tr class="separator:aad38827868db8057b94631c6e15d15da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2a296ac7ef95d8c1642ae0a8a2ddf0b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepxl.html#ac2a296ac7ef95d8c1642ae0a8a2ddf0b">lambda</a></td></tr>
+<tr class="separator:ac2a296ac7ef95d8c1642ae0a8a2ddf0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ab5bc9b30decc2a75068db7091e3b42ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5bc9b30decc2a75068db7091e3b42ea">&#9670;&nbsp;</a></span>Point</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::pair&lt; double, double &gt; <a class="el" href="namespacepxl.html#ab5bc9b30decc2a75068db7091e3b42ea">pxl::Point</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a0701b37c7456e2154050add8257094c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0701b37c7456e2154050add8257094c0">&#9670;&nbsp;</a></span>action_Point</h2>
@@ -617,6 +652,35 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The wrapped angle in radians. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ac2a296ac7ef95d8c1642ae0a8a2ddf0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2a296ac7ef95d8c1642ae0a8a2ddf0b">&#9670;&nbsp;</a></span>lambda</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double pxl::lambda</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad38827868db8057b94631c6e15d15da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad38827868db8057b94631c6e15d15da">&#9670;&nbsp;</a></span>points</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="namespacepxl.html#ab5bc9b30decc2a75068db7091e3b42ea">Point</a>&gt; pxl::points</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

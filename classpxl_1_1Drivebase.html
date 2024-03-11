@@ -69,6 +69,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classpxl_1_1Drivebase-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">pxl::Drivebase Class Reference</div>  </div>
@@ -78,7 +79,7 @@ $(function() {
 <p>The <a class="el" href="classpxl_1_1Drivebase.html" title="The Drivebase class represents the base of a robot&#39;s drivetrain.">Drivebase</a> class represents the base of a robot's drivetrain.  
  <a href="classpxl_1_1Drivebase.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="drive_8hpp_source.html">drive.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="drivebase_2drive_8hpp_source.html">drive.hpp</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for pxl::Drivebase:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -91,16 +92,14 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0cc11bc53b3e7d37c8bd74ff54565e71"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a0cc11bc53b3e7d37c8bd74ff54565e71">isDriverControl</a> ()</td></tr>
 <tr class="separator:a0cc11bc53b3e7d37c8bd74ff54565e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25d0e673e2558ca46d81f21ea81714ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a25d0e673e2558ca46d81f21ea81714ca">Drivebase</a> (<a class="el" href="classpxl_1_1Drivetrain.html">Drivetrain</a> <a class="el" href="classpxl_1_1Drivebase.html#a270e97d895e45eef8964be072e9535ce">drivetrain</a>, <a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a> <a class="el" href="classpxl_1_1Drivebase.html#a728c5496401d6b53e263e4c522c720f9">sensors</a>)</td></tr>
-<tr class="separator:a25d0e673e2558ca46d81f21ea81714ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24988e39ce3bb2ba6f104acbd24b7ff5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a24988e39ce3bb2ba6f104acbd24b7ff5">Drivebase</a> (<a class="el" href="classpxl_1_1Drivetrain.html">Drivetrain</a> <a class="el" href="classpxl_1_1Drivebase.html#a270e97d895e45eef8964be072e9535ce">drivetrain</a>, <a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a> <a class="el" href="classpxl_1_1Drivebase.html#a728c5496401d6b53e263e4c522c720f9">sensors</a>, <a class="el" href="classpxl_1_1SeekingController.html">SeekingController</a> <a class="el" href="classpxl_1_1Drivebase.html#aed6f1df061e441e9e71a8ba8e60f0c3b">linearController</a>, <a class="el" href="classpxl_1_1SeekingController.html">SeekingController</a> <a class="el" href="classpxl_1_1Drivebase.html#ac9101024ccdbbf767837f01dfd3f29a9">angularController</a>)</td></tr>
+<tr class="separator:a24988e39ce3bb2ba6f104acbd24b7ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af40956ce1b817eca0b6457171235dbd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#af40956ce1b817eca0b6457171235dbd1">calibrateIMU</a> (<a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a> <a class="el" href="classpxl_1_1Drivebase.html#a728c5496401d6b53e263e4c522c720f9">sensors</a>)</td></tr>
 <tr class="separator:af40956ce1b817eca0b6457171235dbd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee833c265b0a3bfbf120893b187b1c02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#aee833c265b0a3bfbf120893b187b1c02">setSensors</a> (<a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a> <a class="el" href="classpxl_1_1Drivebase.html#a728c5496401d6b53e263e4c522c720f9">sensors</a>)</td></tr>
-<tr class="separator:aee833c265b0a3bfbf120893b187b1c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0392a5b4cca4cfba1bf649ff36380446"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Odom.html">Odom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a0392a5b4cca4cfba1bf649ff36380446">setSensors</a> (<a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a> <a class="el" href="classpxl_1_1Drivebase.html#a728c5496401d6b53e263e4c522c720f9">sensors</a>)</td></tr>
+<tr class="separator:a0392a5b4cca4cfba1bf649ff36380446"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dab3179284fcf3d5d5df4c5a3e0a54c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a7dab3179284fcf3d5d5df4c5a3e0a54c">calibrate</a> (bool <a class="el" href="classpxl_1_1Drivebase.html#af40956ce1b817eca0b6457171235dbd1">calibrateIMU</a>)</td></tr>
 <tr class="separator:a7dab3179284fcf3d5d5df4c5a3e0a54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a710331a104ee84dfaf6ee1d684723dc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a710331a104ee84dfaf6ee1d684723dc1">move_to_pose</a> (<a class="el" href="classpxl_1_1Pose.html">Pose</a> <a class="el" href="namespacepxl.html#a0701b37c7456e2154050add8257094c0a41319fa3d0af6570af134c7465a45916">pose</a>)</td></tr>
-<tr class="separator:a710331a104ee84dfaf6ee1d684723dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -110,13 +109,24 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a728c5496401d6b53e263e4c522c720f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a3820153e9623195ccd1d0d0a93b367"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a8a3820153e9623195ccd1d0d0a93b367">odomSensors</a> = {nullptr, nullptr, nullptr, nullptr, nullptr}</td></tr>
 <tr class="separator:a8a3820153e9623195ccd1d0d0a93b367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed6f1df061e441e9e71a8ba8e60f0c3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1SeekingController.html">SeekingController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#aed6f1df061e441e9e71a8ba8e60f0c3b">linearController</a></td></tr>
+<tr class="separator:aed6f1df061e441e9e71a8ba8e60f0c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9101024ccdbbf767837f01dfd3f29a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1SeekingController.html">SeekingController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#ac9101024ccdbbf767837f01dfd3f29a9">angularController</a></td></tr>
+<tr class="separator:ac9101024ccdbbf767837f01dfd3f29a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1858f1d0047b447e48ad60f58949c9b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Odom.html">Odom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a1858f1d0047b447e48ad60f58949c9b8">odom</a></td></tr>
+<tr class="separator:a1858f1d0047b447e48ad60f58949c9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:aabf170057ad00f695ee86cd78f23302c"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#aabf170057ad00f695ee86cd78f23302c">Drive_</a></td></tr>
+<tr class="separator:aabf170057ad00f695ee86cd78f23302c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classpxl_1_1Drivebase.html" title="The Drivebase class represents the base of a robot&#39;s drivetrain.">Drivebase</a> class represents the base of a robot's drivetrain. </p>
 <p>The <a class="el" href="classpxl_1_1Drivebase.html" title="The Drivebase class represents the base of a robot&#39;s drivetrain.">Drivebase</a> class provides methods to control the drivetrain. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a25d0e673e2558ca46d81f21ea81714ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25d0e673e2558ca46d81f21ea81714ca">&#9670;&nbsp;</a></span>Drivebase()</h2>
+<a id="a24988e39ce3bb2ba6f104acbd24b7ff5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24988e39ce3bb2ba6f104acbd24b7ff5">&#9670;&nbsp;</a></span>Drivebase()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -131,7 +141,19 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a>&#160;</td>
-          <td class="paramname"><em>sensors</em>&#160;</td>
+          <td class="paramname"><em>sensors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classpxl_1_1SeekingController.html">SeekingController</a>&#160;</td>
+          <td class="paramname"><em>linearController</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classpxl_1_1SeekingController.html">SeekingController</a>&#160;</td>
+          <td class="paramname"><em>angularController</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -197,32 +219,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a710331a104ee84dfaf6ee1d684723dc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a710331a104ee84dfaf6ee1d684723dc1">&#9670;&nbsp;</a></span>move_to_pose()</h2>
+<a id="a0392a5b4cca4cfba1bf649ff36380446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0392a5b4cca4cfba1bf649ff36380446">&#9670;&nbsp;</a></span>setSensors()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void pxl::Drivebase::move_to_pose </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classpxl_1_1Pose.html">Pose</a>&#160;</td>
-          <td class="paramname"><em>pose</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aee833c265b0a3bfbf120893b187b1c02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee833c265b0a3bfbf120893b187b1c02">&#9670;&nbsp;</a></span>setSensors()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void pxl::Drivebase::setSensors </td>
+          <td class="memname"><a class="el" href="classpxl_1_1Odom.html">Odom</a> pxl::Drivebase::setSensors </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a>&#160;</td>
           <td class="paramname"><em>sensors</em></td><td>)</td>
@@ -233,7 +237,52 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="aabf170057ad00f695ee86cd78f23302c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabf170057ad00f695ee86cd78f23302c">&#9670;&nbsp;</a></span>Drive_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classpxl_1_1Drive__.html">Drive_</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ac9101024ccdbbf767837f01dfd3f29a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9101024ccdbbf767837f01dfd3f29a9">&#9670;&nbsp;</a></span>angularController</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpxl_1_1SeekingController.html">SeekingController</a> pxl::Drivebase::angularController</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a270e97d895e45eef8964be072e9535ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a270e97d895e45eef8964be072e9535ce">&#9670;&nbsp;</a></span>drivetrain</h2>
 
@@ -245,6 +294,50 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classpxl_1_1Drivetrain.html">Drivetrain</a> pxl::Drivebase::drivetrain</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed6f1df061e441e9e71a8ba8e60f0c3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed6f1df061e441e9e71a8ba8e60f0c3b">&#9670;&nbsp;</a></span>linearController</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpxl_1_1SeekingController.html">SeekingController</a> pxl::Drivebase::linearController</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1858f1d0047b447e48ad60f58949c9b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1858f1d0047b447e48ad60f58949c9b8">&#9670;&nbsp;</a></span>odom</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpxl_1_1Odom.html">Odom</a> pxl::Drivebase::odom</td>
         </tr>
       </table>
   </td>
@@ -301,8 +394,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/pxl/drivebase/<a class="el" href="drive_8hpp_source.html">drive.hpp</a></li>
-<li>src/pxl/drivebase/<a class="el" href="drive_8cpp.html">drive.cpp</a></li>
+<li>include/pxl/drivebase/<a class="el" href="drivebase_2drive_8hpp_source.html">drive.hpp</a></li>
+<li>src/pxl/drivebase/<a class="el" href="drivebase_2drive_8cpp.html">drive.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <footer>
