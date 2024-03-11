@@ -149,12 +149,12 @@ template <typename T> T avg(const std::vector<T> &vec) {
 }
 /**
  * @brief normalizes the output of a lateral and angular controller so speeds do not exceed the `maxSpeed`
- * 
- * @param lateralOut 
- * @param angularOut 
- * @param maxSpeed 
- * @return std::pair<float,float> 
+ *
+ * @param lateralOut
+ * @param angularOut
+ * @param maxSpeed
+ * @return std::pair<float,float>
  */
-std::pair<float,float> normalize(float lateralOut, float angularOut, float maxSpeed);
+std::pair<float, float> normalize(float lateralOut, float angularOut, float maxSpeed);
 
 }  // namespace pxl
