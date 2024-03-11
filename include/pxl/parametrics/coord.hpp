@@ -18,12 +18,46 @@ class Coord {
          */
         Coord(float x, float y) : x(x), y(y) {}
 
-        // Overloaded Operators
+        /**
+         * @brief Adds two coordinates together.
+         * @param other The other coordinate to add.
+         * @return The sum of the two coordinates.
+         */
         Coord operator+(const Coord &other) const;
+
+        /**
+         * @brief Subtracts one coordinate from another.
+         * @param other The coordinate to subtract.
+         * @return The difference between the two coordinates.
+         */
         Coord operator-(const Coord &other) const;
+
+        /**
+         * @brief Calculates the dot product of two coordinates.
+         * @param other The other coordinate.
+         * @return The dot product of the two coordinates.
+         */
         float operator*(const Coord &other) const;
+
+        /**
+         * @brief Multiplies a coordinate by a scalar value.
+         * @param scalar The scalar value.
+         * @return The scaled coordinate.
+         */
         Coord operator*(const float &scalar) const;
+
+        /**
+         * @brief Divides a coordinate by a scalar value.
+         * @param scalar The scalar value.
+         * @return The divided coordinate.
+         */
         Coord operator/(const float &scalar) const;
+
+        /**
+         * @brief Adds another coordinate to this coordinate.
+         * @param other The other coordinate to add.
+         * @return A reference to this coordinate after the addition.
+         */
         Coord &operator+=(const Coord &other);
 
         /**

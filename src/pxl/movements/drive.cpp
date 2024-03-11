@@ -3,6 +3,7 @@
 #include "pros/misc.hpp"
 #include "pxl/drivebase/drive.hpp"
 #include "pxl/parametrics/pose.hpp"
+#include "pxl/parametrics/coord.hpp"
 #include "pxl/drivebase/odom.hpp"
 // TODO drivebase.drivetrain.leftMotors->move(127);
 namespace pxl{
@@ -14,7 +15,7 @@ namespace pxl{
             return;
         }
         Pose targetPose = drivebase.odom.getPose();
-        targetPose = targetPose.rotate(drivebase.odom.getPose().theta);
+        targetPose +=  targetPose.rotate(drivebase.odom.getPose().theta) * target;
     }
 
 }
