@@ -1,4 +1,5 @@
 #include "pxl/drivebase/drive.hpp"
+
 #include "pxl/seekingcontroller.hpp"
 
 namespace pxl {
@@ -12,7 +13,12 @@ pxl::Drivetrain::Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *righ
       trackWidth(trackWidth),
       wheelDiameter(wheelDiameter),
       rpm(rpm) {}
-pxl::Drivebase::Drivebase(Drivetrain drivetrain, OdomSensors sensors, SeekingController linearController, SeekingController angularController) : drivetrain(drivetrain), sensors(sensors), linearController(linearController), angularController(angularController) {}
+pxl::Drivebase::Drivebase(Drivetrain drivetrain, OdomSensors sensors, SeekingController linearController,
+                          SeekingController angularController)
+    : drivetrain(drivetrain),
+      sensors(sensors),
+      linearController(linearController),
+      angularController(angularController) {}
 
 void pxl::Drivebase::calibrateIMU(OdomSensors sensors) {
     for (int attempt = 1; attempt <= 5 && !isDriverControl(); attempt++) {
@@ -81,7 +87,5 @@ void Drivebase::calibrate(bool calibrateImu) {
     // rumble to controller to indicate success
     pros::c::controller_rumble(pros::E_CONTROLLER_MASTER, ".");
 }
-
-
 
 }  // namespace pxl
