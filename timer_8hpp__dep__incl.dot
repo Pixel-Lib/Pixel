@@ -11,6 +11,7 @@ digraph "include/pxl/timer.hpp"
   Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="include/pxl/drivebase\l/drivebase.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drivebase_8hpp.html",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="include/pxl/movements\l/drive.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drive_8hpp.html",tooltip=" "];
   Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
