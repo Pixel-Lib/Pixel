@@ -42,14 +42,16 @@ digraph "src/pxl/drivebase/odom.cpp"
   Node15 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node17 [label="type_traits",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node15 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node18 [label="pxl/parametrics/pose.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pose_8hpp.html",tooltip=" "];
-  Node18 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node19 [label="pxl/parametrics/coord.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$coord_8hpp.html",tooltip=" "];
-  Node19 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="chrono",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="pxl/parametrics/pose.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pose_8hpp.html",tooltip=" "];
+  Node19 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="pxl/parametrics/coord.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$coord_8hpp.html",tooltip=" "];
+  Node20 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node20 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

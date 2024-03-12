@@ -93,8 +93,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3079c6fef3a4bf6818776693acca6d28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drive__.html#a3079c6fef3a4bf6818776693acca6d28">Drive</a> (float target, float timeout, <a class="el" href="structpxl_1_1Drive___1_1Params.html">Params</a> *<a class="el" href="classpxl_1_1Drive__.html#a65d22006f96f938e57e0abdbfa7f4680">params</a>, bool async=true)</td></tr>
-<tr class="separator:a3079c6fef3a4bf6818776693acca6d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad95a83db75f497e7f86b95807ecf8c3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drive__.html#ad95a83db75f497e7f86b95807ecf8c3e">Drive</a> (float target, float timeout, <a class="el" href="structpxl_1_1Drive___1_1Params.html">Params</a> *<a class="el" href="classpxl_1_1Drive__.html#a65d22006f96f938e57e0abdbfa7f4680">params</a>={}, bool async=true)</td></tr>
+<tr class="separator:ad95a83db75f497e7f86b95807ecf8c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -102,6 +102,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a8709b4e89b4871fc4c9947e589e65e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65d22006f96f938e57e0abdbfa7f4680"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpxl_1_1Drive___1_1Params.html">Params</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drive__.html#a65d22006f96f938e57e0abdbfa7f4680">params</a></td></tr>
 <tr class="separator:a65d22006f96f938e57e0abdbfa7f4680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97653141d0eee11e2d4344ef63c688e2"><td class="memItemLeft" align="right" valign="top">pros::Mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drive__.html#a97653141d0eee11e2d4344ef63c688e2">mutex</a></td></tr>
+<tr class="separator:a97653141d0eee11e2d4344ef63c688e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa11b645f5fcbc468096b5ce355c9f1fe"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drive__.html#aa11b645f5fcbc468096b5ce355c9f1fe">compstate</a> = pros::competition::get_status()</td></tr>
 <tr class="separator:aa11b645f5fcbc468096b5ce355c9f1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -111,8 +113,8 @@ Friends</h2></td></tr>
 <tr class="separator:aa6244770d3d6c92422516f018bf11c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3079c6fef3a4bf6818776693acca6d28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3079c6fef3a4bf6818776693acca6d28">&#9670;&nbsp;</a></span>Drive()</h2>
+<a id="ad95a83db75f497e7f86b95807ecf8c3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad95a83db75f497e7f86b95807ecf8c3e">&#9670;&nbsp;</a></span>Drive()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,7 +135,7 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structpxl_1_1Drive___1_1Params.html">Params</a> *&#160;</td>
-          <td class="paramname"><em>params</em>, </td>
+          <td class="paramname"><em>params</em> = <code>{}</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -208,6 +210,28 @@ Friends</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classpxl_1_1Drivebase.html">Drivebase</a> pxl::Drive_::drivebase</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a97653141d0eee11e2d4344ef63c688e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97653141d0eee11e2d4344ef63c688e2">&#9670;&nbsp;</a></span>mutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pros::Mutex pxl::Drive_::mutex</td>
         </tr>
       </table>
   </td>

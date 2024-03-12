@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['regression_203',['Regression',['../classpxl_1_1Regression.html',1,'pxl']]]
+  ['regression_204',['Regression',['../classpxl_1_1Regression.html',1,'pxl']]]
 ];

@@ -69,6 +69,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classpxl_1_1SeekingController-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">pxl::SeekingController Class Reference</div>  </div>
@@ -88,8 +89,8 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a88f5dc415b75a7b39d9ed7622f3292b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#a88f5dc415b75a7b39d9ed7622f3292b3">SeekingController</a> (<a class="el" href="classpxl_1_1PID.html">PID</a> <a class="el" href="classpxl_1_1SeekingController.html#a622ad6609097d4615ae76e507739cfd1">pid</a>, float <a class="el" href="classpxl_1_1SeekingController.html#a86b4361b7ed37c4369205614f414f808">slew_</a>, <a class="el" href="classpxl_1_1Regression.html">Regression</a> <a class="el" href="classpxl_1_1SeekingController.html#af08a9ec3689a46497b99c8e0845ca924">regression</a>, float <a class="el" href="classpxl_1_1SeekingController.html#a9fa0b9754c678b79b0d76ed35184edde">globalTimeout</a>)</td></tr>
 <tr class="separator:a88f5dc415b75a7b39d9ed7622f3292b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac295773515476f4645615800457fd651"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#ac295773515476f4645615800457fd651">update</a> (float <a class="el" href="classpxl_1_1SeekingController.html#a94e7f21d5e18d43e29eac090c36cfd4e">error</a>)</td></tr>
-<tr class="separator:ac295773515476f4645615800457fd651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2ce62534e581c0ce4483af96be911c0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#ab2ce62534e581c0ce4483af96be911c0">update</a> (float <a class="el" href="classpxl_1_1SeekingController.html#a94e7f21d5e18d43e29eac090c36cfd4e">error</a>, bool <a class="el" href="namespacepxl.html#aef4d585e132a7669441e66bd34be8f11">slew</a>=true)</td></tr>
+<tr class="separator:ab2ce62534e581c0ce4483af96be911c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5abeded2924d0eaa5edf94d6e92a59bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#a5abeded2924d0eaa5edf94d6e92a59bc">timerStart</a> ()</td></tr>
 <tr class="separator:a5abeded2924d0eaa5edf94d6e92a59bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cd2960ab0e783999f3fc44b84085f69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#a9cd2960ab0e783999f3fc44b84085f69">getExit</a> (float <a class="el" href="classpxl_1_1SeekingController.html#a94e7f21d5e18d43e29eac090c36cfd4e">error</a>)</td></tr>
@@ -111,6 +112,11 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a86b4361b7ed37c4369205614f414f808"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3382c17069ba2758c28895b674da5d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Timer.html">pxl::Timer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#af3382c17069ba2758c28895b674da5d8">timer</a></td></tr>
 <tr class="separator:af3382c17069ba2758c28895b674da5d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:aabf170057ad00f695ee86cd78f23302c"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#aabf170057ad00f695ee86cd78f23302c">Drive_</a></td></tr>
+<tr class="separator:aabf170057ad00f695ee86cd78f23302c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a88f5dc415b75a7b39d9ed7622f3292b3"></a>
@@ -189,8 +195,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ac295773515476f4645615800457fd651"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac295773515476f4645615800457fd651">&#9670;&nbsp;</a></span>update()</h2>
+<a id="ab2ce62534e581c0ce4483af96be911c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2ce62534e581c0ce4483af96be911c0">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,10 +205,43 @@ Private Attributes</h2></td></tr>
           <td class="memname">float pxl::SeekingController::update </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>error</em></td><td>)</td>
+          <td class="paramname"><em>error</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>slew</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="aabf170057ad00f695ee86cd78f23302c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabf170057ad00f695ee86cd78f23302c">&#9670;&nbsp;</a></span>Drive_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classpxl_1_1Drive__.html">Drive_</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
