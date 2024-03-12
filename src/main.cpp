@@ -1,5 +1,27 @@
 #include "main.h"
+#include "drivebase.hpp"
+#include "pros/motors.hpp"
 #include "pxl/api.hpp"
+
+pros::Motor leftFront(1);
+pros::Motor leftMiddle(2);
+pros::Motor  leftBack(3);
+
+pros::Motor rightFront(4);
+pros::Motor rightMiddle(5);
+pros::Motor rightBack(6);
+
+pros::MotorGroup leftMotors({leftFront, leftMiddle, leftBack});
+pros::MotorGroup rightMotors({rightFront, rightMiddle, rightBack});
+
+// Create drivetrain object
+pxl::Drivetrain drivetrain(
+    &leftMotors,// left motors
+ &rightMotors, //right motors
+ 12.5,  // track width
+ 3.25, // diameter of wheel
+ 360 // rpm of drivetrain. If unsure, type (input gear / output gear) * motor rpm
+ );
 /**
  * A callback function for LLEMU's center button.
  *
