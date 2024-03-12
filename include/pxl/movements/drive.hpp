@@ -1,11 +1,12 @@
 #pragma once
+#include <memory>
+
 #include "pros/rtos.hpp"
 #include "pxl/aSync.hpp"
 #include "pxl/drivebase/api.hpp"
 #include "pxl/drivebase/drivebase.hpp"
 #include "pxl/pid.hpp"
 #include "pxl/seekingcontroller.hpp"
-#include <memory>
 namespace pxl {
 class Drive_ {
     private:

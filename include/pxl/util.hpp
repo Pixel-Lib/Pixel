@@ -1,11 +1,11 @@
 #pragma once
 
 #include <algorithm>
+#include <chrono>
 #include <cmath>
 #include <memory>
 #include <type_traits>
 #include <vector>
-#include <chrono>
 namespace pxl {
 
 /**

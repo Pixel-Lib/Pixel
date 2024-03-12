@@ -13,7 +13,8 @@ float slew(float target, float current, float maxChange) {
     auto now = std::chrono::high_resolution_clock::now();
     float timestep = std::chrono::duration<float>(now - lastTime).count();
     lastTime = now;
-    return maxChange == 0 ? target : current + std::clamp(target - current, -maxChange* timestep, maxChange* timestep);
+    return maxChange == 0 ? target
+                          : current + std::clamp(target - current, -maxChange * timestep, maxChange * timestep);
 }
 
 float radToDeg(float rad) { return rad * 180 / M_PI; }
