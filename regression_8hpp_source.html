@@ -74,40 +74,42 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="coord_8hpp.html">pxl/parametrics/coord.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepxl.html">pxl</a> {</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">// Define a pair of doubles as a Point</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespacepxl.html#ab5bc9b30decc2a75068db7091e3b42ea">    9</a></span>&#160;    <span class="keyword">typedef</span> std::pair&lt;double, double&gt; <a class="code" href="namespacepxl.html#ab5bc9b30decc2a75068db7091e3b42ea">Point</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">// typedef std::pair&lt;double, double&gt; Point;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// Define the Regression class</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classpxl_1_1Regression.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classpxl_1_1Regression.html">Regression</a> {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classpxl_1_1Regression.html#a3137470875322ffe9bafb3944bb564b3">   14</a></span>&#160;        std::vector&lt;Point&gt; <a class="code" href="classpxl_1_1Regression.html#a3137470875322ffe9bafb3944bb564b3">points</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="comment">// Constructor for the Regression class</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="classpxl_1_1Regression.html#a9643761d7288c21404c46791b8941a0a">Regression</a>(std::vector&lt;Point&gt;&amp; <a class="code" href="classpxl_1_1Regression.html#a3137470875322ffe9bafb3944bb564b3">points</a>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classpxl_1_1Regression.html#aae399999529d47311c27c8872ada4758">   14</a></span>&#160;        std::vector&lt;pxl::Coord&gt; <a class="code" href="classpxl_1_1Regression.html#aae399999529d47311c27c8872ada4758">points</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classpxl_1_1Regression.html#a8cdb5be7af71a054e8d44d204bd98687">   15</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classpxl_1_1Regression.html#a8cdb5be7af71a054e8d44d204bd98687">lambda</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="comment">// Constructor for the Regression class</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classpxl_1_1Regression.html#a084e55ed2f6dc7864497409b39e92c37">Regression</a>(std::vector&lt;pxl::Coord&gt; <a class="code" href="classpxl_1_1Regression.html#aae399999529d47311c27c8872ada4758">points</a>);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">// Function to calculate the dot product of two vectors</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classpxl_1_1Regression.html#ace5c1576908f29eeed2f3913979f5d45">dotProduct</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; v1, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; v2);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// Function to fit a function through the coordinates using ridge regression</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        std::pair&lt;double, double&gt; <a class="code" href="classpxl_1_1Regression.html#a629456709415f74159b6898f2d3a752f">Ridge</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classpxl_1_1Regression.html#acf2d3ec55a10ffe3f5ef3246d1ef9d24">predict</a>(<span class="keywordtype">double</span> x);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    };</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">// Function to calculate the dot product of two vectors</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classpxl_1_1Regression.html#ace5c1576908f29eeed2f3913979f5d45">dotProduct</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; v1, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; v2);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">// Function to fit a function through the coordinates using ridge regression</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        std::pair&lt;double, double&gt; <a class="code" href="classpxl_1_1Regression.html#a629456709415f74159b6898f2d3a752f">Ridge</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classpxl_1_1Regression.html#acf2d3ec55a10ffe3f5ef3246d1ef9d24">predict</a>(<span class="keywordtype">double</span> x);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="ttc" id="aclasspxl_1_1Regression_html"><div class="ttname"><a href="classpxl_1_1Regression.html">pxl::Regression</a></div><div class="ttdef"><b>Definition:</b> regression.hpp:12</div></div>
-<div class="ttc" id="aclasspxl_1_1Regression_html_a3137470875322ffe9bafb3944bb564b3"><div class="ttname"><a href="classpxl_1_1Regression.html#a3137470875322ffe9bafb3944bb564b3">pxl::Regression::points</a></div><div class="ttdeci">std::vector&lt; Point &gt; points</div><div class="ttdef"><b>Definition:</b> regression.hpp:14</div></div>
-<div class="ttc" id="aclasspxl_1_1Regression_html_a629456709415f74159b6898f2d3a752f"><div class="ttname"><a href="classpxl_1_1Regression.html#a629456709415f74159b6898f2d3a752f">pxl::Regression::Ridge</a></div><div class="ttdeci">std::pair&lt; double, double &gt; Ridge()</div><div class="ttdef"><b>Definition:</b> regression.cpp:30</div></div>
-<div class="ttc" id="aclasspxl_1_1Regression_html_a9643761d7288c21404c46791b8941a0a"><div class="ttname"><a href="classpxl_1_1Regression.html#a9643761d7288c21404c46791b8941a0a">pxl::Regression::Regression</a></div><div class="ttdeci">Regression(std::vector&lt; Point &gt; &amp;points)</div><div class="ttdef"><b>Definition:</b> regression.cpp:15</div></div>
-<div class="ttc" id="aclasspxl_1_1Regression_html_ace5c1576908f29eeed2f3913979f5d45"><div class="ttname"><a href="classpxl_1_1Regression.html#ace5c1576908f29eeed2f3913979f5d45">pxl::Regression::dotProduct</a></div><div class="ttdeci">double dotProduct(const std::vector&lt; double &gt; &amp;v1, const std::vector&lt; double &gt; &amp;v2)</div><div class="ttdef"><b>Definition:</b> regression.cpp:21</div></div>
-<div class="ttc" id="aclasspxl_1_1Regression_html_acf2d3ec55a10ffe3f5ef3246d1ef9d24"><div class="ttname"><a href="classpxl_1_1Regression.html#acf2d3ec55a10ffe3f5ef3246d1ef9d24">pxl::Regression::predict</a></div><div class="ttdeci">double predict(double x)</div><div class="ttdef"><b>Definition:</b> regression.cpp:55</div></div>
+<div class="ttc" id="aclasspxl_1_1Regression_html_a084e55ed2f6dc7864497409b39e92c37"><div class="ttname"><a href="classpxl_1_1Regression.html#a084e55ed2f6dc7864497409b39e92c37">pxl::Regression::Regression</a></div><div class="ttdeci">Regression(std::vector&lt; pxl::Coord &gt; points)</div><div class="ttdef"><b>Definition:</b> regression.cpp:11</div></div>
+<div class="ttc" id="aclasspxl_1_1Regression_html_a629456709415f74159b6898f2d3a752f"><div class="ttname"><a href="classpxl_1_1Regression.html#a629456709415f74159b6898f2d3a752f">pxl::Regression::Ridge</a></div><div class="ttdeci">std::pair&lt; double, double &gt; Ridge()</div><div class="ttdef"><b>Definition:</b> regression.cpp:26</div></div>
+<div class="ttc" id="aclasspxl_1_1Regression_html_a8cdb5be7af71a054e8d44d204bd98687"><div class="ttname"><a href="classpxl_1_1Regression.html#a8cdb5be7af71a054e8d44d204bd98687">pxl::Regression::lambda</a></div><div class="ttdeci">double lambda</div><div class="ttdef"><b>Definition:</b> regression.hpp:15</div></div>
+<div class="ttc" id="aclasspxl_1_1Regression_html_aae399999529d47311c27c8872ada4758"><div class="ttname"><a href="classpxl_1_1Regression.html#aae399999529d47311c27c8872ada4758">pxl::Regression::points</a></div><div class="ttdeci">std::vector&lt; pxl::Coord &gt; points</div><div class="ttdef"><b>Definition:</b> regression.hpp:14</div></div>
+<div class="ttc" id="aclasspxl_1_1Regression_html_ace5c1576908f29eeed2f3913979f5d45"><div class="ttname"><a href="classpxl_1_1Regression.html#ace5c1576908f29eeed2f3913979f5d45">pxl::Regression::dotProduct</a></div><div class="ttdeci">double dotProduct(const std::vector&lt; double &gt; &amp;v1, const std::vector&lt; double &gt; &amp;v2)</div><div class="ttdef"><b>Definition:</b> regression.cpp:17</div></div>
+<div class="ttc" id="aclasspxl_1_1Regression_html_acf2d3ec55a10ffe3f5ef3246d1ef9d24"><div class="ttname"><a href="classpxl_1_1Regression.html#acf2d3ec55a10ffe3f5ef3246d1ef9d24">pxl::Regression::predict</a></div><div class="ttdeci">double predict(double x)</div><div class="ttdef"><b>Definition:</b> regression.cpp:51</div></div>
+<div class="ttc" id="acoord_8hpp_html"><div class="ttname"><a href="coord_8hpp.html">coord.hpp</a></div></div>
 <div class="ttc" id="anamespacepxl_html"><div class="ttname"><a href="namespacepxl.html">pxl</a></div><div class="ttdef"><b>Definition:</b> aSync.hpp:12</div></div>
-<div class="ttc" id="anamespacepxl_html_ab5bc9b30decc2a75068db7091e3b42ea"><div class="ttname"><a href="namespacepxl.html#ab5bc9b30decc2a75068db7091e3b42ea">pxl::Point</a></div><div class="ttdeci">std::pair&lt; double, double &gt; Point</div><div class="ttdef"><b>Definition:</b> regression.hpp:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <footer>
     <div class="pixel">Pixel</div>
