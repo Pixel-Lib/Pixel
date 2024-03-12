@@ -4,7 +4,10 @@
 #include "pros/motors.hpp"
 #include "pros/rotation.hpp"
 #include "pxl/api.hpp"
+#include "pxl/seekingcontroller.hpp"
 #include "trackingwheel.hpp"
+#include "pxl/parametrics/coord.hpp"
+
 
 pros::Motor leftFront(1);
 pros::Motor leftMiddle(2);
@@ -39,6 +42,36 @@ pxl::OdomSensors sensors(
     nullptr, // horizontal2
     &imu// imu
 );
+
+
+pxl::SeekingController linearSettings( // linear settings
+    pxl::PID( // PID constants
+        25.0, // kP
+        0.0, // kI
+        4.0// kD
+        ), 
+    20, // slew rate of 20. Approximately 20 max volts per second increase
+    pxl::Regression({// regression points. You may add as many error-timeout pairs as you want
+        pxl::Coord(1.0, 100), // error of 1 inch, timeout of 100 ms
+        pxl::Coord(3.0, 500), // error of 3 inches, timeout of 500 ms
+}), 
+5000.0 // global timeout
+); 
+
+pxl::SeekingController angularSettings( // angular settings
+    pxl::PID( // PID constants
+        25.0, // kP
+        0.0, // kI
+        4.0// kD
+        ), 
+    20, // slew rate of 20. Approximately 20 max volts per second increase
+    pxl::Regression({// regression points. You may add as many error-timeout pairs as you want
+        pxl::Coord(0.5, 100), // error of 0.5 degree, timeout of 100 ms
+        pxl::Coord(5.0, 700), // error of 5 degtees, timeout of 700 ms
+}), 
+3000.0 // global timeout
+); 
+pxl::Drivebase drivebase(drivetrain, sensors, linearSettings, angularSettings); // make the drivebase
 /**
  * A callback function for LLEMU's center button.
  *

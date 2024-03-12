@@ -7,11 +7,8 @@
 namespace pxl {
 
 
-        std::vector<pxl::Coord> points;
-        double lambda;
-
         // Constructor for the Regression class
-    Regression::Regression(std::vector<pxl::Coord>& points) 
+    Regression::Regression(std::vector<pxl::Coord> points) 
     : points(points) {}
 
 

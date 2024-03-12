@@ -12,10 +12,11 @@ namespace pxl {
     class Regression {
     private:
         std::vector<pxl::Coord> points;
+        double lambda;
 
     public:
         // Constructor for the Regression class
-        Regression(std::vector<pxl::Coord>& points);
+        Regression(std::vector<pxl::Coord> points);
 
 
 
