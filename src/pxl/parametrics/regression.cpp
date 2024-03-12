@@ -1,28 +1,24 @@
-#include <vector>
-#include <utility>
 #include "pxl/parametrics/regression.hpp"
+
+#include <utility>
+#include <vector>
+
 #include "pxl/parametrics/coord.hpp"
 #include "pxl/util.hpp"
 
 namespace pxl {
 
+// Constructor for the Regression class
+Regression::Regression(std::vector<pxl::Coord> points) : points(points) {}
 
-        // Constructor for the Regression class
-    Regression::Regression(std::vector<pxl::Coord> points) 
-    : points(points) {}
+// Function to calculate the dot product of two vectors
+double Regression::dotProduct(const std::vector<double> &v1, const std::vector<double> &v2) {
+    double product = 0.0;
+    for (int i = 0; i < v1.size(); i++) { product += v1[i] * v2[i]; }
+    return product;
+}
 
-
-
-        // Function to calculate the dot product of two vectors
-        double Regression::dotProduct(const std::vector<double>& v1, const std::vector<double>& v2) {
-            double product = 0.0;
-            for (int i = 0; i < v1.size(); i++) {
-                product += v1[i] * v2[i];
-            }
-            return product;
-        }
-
-        // Function to fit a function through the coordinates using ridge regression
+// Function to fit a function through the coordinates using ridge regression
 std::pair<double, double> Regression::Ridge() {
     std::vector<double> x(this->points.size());
     std::vector<double> y(this->points.size());
@@ -48,11 +44,11 @@ std::pair<double, double> Regression::Ridge() {
     return std::make_pair(m, b);
 }
 
-        double Regression::predict(double x) {
-            std::pair<double, double> coefficients = Ridge();
-            double m = coefficients.first;
-            double b = coefficients.second;
-            return m * x + b;
-        }
-
+double Regression::predict(double x) {
+    std::pair<double, double> coefficients = Ridge();
+    double m = coefficients.first;
+    double b = coefficients.second;
+    return m * x + b;
 }
+
+}  // namespace pxl
