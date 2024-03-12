@@ -53,27 +53,41 @@ class Odom {
          * @brief Updates the odometry system by calculating the robot's position and orientation.
          */
         void update();
+
         /**
          * @brief Get the `Pose` of the robot
          *
-         * @param radians
+         * @param radians Specifies whether to return the orientation in radians. Default is false.
+         * @return The current `Pose` of the robot.
          */
         Pose getPose(bool radians = false);
 
     private:
         std::vector<std::unique_ptr<TrackingWheel>> verticals;  // Vector of unique pointers to vertical tracking wheels
-        std::vector<std::unique_ptr<TrackingWheel>>
-            horizontals;  // Vector of unique pointers to horizontal tracking wheels
-        std::vector<std::unique_ptr<TrackingWheel>>
-            drivetrain;                               // Vector of unique pointers to drivetrain tracking wheels
+        std::vector<std::unique_ptr<TrackingWheel>> horizontals;  // Vector of unique pointers to horizontal tracking wheels
+        std::vector<std::unique_ptr<TrackingWheel>> drivetrain;  // Vector of unique pointers to drivetrain tracking wheels
         std::vector<std::shared_ptr<pros::IMU>> imu;  // Vector of shared pointers to IMUs
-        Pose pose = Pose(0, 0, 0);                    // Current pose of the robot
-        pros::Task *OdomTask = nullptr;               // Pointer to the odometry task
-        float lastAngle = 0;                          // Last recorded angle
-        float calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>> &imu,
-                             bool update = true);  // Calculates the change in angle using IMUs
-        float calcDeltaTheta(TrackingWheel &tracker1,
-                             TrackingWheel &tracker2);  // Calculates the change in angle using tracking wheels
+        Pose pose = Pose(0, 0, 0);  // Current pose of the robot
+        pros::Task *OdomTask = nullptr;  // Pointer to the odometry task
+        float lastAngle = 0;  // Last recorded angle
+
+        /**
+         * @brief Calculates the change in angle using IMUs.
+         *
+         * @param imu A vector of shared pointers to IMUs.
+         * @param update Specifies whether to update the IMU readings. Default is true.
+         * @return The change in angle in radians.
+         */
+        float calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>> &imu, bool update = true);
+
+        /**
+         * @brief Calculates the change in angle using tracking wheels.
+         *
+         * @param tracker1 The first tracking wheel.
+         * @param tracker2 The second tracking wheel.
+         * @return The change in angle in radians.
+         */
+        float calcDeltaTheta(TrackingWheel &tracker1, TrackingWheel &tracker2);
 };
 
 }  // namespace pxl

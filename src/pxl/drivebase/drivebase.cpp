@@ -81,8 +81,8 @@ void Drivebase::calibrate(bool calibrateImu) {
     if (sensors.horizontal1 != nullptr) sensors.horizontal1->reset();
     if (sensors.horizontal2 != nullptr) sensors.horizontal2->reset();
 
-    odom = setSensors(sensors);
-    odom.init();
+    this->odom = setSensors(sensors);
+    this->odom.init();
 
     // rumble to controller to indicate success
     pros::c::controller_rumble(pros::E_CONTROLLER_MASTER, ".");

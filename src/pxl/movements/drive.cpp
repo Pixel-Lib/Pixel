@@ -29,6 +29,8 @@ void Drive_::Drive(float target, float timeout, Params *params, bool async) {
     localTimeout.start();
     while (!localTimeout.isDone() && !linearController.getExit(linearError)
            && !angularController.getExit(angularError)) {
+
+        // calculate the linear error
         linearError = this->odom.getPose().distance(targetPose);
 
         // convert angular error to degrees for consistency

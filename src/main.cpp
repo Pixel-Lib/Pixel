@@ -125,7 +125,8 @@ void competition_initialize() {}
  * from where it left off.
  */
 void autonomous() {
-    // drivebase.drive(24, 24, 1000);
+    //TODO give Drivebase access to Drive_::Drive
+    // drivebase.Drive(24, 24, 1000);
 }
 
 /**

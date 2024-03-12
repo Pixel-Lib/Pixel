@@ -60,21 +60,38 @@ class ExtendedDrivetrain {
  */
 class Drivebase {
     public:
-       
+        /**
+         * @brief Constructs a Drivebase object.
+         *
+         * This constructor initializes a Drivebase object with the specified drivetrain, odometry sensors,
+         * linear controller, and angular controller.
+         *
+         * @param drivetrain The drivetrain object used for controlling the robot's movement.
+         * @param sensors The odometry sensors used for tracking the robot's position and orientation.
+         * @param linearController The controller used for controlling linear movement.
+         * @param angularController The controller used for controlling angular movement.
+         */
         Drivebase(Drivetrain drivetrain, OdomSensors sensors, SeekingController linearController,
                   SeekingController angularController);
 
-        Odom setSensors(OdomSensors sensors);
+        /**
+         * @brief callibrate the drivebase's sensors. Callibrates the IMU and resets the tracking wheels.
+         * 
+         * @param calibrateIMU callibrate the IMU. `true` by default
+         */
         void calibrate(bool calibrateIMU = true);
+
+
         // friends
 
         friend class Drive_;
     private:
 
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
-
-        protected:
         void calibrateIMU(OdomSensors sensors);
+        Odom setSensors(OdomSensors sensors);
+        protected:
+        
                 SeekingController linearController;
         SeekingController angularController;
         Odom odom;
