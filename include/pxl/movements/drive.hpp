@@ -1,22 +1,19 @@
 #pragma once
 #include <memory>
-
-#include "pros/rtos.hpp"
-#include "pxl/aSync.hpp"
-#include "pxl/drivebase/api.hpp"
 #include "pxl/drivebase/drivebase.hpp"
-#include "pxl/pid.hpp"
-#include "pxl/seekingcontroller.hpp"
+#include "pxl/movements/drive.hpp"
+
+
 namespace pxl {
-class Drive_ {
+    // class Drivebase;
+class Drive_ : public Drivebase{
     private:
-        Drivebase drivebase;
+        // Drivebase drivebase;
         struct Params {
                 float minSpeed = 0;
                 float maxSpeed = 127;
                 float slew = NAN;
         };
-        Params *params;
         pros::Mutex mutex;
         // get the current competition state. If this changes, the movement will stop
         uint8_t compstate = pros::competition::get_status();

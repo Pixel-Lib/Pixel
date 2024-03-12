@@ -19,24 +19,24 @@ void Drive_::Drive(float target, float timeout, Params *params, bool async) {
         pros::delay(10);
         return;
     }
-    Pose targetPose = drivebase.odom.getPose();
-    targetPose += targetPose.rotate(drivebase.odom.getPose().theta) * target;
+    Pose targetPose = odom.getPose();
+    targetPose += targetPose.rotate(odom.getPose().theta) * target;
     float linearError;
     // convert angular error to degrees for consistency
     float angularError;
     // start the timeout
     Timer localTimeout(timeout);
     localTimeout.start();
-    while (!localTimeout.isDone() && !drivebase.linearController.getExit(linearError)
-           && !drivebase.angularController.getExit(angularError)) {
-        linearError = this->drivebase.odom.getPose().distance(targetPose);
+    while (!localTimeout.isDone() && !linearController.getExit(linearError)
+           && !angularController.getExit(angularError)) {
+        linearError = this->odom.getPose().distance(targetPose);
 
         // convert angular error to degrees for consistency
-        angularError = wrapTo180(radToDeg(this->drivebase.odom.getPose().angle(targetPose)));
+        angularError = wrapTo180(radToDeg(this->odom.getPose().angle(targetPose)));
 
         // calculate the raw linear and angular output from the PID controllers
-        float linearOutput = this->drivebase.linearController.update(linearError);
-        float angularOutput = this->drivebase.angularController.update(angularError);
+        float linearOutput = this->linearController.update(linearError);
+        float angularOutput = this->angularController.update(angularError);
 
         // clamp the output
         float minSpeed = params->minSpeed;
@@ -48,13 +48,13 @@ void Drive_::Drive(float target, float timeout, Params *params, bool async) {
             if (params->slew == 0) {
                 return;
             } else {
-                minSpeed = slew(params->minSpeed, drivebase.linearController.prevOut, params->slew);
-                maxSpeed = slew(params->maxSpeed, drivebase.linearController.prevOut, params->slew);
+                minSpeed = slew(params->minSpeed, linearController.prevOut, params->slew);
+                maxSpeed = slew(params->maxSpeed, linearController.prevOut, params->slew);
             }
 
-        } else if (drivebase.linearController.slew_ != 0) {
-            minSpeed = slew(params->minSpeed, drivebase.linearController.prevOut, drivebase.linearController.slew_);
-            maxSpeed = slew(params->maxSpeed, drivebase.linearController.prevOut, drivebase.linearController.slew_);
+        } else if (linearController.slew_ != 0) {
+            minSpeed = slew(params->minSpeed, linearController.prevOut, linearController.slew_);
+            maxSpeed = slew(params->maxSpeed, linearController.prevOut, linearController.slew_);
         }
         // clamp the output to the min and max speed
 
@@ -68,14 +68,14 @@ void Drive_::Drive(float target, float timeout, Params *params, bool async) {
 
         std::pair<float, float> normalized = normalize(leftPower, rightPower, maxSpeed);
 
-        drivebase.drivetrain.leftMotors->move(normalized.first);
-        drivebase.drivetrain.rightMotors->move(normalized.second);
+        drivetrain.leftMotors->move(normalized.first);
+        drivetrain.rightMotors->move(normalized.second);
 
         pros::delay(10);
     }
     // stop the motors
-    drivebase.drivetrain.leftMotors->move(0);
-    drivebase.drivetrain.rightMotors->move(0);
+    drivetrain.leftMotors->move(0);
+    drivetrain.rightMotors->move(0);
 }
 
 }  // namespace pxl

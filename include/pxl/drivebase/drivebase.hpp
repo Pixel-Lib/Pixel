@@ -1,18 +1,15 @@
 #pragma once
 
 #include <memory>
+#include <iostream>
 
-#include "pros/imu.hpp"
-#include "pros/motors.hpp"
-#include "pros/rtos.hpp"
+// #include "pxl/movements/drive.hpp"
 #include "pxl/aSync.hpp"
 #include "pxl/drivebase/odom.hpp"
-#include "pxl/drivebase/trackingwheel.hpp"
-#include "pxl/parametrics/pose.hpp"
-#include "pxl/pid.hpp"
 #include "pxl/seekingcontroller.hpp"
 
 namespace pxl {
+    class Drive_;
 struct OdomSensors {
         OdomSensors(TrackingWheel *vertical1, TrackingWheel *vertical2, TrackingWheel *horizontal1,
                     TrackingWheel *horizontal2, pros::Imu *imu);
@@ -63,21 +60,27 @@ class ExtendedDrivetrain {
  */
 class Drivebase {
     public:
-        bool isDriverControl();
+       
         Drivebase(Drivetrain drivetrain, OdomSensors sensors, SeekingController linearController,
                   SeekingController angularController);
-        void calibrateIMU(OdomSensors sensors);
+
         Odom setSensors(OdomSensors sensors);
         void calibrate(bool calibrateIMU = true);
+        // friends
 
+        friend class Drive_;
     private:
-        Drivetrain drivetrain;
-        OdomSensors sensors;
+
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
-        SeekingController linearController;
+
+        protected:
+        void calibrateIMU(OdomSensors sensors);
+                SeekingController linearController;
         SeekingController angularController;
         Odom odom;
-        friend class Drive_;
+         bool isDriverControl();
+                 Drivetrain drivetrain;
+        OdomSensors sensors;
 };
 
 };  // namespace pxl

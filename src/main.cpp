@@ -1,12 +1,5 @@
 #include "main.h"
-#include "drivebase.hpp"
-#include "pros/imu.hpp"
-#include "pros/motors.hpp"
-#include "pros/rotation.hpp"
 #include "pxl/api.hpp"
-#include "pxl/seekingcontroller.hpp"
-#include "trackingwheel.hpp"
-#include "pxl/parametrics/coord.hpp"
 
 
 pros::Motor leftFront(1);
@@ -131,7 +124,9 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
-void autonomous() {}
+void autonomous() {
+    // drivebase.drive(24, 24, 1000);
+}
 
 /**
  * Runs the operator control code. This function will be started in its own task
