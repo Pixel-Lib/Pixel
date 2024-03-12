@@ -68,7 +68,7 @@ class Drivebase {
                   SeekingController angularController);
         void calibrateIMU(OdomSensors sensors);
         Odom setSensors(OdomSensors sensors);
-        void calibrate(bool calibrateIMU);
+        void calibrate(bool calibrateIMU = true);
 
     private:
         Drivetrain drivetrain;
