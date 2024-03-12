@@ -9,7 +9,11 @@
 
 namespace pxl {
 float slew(float target, float current, float maxChange) {
-    return maxChange == 0 ? target : current + std::clamp(target - current, -maxChange, maxChange);
+    static auto lastTime = std::chrono::high_resolution_clock::now();
+    auto now = std::chrono::high_resolution_clock::now();
+    float timestep = std::chrono::duration<float>(now - lastTime).count();
+    lastTime = now;
+    return maxChange == 0 ? target : current + std::clamp(target - current, -maxChange* timestep, maxChange* timestep);
 }
 
 float radToDeg(float rad) { return rad * 180 / M_PI; }
@@ -31,6 +35,7 @@ float angleError(float angle1, float angle2, bool radians) {
 }
 
 float ema(float current, float previous, float smooth) { return (current * smooth) + (previous * (1 - smooth)); }
+
 std::pair<float, float> normalize(float lateralOut, float angularOut, float maxSpeed) {
     float leftPower = lateralOut + angularOut;
     float rightPower = lateralOut - angularOut;

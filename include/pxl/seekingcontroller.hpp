@@ -9,7 +9,7 @@ class SeekingController {
 public:
     SeekingController(PID pid, float slew_, Regression regression, float globalTimeout);
 
-    float update(float error);
+    float update(float error, bool slew = true);
 void timerStart();
     bool getExit(float error);
 private:
@@ -20,6 +20,7 @@ float error;
 float prevOut = 0;
 float slew_;
 pxl::Timer timer;
+friend class Drive_;
 };
 
 }
