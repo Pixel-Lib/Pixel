@@ -2,20 +2,20 @@
 
 #include <vector>
 #include <utility>
-
+#include "pxl/parametrics/coord.hpp"
 namespace pxl {
 
     // Define a pair of doubles as a Point
-    typedef std::pair<double, double> Point;
+    // typedef std::pair<double, double> Point;
 
     // Define the Regression class
     class Regression {
     private:
-        std::vector<Point> points;
+        std::vector<pxl::Coord> points;
 
     public:
         // Constructor for the Regression class
-        Regression(std::vector<Point>& points);
+        Regression(std::vector<pxl::Coord>& points);
 
 
 
