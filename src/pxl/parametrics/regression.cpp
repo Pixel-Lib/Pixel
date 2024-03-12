@@ -1,18 +1,17 @@
 #include <vector>
 #include <utility>
 #include "pxl/parametrics/regression.hpp"
+#include "pxl/parametrics/coord.hpp"
 #include "pxl/util.hpp"
 
 namespace pxl {
 
-    // Define a pair of doubles as a Point
-    typedef std::pair<double, double> Point;
 
-        std::vector<Point> points;
+        std::vector<pxl::Coord> points;
         double lambda;
 
         // Constructor for the Regression class
-    Regression::Regression(std::vector<Point>& points) 
+    Regression::Regression(std::vector<pxl::Coord>& points) 
     : points(points) {}
 
 
@@ -32,8 +31,8 @@ std::pair<double, double> Regression::Ridge() {
     std::vector<double> y(this->points.size());
 
     for (int i = 0; i < points.size(); i++) {
-        x[i] = points[i].first;
-        y[i] = points[i].second;
+        x[i] = points[i].x;
+        y[i] = points[i].y;
     }
 
     double xMean = pxl::avg(x);
