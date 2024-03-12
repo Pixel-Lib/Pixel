@@ -29,7 +29,7 @@ public:
      * @param distance Wheel offset from the robot center in meters.
      * @param gearRatio Gear ratio of the wheel (encoder/motor).
      */
-    TrackingWheel(pros::ADIEncoder *encoder, float wheelDiameter, float distance, float gearRatio);
+    TrackingWheel(pros::ADIEncoder *encoder, float wheelDiameter, float distance, float gearRatio = 1.0f);
 
     /**
      * @brief Constructor for a tracking wheel with a Rotation sensor.
@@ -38,7 +38,7 @@ public:
      * @param distance Wheel offset from the robot center in meters.
      * @param gearRatio Gear ratio of the wheel (encoder/motor).
      */
-    TrackingWheel(pros::Rotation *rotation, float wheelDiameter, float distance, float gearRatio);
+    TrackingWheel(pros::Rotation *rotation, float wheelDiameter, float distance, float gearRatio = 1.0f);
 
     /**
      * @brief Constructor for a tracking wheel with a MotorGroup.

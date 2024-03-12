@@ -1,7 +1,10 @@
 #include "main.h"
 #include "drivebase.hpp"
+#include "pros/imu.hpp"
 #include "pros/motors.hpp"
+#include "pros/rotation.hpp"
 #include "pxl/api.hpp"
+#include "trackingwheel.hpp"
 
 pros::Motor leftFront(1);
 pros::Motor leftMiddle(2);
@@ -22,6 +25,20 @@ pxl::Drivetrain drivetrain(
  3.25, // diameter of wheel
  360 // rpm of drivetrain. If unsure, type (input gear / output gear) * motor rpm
  );
+ pros::IMU imu(8);
+ pros::Rotation leftRotation(7);
+ pxl::TrackingWheel horizontal1(
+    &leftRotation, // rotation sensor or shaft encoder
+ 2.75, // diameter of wheel
+ 4.5 // offset from tracking center in inches
+ );
+pxl::OdomSensors sensors(
+    nullptr, // vertical1
+    nullptr,// vertical2
+    &horizontal1, // horizontal1
+    nullptr, // horizontal2
+    &imu// imu
+);
 /**
  * A callback function for LLEMU's center button.
  *
