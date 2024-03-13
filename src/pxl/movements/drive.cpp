@@ -19,15 +19,17 @@ void Drive_::Drive(float target, float timeout, Params *params, bool async) {
         pros::delay(10);
         return;
     }
-    Pose targetPose = odom.getPose();
+    // calculate the target as a coordinate for accuracy
+    Pose targetPose = this->odom.getPose();
     targetPose += targetPose.rotate(odom.getPose().theta) * target;
+
+
     float linearError;
-    // convert angular error to degrees for consistency
     float angularError;
     // start the timeout
     Timer localTimeout(timeout);
     localTimeout.start();
-    while (!localTimeout.isDone() && !linearController.getExit(linearError)
+    while (!localTimeout.isDone() || !linearController.getExit(linearError)
            && !angularController.getExit(angularError)) {
 
         // calculate the linear error
