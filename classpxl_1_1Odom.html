@@ -108,6 +108,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2a6693e100fa8266d66c35088df2ae41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Pose.html">Pose</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#a2a6693e100fa8266d66c35088df2ae41">getPose</a> (bool radians=false)</td></tr>
 <tr class="memdesc:a2a6693e100fa8266d66c35088df2ae41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <code><a class="el" href="classpxl_1_1Pose.html" title="The Pose class contains classes and functions related to (x, y, theta) coordinates.">Pose</a></code> of the robot.  <a href="classpxl_1_1Odom.html#a2a6693e100fa8266d66c35088df2ae41">More...</a><br /></td></tr>
 <tr class="separator:a2a6693e100fa8266d66c35088df2ae41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00983dbfefd2ff1ab4aa6c4246f088c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#af00983dbfefd2ff1ab4aa6c4246f088c">calculateLocal</a> (std::vector&lt; std::unique_ptr&lt; <a class="el" href="classpxl_1_1TrackingWheel.html">TrackingWheel</a> &gt;&gt; &amp;trackers, float deltaTheta, float sinDTheta2)</td></tr>
+<tr class="separator:af00983dbfefd2ff1ab4aa6c4246f088c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -307,6 +309,40 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The change in angle in radians. </dd></dl>
+
+</div>
+</div>
+<a id="af00983dbfefd2ff1ab4aa6c4246f088c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00983dbfefd2ff1ab4aa6c4246f088c">&#9670;&nbsp;</a></span>calculateLocal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float pxl::Odom::calculateLocal </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classpxl_1_1TrackingWheel.html">TrackingWheel</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>trackers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>deltaTheta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>sinDTheta2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
