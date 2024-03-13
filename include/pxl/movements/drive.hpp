@@ -1,12 +1,12 @@
 #pragma once
 #include <memory>
+
 #include "pxl/drivebase/drivebase.hpp"
 #include "pxl/movements/drive.hpp"
 
-
 namespace pxl {
-    // class Drivebase;
-class Drive_ : public Drivebase{
+// class Drivebase;
+class Drive_ : public Drivebase {
     private:
         // Drivebase drivebase;
         struct Params {
