@@ -7,7 +7,7 @@ digraph "pxl::Drive_"
   Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="pxl::Drivebase",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1Drivebase.html",tooltip="The Drivebase class represents the base of a robot's drivetrain."];
   Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" angularController\nlinearController" ,fontname="Helvetica"];
-  Node3 [label="pxl::SeekingController",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1SeekingController.html",tooltip=" "];
+  Node3 [label="pxl::SeekingController",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1SeekingController.html",tooltip="The SeekingController class represents a controller used for seeking a target value."];
   Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" regression" ,fontname="Helvetica"];
   Node4 [label="pxl::Regression",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1Regression.html",tooltip="A class that performs regression analysis on a set of points."];
   Node5 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pid" ,fontname="Helvetica"];

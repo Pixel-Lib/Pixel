@@ -76,6 +76,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>The <a class="el" href="classpxl_1_1SeekingController.html" title="The SeekingController class represents a controller used for seeking a target value.">SeekingController</a> class represents a controller used for seeking a target value.  
+ <a href="classpxl_1_1SeekingController.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="seekingcontroller_8hpp_source.html">seekingcontroller.hpp</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for pxl::SeekingController:</div>
@@ -88,29 +91,40 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a88f5dc415b75a7b39d9ed7622f3292b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#a88f5dc415b75a7b39d9ed7622f3292b3">SeekingController</a> (<a class="el" href="classpxl_1_1PID.html">PID</a> <a class="el" href="classpxl_1_1SeekingController.html#a622ad6609097d4615ae76e507739cfd1">pid</a>, float <a class="el" href="classpxl_1_1SeekingController.html#a86b4361b7ed37c4369205614f414f808">slew_</a>, <a class="el" href="classpxl_1_1Regression.html">Regression</a> <a class="el" href="classpxl_1_1SeekingController.html#af08a9ec3689a46497b99c8e0845ca924">regression</a>, float <a class="el" href="classpxl_1_1SeekingController.html#a9fa0b9754c678b79b0d76ed35184edde">globalTimeout</a>)</td></tr>
+<tr class="memdesc:a88f5dc415b75a7b39d9ed7622f3292b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classpxl_1_1SeekingController.html" title="The SeekingController class represents a controller used for seeking a target value.">SeekingController</a> object with the specified parameters.  <a href="classpxl_1_1SeekingController.html#a88f5dc415b75a7b39d9ed7622f3292b3">More...</a><br /></td></tr>
 <tr class="separator:a88f5dc415b75a7b39d9ed7622f3292b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2ce62534e581c0ce4483af96be911c0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#ab2ce62534e581c0ce4483af96be911c0">update</a> (float <a class="el" href="classpxl_1_1SeekingController.html#a94e7f21d5e18d43e29eac090c36cfd4e">error</a>, bool <a class="el" href="namespacepxl.html#aef4d585e132a7669441e66bd34be8f11">slew</a>=true)</td></tr>
+<tr class="memdesc:ab2ce62534e581c0ce4483af96be911c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the controller with the given error value.  <a href="classpxl_1_1SeekingController.html#ab2ce62534e581c0ce4483af96be911c0">More...</a><br /></td></tr>
 <tr class="separator:ab2ce62534e581c0ce4483af96be911c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5abeded2924d0eaa5edf94d6e92a59bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#a5abeded2924d0eaa5edf94d6e92a59bc">timerStart</a> ()</td></tr>
+<tr class="memdesc:a5abeded2924d0eaa5edf94d6e92a59bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the timer for the controller.  <a href="classpxl_1_1SeekingController.html#a5abeded2924d0eaa5edf94d6e92a59bc">More...</a><br /></td></tr>
 <tr class="separator:a5abeded2924d0eaa5edf94d6e92a59bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cd2960ab0e783999f3fc44b84085f69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#a9cd2960ab0e783999f3fc44b84085f69">getExit</a> (float <a class="el" href="classpxl_1_1SeekingController.html#a94e7f21d5e18d43e29eac090c36cfd4e">error</a>)</td></tr>
+<tr class="memdesc:a9cd2960ab0e783999f3fc44b84085f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the exit condition is met based on the given error value.  <a href="classpxl_1_1SeekingController.html#a9cd2960ab0e783999f3fc44b84085f69">More...</a><br /></td></tr>
 <tr class="separator:a9cd2960ab0e783999f3fc44b84085f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a622ad6609097d4615ae76e507739cfd1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1PID.html">PID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#a622ad6609097d4615ae76e507739cfd1">pid</a></td></tr>
+<tr class="memdesc:a622ad6609097d4615ae76e507739cfd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classpxl_1_1PID.html" title="A class representing a Proportional-Integral-Derivative (PID) controller.">PID</a> object containing the <a class="el" href="classpxl_1_1PID.html" title="A class representing a Proportional-Integral-Derivative (PID) controller.">PID</a> parameters.  <a href="classpxl_1_1SeekingController.html#a622ad6609097d4615ae76e507739cfd1">More...</a><br /></td></tr>
 <tr class="separator:a622ad6609097d4615ae76e507739cfd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af08a9ec3689a46497b99c8e0845ca924"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Regression.html">Regression</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#af08a9ec3689a46497b99c8e0845ca924">regression</a></td></tr>
+<tr class="memdesc:af08a9ec3689a46497b99c8e0845ca924"><td class="mdescLeft">&#160;</td><td class="mdescRight">The regression object for calculating the output.  <a href="classpxl_1_1SeekingController.html#af08a9ec3689a46497b99c8e0845ca924">More...</a><br /></td></tr>
 <tr class="separator:af08a9ec3689a46497b99c8e0845ca924"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fa0b9754c678b79b0d76ed35184edde"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#a9fa0b9754c678b79b0d76ed35184edde">globalTimeout</a></td></tr>
+<tr class="memdesc:a9fa0b9754c678b79b0d76ed35184edde"><td class="mdescLeft">&#160;</td><td class="mdescRight">The global timeout value for the controller.  <a href="classpxl_1_1SeekingController.html#a9fa0b9754c678b79b0d76ed35184edde">More...</a><br /></td></tr>
 <tr class="separator:a9fa0b9754c678b79b0d76ed35184edde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94e7f21d5e18d43e29eac090c36cfd4e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#a94e7f21d5e18d43e29eac090c36cfd4e">error</a></td></tr>
+<tr class="memdesc:a94e7f21d5e18d43e29eac090c36cfd4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current error value.  <a href="classpxl_1_1SeekingController.html#a94e7f21d5e18d43e29eac090c36cfd4e">More...</a><br /></td></tr>
 <tr class="separator:a94e7f21d5e18d43e29eac090c36cfd4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8966ebb71fde226be7158c6baf8a7b54"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#a8966ebb71fde226be7158c6baf8a7b54">prevOut</a> = 0</td></tr>
+<tr class="memdesc:a8966ebb71fde226be7158c6baf8a7b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">The previous output value.  <a href="classpxl_1_1SeekingController.html#a8966ebb71fde226be7158c6baf8a7b54">More...</a><br /></td></tr>
 <tr class="separator:a8966ebb71fde226be7158c6baf8a7b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86b4361b7ed37c4369205614f414f808"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#a86b4361b7ed37c4369205614f414f808">slew_</a></td></tr>
+<tr class="memdesc:a86b4361b7ed37c4369205614f414f808"><td class="mdescLeft">&#160;</td><td class="mdescRight">The slew rate for the controller.  <a href="classpxl_1_1SeekingController.html#a86b4361b7ed37c4369205614f414f808">More...</a><br /></td></tr>
 <tr class="separator:a86b4361b7ed37c4369205614f414f808"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3382c17069ba2758c28895b674da5d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Timer.html">pxl::Timer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#af3382c17069ba2758c28895b674da5d8">timer</a></td></tr>
+<tr class="memdesc:af3382c17069ba2758c28895b674da5d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The timer object for the controller.  <a href="classpxl_1_1SeekingController.html#af3382c17069ba2758c28895b674da5d8">More...</a><br /></td></tr>
 <tr class="separator:af3382c17069ba2758c28895b674da5d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -118,7 +132,10 @@ Friends</h2></td></tr>
 <tr class="memitem:aabf170057ad00f695ee86cd78f23302c"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1SeekingController.html#aabf170057ad00f695ee86cd78f23302c">Drive_</a></td></tr>
 <tr class="separator:aabf170057ad00f695ee86cd78f23302c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classpxl_1_1SeekingController.html" title="The SeekingController class represents a controller used for seeking a target value.">SeekingController</a> class represents a controller used for seeking a target value. </p>
+<p>This class provides methods to update the controller, start a timer, and check for exit conditions. It also contains private member variables for storing <a class="el" href="classpxl_1_1PID.html" title="A class representing a Proportional-Integral-Derivative (PID) controller.">PID</a> parameters, regression, timeout, error, slew rate, and a timer object. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a88f5dc415b75a7b39d9ed7622f3292b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a88f5dc415b75a7b39d9ed7622f3292b3">&#9670;&nbsp;</a></span>SeekingController()</h2>
 
@@ -157,6 +174,17 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructs a <a class="el" href="classpxl_1_1SeekingController.html" title="The SeekingController class represents a controller used for seeking a target value.">SeekingController</a> object with the specified parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pid</td><td>The <a class="el" href="classpxl_1_1PID.html" title="A class representing a Proportional-Integral-Derivative (PID) controller.">PID</a> object containing the <a class="el" href="classpxl_1_1PID.html" title="A class representing a Proportional-Integral-Derivative (PID) controller.">PID</a> parameters. </td></tr>
+    <tr><td class="paramname">slew_</td><td>The slew rate for the controller. </td></tr>
+    <tr><td class="paramname">regression</td><td>The regression object for calculating the output. </td></tr>
+    <tr><td class="paramname">globalTimeout</td><td>The global timeout value for the controller. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -176,6 +204,15 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Checks if the exit condition is met based on the given error value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error</td><td>The error value to check for the exit condition. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the exit condition is met, false otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="a5abeded2924d0eaa5edf94d6e92a59bc"></a>
@@ -192,6 +229,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Starts the timer for the controller. </p>
 
 </div>
 </div>
@@ -220,6 +259,16 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Updates the controller with the given error value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error</td><td>The error value to update the controller. </td></tr>
+    <tr><td class="paramname">slew</td><td>Flag indicating whether to apply the slew rate or not (default: true). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The updated output value of the controller. </dd></dl>
 
 </div>
 </div>
@@ -267,6 +316,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The current error value. </p>
+
 </div>
 </div>
 <a id="a9fa0b9754c678b79b0d76ed35184edde"></a>
@@ -288,6 +339,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The global timeout value for the controller. </p>
 
 </div>
 </div>
@@ -311,6 +364,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The <a class="el" href="classpxl_1_1PID.html" title="A class representing a Proportional-Integral-Derivative (PID) controller.">PID</a> object containing the <a class="el" href="classpxl_1_1PID.html" title="A class representing a Proportional-Integral-Derivative (PID) controller.">PID</a> parameters. </p>
+
 </div>
 </div>
 <a id="a8966ebb71fde226be7158c6baf8a7b54"></a>
@@ -332,6 +387,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The previous output value. </p>
 
 </div>
 </div>
@@ -355,6 +412,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The regression object for calculating the output. </p>
+
 </div>
 </div>
 <a id="a86b4361b7ed37c4369205614f414f808"></a>
@@ -377,6 +436,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The slew rate for the controller. </p>
+
 </div>
 </div>
 <a id="af3382c17069ba2758c28895b674da5d8"></a>
@@ -398,6 +459,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The timer object for the controller. </p>
 
 </div>
 </div>
