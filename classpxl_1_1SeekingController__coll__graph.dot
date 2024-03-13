@@ -5,7 +5,7 @@ digraph "pxl::SeekingController"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="pxl::SeekingController",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" regression" ,fontname="Helvetica"];
-  Node2 [label="pxl::Regression",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1Regression.html",tooltip=" "];
+  Node2 [label="pxl::Regression",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1Regression.html",tooltip="A class that performs regression analysis on a set of points."];
   Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pid" ,fontname="Helvetica"];
   Node3 [label="pxl::PID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1PID.html",tooltip="A class representing a Proportional-Integral-Derivative (PID) controller."];
   Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" timer" ,fontname="Helvetica"];

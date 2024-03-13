@@ -75,27 +75,39 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>A class that performs regression analysis on a set of points.  
+ <a href="classpxl_1_1Regression.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="regression_8hpp_source.html">regression.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a084e55ed2f6dc7864497409b39e92c37"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Regression.html#a084e55ed2f6dc7864497409b39e92c37">Regression</a> (std::vector&lt; <a class="el" href="classpxl_1_1Coord.html">pxl::Coord</a> &gt; <a class="el" href="classpxl_1_1Regression.html#aae399999529d47311c27c8872ada4758">points</a>)</td></tr>
+<tr class="memdesc:a084e55ed2f6dc7864497409b39e92c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classpxl_1_1Regression.html" title="A class that performs regression analysis on a set of points.">Regression</a> class.  <a href="classpxl_1_1Regression.html#a084e55ed2f6dc7864497409b39e92c37">More...</a><br /></td></tr>
 <tr class="separator:a084e55ed2f6dc7864497409b39e92c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace5c1576908f29eeed2f3913979f5d45"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Regression.html#ace5c1576908f29eeed2f3913979f5d45">dotProduct</a> (const std::vector&lt; double &gt; &amp;v1, const std::vector&lt; double &gt; &amp;v2)</td></tr>
+<tr class="memdesc:ace5c1576908f29eeed2f3913979f5d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the dot product of two vectors.  <a href="classpxl_1_1Regression.html#ace5c1576908f29eeed2f3913979f5d45">More...</a><br /></td></tr>
 <tr class="separator:ace5c1576908f29eeed2f3913979f5d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a629456709415f74159b6898f2d3a752f"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Regression.html#a629456709415f74159b6898f2d3a752f">Ridge</a> ()</td></tr>
+<tr class="memdesc:a629456709415f74159b6898f2d3a752f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fits a function through the coordinates using ridge regression.  <a href="classpxl_1_1Regression.html#a629456709415f74159b6898f2d3a752f">More...</a><br /></td></tr>
 <tr class="separator:a629456709415f74159b6898f2d3a752f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf2d3ec55a10ffe3f5ef3246d1ef9d24"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Regression.html#acf2d3ec55a10ffe3f5ef3246d1ef9d24">predict</a> (double x)</td></tr>
+<tr class="memdesc:acf2d3ec55a10ffe3f5ef3246d1ef9d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predicts the y-value for a given x-value based on the fitted line.  <a href="classpxl_1_1Regression.html#acf2d3ec55a10ffe3f5ef3246d1ef9d24">More...</a><br /></td></tr>
 <tr class="separator:acf2d3ec55a10ffe3f5ef3246d1ef9d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aae399999529d47311c27c8872ada4758"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classpxl_1_1Coord.html">pxl::Coord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Regression.html#aae399999529d47311c27c8872ada4758">points</a></td></tr>
+<tr class="memdesc:aae399999529d47311c27c8872ada4758"><td class="mdescLeft">&#160;</td><td class="mdescRight">The set of points used for regression analysis.  <a href="classpxl_1_1Regression.html#aae399999529d47311c27c8872ada4758">More...</a><br /></td></tr>
 <tr class="separator:aae399999529d47311c27c8872ada4758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cdb5be7af71a054e8d44d204bd98687"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Regression.html#a8cdb5be7af71a054e8d44d204bd98687">lambda</a></td></tr>
+<tr class="memdesc:a8cdb5be7af71a054e8d44d204bd98687"><td class="mdescLeft">&#160;</td><td class="mdescRight">The regularization parameter for ridge regression.  <a href="classpxl_1_1Regression.html#a8cdb5be7af71a054e8d44d204bd98687">More...</a><br /></td></tr>
 <tr class="separator:a8cdb5be7af71a054e8d44d204bd98687"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class that performs regression analysis on a set of points. </p>
+<p>The <a class="el" href="classpxl_1_1Regression.html" title="A class that performs regression analysis on a set of points.">Regression</a> class calculates the best-fit line through a set of points using ridge regression. It also provides a method to predict the y-value for a given x-value based on the fitted line. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a084e55ed2f6dc7864497409b39e92c37"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a084e55ed2f6dc7864497409b39e92c37">&#9670;&nbsp;</a></span>Regression()</h2>
 
@@ -111,6 +123,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="classpxl_1_1Regression.html" title="A class that performs regression analysis on a set of points.">Regression</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">points</td><td>The set of points to perform regression analysis on. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -141,6 +161,16 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Calculates the dot product of two vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v1</td><td>The first vector. </td></tr>
+    <tr><td class="paramname">v2</td><td>The second vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The dot product of v1 and v2. </dd></dl>
+
 </div>
 </div>
 <a id="acf2d3ec55a10ffe3f5ef3246d1ef9d24"></a>
@@ -159,6 +189,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Predicts the y-value for a given x-value based on the fitted line. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x-value for which to predict the y-value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The predicted y-value. </dd></dl>
+
 </div>
 </div>
 <a id="a629456709415f74159b6898f2d3a752f"></a>
@@ -175,6 +214,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fits a function through the coordinates using ridge regression. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pair of doubles representing the slope and y-intercept of the fitted line. </dd></dl>
 
 </div>
 </div>
@@ -199,6 +241,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The regularization parameter for ridge regression. </p>
+
 </div>
 </div>
 <a id="aae399999529d47311c27c8872ada4758"></a>
@@ -220,6 +264,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The set of points used for regression analysis. </p>
 
 </div>
 </div>
