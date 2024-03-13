@@ -15,15 +15,13 @@ class Drive_ : public Drivebase {
         friend class Drivebase;
 
     public:
-            struct Params {
+        struct Params {
                 float minSpeed = 0;
                 float maxSpeed = 127;
                 float slew = NAN;
         };
-            static std::shared_ptr<Params> defaultParams() {
-        return std::make_shared<Params>();
-    }
-    void Drive(float target, float timeout, std::shared_ptr<Params> params = defaultParams(), bool async = true);
+        static std::shared_ptr<Params> defaultParams() { return std::make_shared<Params>(); }
+        void Drive(float target, float timeout, std::shared_ptr<Params> params = defaultParams(), bool async = true);
 };
 
 }  // namespace pxl
