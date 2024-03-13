@@ -1,7 +1,5 @@
 #include "pxl/util.hpp"
 
-
-
 namespace pxl {
 float slew(float target, float current, float maxChange) {
     static auto lastTime = std::chrono::high_resolution_clock::now();
