@@ -37,18 +37,15 @@ void Drive_::Drive(float target, float timeout, Params *params, bool async) {
         float maxSpeed = params->maxSpeed;
         // if the real minSpeed and maxSpeed values are too high/low, the robot will ignore the slew when the clamping
         // happens
-        if (!isnanf((params->slew))) {
-            // allow users to remove the slew rate for a specific movement
-            if (params->slew != 0) {
-                minSpeed = slew(params->minSpeed, linearController.prevOut, params->slew);
-                maxSpeed = slew(params->maxSpeed, linearController.prevOut, params->slew);
-            }
-        } else if (linearController.slew_ != 0) {
-            minSpeed = slew(params->minSpeed, linearController.prevOut, linearController.slew_);
-            maxSpeed = slew(params->maxSpeed, linearController.prevOut, linearController.slew_);
-        }
-        // clamp the output to the min and max speed
+minSpeed = !isnanf((params->slew)) 
+            ? (params->slew != 0 ? slew(params->minSpeed, linearController.prevOut, params->slew) : params->minSpeed)
+            : (linearController.slew_ != 0 ? slew(params->minSpeed, linearController.prevOut, linearController.slew_) : params->minSpeed);
 
+maxSpeed = !isnanf((params->slew)) 
+            ? (params->slew != 0 ? slew(params->maxSpeed, linearController.prevOut, params->slew) : params->maxSpeed)
+            : (linearController.slew_ != 0 ? slew(params->maxSpeed, linearController.prevOut, linearController.slew_) : params->maxSpeed);
+
+        // clamp the output to the min and max speed
         linearOutput = std::clamp(linearOutput, minSpeed, maxSpeed);
 
         // if the error is negative, the robot should move backwards

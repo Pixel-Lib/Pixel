@@ -63,7 +63,7 @@ Odom Drivebase::setSensors(OdomSensors sensors) {
                                                     drivetrain.trackWidth / 2, drivetrain.rpm));
     pxl::Odom odom(Verticals, Horizontals, drive, imu);
     return odom;
-    // odom.init();
+
 }
 void Drivebase::calibrate(bool calibrateImu) {
     // calibrate the IMU if it exists and the user doesn't specify otherwise
