@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "pxl/util.hpp"
+#include "trackingwheel.hpp"
 
 namespace pxl {
 Odom::Odom(std::vector<std::unique_ptr<TrackingWheel>> &verticals,
@@ -88,7 +89,15 @@ float Odom::calcDeltaTheta(TrackingWheel &tracker1, TrackingWheel &tracker2) {
     return (tracker1.getDistanceDelta(false) - tracker2.getDistanceDelta(false))
            / (tracker1.getOffset() - tracker2.getOffset());
 }
-
+float Odom::calculateLocal(std::vector<std::unique_ptr<TrackingWheel>> &trackers, float deltaTheta, float sinDTheta2) {
+    float localComponent = 0;
+    for (auto &tracker : trackers) {
+        const float radius = (deltaTheta == 0) ? tracker->getDistanceDelta()
+                                               : tracker->getDistanceDelta() / deltaTheta + tracker->getOffset();
+        localComponent += sinDTheta2 * radius / trackers.size();
+    }
+    return localComponent;
+}
 void Odom::update() {
     float theta = this->pose.theta;
     if (this->imu.size() > 0) {
@@ -100,37 +109,22 @@ void Odom::update() {
     } else if (drivetrain.size() > 1) {
         theta += Odom::calcDeltaTheta(*this->drivetrain.at(0), *this->drivetrain.at(1));
     } else {
-        std::cerr << "Odom calculation failure! Not enough sensors to "
-                     "calculate heading"
-                  << std::endl;
+        std::cerr << "Odom calculation failure! Not enough sensors to calculate heading" << std::endl;
         return;
     }
+
     const float deltaTheta = theta - this->pose.theta;  // change in angle
     const float avgTheta = this->pose.theta + deltaTheta / 2;
-
     Pose local(0, 0, deltaTheta);
     const float sinDTheta2 = (deltaTheta == 0) ? 1 : 2 * std::sin(deltaTheta / 2);
 
-    for (auto &tracker : this->horizontals) {
-        const float radius = (deltaTheta == 0) ? tracker->getDistanceDelta()
-                                               : tracker->getDistanceDelta() / deltaTheta + tracker->getOffset();
-        local.y += sinDTheta2 * radius / this->horizontals.size();
-    }
-
-    if (this->verticals.size() > 0) {
-        for (auto &tracker : this->verticals) {
-            const float radius = (deltaTheta == 0) ? tracker->getDistanceDelta()
-                                                   : tracker->getDistanceDelta() / deltaTheta + tracker->getOffset();
-            local.x += sinDTheta2 * radius / this->verticals.size();
+    local.y += calculateLocal(this->horizontals, deltaTheta, sinDTheta2);
+    local.x += calculateLocal(this->verticals, deltaTheta, sinDTheta2);
+    if (this->verticals.size() == 0) {
+        local.x += calculateLocal(this->drivetrain, deltaTheta, sinDTheta2);
+        if (this->drivetrain.size() == 0) {
+            std::cout << "No vertical tracking wheels! Assuming y movement is 0" << std::endl;
         }
-    } else if (this->drivetrain.size() > 0) {
-        for (auto &motor : this->drivetrain) {
-            const float radius = (deltaTheta == 0) ? motor->getDistanceDelta()
-                                                   : motor->getDistanceDelta() / deltaTheta + motor->getOffset();
-            local.x += sinDTheta2 * radius / this->drivetrain.size();
-        }
-    } else {
-        std::cout << "No vertical tracking wheels! Assuming y movement is 0" << std::endl;
     }
 
     this->pose += local.rotate(avgTheta);

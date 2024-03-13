@@ -62,6 +62,8 @@ class Odom {
          */
         Pose getPose(bool radians = false);
 
+        float calculateLocal(std::vector<std::unique_ptr<TrackingWheel>> &trackers, float deltaTheta, float sinDTheta2);
+
     private:
         std::vector<std::unique_ptr<TrackingWheel>> verticals;  // Vector of unique pointers to vertical tracking wheels
         std::vector<std::unique_ptr<TrackingWheel>>
