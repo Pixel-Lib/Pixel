@@ -64,7 +64,7 @@ void Drive_::Drive(float target, float timeout, Params *params, bool async) {
         linearOutput = std::clamp(linearOutput, minSpeed, maxSpeed);
 
         // if the error is negative, the robot should move backwards
-        linearOutput *= pxl::sgn(linearError);
+ linearOutput = (pxl::sgn(linearOutput) != pxl::sgn(linearError)) ? -linearOutput : linearOutput;
 
         float leftPower = linearOutput + angularOutput;
         float rightPower = linearOutput - angularOutput;
