@@ -23,14 +23,13 @@ void Drive_::Drive(float target, float timeout, Params *params, bool async) {
     Pose targetPose = this->odom.getPose();
     targetPose += targetPose.rotate(odom.getPose().theta) * target;
 
-
     float linearError;
     float angularError;
     // start the timeout
     Timer localTimeout(timeout);
     localTimeout.start();
-    while (!localTimeout.isDone() || !linearController.getExit(linearError)
-           && !angularController.getExit(angularError)) {
+    while (!localTimeout.isDone()
+           || !linearController.getExit(linearError) && !angularController.getExit(angularError)) {
 
         // calculate the linear error
         linearError = this->odom.getPose().distance(targetPose);
