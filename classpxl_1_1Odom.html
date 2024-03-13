@@ -112,8 +112,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a380828e0d450f4f61a0188eb52af511e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#a380828e0d450f4f61a0188eb52af511e">calcDeltaTheta</a> (std::vector&lt; std::shared_ptr&lt; pros::IMU &gt;&gt; &amp;<a class="el" href="classpxl_1_1Odom.html#a42fb961578d4d980af5531b570c7f43d">imu</a>, bool <a class="el" href="classpxl_1_1Odom.html#a464b30a97f57c9de25bff0ffada5302b">update</a>=true)</td></tr>
+<tr class="memdesc:a380828e0d450f4f61a0188eb52af511e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the change in angle using IMUs.  <a href="classpxl_1_1Odom.html#a380828e0d450f4f61a0188eb52af511e">More...</a><br /></td></tr>
 <tr class="separator:a380828e0d450f4f61a0188eb52af511e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3dbd0d3ab06623505e424056e8c5de7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Odom.html#ae3dbd0d3ab06623505e424056e8c5de7">calcDeltaTheta</a> (<a class="el" href="classpxl_1_1TrackingWheel.html">TrackingWheel</a> &amp;tracker1, <a class="el" href="classpxl_1_1TrackingWheel.html">TrackingWheel</a> &amp;tracker2)</td></tr>
+<tr class="memdesc:ae3dbd0d3ab06623505e424056e8c5de7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the change in angle using tracking wheels.  <a href="classpxl_1_1Odom.html#ae3dbd0d3ab06623505e424056e8c5de7">More...</a><br /></td></tr>
 <tr class="separator:ae3dbd0d3ab06623505e424056e8c5de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -250,6 +252,16 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Calculates the change in angle using IMUs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imu</td><td>A vector of shared pointers to IMUs. </td></tr>
+    <tr><td class="paramname">update</td><td>Specifies whether to update the IMU readings. Default is true. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The change in angle in radians. </dd></dl>
+
 </div>
 </div>
 <a id="ae3dbd0d3ab06623505e424056e8c5de7"></a>
@@ -285,6 +297,16 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Calculates the change in angle using tracking wheels. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tracker1</td><td>The first tracking wheel. </td></tr>
+    <tr><td class="paramname">tracker2</td><td>The second tracking wheel. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The change in angle in radians. </dd></dl>
 
 </div>
 </div>
@@ -333,10 +355,11 @@ Private Attributes</h2></td></tr>
 <p>Get the <code><a class="el" href="classpxl_1_1Pose.html" title="The Pose class contains classes and functions related to (x, y, theta) coordinates.">Pose</a></code> of the robot. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">radians</td><td></td></tr>
+    <tr><td class="paramname">radians</td><td>Specifies whether to return the orientation in radians. Default is false. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>The current <code><a class="el" href="classpxl_1_1Pose.html" title="The Pose class contains classes and functions related to (x, y, theta) coordinates.">Pose</a></code> of the robot. </dd></dl>
 
 </div>
 </div>

@@ -70,6 +70,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classpxl_1_1Drivebase-members.html">List of all members</a>  </div>
@@ -100,16 +101,14 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a24988e39ce3bb2ba6f104acbd24b7ff5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a24988e39ce3bb2ba6f104acbd24b7ff5">Drivebase</a> (<a class="el" href="classpxl_1_1Drivetrain.html">Drivetrain</a> <a class="el" href="classpxl_1_1Drivebase.html#a270e97d895e45eef8964be072e9535ce">drivetrain</a>, <a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a> <a class="el" href="classpxl_1_1Drivebase.html#a728c5496401d6b53e263e4c522c720f9">sensors</a>, <a class="el" href="classpxl_1_1SeekingController.html">SeekingController</a> <a class="el" href="classpxl_1_1Drivebase.html#aed6f1df061e441e9e71a8ba8e60f0c3b">linearController</a>, <a class="el" href="classpxl_1_1SeekingController.html">SeekingController</a> <a class="el" href="classpxl_1_1Drivebase.html#ac9101024ccdbbf767837f01dfd3f29a9">angularController</a>)</td></tr>
+<tr class="memdesc:a24988e39ce3bb2ba6f104acbd24b7ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classpxl_1_1Drivebase.html" title="The Drivebase class represents the base of a robot&#39;s drivetrain.">Drivebase</a> object.  <a href="classpxl_1_1Drivebase.html#a24988e39ce3bb2ba6f104acbd24b7ff5">More...</a><br /></td></tr>
 <tr class="separator:a24988e39ce3bb2ba6f104acbd24b7ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0392a5b4cca4cfba1bf649ff36380446"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Odom.html">Odom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a0392a5b4cca4cfba1bf649ff36380446">setSensors</a> (<a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a> <a class="el" href="classpxl_1_1Drivebase.html#a728c5496401d6b53e263e4c522c720f9">sensors</a>)</td></tr>
-<tr class="separator:a0392a5b4cca4cfba1bf649ff36380446"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18e259d388285d8a1bfedb9d94ce9e15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a18e259d388285d8a1bfedb9d94ce9e15">calibrate</a> (bool <a class="el" href="classpxl_1_1Drivebase.html#af40956ce1b817eca0b6457171235dbd1">calibrateIMU</a>=true)</td></tr>
+<tr class="memdesc:a18e259d388285d8a1bfedb9d94ce9e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">callibrate the drivebase's sensors. Callibrates the IMU and resets the tracking wheels.  <a href="classpxl_1_1Drivebase.html#a18e259d388285d8a1bfedb9d94ce9e15">More...</a><br /></td></tr>
 <tr class="separator:a18e259d388285d8a1bfedb9d94ce9e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:af40956ce1b817eca0b6457171235dbd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#af40956ce1b817eca0b6457171235dbd1">calibrateIMU</a> (<a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a> <a class="el" href="classpxl_1_1Drivebase.html#a728c5496401d6b53e263e4c522c720f9">sensors</a>)</td></tr>
-<tr class="separator:af40956ce1b817eca0b6457171235dbd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cc11bc53b3e7d37c8bd74ff54565e71"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a0cc11bc53b3e7d37c8bd74ff54565e71">isDriverControl</a> ()</td></tr>
 <tr class="separator:a0cc11bc53b3e7d37c8bd74ff54565e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -125,6 +124,13 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a270e97d895e45eef8964be072e9535ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a728c5496401d6b53e263e4c522c720f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a728c5496401d6b53e263e4c522c720f9">sensors</a></td></tr>
 <tr class="separator:a728c5496401d6b53e263e4c522c720f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:af40956ce1b817eca0b6457171235dbd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#af40956ce1b817eca0b6457171235dbd1">calibrateIMU</a> (<a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a> <a class="el" href="classpxl_1_1Drivebase.html#a728c5496401d6b53e263e4c522c720f9">sensors</a>)</td></tr>
+<tr class="separator:af40956ce1b817eca0b6457171235dbd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0392a5b4cca4cfba1bf649ff36380446"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Odom.html">Odom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a0392a5b4cca4cfba1bf649ff36380446">setSensors</a> (<a class="el" href="structpxl_1_1OdomSensors.html">OdomSensors</a> <a class="el" href="classpxl_1_1Drivebase.html#a728c5496401d6b53e263e4c522c720f9">sensors</a>)</td></tr>
+<tr class="separator:a0392a5b4cca4cfba1bf649ff36380446"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -178,6 +184,18 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructs a <a class="el" href="classpxl_1_1Drivebase.html" title="The Drivebase class represents the base of a robot&#39;s drivetrain.">Drivebase</a> object. </p>
+<p>This constructor initializes a <a class="el" href="classpxl_1_1Drivebase.html" title="The Drivebase class represents the base of a robot&#39;s drivetrain.">Drivebase</a> object with the specified drivetrain, odometry sensors, linear controller, and angular controller.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">drivetrain</td><td>The drivetrain object used for controlling the robot's movement. </td></tr>
+    <tr><td class="paramname">sensors</td><td>The odometry sensors used for tracking the robot's position and orientation. </td></tr>
+    <tr><td class="paramname">linearController</td><td>The controller used for controlling linear movement. </td></tr>
+    <tr><td class="paramname">angularController</td><td>The controller used for controlling angular movement. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -196,6 +214,14 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>callibrate the drivebase's sensors. Callibrates the IMU and resets the tracking wheels. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">calibrateIMU</td><td>callibrate the IMU. <code>true</code> by default </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -218,7 +244,7 @@ Friends</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -255,6 +281,9 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classpxl_1_1Odom.html">Odom</a> pxl::Drivebase::setSensors </td>
@@ -264,6 +293,11 @@ Friends</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
