@@ -1,10 +1,10 @@
 #include "main.h"
-#include "pxl/api.hpp"
 
+#include "pxl/api.hpp"
 
 pros::Motor leftFront(1);
 pros::Motor leftMiddle(2);
-pros::Motor  leftBack(3);
+pros::Motor leftBack(3);
 
 pros::Motor rightFront(4);
 pros::Motor rightMiddle(5);
@@ -14,57 +14,55 @@ pros::MotorGroup leftMotors({leftFront, leftMiddle, leftBack});
 pros::MotorGroup rightMotors({rightFront, rightMiddle, rightBack});
 
 // Create drivetrain object
-pxl::Drivetrain drivetrain(
-    &leftMotors,// left motors
- &rightMotors, //right motors
- 12.5,  // track width
- 3.25, // diameter of wheel
- 360 // rpm of drivetrain. If unsure, type (input gear / output gear) * motor rpm
- );
- pros::IMU imu(8);
- pros::Rotation leftRotation(7);
- pxl::TrackingWheel horizontal1(
-    &leftRotation, // rotation sensor or shaft encoder
- 2.75, // diameter of wheel
- 4.5 // offset from tracking center in inches
- );
-pxl::OdomSensors sensors(
-    nullptr, // vertical1
-    nullptr,// vertical2
-    &horizontal1, // horizontal1
-    nullptr, // horizontal2
-    &imu// imu
+pxl::Drivetrain drivetrain(&leftMotors,   // left motors
+                           &rightMotors,  // right motors
+                           12.5,          // track width
+                           3.25,          // diameter of wheel
+                           360            // rpm of drivetrain. If unsure, type (input gear / output gear) * motor rpm
+);
+pros::IMU imu(8);
+pros::Rotation leftRotation(7);
+pxl::TrackingWheel horizontal1(&leftRotation,  // rotation sensor or shaft encoder
+                               2.75,           // diameter of wheel
+                               4.5             // offset from tracking center in inches
+);
+pxl::OdomSensors sensors(nullptr,       // vertical1
+                         nullptr,       // vertical2
+                         &horizontal1,  // horizontal1
+                         nullptr,       // horizontal2
+                         &imu           // imu
 );
 
+pxl::SeekingController linearSettings(  // linear settings
+    pxl::PID(                           // PID constants
+        25.0,                           // kP
+        0.0,                            // kI
+        4.0                             // kD
+        ),
+    20,  // slew rate of 20. Approximately 20 max volts per second increase
+    pxl::Regression({
+        // regression points. You may add as many error-timeout pairs as you want
+        pxl::Coord(1.0, 100),  // error of 1 inch, timeout of 100 ms
+        pxl::Coord(3.0, 500),  // error of 3 inches, timeout of 500 ms
+    }),
+    5000.0  // global timeout
+);
 
-pxl::SeekingController linearSettings( // linear settings
-    pxl::PID( // PID constants
-        25.0, // kP
-        0.0, // kI
-        4.0// kD
-        ), 
-    20, // slew rate of 20. Approximately 20 max volts per second increase
-    pxl::Regression({// regression points. You may add as many error-timeout pairs as you want
-        pxl::Coord(1.0, 100), // error of 1 inch, timeout of 100 ms
-        pxl::Coord(3.0, 500), // error of 3 inches, timeout of 500 ms
-}), 
-5000.0 // global timeout
-); 
-
-pxl::SeekingController angularSettings( // angular settings
-    pxl::PID( // PID constants
-        25.0, // kP
-        0.0, // kI
-        4.0// kD
-        ), 
-    20, // slew rate of 20. Approximately 20 max volts per second increase
-    pxl::Regression({// regression points. You may add as many error-timeout pairs as you want
-        pxl::Coord(0.5, 100), // error of 0.5 degree, timeout of 100 ms
-        pxl::Coord(5.0, 700), // error of 5 degtees, timeout of 700 ms
-}), 
-3000.0 // global timeout
-); 
-pxl::Drivebase drivebase(drivetrain, sensors, linearSettings, angularSettings); // make the drivebase
+pxl::SeekingController angularSettings(  // angular settings
+    pxl::PID(                            // PID constants
+        25.0,                            // kP
+        0.0,                             // kI
+        4.0                              // kD
+        ),
+    20,  // slew rate of 20. Approximately 20 max volts per second increase
+    pxl::Regression({
+        // regression points. You may add as many error-timeout pairs as you want
+        pxl::Coord(0.5, 100),  // error of 0.5 degree, timeout of 100 ms
+        pxl::Coord(5.0, 700),  // error of 5 degtees, timeout of 700 ms
+    }),
+    3000.0  // global timeout
+);
+pxl::Drivebase drivebase(drivetrain, sensors, linearSettings, angularSettings);  // make the drivebase
 /**
  * A callback function for LLEMU's center button.
  *
@@ -125,8 +123,8 @@ void competition_initialize() {}
  * from where it left off.
  */
 void autonomous() {
-    //TODO give Drivebase access to Drive_::Drive
-    // drivebase.Drive(24, 24, 1000);
+    // TODO give Drivebase access to Drive_::Drive
+    //  drivebase.Drive(24, 24, 1000);
 }
 
 /**

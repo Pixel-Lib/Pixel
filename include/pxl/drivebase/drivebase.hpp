@@ -1,7 +1,7 @@
 #pragma once
 
-#include <memory>
 #include <iostream>
+#include <memory>
 
 // #include "pxl/movements/drive.hpp"
 #include "pxl/aSync.hpp"
@@ -9,7 +9,7 @@
 #include "pxl/seekingcontroller.hpp"
 
 namespace pxl {
-    class Drive_;
+class Drive_;
 struct OdomSensors {
         OdomSensors(TrackingWheel *vertical1, TrackingWheel *vertical2, TrackingWheel *horizontal1,
                     TrackingWheel *horizontal2, pros::Imu *imu);
@@ -76,27 +76,26 @@ class Drivebase {
 
         /**
          * @brief callibrate the drivebase's sensors. Callibrates the IMU and resets the tracking wheels.
-         * 
+         *
          * @param calibrateIMU callibrate the IMU. `true` by default
          */
         void calibrate(bool calibrateIMU = true);
 
-
         // friends
 
         friend class Drive_;
-    private:
 
+    private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         void calibrateIMU(OdomSensors sensors);
         Odom setSensors(OdomSensors sensors);
-        protected:
-        
-                SeekingController linearController;
+
+    protected:
+        SeekingController linearController;
         SeekingController angularController;
         Odom odom;
-         bool isDriverControl();
-                 Drivetrain drivetrain;
+        bool isDriverControl();
+        Drivetrain drivetrain;
         OdomSensors sensors;
 };
 
