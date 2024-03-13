@@ -62,6 +62,14 @@ class Odom {
          */
         Pose getPose(bool radians = false);
 
+        /**
+         * Calculates the local position using the given tracking wheel measurements.
+         *
+         * @param trackers The vector of unique pointers to the tracking wheels.
+         * @param deltaTheta The change in heading angle.
+         * @param sinDTheta2 The sine of half the change in heading angle.
+         * @return The calculated local position.
+         */
         float calculateLocal(std::vector<std::unique_ptr<TrackingWheel>> &trackers, float deltaTheta, float sinDTheta2);
 
     private:
