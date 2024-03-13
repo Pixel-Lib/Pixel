@@ -63,14 +63,17 @@ Odom Drivebase::setSensors(OdomSensors sensors) {
                                                     drivetrain.trackWidth / 2, drivetrain.rpm));
     pxl::Odom odom(Verticals, Horizontals, drive, imu);
     return odom;
-
 }
 void Drivebase::calibrate(bool calibrateImu) {
     // calibrate the IMU if it exists and the user doesn't specify otherwise
     if (sensors.imu != nullptr && calibrateImu) calibrateIMU(sensors);
     // initialize odom
-sensors.vertical1 = sensors.vertical1 ? sensors.vertical1 : new pxl::TrackingWheel(drivetrain.leftMotors, drivetrain.wheelDiameter, -(drivetrain.trackWidth / 2), drivetrain.rpm);
-sensors.vertical2 = sensors.vertical2 ? sensors.vertical2 : new pxl::TrackingWheel(drivetrain.rightMotors, drivetrain.wheelDiameter, drivetrain.trackWidth / 2, drivetrain.rpm);
+    sensors.vertical1 = sensors.vertical1 ? sensors.vertical1
+                                          : new pxl::TrackingWheel(drivetrain.leftMotors, drivetrain.wheelDiameter,
+                                                                   -(drivetrain.trackWidth / 2), drivetrain.rpm);
+    sensors.vertical2 = sensors.vertical2 ? sensors.vertical2
+                                          : new pxl::TrackingWheel(drivetrain.rightMotors, drivetrain.wheelDiameter,
+                                                                   drivetrain.trackWidth / 2, drivetrain.rpm);
     sensors.vertical1->reset();
     sensors.vertical2->reset();
 
