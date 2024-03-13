@@ -1,7 +1,7 @@
 #include "pxl/movements/drive.hpp"
 
 namespace pxl {
-void Drive_::Drive(float target, float timeout, Params *params, bool async) {
+void Drive_::Drive(float target, float timeout, std::shared_ptr<Params> params, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
         pros::Task task([&]() { Drive(target, timeout, params, false); });
