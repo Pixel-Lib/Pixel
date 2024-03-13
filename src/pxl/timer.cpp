@@ -7,8 +7,10 @@
 namespace pxl {
 // Constructor
 Timer::Timer(uint32_t stop_time) {
-    if (stop_time != -1) this->stop_time = stop_time + pros::millis();
-    else this->stop_time = -1;
+    if (stop_time != -1)
+        this->stop_time = stop_time + pros::millis();
+    else
+        this->stop_time = -1;
 }
 
 // Destructor

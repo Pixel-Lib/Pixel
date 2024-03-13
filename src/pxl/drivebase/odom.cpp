@@ -1,6 +1,7 @@
 #include "pxl/drivebase/odom.hpp"
 
 #include <iostream>
+
 #include "pxl/util.hpp"
 
 namespace pxl {
@@ -134,9 +135,7 @@ void Odom::update() {
 
     this->pose += local.rotate(avgTheta);
 }
-Pose Odom::getPose(bool radians){
-    return radians ? this->pose : (pose.theta=radToDeg(pose.theta), pose);
-}
+Pose Odom::getPose(bool radians) { return radians ? this->pose : (pose.theta = radToDeg(pose.theta), pose); }
 void Odom::init() {
     if (OdomTask == nullptr) {
         OdomTask = new pros::Task([this]() {
