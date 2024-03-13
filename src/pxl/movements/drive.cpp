@@ -23,12 +23,13 @@ void Drive_::Drive(float target, float timeout, Params *params, bool async) {
     Pose targetPose = this->odom.getPose();
     targetPose += targetPose.rotate(odom.getPose().theta) * target;
 
-
     float linearError;
     float angularError;
-    // start the timeout
+
+    // start a timer based on the local timeut param
     Timer localTimeout(timeout);
     localTimeout.start();
+
     while (!localTimeout.isDone() || !linearController.getExit(linearError)
            && !angularController.getExit(angularError)) {
 
@@ -45,8 +46,7 @@ void Drive_::Drive(float target, float timeout, Params *params, bool async) {
         // clamp the output
         float minSpeed = params->minSpeed;
         float maxSpeed = params->maxSpeed;
-        // if the real minSpeed and maxSpeed values are too high/low, the robot will ignore the slew when the clamping
-        // happens
+        // if the real minSpeed and maxSpeed values are too high/low, the robot will ignore the slew when clamping happens
         if (!isnanf((params->slew))) {
             // allow users to remove the slew rate for a specific movement
             if (params->slew == 0) {
@@ -67,11 +67,14 @@ void Drive_::Drive(float target, float timeout, Params *params, bool async) {
         // if the error is negative, the robot should move backwards
         linearOutput *= pxl::sgn(linearError);
 
+        // calculate the left and right powers
         float leftPower = linearOutput + angularOutput;
         float rightPower = linearOutput - angularOutput;
 
+        // normalize the powers to the max speed
         std::pair<float, float> normalized = normalize(leftPower, rightPower, maxSpeed);
 
+        // move the motors
         drivetrain.leftMotors->move(normalized.first);
         drivetrain.rightMotors->move(normalized.second);
 
