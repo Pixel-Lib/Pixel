@@ -1,11 +1,6 @@
 #include "pxl/util.hpp"
 
-#include <math.h>
 
-#include <algorithm>
-#include <iostream>
-#include <type_traits>
-#include <vector>
 
 namespace pxl {
 float slew(float target, float current, float maxChange) {

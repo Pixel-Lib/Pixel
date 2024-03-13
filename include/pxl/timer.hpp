@@ -4,12 +4,20 @@
 #include "pros/rtos.hpp"
 
 namespace pxl {
+/**
+ * The Timer class provides a simple timer functionality for measuring and checking time
+ */
 class Timer {
     public:
-        // Constructor
+        /**
+         * @brief Constructor for the Timer class.
+         * @param stop_time The stop time for the timer in milliseconds. Default value is -1.
+         */
         Timer(uint32_t stop_time = -1);
 
-        // Destructor
+        /**
+         * @brief Destructor for the Timer class.
+         */
         ~Timer();
 
         /**

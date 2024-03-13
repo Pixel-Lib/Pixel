@@ -1,16 +1,5 @@
 #include "pxl/movements/drive.hpp"
 
-#include <sys/_stdint.h>
-
-#include <cmath>
-
-#include "pros/misc.hpp"
-#include "pros/rtos.h"
-#include "pxl/drivebase/drivebase.hpp"
-#include "pxl/drivebase/odom.hpp"
-#include "pxl/parametrics/coord.hpp"
-#include "pxl/parametrics/pose.hpp"
-#include "pxl/util.hpp"
 namespace pxl {
 void Drive_::Drive(float target, float timeout, Params *params, bool async) {
     mutex.take(TIMEOUT_MAX);
