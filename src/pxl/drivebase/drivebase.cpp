@@ -69,12 +69,8 @@ void Drivebase::calibrate(bool calibrateImu) {
     // calibrate the IMU if it exists and the user doesn't specify otherwise
     if (sensors.imu != nullptr && calibrateImu) calibrateIMU(sensors);
     // initialize odom
-    if (sensors.vertical1 == nullptr)
-        sensors.vertical1 = new pxl::TrackingWheel(drivetrain.leftMotors, drivetrain.wheelDiameter,
-                                                   -(drivetrain.trackWidth / 2), drivetrain.rpm);
-    if (sensors.vertical2 == nullptr)
-        sensors.vertical2 = new pxl::TrackingWheel(drivetrain.rightMotors, drivetrain.wheelDiameter,
-                                                   drivetrain.trackWidth / 2, drivetrain.rpm);
+sensors.vertical1 = sensors.vertical1 ? sensors.vertical1 : new pxl::TrackingWheel(drivetrain.leftMotors, drivetrain.wheelDiameter, -(drivetrain.trackWidth / 2), drivetrain.rpm);
+sensors.vertical2 = sensors.vertical2 ? sensors.vertical2 : new pxl::TrackingWheel(drivetrain.rightMotors, drivetrain.wheelDiameter, drivetrain.trackWidth / 2, drivetrain.rpm);
     sensors.vertical1->reset();
     sensors.vertical2->reset();
 
