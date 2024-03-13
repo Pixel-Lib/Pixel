@@ -5,23 +5,58 @@
 #include "pxl/util.hpp"
 
 namespace pxl {
+/**
+ * @brief The SeekingController class represents a controller used for seeking a target value.
+ * 
+ * This class provides methods to update the controller, start a timer, and check for exit conditions.
+ * It also contains private member variables for storing PID parameters, regression, timeout, error, slew rate, and a timer object.
+ */
 class SeekingController {
-    public:
-        SeekingController(PID pid, float slew_, Regression regression, float globalTimeout);
+public:
+    /**
+     * @brief Constructs a SeekingController object with the specified parameters.
+     * 
+     * @param pid The PID object containing the PID parameters.
+     * @param slew_ The slew rate for the controller.
+     * @param regression The regression object for calculating the output.
+     * @param globalTimeout The global timeout value for the controller.
+     */
+    SeekingController(PID pid, float slew_, Regression regression, float globalTimeout);
 
-        float update(float error, bool slew = true);
-        void timerStart();
-        bool getExit(float error);
+    /**
+     * @brief Updates the controller with the given error value.
+     * 
+     * @param error The error value to update the controller.
+     * @param slew Flag indicating whether to apply the slew rate or not (default: true).
+     * @return The updated output value of the controller.
+     */
+    float update(float error, bool slew = true);
 
-    private:
-        PID pid;
-        Regression regression;
-        float globalTimeout;
-        float error;
-        float prevOut = 0;
-        float slew_;
-        pxl::Timer timer;
-        friend class Drive_;
+    /**
+     * @brief Starts the timer for the controller.
+     */
+    void timerStart();
+
+    /**
+     * @brief Checks if the exit condition is met based on the given error value.
+     * 
+     * @param error The error value to check for the exit condition.
+     * @return True if the exit condition is met, false otherwise.
+     */
+    bool getExit(float error);
+
+private:
+    PID pid;                    ///< The PID object containing the PID parameters.
+    Regression regression;      ///< The regression object for calculating the output.
+    float globalTimeout;        ///< The global timeout value for the controller.
+    float error;                ///< The current error value.
+    float prevOut = 0;          ///< The previous output value.
+    float slew_;                ///< The slew rate for the controller.
+    pxl::Timer timer;           ///< The timer object for the controller.
+
+    // friends
+    friend class Drive_;
 };
+
 
 }  // namespace pxl

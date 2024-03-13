@@ -17,6 +17,8 @@ void Drive_::Drive(float target, float timeout, Params *params, bool async) {
     // start the timeout
     Timer localTimeout(timeout);
     localTimeout.start();
+    linearController.timerStart();
+    angularController.timerStart();
     while (!localTimeout.isDone()
            || !linearController.getExit(linearError) && !angularController.getExit(angularError)) {
 
