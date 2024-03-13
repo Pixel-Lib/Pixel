@@ -136,14 +136,13 @@ void Odom::update() {
     this->pose += local.rotate(avgTheta);
 }
 Pose Odom::getPose(bool radians) { return radians ? this->pose : (pose.theta = radToDeg(pose.theta), pose); }
+
 void Odom::init() {
-    if (OdomTask == nullptr) {
-        OdomTask = new pros::Task([this]() {
-            while (true) {
-                update();
-                pros::delay(10);
-            }
-        });
-    }
+    OdomTask = OdomTask ? OdomTask : new pros::Task([this]() {
+        while (true) {
+            update();
+            pros::delay(10);
+        }
+    });
 }
 }  // namespace pxl
