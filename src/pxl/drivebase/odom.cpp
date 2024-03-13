@@ -118,7 +118,7 @@ void Odom::update() {
     Pose local(0, 0, deltaTheta);
     const float sinDTheta2 = (deltaTheta == 0) ? 1 : 2 * std::sin(deltaTheta / 2);
 
-    Coord LocalMatrix(calculateLocal(this->verticals, deltaTheta, sinDTheta2),
+    const Coord LocalMatrix(calculateLocal(this->verticals, deltaTheta, sinDTheta2),
                      calculateLocal(this->horizontals, deltaTheta, sinDTheta2));
                      
     local.y += LocalMatrix.y;
