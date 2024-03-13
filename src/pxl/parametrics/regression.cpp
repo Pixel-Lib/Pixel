@@ -38,14 +38,14 @@ std::pair<double, double> Regression::Ridge() {
     // Calculate lambda as 1% of the sum of squares of x
     lambda = 0.01 * xDotX;
 
-    double m = (xDotY - n * xMean * yMean) / (xDotX - n * xMean * xMean + lambda);
+    double m = (xDotY - n * xMean * yMean) / (xDotX - n * xMean * xMean + this->lambda);
     double b = yMean - m * xMean;
 
     return std::make_pair(m, b);
 }
 
 double Regression::predict(double x) {
-    std::pair<double, double> coefficients = Ridge();
+    std::pair<double, double> coefficients = this->Ridge();
     double m = coefficients.first;
     double b = coefficients.second;
     return m * x + b;
