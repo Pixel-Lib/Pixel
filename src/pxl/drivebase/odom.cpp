@@ -118,8 +118,11 @@ void Odom::update() {
     Pose local(0, 0, deltaTheta);
     const float sinDTheta2 = (deltaTheta == 0) ? 1 : 2 * std::sin(deltaTheta / 2);
 
-    local.y += calculateLocal(this->horizontals, deltaTheta, sinDTheta2);
-    local.x += calculateLocal(this->verticals, deltaTheta, sinDTheta2);
+    Coord LocalMatrix(calculateLocal(this->verticals, deltaTheta, sinDTheta2),
+                     calculateLocal(this->horizontals, deltaTheta, sinDTheta2));
+                     
+    local.y += LocalMatrix.y;
+    local.x += LocalMatrix.x;
     if (this->verticals.size() == 0) {
         local.x += calculateLocal(this->drivetrain, deltaTheta, sinDTheta2);
         if (this->drivetrain.size() == 0) {
@@ -129,6 +132,7 @@ void Odom::update() {
 
     this->pose += local.rotate(avgTheta);
 }
+
 Pose Odom::getPose(bool radians) { return radians ? this->pose : (pose.theta = radToDeg(pose.theta), pose); }
 
 void Odom::init() {
