@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalize_271',['normalize',['../namespacepxl.html#a5ab789e9b21ea584870a2a6a0ea2bbb5',1,'pxl']]]
+  ['movements_281',['Movements',['../classpxl_1_1Movements.html#a043e2189a8fea8e10c27eae8a926b7f2',1,'pxl::Movements']]]
 ];

@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['pid_279',['PID',['../classpxl_1_1PID.html#a3cecdb6c97a89f1908e14dea28f3a4c1',1,'pxl::PID::PID(float kP, float kI, float kD)'],['../classpxl_1_1PID.html#a61e23901efdfd91cc1c177913d6419f7',1,'pxl::PID::PID(float kP, float kI, float kD, float kP_d)'],['../classpxl_1_1PID.html#aabad8a8d50a40ae87d1ba5c78ee7b9d0',1,'pxl::PID::PID(float kP, float kI, float kD, float kP_d, float integralMAX)']]],
-  ['pose_280',['Pose',['../classpxl_1_1Pose.html#a0bd959a338340220c753d5e8997958b3',1,'pxl::Pose::Pose(float x, float y, float theta)'],['../classpxl_1_1Pose.html#a63d83e71b2e84695da9803f4df1c723a',1,'pxl::Pose::Pose(const pxl::Coord &amp;other)']]],
-  ['predict_281',['predict',['../classpxl_1_1Regression.html#acf2d3ec55a10ffe3f5ef3246d1ef9d24',1,'pxl::Regression']]]
+  ['odom_283',['Odom',['../classpxl_1_1Odom.html#a1d431b27727093276f854509297768e3',1,'pxl::Odom::Odom(std::vector&lt; std::unique_ptr&lt; TrackingWheel &gt;&gt; &amp;verticals, std::vector&lt; std::unique_ptr&lt; TrackingWheel &gt;&gt; &amp;horizontals, std::vector&lt; std::unique_ptr&lt; TrackingWheel &gt;&gt; &amp;drivetrain, std::vector&lt; std::shared_ptr&lt; pros::IMU &gt;&gt; &amp;imu)'],['../classpxl_1_1Odom.html#a0cfb4288b37d6e62e6275b79a0ac20e5',1,'pxl::Odom::Odom()=default']]],
+  ['odomsensors_284',['OdomSensors',['../structpxl_1_1OdomSensors.html#ad0936e05daef050fe297261f8846e803',1,'pxl::OdomSensors']]],
+  ['operator_2a_285',['operator*',['../classpxl_1_1Coord.html#a2ab87f9ea614172f5292506612af8106',1,'pxl::Coord::operator*(const Coord &amp;other) const'],['../classpxl_1_1Coord.html#a88b482561d183d90a5674db359faf10c',1,'pxl::Coord::operator*(const float &amp;scalar) const']]],
+  ['operator_2b_286',['operator+',['../classpxl_1_1Coord.html#aee39dfada5e879a728d0999a3c6e1ff9',1,'pxl::Coord']]],
+  ['operator_2b_3d_287',['operator+=',['../classpxl_1_1Coord.html#a9eaae4f8bcc18bfd92232f17bc9edc16',1,'pxl::Coord']]],
+  ['operator_2d_288',['operator-',['../classpxl_1_1Coord.html#adb4d3be41dd397f272d5137e009261f1',1,'pxl::Coord']]],
+  ['operator_2f_289',['operator/',['../classpxl_1_1Coord.html#a032883c421ccf27f0fd30fad2dc755d8',1,'pxl::Coord']]]
 ];

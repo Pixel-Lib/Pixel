@@ -6,5 +6,8 @@ var searchData=
   ['minspeed_84',['minSpeed',['../structpxl_1_1Drive___1_1Params.html#a9c8aaf8f245b7d82a1120e4ab2ba8226',1,'pxl::Drive_::Params']]],
   ['motors_85',['motors',['../classpxl_1_1TrackingWheel.html#acd951972355bea5863f875ca0941ba6a',1,'pxl::TrackingWheel']]],
   ['movement_5ftype_86',['movement_Type',['../namespacepxl.html#afd77ac6809a811ca911fe64f4e47410c',1,'pxl']]],
-  ['mutex_87',['mutex',['../classpxl_1_1Drive__.html#a97653141d0eee11e2d4344ef63c688e2',1,'pxl::Drive_']]]
+  ['movements_87',['Movements',['../classpxl_1_1Movements.html#a043e2189a8fea8e10c27eae8a926b7f2',1,'pxl::Movements::Movements()'],['../classpxl_1_1Movements.html',1,'pxl::Movements']]],
+  ['movements_2ecpp_88',['movements.cpp',['../movements_8cpp.html',1,'']]],
+  ['movements_2ehpp_89',['movements.hpp',['../movements_8hpp.html',1,'']]],
+  ['mutex_90',['mutex',['../classpxl_1_1Drive__.html#a97653141d0eee11e2d4344ef63c688e2',1,'pxl::Drive_']]]
 ];

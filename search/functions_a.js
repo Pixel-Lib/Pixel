@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['radtodeg_282',['radToDeg',['../namespacepxl.html#accc0c31a4c5d20ceb1ea8de0417006d6',1,'pxl']]],
-  ['regression_283',['Regression',['../classpxl_1_1Regression.html#a084e55ed2f6dc7864497409b39e92c37',1,'pxl::Regression']]],
-  ['reset_284',['reset',['../classpxl_1_1TrackingWheel.html#aa9d1586ec8052d2340ff34f3fc1c5136',1,'pxl::TrackingWheel::reset()'],['../classpxl_1_1PID.html#aa2e8dc0f3757ea432863fa1ecfb7953f',1,'pxl::PID::reset()']]],
-  ['ridge_285',['Ridge',['../classpxl_1_1Regression.html#a629456709415f74159b6898f2d3a752f',1,'pxl::Regression']]],
-  ['rotate_286',['rotate',['../classpxl_1_1Coord.html#a9f45c86775fbd36346f23f9f7ab0756d',1,'pxl::Coord']]]
+  ['pid_290',['PID',['../classpxl_1_1PID.html#a3cecdb6c97a89f1908e14dea28f3a4c1',1,'pxl::PID::PID(float kP, float kI, float kD)'],['../classpxl_1_1PID.html#a61e23901efdfd91cc1c177913d6419f7',1,'pxl::PID::PID(float kP, float kI, float kD, float kP_d)'],['../classpxl_1_1PID.html#aabad8a8d50a40ae87d1ba5c78ee7b9d0',1,'pxl::PID::PID(float kP, float kI, float kD, float kP_d, float integralMAX)']]],
+  ['pose_291',['Pose',['../classpxl_1_1Pose.html#a0bd959a338340220c753d5e8997958b3',1,'pxl::Pose::Pose(float x, float y, float theta)'],['../classpxl_1_1Pose.html#a63d83e71b2e84695da9803f4df1c723a',1,'pxl::Pose::Pose(const pxl::Coord &amp;other)']]],
+  ['predict_292',['predict',['../classpxl_1_1Regression.html#acf2d3ec55a10ffe3f5ef3246d1ef9d24',1,'pxl::Regression']]]
 ];
