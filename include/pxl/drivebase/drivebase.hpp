@@ -3,7 +3,7 @@
 #include <iostream>
 #include <memory>
 
-// #include "pxl/movements/drive.hpp"
+#include "pxl/movements/drive.hpp"
 #include "pxl/aSync.hpp"
 #include "pxl/drivebase/odom.hpp"
 #include "pxl/seekingcontroller.hpp"
@@ -20,6 +20,13 @@ struct OdomSensors {
         pros::IMU *imu;
 };
 
+/**
+ * @class Drivetrain
+ * @brief Represents a drivetrain for a robot.
+ * 
+ * The Drivetrain class provides functionality to control the movement of a robot's drivetrain.
+ * It encapsulates the left and right motor groups, track width, wheel diameter, and RPM of the drivetrain.
+ */
 class Drivetrain {
     public:
         Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *rightMotors, float trackWidth, float wheelDiameter,

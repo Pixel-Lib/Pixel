@@ -38,4 +38,5 @@ std::pair<float, float> normalize(float lateralOut, float angularOut, float maxS
     rightPower = (ratio > 1) ? rightPower / ratio : rightPower;
     return std::make_pair(leftPower, rightPower);
 }
+
 }  // namespace pxl
