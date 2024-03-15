@@ -17,11 +17,11 @@ float degToRad(float deg) { return deg * M_PI / 180; }
 
 float wrapTo180(float deg) { return std::remainder(deg, 360); }
 
-float wrapTo360(float deg) { return std::fmod(deg, 360); }
+float wrapTo360(float deg) { return std::remainder(deg,720);}
 
-float wrapToPi(float rad) { return std::fmod(rad + M_PI, 2 * M_PI) - M_PI; }
+float wrapToPi(float rad) { return std::remainder(rad, 2 * M_PI);}
 
-float wrapTo2Pi(float rad) { return std::fmod(rad, 2 * M_PI); }
+float wrapTo2Pi(float rad) { return std::remainder(rad, 4 * M_PI); }
 
 float angleError(float angle1, float angle2, bool radians) {
     float max = radians ? 2 * M_PI : 360;
