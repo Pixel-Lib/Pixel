@@ -4,6 +4,7 @@
 #include "pxl/drivebase/drivebase.hpp"
 namespace pxl {
 class Movements {
+    class Drivetrain;
         Movements(Drivetrain &drivetrain, Odom &odom, SeekingController &linearController,
                   SeekingController &angularController);
         SeekingController &linearController;

@@ -7,6 +7,7 @@
 #include "pxl/drivebase/odom.hpp"
 #include "pxl/movements/drive.hpp"
 #include "pxl/seekingcontroller.hpp"
+#include "pxl/movements/movements.hpp"
 
 namespace pxl {
 class Drive_;
