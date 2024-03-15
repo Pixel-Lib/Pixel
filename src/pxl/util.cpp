@@ -1,4 +1,5 @@
 #include "pxl/util.hpp"
+#include <cmath>
 
 namespace pxl {
 float slew(float target, float current, float maxChange) {
@@ -14,7 +15,7 @@ float radToDeg(float rad) { return rad * 180 / M_PI; }
 
 float degToRad(float deg) { return deg * M_PI / 180; }
 
-float wrapTo180(float deg) { return std::fmod(deg + 180, 360) - 180; }
+float wrapTo180(float deg) { return std::remainder(deg, 360); }
 
 float wrapTo360(float deg) { return std::fmod(deg, 360); }
 
