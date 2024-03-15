@@ -1,11 +1,13 @@
 #include "pxl/movements/drive.hpp"
+
 #include <memory>
+
 #include "pxl/drivebase/odom.hpp"
 
 namespace pxl {
-    Drive_::Drive_(Drivetrain& drivetrain, Odom& odom, SeekingController& linearController,
-                   SeekingController& angularController)
-        : drivetrain(drivetrain), odom(odom), linearController(linearController), angularController(angularController) {}
+Drive_::Drive_(Drivetrain &drivetrain, Odom &odom, SeekingController &linearController,
+               SeekingController &angularController)
+    : drivetrain(drivetrain), odom(odom), linearController(linearController), angularController(angularController) {}
 void Drive_::Drive(float target, float timeout, std::shared_ptr<Params> params, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {

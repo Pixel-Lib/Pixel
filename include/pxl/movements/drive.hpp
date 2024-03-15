@@ -1,6 +1,7 @@
 #pragma once
-#include <memory>
 #include <cmath>
+#include <memory>
+
 #include "main.h"
 #include "pxl/drivebase/drivebase.hpp"
 #include "pxl/drivebase/odom.hpp"
@@ -19,8 +20,8 @@ class Drive_ {
         friend class Drivebase;
 
     public:
-    Drive_(pxl::Drivetrain& drivetrain, pxl::Odom& odom, pxl::SeekingController& linearController,
-                          pxl::SeekingController& angularController);
+        Drive_(pxl::Drivetrain &drivetrain, pxl::Odom &odom, pxl::SeekingController &linearController,
+               pxl::SeekingController &angularController);
         struct Params {
                 float minSpeed = 0;
                 float maxSpeed = 127;
@@ -31,10 +32,10 @@ class Drive_ {
 
         // non-modifiable Drivebase derived
 
-        pxl::SeekingController& linearController;
-        pxl::SeekingController& angularController;
-        pxl::Drivetrain& drivetrain;
-        pxl::Odom& odom;
+        pxl::SeekingController &linearController;
+        pxl::SeekingController &angularController;
+        pxl::Drivetrain &drivetrain;
+        pxl::Odom &odom;
 };
 
 }  // namespace pxl

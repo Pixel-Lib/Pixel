@@ -3,9 +3,9 @@
 #include <iostream>
 #include <memory>
 
-#include "pxl/movements/drive.hpp"
 #include "pxl/aSync.hpp"
 #include "pxl/drivebase/odom.hpp"
+#include "pxl/movements/drive.hpp"
 #include "pxl/seekingcontroller.hpp"
 
 namespace pxl {
@@ -23,7 +23,7 @@ struct OdomSensors {
 /**
  * @class Drivetrain
  * @brief Represents a drivetrain for a robot.
- * 
+ *
  * The Drivetrain class provides functionality to control the movement of a robot's drivetrain.
  * It encapsulates the left and right motor groups, track width, wheel diameter, and RPM of the drivetrain.
  */
