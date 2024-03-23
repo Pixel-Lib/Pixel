@@ -63,7 +63,7 @@ digraph "include/pxl/drivebase/drivebase.hpp"
   Node15 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node15 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node24 [label="pxl/movements/movements.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$movements_8hpp.html",tooltip=" "];
+  Node24 [label="pxl/movements/movements.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node1 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node25 [label="pxl/seekingcontroller.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$seekingcontroller_8hpp.html",tooltip=" "];
   Node25 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

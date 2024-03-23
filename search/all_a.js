@@ -6,7 +6,5 @@ var searchData=
   ['minspeed_84',['minSpeed',['../structpxl_1_1Drivebase_1_1driveParams.html#a4b6b4f8d8e2d6fd4f3ba518b8bec03c5',1,'pxl::Drivebase::driveParams']]],
   ['motors_85',['motors',['../classpxl_1_1TrackingWheel.html#acd951972355bea5863f875ca0941ba6a',1,'pxl::TrackingWheel']]],
   ['movement_5ftype_86',['movement_Type',['../namespacepxl.html#afd77ac6809a811ca911fe64f4e47410c',1,'pxl']]],
-  ['movements_2ecpp_87',['movements.cpp',['../movements_8cpp.html',1,'']]],
-  ['movements_2ehpp_88',['movements.hpp',['../movements_8hpp.html',1,'']]],
-  ['mutex_89',['mutex',['../classpxl_1_1Drivebase.html#a7eb12087c25445beebe908b172e23b3c',1,'pxl::Drivebase']]]
+  ['mutex_87',['mutex',['../classpxl_1_1Drivebase.html#a7eb12087c25445beebe908b172e23b3c',1,'pxl::Drivebase']]]
 ];
