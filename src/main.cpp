@@ -123,8 +123,8 @@ void competition_initialize() {}
  * from where it left off.
  */
 void autonomous() {
-    // TODO give Drivebase access to Drive_::Drive
-     drivebase.Drive(24, 1000);
+    //? Drive 24 inches forward with 2000 ms timeout
+     drivebase.Drive(24, 2000);
 }
 
 /**
