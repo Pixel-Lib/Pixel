@@ -1,17 +1,14 @@
-#include "pxl/movements/drive.hpp"
+
 
 #include <memory>
-
+#include "pxl/drivebase/drivebase.hpp"
 #include "pxl/drivebase/odom.hpp"
 
 namespace pxl {
-Drive_::Drive_(Drivetrain &drivetrain, Odom &odom, SeekingController &linearController,
-               SeekingController &angularController)
-    : drivetrain(drivetrain), odom(odom), linearController(linearController), angularController(angularController) {}
-void Drive_::Drive(float target, float timeout, std::shared_ptr<Params> params, bool async) {
+void Drivebase::Drive(float target, float timeout, std::shared_ptr<driveParams> driveParams, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
-        pros::Task task([&]() { Drive(target, timeout, params, false); });
+        pros::Task task([&]() { Drive(target, timeout, driveParams, false); });
         pros::delay(10);
         return;
     }
@@ -40,19 +37,19 @@ void Drive_::Drive(float target, float timeout, std::shared_ptr<Params> params, 
         float angularOutput = this->angularController.update(angularError);
 
         // clamp the output
-        float minSpeed = params->minSpeed;
-        float maxSpeed = params->maxSpeed;
+        float minSpeed = driveParams->minSpeed;
+        float maxSpeed = driveParams->maxSpeed;
         // if the real minSpeed and maxSpeed values are too high/low, the robot will ignore the slew when the clamping
         // happens
         std::pair<float, float> speeds =
-            !isnanf((params->slew))
-                ? (params->slew != 0 ? std::make_pair(slew(params->minSpeed, linearController.prevOut, params->slew),
-                                                      slew(params->maxSpeed, linearController.prevOut, params->slew))
-                                     : std::make_pair(params->minSpeed, params->maxSpeed))
+            !isnanf((driveParams->slew))
+                ? (driveParams->slew != 0 ? std::make_pair(slew(driveParams->minSpeed, linearController.prevOut, driveParams->slew),
+                                                      slew(driveParams->maxSpeed, linearController.prevOut, driveParams->slew))
+                                     : std::make_pair(driveParams->minSpeed, driveParams->maxSpeed))
                 : (linearController.slew_ != 0
-                       ? std::make_pair(slew(params->minSpeed, linearController.prevOut, linearController.slew_),
-                                        slew(params->maxSpeed, linearController.prevOut, linearController.slew_))
-                       : std::make_pair(params->minSpeed, params->maxSpeed));
+                       ? std::make_pair(slew(driveParams->minSpeed, linearController.prevOut, linearController.slew_),
+                                        slew(driveParams->maxSpeed, linearController.prevOut, linearController.slew_))
+                       : std::make_pair(driveParams->minSpeed, driveParams->maxSpeed));
 
         minSpeed = speeds.first;
         maxSpeed = speeds.second;

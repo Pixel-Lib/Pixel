@@ -11,6 +11,7 @@
 
 namespace pxl {
 class Drive_;
+// class Drivetrain;
 struct OdomSensors {
         OdomSensors(TrackingWheel *vertical1, TrackingWheel *vertical2, TrackingWheel *horizontal1,
                     TrackingWheel *horizontal2, pros::Imu *imu);
@@ -32,7 +33,7 @@ class Drivetrain {
     public:
         Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *rightMotors, float trackWidth, float wheelDiameter,
                    float rpm);
-
+Drivetrain() = default;
         // Add any necessary member functions here
 
         /**
@@ -92,13 +93,27 @@ class Drivebase {
         // friends
 
         friend class Drive_;
+        friend class Drivetrain;
+
+        //* MOTIONS *//
+        pros::Mutex mutex;
+        // get the current competition state. If this changes, the movement will stop
+        uint8_t compstate = pros::competition::get_status(); // global variable
+
+        struct driveParams {
+                float minSpeed = 0;
+                float maxSpeed = 127;
+                float slew = NAN;
+        };
+        static std::shared_ptr<driveParams> defaultDriveParams() { return std::make_shared<driveParams>(); }
+        void Drive(float target, float timeout, std::shared_ptr<driveParams> params = defaultDriveParams(), bool async = true);
 
     private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         void calibrateIMU(OdomSensors sensors);
         Odom setSensors(OdomSensors sensors);
 
-    protected:
+    public:
         SeekingController linearController;
         SeekingController angularController;
         Odom odom;
