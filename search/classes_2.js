@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['drive_5f_195',['Drive_',['../classpxl_1_1Drive__.html',1,'pxl']]],
-  ['drivebase_196',['Drivebase',['../classpxl_1_1Drivebase.html',1,'pxl']]],
-  ['drivetrain_197',['Drivetrain',['../classpxl_1_1Drivetrain.html',1,'pxl']]]
+  ['drivebase_187',['Drivebase',['../classpxl_1_1Drivebase.html',1,'pxl']]],
+  ['driveparams_188',['driveParams',['../structpxl_1_1Drivebase_1_1driveParams.html',1,'pxl::Drivebase']]],
+  ['drivetrain_189',['Drivetrain',['../classpxl_1_1Drivetrain.html',1,'pxl']]]
 ];

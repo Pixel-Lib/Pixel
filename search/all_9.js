@@ -6,5 +6,5 @@ var searchData=
   ['lateral_77',['lateral',['../namespacepxl.html#afd77ac6809a811ca911fe64f4e47410ca75753cf2b953e7f1e5d657b97c1f6894',1,'pxl']]],
   ['leftmotors_78',['leftMotors',['../classpxl_1_1Drivetrain.html#a1e683aa28b4f6f9b9e1fe769fe60fe5d',1,'pxl::Drivetrain']]],
   ['lerp_79',['lerp',['../classpxl_1_1Coord.html#a653a51dc4d0507336de4dbcb330a0979',1,'pxl::Coord']]],
-  ['linearcontroller_80',['linearController',['../classpxl_1_1Drivebase.html#aed6f1df061e441e9e71a8ba8e60f0c3b',1,'pxl::Drivebase::linearController()'],['../classpxl_1_1Drive__.html#a3dc4b76b649fcc21236d4aff30f99ce1',1,'pxl::Drive_::linearController()'],['../classpxl_1_1Movements.html#a2b08b22a7b302cba9a36581f3dfd98ca',1,'pxl::Movements::linearController()']]]
+  ['linearcontroller_80',['linearController',['../classpxl_1_1Drivebase.html#aed6f1df061e441e9e71a8ba8e60f0c3b',1,'pxl::Drivebase']]]
 ];

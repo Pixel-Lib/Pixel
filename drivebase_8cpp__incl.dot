@@ -65,13 +65,8 @@ digraph "src/pxl/drivebase/drivebase.cpp"
   Node16 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node25 [label="pxl/movements/drive.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drive_8hpp.html",tooltip=" "];
-  Node25 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node25 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node25 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node25 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node25 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node25 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="pxl/movements/movements.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$movements_8hpp.html",tooltip=" "];
+  Node2 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node26 [label="pxl/seekingcontroller.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$seekingcontroller_8hpp.html",tooltip=" "];
   Node26 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node27 [label="pxl/parametrics/regression.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$regression_8hpp.html",tooltip=" "];
@@ -86,8 +81,4 @@ digraph "src/pxl/drivebase/drivebase.cpp"
   Node29 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node26 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node26 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 -> Node30 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node30 [label="pxl/movements/movements.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$movements_8hpp.html",tooltip=" "];
-  Node30 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

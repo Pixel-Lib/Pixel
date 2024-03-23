@@ -70,36 +70,28 @@ $(function() {
 <div class="title">movements.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="movements_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<a href="movements_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// #pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// #include &quot;drive.hpp&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drivebase_8hpp.html">pxl/drivebase/drivebase.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepxl.html">pxl</a> {</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classpxl_1_1Movements.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classpxl_1_1Movements.html">Movements</a> {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">class </span><a class="code" href="classpxl_1_1Drivetrain.html">Drivetrain</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <a class="code" href="classpxl_1_1Movements.html#a043e2189a8fea8e10c27eae8a926b7f2">Movements</a>(<a class="code" href="classpxl_1_1Drivetrain.html">Drivetrain</a> &amp;<a class="code" href="classpxl_1_1Movements.html#a1c7d779423ff106bff1841b6cf1e0b00">drivetrain</a>, <a class="code" href="classpxl_1_1Odom.html">Odom</a> &amp;<a class="code" href="classpxl_1_1Movements.html#a330866407ae54a0763140f3149d9d6cb">odom</a>, <a class="code" href="classpxl_1_1SeekingController.html">SeekingController</a> &amp;<a class="code" href="classpxl_1_1Movements.html#a2b08b22a7b302cba9a36581f3dfd98ca">linearController</a>,</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                  <a class="code" href="classpxl_1_1SeekingController.html">SeekingController</a> &amp;<a class="code" href="classpxl_1_1Movements.html#ae42e6c2c546a286ee1d9ba591cf08a00">angularController</a>);</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classpxl_1_1Movements.html#a2b08b22a7b302cba9a36581f3dfd98ca">   10</a></span>&#160;        <a class="code" href="classpxl_1_1SeekingController.html">SeekingController</a> &amp;<a class="code" href="classpxl_1_1Movements.html#a2b08b22a7b302cba9a36581f3dfd98ca">linearController</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classpxl_1_1Movements.html#ae42e6c2c546a286ee1d9ba591cf08a00">   11</a></span>&#160;        <a class="code" href="classpxl_1_1SeekingController.html">SeekingController</a> &amp;<a class="code" href="classpxl_1_1Movements.html#ae42e6c2c546a286ee1d9ba591cf08a00">angularController</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classpxl_1_1Movements.html#a1c7d779423ff106bff1841b6cf1e0b00">   12</a></span>&#160;        <a class="code" href="classpxl_1_1Drivetrain.html">Drivetrain</a> &amp;<a class="code" href="classpxl_1_1Movements.html#a1c7d779423ff106bff1841b6cf1e0b00">drivetrain</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classpxl_1_1Movements.html#a330866407ae54a0763140f3149d9d6cb">   13</a></span>&#160;        <a class="code" href="classpxl_1_1Odom.html">Odom</a> &amp;<a class="code" href="classpxl_1_1Movements.html#a330866407ae54a0763140f3149d9d6cb">odom</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classpxl_1_1Movements.html#aabf170057ad00f695ee86cd78f23302c">   16</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classpxl_1_1Drive__.html">Drive_</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}  <span class="comment">// namespace pxl</span></div>
-<div class="ttc" id="aclasspxl_1_1Drive___html"><div class="ttname"><a href="classpxl_1_1Drive__.html">pxl::Drive_</a></div><div class="ttdef"><b>Definition:</b> drive.hpp:14</div></div>
-<div class="ttc" id="aclasspxl_1_1Drivetrain_html"><div class="ttname"><a href="classpxl_1_1Drivetrain.html">pxl::Drivetrain</a></div><div class="ttdoc">Represents a drivetrain for a robot.</div><div class="ttdef"><b>Definition:</b> drivebase.hpp:31</div></div>
-<div class="ttc" id="aclasspxl_1_1Movements_html"><div class="ttname"><a href="classpxl_1_1Movements.html">pxl::Movements</a></div><div class="ttdef"><b>Definition:</b> movements.hpp:6</div></div>
-<div class="ttc" id="aclasspxl_1_1Movements_html_a043e2189a8fea8e10c27eae8a926b7f2"><div class="ttname"><a href="classpxl_1_1Movements.html#a043e2189a8fea8e10c27eae8a926b7f2">pxl::Movements::Movements</a></div><div class="ttdeci">Movements(Drivetrain &amp;drivetrain, Odom &amp;odom, SeekingController &amp;linearController, SeekingController &amp;angularController)</div><div class="ttdef"><b>Definition:</b> movements.cpp:4</div></div>
-<div class="ttc" id="aclasspxl_1_1Movements_html_a1c7d779423ff106bff1841b6cf1e0b00"><div class="ttname"><a href="classpxl_1_1Movements.html#a1c7d779423ff106bff1841b6cf1e0b00">pxl::Movements::drivetrain</a></div><div class="ttdeci">Drivetrain &amp; drivetrain</div><div class="ttdef"><b>Definition:</b> movements.hpp:12</div></div>
-<div class="ttc" id="aclasspxl_1_1Movements_html_a2b08b22a7b302cba9a36581f3dfd98ca"><div class="ttname"><a href="classpxl_1_1Movements.html#a2b08b22a7b302cba9a36581f3dfd98ca">pxl::Movements::linearController</a></div><div class="ttdeci">SeekingController &amp; linearController</div><div class="ttdef"><b>Definition:</b> movements.hpp:10</div></div>
-<div class="ttc" id="aclasspxl_1_1Movements_html_a330866407ae54a0763140f3149d9d6cb"><div class="ttname"><a href="classpxl_1_1Movements.html#a330866407ae54a0763140f3149d9d6cb">pxl::Movements::odom</a></div><div class="ttdeci">Odom &amp; odom</div><div class="ttdef"><b>Definition:</b> movements.hpp:13</div></div>
-<div class="ttc" id="aclasspxl_1_1Movements_html_ae42e6c2c546a286ee1d9ba591cf08a00"><div class="ttname"><a href="classpxl_1_1Movements.html#ae42e6c2c546a286ee1d9ba591cf08a00">pxl::Movements::angularController</a></div><div class="ttdeci">SeekingController &amp; angularController</div><div class="ttdef"><b>Definition:</b> movements.hpp:11</div></div>
-<div class="ttc" id="aclasspxl_1_1Odom_html"><div class="ttname"><a href="classpxl_1_1Odom.html">pxl::Odom</a></div><div class="ttdoc">The Odom class represents an odometry system that tracks the robot's position and orientation.</div><div class="ttdef"><b>Definition:</b> odom.hpp:22</div></div>
-<div class="ttc" id="aclasspxl_1_1SeekingController_html"><div class="ttname"><a href="classpxl_1_1SeekingController.html">pxl::SeekingController</a></div><div class="ttdoc">The SeekingController class represents a controller used for seeking a target value.</div><div class="ttdef"><b>Definition:</b> seekingcontroller.hpp:15</div></div>
-<div class="ttc" id="adrivebase_8hpp_html"><div class="ttname"><a href="drivebase_8hpp.html">drivebase.hpp</a></div></div>
-<div class="ttc" id="anamespacepxl_html"><div class="ttname"><a href="namespacepxl.html">pxl</a></div><div class="ttdef"><b>Definition:</b> aSync.hpp:12</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// #include &quot;pxl/drivebase/drivebase.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// #include &quot;pxl/seekingcontroller.hpp&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// namespace pxl {</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// class Movements {</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//         // class Drivetrain;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//         Movements(Drivetrain&amp; drivetrain, Odom&amp; odom, SeekingController&amp; linearController,</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//                   SeekingController&amp; angularController);</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                  </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//         SeekingController&amp; linearController;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//         SeekingController&amp; angularController;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//         Drivetrain&amp; drivetrain;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//         Odom &amp;odom;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//     public:</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//         friend class Drive_;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//         friend class Drivetrain;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//         friend class SeekingController;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// }  // namespace pxl</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <footer>
     <div class="pixel">Pixel</div>

@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="pxl::Drive_::Params",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structpxl_1_1Drive___1_1Params.html",tooltip=" "];
+  Node0 [label="pxl::Drivebase::driveParams",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structpxl_1_1Drivebase_1_1driveParams.html",tooltip=" "];
 }

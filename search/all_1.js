@@ -5,7 +5,7 @@ var searchData=
   ['calibrate_14',['calibrate',['../classpxl_1_1Drivebase.html#a18e259d388285d8a1bfedb9d94ce9e15',1,'pxl::Drivebase::calibrate()'],['../classpxl_1_1Odom.html#a11b4f0251d39de3167c89d59466b8524',1,'pxl::Odom::calibrate()']]],
   ['calibrateimu_15',['calibrateIMU',['../classpxl_1_1Drivebase.html#af40956ce1b817eca0b6457171235dbd1',1,'pxl::Drivebase']]],
   ['called_16',['called',['../structpxl_1_1ActionFuncTuple.html#aaedbeab6ec75482b759c7660996a7f58',1,'pxl::ActionFuncTuple']]],
-  ['compstate_17',['compstate',['../classpxl_1_1Drive__.html#aa11b645f5fcbc468096b5ce355c9f1fe',1,'pxl::Drive_']]],
+  ['compstate_17',['compstate',['../classpxl_1_1Drivebase.html#ae1177ad96b380aba74b4dd3fa1107e4b',1,'pxl::Drivebase']]],
   ['coord_18',['Coord',['../classpxl_1_1Coord.html#afc1f9aefc5bbd25daf9ac43589e0153a',1,'pxl::Coord::Coord()'],['../classpxl_1_1Coord.html',1,'pxl::Coord']]],
   ['coord_2ecpp_19',['coord.cpp',['../coord_8cpp.html',1,'']]],
   ['coord_2ehpp_20',['coord.hpp',['../coord_8hpp.html',1,'']]]
