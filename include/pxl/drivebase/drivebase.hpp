@@ -32,7 +32,7 @@ class Drivetrain {
     public:
         Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *rightMotors, float trackWidth, float wheelDiameter,
                    float rpm);
-Drivetrain() = default;
+        Drivetrain() = default;
         // Add any necessary member functions here
 
         /**
@@ -97,7 +97,7 @@ class Drivebase {
         //* MOTIONS *//
         pros::Mutex mutex;
         // get the current competition state. If this changes, the movement will stop
-        uint8_t compstate = pros::competition::get_status(); // global variable
+        uint8_t compstate = pros::competition::get_status();  // global variable
 
         struct driveParams {
                 float minSpeed = 0;
@@ -105,7 +105,8 @@ class Drivebase {
                 float slew = NAN;
         };
         static std::shared_ptr<driveParams> defaultDriveParams() { return std::make_shared<driveParams>(); }
-        void Drive(float target, float timeout, std::shared_ptr<driveParams> params = defaultDriveParams(), bool async = true);
+        void Drive(float target, float timeout, std::shared_ptr<driveParams> params = defaultDriveParams(),
+                   bool async = true);
 
     private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
