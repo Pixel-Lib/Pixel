@@ -124,7 +124,7 @@ void competition_initialize() {}
  */
 void autonomous() {
     // TODO give Drivebase access to Drive_::Drive
-    //  drivebase.Drive(24, 24, 1000);
+     drivebase.Drive(24, 1000);
 }
 
 /**
