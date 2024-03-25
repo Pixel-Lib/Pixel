@@ -1,4 +1,5 @@
 #include "pxl/drivebase/drivebase.hpp"
+
 #include "pxl/seekingcontroller.hpp"
 
 // #include "pxl/seekingcontroller.hpp"
@@ -87,14 +88,16 @@ void Drivebase::calibrate(bool calibrateImu) {
     // rumble to controller to indicate success
     pros::c::controller_rumble(pros::E_CONTROLLER_MASTER, ".");
 }
-std::pair<float, float> slewSpeedLimits(std::shared_ptr<Drivebase::driveParams> driveParams, SeekingController& seekingController) {
+std::pair<float, float> slewSpeedLimits(std::shared_ptr<Drivebase::driveParams> driveParams,
+                                        SeekingController &seekingController) {
     return !isnanf((driveParams->slew))
-        ? (driveParams->slew != 0 ? std::make_pair(slew(driveParams->minSpeed, seekingController.prevOut, driveParams->slew),
-                                                  slew(driveParams->maxSpeed, seekingController.prevOut, driveParams->slew))
-                                 : std::make_pair(driveParams->minSpeed, driveParams->maxSpeed))
-        : (seekingController.slew_ != 0
-               ? std::make_pair(slew(driveParams->minSpeed, seekingController.prevOut, seekingController.slew_),
-                                slew(driveParams->maxSpeed, seekingController.prevOut, seekingController.slew_))
-               : std::make_pair(driveParams->minSpeed, driveParams->maxSpeed));
+               ? (driveParams->slew != 0
+                      ? std::make_pair(slew(driveParams->minSpeed, seekingController.prevOut, driveParams->slew),
+                                       slew(driveParams->maxSpeed, seekingController.prevOut, driveParams->slew))
+                      : std::make_pair(driveParams->minSpeed, driveParams->maxSpeed))
+               : (seekingController.slew_ != 0
+                      ? std::make_pair(slew(driveParams->minSpeed, seekingController.prevOut, seekingController.slew_),
+                                       slew(driveParams->maxSpeed, seekingController.prevOut, seekingController.slew_))
+                      : std::make_pair(driveParams->minSpeed, driveParams->maxSpeed));
 }
 }  // namespace pxl

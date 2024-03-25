@@ -9,14 +9,14 @@ namespace pxl {
 /**
  * @class Regression
  * @brief A class that performs regression analysis on a set of points.
- * 
+ *
  * The Regression class calculates the best-fit line through a set of points using ridge regression.
  * It also provides a method to predict the y-value for a given x-value based on the fitted line.
  */
 class Regression {
     private:
-        std::vector<pxl::Coord> points; ///< The set of points used for regression analysis.
-        double lambda; ///< The regularization parameter for ridge regression.
+        std::vector<pxl::Coord> points;  ///< The set of points used for regression analysis.
+        double lambda;                   ///< The regularization parameter for ridge regression.
 
     public:
         /**

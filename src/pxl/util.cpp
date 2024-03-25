@@ -1,4 +1,5 @@
 #include "pxl/util.hpp"
+
 #include <cmath>
 
 namespace pxl {
@@ -17,9 +18,9 @@ float degToRad(float deg) { return deg * M_PI / 180; }
 
 float wrapTo180(float deg) { return std::remainder(deg, 360); }
 
-float wrapTo360(float deg) { return std::remainder(deg,720);}
+float wrapTo360(float deg) { return std::remainder(deg, 720); }
 
-float wrapToPi(float rad) { return std::remainder(rad, 2 * M_PI);}
+float wrapToPi(float rad) { return std::remainder(rad, 2 * M_PI); }
 
 float wrapTo2Pi(float rad) { return std::remainder(rad, 4 * M_PI); }
 

@@ -9,7 +9,8 @@ SeekingController::SeekingController(PID pid, float slew_, Regression regression
 
 float SeekingController::update(float error, bool slew) {
     prevOut = pid.update(this->error);
-    return (this->slew_ != 0 || !slew) ? pxl::slew(pid.update(this->error), prevOut, this->slew_) : pid.update(this->error);
+    return (this->slew_ != 0 || !slew) ? pxl::slew(pid.update(this->error), prevOut, this->slew_)
+                                       : pid.update(this->error);
 }
 
 void SeekingController::timerStart() { timer.start(); }
