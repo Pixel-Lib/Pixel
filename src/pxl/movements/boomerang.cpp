@@ -25,6 +25,41 @@ namespace pxl {
         float distance = this->odom.getPose().distance(targetPose);
            Pose carrot(targetPose.x - distance * cos(theta) * dlead,
 			         targetPose.y - distance * sin(theta) * dlead, theta);
-    
+        linearError = this->odom.getPose().distance(carrot);
+        angularError = wrapTo180(radToDeg(this->odom.getPose().angle(carrot)));
+
+
+
+               // calculate the raw linear and angular output from the PID controllers
+        float linearOutput = this->linearController.update(linearError);
+        float angularOutput = this->angularController.update(angularError);
+
+        // clamp the output
+        float minSpeed = boomerangParams->minSpeed;
+        float maxSpeed = boomerangParams->maxSpeed;
+        // if the real minSpeed and maxSpeed values are too high/low, the robot will ignore the slew when the clamping
+        // happens
+        std::pair<float, float> speeds = slewSpeedLimits(boomerangParams, linearController);
+
+        minSpeed = speeds.first;
+        maxSpeed = speeds.second;
+
+        // clamp the output to the min and max speed
+        linearOutput = std::clamp(linearOutput, minSpeed, maxSpeed);
+
+        // if the error is negative, the robot should move backwards
+        linearOutput = (pxl::sgn(linearOutput) != pxl::sgn(linearError)) ? -linearOutput : linearOutput;
+
+        // calculate and normalize the left/right speeds
+        std::pair<float, float> normalized = normalize(linearOutput, angularOutput, maxSpeed);
+
+        drivetrain.leftMotors->move(normalized.first);
+        drivetrain.rightMotors->move(normalized.second);
+
+        pros::delay(10);
+    }
+    // stop the motors
+    drivetrain.leftMotors->move(0);
+    drivetrain.rightMotors->move(0);
     }  
-}}
+}
