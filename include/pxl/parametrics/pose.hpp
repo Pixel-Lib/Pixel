@@ -18,6 +18,7 @@ class Pose : public pxl::Coord {
          */
         Pose(float x, float y, float theta);
 
+        Pose() = default;
         /**
          * @brief Constructs a `Pose` object from a `Coord` object.
          * @param other The `Coord` object to convert.

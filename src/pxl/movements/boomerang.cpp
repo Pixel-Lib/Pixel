@@ -17,7 +17,7 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
     float angularError;
 
     bool carrotSettled = false;
-    Pose previousCarrot = Pose(0, 0, 0);
+    Pose previousCarrot = Pose();
 
     Timer localTimeout(timeout);
     localTimeout.start();
