@@ -1,4 +1,5 @@
 #include "pxl/drivebase/drivebase.hpp"
+#include "pxl/parametrics/coord.hpp"
 
 namespace pxl {
 void Drivebase::Boomerang(float x, float y, float theta, float dlead, float timeout,
@@ -26,8 +27,15 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
     while (!localTimeout.isDone()
            || !linearController.getExit(linearError) && !angularController.getExit(angularError)) {
 
+        Coord carrot(0, 0);
+           if (!carrotSettled){
+        // calculate the carrot
         float distance = this->odom.getPose().distance(targetPose);
-        const Coord carrot(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead);
+          carrot=Coord(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead);
+        }else{
+              carrot=Coord(targetPose.x, targetPose.y);
+        }
+
         if (previousCarrot.distance(carrot) < 0.01) { carrotSettled = true; }
         previousCarrot = carrot;
 
