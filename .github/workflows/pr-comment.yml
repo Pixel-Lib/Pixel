@@ -1,27 +1,19 @@
 name: PROS Template
 on:
   pull_request:
-    types: [opened, synchronize]
-    branches: [ main ]
+    types: [opened, synchronize, reopened]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions: 
-      pull-requests: write
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
 
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
-
-      - name: Install ARM Toolchain
-        uses: fiam/arm-none-eabi-gcc@v1
-        with:
-          release: '10-2020-q4'
 
       - name: PIP Installer
         uses: BSFishy/pip-action@v1
@@ -40,37 +32,27 @@ jobs:
           name: template
           path: '*.zip'
 
-      - name: Upload zip file
-        uses: actions/upload-artifact@v2
+  comment:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
         with:
-          name: output-zip
-          path: '*.zip'
+          name: template
 
       - name: Comment PR
-        uses: actions/github-script@v5
+        uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const core = require('@actions/core');
-            const context = github.context;
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            const issue_number = context.issue.number;
-
-            github.rest.actions.listWorkflowRunArtifacts({
-              owner: owner,
-              repo: repo,
-              run_id: context.runId
-            }).then(response => {
-              const artifact = response.data.artifacts.find(artifact => artifact.name === 'template');
-              if (artifact) {
-                return github.rest.issues.createComment({
-                  issue_number: issue_number,
-                  owner: owner,
-                  repo: repo,
-                  body: `You can download the template artifact [here](${artifact.archive_download_url})`
-                });
-              }
-            }).catch(error => {
-              core.setFailed(error.message);
+            const fs = require('fs');
+            const artifact = fs.readdirSync('.').find(file => file.endsWith('.zip'));
+            const url = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+            const message = `Download the PROS template [here](${url}/artifacts/${artifact})`;
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: message
             });
