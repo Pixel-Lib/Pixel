@@ -18,6 +18,8 @@ class Coord {
          */
         Coord(float x, float y) : x(x), y(y) {}
 
+        Coord() = default;
+
         /**
          * @brief Adds two coordinates together.
          * @param other The other coordinate to add.
