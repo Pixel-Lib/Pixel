@@ -20,7 +20,7 @@ class Pose : public pxl::Coord {
 
         /**
          * @brief Construct a new empty `Pose` object
-         * 
+         *
          */
         Pose() = default;
         /**

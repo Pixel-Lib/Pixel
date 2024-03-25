@@ -20,7 +20,7 @@ class Coord {
 
         /**
          * @brief Construct a new empty `Coord` object
-         * 
+         *
          */
         Coord() = default;
 
