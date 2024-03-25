@@ -12,7 +12,6 @@ void Drivebase::Turn(Pose target, float timeout, std::shared_ptr<turnParams> tur
         pros::delay(10);
         return;
     }
-    // calculate the target as an angle for accuracy
 
     float angularError;
     // start the timeout
