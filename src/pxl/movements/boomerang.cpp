@@ -23,8 +23,10 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
     angularController.timerStart();
     while (!localTimeout.isDone()
            || !linearController.getExit(linearError) && !angularController.getExit(angularError)) {
+
         float distance = this->odom.getPose().distance(targetPose);
-        Pose carrot(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead, theta);
+        Coord carrot(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead);
+
         linearError = this->odom.getPose().distance(carrot);
         angularError = wrapTo180(radToDeg(this->odom.getPose().angle(carrot)));
 
