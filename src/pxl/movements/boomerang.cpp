@@ -49,6 +49,13 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
         // if the error is negative, the robot should move backwards
         linearOutput = (pxl::sgn(linearOutput) != pxl::sgn(linearError)) ? -linearOutput : linearOutput;
 
+        //* Motion Optomization *//
+
+        // priotize angular movement
+        float overturn = fabs(angularOutput) + fabs(linearOutput)-boomerangParams->maxSpeed;
+        if (overturn > 0) linearOutput-=linearOutput>0?overturn:-overturn;  
+        
+
         // calculate and normalize the left/right speeds
         std::pair<float, float> normalized = normalize(linearOutput, angularOutput, maxSpeed);
 
