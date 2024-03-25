@@ -94,6 +94,8 @@ class Drivebase {
         friend class Drivetrain;
 
         //* MOTIONS *//
+
+        //* DRIVE *//
         pros::Mutex mutex;
         // get the current competition state. If this changes, the movement will stop
         uint8_t compstate = pros::competition::get_status();  // global variable
@@ -107,12 +109,33 @@ class Drivebase {
         void Drive(float target, float timeout, std::shared_ptr<driveParams> params = defaultDriveParams(),
                    bool async = true);
 
+        //* TURN *//
+        struct turnParams {
+                float minSpeed = 0;
+                float maxSpeed = 127;
+                float slew = NAN;
+        };
+        static std::shared_ptr<turnParams> defaultTurnParams() { return std::make_shared<turnParams>(); }
+        void Turn(Pose target, float timeout, std::shared_ptr<turnParams> params = defaultTurnParams(),
+                  bool async = true);
+
     private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         void calibrateIMU(OdomSensors sensors);
         Odom setSensors(OdomSensors sensors);
-        std::pair<float, float> slewSpeedLimits(std::shared_ptr<driveParams> driveParams,
-                                                SeekingController &seekingController);
+template <typename T>
+std::pair<float, float> slewSpeedLimits(std::shared_ptr<T> object,
+                                        SeekingController &seekingController) {    return !isnanf((object->slew))
+               ? (object->slew != 0
+                      ? std::make_pair(slew(object->minSpeed, seekingController.prevOut, object->slew),
+                                       slew(object->maxSpeed, seekingController.prevOut, object->slew))
+                      : std::make_pair(object->minSpeed, object->maxSpeed))
+               : (seekingController.slew_ != 0
+                      ? std::make_pair(slew(object->minSpeed, seekingController.prevOut, seekingController.slew_),
+                                       slew(object->maxSpeed, seekingController.prevOut, seekingController.slew_))
+                      : std::make_pair(object->minSpeed, object->maxSpeed));
+    // Your code here
+}
 
     public:
         SeekingController linearController;
