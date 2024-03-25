@@ -41,15 +41,7 @@ void Drivebase::Drive(float target, float timeout, std::shared_ptr<driveParams> 
         float maxSpeed = driveParams->maxSpeed;
         // if the real minSpeed and maxSpeed values are too high/low, the robot will ignore the slew when the clamping
         // happens
-        std::pair<float, float> speeds =
-            !isnanf((driveParams->slew))
-                ? (driveParams->slew != 0 ? std::make_pair(slew(driveParams->minSpeed, linearController.prevOut, driveParams->slew),
-                                                      slew(driveParams->maxSpeed, linearController.prevOut, driveParams->slew))
-                                     : std::make_pair(driveParams->minSpeed, driveParams->maxSpeed))
-                : (linearController.slew_ != 0
-                       ? std::make_pair(slew(driveParams->minSpeed, linearController.prevOut, linearController.slew_),
-                                        slew(driveParams->maxSpeed, linearController.prevOut, linearController.slew_))
-                       : std::make_pair(driveParams->minSpeed, driveParams->maxSpeed));
+        std::pair<float, float> speeds = slewSpeedLimits(driveParams, linearController);
 
         minSpeed = speeds.first;
         maxSpeed = speeds.second;
