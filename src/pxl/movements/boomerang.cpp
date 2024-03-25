@@ -27,7 +27,7 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
     while (!localTimeout.isDone()
            || !linearController.getExit(linearError) && !angularController.getExit(angularError)) {
 
-        Coord carrot(0, 0);
+        Coord carrot;
         if (!carrotSettled) {
             // calculate the carrot
             float distance = this->odom.getPose().distance(targetPose);
