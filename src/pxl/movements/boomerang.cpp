@@ -21,7 +21,8 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
 
     //*GLEAD*//
     float distance = this->odom.getPose().distance(targetPose);
-    const Coord inCoord = Coord(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead);
+    const Coord inCoord =
+        Coord(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead);
 
     // start the timeout
     Timer localTimeout(timeout);
@@ -35,7 +36,7 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
         Coord carrot;
         if (!carrotSettled) {
             // calculate the carrot
-             distance = this->odom.getPose().distance(targetPose);
+            distance = this->odom.getPose().distance(targetPose);
             carrot = Coord(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead);
         } else {
             carrot = Coord(targetPose.x, targetPose.y);
