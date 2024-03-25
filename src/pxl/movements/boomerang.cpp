@@ -1,6 +1,4 @@
 #include "pxl/drivebase/drivebase.hpp"
-#include "pxl/parametrics/pose.hpp"
-#include "pxl/util.hpp"
 
 namespace pxl {
 void Drivebase::Boomerang(float x, float y, float theta, float dlead, float timeout,
@@ -21,6 +19,7 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
     localTimeout.start();
     linearController.timerStart();
     angularController.timerStart();
+
     while (!localTimeout.isDone()
            || !linearController.getExit(linearError) && !angularController.getExit(angularError)) {
 
