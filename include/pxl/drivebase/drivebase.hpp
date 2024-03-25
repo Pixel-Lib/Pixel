@@ -125,7 +125,7 @@ class Drivebase {
         Odom setSensors(OdomSensors sensors);
         /**
          * Calculates the slew speed limits for a given object and seeking controller.
-         * 
+         *
          * @tparam T The type of the object.
          * @param object A shared pointer to the object.
          * @param seekingController The seeking controller.
