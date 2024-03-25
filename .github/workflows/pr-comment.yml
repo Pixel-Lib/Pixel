@@ -36,11 +36,15 @@ jobs:
       - name: Create Pixel template
         run: pros make template
 
+      - name: Get zip file name
+        id: get-zip
+        run: echo "::set-output name=zip::$(ls *.zip)"
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: template
-          path: '*.zip'
+          path: ${{ steps.get-zip.outputs.zip }}
 
   comment:
     needs: build
