@@ -28,12 +28,12 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
            || !linearController.getExit(linearError) && !angularController.getExit(angularError)) {
 
         Coord carrot(0, 0);
-           if (!carrotSettled){
-        // calculate the carrot
-        float distance = this->odom.getPose().distance(targetPose);
-          carrot=Coord(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead);
-        }else{
-              carrot=Coord(targetPose.x, targetPose.y);
+        if (!carrotSettled) {
+            // calculate the carrot
+            float distance = this->odom.getPose().distance(targetPose);
+            carrot = Coord(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead);
+        } else {
+            carrot = Coord(targetPose.x, targetPose.y);
         }
 
         if (previousCarrot.distance(carrot) < 0.01) { carrotSettled = true; }
