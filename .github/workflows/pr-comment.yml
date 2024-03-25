@@ -52,11 +52,20 @@ jobs:
               const artifacts = fs.readdirSync('.');
               const zipFile = artifacts.find(file => file.endsWith('.zip'));
               if (zipFile) {
-                return github.issues.createComment({
-                  issue_number: issue_number,
+                github.rest.actions.listWorkflowRunArtifacts({
                   owner: owner,
                   repo: repo,
-                  body: `Here is the output zip file: ${zipFile}\n\nYou can download the template artifact [here](https://github.com/${owner}/${repo}/actions/runs/${github.context.runId})`
+                  run_id: github.context.runId
+                }).then(response => {
+                  const artifact = response.data.artifacts.find(artifact => artifact.name === 'template');
+                  if (artifact) {
+                    return github.issues.createComment({
+                      issue_number: issue_number,
+                      owner: owner,
+                      repo: repo,
+                      body: `Here is the output zip file: ${zipFile}\n\nYou can download the template artifact [here](${artifact.archive_download_url})`
+                    });
+                  }
                 });
               }
             }
