@@ -123,19 +123,19 @@ class Drivebase {
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         void calibrateIMU(OdomSensors sensors);
         Odom setSensors(OdomSensors sensors);
-template <typename T>
-std::pair<float, float> slewSpeedLimits(std::shared_ptr<T> object,
-                                        SeekingController &seekingController) {    return !isnanf((object->slew))
-               ? (object->slew != 0
-                      ? std::make_pair(slew(object->minSpeed, seekingController.prevOut, object->slew),
-                                       slew(object->maxSpeed, seekingController.prevOut, object->slew))
-                      : std::make_pair(object->minSpeed, object->maxSpeed))
-               : (seekingController.slew_ != 0
-                      ? std::make_pair(slew(object->minSpeed, seekingController.prevOut, seekingController.slew_),
-                                       slew(object->maxSpeed, seekingController.prevOut, seekingController.slew_))
-                      : std::make_pair(object->minSpeed, object->maxSpeed));
-    // Your code here
-}
+        template <typename T>
+        std::pair<float, float> slewSpeedLimits(std::shared_ptr<T> object, SeekingController &seekingController) {
+            return !isnanf((object->slew))
+                       ? (object->slew != 0
+                              ? std::make_pair(slew(object->minSpeed, seekingController.prevOut, object->slew),
+                                               slew(object->maxSpeed, seekingController.prevOut, object->slew))
+                              : std::make_pair(object->minSpeed, object->maxSpeed))
+                       : (seekingController.slew_ != 0 ? std::make_pair(
+                              slew(object->minSpeed, seekingController.prevOut, seekingController.slew_),
+                              slew(object->maxSpeed, seekingController.prevOut, seekingController.slew_))
+                                                       : std::make_pair(object->minSpeed, object->maxSpeed));
+            // Your code here
+        }
 
     public:
         SeekingController linearController;
