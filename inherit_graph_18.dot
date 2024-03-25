@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="pxl::TrackingWheel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1TrackingWheel.html",tooltip="Represents a tracking wheel used for measuring distance traveled by a robot."];
+  Node0 [label="pxl::Timer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpxl_1_1Timer.html",tooltip=" "];
 }

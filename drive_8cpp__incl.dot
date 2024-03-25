@@ -80,5 +80,4 @@ digraph "src/pxl/movements/drive.cpp"
   Node28 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node25 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node25 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }
