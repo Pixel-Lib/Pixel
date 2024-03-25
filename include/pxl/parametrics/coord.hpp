@@ -18,6 +18,10 @@ class Coord {
          */
         Coord(float x, float y) : x(x), y(y) {}
 
+        /**
+         * @brief Construct a new empty Coord object
+         * 
+         */
         Coord() = default;
 
         /**
