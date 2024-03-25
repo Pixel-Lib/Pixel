@@ -118,7 +118,14 @@ class Drivebase {
         static std::shared_ptr<turnParams> defaultTurnParams() { return std::make_shared<turnParams>(); }
         void Turn(Pose target, float timeout, std::shared_ptr<turnParams> params = defaultTurnParams(),
                   bool async = true);
-
+        //* Boomerang *//
+        struct boomerangParams {
+                float minSpeed = 0;
+                float maxSpeed = 127;
+                float slew = NAN;
+        };
+        static std::shared_ptr<boomerangParams> defaultBoomerangParams() { return std::make_shared<boomerangParams>(); }
+void Boomerang (float x, float y, float theta, float timeout, std::shared_ptr<boomerangParams> boomerangParams = defaultBoomerangParams(), float async = true);
     private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         void calibrateIMU(OdomSensors sensors);
