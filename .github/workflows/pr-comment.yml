@@ -56,7 +56,7 @@ jobs:
                   issue_number: issue_number,
                   owner: owner,
                   repo: repo,
-                  body: `Here is the output zip file: ${zipFile}`
+                  body: `Here is the output zip file: ${zipFile}\n\nYou can download the template artifact [here](https://github.com/${owner}/${repo}/actions/runs/${github.context.runId})`
                 });
               }
             }
