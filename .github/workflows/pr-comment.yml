@@ -45,19 +45,11 @@ jobs:
       - name: Create Pixel template
         run: pros m template
 
-      - name: Create template folder
-        run: mkdir template
-
-      - name: Unzip Template
-        uses: montudor/action-zip@v1.0.0
-        with:
-          args: unzip "template.zip" -d template
-  
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: template
-          path: 'template/*'
+          path: 'template.zip'
           retention-days: 89
 
       - name: Comment PR
@@ -66,7 +58,7 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const fs = require('fs');
-            const zip = fs.readFileSync('template/template.zip', 'base64');
+            const zip = fs.readFileSync('template.zip', 'base64');
             const issue_number = context.issue.number;
             const owner = context.repo.owner;
             const repo = context.repo.repo;
