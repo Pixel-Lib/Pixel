@@ -3,15 +3,16 @@
 #include "pxl/util.hpp"
 
 namespace pxl {
-    void Drivebase::Boomerang(float x, float y, float theta, float dlead, float timeout, std::shared_ptr<boomerangParams> boomerangParams, bool async) {
+void Drivebase::Boomerang(float x, float y, float theta, float dlead, float timeout,
+                          std::shared_ptr<boomerangParams> boomerangParams, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
-        pros::Task task([&]() { Boomerang(x,y,theta,timeout,dlead,boomerangParams,false); });
+        pros::Task task([&]() { Boomerang(x, y, theta, timeout, dlead, boomerangParams, false); });
         pros::delay(10);
         return;
     }
 
-    Pose targetPose = Pose(x,y,degToRad(theta));
+    Pose targetPose = Pose(x, y, degToRad(theta));
 
     float linearError;
     float angularError;
@@ -23,14 +24,11 @@ namespace pxl {
     while (!localTimeout.isDone()
            || !linearController.getExit(linearError) && !angularController.getExit(angularError)) {
         float distance = this->odom.getPose().distance(targetPose);
-           Pose carrot(targetPose.x - distance * cos(theta) * dlead,
-			         targetPose.y - distance * sin(theta) * dlead, theta);
+        Pose carrot(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead, theta);
         linearError = this->odom.getPose().distance(carrot);
         angularError = wrapTo180(radToDeg(this->odom.getPose().angle(carrot)));
 
-
-
-               // calculate the raw linear and angular output from the PID controllers
+        // calculate the raw linear and angular output from the PID controllers
         float linearOutput = this->linearController.update(linearError);
         float angularOutput = this->angularController.update(angularError);
 
@@ -61,5 +59,5 @@ namespace pxl {
     // stop the motors
     drivetrain.leftMotors->move(0);
     drivetrain.rightMotors->move(0);
-    }  
 }
+}  // namespace pxl
