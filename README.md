@@ -11,8 +11,8 @@
 
 # Pixel
 
-Pixel is a robust Libray for Vex V5 still in early deveolpment 
+Pixel is a robust Libray for Vex V5 still in early development 
 
 
 TO DO:
-Download instructions 
+Download instructions
