@@ -40,12 +40,17 @@ jobs:
           name: template
           path: '*.zip'
 
+      - name: Upload zip file
+        uses: actions/upload-artifact@v2
+        with:
+          name: output-zip
+          path: '*.zip'
+
       - name: Comment PR
         uses: actions/github-script@v5
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const github = require('@actions/github');
             const core = require('@actions/core');
             const context = github.context;
             const owner = context.repo.owner;
@@ -69,9 +74,3 @@ jobs:
             }).catch(error => {
               core.setFailed(error.message);
             });
-
-      - name: Upload zip file
-        uses: actions/upload-artifact@v2
-        with:
-          name: output-zip
-          path: '*.zip'
