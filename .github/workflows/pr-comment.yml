@@ -45,6 +45,8 @@ jobs:
         with:
           name: ${{ steps.get-zip.outputs.zip }}
           path: ${{ steps.get-zip.outputs.zip }}.zip
+    outputs:
+      zip: ${{ steps.get-zip.outputs.zip }}
 
   comment:
     needs: build
