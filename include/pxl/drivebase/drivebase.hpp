@@ -111,7 +111,7 @@ class Drivebase {
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         void calibrateIMU(OdomSensors sensors);
         Odom setSensors(OdomSensors sensors);
-std::pair<float,float> calculateSpeeds(std::shared_ptr<driveParams> driveParams, SeekingController& seekingController);
+std::pair<float,float> slewSpeedLimits(std::shared_ptr<driveParams> driveParams, SeekingController& seekingController);
 
     public:
         SeekingController linearController;
