@@ -1,4 +1,4 @@
-name: Add Template to Pull Request 
+name: pr-comment
 on:
   workflow_run:
     workflows: ['Build Template']
