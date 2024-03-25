@@ -28,11 +28,8 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
 
         float distance = this->odom.getPose().distance(targetPose);
         const Coord carrot(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead);
-                    if (previousCarrot.distance(carrot) < 0.01) {
-                carrotSettled = true;
-            }
+        if (previousCarrot.distance(carrot) < 0.01) { carrotSettled = true; }
         previousCarrot = carrot;
-
 
         linearError = this->odom.getPose().distance(carrot);
         angularError = wrapTo180(radToDeg(this->odom.getPose().angle(carrot)));
@@ -64,7 +61,7 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
         if (overturn > 0) linearOutput -= linearOutput > 0 ? overturn : -overturn;
 
         // if the carrot has settled, reduce the linear output by the cosine of the angular error
-        if (carrotSettled) linearOutput*=std::cos(degToRad(angularError));
+        if (carrotSettled) linearOutput *= std::cos(degToRad(angularError));
 
         // calculate and normalize the left/right speeds
         std::pair<float, float> normalized = normalize(linearOutput, angularOutput, maxSpeed);
