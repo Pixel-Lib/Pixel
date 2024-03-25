@@ -4,5 +4,5 @@ var searchData=
   ['calculatelocal_253',['calculateLocal',['../classpxl_1_1Odom.html#af00983dbfefd2ff1ab4aa6c4246f088c',1,'pxl::Odom']]],
   ['calibrate_254',['calibrate',['../classpxl_1_1Drivebase.html#a18e259d388285d8a1bfedb9d94ce9e15',1,'pxl::Drivebase::calibrate()'],['../classpxl_1_1Odom.html#a11b4f0251d39de3167c89d59466b8524',1,'pxl::Odom::calibrate()']]],
   ['calibrateimu_255',['calibrateIMU',['../classpxl_1_1Drivebase.html#af40956ce1b817eca0b6457171235dbd1',1,'pxl::Drivebase']]],
-  ['coord_256',['Coord',['../classpxl_1_1Coord.html#afc1f9aefc5bbd25daf9ac43589e0153a',1,'pxl::Coord']]]
+  ['coord_256',['Coord',['../classpxl_1_1Coord.html#afc1f9aefc5bbd25daf9ac43589e0153a',1,'pxl::Coord::Coord(float x, float y)'],['../classpxl_1_1Coord.html#a29436cbffb3ad7ccfb422fab836f7660',1,'pxl::Coord::Coord()=default']]]
 ];

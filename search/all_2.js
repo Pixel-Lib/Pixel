@@ -6,7 +6,7 @@ var searchData=
   ['calibrateimu_18',['calibrateIMU',['../classpxl_1_1Drivebase.html#af40956ce1b817eca0b6457171235dbd1',1,'pxl::Drivebase']]],
   ['called_19',['called',['../structpxl_1_1ActionFuncTuple.html#aaedbeab6ec75482b759c7660996a7f58',1,'pxl::ActionFuncTuple']]],
   ['compstate_20',['compstate',['../classpxl_1_1Drivebase.html#ae1177ad96b380aba74b4dd3fa1107e4b',1,'pxl::Drivebase']]],
-  ['coord_21',['Coord',['../classpxl_1_1Coord.html#afc1f9aefc5bbd25daf9ac43589e0153a',1,'pxl::Coord::Coord()'],['../classpxl_1_1Coord.html',1,'pxl::Coord']]],
+  ['coord_21',['Coord',['../classpxl_1_1Coord.html#afc1f9aefc5bbd25daf9ac43589e0153a',1,'pxl::Coord::Coord(float x, float y)'],['../classpxl_1_1Coord.html#a29436cbffb3ad7ccfb422fab836f7660',1,'pxl::Coord::Coord()=default'],['../classpxl_1_1Coord.html',1,'pxl::Coord']]],
   ['coord_2ecpp_22',['coord.cpp',['../coord_8cpp.html',1,'']]],
   ['coord_2ehpp_23',['coord.hpp',['../coord_8hpp.html',1,'']]]
 ];
