@@ -79,7 +79,7 @@ class Odom {
         std::vector<std::unique_ptr<TrackingWheel>>
             drivetrain;                               // Vector of unique pointers to drivetrain tracking wheels
         std::vector<std::shared_ptr<pros::IMU>> imu;  // Vector of shared pointers to IMUs
-        Pose pose = Pose(0, 0, 0);                    // Current pose of the robot
+        Pose pose = Pose();                    // Current pose of the robot
         pros::Task *OdomTask = nullptr;               // Pointer to the odometry task
         float lastAngle = 0;                          // Last recorded angle
 
