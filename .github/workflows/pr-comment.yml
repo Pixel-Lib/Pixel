@@ -37,9 +37,6 @@ jobs:
       - name: Testing PROS Install 
         run: pros --version
 
-      - name: Build PROS Project  
-        run: make clean quick -j
-
       - name: Create Pixel template
         run: pros m template
 
