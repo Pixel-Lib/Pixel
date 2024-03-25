@@ -2,7 +2,7 @@
 
 > ordered by importance
 
-* [ ] start boomerang
+* [X] start boomerang
 * [ ] cos scaling
 * [ ] overturn
 * [ ] glead
