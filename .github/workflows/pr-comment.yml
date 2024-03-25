@@ -1,70 +1,64 @@
-name: pr-comment
-
+name: Add Template to Pull Request 
 on:
-  pull_request:
-    branches: '*'
-
+  workflow_run:
+    workflows: ['Build Template']
+    types: [completed]
 jobs:
-  build:
+  pr_comment:
+    # if Build Template was successful and ran on a branch that is currently the head in a pull request
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+
+    permissions: 
+      pull-requests: write
     
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2.3.4
-
-      - name: Setup Python
-        uses: actions/setup-python@v2
+      - uses: actions/github-script@v6
         with:
-          python-version: 3.9
-
-      - name: Get Date
-        id: get-date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-
-      - name: Cache PIP packages
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ steps.get-date.outputs.date }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
-      - name: PIP Installer
-        uses: BSFishy/pip-action@v1
-        with:
-          packages: pros-cli
-
-      - name: Install ARM Toolchain
-        uses: fiam/arm-none-eabi-gcc@v1
-        with:
-          release: '10-2020-q4'
-  
-      - name: Testing PROS Install 
-        run: pros --version
-
-      - name: Create Pixel template
-        run: pros m template
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: template
-          path: 'template.zip'
-          retention-days: 89
-
-      - name: Comment PR
-        uses: actions/github-script@v5
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
+            const exec = require('@actions/exec');
+            const core = require('@actions/core');
+            const github = require('@actions/github');
             const fs = require('fs');
-            const zip = fs.readFileSync('template.zip', 'base64');
-            const issue_number = context.issue.number;
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            github.rest.issues.createComment({
-              owner: owner,
-              repo: repo,
-              issue_number: issue_number,
-              body: "Here's the template zip file:\n\n```" + zip + "```"
+            const path = require('path');
+
+            // Run pros m template
+            let output = '';
+            let error = '';
+            const options = {};
+            options.listeners = {
+              stdout: (data) => {
+                output += data.toString();
+              },
+              stderr: (data) => {
+                error += data.toString();
+              }
+            };
+            await exec.exec('pros m template', [], options);
+            if (error) {
+              core.setFailed(`Failed to run pros m template: ${error}`);
+              return;
+            }
+
+            // Zip the output
+            const zipFile = 'template.zip';
+            await exec.exec('zip', ['-r', zipFile, '.']);
+
+            // Upload the zip file as an artifact
+            const artifact = await github.rest.actions.uploadArtifact({
+              owner: github.context.repo.owner,
+              repo: github.context.repo.repo,
+              artifact_name: 'template',
+              file: fs.createReadStream(path.join(process.cwd(), zipFile)),
+              content_length: fs.statSync(zipFile).size,
+              content_type: 'application/zip',
+            });
+
+            // Post a comment on the pull request with a link to the artifact
+            const comment = `Download the template for this pull request: [${artifact.data.url}](${artifact.data.url})`;
+            await github.rest.issues.createComment({
+              owner: github.context.repo.owner,
+              repo: github.context.repo.repo,
+              issue_number: github.context.issue.number,
+              body: comment,
             });
