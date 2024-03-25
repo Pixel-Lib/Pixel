@@ -40,17 +40,16 @@ jobs:
               return;
             }
 
-            // Zip the output
-            const zipFile = 'template.zip';
-            await exec.exec('zip', ['-r', zipFile, '.']);
+            // The output file name. Adjust this if the output of 'pros m template' is different.
+            const outputFile = 'template.zip';
 
-            // Upload the zip file as an artifact
+            // Upload the output file as an artifact
             const artifact = await github.rest.actions.uploadArtifact({
               owner: github.context.repo.owner,
               repo: github.context.repo.repo,
               artifact_name: 'template',
-              file: fs.createReadStream(path.join(process.cwd(), zipFile)),
-              content_length: fs.statSync(zipFile).size,
+              file: fs.createReadStream(path.join(process.cwd(), outputFile)),
+              content_length: fs.statSync(outputFile).size,
               content_type: 'application/zip',
             });
 
