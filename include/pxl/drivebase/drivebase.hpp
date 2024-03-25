@@ -123,6 +123,14 @@ class Drivebase {
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         void calibrateIMU(OdomSensors sensors);
         Odom setSensors(OdomSensors sensors);
+        /**
+         * Calculates the slew speed limits for a given object and seeking controller.
+         * 
+         * @tparam T The type of the object.
+         * @param object A shared pointer to the object.
+         * @param seekingController The seeking controller.
+         * @return A pair of floats representing the minimum and maximum speed limits.
+         */
         template <typename T>
         std::pair<float, float> slewSpeedLimits(std::shared_ptr<T> object, SeekingController &seekingController) {
             return !isnanf((object->slew))
