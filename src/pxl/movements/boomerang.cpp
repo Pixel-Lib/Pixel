@@ -15,6 +15,9 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
     float linearError;
     float angularError;
 
+    bool carrotSettled = false;
+    Pose previousCarrot = Pose(0, 0, 0);
+
     Timer localTimeout(timeout);
     localTimeout.start();
     linearController.timerStart();
@@ -24,7 +27,12 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
            || !linearController.getExit(linearError) && !angularController.getExit(angularError)) {
 
         float distance = this->odom.getPose().distance(targetPose);
-        Coord carrot(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead);
+        const Coord carrot(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead);
+                    if (previousCarrot.distance(carrot) < 0.01) {
+                carrotSettled = true;
+            }
+        previousCarrot = carrot;
+
 
         linearError = this->odom.getPose().distance(carrot);
         angularError = wrapTo180(radToDeg(this->odom.getPose().angle(carrot)));
@@ -54,6 +62,9 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
         // priotize angular movement
         float overturn = fabs(angularOutput) + fabs(linearOutput) - boomerangParams->maxSpeed;
         if (overturn > 0) linearOutput -= linearOutput > 0 ? overturn : -overturn;
+
+        // if the carrot has settled, reduce the linear output by the cosine of the angular error
+        if (carrotSettled) linearOutput*=std::cos(degToRad(angularError));
 
         // calculate and normalize the left/right speeds
         std::pair<float, float> normalized = normalize(linearOutput, angularOutput, maxSpeed);

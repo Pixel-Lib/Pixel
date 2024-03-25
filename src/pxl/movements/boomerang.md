@@ -3,7 +3,7 @@
 > ordered by importance
 
 * [X] start boomerang
-* [ ] cos scaling
+* [X] cos scaling
 * [X] overturn
 * [ ] glead
 * [ ] smoothness?
