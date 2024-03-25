@@ -18,6 +18,10 @@ class Pose : public pxl::Coord {
          */
         Pose(float x, float y, float theta);
 
+        /**
+         * @brief Construct a new empty `Pose` object
+         * 
+         */
         Pose() = default;
         /**
          * @brief Constructs a `Pose` object from a `Coord` object.
