@@ -14,7 +14,6 @@ void Drivebase::Turn(Pose target, float timeout, std::shared_ptr<turnParams> tur
     }
     // calculate the target as an angle for accuracy
 
-    
     float angularError;
     // start the timeout
     Timer localTimeout(timeout);
@@ -46,4 +45,4 @@ void Drivebase::Turn(Pose target, float timeout, std::shared_ptr<turnParams> tur
     drivetrain.leftMotors->move(0);
     drivetrain.rightMotors->move(0);
 }
-}
+}  // namespace pxl
