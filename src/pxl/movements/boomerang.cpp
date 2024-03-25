@@ -52,9 +52,8 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
         //* Motion Optomization *//
 
         // priotize angular movement
-        float overturn = fabs(angularOutput) + fabs(linearOutput)-boomerangParams->maxSpeed;
-        if (overturn > 0) linearOutput-=linearOutput>0?overturn:-overturn;  
-        
+        float overturn = fabs(angularOutput) + fabs(linearOutput) - boomerangParams->maxSpeed;
+        if (overturn > 0) linearOutput -= linearOutput > 0 ? overturn : -overturn;
 
         // calculate and normalize the left/right speeds
         std::pair<float, float> normalized = normalize(linearOutput, angularOutput, maxSpeed);
