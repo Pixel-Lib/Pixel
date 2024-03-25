@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['defaultdriveparams_249',['defaultDriveParams',['../classpxl_1_1Drivebase.html#a8ed7ac7f0f0f1a4467d7e4dc3f75aa64',1,'pxl::Drivebase']]],
-  ['defaultturnparams_250',['defaultTurnParams',['../classpxl_1_1Drivebase.html#a86333f63e106c5542cf2a1c22da4cfd2',1,'pxl::Drivebase']]],
-  ['degtorad_251',['degToRad',['../namespacepxl.html#a092e7e57e83f9d3a78fe9ffcf940cef8',1,'pxl']]],
-  ['distance_252',['distance',['../classpxl_1_1Coord.html#afa78aa9b2e87a58802654f51503ebae0',1,'pxl::Coord']]],
-  ['dotproduct_253',['dotProduct',['../classpxl_1_1Regression.html#ace5c1576908f29eeed2f3913979f5d45',1,'pxl::Regression']]],
-  ['drive_254',['Drive',['../classpxl_1_1Drivebase.html#aef6c06ef10c858f6363754a87115ebc0',1,'pxl::Drivebase']]],
-  ['drivebase_255',['Drivebase',['../classpxl_1_1Drivebase.html#a24988e39ce3bb2ba6f104acbd24b7ff5',1,'pxl::Drivebase']]],
-  ['drivetrain_256',['Drivetrain',['../classpxl_1_1Drivetrain.html#aede2e8ef67b2ae3fd1fde91cb924e3ee',1,'pxl::Drivetrain::Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *rightMotors, float trackWidth, float wheelDiameter, float rpm)'],['../classpxl_1_1Drivetrain.html#a5cb7a2982163322c5cb677065773aa0c',1,'pxl::Drivetrain::Drivetrain()=default']]]
+  ['calcdeltatheta_252',['calcDeltaTheta',['../classpxl_1_1Odom.html#a380828e0d450f4f61a0188eb52af511e',1,'pxl::Odom::calcDeltaTheta(std::vector&lt; std::shared_ptr&lt; pros::IMU &gt;&gt; &amp;imu, bool update=true)'],['../classpxl_1_1Odom.html#ae3dbd0d3ab06623505e424056e8c5de7',1,'pxl::Odom::calcDeltaTheta(TrackingWheel &amp;tracker1, TrackingWheel &amp;tracker2)']]],
+  ['calculatelocal_253',['calculateLocal',['../classpxl_1_1Odom.html#af00983dbfefd2ff1ab4aa6c4246f088c',1,'pxl::Odom']]],
+  ['calibrate_254',['calibrate',['../classpxl_1_1Drivebase.html#a18e259d388285d8a1bfedb9d94ce9e15',1,'pxl::Drivebase::calibrate()'],['../classpxl_1_1Odom.html#a11b4f0251d39de3167c89d59466b8524',1,'pxl::Odom::calibrate()']]],
+  ['calibrateimu_255',['calibrateIMU',['../classpxl_1_1Drivebase.html#af40956ce1b817eca0b6457171235dbd1',1,'pxl::Drivebase']]],
+  ['coord_256',['Coord',['../classpxl_1_1Coord.html#afc1f9aefc5bbd25daf9ac43589e0153a',1,'pxl::Coord']]]
 ];

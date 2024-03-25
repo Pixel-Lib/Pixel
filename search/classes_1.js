@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['coord_192',['Coord',['../classpxl_1_1Coord.html',1,'pxl']]]
+  ['boomerangparams_197',['boomerangParams',['../structpxl_1_1Drivebase_1_1boomerangParams.html',1,'pxl::Drivebase']]]
 ];

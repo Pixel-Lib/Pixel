@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalize_276',['normalize',['../namespacepxl.html#a5ab789e9b21ea584870a2a6a0ea2bbb5',1,'pxl']]]
+  ['lerp_284',['lerp',['../classpxl_1_1Coord.html#a653a51dc4d0507336de4dbcb330a0979',1,'pxl::Coord']]]
 ];

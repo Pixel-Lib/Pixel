@@ -94,6 +94,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpxl_1_1Drivebase_1_1boomerangParams.html">boomerangParams</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpxl_1_1Drivebase_1_1driveParams.html">driveParams</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpxl_1_1Drivebase_1_1turnParams.html">turnParams</a></td></tr>
@@ -111,6 +113,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aef6c06ef10c858f6363754a87115ebc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab26a917748835994740e274356b92e48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#ab26a917748835994740e274356b92e48">Turn</a> (<a class="el" href="classpxl_1_1Pose.html">Pose</a> target, float timeout, std::shared_ptr&lt; <a class="el" href="structpxl_1_1Drivebase_1_1turnParams.html">turnParams</a> &gt; params=<a class="el" href="classpxl_1_1Drivebase.html#a86333f63e106c5542cf2a1c22da4cfd2">defaultTurnParams</a>(), bool async=true)</td></tr>
 <tr class="separator:ab26a917748835994740e274356b92e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac83892335427e0cde2d979e89a163e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#aac83892335427e0cde2d979e89a163e3">Boomerang</a> (float x, float y, float theta, float dlead, float timeout, std::shared_ptr&lt; <a class="el" href="structpxl_1_1Drivebase_1_1boomerangParams.html">boomerangParams</a> &gt; <a class="el" href="structpxl_1_1Drivebase_1_1boomerangParams.html">boomerangParams</a>=<a class="el" href="classpxl_1_1Drivebase.html#a7359fe8e66f419636dd7a113595dce0d">defaultBoomerangParams</a>(), bool async=true)</td></tr>
+<tr class="separator:aac83892335427e0cde2d979e89a163e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cc11bc53b3e7d37c8bd74ff54565e71"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a0cc11bc53b3e7d37c8bd74ff54565e71">isDriverControl</a> ()</td></tr>
 <tr class="separator:a0cc11bc53b3e7d37c8bd74ff54565e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -120,6 +124,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a8ed7ac7f0f0f1a4467d7e4dc3f75aa64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86333f63e106c5542cf2a1c22da4cfd2"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="structpxl_1_1Drivebase_1_1turnParams.html">turnParams</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a86333f63e106c5542cf2a1c22da4cfd2">defaultTurnParams</a> ()</td></tr>
 <tr class="separator:a86333f63e106c5542cf2a1c22da4cfd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7359fe8e66f419636dd7a113595dce0d"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="structpxl_1_1Drivebase_1_1boomerangParams.html">boomerangParams</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a7359fe8e66f419636dd7a113595dce0d">defaultBoomerangParams</a> ()</td></tr>
+<tr class="separator:a7359fe8e66f419636dd7a113595dce0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -217,6 +223,64 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aac83892335427e0cde2d979e89a163e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac83892335427e0cde2d979e89a163e3">&#9670;&nbsp;</a></span>Boomerang()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pxl::Drivebase::Boomerang </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>theta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dlead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="structpxl_1_1Drivebase_1_1boomerangParams.html">boomerangParams</a> &gt;&#160;</td>
+          <td class="paramname"><em>boomerangParams</em> = <code><a class="el" href="classpxl_1_1Drivebase.html#a7359fe8e66f419636dd7a113595dce0d">defaultBoomerangParams</a>()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>async</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a18e259d388285d8a1bfedb9d94ce9e15"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a18e259d388285d8a1bfedb9d94ce9e15">&#9670;&nbsp;</a></span>calibrate()</h2>
 
@@ -263,6 +327,31 @@ Friends</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7359fe8e66f419636dd7a113595dce0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7359fe8e66f419636dd7a113595dce0d">&#9670;&nbsp;</a></span>defaultBoomerangParams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::shared_ptr&lt;<a class="el" href="structpxl_1_1Drivebase_1_1boomerangParams.html">boomerangParams</a>&gt; pxl::Drivebase::defaultBoomerangParams </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -664,13 +753,14 @@ template&lt;typename T &gt; </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/pxl/drivebase/<a class="el" href="drivebase_8hpp_source.html">drivebase.hpp</a></li>
 <li>src/pxl/drivebase/<a class="el" href="drivebase_8cpp.html">drivebase.cpp</a></li>
+<li>src/pxl/movements/<a class="el" href="boomerang_8cpp.html">boomerang.cpp</a></li>
 <li>src/pxl/movements/<a class="el" href="drive_8cpp.html">drive.cpp</a></li>
 <li>src/pxl/movements/<a class="el" href="turn_8cpp.html">turn.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 25 2024 04:58:13 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Mar 25 2024 05:29:31 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

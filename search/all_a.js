@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['maxspeed_82',['maxSpeed',['../structpxl_1_1Drivebase_1_1driveParams.html#addd57d43dfdf68a69e1fe6d26a7dea8b',1,'pxl::Drivebase::driveParams::maxSpeed()'],['../structpxl_1_1Drivebase_1_1turnParams.html#aed9270e56a05b8b7f0b3ae415876f742',1,'pxl::Drivebase::turnParams::maxSpeed()']]],
-  ['maxstepdistance_5ft_83',['maxStepDistance_t',['../structpxl_1_1stand__still.html#adf229f1d4685b80b026413c55891d4a5',1,'pxl::stand_still']]],
-  ['maxstepturn_5fd_84',['maxStepTurn_d',['../structpxl_1_1stand__still.html#af85308a352dc2247ee02d5b1125d21be',1,'pxl::stand_still']]],
-  ['minspeed_85',['minSpeed',['../structpxl_1_1Drivebase_1_1driveParams.html#a4b6b4f8d8e2d6fd4f3ba518b8bec03c5',1,'pxl::Drivebase::driveParams::minSpeed()'],['../structpxl_1_1Drivebase_1_1turnParams.html#af17d13a67cc49ee96ffdc502362d649a',1,'pxl::Drivebase::turnParams::minSpeed()']]],
-  ['motors_86',['motors',['../classpxl_1_1TrackingWheel.html#acd951972355bea5863f875ca0941ba6a',1,'pxl::TrackingWheel']]],
-  ['movement_5ftype_87',['movement_Type',['../namespacepxl.html#afd77ac6809a811ca911fe64f4e47410c',1,'pxl']]],
-  ['mutex_88',['mutex',['../classpxl_1_1Drivebase.html#a7eb12087c25445beebe908b172e23b3c',1,'pxl::Drivebase']]]
+  ['lambda_78',['lambda',['../classpxl_1_1Regression.html#a8cdb5be7af71a054e8d44d204bd98687',1,'pxl::Regression']]],
+  ['lambda_79',['LAMBDA',['../aSync_8hpp.html#a8f425be7043e221bb8ad37ddb078c864',1,'aSync.hpp']]],
+  ['lastangle_80',['lastAngle',['../classpxl_1_1Odom.html#a208a6d622031e9a15c0782e3e5a2c9fa',1,'pxl::Odom::lastAngle()'],['../classpxl_1_1TrackingWheel.html#ad84e3f65f1d25eab6f8790761a42de82',1,'pxl::TrackingWheel::lastAngle()']]],
+  ['lateral_81',['lateral',['../namespacepxl.html#afd77ac6809a811ca911fe64f4e47410ca75753cf2b953e7f1e5d657b97c1f6894',1,'pxl']]],
+  ['leftmotors_82',['leftMotors',['../classpxl_1_1Drivetrain.html#a1e683aa28b4f6f9b9e1fe769fe60fe5d',1,'pxl::Drivetrain']]],
+  ['lerp_83',['lerp',['../classpxl_1_1Coord.html#a653a51dc4d0507336de4dbcb330a0979',1,'pxl::Coord']]],
+  ['linearcontroller_84',['linearController',['../classpxl_1_1Drivebase.html#aed6f1df061e441e9e71a8ba8e60f0c3b',1,'pxl::Drivebase']]]
 ];

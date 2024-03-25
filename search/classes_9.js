@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['timer_208',['Timer',['../classpxl_1_1Timer.html',1,'pxl']]],
-  ['trackingwheel_209',['TrackingWheel',['../classpxl_1_1TrackingWheel.html',1,'pxl']]],
-  ['turnparams_210',['turnParams',['../structpxl_1_1Drivebase_1_1turnParams.html',1,'pxl::Drivebase']]]
+  ['seekingcontroller_212',['SeekingController',['../classpxl_1_1SeekingController.html',1,'pxl']]],
+  ['stand_5fstill_213',['stand_still',['../structpxl_1_1stand__still.html',1,'pxl']]]
 ];
