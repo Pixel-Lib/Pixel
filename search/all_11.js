@@ -11,8 +11,8 @@ var searchData=
   ['trackingwheel_2ecpp_185',['trackingwheel.cpp',['../trackingwheel_8cpp.html',1,'']]],
   ['trackingwheel_2ehpp_186',['trackingwheel.hpp',['../trackingwheel_8hpp.html',1,'']]],
   ['trackwidth_187',['trackWidth',['../classpxl_1_1Drivetrain.html#ac86cb20fd156c3e3a4c04d5e5ac834b1',1,'pxl::Drivetrain']]],
-  ['turn_188',['Turn',['../classpxl_1_1Drivebase.html#ab26a917748835994740e274356b92e48',1,'pxl::Drivebase']]],
-  ['turn_189',['turn',['../namespacepxl.html#afd77ac6809a811ca911fe64f4e47410ca60dc3d9659607b3f6d7a1f5d2477fbc3',1,'pxl']]],
-  ['turn_2ecpp_190',['turn.cpp',['../turn_8cpp.html',1,'']]],
-  ['turnparams_191',['turnParams',['../structpxl_1_1Drivebase_1_1turnParams.html',1,'pxl::Drivebase']]]
+  ['turn_188',['turn',['../namespacepxl.html#afd77ac6809a811ca911fe64f4e47410ca60dc3d9659607b3f6d7a1f5d2477fbc3',1,'pxl']]],
+  ['turntopoint_189',['turnToPoint',['../classpxl_1_1Drivebase.html#a45a7e947ea86fe9226b0b511079bb525',1,'pxl::Drivebase']]],
+  ['turntopoint_2ecpp_190',['turntopoint.cpp',['../turntopoint_8cpp.html',1,'']]],
+  ['turntopointparams_191',['turnToPointParams',['../structpxl_1_1Drivebase_1_1turnToPointParams.html',1,'pxl::Drivebase']]]
 ];

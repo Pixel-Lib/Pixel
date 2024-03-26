@@ -8,7 +8,7 @@ var searchData=
   ['angleerror_5',['angleError',['../namespacepxl.html#a26c76428239cd4f5adbb23aff8cd6384',1,'pxl']]],
   ['angularcontroller_6',['angularController',['../classpxl_1_1Drivebase.html#ac9101024ccdbbf767837f01dfd3f29a9',1,'pxl::Drivebase']]],
   ['api_2ehpp_7',['api.hpp',['../api_8hpp.html',1,'(Global Namespace)'],['../drivebase_2api_8hpp.html',1,'(Global Namespace)']]],
-  ['arcturn_8',['Arcturn',['../classpxl_1_1Drivebase.html#a5391c470344f5bb46d369f1be408b93e',1,'pxl::Drivebase']]],
+  ['arcturn_8',['arcturn',['../classpxl_1_1Drivebase.html#af13cdc39c4365356ed4961ac2a5c02fb',1,'pxl::Drivebase']]],
   ['arcturn_2ecpp_9',['arcturn.cpp',['../arcturn_8cpp.html',1,'']]],
   ['arcturnparams_10',['arcturnParams',['../structpxl_1_1Drivebase_1_1arcturnParams.html',1,'pxl::Drivebase']]],
   ['async_11',['aSync',['../classpxl_1_1aSync.html',1,'pxl']]],
