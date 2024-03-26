@@ -174,9 +174,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a1400e5c065d0e56c9cfc4d7998ab0a4f"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacepxl.html#a1400e5c065d0e56c9cfc4d7998ab0a4f">avg</a> (const std::vector&lt; T &gt; &amp;vec)</td></tr>
 <tr class="memdesc:a1400e5c065d0e56c9cfc4d7998ab0a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the average of a vector of any type.  <a href="namespacepxl.html#a1400e5c065d0e56c9cfc4d7998ab0a4f">More...</a><br /></td></tr>
 <tr class="separator:a1400e5c065d0e56c9cfc4d7998ab0a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ab789e9b21ea584870a2a6a0ea2bbb5"><td class="memItemLeft" align="right" valign="top">std::pair&lt; float, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepxl.html#a5ab789e9b21ea584870a2a6a0ea2bbb5">normalize</a> (float lateralOut, float angularOut, float maxSpeed)</td></tr>
-<tr class="memdesc:a5ab789e9b21ea584870a2a6a0ea2bbb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">normalizes the output of a lateral and angular controller so speeds do not exceed the <code>maxSpeed</code>  <a href="namespacepxl.html#a5ab789e9b21ea584870a2a6a0ea2bbb5">More...</a><br /></td></tr>
-<tr class="separator:a5ab789e9b21ea584870a2a6a0ea2bbb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6a4556717fb97f5c3cf2fb59899254"><td class="memItemLeft" align="right" valign="top">std::pair&lt; float, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepxl.html#aec6a4556717fb97f5c3cf2fb59899254">normalize</a> (float lateralOut, float angularOut, float maxSpeed, bool leftright=false)</td></tr>
+<tr class="memdesc:aec6a4556717fb97f5c3cf2fb59899254"><td class="mdescLeft">&#160;</td><td class="mdescRight">normalizes the output of a lateral and angular controller so speeds do not exceed the <code>maxSpeed</code>  <a href="namespacepxl.html#aec6a4556717fb97f5c3cf2fb59899254">More...</a><br /></td></tr>
+<tr class="separator:aec6a4556717fb97f5c3cf2fb59899254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af71c6114016a2ff82c929141b97670e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepxl.html#af71c6114016a2ff82c929141b97670e4">dirToSpin</a> (float target, float currHeading)</td></tr>
+<tr class="separator:af71c6114016a2ff82c929141b97670e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68b10b21d74b18d39d19169ef013e4d6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepxl.html#a68b10b21d74b18d39d19169ef013e4d6">getCurvature</a> (<a class="el" href="classpxl_1_1Pose.html">Pose</a> <a class="el" href="namespacepxl.html#a0701b37c7456e2154050add8257094c0a41319fa3d0af6570af134c7465a45916">pose</a>, <a class="el" href="classpxl_1_1Pose.html">Pose</a> other)</td></tr>
 <tr class="separator:a68b10b21d74b18d39d19169ef013e4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -342,6 +344,43 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="af71c6114016a2ff82c929141b97670e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af71c6114016a2ff82c929141b97670e4">&#9670;&nbsp;</a></span>dirToSpin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pxl::dirToSpin </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>currHeading</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculates the spin direction based on the target and current heading.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>The target heading. </td></tr>
+    <tr><td class="paramname">currHeading</td><td>The current heading. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The spin direction as an integer value. </dd></dl>
+
+</div>
+</div>
 <a id="aae3973eb617ab05e24069a0ad9a1d9b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae3973eb617ab05e24069a0ad9a1d9b0">&#9670;&nbsp;</a></span>ema()</h2>
 
@@ -414,8 +453,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a5ab789e9b21ea584870a2a6a0ea2bbb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ab789e9b21ea584870a2a6a0ea2bbb5">&#9670;&nbsp;</a></span>normalize()</h2>
+<a id="aec6a4556717fb97f5c3cf2fb59899254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec6a4556717fb97f5c3cf2fb59899254">&#9670;&nbsp;</a></span>normalize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -436,7 +475,13 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>maxSpeed</em>&#160;</td>
+          <td class="paramname"><em>maxSpeed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>leftright</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -678,7 +723,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 26 2024 15:25:36 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Tue Mar 26 2024 22:25:40 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalize_96',['normalize',['../namespacepxl.html#a5ab789e9b21ea584870a2a6a0ea2bbb5',1,'pxl']]]
+  ['normalize_104',['normalize',['../namespacepxl.html#aec6a4556717fb97f5c3cf2fb59899254',1,'pxl']]]
 ];
