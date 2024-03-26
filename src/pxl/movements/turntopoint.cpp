@@ -1,14 +1,14 @@
 #include "pxl/drivebase/drivebase.hpp"
 
 namespace pxl {
-void Drivebase::turnToPoint(Pose target, float timeout, turnToPointParams turnParams, bool async) {
+void Drivebase::turnToPoint(float x,float y, float timeout, turnToPointParams turnParams, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
-        pros::Task task([&]() { turnToPoint(target, timeout, turnParams, false); });
+        pros::Task task([&]() { turnToPoint(x,y, timeout, turnParams, false); });
         pros::delay(10);
         return;
     }
-
+    Coord target = Coord(x,y);
     float angularError;
     // start the timeout
     Timer localTimeout(timeout);

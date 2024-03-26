@@ -104,14 +104,14 @@ struct driveParams {
 static driveParams defaultDriveParams() { return driveParams(); }
 void drive(float target, float timeout, driveParams params = defaultDriveParams(), bool async = true);
 
-//* TURN *//
+//* TURN_TO_POINT *//
 struct turnToPointParams {
     float minSpeed = 0;
     float maxSpeed = 127;
     float slew = NAN;
 };
 static turnToPointParams defaultTurnParams() { return turnToPointParams(); }
-void turnToPoint(Pose target, float timeout, turnToPointParams params = defaultTurnParams(), bool async = true);
+void turnToPoint(float x,float y, float timeout, turnToPointParams params = defaultTurnParams(), bool async = true);
 
 //* Boomerang *//
 static bool SemicircleExit(pxl::Pose target, pxl::Coord curr, float radius);
