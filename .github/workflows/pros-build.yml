@@ -17,6 +17,17 @@ jobs:
         id: get-date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
 
+      # Cache Python dependencies
+      - name: Cache Python dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-${{ steps.get-date.outputs.date }}-
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+
       - name: Get short SHA
         id: short-sha
         run: |
