@@ -89,14 +89,14 @@ void initialize() {
     pros::lcd::initialize();
     drivebase.calibrate();
     pros::Task display_coordinates([] {
-while (true) {
-    pxl::Pose pose = drivebase.odom.getPose();
-    pros::lcd::print(0, "X: %f", pose.x);
-    pros::lcd::print(1, "Y: %f", pose.y);
-    pros::lcd::print(2, "Theta: %f", pose.theta);
-    pros::delay(50);
-}
-});
+        while (true) {
+            pxl::Pose pose = drivebase.odom.getPose();
+            pros::lcd::print(0, "X: %f", pose.x);
+            pros::lcd::print(1, "Y: %f", pose.y);
+            pros::lcd::print(2, "Theta: %f", pose.theta);
+            pros::delay(50);
+        }
+    });
 
     pros::lcd::register_btn1_cb(on_center_button);
 }
