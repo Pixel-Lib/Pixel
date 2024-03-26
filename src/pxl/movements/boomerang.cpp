@@ -21,11 +21,11 @@ bool Drivebase::SemicircleExit(pxl::Pose target, pxl::Coord curr, float radius) 
     // Check if the robot is within the semicircle
     return std::abs(target.theta - angle) <= M_PI;
 }
-void Drivebase::Boomerang(float x, float y, float theta, float timeout,
+void Drivebase::boomerang(float x, float y, float theta, float timeout,
                           std::shared_ptr<boomerangParams> boomerangParams, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
-        pros::Task task([&]() { Boomerang(x, y, theta, timeout, boomerangParams, false); });
+        pros::Task task([&]() { boomerang(x, y, theta, timeout, boomerangParams, false); });
         pros::delay(10);
         return;
     }

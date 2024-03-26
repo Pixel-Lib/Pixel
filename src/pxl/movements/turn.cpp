@@ -3,10 +3,10 @@
 #include "pxl/drivebase/drivebase.hpp"
 
 namespace pxl {
-void Drivebase::Turn(Pose target, float timeout, std::shared_ptr<turnParams> turnParams, bool async) {
+void Drivebase::turnToPoint(Pose target, float timeout, std::shared_ptr<turnToPointParams> turnParams, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
-        pros::Task task([&]() { Turn(target, timeout, turnParams, false); });
+        pros::Task task([&]() { turnToPoint(target, timeout, turnParams, false); });
         pros::delay(10);
         return;
     }

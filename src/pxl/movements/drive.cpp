@@ -3,10 +3,10 @@
 #include "pxl/drivebase/drivebase.hpp"
 
 namespace pxl {
-void Drivebase::Drive(float target, float timeout, std::shared_ptr<driveParams> driveParams, bool async) {
+void Drivebase::drive(float target, float timeout, std::shared_ptr<driveParams> driveParams, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
-        pros::Task task([&]() { Drive(target, timeout, driveParams, false); });
+        pros::Task task([&]() { drive(target, timeout, driveParams, false); });
         pros::delay(10);
         return;
     }

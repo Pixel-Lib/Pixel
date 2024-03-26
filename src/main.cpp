@@ -60,7 +60,7 @@ pxl::SeekingController angularSettings(  // angular settings
         pxl::Coord(0.5, 100),  // error of 0.5 degree, timeout of 100 ms
         pxl::Coord(5.0, 700),  // error of 5 degtees, timeout of 700 ms
     }),
-    3000.0  // global timeout
+    5000.0  // global timeout
 );
 pxl::Drivebase drivebase(drivetrain, sensors, linearSettings, angularSettings);  // make the drivebase
 /**
@@ -124,7 +124,8 @@ void competition_initialize() {}
  */
 void autonomous() {
     //? Drive 24 inches forward with 2000 ms timeout
-    drivebase.Drive(24, 2000);
+    drivebase.drive(24, 2000);
+    // drivebase.drive(-6, 1000,{});
 }
 
 /**

@@ -105,17 +105,17 @@ class Drivebase {
                 float slew = NAN;
         };
         static std::shared_ptr<driveParams> defaultDriveParams() { return std::make_shared<driveParams>(); }
-        void Drive(float target, float timeout, std::shared_ptr<driveParams> params = defaultDriveParams(),
+        void drive(float target, float timeout, std::shared_ptr<driveParams> params = defaultDriveParams(),
                    bool async = true);
 
         //* TURN *//
-        struct turnParams {
+        struct turnToPointParams {
                 float minSpeed = 0;
                 float maxSpeed = 127;
                 float slew = NAN;
         };
-        static std::shared_ptr<turnParams> defaultTurnParams() { return std::make_shared<turnParams>(); }
-        void Turn(Pose target, float timeout, std::shared_ptr<turnParams> params = defaultTurnParams(),
+        static std::shared_ptr<turnToPointParams> defaultTurnParams() { return std::make_shared<turnToPointParams>(); }
+        void turnToPoint(Pose target, float timeout, std::shared_ptr<turnToPointParams> params = defaultTurnParams(),
                   bool async = true);
         //* Boomerang *//
         static bool SemicircleExit(pxl::Pose target, pxl::Coord curr, float radius);
@@ -130,7 +130,7 @@ class Drivebase {
                 float slew = NAN;
         };
         static std::shared_ptr<boomerangParams> defaultBoomerangParams() { return std::make_shared<boomerangParams>(); }
-        void Boomerang(float x, float y, float theta, float timeout,
+        void boomerang(float x, float y, float theta, float timeout,
                        std::shared_ptr<boomerangParams> boomerangParams = defaultBoomerangParams(), bool async = true);
         //* ARCTURN *//
         struct arcturnParams {
@@ -142,7 +142,7 @@ class Drivebase {
                 float slew = NAN;
         };
         static std::shared_ptr<arcturnParams> defaultArcturnParams() { return std::make_shared<arcturnParams>(); }
-        void Arcturn(float target, float timeout, std::shared_ptr<arcturnParams> params = defaultArcturnParams(),
+        void arcturn(float target, float timeout, std::shared_ptr<arcturnParams> params = defaultArcturnParams(),
                      bool async = true);
 
     private:
