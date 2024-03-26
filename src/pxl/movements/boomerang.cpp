@@ -2,24 +2,24 @@
 #include "pxl/parametrics/coord.hpp"
 
 namespace pxl {
-bool Drivebase::SemicircleExit(pxl::Pose pose, pxl::Coord point, float radius) {
-    // Calculate the distance from the point to the pose
-    float dx = point.x - pose.x;
-    float dy = point.y - pose.y;
+bool Drivebase::SemicircleExit(pxl::Pose target, pxl::Coord curr, float radius) {
+    // Calculate the distance from the robot to the target
+    float dx = curr.x - target.x;
+    float dy = curr.y - target.y;
     float distance = std::sqrt(dx * dx + dy * dy);
 
-    // Check if the point is within the circle
+    // Check if the robot is within the circle
     if (distance > radius) { return false; }
 
-    // Calculate the angle from the pose to the point
+    // Calculate the angle from the target to the robot
     float angle = std::atan2(dy, dx);
 
     // Normalize the angles to the range [-pi, pi]
-    pose.theta = pxl::wrapToPi(pose.theta);
+    target.theta = pxl::wrapToPi(target.theta);
     angle = pxl::wrapToPi(angle);
 
-    // Check if the point is within the semicircle
-    return std::abs(pose.theta - angle) <= M_PI;
+    // Check if the robot is within the semicircle
+    return std::abs(target.theta - angle) <= M_PI;
 }
 void Drivebase::Boomerang(float x, float y, float theta, float timeout,
                           std::shared_ptr<boomerangParams> boomerangParams, bool async) {
