@@ -5,5 +5,5 @@
 * [X] start boomerang
 * [X] cos scaling
 * [X] overturn
-* [ ] glead
+* [X] glead
 * [ ] smoothness?
