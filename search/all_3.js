@@ -16,6 +16,7 @@ var searchData=
   ['drivebase_2ecpp_37',['drivebase.cpp',['../drivebase_8cpp.html',1,'']]],
   ['drivebase_2ehpp_38',['drivebase.hpp',['../drivebase_8hpp.html',1,'']]],
   ['driveparams_39',['driveParams',['../structpxl_1_1Drivebase_1_1driveParams.html',1,'pxl::Drivebase']]],
-  ['drivetrain_40',['drivetrain',['../classpxl_1_1Drivebase.html#a270e97d895e45eef8964be072e9535ce',1,'pxl::Drivebase::drivetrain()'],['../classpxl_1_1Odom.html#a25a62f0a15b5fabf52b8896d97a5016d',1,'pxl::Odom::drivetrain()']]],
-  ['drivetrain_41',['Drivetrain',['../classpxl_1_1Drivebase.html#a1cd580fd12ab8dde6da6f9ac10103316',1,'pxl::Drivebase::Drivetrain()'],['../classpxl_1_1Drivetrain.html#aede2e8ef67b2ae3fd1fde91cb924e3ee',1,'pxl::Drivetrain::Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *rightMotors, float trackWidth, float wheelDiameter, float rpm)'],['../classpxl_1_1Drivetrain.html#a5cb7a2982163322c5cb677065773aa0c',1,'pxl::Drivetrain::Drivetrain()=default'],['../classpxl_1_1Drivetrain.html',1,'pxl::Drivetrain']]]
+  ['drivetrain_40',['Drivetrain',['../classpxl_1_1Drivebase.html#a1cd580fd12ab8dde6da6f9ac10103316',1,'pxl::Drivebase::Drivetrain()'],['../classpxl_1_1Drivetrain.html#aede2e8ef67b2ae3fd1fde91cb924e3ee',1,'pxl::Drivetrain::Drivetrain(pros::MotorGroup *leftMotors, pros::MotorGroup *rightMotors, float trackWidth, float wheelDiameter, float rpm)'],['../classpxl_1_1Drivetrain.html#a5cb7a2982163322c5cb677065773aa0c',1,'pxl::Drivetrain::Drivetrain()=default']]],
+  ['drivetrain_41',['drivetrain',['../classpxl_1_1Drivebase.html#a270e97d895e45eef8964be072e9535ce',1,'pxl::Drivebase::drivetrain()'],['../classpxl_1_1Odom.html#a25a62f0a15b5fabf52b8896d97a5016d',1,'pxl::Odom::drivetrain()']]],
+  ['drivetrain_42',['Drivetrain',['../classpxl_1_1Drivetrain.html',1,'pxl']]]
 ];
