@@ -56,9 +56,9 @@ jobs:
         with:
           path: |
             arm-none-eabi
-          key: arm-none-eabi-${{ matrix.config.target }}-10-2020-q4
+            key: arm-none-eabi-<target-configuration>-10-2020-q4
           restore-keys: |
-            arm-none-eabi-${{ matrix.config.target }}-
+            arm-none-eabi-<target-configuration>-
             arm-none-eabi-
 
       - name: Install ARM Toolchain
