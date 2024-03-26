@@ -96,7 +96,7 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
         if (overturn > 0) linearOutput -= linearOutput > 0 ? overturn : -overturn;
 
         // if the carrot has settled, reduce the linear output by the cosine of the angular error
-        if (carrotSettled) linearOutput *= std::cos(degToRad(angularError)) + params.minAccel;
+        if (carrotSettled) linearOutput *= (std::cos(degToRad(angularError)) + params.minAccel);
 
         // if the robot is moving backwards, negate the linear output
         if (!params.forward) linearOutput = -linearOutput;
