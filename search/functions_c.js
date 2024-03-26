@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['seekingcontroller_304',['SeekingController',['../classpxl_1_1SeekingController.html#a88f5dc415b75a7b39d9ed7622f3292b3',1,'pxl::SeekingController']]],
+  ['seekingcontroller_303',['SeekingController',['../classpxl_1_1SeekingController.html#a88f5dc415b75a7b39d9ed7622f3292b3',1,'pxl::SeekingController']]],
+  ['semicircleexit_304',['SemicircleExit',['../classpxl_1_1Drivebase.html#a25133741a60772c721da634a1d364e96',1,'pxl::Drivebase::SemicircleExit()'],['../namespacepxl.html#a5c965f98f5fb1bcbfc13b556e6d2891e',1,'pxl::SemicircleExit()']]],
   ['setconstants_305',['setConstants',['../classpxl_1_1Drivetrain.html#ab51f21697996f75f03f41d2e6078c89e',1,'pxl::Drivetrain']]],
   ['setsensors_306',['setSensors',['../classpxl_1_1Drivebase.html#a0392a5b4cca4cfba1bf649ff36380446',1,'pxl::Drivebase']]],
   ['setstandstill_307',['setStandStill',['../structpxl_1_1stand__still.html#ae8204f83178b92b936dff72c17591d8d',1,'pxl::stand_still']]],

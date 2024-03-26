@@ -113,6 +113,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aef6c06ef10c858f6363754a87115ebc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab26a917748835994740e274356b92e48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#ab26a917748835994740e274356b92e48">Turn</a> (<a class="el" href="classpxl_1_1Pose.html">Pose</a> target, float timeout, std::shared_ptr&lt; <a class="el" href="structpxl_1_1Drivebase_1_1turnParams.html">turnParams</a> &gt; params=<a class="el" href="classpxl_1_1Drivebase.html#a86333f63e106c5542cf2a1c22da4cfd2">defaultTurnParams</a>(), bool async=true)</td></tr>
 <tr class="separator:ab26a917748835994740e274356b92e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25133741a60772c721da634a1d364e96"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a25133741a60772c721da634a1d364e96">SemicircleExit</a> (<a class="el" href="classpxl_1_1Pose.html">pxl::Pose</a> <a class="el" href="namespacepxl.html#a0701b37c7456e2154050add8257094c0a41319fa3d0af6570af134c7465a45916">pose</a>, <a class="el" href="classpxl_1_1Coord.html">pxl::Coord</a> <a class="el" href="namespacepxl.html#a0701b37c7456e2154050add8257094c0ae049005f408ad18964ff92c37164b6c4">point</a>, float radius)</td></tr>
+<tr class="separator:a25133741a60772c721da634a1d364e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a283984e2196dc178ae70531f94b05ebb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a283984e2196dc178ae70531f94b05ebb">Boomerang</a> (float x, float y, float theta, float timeout, std::shared_ptr&lt; <a class="el" href="structpxl_1_1Drivebase_1_1boomerangParams.html">boomerangParams</a> &gt; <a class="el" href="structpxl_1_1Drivebase_1_1boomerangParams.html">boomerangParams</a>=<a class="el" href="classpxl_1_1Drivebase.html#a7359fe8e66f419636dd7a113595dce0d">defaultBoomerangParams</a>(), bool async=true)</td></tr>
 <tr class="separator:a283984e2196dc178ae70531f94b05ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cc11bc53b3e7d37c8bd74ff54565e71"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a0cc11bc53b3e7d37c8bd74ff54565e71">isDriverControl</a> ()</td></tr>
@@ -459,6 +461,40 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a25133741a60772c721da634a1d364e96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25133741a60772c721da634a1d364e96">&#9670;&nbsp;</a></span>SemicircleExit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pxl::Drivebase::SemicircleExit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpxl_1_1Pose.html">pxl::Pose</a>&#160;</td>
+          <td class="paramname"><em>pose</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classpxl_1_1Coord.html">pxl::Coord</a>&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a0392a5b4cca4cfba1bf649ff36380446"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0392a5b4cca4cfba1bf649ff36380446">&#9670;&nbsp;</a></span>setSensors()</h2>
 
@@ -754,7 +790,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 26 2024 03:56:25 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Tue Mar 26 2024 04:11:17 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
