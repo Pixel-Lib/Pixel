@@ -17,17 +17,6 @@ jobs:
         id: get-date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.cache/pip
-            ~/.npm
-          key: ${{ runner.os }}-dependencies-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-dependencies-${{ steps.get-date.outputs.date }}-
-            ${{ runner.os }}-dependencies-
-            ${{ runner.os }}-
       - name: Get short SHA
         id: short-sha
         run: |
@@ -50,20 +39,7 @@ jobs:
         env:
           SHA: ${{ steps.short-sha.outputs.sha }}
 
-      - name: Cache ARM Toolchain
-        id: cache-arm
-        uses: actions/cache@v2
-        with:
-          key: arm-none-eabi-<target-configuration>-10-2020-q4
-          path: |
-            arm-none-eabi
-            key: arm-none-eabi-<target-configuration>-10-2020-q4
-          restore-keys: |
-            arm-none-eabi-<target-configuration>-
-            arm-none-eabi-
-
       - name: Install ARM Toolchain
-        if: steps.cache-arm.outputs.cache-hit != 'true'
         uses: fiam/arm-none-eabi-gcc@v1
         with:
           release: '10-2020-q4'
