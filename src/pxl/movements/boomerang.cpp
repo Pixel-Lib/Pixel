@@ -41,8 +41,8 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
 
     //*GLEAD*//
     float distance = this->odom.getPose().distance(targetPose);
-    const Coord inCarrot = Coord(targetPose.x - distance * cos(theta) * params.dlead,
-                                 targetPose.y - distance * sin(theta) * params.dlead);
+    const Coord inCarrot =
+        Coord(targetPose.x - distance * cos(theta) * params.dlead, targetPose.y - distance * sin(theta) * params.dlead);
     Coord carrot = inCarrot;
 
     // start the timeout
@@ -115,9 +115,3 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
 }
 
 }  // namespace pxl
-
-
-
-
-
-
