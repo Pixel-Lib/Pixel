@@ -15,6 +15,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Generate unique key
+        id: cache-key
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ steps.cache-key.outputs.date }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -47,29 +59,3 @@ jobs:
           path: ${{ steps.get-zip.outputs.zip }}.zip
     outputs:
       zip: ${{ steps.get-zip.outputs.zip }}
-
-  comment:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: ${{ needs.build.outputs.zip }}
-
-      - name: Comment PR
-        uses: actions/github-script@v3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            const fs = require('fs');
-            const artifact = fs.readdirSync('.').find(file => file.endsWith('.zip'));
-            const artifactName = artifact.replace('.zip', '');
-            const url = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`;
-            const message = `<!-- commit-sha: ${process.env.GITHUB_SHA} -->\n## Download the template for this pull request: \n\n> [!NOTE]\n> This is auto generated from [\`${process.env.GITHUB_WORKFLOW}\`](${url})\n- via manual download: [${artifact}](https://nightly.link/${process.env.GITHUB_REPOSITORY}/actions/artifacts/${artifactName}.zip)\n- via PROS Integrated Terminal: \n \`\`\`\ncurl -o ${artifact} https://nightly.link/${process.env.GITHUB_REPOSITORY}/actions/artifacts/${artifactName}.zip;\npros c fetch ${artifact};\npros c apply ${artifact};\nrm ${artifact};\n\`\`\``;
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: message
-            });
