@@ -44,7 +44,7 @@ void Drivebase::Boomerang(float x, float y, float theta, float timeout,
     float distance = this->odom.getPose().distance(targetPose);
     const Coord inCarrot = Coord(targetPose.x - distance * cos(theta) * boomerangParams->dlead,
                                  targetPose.y - distance * sin(theta) * boomerangParams->dlead);
-                                 Coord carrot = inCarrot;
+    Coord carrot = inCarrot;
 
     // start the timeout
     Timer localTimeout(timeout);
