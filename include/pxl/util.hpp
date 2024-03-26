@@ -155,7 +155,7 @@ template <typename T> T avg(const std::vector<T> &vec) {
  * @param maxSpeed
  * @return std::pair<float,float>
  */
-std::pair<float, float> normalize(float lateralOut, float angularOut, float maxSpeed);
+std::pair<float, float> normalize(float lateralOut, float angularOut, float maxSpeed, bool leftright = false);
 
 /**
  * Calculates the spin direction based on the target and current heading.

@@ -135,6 +135,7 @@ class Drivebase {
         //* ARCTURN *//
         struct arcturnParams {
             float radius = NAN;
+            bool forward = true;
                 float minSpeed = 0;
                 float maxSpeed = 127;
                 float slew = NAN;
