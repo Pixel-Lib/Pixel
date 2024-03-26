@@ -128,7 +128,7 @@ class Drivebase {
                 float glead = 0.2;
         };
         static std::shared_ptr<boomerangParams> defaultBoomerangParams() { return std::make_shared<boomerangParams>(); }
-        void Boomerang(float x, float y, float theta,  float timeout,
+        void Boomerang(float x, float y, float theta, float timeout,
                        std::shared_ptr<boomerangParams> boomerangParams = defaultBoomerangParams(), bool async = true);
 
     private:
