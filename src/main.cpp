@@ -126,7 +126,7 @@ void autonomous() {
     //? Drive 24 inches forward with 2000 ms timeout
     drivebase.drive(24, 2000);
     //? Drive 6 inches backward with 1000 ms timeout, with a minimum speed of 20 and a maximum speed of 100
-    drivebase.drive(-6, 1000,{.minSpeed = 20, .maxSpeed = 100});
+    drivebase.drive(-6, 1000, {.minSpeed = 20, .maxSpeed = 100});
     // drivebase.turnToPoint(Pose target, float timeout)
 }
 
