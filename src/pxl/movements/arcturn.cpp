@@ -1,3 +1,4 @@
+#include "pros/rtos.hpp"
 #include "pxl/drivebase/drivebase.hpp"
 #include "pxl/seekingcontroller.hpp"
 #include "pxl/util.hpp"
@@ -51,7 +52,11 @@ void Drivebase::Arcturn(float target, float timeout, std::shared_ptr<arcturnPara
             drivetrain.leftMotors->move(-normalized.second);
             drivetrain.rightMotors->move(-normalized.first);
         }
+
+        pros::delay(10);
     }
+        drivetrain.leftMotors->move(0);
+    drivetrain.rightMotors->move(0);
 }
 
 }  // namespace pxl
