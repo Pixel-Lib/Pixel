@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cmath>
 #include <iostream>
 #include <memory>
 
@@ -135,12 +136,13 @@ class Drivebase {
                        std::shared_ptr<boomerangParams> boomerangParams = defaultBoomerangParams(), bool async = true);
         //* ARCTURN *//
         struct arcturnParams {
+            float radius = NAN;
                 float minSpeed = 0;
                 float maxSpeed = 127;
                 float slew = NAN;
         };
         static std::shared_ptr<arcturnParams> defaultArcturnParams() { return std::make_shared<arcturnParams>(); }
-        void Arcturn(float target, float radius, float timeout,  std::shared_ptr<arcturnParams> params = defaultArcturnParams(),
+        void Arcturn(float target, float timeout,  std::shared_ptr<arcturnParams> params = defaultArcturnParams(),
                      bool async = true);
     private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
