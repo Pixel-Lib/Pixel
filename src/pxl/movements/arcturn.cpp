@@ -1,7 +1,4 @@
-#include "pros/rtos.hpp"
 #include "pxl/drivebase/drivebase.hpp"
-#include "pxl/seekingcontroller.hpp"
-#include "pxl/util.hpp"
 
 namespace pxl {
 
