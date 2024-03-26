@@ -44,6 +44,7 @@ void Drivebase::Boomerang(float x, float y, float theta, float timeout,
     float distance = this->odom.getPose().distance(targetPose);
     const Coord inCarrot = Coord(targetPose.x - distance * cos(theta) * boomerangParams->dlead,
                                  targetPose.y - distance * sin(theta) * boomerangParams->dlead);
+                                 Coord carrot = inCarrot;
 
     // start the timeout
     Timer localTimeout(timeout);
@@ -51,7 +52,6 @@ void Drivebase::Boomerang(float x, float y, float theta, float timeout,
     linearController.timerStart();
     angularController.timerStart();
 
-    Coord carrot;
     while (!localTimeout.isDone() || !linearController.getExit(linearError) && !angularController.getExit(angularError)
            || SemicircleExit(carrot, odom.getPose(), previousCarrot.distance(carrot)) / 0.01) {
 
