@@ -37,7 +37,6 @@ digraph "include/pxl/timer.hpp"
   Node14 [label="include/pxl/seekingcontroller.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$seekingcontroller_8hpp.html",tooltip=" "];
   Node14 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node14 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node14 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node15 [label="src/pxl/seekingcontroller.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$seekingcontroller_8cpp.html",tooltip=" "];
   Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

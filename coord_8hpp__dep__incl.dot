@@ -39,7 +39,6 @@ digraph "include/pxl/parametrics/coord.hpp"
   Node16 [label="include/pxl/seekingcontroller.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$seekingcontroller_8hpp.html",tooltip=" "];
   Node16 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node16 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node17 [label="src/pxl/seekingcontroller.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$seekingcontroller_8cpp.html",tooltip=" "];
   Node15 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
