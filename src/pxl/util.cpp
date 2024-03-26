@@ -36,16 +36,15 @@ std::pair<float, float> normalize(float lateralOut, float angularOut, float maxS
     float leftPower = lateralOut;
     float rightPower = angularOut;
 
-    if (leftright == false){
+    if (leftright == false) {
         leftPower = lateralOut + angularOut;
         rightPower = lateralOut - angularOut;
-    } 
+    }
 
     const float ratio = std::max(std::fabs(leftPower), std::fabs(rightPower)) / maxSpeed;
     leftPower = (ratio > 1) ? leftPower / ratio : leftPower;
     rightPower = (ratio > 1) ? rightPower / ratio : rightPower;
     return std::make_pair(leftPower, rightPower);
-}int dirToSpin(float target, float currHeading) {
-    return (angleError(target, currHeading, false) > 180 ? 1 : -1);
 }
+int dirToSpin(float target, float currHeading) { return (angleError(target, currHeading, false) > 180 ? 1 : -1); }
 }  // namespace pxl
