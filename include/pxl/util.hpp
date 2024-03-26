@@ -157,4 +157,6 @@ template <typename T> T avg(const std::vector<T> &vec) {
  */
 std::pair<float, float> normalize(float lateralOut, float angularOut, float maxSpeed);
 
+int dir2spin(float target, float currHeading);
+
 }  // namespace pxl

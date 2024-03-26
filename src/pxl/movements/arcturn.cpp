@@ -9,6 +9,8 @@ void Drivebase::Arcturn(float target, float timeout, std::shared_ptr<arcturnPara
         pros::delay(10);
         return;
     }
+
+    float curr = odom.getPose().theta;
 }
 
 }
