@@ -9,22 +9,16 @@ bool SemicircleExit(pxl::Pose pose, pxl::Coord point, float radius) {
     float distance = std::sqrt(dx * dx + dy * dy);
 
     // Check if the point is within the circle
-    if (distance > radius) {
-        return false;
-    }
+    if (distance > radius) { return false; }
 
     // Calculate the angle from the pose to the point
     float angle = std::atan2(dy, dx);
 
     // Normalize the angles to the range [-pi, pi]
     pose.theta = std::fmod(pose.theta, 2 * M_PI);
-    if (pose.theta < 0) {
-        pose.theta += 2 * M_PI;
-    }
+    if (pose.theta < 0) { pose.theta += 2 * M_PI; }
     angle = std::fmod(angle, 2 * M_PI);
-    if (angle < 0) {
-        angle += 2 * M_PI;
-    }
+    if (angle < 0) { angle += 2 * M_PI; }
 
     // Check if the point is within the semicircle
     return std::abs(pose.theta - angle) <= M_PI;
@@ -59,10 +53,9 @@ void Drivebase::Boomerang(float x, float y, float theta, float timeout,
     angularController.timerStart();
 
     Coord carrot;
-    while (!localTimeout.isDone()
-           || !linearController.getExit(linearError) && !angularController.getExit(angularError) || SemicircleExit(carrot, odom.getPose(), previousCarrot.distance(carrot)) / 0.01) {
+    while (!localTimeout.isDone() || !linearController.getExit(linearError) && !angularController.getExit(angularError)
+           || SemicircleExit(carrot, odom.getPose(), previousCarrot.distance(carrot)) / 0.01) {
 
-        
         if (!carrotSettled) {
             // calculate the carrot
             distance = this->odom.getPose().distance(targetPose);
