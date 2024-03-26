@@ -58,10 +58,11 @@ void Drivebase::Boomerang(float x, float y, float theta, float timeout,
     linearController.timerStart();
     angularController.timerStart();
 
+    Coord carrot;
     while (!localTimeout.isDone()
-           || !linearController.getExit(linearError) && !angularController.getExit(angularError)) {
+           || !linearController.getExit(linearError) && !angularController.getExit(angularError) || SemicircleExit(carrot, odom.getPose(), previousCarrot.distance(carrot)) / 0.01) {
 
-        Coord carrot;
+        
         if (!carrotSettled) {
             // calculate the carrot
             distance = this->odom.getPose().distance(targetPose);
