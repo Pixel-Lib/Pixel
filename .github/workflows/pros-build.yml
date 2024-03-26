@@ -11,21 +11,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        check: ['setup-python', 'install-arm-toolchain']
+    
     steps:
-      - name: ${{ matrix.check }}
-        run: |
-          if [ "${{ matrix.check }}" == "setup-python" ]; then
-            uses: actions/setup-python@v2
-            with:
-              python-version: 3.9
-          elif [ "${{ matrix.check }}" == "install-arm-toolchain" ]; then
-            uses: fiam/arm-none-eabi-gcc@v1
-            with:
-              release: '10-2020-q4'
-          fi
       - name: Get Date
         id: get-date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
