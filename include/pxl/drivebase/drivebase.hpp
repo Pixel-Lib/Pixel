@@ -55,7 +55,7 @@ class Drivetrain {
 class ExtendedDrivetrain {
     public:
         ExtendedDrivetrain(float verticalTrackWidth);
-
+        ExtendedDrivetrain() = default;
     private:
         float verticalTrackWidth;
 };
@@ -137,6 +137,7 @@ class Drivebase {
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         void calibrateIMU(OdomSensors sensors);
         Odom setSensors(OdomSensors sensors);
+        ExtendedDrivetrain extendedDrivetrain = ExtendedDrivetrain();
         /**
          * Calculates the slew speed limits for a given object and seeking controller.
          *
