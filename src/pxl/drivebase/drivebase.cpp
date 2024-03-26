@@ -21,7 +21,7 @@ pxl::Drivebase::Drivebase(Drivetrain drivetrain, OdomSensors sensors, SeekingCon
       sensors(sensors),
       linearController(linearController),
       angularController(angularController) {}
-
+pxl::ExtendedDrivetrain::ExtendedDrivetrain(float verticalTrackWidth) : verticalTrackWidth(verticalTrackWidth) {}
 void pxl::Drivebase::calibrateIMU(OdomSensors sensors) {
     for (int attempt = 1; attempt <= 5 && !isDriverControl(); attempt++) {
         sensors.imu->reset();
@@ -41,11 +41,11 @@ void pxl::Drivebase::calibrateIMU(OdomSensors sensors) {
                 : "IMU calibration failed, defaulting to tracking wheels / motor encoders")
         << std::endl;
 }
-bool Drivebase::isDriverControl() {
+bool pxl::Drivebase::isDriverControl() {
     return pros::competition::is_connected() && !pros::competition::is_autonomous()
            && !pros::competition::is_disabled();
 }
-Odom Drivebase::setSensors(OdomSensors sensors) {
+pxl::Odom pxl::Drivebase::setSensors(OdomSensors sensors) {
     std::vector<std::unique_ptr<TrackingWheel>> Verticals;
     std::vector<std::unique_ptr<TrackingWheel>> Horizontals;
     std::vector<std::unique_ptr<TrackingWheel>> drive;
@@ -66,7 +66,7 @@ Odom Drivebase::setSensors(OdomSensors sensors) {
     pxl::Odom odom(Verticals, Horizontals, drive, imu);
     return odom;
 }
-void Drivebase::calibrate(bool calibrateImu) {
+void pxl::Drivebase::calibrate(bool calibrateImu) {
     // calibrate the IMU if it exists and the user doesn't specify otherwise
     if (sensors.imu != nullptr && calibrateImu) calibrateIMU(sensors);
     // initialize odom

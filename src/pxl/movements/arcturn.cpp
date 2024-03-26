@@ -1,4 +1,5 @@
 #include "pxl/drivebase/drivebase.hpp"
+#include "pxl/util.hpp"
 
 namespace pxl {
 
@@ -11,6 +12,9 @@ void Drivebase::Arcturn(float target, float timeout, std::shared_ptr<arcturnPara
     }
 
     float curr = odom.getPose().theta;
+    float theta = dirToSpin(target,curr);
+
+    float sl = theta * (params->radius );
 }
 
 }

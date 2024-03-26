@@ -9,8 +9,7 @@
 #include "pxl/seekingcontroller.hpp"
 
 namespace pxl {
-class Drive_;
-// class Drivetrain;
+
 struct OdomSensors {
         OdomSensors(TrackingWheel *vertical1, TrackingWheel *vertical2, TrackingWheel *horizontal1,
                     TrackingWheel *horizontal2, pros::Imu *imu);
@@ -57,8 +56,7 @@ class ExtendedDrivetrain {
     public:
         ExtendedDrivetrain(float verticalTrackWidth);
         ExtendedDrivetrain() = default;
-    private:
-        float verticalTrackWidth;
+        float verticalTrackWidth;  
 };
 
 /**
@@ -148,7 +146,6 @@ class Drivebase {
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         void calibrateIMU(OdomSensors sensors);
         Odom setSensors(OdomSensors sensors);
-        ExtendedDrivetrain extendedDrivetrain = ExtendedDrivetrain();
         /**
          * Calculates the slew speed limits for a given object and seeking controller.
          *
@@ -177,6 +174,9 @@ class Drivebase {
         bool isDriverControl();
         Drivetrain drivetrain;
         OdomSensors sensors;
+
+                ExtendedDrivetrain extendedDrivetrain;
+
 };
 
 };  // namespace pxl
