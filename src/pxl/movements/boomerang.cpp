@@ -99,8 +99,8 @@ void Drivebase::Boomerang(float x, float y, float theta, float timeout,
         // if the carrot has settled, reduce the linear output by the cosine of the angular error
         if (carrotSettled) linearOutput *= std::cos(degToRad(angularError));
 
-        //
-        if (boomerangParams->forward) linearOutput = -linearOutput;
+        // if the robot is moving backwards, negate the linear output
+        if (!boomerangParams->forward) linearOutput = -linearOutput;
 
         // calculate and normalize the left/right speeds
         std::pair<float, float> normalized = normalize(linearOutput, angularOutput, maxSpeed);
