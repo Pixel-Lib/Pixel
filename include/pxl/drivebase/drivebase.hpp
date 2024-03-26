@@ -177,6 +177,8 @@ class Drivebase {
 
                 ExtendedDrivetrain extendedDrivetrain;
 
+                SeekingController secondaryController;
+
 };
 
 };  // namespace pxl
