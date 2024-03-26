@@ -2,20 +2,20 @@
 
 namespace pxl {
 
-void Drivebase::arcturn(float target, float timeout, std::shared_ptr<arcturnParams> params, bool async) {
+void Drivebase::arcturn(float target, float timeout, arcturnParams params, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
         pros::Task task([&]() { arcturn(target, timeout, params, false); });
         pros::delay(10);
         return;
     }
-    if (isnanf(params->radius)) { params->radius = this->drivetrain.trackWidth / 2; }
+    if (isnanf(params.radius)) { params.radius = this->drivetrain.trackWidth / 2; }
 
     float curr = this->odom.getPose().theta;
     float theta = dirToSpin(target, curr);
 
-    float sl = theta * (params->radius + this->extendedDrivetrain.verticalTrackWidth);
-    float sr = theta * (params->radius - this->extendedDrivetrain.verticalTrackWidth);
+    float sl = theta * (params.radius + this->extendedDrivetrain.verticalTrackWidth);
+    float sr = theta * (params.radius - this->extendedDrivetrain.verticalTrackWidth);
     float ratio = sl / sr;
 
     // start the timeout
@@ -28,8 +28,8 @@ void Drivebase::arcturn(float target, float timeout, std::shared_ptr<arcturnPara
         float error = angleError(target, curr, false);
         float vel = this->linearController.update(error);
 
-        float minSpeed = params->minSpeed;
-        float maxSpeed = params->maxSpeed;
+        float minSpeed = params.minSpeed;
+        float maxSpeed = params.maxSpeed;
 
         std::pair<float, float> speeds = this->slewSpeedLimits(params, this->linearController);
         minSpeed = speeds.first;
@@ -44,7 +44,7 @@ void Drivebase::arcturn(float target, float timeout, std::shared_ptr<arcturnPara
 
         std::pair<float, float> normalized = normalize(lvel, rvel, maxSpeed, true);
 
-        if (params->dir == 1) {
+        if (params.dir == 1) {
             drivetrain.leftMotors->move(normalized.first);
             drivetrain.rightMotors->move(normalized.second);
         } else {

@@ -1,12 +1,11 @@
-
-
 #include "pxl/drivebase/drivebase.hpp"
 
 namespace pxl {
-void Drivebase::drive(float target, float timeout, std::shared_ptr<driveParams> driveParams, bool async) {
+
+void Drivebase::drive(float target, float timeout, driveParams params, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
-        pros::Task task([&]() { drive(target, timeout, driveParams, false); });
+        pros::Task task([&]() { drive(target, timeout, params, false); });
         pros::delay(10);
         return;
     }
@@ -35,11 +34,11 @@ void Drivebase::drive(float target, float timeout, std::shared_ptr<driveParams> 
         float angularOutput = this->angularController.update(angularError);
 
         // clamp the output
-        float minSpeed = driveParams->minSpeed;
-        float maxSpeed = driveParams->maxSpeed;
+        float minSpeed = params.minSpeed;
+        float maxSpeed = params.maxSpeed;
         // if the real minSpeed and maxSpeed values are too high/low, the robot will ignore the slew when the clamping
         // happens
-        std::pair<float, float> speeds = slewSpeedLimits(driveParams, linearController);
+        std::pair<float, float> speeds = slewSpeedLimits(params, linearController);
 
         minSpeed = speeds.first;
         maxSpeed = speeds.second;

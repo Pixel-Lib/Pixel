@@ -21,17 +21,16 @@ bool Drivebase::SemicircleExit(pxl::Pose target, pxl::Coord curr, float radius) 
     // Check if the robot is within the semicircle
     return std::abs(target.theta - angle) <= M_PI;
 }
-void Drivebase::boomerang(float x, float y, float theta, float timeout,
-                          std::shared_ptr<boomerangParams> boomerangParams, bool async) {
+void Drivebase::boomerang(float x, float y, float theta, float timeout, boomerangParams params, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
-        pros::Task task([&]() { boomerang(x, y, theta, timeout, boomerangParams, false); });
+        pros::Task task([&]() { boomerang(x, y, theta, timeout, params, false); });
         pros::delay(10);
         return;
     }
 
     Pose targetPose = Pose(x, y, degToRad(theta));
-    if (!boomerangParams->forward) { targetPose.theta = wrapToPi(targetPose.theta + M_PI); }
+    if (!params.forward) { targetPose.theta = wrapToPi(targetPose.theta + M_PI); }
 
     float linearError;
     float angularError;
@@ -42,8 +41,8 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout,
 
     //*GLEAD*//
     float distance = this->odom.getPose().distance(targetPose);
-    const Coord inCarrot = Coord(targetPose.x - distance * cos(theta) * boomerangParams->dlead,
-                                 targetPose.y - distance * sin(theta) * boomerangParams->dlead);
+    const Coord inCarrot = Coord(targetPose.x - distance * cos(theta) * params.dlead,
+                                 targetPose.y - distance * sin(theta) * params.dlead);
     Coord carrot = inCarrot;
 
     // start the timeout
@@ -58,8 +57,8 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout,
         if (!carrotSettled) {
             // calculate the carrot
             distance = this->odom.getPose().distance(targetPose);
-            carrot = Coord(inCarrot.x + (carrot.x - inCarrot.x) * (1 - boomerangParams->glead),
-                           inCarrot.y + (carrot.y - inCarrot.y) * (1 - boomerangParams->glead));
+            carrot = Coord(inCarrot.x + (carrot.x - inCarrot.x) * (1 - params.glead),
+                           inCarrot.y + (carrot.y - inCarrot.y) * (1 - params.glead));
         } else {
             carrot = Coord(targetPose.x, targetPose.y);
         }
@@ -75,11 +74,11 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout,
         float angularOutput = this->angularController.update(angularError);
 
         // clamp the output
-        float minSpeed = boomerangParams->minSpeed;
-        float maxSpeed = boomerangParams->maxSpeed;
+        float minSpeed = params.minSpeed;
+        float maxSpeed = params.maxSpeed;
         // if the real minSpeed and maxSpeed values are too high/low, the robot will ignore the slew when the clamping
         // happens
-        std::pair<float, float> speeds = slewSpeedLimits(boomerangParams, linearController);
+        std::pair<float, float> speeds = slewSpeedLimits(params, linearController);
 
         minSpeed = speeds.first;
         maxSpeed = speeds.second;
@@ -93,14 +92,14 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout,
         //* Motion Optomization *//
 
         // priotize angular movement
-        float overturn = fabs(angularOutput) + fabs(linearOutput) - boomerangParams->maxSpeed;
+        float overturn = fabs(angularOutput) + fabs(linearOutput) - params.maxSpeed;
         if (overturn > 0) linearOutput -= linearOutput > 0 ? overturn : -overturn;
 
         // if the carrot has settled, reduce the linear output by the cosine of the angular error
-        if (carrotSettled) linearOutput *= std::cos(degToRad(angularError)) + boomerangParams->minAccel;
+        if (carrotSettled) linearOutput *= std::cos(degToRad(angularError)) + params.minAccel;
 
         // if the robot is moving backwards, negate the linear output
-        if (!boomerangParams->forward) linearOutput = -linearOutput;
+        if (!params.forward) linearOutput = -linearOutput;
 
         // calculate and normalize the left/right speeds
         std::pair<float, float> normalized = normalize(linearOutput, angularOutput, maxSpeed);
@@ -114,4 +113,11 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout,
     drivetrain.leftMotors->move(0);
     drivetrain.rightMotors->move(0);
 }
+
 }  // namespace pxl
+
+
+
+
+
+

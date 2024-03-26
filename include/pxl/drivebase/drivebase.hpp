@@ -92,58 +92,53 @@ class Drivebase {
         friend class Drive_;
         friend class Drivetrain;
 
-        //* MOTIONS *//
+  //* DRIVE *//
+pros::Mutex mutex;
+uint8_t compstate = pros::competition::get_status();
 
-        //* DRIVE *//
-        pros::Mutex mutex;
-        // get the current competition state. If this changes, the movement will stop
-        uint8_t compstate = pros::competition::get_status();  // global variable
+struct driveParams {
+    float minSpeed = 0;
+    float maxSpeed = 127;
+    float slew = NAN;
+};
+static driveParams defaultDriveParams() { return driveParams(); }
+void drive(float target, float timeout, driveParams params = defaultDriveParams(), bool async = true);
 
-        struct driveParams {
-                float minSpeed = 0;
-                float maxSpeed = 127;
-                float slew = NAN;
-        };
-        static std::shared_ptr<driveParams> defaultDriveParams() { return std::make_shared<driveParams>(); }
-        void drive(float target, float timeout, std::shared_ptr<driveParams> params = defaultDriveParams(),
-                   bool async = true);
+//* TURN *//
+struct turnToPointParams {
+    float minSpeed = 0;
+    float maxSpeed = 127;
+    float slew = NAN;
+};
+static turnToPointParams defaultTurnParams() { return turnToPointParams(); }
+void turnToPoint(Pose target, float timeout, turnToPointParams params = defaultTurnParams(), bool async = true);
 
-        //* TURN *//
-        struct turnToPointParams {
-                float minSpeed = 0;
-                float maxSpeed = 127;
-                float slew = NAN;
-        };
-        static std::shared_ptr<turnToPointParams> defaultTurnParams() { return std::make_shared<turnToPointParams>(); }
-        void turnToPoint(Pose target, float timeout, std::shared_ptr<turnToPointParams> params = defaultTurnParams(),
-                  bool async = true);
-        //* Boomerang *//
-        static bool SemicircleExit(pxl::Pose target, pxl::Coord curr, float radius);
-        struct boomerangParams {
-                float dlead = 0.5;
-                float glead = 0.2;
+//* Boomerang *//
+static bool SemicircleExit(pxl::Pose target, pxl::Coord curr, float radius);
+struct boomerangParams {
+    float dlead = 0.5;
+    float glead = 0.2;
 
-                bool forward = true;
-                float minSpeed = 0;
-                float maxSpeed = 127;
-                float minAccel = 0;
-                float slew = NAN;
-        };
-        static std::shared_ptr<boomerangParams> defaultBoomerangParams() { return std::make_shared<boomerangParams>(); }
-        void boomerang(float x, float y, float theta, float timeout,
-                       std::shared_ptr<boomerangParams> boomerangParams = defaultBoomerangParams(), bool async = true);
-        //* ARCTURN *//
-        struct arcturnParams {
-                float radius = NAN;
-                int dir = 1;
-                bool forward = true;
-                float minSpeed = 0;
-                float maxSpeed = 127;
-                float slew = NAN;
-        };
-        static std::shared_ptr<arcturnParams> defaultArcturnParams() { return std::make_shared<arcturnParams>(); }
-        void arcturn(float target, float timeout, std::shared_ptr<arcturnParams> params = defaultArcturnParams(),
-                     bool async = true);
+    bool forward = true;
+    float minSpeed = 0;
+    float maxSpeed = 127;
+    float minAccel = 0;
+    float slew = NAN;
+};
+static boomerangParams defaultBoomerangParams() { return boomerangParams(); }
+void boomerang(float x, float y, float theta, float timeout, boomerangParams params = defaultBoomerangParams(), bool async = true);
+
+//* ARCTURN *//
+struct arcturnParams {
+    float radius = NAN;
+    int dir = 1;
+    bool forward = true;
+    float minSpeed = 0;
+    float maxSpeed = 127;
+    float slew = NAN;
+};
+static arcturnParams defaultArcturnParams() { return arcturnParams(); }
+void arcturn(float target, float timeout, arcturnParams params = defaultArcturnParams(), bool async = true);
 
     private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
@@ -157,18 +152,18 @@ class Drivebase {
          * @param seekingController The seeking controller.
          * @return A pair of floats representing the minimum and maximum speed limits.
          */
-        template <typename T>
-        std::pair<float, float> slewSpeedLimits(std::shared_ptr<T> object, SeekingController &seekingController) {
-            return !isnanf((object->slew))
-                       ? (object->slew != 0
-                              ? std::make_pair(slew(object->minSpeed, seekingController.prevOut, object->slew),
-                                               slew(object->maxSpeed, seekingController.prevOut, object->slew))
-                              : std::make_pair(object->minSpeed, object->maxSpeed))
-                       : (seekingController.slew_ != 0 ? std::make_pair(
-                              slew(object->minSpeed, seekingController.prevOut, seekingController.slew_),
-                              slew(object->maxSpeed, seekingController.prevOut, seekingController.slew_))
-                                                       : std::make_pair(object->minSpeed, object->maxSpeed));
-        }
+template <typename T>
+std::pair<float, float> slewSpeedLimits(T object, SeekingController &seekingController) {
+    return !isnanf((object.slew))
+               ? (object.slew != 0
+                      ? std::make_pair(slew(object.minSpeed, seekingController.prevOut, object.slew),
+                                       slew(object.maxSpeed, seekingController.prevOut, object.slew))
+                      : std::make_pair(object.minSpeed, object.maxSpeed))
+               : (seekingController.slew_ != 0 ? std::make_pair(
+                      slew(object.minSpeed, seekingController.prevOut, seekingController.slew_),
+                      slew(object.maxSpeed, seekingController.prevOut, seekingController.slew_))
+                                               : std::make_pair(object.minSpeed, object.maxSpeed));
+}
 
     public:
         SeekingController linearController;

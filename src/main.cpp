@@ -125,7 +125,7 @@ void competition_initialize() {}
 void autonomous() {
     //? Drive 24 inches forward with 2000 ms timeout
     drivebase.drive(24, 2000);
-    // drivebase.drive(-6, 1000,{});
+    drivebase.drive(-6, 1000,{.minSpeed = 20, .maxSpeed = 100});
 }
 
 /**

@@ -1,9 +1,7 @@
-
-
 #include "pxl/drivebase/drivebase.hpp"
 
 namespace pxl {
-void Drivebase::turnToPoint(Pose target, float timeout, std::shared_ptr<turnToPointParams> turnParams, bool async) {
+void Drivebase::turnToPoint(Pose target, float timeout, turnToPointParams turnParams, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
         pros::Task task([&]() { turnToPoint(target, timeout, turnParams, false); });
@@ -22,8 +20,8 @@ void Drivebase::turnToPoint(Pose target, float timeout, std::shared_ptr<turnToPo
         // calculate the raw angular output from the PID controller
         float angularOutput = this->angularController.update(angularError);
         // clamp the output
-        float minSpeed = turnParams->minSpeed;
-        float maxSpeed = turnParams->maxSpeed;
+        float minSpeed = turnParams.minSpeed;
+        float maxSpeed = turnParams.maxSpeed;
         // if the real minSpeed and maxSpeed values are too high/low, the robot will ignore the slew when the clamping
         // happens
         std::pair<float, float> speeds = slewSpeedLimits(turnParams, angularController);
