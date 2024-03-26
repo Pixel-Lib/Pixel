@@ -6,7 +6,7 @@ void Drivebase::Boomerang(float x, float y, float theta, float timeout,
                           std::shared_ptr<boomerangParams> boomerangParams, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
-        pros::Task task([&]() { Boomerang(x, y, theta, timeout,boomerangParams, false); });
+        pros::Task task([&]() { Boomerang(x, y, theta, timeout, boomerangParams, false); });
         pros::delay(10);
         return;
     }
@@ -21,8 +21,8 @@ void Drivebase::Boomerang(float x, float y, float theta, float timeout,
 
     //*GLEAD*//
     float distance = this->odom.getPose().distance(targetPose);
-    const Coord inCarrot =
-        Coord(targetPose.x - distance * cos(theta) * boomerangParams->dlead, targetPose.y - distance * sin(theta) * boomerangParams->dlead);
+    const Coord inCarrot = Coord(targetPose.x - distance * cos(theta) * boomerangParams->dlead,
+                                 targetPose.y - distance * sin(theta) * boomerangParams->dlead);
 
     // start the timeout
     Timer localTimeout(timeout);
@@ -37,7 +37,8 @@ void Drivebase::Boomerang(float x, float y, float theta, float timeout,
         if (!carrotSettled) {
             // calculate the carrot
             distance = this->odom.getPose().distance(targetPose);
-            carrot = Coord(inCarrot.x + (carrot.x - inCarrot.x) * (1-boomerangParams->glead), inCarrot.y + (carrot.y - inCarrot.y) * (1-boomerangParams->glead));
+            carrot = Coord(inCarrot.x + (carrot.x - inCarrot.x) * (1 - boomerangParams->glead),
+                           inCarrot.y + (carrot.y - inCarrot.y) * (1 - boomerangParams->glead));
         } else {
             carrot = Coord(targetPose.x, targetPose.y);
         }
