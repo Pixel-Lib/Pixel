@@ -49,8 +49,20 @@ jobs:
         run: echo $SHA
         env:
           SHA: ${{ steps.short-sha.outputs.sha }}
-    
+
+      - name: Cache ARM Toolchain
+        id: cache-arm
+        uses: actions/cache@v2
+        with:
+          path: |
+            arm-none-eabi
+          key: arm-none-eabi-${{ matrix.config.target }}-10-2020-q4
+          restore-keys: |
+            arm-none-eabi-${{ matrix.config.target }}-
+            arm-none-eabi-
+
       - name: Install ARM Toolchain
+        if: steps.cache-arm.outputs.cache-hit != 'true'
         uses: fiam/arm-none-eabi-gcc@v1
         with:
           release: '10-2020-q4'
