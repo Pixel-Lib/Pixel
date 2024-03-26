@@ -3,7 +3,7 @@ var searchData=
   ['seekingcontroller_140',['SeekingController',['../classpxl_1_1SeekingController.html',1,'pxl::SeekingController'],['../classpxl_1_1SeekingController.html#a88f5dc415b75a7b39d9ed7622f3292b3',1,'pxl::SeekingController::SeekingController()']]],
   ['seekingcontroller_2ecpp_141',['seekingcontroller.cpp',['../seekingcontroller_8cpp.html',1,'']]],
   ['seekingcontroller_2ehpp_142',['seekingcontroller.hpp',['../seekingcontroller_8hpp.html',1,'']]],
-  ['semicircleexit_143',['SemicircleExit',['../classpxl_1_1Drivebase.html#a25133741a60772c721da634a1d364e96',1,'pxl::Drivebase']]],
+  ['semicircleexit_143',['SemicircleExit',['../classpxl_1_1Drivebase.html#a5a3e88e5cb255c13175a29124157342b',1,'pxl::Drivebase']]],
   ['sensed_144',['SENSED',['../namespacepxl.html#a93a826b4e3a75a792a4ed863cd6a90a7a36c9f8cb447eca51d27aa9d398c19605',1,'pxl']]],
   ['sensed_145',['sensed',['../namespacepxl.html#a93a826b4e3a75a792a4ed863cd6a90a7',1,'pxl::sensed()'],['../namespacepxl.html#a0701b37c7456e2154050add8257094c0a20656fb3d6af7de026b66e2d69639cc8',1,'pxl::sensed()']]],
   ['sensing_5ffailed_146',['SENSING_FAILED',['../namespacepxl.html#a93a826b4e3a75a792a4ed863cd6a90a7a7b1748c490ce6463734c91391402c8d2',1,'pxl']]],
