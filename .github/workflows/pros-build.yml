@@ -9,10 +9,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  setup-python:
     runs-on: ubuntu-latest
-    
     steps:
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+  install-arm-toolchain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install ARM Toolchain
+        uses: fiam/arm-none-eabi-gcc@v1
+        with:
+          release: '10-2020-q4'
+    
+    # steps:
       - name: Get Date
         id: get-date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
