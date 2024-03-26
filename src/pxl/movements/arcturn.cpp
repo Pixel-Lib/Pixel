@@ -1,4 +1,5 @@
 #include <cmath>
+
 #include "pxl/drivebase/drivebase.hpp"
 
 namespace pxl {
@@ -10,9 +11,7 @@ void Drivebase::Arcturn(float target, float timeout, std::shared_ptr<arcturnPara
         pros::delay(10);
         return;
     }
-    if (isnanf(params->radius)) {
-        params->radius = this->drivetrain.trackWidth/2;
-    }
+    if (isnanf(params->radius)) { params->radius = this->drivetrain.trackWidth / 2; }
 
     float curr = this->odom.getPose().theta;
     float theta = dirToSpin(target, curr);
@@ -46,7 +45,7 @@ void Drivebase::Arcturn(float target, float timeout, std::shared_ptr<arcturnPara
         float lvel = ratio * rvel;
 
         std::pair<float, float> normalized = normalize(lvel, rvel, maxSpeed, true);
-        
+
         if (params->dir == 1) {
             drivetrain.leftMotors->move(normalized.first);
             drivetrain.rightMotors->move(normalized.second);
