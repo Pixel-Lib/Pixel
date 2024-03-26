@@ -123,9 +123,12 @@ class Drivebase {
                 float minSpeed = 0;
                 float maxSpeed = 127;
                 float slew = NAN;
+
+                float dlead = 0.5;
+                float glead = 0.2;
         };
         static std::shared_ptr<boomerangParams> defaultBoomerangParams() { return std::make_shared<boomerangParams>(); }
-        void Boomerang(float x, float y, float theta, float dlead, float timeout,
+        void Boomerang(float x, float y, float theta,  float timeout,
                        std::shared_ptr<boomerangParams> boomerangParams = defaultBoomerangParams(), bool async = true);
 
     private:
