@@ -12,7 +12,7 @@ void Drivebase::arcturn(float target, float timeout, arcturnParams params, bool 
     if (isnanf(params.radius)) { params.radius = this->drivetrain.trackWidth / 2; }
 
     float curr = this->odom.getPose().theta;
-    float theta = dirToSpin(target, curr);
+    float theta = angleError(target, curr, true);
 
     float sl = theta * (params.radius + this->extendedDrivetrain.verticalTrackWidth);
     float sr = theta * (params.radius - this->extendedDrivetrain.verticalTrackWidth);
