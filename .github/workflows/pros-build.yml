@@ -54,6 +54,7 @@ jobs:
         id: cache-arm
         uses: actions/cache@v2
         with:
+          key: arm-none-eabi-<target-configuration>-10-2020-q4
           path: |
             arm-none-eabi
             key: arm-none-eabi-<target-configuration>-10-2020-q4
