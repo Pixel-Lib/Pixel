@@ -1,76 +1,75 @@
-name: pr-comment
-
+name: PROS Template
 on:
   pull_request:
-    branches: '*'
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2
 
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
 
-      - name: Get Date
-        id: get-date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-
-      - name: Cache PIP packages
-        uses: actions/cache@v2
+      - name: Install ARM Toolchain
+        uses: fiam/arm-none-eabi-gcc@v1
         with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ steps.get-date.outputs.date }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          release: '10-2020-q4'
 
       - name: PIP Installer
         uses: BSFishy/pip-action@v1
         with:
           packages: pros-cli
-  
-      - name: Testing PROS Install 
-        run: pros --version
 
-      - name: Build PROS Project  
+      - name: Build PROS Project
         run: make clean quick -j
 
       - name: Create Pixel template
-        run: pros m template
+        run: pros make template
 
-      - name: Create template folder
-        run: mkdir template
+      - name: Get zip file name
+        id: get-zip
+        run: echo "::set-output name=zip::$(ls *.zip | sed 's/.zip//')"
 
-      - name: Unzip Template
-        uses: montudor/action-zip@v1.0.0
-        with:
-          args: unzip "template.zip" -d template
-  
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
-          name: template
-          path: 'template/*'
-          retention-days: 89
+          name: ${{ steps.get-zip.outputs.zip }}
+          path: ${{ steps.get-zip.outputs.zip }}.zip
+    outputs:
+      zip: ${{ steps.get-zip.outputs.zip }}
+
+  comment:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ needs.build.outputs.zip }}
 
       - name: Comment PR
-        uses: actions/github-script@v5
+        uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const fs = require('fs');
-            const zip = fs.readFileSync('template/template.zip', 'base64');
-            const issue_number = context.issue.number;
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            github.rest.issues.createComment({
-              owner: owner,
-              repo: repo,
-              issue_number: issue_number,
-              body: "Here's the template zip file:\n\n```" + zip + "```"
+            const artifact = fs.readdirSync('.').find(file => file.endsWith('.zip'));
+            const artifactName = artifact.replace('.zip', '');
+            const url = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+            const message = `<!-- commit-sha: ${process.env.GITHUB_SHA} -->\n## Download the template for this pull request: \n\n> [!NOTE]\n> This is auto generated from [\`${process.env.GITHUB_WORKFLOW}\`](${url})\n- via manual download: [${artifact}](https://nightly.link/${process.env.GITHUB_REPOSITORY}/actions/artifacts/${artifactName}.zip)\n- via PROS Integrated Terminal: \n \`\`\`\ncurl -o ${artifact} https://nightly.link/${process.env.GITHUB_REPOSITORY}/actions/artifacts/${artifactName}.zip;\npros c fetch ${artifact};\npros c apply ${artifact};\nrm ${artifact};\n\`\`\``;
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: message
             });

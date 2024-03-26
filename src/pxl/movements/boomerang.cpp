@@ -2,11 +2,11 @@
 #include "pxl/parametrics/coord.hpp"
 
 namespace pxl {
-void Drivebase::Boomerang(float x, float y, float theta, float dlead, float timeout,
+void Drivebase::Boomerang(float x, float y, float theta, float timeout,
                           std::shared_ptr<boomerangParams> boomerangParams, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
-        pros::Task task([&]() { Boomerang(x, y, theta, timeout, dlead, boomerangParams, false); });
+        pros::Task task([&]() { Boomerang(x, y, theta, timeout, boomerangParams, false); });
         pros::delay(10);
         return;
     }
@@ -19,6 +19,12 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
     bool carrotSettled = false;
     Pose previousCarrot = Pose();
 
+    //*GLEAD*//
+    float distance = this->odom.getPose().distance(targetPose);
+    const Coord inCarrot = Coord(targetPose.x - distance * cos(theta) * boomerangParams->dlead,
+                                 targetPose.y - distance * sin(theta) * boomerangParams->dlead);
+
+    // start the timeout
     Timer localTimeout(timeout);
     localTimeout.start();
     linearController.timerStart();
@@ -30,8 +36,9 @@ void Drivebase::Boomerang(float x, float y, float theta, float dlead, float time
         Coord carrot;
         if (!carrotSettled) {
             // calculate the carrot
-            float distance = this->odom.getPose().distance(targetPose);
-            carrot = Coord(targetPose.x - distance * cos(theta) * dlead, targetPose.y - distance * sin(theta) * dlead);
+            distance = this->odom.getPose().distance(targetPose);
+            carrot = Coord(inCarrot.x + (carrot.x - inCarrot.x) * (1 - boomerangParams->glead),
+                           inCarrot.y + (carrot.y - inCarrot.y) * (1 - boomerangParams->glead));
         } else {
             carrot = Coord(targetPose.x, targetPose.y);
         }
