@@ -4,7 +4,7 @@
 
 namespace pxl {
 
-void Drivebase::Arcturn(float target, float timeout, std::shared_ptr<arcturnParams> params, bool async){
+void Drivebase::Arcturn(float target, float timeout, std::shared_ptr<arcturnParams> params, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
         pros::Task task([&]() { Arcturn(target, timeout, params, false); });
@@ -13,19 +13,18 @@ void Drivebase::Arcturn(float target, float timeout, std::shared_ptr<arcturnPara
     }
 
     float curr = odom.getPose().theta;
-    float theta = dirToSpin(target,curr);
+    float theta = dirToSpin(target, curr);
 
-    float sl = theta * (params->radius+this->extendedDrivetrain.verticalTrackWidth);
-    float sr = theta * (params->radius-this->extendedDrivetrain.verticalTrackWidth);
-    float ratio = sl/sr;
+    float sl = theta * (params->radius + this->extendedDrivetrain.verticalTrackWidth);
+    float sr = theta * (params->radius - this->extendedDrivetrain.verticalTrackWidth);
+    float ratio = sl / sr;
 
-        // start the timeout
+    // start the timeout
     Timer localTimeout(timeout);
     localTimeout.start();
     linearController.timerStart();
 
-    while (!localTimeout.isDone()
-           || !linearController.getExit(error) ){
+    while (!localTimeout.isDone() || !linearController.getExit(error)) {
 
         float error = angleError(target, curr, false);
         float vel = linearController.update(error);
@@ -34,26 +33,25 @@ void Drivebase::Arcturn(float target, float timeout, std::shared_ptr<arcturnPara
         float maxSpeed = params->maxSpeed;
 
         std::pair<float, float> speeds = slewSpeedLimits(params, linearController);
-            minSpeed = speeds.first;
-    maxSpeed = speeds.second;
+        minSpeed = speeds.first;
+        maxSpeed = speeds.second;
 
         vel = std::max(std::abs(vel), minSpeed) * pxl::sgn(vel);
 
-        float rvel = (2 * vel) / (ratio+1);
+        float rvel = (2 * vel) / (ratio + 1);
         rvel = std::abs(rvel) >= maxSpeed ? (maxSpeed * pxl::sgn(rvel)) : rvel;
 
         float lvel = ratio * rvel;
 
-    std::pair<float, float> normalized = normalize(lvel, rvel, maxSpeed,true);
-    if (params->dir ==1 ){
-             drivetrain.leftMotors->move(normalized.first);
-        drivetrain.rightMotors->move(normalized.second);
-    } else {
-             drivetrain.leftMotors->move(-normalized.second);
-        drivetrain.rightMotors->move(-normalized.first);
+        std::pair<float, float> normalized = normalize(lvel, rvel, maxSpeed, true);
+        if (params->dir == 1) {
+            drivetrain.leftMotors->move(normalized.first);
+            drivetrain.rightMotors->move(normalized.second);
+        } else {
+            drivetrain.leftMotors->move(-normalized.second);
+            drivetrain.rightMotors->move(-normalized.first);
+        }
     }
-
-           }
 }
 
-}
+}  // namespace pxl

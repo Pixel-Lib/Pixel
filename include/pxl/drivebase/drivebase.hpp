@@ -56,7 +56,7 @@ class ExtendedDrivetrain {
     public:
         ExtendedDrivetrain(float verticalTrackWidth);
         ExtendedDrivetrain() = default;
-        float verticalTrackWidth;  
+        float verticalTrackWidth;
 };
 
 /**
@@ -120,7 +120,7 @@ class Drivebase {
         //* Boomerang *//
         static bool SemicircleExit(pxl::Pose target, pxl::Coord curr, float radius);
         struct boomerangParams {
-                 float dlead = 0.5;
+                float dlead = 0.5;
                 float glead = 0.2;
 
                 bool forward = true;
@@ -134,16 +134,17 @@ class Drivebase {
                        std::shared_ptr<boomerangParams> boomerangParams = defaultBoomerangParams(), bool async = true);
         //* ARCTURN *//
         struct arcturnParams {
-            float radius = NAN;
-            int dir = 1;
-            bool forward = true;
+                float radius = NAN;
+                int dir = 1;
+                bool forward = true;
                 float minSpeed = 0;
                 float maxSpeed = 127;
                 float slew = NAN;
         };
         static std::shared_ptr<arcturnParams> defaultArcturnParams() { return std::make_shared<arcturnParams>(); }
-        void Arcturn(float target, float timeout,  std::shared_ptr<arcturnParams> params = defaultArcturnParams(),
+        void Arcturn(float target, float timeout, std::shared_ptr<arcturnParams> params = defaultArcturnParams(),
                      bool async = true);
+
     private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         void calibrateIMU(OdomSensors sensors);
@@ -177,10 +178,9 @@ class Drivebase {
         Drivetrain drivetrain;
         OdomSensors sensors;
 
-                ExtendedDrivetrain extendedDrivetrain;
+        ExtendedDrivetrain extendedDrivetrain;
 
-                SeekingController secondaryController;
-
+        SeekingController secondaryController;
 };
 
 };  // namespace pxl
