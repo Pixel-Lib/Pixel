@@ -55,7 +55,7 @@ void Drivebase::Arcturn(float target, float timeout, std::shared_ptr<arcturnPara
 
         pros::delay(10);
     }
-        drivetrain.leftMotors->move(0);
+    drivetrain.leftMotors->move(0);
     drivetrain.rightMotors->move(0);
 }
 
