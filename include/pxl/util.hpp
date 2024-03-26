@@ -157,6 +157,13 @@ template <typename T> T avg(const std::vector<T> &vec) {
  */
 std::pair<float, float> normalize(float lateralOut, float angularOut, float maxSpeed);
 
-int dir2spin(float target, float currHeading);
+/**
+ * Calculates the spin direction based on the target and current heading.
+ *
+ * @param target The target heading.
+ * @param currHeading The current heading.
+ * @return The spin direction as an integer value.
+ */
+int dirToSpin(float target, float currHeading);
 
 }  // namespace pxl
