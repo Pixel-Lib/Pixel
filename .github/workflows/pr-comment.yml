@@ -11,9 +11,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      zip: ${{ steps.get-zip.outputs.zip }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -38,13 +38,15 @@ jobs:
 
       - name: Get zip file name
         id: get-zip
-        run: echo "::set-output name=zip::$(ls *.zip)"
+        run: echo "::set-output name=zip::$(ls *.zip | sed 's/.zip//')"
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: ${{ steps.get-zip.outputs.zip }}
-          path: ${{ steps.get-zip.outputs.zip }}
+          path: ${{ steps.get-zip.outputs.zip }}.zip
+    outputs:
+      zip: ${{ steps.get-zip.outputs.zip }}
 
   comment:
     needs: build
