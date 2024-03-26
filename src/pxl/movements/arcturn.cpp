@@ -1,3 +1,4 @@
+#include <cmath>
 #include "pxl/drivebase/drivebase.hpp"
 
 namespace pxl {
@@ -9,8 +10,11 @@ void Drivebase::Arcturn(float target, float timeout, std::shared_ptr<arcturnPara
         pros::delay(10);
         return;
     }
+    if (isnanf(params->radius)) {
+        params->radius = this->drivetrain.trackWidth/2;
+    }
 
-    float curr = odom.getPose().theta;
+    float curr = this->odom.getPose().theta;
     float theta = dirToSpin(target, curr);
 
     float sl = theta * (params->radius + this->extendedDrivetrain.verticalTrackWidth);
@@ -25,12 +29,12 @@ void Drivebase::Arcturn(float target, float timeout, std::shared_ptr<arcturnPara
     while (!localTimeout.isDone() || !linearController.getExit(error)) {
 
         float error = angleError(target, curr, false);
-        float vel = linearController.update(error);
+        float vel = this->linearController.update(error);
 
         float minSpeed = params->minSpeed;
         float maxSpeed = params->maxSpeed;
 
-        std::pair<float, float> speeds = slewSpeedLimits(params, linearController);
+        std::pair<float, float> speeds = this->slewSpeedLimits(params, this->linearController);
         minSpeed = speeds.first;
         maxSpeed = speeds.second;
 
@@ -42,6 +46,7 @@ void Drivebase::Arcturn(float target, float timeout, std::shared_ptr<arcturnPara
         float lvel = ratio * rvel;
 
         std::pair<float, float> normalized = normalize(lvel, rvel, maxSpeed, true);
+        
         if (params->dir == 1) {
             drivetrain.leftMotors->move(normalized.first);
             drivetrain.rightMotors->move(normalized.second);
