@@ -15,10 +15,8 @@ bool Drivebase::SemicircleExit(pxl::Pose pose, pxl::Coord point, float radius) {
     float angle = std::atan2(dy, dx);
 
     // Normalize the angles to the range [-pi, pi]
-    pose.theta = std::fmod(pose.theta, 2 * M_PI);
-    if (pose.theta < 0) { pose.theta += 2 * M_PI; }
-    angle = std::fmod(angle, 2 * M_PI);
-    if (angle < 0) { angle += 2 * M_PI; }
+    pose.theta = pxl::wrapToPi(pose.theta);
+    angle = pxl::wrapToPi(angle);
 
     // Check if the point is within the semicircle
     return std::abs(pose.theta - angle) <= M_PI;
