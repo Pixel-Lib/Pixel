@@ -45,5 +45,7 @@ std::pair<float, float> normalize(float lateralOut, float angularOut, float maxS
     leftPower = (ratio > 1) ? leftPower / ratio : leftPower;
     rightPower = (ratio > 1) ? rightPower / ratio : rightPower;
     return std::make_pair(leftPower, rightPower);
+}int dirToSpin(float target, float currHeading) {
+    return (angleError(target, currHeading, false) > 180 ? 1 : -1);
 }
 }  // namespace pxl
