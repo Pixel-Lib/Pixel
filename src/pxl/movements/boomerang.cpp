@@ -31,6 +31,7 @@ void Drivebase::Boomerang(float x, float y, float theta, float timeout,
     }
 
     Pose targetPose = Pose(x, y, degToRad(theta));
+    if (!boomerangParams->forward) { targetPose.theta = wrapToPi(targetPose.theta + M_PI); }
 
     float linearError;
     float angularError;
