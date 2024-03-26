@@ -119,6 +119,7 @@ class Drivebase {
         void Turn(Pose target, float timeout, std::shared_ptr<turnParams> params = defaultTurnParams(),
                   bool async = true);
         //* Boomerang *//
+        bool SemicircleExit(pxl::Pose pose, pxl::Coord point, float radius);
         struct boomerangParams {
                 float minSpeed = 0;
                 float maxSpeed = 127;

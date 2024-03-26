@@ -2,6 +2,33 @@
 #include "pxl/parametrics/coord.hpp"
 
 namespace pxl {
+bool SemicircleExit(pxl::Pose pose, pxl::Coord point, float radius) {
+    // Calculate the distance from the point to the pose
+    float dx = point.x - pose.x;
+    float dy = point.y - pose.y;
+    float distance = std::sqrt(dx * dx + dy * dy);
+
+    // Check if the point is within the circle
+    if (distance > radius) {
+        return false;
+    }
+
+    // Calculate the angle from the pose to the point
+    float angle = std::atan2(dy, dx);
+
+    // Normalize the angles to the range [-pi, pi]
+    pose.theta = std::fmod(pose.theta, 2 * M_PI);
+    if (pose.theta < 0) {
+        pose.theta += 2 * M_PI;
+    }
+    angle = std::fmod(angle, 2 * M_PI);
+    if (angle < 0) {
+        angle += 2 * M_PI;
+    }
+
+    // Check if the point is within the semicircle
+    return std::abs(pose.theta - angle) <= M_PI;
+}
 void Drivebase::Boomerang(float x, float y, float theta, float timeout,
                           std::shared_ptr<boomerangParams> boomerangParams, bool async) {
     mutex.take(TIMEOUT_MAX);
@@ -18,6 +45,7 @@ void Drivebase::Boomerang(float x, float y, float theta, float timeout,
 
     bool carrotSettled = false;
     Pose previousCarrot = Pose();
+    const float carrotSettleThreshold = 0.01;
 
     //*GLEAD*//
     float distance = this->odom.getPose().distance(targetPose);
@@ -43,7 +71,7 @@ void Drivebase::Boomerang(float x, float y, float theta, float timeout,
             carrot = Coord(targetPose.x, targetPose.y);
         }
 
-        if (previousCarrot.distance(carrot) < 0.01) { carrotSettled = true; }
+        if (previousCarrot.distance(carrot) < carrotSettleThreshold) { carrotSettled = true; }
         previousCarrot = carrot;
 
         linearError = this->odom.getPose().distance(carrot);
