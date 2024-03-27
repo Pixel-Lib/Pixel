@@ -62,8 +62,7 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
             distance = this->odom.getPose().distance(targetPose);
             carrot = Coord(inCarrot.x + (carrot.x - inCarrot.x) * (1 - params.glead),
                            inCarrot.y + (carrot.y - inCarrot.y) * (1 - params.glead));
-        }
-        if (carrotSettled.first && !carrotSettled.second) {
+        } else if (carrotSettled.first && !carrotSettled.second) {
             // calculate the carrot
             carrot = Coord(targetPose.x - distance * cos(theta) * params.dlead,
                            targetPose.y - distance * sin(theta) * params.dlead);
