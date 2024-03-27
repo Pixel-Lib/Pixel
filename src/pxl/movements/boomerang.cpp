@@ -1,3 +1,4 @@
+#include <utility>
 #include "pxl/drivebase/drivebase.hpp"
 #include "pxl/parametrics/coord.hpp"
 
@@ -35,7 +36,8 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
     float linearError;
     float angularError;
 
-    bool carrotSettled = false;
+    // bool carrotSettled = false;
+    std::pair<bool, bool>carrotSettled = std::make_pair(false, false);
     Pose previousCarrot = Pose();
     const float carrotSettleThreshold = 0.01;
 
@@ -52,18 +54,23 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
     angularController.timerStart();
 
     while (!localTimeout.isDone() || !linearController.getExit(linearError) && !angularController.getExit(angularError)
-           || SemicircleExit(carrot, odom.getPose(), previousCarrot.distance(carrot)) / 0.01) {
+           || SemicircleExit(targetPose, odom.getPose(), previousCarrot.distance(carrot)) / 0.01) {
 
-        if (!carrotSettled) {
-            // calculate the carrot
+        if (!carrotSettled.first) {
+            // calculate the glead carrot
             distance = this->odom.getPose().distance(targetPose);
             carrot = Coord(inCarrot.x + (carrot.x - inCarrot.x) * (1 - params.glead),
                            inCarrot.y + (carrot.y - inCarrot.y) * (1 - params.glead));
+        }if(carrotSettled.first && !carrotSettled.second){
+            // calculate the carrot
+            carrot = Coord(targetPose.x - distance * cos(theta) * params.dlead, targetPose.y - distance * sin(theta) * params.dlead);
         } else {
+            // switch to the target
             carrot = Coord(targetPose.x, targetPose.y);
         }
 
-        if (previousCarrot.distance(carrot) < carrotSettleThreshold) { carrotSettled = true; }
+        if (SemicircleExit(inCarrot, odom.getPose(), previousCarrot.distance(carrot)) * drivetrain.trackWidth) { carrotSettled.first = true; }
+        if (previousCarrot.distance(carrot) < carrotSettleThreshold && carrotSettled.first) { carrotSettled.second = true; }
         previousCarrot = carrot;
 
         linearError = this->odom.getPose().distance(carrot);
@@ -96,7 +103,7 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
         if (overturn > 0) linearOutput -= linearOutput > 0 ? overturn : -overturn;
 
         // if the carrot has settled, reduce the linear output by the cosine of the angular error
-        if (carrotSettled) linearOutput *= (std::cos(degToRad(angularError)) + params.minAccel);
+        if (carrotSettled.second) linearOutput *= (std::cos(degToRad(angularError)) + params.minAccel);
 
         // if the robot is moving backwards, negate the linear output
         if (!params.forward) linearOutput = -linearOutput;
