@@ -71,7 +71,7 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
             carrot = Coord(targetPose.x, targetPose.y);
         }
 
-        if (SemicircleExit(inCarrot, odom.getPose(), previousCarrot.distance(carrot)) * drivetrain.trackWidth) {
+        if (SemicircleExit(Pose(inCarrot.x, inCarrot.y,targetPose.theta), odom.getPose(), previousCarrot.distance(carrot) / 0.01 * drivetrain.trackWidth)) {
             carrotSettled.first = true;
         }
         if (previousCarrot.distance(carrot) < carrotSettleThreshold && carrotSettled.first) {
