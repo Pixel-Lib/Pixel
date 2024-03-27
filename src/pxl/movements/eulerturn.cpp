@@ -26,7 +26,9 @@ void Drivebase::eulerTurn(float target, float rate, float timeout, eulerTurnPara
         float sr = target * (1 / curvature - this->drivetrain.trackWidth);
         float ratio = sl / sr;
 
-        float vel = this->linearController.update(angleError(target, curr, false));
+        float error = angleError(target, curr, false);
+
+        float vel = this->linearController.update(error);
         float minSpeed = params.minSpeed;
         float maxSpeed = params.maxSpeed;
 
