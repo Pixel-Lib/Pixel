@@ -15,9 +15,13 @@ void Drivebase::moveToPoint(float x, float y, float timeout, moveToPointParams p
     linearController.timerStart();
     angularController.timerStart();
 
-//     while (!localTimeout.isDone() || !linearController.getExit(error)) {
-//         float currX = this->odom.getPose().x;
+    float linearError;
+    float angularError;
 
-// }
+    while (!localTimeout.isDone()
+           || !linearController.getExit(linearError) && !angularController.getExit(angularError)){
+        linearError = this->odom.getPose().distance(target);
+        float currHeading = this->odom.getPose().theta;
+        }
 }
 }
