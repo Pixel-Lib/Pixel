@@ -149,6 +149,16 @@ class Drivebase {
         };
         static arcturnParams defaultArcturnParams() { return arcturnParams(); }
         void arcturn(float target, float timeout, arcturnParams params = defaultArcturnParams(), bool async = true);
+        //* EULER_TURN *//
+        struct eulerTurnParams {
+                int dir = 1;
+                bool forward = true;
+                float minSpeed = 0;
+                float maxSpeed = 127;
+                float slew = NAN;
+        };
+        static eulerTurnParams defaultEulerTurnParams() { return eulerTurnParams(); }
+        void eulerTurn(float target,float rate, float timeout, eulerTurnParams params = defaultEulerTurnParams(), bool async = true);
 
     private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
