@@ -148,7 +148,7 @@ class Drivebase {
                 float slew = NAN;
         };
         static arcturnParams defaultArcturnParams() { return arcturnParams(); }
-        void arcturn(float target, float timeout, arcturnParams params = defaultArcturnParams(), bool async = true);
+        void arcTurn(float target, float timeout, arcturnParams params = defaultArcturnParams(), bool async = true);
         //* EULER_TURN *//
         struct eulerTurnParams {
                 bool forward = true;

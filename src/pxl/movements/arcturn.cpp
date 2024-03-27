@@ -2,10 +2,10 @@
 
 namespace pxl {
 
-void Drivebase::arcturn(float target, float timeout, arcturnParams params, bool async) {
+void Drivebase::arcTurn(float target, float timeout, arcturnParams params, bool async) {
     mutex.take(TIMEOUT_MAX);
     if (async) {
-        pros::Task task([&]() { arcturn(target, timeout, params, false); });
+        pros::Task task([&]() { arcTurn(target, timeout, params, false); });
         pros::delay(10);
         return;
     }

@@ -138,11 +138,11 @@ void autonomous() {
     //? Turn to (18,0) degrees with a 1000 ms timeout
     drivebase.turnToPoint(18, 10, 1000);
     //? Arc turn to 135 degrees with a 2000 ms timeout
-    drivebase.arcturn(135, 2000);
+    drivebase.arcTurn(135, 2000);
     //? Boomerang to (18,0,0) with a 2000 ms timeout
     drivebase.boomerang(18, 0, 0, 2000);
     //? Arc turn to 90 degrees with a 2000 ms timeout, with a radius of 6 inches and a forward direction of false
-    drivebase.arcturn(90, 2000, {.radius = 6, .forward = false});
+    drivebase.arcTurn(90, 2000, {.radius = 6, .forward = false});
     //? Boomerang to (0,0,180) with a 3000 ms timeout, with a forward direction of false
     drivebase.boomerang(0, 0, 180, 3000.0, {.forward = false});
     //? Euler turn to 90 degrees with a 4000 ms timeout, forward direction of false, minimum speed of 20, and maximum
