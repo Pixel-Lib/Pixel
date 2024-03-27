@@ -9,7 +9,9 @@ void Drivebase::arcturn(float target, float timeout, arcturnParams params, bool 
         pros::delay(10);
         return;
     }
-    if (isnanf(params.radius)) { params.radius = this->drivetrain.trackWidth / 2.0f; }
+    if (isnanf(params.radius)) { 
+        if (params.right )params.radius = this->drivetrain.trackWidth / 2.0f;
+        else  params.radius = -this->drivetrain.trackWidth / 2.0f;}
 
     float curr = this->odom.getPose().theta;
     float theta = angleError(target, curr, true);
@@ -44,7 +46,7 @@ void Drivebase::arcturn(float target, float timeout, arcturnParams params, bool 
 
         std::pair<float, float> normalized = normalize(lvel, rvel, maxSpeed, true);
 
-        if (params.dir == 1) {
+        if (params.forward) {
             drivetrain.leftMotors->move(normalized.first);
             drivetrain.rightMotors->move(normalized.second);
         } else {

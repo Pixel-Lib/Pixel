@@ -145,9 +145,8 @@ void autonomous() {
     drivebase.arcturn(90, 2000, {.radius = 6, .forward = false});
     //? Boomerang to (0,0,180) with a 3000 ms timeout, with a forward direction of false
     drivebase.boomerang(0, 0, 180, 3000.0, {.forward = false});
-    //? Euler turn to 90 degrees with a 4000 ms timeout, with a direction of -1, forward direction of false, minimum
-    //speed of 20, and maximum speed of 100
-    drivebase.eulerTurn(90.0, 0.1, 4000.0, {.dir = -1, .forward = false, .minSpeed = 20, .maxSpeed = 100});
+    //? Euler turn to 90 degrees with a 4000 ms timeout, forward direction of false, minimum speed of 20, and maximum speed of 100
+    drivebase.eulerTurn(90.0, -0.1, 4000.0, {.forward = false, .minSpeed = 20, .maxSpeed = 100});
     //? boomerang to (0,0,0) with a 1000 ms timeout, with a dlead of 0.2, glead of 0.5, and slew of 10
     drivebase.boomerang(0, 0, 0, 1000, {.dlead = 0.2, .glead = 0.5, .slew = 10});
 }

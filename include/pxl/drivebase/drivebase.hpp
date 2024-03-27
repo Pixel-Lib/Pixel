@@ -141,7 +141,7 @@ class Drivebase {
         //* ARCTURN *//
         struct arcturnParams {
                 float radius = NAN;
-                int dir = 1;
+                bool right = true;
                 bool forward = true;
                 float minSpeed = 0;
                 float maxSpeed = 127;
@@ -151,7 +151,6 @@ class Drivebase {
         void arcturn(float target, float timeout, arcturnParams params = defaultArcturnParams(), bool async = true);
         //* EULER_TURN *//
         struct eulerTurnParams {
-                int dir = 1;
                 bool forward = true;
                 float minSpeed = 0;
                 float maxSpeed = 127;

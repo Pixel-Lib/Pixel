@@ -42,7 +42,7 @@ void Drivebase::eulerTurn(float target, float rate, float timeout, eulerTurnPara
 
         std::pair<float, float> normalized = normalize(lvel, rvel, maxSpeed, true);
 
-        if (params.dir == 1) {
+        if (params.forward) {
             drivetrain.leftMotors->move(normalized.first);
             drivetrain.rightMotors->move(normalized.second);
         } else {
