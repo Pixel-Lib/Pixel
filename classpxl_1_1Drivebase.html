@@ -100,6 +100,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpxl_1_1Drivebase_1_1driveParams.html">driveParams</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpxl_1_1Drivebase_1_1eulerTurnParams.html">eulerTurnParams</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpxl_1_1Drivebase_1_1turnToPointParams.html">turnToPointParams</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -119,6 +121,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a182cb2bbc774caa274d0d488dafaa6d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af13cdc39c4365356ed4961ac2a5c02fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#af13cdc39c4365356ed4961ac2a5c02fb">arcturn</a> (float target, float timeout, <a class="el" href="structpxl_1_1Drivebase_1_1arcturnParams.html">arcturnParams</a> params=<a class="el" href="classpxl_1_1Drivebase.html#acc25f3130a9d990e94dc6aae415c3857">defaultArcturnParams</a>(), bool async=true)</td></tr>
 <tr class="separator:af13cdc39c4365356ed4961ac2a5c02fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2899815c1f9fad6d28a660107846bf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#ab2899815c1f9fad6d28a660107846bf6">eulerTurn</a> (float target, float rate, float timeout, <a class="el" href="structpxl_1_1Drivebase_1_1eulerTurnParams.html">eulerTurnParams</a> params=<a class="el" href="classpxl_1_1Drivebase.html#a73f894f6ef00902b0601f8edc51c93b9">defaultEulerTurnParams</a>(), bool async=true)</td></tr>
+<tr class="separator:ab2899815c1f9fad6d28a660107846bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cc11bc53b3e7d37c8bd74ff54565e71"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a0cc11bc53b3e7d37c8bd74ff54565e71">isDriverControl</a> ()</td></tr>
 <tr class="separator:a0cc11bc53b3e7d37c8bd74ff54565e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -134,6 +138,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a869b3edc637b948ca34d4686a19094b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc25f3130a9d990e94dc6aae415c3857"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structpxl_1_1Drivebase_1_1arcturnParams.html">arcturnParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#acc25f3130a9d990e94dc6aae415c3857">defaultArcturnParams</a> ()</td></tr>
 <tr class="separator:acc25f3130a9d990e94dc6aae415c3857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73f894f6ef00902b0601f8edc51c93b9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structpxl_1_1Drivebase_1_1eulerTurnParams.html">eulerTurnParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a73f894f6ef00902b0601f8edc51c93b9">defaultEulerTurnParams</a> ()</td></tr>
+<tr class="separator:a73f894f6ef00902b0601f8edc51c93b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -454,6 +460,31 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a73f894f6ef00902b0601f8edc51c93b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73f894f6ef00902b0601f8edc51c93b9">&#9670;&nbsp;</a></span>defaultEulerTurnParams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structpxl_1_1Drivebase_1_1eulerTurnParams.html">eulerTurnParams</a> pxl::Drivebase::defaultEulerTurnParams </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a8898ef5e73867216635f477331f1c880"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8898ef5e73867216635f477331f1c880">&#9670;&nbsp;</a></span>defaultTurnParams()</h2>
 
@@ -502,6 +533,52 @@ Friends</h2></td></tr>
           <td></td>
           <td class="paramtype"><a class="el" href="structpxl_1_1Drivebase_1_1driveParams.html">driveParams</a>&#160;</td>
           <td class="paramname"><em>params</em> = <code><a class="el" href="classpxl_1_1Drivebase.html#ade8b1c3fe7c286d13ffdf3b8e830e5ed">defaultDriveParams</a>()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>async</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2899815c1f9fad6d28a660107846bf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2899815c1f9fad6d28a660107846bf6">&#9670;&nbsp;</a></span>eulerTurn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pxl::Drivebase::eulerTurn </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpxl_1_1Drivebase_1_1eulerTurnParams.html">eulerTurnParams</a>&#160;</td>
+          <td class="paramname"><em>params</em> = <code><a class="el" href="classpxl_1_1Drivebase.html#a73f894f6ef00902b0601f8edc51c93b9">defaultEulerTurnParams</a>()</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -913,12 +990,13 @@ template&lt;typename T &gt; </div>
 <li>src/pxl/movements/<a class="el" href="arcturn_8cpp.html">arcturn.cpp</a></li>
 <li>src/pxl/movements/<a class="el" href="boomerang_8cpp.html">boomerang.cpp</a></li>
 <li>src/pxl/movements/<a class="el" href="drive_8cpp.html">drive.cpp</a></li>
+<li>src/pxl/movements/<a class="el" href="eulerturn_8cpp.html">eulerturn.cpp</a></li>
 <li>src/pxl/movements/<a class="el" href="turntopoint_8cpp.html">turntopoint.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 27 2024 15:32:01 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Mar 27 2024 16:07:27 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
