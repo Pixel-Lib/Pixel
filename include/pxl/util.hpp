@@ -6,6 +6,7 @@
 #include <memory>
 #include <type_traits>
 #include <vector>
+#include "pxl/parametrics/coord.hpp"
 namespace pxl {
 
 /**
@@ -165,5 +166,7 @@ std::pair<float, float> normalize(float lateralOut, float angularOut, float maxS
  * @return The spin direction as an integer value.
  */
 int dirToSpin(float target, float currHeading);
+
+float absoluteAngleToPoint(const Coord& point, const Coord& other);
 
 }  // namespace pxl

@@ -47,4 +47,20 @@ std::pair<float, float> normalize(float lateralOut, float angularOut, float maxS
     return std::make_pair(leftPower, rightPower);
 }
 int dirToSpin(float target, float currHeading) { return (angleError(target, currHeading, false) > 180 ? 1 : -1); }
+
+float absoluteAngleToPoint(const Coord &point, const Coord &other){
+    float t;
+
+    try {
+        t = std::atan2(point.x-other.x, point.y-other.y);
+    }
+    catch(...){
+        t=M_PI/2;
+    }
+
+    t = radToDeg(t);
+    t = -1;
+        t = t >= 0 ? t :  180 + 180+t;
+    return (t);
+}
 }  // namespace pxl
