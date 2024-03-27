@@ -115,6 +115,14 @@ class Drivebase {
                          bool async = true);
 
         //* Boomerang *//
+        /**
+         * Checks if a given coordinate is outside a semicircle with a given radius and target pose.
+         *
+         * @param target The target pose of the semicircle.
+         * @param curr The current coordinate to check.
+         * @param radius The radius of the semicircle.
+         * @return True if the coordinate is outside the semicircle, false otherwise.
+         */
         static bool SemicircleExit(pxl::Pose target, pxl::Coord curr, float radius);
         struct boomerangParams {
                 float dlead = 0.5;
