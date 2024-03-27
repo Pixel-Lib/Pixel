@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['object_5ftracking_2ehpp_109',['object_tracking.hpp',['../object__tracking_8hpp.html',1,'']]],
-  ['objecttracker_110',['ObjectTracker',['../classpxl_1_1ObjectTracker.html',1,'pxl']]],
+  ['object_5ftracking_2ehpp_108',['object_tracking.hpp',['../object__tracking_8hpp.html',1,'']]],
+  ['objecttracker_109',['ObjectTracker',['../classpxl_1_1ObjectTracker.html',1,'pxl']]],
+  ['odom_110',['Odom',['../classpxl_1_1Odom.html#a1d431b27727093276f854509297768e3',1,'pxl::Odom::Odom(std::vector&lt; std::unique_ptr&lt; TrackingWheel &gt;&gt; &amp;verticals, std::vector&lt; std::unique_ptr&lt; TrackingWheel &gt;&gt; &amp;horizontals, std::vector&lt; std::unique_ptr&lt; TrackingWheel &gt;&gt; &amp;drivetrain, std::vector&lt; std::shared_ptr&lt; pros::IMU &gt;&gt; &amp;imu)'],['../classpxl_1_1Odom.html#a0cfb4288b37d6e62e6275b79a0ac20e5',1,'pxl::Odom::Odom()=default']]],
   ['odom_111',['odom',['../classpxl_1_1Drivebase.html#a1858f1d0047b447e48ad60f58949c9b8',1,'pxl::Drivebase']]],
-  ['odom_112',['Odom',['../classpxl_1_1Odom.html#a1d431b27727093276f854509297768e3',1,'pxl::Odom::Odom(std::vector&lt; std::unique_ptr&lt; TrackingWheel &gt;&gt; &amp;verticals, std::vector&lt; std::unique_ptr&lt; TrackingWheel &gt;&gt; &amp;horizontals, std::vector&lt; std::unique_ptr&lt; TrackingWheel &gt;&gt; &amp;drivetrain, std::vector&lt; std::shared_ptr&lt; pros::IMU &gt;&gt; &amp;imu)'],['../classpxl_1_1Odom.html#a0cfb4288b37d6e62e6275b79a0ac20e5',1,'pxl::Odom::Odom()=default'],['../classpxl_1_1Odom.html',1,'pxl::Odom']]],
+  ['odom_112',['Odom',['../classpxl_1_1Odom.html',1,'pxl']]],
   ['odom_2ecpp_113',['odom.cpp',['../odom_8cpp.html',1,'']]],
   ['odom_2ehpp_114',['odom.hpp',['../odom_8hpp.html',1,'']]],
   ['odomsensors_115',['OdomSensors',['../structpxl_1_1OdomSensors.html#ad0936e05daef050fe297261f8846e803',1,'pxl::OdomSensors']]],
