@@ -39,13 +39,14 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
 
     // bool carrotSettled = false;
     std::pair<bool, bool> carrotSettled = std::make_pair(false, false);
-    const float carrotSettleThreshold = 0.01;
+    static const float carrotSettleThreshold = 0.01;
 
     //*GLEAD*//
     float distance = this->odom.getPose().distance(targetPose);
     const Coord inCarrot =
         Coord(targetPose.x - distance * cos(theta) * params.dlead, targetPose.y - distance * sin(theta) * params.dlead);
     Coord carrot = inCarrot;
+
     Coord previousCarrot = inCarrot;
     Pose prevPose = this->odom.getPose();
 
