@@ -157,7 +157,8 @@ class Drivebase {
                 float slew = NAN;
         };
         static eulerTurnParams defaultEulerTurnParams() { return eulerTurnParams(); }
-        void eulerTurn(float target,float rate, float timeout, eulerTurnParams params = defaultEulerTurnParams(), bool async = true);
+        void eulerTurn(float target, float rate, float timeout, eulerTurnParams params = defaultEulerTurnParams(),
+                       bool async = true);
 
     private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
