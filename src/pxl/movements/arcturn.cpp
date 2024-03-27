@@ -9,7 +9,7 @@ void Drivebase::arcturn(float target, float timeout, arcturnParams params, bool 
         pros::delay(10);
         return;
     }
-    if (isnanf(params.radius)) { params.radius = this->drivetrain.trackWidth / 2; }
+    if (isnanf(params.radius)) { params.radius = this->drivetrain.trackWidth / 2.0f; }
 
     float curr = this->odom.getPose().theta;
     float theta = angleError(target, curr, true);
