@@ -57,7 +57,7 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
     angularController.timerStart();
 
     while (!localTimeout.isDone() || !linearController.getExit(linearError) && !angularController.getExit(angularError)
-           || SemicircleExit(targetPose, odom.getPose(), previousCarrot.distance(carrot)) / 0.01) {
+           || SemicircleExit(targetPose, odom.getPose(), prevPose.distance(odom.getPose())) / 0.01) {
 
         if (!carrotSettled.first) {
             // calculate the glead carrot
