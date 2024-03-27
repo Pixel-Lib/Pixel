@@ -1,4 +1,5 @@
 #include <utility>
+
 #include "pxl/drivebase/drivebase.hpp"
 #include "pxl/parametrics/coord.hpp"
 
@@ -37,7 +38,7 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
     float angularError;
 
     // bool carrotSettled = false;
-    std::pair<bool, bool>carrotSettled = std::make_pair(false, false);
+    std::pair<bool, bool> carrotSettled = std::make_pair(false, false);
     Pose previousCarrot = Pose();
     const float carrotSettleThreshold = 0.01;
 
@@ -61,16 +62,22 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
             distance = this->odom.getPose().distance(targetPose);
             carrot = Coord(inCarrot.x + (carrot.x - inCarrot.x) * (1 - params.glead),
                            inCarrot.y + (carrot.y - inCarrot.y) * (1 - params.glead));
-        }if(carrotSettled.first && !carrotSettled.second){
+        }
+        if (carrotSettled.first && !carrotSettled.second) {
             // calculate the carrot
-            carrot = Coord(targetPose.x - distance * cos(theta) * params.dlead, targetPose.y - distance * sin(theta) * params.dlead);
+            carrot = Coord(targetPose.x - distance * cos(theta) * params.dlead,
+                           targetPose.y - distance * sin(theta) * params.dlead);
         } else {
             // switch to the target
             carrot = Coord(targetPose.x, targetPose.y);
         }
 
-        if (SemicircleExit(inCarrot, odom.getPose(), previousCarrot.distance(carrot)) * drivetrain.trackWidth) { carrotSettled.first = true; }
-        if (previousCarrot.distance(carrot) < carrotSettleThreshold && carrotSettled.first) { carrotSettled.second = true; }
+        if (SemicircleExit(inCarrot, odom.getPose(), previousCarrot.distance(carrot)) * drivetrain.trackWidth) {
+            carrotSettled.first = true;
+        }
+        if (previousCarrot.distance(carrot) < carrotSettleThreshold && carrotSettled.first) {
+            carrotSettled.second = true;
+        }
         previousCarrot = carrot;
 
         linearError = this->odom.getPose().distance(carrot);
