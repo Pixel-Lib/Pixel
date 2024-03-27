@@ -1,4 +1,5 @@
 #include "pxl/drivebase/drivebase.hpp"
+#include "pxl/util.hpp"
 
 namespace pxl {
 void Drivebase::moveToPoint(float x, float y, float timeout, moveToPointParams params, bool async) {
@@ -22,6 +23,19 @@ void Drivebase::moveToPoint(float x, float y, float timeout, moveToPointParams p
            || !linearController.getExit(linearError) && !angularController.getExit(angularError)){
         linearError = this->odom.getPose().distance(target);
         float currHeading = this->odom.getPose().theta;
+        float targetHeading = absoluteAngleToPoint(odom.getPose(), target);
+
+        float angularError = radToDeg(angleError(targetHeading, currHeading, false));
+
+        float cre = fabs(angularError) > 90 ? 0.1 : std::cos(degToRad(angularError));
+
+        float angularOutput = angularController.update(angularError);
+        float linearOutput = cre * linearController.update(linearError);
+
+float rVel = (linearOutput - (fabs(angularOutput) * params.rotationBias)) + angularOutput;
+float lVel = (linearOutput - (fabs(angularOutput) * params.rotationBias)) - angularOutput;
+
+
         }
 }
 }
