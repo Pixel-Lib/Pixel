@@ -167,6 +167,13 @@ std::pair<float, float> normalize(float lateralOut, float angularOut, float maxS
  */
 int dirToSpin(float target, float currHeading);
 
+/**
+ * Calculates the absolute angle between two points.
+ *
+ * @param point The first point.
+ * @param other The second point.
+ * @return The absolute angle between the two points.
+ */
 float absoluteAngleToPoint(const Coord& point, const Coord& other);
 
 }  // namespace pxl
