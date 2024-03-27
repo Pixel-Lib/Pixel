@@ -167,7 +167,7 @@ class Drivebase {
                 float slew = NAN;
         };
         static moveToPointParams defaultMoveToPointParams() { return moveToPointParams(); }
-        void moveToCoord(float x, float y, float timeout, moveToPointParams params = defaultMoveToPointParams(),
+        void moveToPoint(float x, float y, float timeout, moveToPointParams params = defaultMoveToPointParams(),
                          bool async = true);
     private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
