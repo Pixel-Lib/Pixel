@@ -159,7 +159,16 @@ class Drivebase {
         static eulerTurnParams defaultEulerTurnParams() { return eulerTurnParams(); }
         void eulerTurn(float target, float rate, float timeout, eulerTurnParams params = defaultEulerTurnParams(),
                        bool async = true);
-
+        //* MOVE_TO_POINT *//
+        struct moveToPointParams {
+                float rotationBias = 0.2;
+                float minSpeed = 0;
+                float maxSpeed = 127;
+                float slew = NAN;
+        };
+        static moveToPointParams defaultMoveToPointParams() { return moveToPointParams(); }
+        void moveToCoord(float x, float y, float timeout, moveToPointParams params = defaultMoveToPointParams(),
+                         bool async = true);
     private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         void calibrateIMU(OdomSensors sensors);
