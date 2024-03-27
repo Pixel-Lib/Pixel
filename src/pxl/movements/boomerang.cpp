@@ -48,6 +48,8 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
         Coord(targetPose.x - distance * cos(theta) * params.dlead, targetPose.y - distance * sin(theta) * params.dlead);
     Coord carrot = inCarrot;
 
+    static Pose prevPose = this->odom.getPose();
+
     // start the timeout
     Timer localTimeout(timeout);
     localTimeout.start();
@@ -120,6 +122,8 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
 
         drivetrain.leftMotors->move(normalized.first);
         drivetrain.rightMotors->move(normalized.second);
+
+        prevPose = this->odom.getPose();
 
         pros::delay(10);
     }
