@@ -1,6 +1,4 @@
 #include "pxl/drivebase/drivebase.hpp"
-#include "pxl/drivebase/exit_conditions.hpp"
-#include "pxl/util.hpp"
 
 namespace pxl {
 void Drivebase::moveToPoint(float x, float y, float timeout, moveToPointParams params, bool async) {
