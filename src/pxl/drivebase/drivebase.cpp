@@ -20,7 +20,8 @@ pxl::Drivebase::Drivebase(Drivetrain drivetrain, OdomSensors sensors, SeekingCon
     : drivetrain(drivetrain),
       sensors(sensors),
       linearController(linearController),
-      angularController(angularController), secondaryController(linearController) {}
+      angularController(angularController),
+      secondaryController(linearController) {}
 pxl::ExtendedDrivetrain::ExtendedDrivetrain(float verticalTrackWidth) : verticalTrackWidth(verticalTrackWidth) {}
 void pxl::Drivebase::calibrateIMU(OdomSensors sensors) {
     for (int attempt = 1; attempt <= 5 && !isDriverControl(); attempt++) {

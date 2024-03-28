@@ -6,6 +6,7 @@
 #include <memory>
 #include <type_traits>
 #include <vector>
+
 #include "pxl/parametrics/coord.hpp"
 namespace pxl {
 
@@ -143,9 +144,9 @@ float ema(float current, float previous, float smooth);
  * @tparam vec The vector of elements.
  * @return The average value (in any datatype).
  */
-template <typename T> T avg(const std::vector<T> &vec) {
+template <typename T> T avg(const std::vector<T>& vec) {
     T sum = T();  // Initialize sum to default value for T
-    for (const T &elem : vec) { sum += elem; }
+    for (const T& elem : vec) { sum += elem; }
     return sum / vec.size();
 }
 /**

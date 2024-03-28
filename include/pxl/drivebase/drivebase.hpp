@@ -169,6 +169,7 @@ class Drivebase {
         static moveToPointParams defaultMoveToPointParams() { return moveToPointParams(); }
         void moveToPoint(float x, float y, float timeout, moveToPointParams params = defaultMoveToPointParams(),
                          bool async = true);
+
     private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
         void calibrateIMU(OdomSensors sensors);
