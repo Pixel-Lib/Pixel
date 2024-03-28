@@ -51,9 +51,9 @@ typedef uint8_t lv_preloader_type_t;
 typedef struct {
         lv_arc_ext_t arc; /*Ext. of ancestor*/
         /*New data for this type */
-        uint16_t arc_length;           /*Length of the spinning indicator in degree*/
-        uint16_t time;                 /*Time of one round*/
-        lv_preloader_type_t anim_type; /*Type of the arc animation*/
+        uint16_t            arc_length; /*Length of the spinning indicator in degree*/
+        uint16_t            time;       /*Time of one round*/
+        lv_preloader_type_t anim_type;  /*Type of the arc animation*/
 } lv_preload_ext_t;
 
 /*Styles*/

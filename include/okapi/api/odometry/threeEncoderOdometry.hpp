@@ -27,7 +27,7 @@ class ThreeEncoderOdometry : public TwoEncoderOdometry {
          * @param ilogger The logger this instance will log to.
          */
         ThreeEncoderOdometry(const TimeUtil &itimeUtil, const std::shared_ptr<ReadOnlyChassisModel> &imodel,
-                             const ChassisScales &ichassisScales,
+                             const ChassisScales           &ichassisScales,
                              const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
 
     protected:

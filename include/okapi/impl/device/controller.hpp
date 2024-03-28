@@ -119,8 +119,8 @@ class Controller {
         virtual std::int32_t getBatteryLevel();
 
     protected:
-        ControllerId okapiId;
-        pros::controller_id_e_t prosId;
+        ControllerId                       okapiId;
+        pros::controller_id_e_t            prosId;
         std::array<ControllerButton *, 12> buttonArray{};
 };
 }  // namespace okapi

@@ -46,8 +46,8 @@ std::pair<double, double> Regression::Ridge() {
 
 double Regression::predict(double x) {
     std::pair<double, double> coefficients = this->Ridge();
-    double m = coefficients.first;
-    double b = coefficients.second;
+    double                    m = coefficients.first;
+    double                    b = coefficients.second;
     return m * x + b;
 }
 

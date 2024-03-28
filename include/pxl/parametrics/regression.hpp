@@ -16,7 +16,7 @@ namespace pxl {
 class Regression {
     private:
         std::vector<pxl::Coord> points;  ///< The set of points used for regression analysis.
-        double lambda;                   ///< The regularization parameter for ridge regression.
+        double                  lambda;  ///< The regularization parameter for ridge regression.
 
     public:
         /**

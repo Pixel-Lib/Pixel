@@ -166,28 +166,28 @@ class AsyncPosControllerBuilder {
     private:
         std::shared_ptr<Logger> logger;
 
-        bool hasMotors{false};  // Used to verify motors were passed
+        bool                           hasMotors{false};  // Used to verify motors were passed
         std::shared_ptr<AbstractMotor> motor;
 
-        bool sensorsSetByUser{false};  // Used so motors don't overwrite sensors set manually
+        bool                          sensorsSetByUser{false};  // Used so motors don't overwrite sensors set manually
         std::shared_ptr<RotarySensor> sensor;
 
         bool hasGains{false};  // Whether gains were passed, no gains means integrated control
         IterativePosPIDController::Gains gains;
-        std::unique_ptr<Filter> derivativeFilter = std::make_unique<PassthroughFilter>();
+        std::unique_ptr<Filter>          derivativeFilter = std::make_unique<PassthroughFilter>();
 
         bool gearsetSetByUser{false};  // Used so motor's don't overwrite a gearset set manually
         AbstractMotor::GearsetRatioPair pair{AbstractMotor::gearset::invalid};
 
-        bool maxVelSetByUser{false};  // Used so motors don't overwrite maxVelocity
+        bool   maxVelSetByUser{false};  // Used so motors don't overwrite maxVelocity
         double maxVelocity{600};
 
-        TimeUtilFactory timeUtilFactory = TimeUtilFactory();
+        TimeUtilFactory         timeUtilFactory = TimeUtilFactory();
         std::shared_ptr<Logger> controllerLogger = Logger::getDefaultLogger();
 
         bool isParentedToCurrentTask{true};
 
         std::shared_ptr<AsyncPosIntegratedController> buildAPIC();
-        std::shared_ptr<AsyncPosPIDController> buildAPPC();
+        std::shared_ptr<AsyncPosPIDController>        buildAPPC();
 };
 }  // namespace okapi

@@ -153,8 +153,8 @@ failed to connect or an invalid id is given.
 
     typedef struct {
             uint16_t year;  // Year - 1980
-            uint8_t day;
-            uint8_t month;  // 1 = January
+            uint8_t  day;
+            uint8_t  month;  // 1 = January
     } date_s_t;
 
     typedef struct {

@@ -34,27 +34,27 @@ extern "C" {
  **********************/
 typedef struct {
         lv_coord_t *points;
-        lv_color_t color;
-        uint16_t start_point;
+        lv_color_t  color;
+        uint16_t    start_point;
 } lv_chart_series_t;
 
 /*Data of chart */
 typedef struct {
         /*No inherited ext*/ /*Ext. of ancestor*/
         /*New data for this type */
-        lv_ll_t series_ll;  /*Linked list for the data line pointers (stores
-                               lv_chart_dl_t)*/
-        lv_coord_t ymin;    /*y min value (used to scale the data)*/
-        lv_coord_t ymax;    /*y max value (used to scale the data)*/
-        uint8_t hdiv_cnt;   /*Number of horizontal division lines*/
-        uint8_t vdiv_cnt;   /*Number of vertical division lines*/
-        uint16_t point_cnt; /*Point number in a data line*/
-        uint8_t type : 4;   /*Line, column or point chart (from 'lv_chart_type_t')*/
+        lv_ll_t series_ll;    /*Linked list for the data line pointers (stores
+                                 lv_chart_dl_t)*/
+        lv_coord_t ymin;      /*y min value (used to scale the data)*/
+        lv_coord_t ymax;      /*y max value (used to scale the data)*/
+        uint8_t    hdiv_cnt;  /*Number of horizontal division lines*/
+        uint8_t    vdiv_cnt;  /*Number of vertical division lines*/
+        uint16_t   point_cnt; /*Point number in a data line*/
+        uint8_t    type : 4;  /*Line, column or point chart (from 'lv_chart_type_t')*/
         struct {
                 lv_coord_t width; /*Line width or point radius*/
-                uint8_t num;      /*Number of data lines in dl_ll*/
-                lv_opa_t opa;     /*Opacity of data lines*/
-                lv_opa_t dark;    /*Dark level of the point/column bottoms*/
+                uint8_t    num;   /*Number of data lines in dl_ll*/
+                lv_opa_t   opa;   /*Opacity of data lines*/
+                lv_opa_t   dark;  /*Dark level of the point/column bottoms*/
         } series;
 } lv_chart_ext_t;
 

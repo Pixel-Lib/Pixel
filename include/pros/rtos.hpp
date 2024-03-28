@@ -535,7 +535,7 @@ template <typename Var> class MutexVar;
 
 template <typename Var> class MutexVarLock {
         Mutex &mutex;
-        Var &var;
+        Var   &var;
 
         friend class MutexVar<Var>;
 
@@ -557,7 +557,7 @@ template <typename Var> class MutexVarLock {
 
 template <typename Var> class MutexVar {
         Mutex mutex;
-        Var var;
+        Var   var;
 
     public:
         /**

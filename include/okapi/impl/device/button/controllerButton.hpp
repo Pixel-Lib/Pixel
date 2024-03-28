@@ -32,7 +32,7 @@ class ControllerButton : public ButtonBase {
         ControllerButton(ControllerId icontroller, ControllerDigital ibtn, bool iinverted = false);
 
     protected:
-        pros::controller_id_e_t id;
+        pros::controller_id_e_t      id;
         pros::controller_digital_e_t btn;
 
         virtual bool currentlyPressed() override;

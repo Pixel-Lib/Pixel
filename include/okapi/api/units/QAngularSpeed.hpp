@@ -23,7 +23,7 @@ constexpr QAngularSpeed cps = (0.01 * degree) / second;  // centidegree per seco
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-function"
-static QAngularSpeed convertHertzToRadPerSec(QFrequency in) { return (in.convert(Hz) / 2_pi) * radps; }
+static QAngularSpeed   convertHertzToRadPerSec(QFrequency in) { return (in.convert(Hz) / 2_pi) * radps; }
 #pragma GCC diagnostic pop
 
 inline namespace literals {

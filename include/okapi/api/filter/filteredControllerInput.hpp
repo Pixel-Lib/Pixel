@@ -40,6 +40,6 @@ template <typename InputType, typename FilterType> class FilteredControllerInput
 
     protected:
         std::unique_ptr<ControllerInput<InputType>> input;
-        std::unique_ptr<FilterType> filter;
+        std::unique_ptr<FilterType>                 filter;
 };
 }  // namespace okapi

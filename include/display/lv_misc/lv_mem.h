@@ -49,8 +49,8 @@ typedef struct {
         uint32_t free_size;
         uint32_t free_biggest_size;
         uint32_t used_cnt;
-        uint8_t used_pct;
-        uint8_t frag_pct;
+        uint8_t  used_pct;
+        uint8_t  frag_pct;
 } lv_mem_monitor_t;
 
 /**********************

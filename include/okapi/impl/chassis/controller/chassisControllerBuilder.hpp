@@ -266,8 +266,8 @@ class ChassisControllerBuilder {
          * @return An ongoing builder.
          */
         ChassisControllerBuilder &withOdometry(const StateMode &imode = StateMode::FRAME_TRANSFORMATION,
-                                               const QLength &imoveThreshold = 0_mm,
-                                               const QAngle &iturnThreshold = 0_deg);
+                                               const QLength   &imoveThreshold = 0_mm,
+                                               const QAngle    &iturnThreshold = 0_deg);
 
         /**
          * Sets the odometry information, causing the builder to generate an
@@ -282,9 +282,9 @@ class ChassisControllerBuilder {
          * @return An ongoing builder.
          */
         ChassisControllerBuilder &withOdometry(const ChassisScales &iodomScales,
-                                               const StateMode &imode = StateMode::FRAME_TRANSFORMATION,
-                                               const QLength &imoveThreshold = 0_mm,
-                                               const QAngle &iturnThreshold = 0_deg);
+                                               const StateMode     &imode = StateMode::FRAME_TRANSFORMATION,
+                                               const QLength       &imoveThreshold = 0_mm,
+                                               const QAngle        &iturnThreshold = 0_deg);
 
         /**
          * Sets the odometry information, causing the builder to generate an
@@ -298,9 +298,9 @@ class ChassisControllerBuilder {
          * @return An ongoing builder.
          */
         ChassisControllerBuilder &withOdometry(std::shared_ptr<Odometry> iodometry,
-                                               const StateMode &imode = StateMode::FRAME_TRANSFORMATION,
-                                               const QLength &imoveThreshold = 0_mm,
-                                               const QAngle &iturnThreshold = 0_deg);
+                                               const StateMode          &imode = StateMode::FRAME_TRANSFORMATION,
+                                               const QLength            &imoveThreshold = 0_mm,
+                                               const QAngle             &iturnThreshold = 0_deg);
 
         /**
          * Sets the derivative filters. Uses a PassthroughFilter by default.
@@ -323,7 +323,7 @@ class ChassisControllerBuilder {
          * @return An ongoing builder.
          */
         ChassisControllerBuilder &withDimensions(const AbstractMotor::GearsetRatioPair &igearset,
-                                                 const ChassisScales &iscales);
+                                                 const ChassisScales                   &iscales);
 
         /**
          * Sets the max velocity. Overrides the max velocity of the gearset.
@@ -372,8 +372,8 @@ class ChassisControllerBuilder {
          * considered settled.
          * @return An ongoing builder.
          */
-        ChassisControllerBuilder &withClosedLoopControllerTimeUtil(double iatTargetError = 50,
-                                                                   double iatTargetDerivative = 5,
+        ChassisControllerBuilder &withClosedLoopControllerTimeUtil(double       iatTargetError = 50,
+                                                                   double       iatTargetDerivative = 5,
                                                                    const QTime &iatTargetTime = 250_ms);
 
         /**
@@ -460,54 +460,54 @@ class ChassisControllerBuilder {
 
         enum class DriveMode { SkidSteer, XDrive, HDrive };
 
-        bool hasMotors{false};  // Used to verify motors were passed
-        DriveMode driveMode{DriveMode::SkidSteer};
+        bool            hasMotors{false};  // Used to verify motors were passed
+        DriveMode       driveMode{DriveMode::SkidSteer};
         SkidSteerMotors skidSteerMotors;
-        XDriveMotors xDriveMotors;
-        HDriveMotors hDriveMotors;
+        XDriveMotors    xDriveMotors;
+        HDriveMotors    hDriveMotors;
 
         bool sensorsSetByUser{false};  // Used so motors don't overwrite sensors set manually
         std::shared_ptr<ContinuousRotarySensor> leftSensor{nullptr};
         std::shared_ptr<ContinuousRotarySensor> rightSensor{nullptr};
         std::shared_ptr<ContinuousRotarySensor> middleSensor{nullptr};
 
-        bool hasGains{false};  // Whether gains were passed, no gains means CCI
+        bool                             hasGains{false};  // Whether gains were passed, no gains means CCI
         IterativePosPIDController::Gains distanceGains;
-        std::unique_ptr<Filter> distanceFilter = std::make_unique<PassthroughFilter>();
+        std::unique_ptr<Filter>          distanceFilter = std::make_unique<PassthroughFilter>();
         IterativePosPIDController::Gains angleGains;
-        std::unique_ptr<Filter> angleFilter = std::make_unique<PassthroughFilter>();
+        std::unique_ptr<Filter>          angleFilter = std::make_unique<PassthroughFilter>();
         IterativePosPIDController::Gains turnGains;
-        std::unique_ptr<Filter> turnFilter = std::make_unique<PassthroughFilter>();
-        TimeUtilFactory chassisControllerTimeUtilFactory = TimeUtilFactory();
-        TimeUtilFactory closedLoopControllerTimeUtilFactory = TimeUtilFactory();
-        TimeUtilFactory odometryTimeUtilFactory = TimeUtilFactory();
+        std::unique_ptr<Filter>          turnFilter = std::make_unique<PassthroughFilter>();
+        TimeUtilFactory                  chassisControllerTimeUtilFactory = TimeUtilFactory();
+        TimeUtilFactory                  closedLoopControllerTimeUtilFactory = TimeUtilFactory();
+        TimeUtilFactory                  odometryTimeUtilFactory = TimeUtilFactory();
 
         AbstractMotor::GearsetRatioPair gearset{AbstractMotor::gearset::invalid, 1.0};
-        ChassisScales driveScales{{1, 1}, imev5GreenTPR};
-        bool differentOdomScales{false};
-        ChassisScales odomScales{{1, 1}, imev5GreenTPR};
-        std::shared_ptr<Logger> controllerLogger = Logger::getDefaultLogger();
+        ChassisScales                   driveScales{{1, 1}, imev5GreenTPR};
+        bool                            differentOdomScales{false};
+        ChassisScales                   odomScales{{1, 1}, imev5GreenTPR};
+        std::shared_ptr<Logger>         controllerLogger = Logger::getDefaultLogger();
 
-        bool hasOdom{false};  // Whether odometry was passed
+        bool                      hasOdom{false};  // Whether odometry was passed
         std::shared_ptr<Odometry> odometry;
-        StateMode stateMode;
-        QLength moveThreshold;
-        QAngle turnThreshold;
+        StateMode                 stateMode;
+        QLength                   moveThreshold;
+        QAngle                    turnThreshold;
 
-        bool maxVelSetByUser{false};  // Used so motors don't overwrite maxVelocity
+        bool   maxVelSetByUser{false};  // Used so motors don't overwrite maxVelocity
         double maxVelocity{600};
 
         double maxVoltage{12000};
 
         bool isParentedToCurrentTask{true};
 
-        std::shared_ptr<ChassisControllerPID> buildCCPID();
-        std::shared_ptr<ChassisControllerIntegrated> buildCCI();
+        std::shared_ptr<ChassisControllerPID>         buildCCPID();
+        std::shared_ptr<ChassisControllerIntegrated>  buildCCI();
         std::shared_ptr<DefaultOdomChassisController> buildDOCC(std::shared_ptr<ChassisController> chassisController);
 
-        std::shared_ptr<ChassisModel> makeChassisModel();
+        std::shared_ptr<ChassisModel>   makeChassisModel();
         std::shared_ptr<SkidSteerModel> makeSkidSteerModel();
-        std::shared_ptr<XDriveModel> makeXDriveModel();
-        std::shared_ptr<HDriveModel> makeHDriveModel();
+        std::shared_ptr<XDriveModel>    makeXDriveModel();
+        std::shared_ptr<HDriveModel>    makeHDriveModel();
 };
 }  // namespace okapi

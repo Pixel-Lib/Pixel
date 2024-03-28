@@ -75,10 +75,10 @@ struct ProfilePoint {
             // return os << p.to_string();
         }
 
-        ControlVector vector;
+        ControlVector       vector;
         std::vector<double> wheel_velocities;
-        double curvature;
-        double time;
+        double              curvature;
+        double              time;
 };
 }  // namespace squiggles
 

@@ -62,7 +62,7 @@ typedef uint8_t lv_label_align_t;
 typedef struct {
         /*Inherited from 'base_obj' so no inherited ext.*/ /*Ext. of ancestor*/
         /*New data for this type */
-        char *text;                     /*Text of the label*/
+        char                *text;      /*Text of the label*/
         lv_label_long_mode_t long_mode; /*Determinate what to do with the long texts*/
 #if LV_TXT_UTF8 == 0
         char dot_tmp[LV_LABEL_DOT_NUM + 1]; /*Store the character which are replaced
@@ -75,15 +75,15 @@ typedef struct {
 #if USE_LV_MULTI_LANG
         uint16_t lang_txt_id; /*The ID of the text to display*/
 #endif
-        uint16_t dot_end;       /*The text end position in dot mode (Handled by the library)*/
-        uint16_t anim_speed;    /*Speed of scroll and roll animation in px/sec unit*/
-        lv_point_t offset;      /*Text draw position offset*/
-        uint8_t static_txt : 1; /*Flag to indicate the text is static*/
-        uint8_t align : 2;      /*Align type from 'lv_label_align_t'*/
-        uint8_t recolor : 1;    /*Enable in-line letter re-coloring*/
-        uint8_t expand : 1;     /*Ignore real width (used by the library with
-                                   LV_LABEL_LONG_ROLL)*/
-        uint8_t body_draw : 1;  /*Draw background body*/
+        uint16_t   dot_end;        /*The text end position in dot mode (Handled by the library)*/
+        uint16_t   anim_speed;     /*Speed of scroll and roll animation in px/sec unit*/
+        lv_point_t offset;         /*Text draw position offset*/
+        uint8_t    static_txt : 1; /*Flag to indicate the text is static*/
+        uint8_t    align : 2;      /*Align type from 'lv_label_align_t'*/
+        uint8_t    recolor : 1;    /*Enable in-line letter re-coloring*/
+        uint8_t    expand : 1;     /*Ignore real width (used by the library with
+                                      LV_LABEL_LONG_ROLL)*/
+        uint8_t body_draw : 1;     /*Draw background body*/
 } lv_label_ext_t;
 
 /**********************

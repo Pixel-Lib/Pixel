@@ -18,7 +18,7 @@ class IterativeMotorVelocityController : public IterativeVelocityController<doub
          * Velocity controller that automatically writes to the motor.
          */
         IterativeMotorVelocityController(
-            const std::shared_ptr<AbstractMotor> &imotor,
+            const std::shared_ptr<AbstractMotor>                               &imotor,
             const std::shared_ptr<IterativeVelocityController<double, double>> &icontroller);
 
         /**
@@ -149,7 +149,7 @@ class IterativeMotorVelocityController : public IterativeVelocityController<doub
         QTime getSampleTime() const override;
 
     protected:
-        std::shared_ptr<AbstractMotor> motor;
+        std::shared_ptr<AbstractMotor>                               motor;
         std::shared_ptr<IterativeVelocityController<double, double>> controller;
 };
 }  // namespace okapi

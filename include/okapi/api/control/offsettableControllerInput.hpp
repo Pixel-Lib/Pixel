@@ -38,6 +38,6 @@ class OffsetableControllerInput : public ControllerInput<double> {
 
     protected:
         std::shared_ptr<ControllerInput<double>> input;
-        double offset{0};
+        double                                   offset{0};
 };
 }  // namespace okapi

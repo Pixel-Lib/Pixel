@@ -40,16 +40,16 @@ typedef lv_res_t (*lv_tileview_action_t)(lv_obj_t *, lv_coord_t, lv_coord_t);
 typedef struct {
         lv_page_ext_t page;
         /*New data for this type */
-        const lv_point_t *valid_pos;
-        uint16_t anim_time;
+        const lv_point_t    *valid_pos;
+        uint16_t             anim_time;
         lv_tileview_action_t action;
-        lv_point_t act_id;
-        uint8_t drag_top_en : 1;
-        uint8_t drag_bottom_en : 1;
-        uint8_t drag_left_en : 1;
-        uint8_t drag_right_en : 1;
-        uint8_t drag_hor : 1;
-        uint8_t drag_ver : 1;
+        lv_point_t           act_id;
+        uint8_t              drag_top_en : 1;
+        uint8_t              drag_bottom_en : 1;
+        uint8_t              drag_left_en : 1;
+        uint8_t              drag_right_en : 1;
+        uint8_t              drag_hor : 1;
+        uint8_t              drag_ver : 1;
 } lv_tileview_ext_t;
 
 /*Styles*/

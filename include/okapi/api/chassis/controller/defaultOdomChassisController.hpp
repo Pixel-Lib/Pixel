@@ -37,7 +37,7 @@ class DefaultOdomChassisController : public OdomChassisController {
          */
         DefaultOdomChassisController(const TimeUtil &itimeUtil, std::shared_ptr<Odometry> iodometry,
                                      std::shared_ptr<ChassisController> icontroller,
-                                     const StateMode &imode = StateMode::FRAME_TRANSFORMATION,
+                                     const StateMode                   &imode = StateMode::FRAME_TRANSFORMATION,
                                      QLength imoveThreshold = 0_mm, QAngle iturnThreshold = 0_deg,
                                      std::shared_ptr<Logger> ilogger = Logger::getDefaultLogger());
 
@@ -178,7 +178,7 @@ class DefaultOdomChassisController : public OdomChassisController {
         ChassisModel &model() override;
 
     protected:
-        std::shared_ptr<Logger> logger;
+        std::shared_ptr<Logger>            logger;
         std::shared_ptr<ChassisController> controller;
 
         void waitForOdomTask();

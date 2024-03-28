@@ -31,10 +31,10 @@ class TankModel : public PhysicalModel {
         std::string to_string() const override;
 
     private:
-        double vel_constraint(const Pose pose, double curvature, double vel);
+        double                     vel_constraint(const Pose pose, double curvature, double vel);
         std::tuple<double, double> accel_constraint(const Pose pose, double curvature, double vel) const;
 
-        double track_width;
+        double      track_width;
         Constraints linear_constraints;
 };
 }  // namespace squiggles

@@ -51,9 +51,9 @@ extern "C" {
 typedef struct {
         lv_cont_ext_t bg; /*Ext. of ancestor*/
         /*New data for this type */
-        lv_obj_t *text;     /*Text of the message box*/
-        lv_obj_t *btnm;     /*Button matrix for the buttons*/
-        uint16_t anim_time; /*Duration of close animation [ms] (0: no animation)*/
+        lv_obj_t *text;      /*Text of the message box*/
+        lv_obj_t *btnm;      /*Button matrix for the buttons*/
+        uint16_t  anim_time; /*Duration of close animation [ms] (0: no animation)*/
 } lv_mbox_ext_t;
 
 enum {

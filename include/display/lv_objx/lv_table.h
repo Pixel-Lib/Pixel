@@ -54,11 +54,11 @@ typedef union {
 /*Data of table*/
 typedef struct {
         /*New data for this type */
-        uint16_t col_cnt;
-        uint16_t row_cnt;
-        char **cell_data;
+        uint16_t    col_cnt;
+        uint16_t    row_cnt;
+        char      **cell_data;
         lv_style_t *cell_style[LV_TABLE_CELL_STYLE_CNT];
-        lv_coord_t col_w[LV_TABLE_COL_MAX];
+        lv_coord_t  col_w[LV_TABLE_COL_MAX];
 } lv_table_ext_t;
 
 /*Styles*/

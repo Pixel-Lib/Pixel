@@ -44,14 +44,14 @@ namespace pros {
 #define LCD_BTN_RIGHT 1
 
     typedef struct lcd_s {
-            lv_obj_t *frame;
-            lv_obj_t *screen;
-            lv_obj_t *lcd_text[8];
-            lv_obj_t *btn_container;
-            lv_obj_t *btns[3];             // < 0 => left; 1 => center; 2 => right
-            lcd_btn_cb_fn_t callbacks[3];  // < 0 => left; 1 => center; 2 => right
-            volatile uint8_t touch_bits;   // < 4 => left; 2 => center; 1 => right (no
-                                           // multitouch support)
+            lv_obj_t        *frame;
+            lv_obj_t        *screen;
+            lv_obj_t        *lcd_text[8];
+            lv_obj_t        *btn_container;
+            lv_obj_t        *btns[3];       // < 0 => left; 1 => center; 2 => right
+            lcd_btn_cb_fn_t  callbacks[3];  // < 0 => left; 1 => center; 2 => right
+            volatile uint8_t touch_bits;    // < 4 => left; 2 => center; 1 => right (no
+                                            // multitouch support)
     } lcd_s_t;
 
 #ifdef __cplusplus

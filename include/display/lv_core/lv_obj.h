@@ -142,26 +142,26 @@ typedef uint8_t lv_align_t;
 #if LV_OBJ_REALIGN
 typedef struct {
         const struct _lv_obj_t *base;
-        lv_coord_t xofs;
-        lv_coord_t yofs;
-        lv_align_t align;
-        uint8_t auto_realign : 1;
-        uint8_t origo_align : 1; /*1: the oigo (center of the object) was aligned
-                                    with `lv_obj_align_origo`*/
+        lv_coord_t              xofs;
+        lv_coord_t              yofs;
+        lv_align_t              align;
+        uint8_t                 auto_realign : 1;
+        uint8_t                 origo_align : 1; /*1: the oigo (center of the object) was aligned
+                                                    with `lv_obj_align_origo`*/
 } lv_reailgn_t;
 #endif
 
 typedef struct _lv_obj_t {
-        struct _lv_obj_t *par; /*Pointer to the parent object*/
-        lv_ll_t child_ll;      /*Linked list to store the children objects*/
+        struct _lv_obj_t *par;      /*Pointer to the parent object*/
+        lv_ll_t           child_ll; /*Linked list to store the children objects*/
 
         lv_area_t coords; /*Coordinates of the object (x1, y1, x2, y2)*/
 
         lv_signal_func_t signal_func; /*Object type specific signal function*/
         lv_design_func_t design_func; /*Object type specific design function*/
 
-        void *ext_attr;      /*Object type specific extended data*/
-        lv_style_t *style_p; /*Pointer to the object's style*/
+        void       *ext_attr; /*Object type specific extended data*/
+        lv_style_t *style_p;  /*Pointer to the object's style*/
 
 #if LV_OBJ_FREE_PTR != 0
         void *free_ptr; /*Application specific pointer (set it freely)*/

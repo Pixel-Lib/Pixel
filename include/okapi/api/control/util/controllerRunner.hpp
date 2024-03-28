@@ -23,7 +23,7 @@ template <typename Input, typename Output> class ControllerRunner {
          * @param itimeUtil The TimeUtil.
          * @param ilogger The logger this instance will log to.
          */
-        explicit ControllerRunner(const TimeUtil &itimeUtil,
+        explicit ControllerRunner(const TimeUtil                &itimeUtil,
                                   const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger())
             : logger(ilogger), rate(itimeUtil.getRate()) {}
 
@@ -130,7 +130,7 @@ template <typename Input, typename Output> class ControllerRunner {
         }
 
     protected:
-        std::shared_ptr<Logger> logger;
+        std::shared_ptr<Logger>       logger;
         std::unique_ptr<AbstractRate> rate;
 };
 }  // namespace okapi

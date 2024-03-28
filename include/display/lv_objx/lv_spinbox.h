@@ -45,14 +45,14 @@ typedef void (*lv_spinbox_value_changed_cb_t)(lv_obj_t *spinbox, int32_t new_val
 typedef struct {
         lv_ta_ext_t ta; /*Ext. of ancestor*/
         /*New data for this type */
-        int32_t value;
-        int32_t range_max;
-        int32_t range_min;
-        int32_t step;
+        int32_t  value;
+        int32_t  range_max;
+        int32_t  range_min;
+        int32_t  step;
         uint16_t digit_count : 4;
         uint16_t dec_point_pos : 4; /*if 0, there is no separator and the number is
                                        an integer*/
-        uint16_t digit_padding_left : 4;
+        uint16_t                      digit_padding_left : 4;
         lv_spinbox_value_changed_cb_t value_changed_cb;
 } lv_spinbox_ext_t;
 

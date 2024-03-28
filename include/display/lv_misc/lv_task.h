@@ -57,7 +57,7 @@ typedef struct {
         uint32_t period;
         uint32_t last_run;
         void (*task)(void *);
-        void *param;
+        void   *param;
         uint8_t prio : 3;
         uint8_t once : 1;
 } lv_task_t;

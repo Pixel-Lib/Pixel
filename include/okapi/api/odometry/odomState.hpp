@@ -15,7 +15,7 @@ namespace okapi {
 struct OdomState {
         QLength x{0_m};
         QLength y{0_m};
-        QAngle theta{0_deg};
+        QAngle  theta{0_deg};
 
         /**
          * Get a string for the current odometry state (optionally with the

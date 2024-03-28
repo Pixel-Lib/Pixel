@@ -141,9 +141,9 @@ class Logger {
 
     private:
         const std::unique_ptr<AbstractTimer> timer;
-        const LogLevel logLevel;
-        FILE *logfile;
-        CrossplatformMutex logfileMutex;
+        const LogLevel                       logLevel;
+        FILE                                *logfile;
+        CrossplatformMutex                   logfileMutex;
 
         static bool isSerialStream(std::string_view filename);
 };

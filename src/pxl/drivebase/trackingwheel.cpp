@@ -39,8 +39,8 @@ float TrackingWheel::getDistanceTraveled() {
     else if (this->rotation != nullptr)
         return (float(this->rotation->get_position()) * this->diameter * M_PI / 36000) / this->gearRatio;
     else if (this->motors != nullptr) {
-        auto gearsets = this->motors->get_gearing();
-        auto positions = this->motors->get_positions();
+        auto               gearsets = this->motors->get_gearing();
+        auto               positions = this->motors->get_positions();
         std::vector<float> distances;
         std::transform(positions.begin(), positions.end(), gearsets.begin(), std::back_inserter(distances),
                        [&](double pos, pros::motor_gearset_e_t gearset) {

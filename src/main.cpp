@@ -14,24 +14,24 @@ pros::MotorGroup leftMotors({leftFront, leftMiddle, leftBack});
 pros::MotorGroup rightMotors({rightFront, rightMiddle, rightBack});
 
 // Create drivetrain object
-pxl::Drivetrain drivetrain(&leftMotors,   // left motors
-                           &rightMotors,  // right motors
-                           12.5,          // track width
-                           3.25,          // diameter of wheel
-                           360            // rpm of drivetrain. If unsure, type (input gear / output gear) * motor rpm
-);
-pros::IMU imu(8);
-pros::Rotation leftRotation(7);
+pxl::Drivetrain    drivetrain(&leftMotors,   // left motors
+                              &rightMotors,  // right motors
+                              12.5,          // track width
+                              3.25,          // diameter of wheel
+                              360  // rpm of drivetrain. If unsure, type (input gear / output gear) * motor rpm
+   );
+pros::IMU          imu(8);
+pros::Rotation     leftRotation(7);
 pxl::TrackingWheel horizontal1(&leftRotation,  // rotation sensor or shaft encoder
                                2.75,           // diameter of wheel
                                4.5             // offset from tracking center in inches
 );
-pxl::OdomSensors sensors(nullptr,       // vertical1
-                         nullptr,       // vertical2
-                         &horizontal1,  // horizontal1
-                         nullptr,       // horizontal2
-                         &imu           // imu
-);
+pxl::OdomSensors   sensors(nullptr,       // vertical1
+                           nullptr,       // vertical2
+                           &horizontal1,  // horizontal1
+                           nullptr,       // horizontal2
+                           &imu           // imu
+  );
 
 pxl::SeekingController linearSettings(  // linear settings
     pxl::PID(                           // PID constants
@@ -62,7 +62,7 @@ pxl::SeekingController angularSettings(  // angular settings
     }),
     5000.0  // global timeout
 );
-pxl::Drivebase drivebase(drivetrain, sensors, linearSettings, angularSettings);  // make the drivebase
+pxl::Drivebase         drivebase(drivetrain, sensors, linearSettings, angularSettings);  // make the drivebase
 /**
  * A callback function for LLEMU's center button.
  *
@@ -167,8 +167,8 @@ void autonomous() {
  */
 void opcontrol() {
     pros::Controller master(pros::E_CONTROLLER_MASTER);
-    pros::Motor left_mtr(1);
-    pros::Motor right_mtr(2);
+    pros::Motor      left_mtr(1);
+    pros::Motor      right_mtr(2);
 
     while (true) {
         pros::lcd::print(0, "%d %d %d", (pros::lcd::read_buttons() & LCD_BTN_LEFT) >> 2,

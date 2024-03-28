@@ -45,8 +45,8 @@ typedef struct {
         lv_style_t *style_knob_on;  /*Style of the knob when the switch is ON (NULL
                                        to  use the same as OFF)*/
         lv_coord_t start_x;
-        uint8_t changed : 1; /*Indicates the switch state explicitly changed by drag*/
-        uint8_t slided : 1;
+        uint8_t    changed : 1; /*Indicates the switch state explicitly changed by drag*/
+        uint8_t    slided : 1;
 #if USE_LV_ANIMATION
         uint16_t anim_time; /*switch animation time */
 #endif

@@ -51,11 +51,11 @@ extern "C" {
 typedef struct {
         lv_page_ext_t page; /*Ext. of ancestor*/
         /*New data for this type */
-        uint16_t anim_time;                       /*Scroll animation time*/
+        uint16_t    anim_time;                    /*Scroll animation time*/
         lv_style_t *styles_btn[LV_BTN_STATE_NUM]; /*Styles of the list element buttons*/
         lv_style_t *style_img;                    /*Style of the list element images on buttons*/
-        uint32_t size;                            /*the number of items(buttons) in the list*/
-        bool single_mode;                         /* whether single selected mode is enabled */
+        uint32_t    size;                         /*the number of items(buttons) in the list*/
+        bool        single_mode;                  /* whether single selected mode is enabled */
 #if USE_LV_GROUP
         lv_obj_t *last_sel;     /* The last selected button. It will be reverted when
                                    the list is focused again */

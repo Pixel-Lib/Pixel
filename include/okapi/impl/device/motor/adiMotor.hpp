@@ -64,6 +64,6 @@ class ADIMotor : public ControllerOutput<double> {
     protected:
         std::uint8_t smartPort;
         std::uint8_t port;
-        std::int8_t reversed;
+        std::int8_t  reversed;
 };
 }  // namespace okapi

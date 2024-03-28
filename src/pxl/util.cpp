@@ -5,8 +5,8 @@
 namespace pxl {
 float slew(float target, float current, float maxChange) {
     static auto lastTime = std::chrono::high_resolution_clock::now();
-    auto now = std::chrono::high_resolution_clock::now();
-    float timestep = std::chrono::duration<float>(now - lastTime).count();
+    auto        now = std::chrono::high_resolution_clock::now();
+    float       timestep = std::chrono::duration<float>(now - lastTime).count();
     lastTime = now;
     return maxChange == 0 ? target
                           : current + std::clamp(target - current, -maxChange * timestep, maxChange * timestep);

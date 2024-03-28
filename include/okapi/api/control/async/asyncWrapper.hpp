@@ -35,8 +35,8 @@ template <typename Input, typename Output> class AsyncWrapper : virtual public A
          * @param iratio Any external gear ratio.
          * @param ilogger The logger this instance will log to.
          */
-        AsyncWrapper(const std::shared_ptr<ControllerInput<Input>> &iinput,
-                     const std::shared_ptr<ControllerOutput<Output>> &ioutput,
+        AsyncWrapper(const std::shared_ptr<ControllerInput<Input>>             &iinput,
+                     const std::shared_ptr<ControllerOutput<Output>>           &ioutput,
                      const std::shared_ptr<IterativeController<Input, Output>> &icontroller,
                      const Supplier<std::unique_ptr<AbstractRate>> &irateSupplier, const double iratio = 1,
                      std::shared_ptr<Logger> ilogger = Logger::getDefaultLogger())
@@ -218,16 +218,16 @@ template <typename Input, typename Output> class AsyncWrapper : virtual public A
         CrossplatformThread *getThread() const { return task; }
 
     protected:
-        std::shared_ptr<Logger> logger;
-        Supplier<std::unique_ptr<AbstractRate>> rateSupplier;
-        std::shared_ptr<ControllerInput<Input>> input;
-        std::shared_ptr<ControllerOutput<Output>> output;
+        std::shared_ptr<Logger>                             logger;
+        Supplier<std::unique_ptr<AbstractRate>>             rateSupplier;
+        std::shared_ptr<ControllerInput<Input>>             input;
+        std::shared_ptr<ControllerOutput<Output>>           output;
         std::shared_ptr<IterativeController<Input, Output>> controller;
-        bool hasFirstTarget{false};
-        Input lastTarget;
-        double ratio;
-        std::atomic_bool dtorCalled{false};
-        CrossplatformThread *task{nullptr};
+        bool                                                hasFirstTarget{false};
+        Input                                               lastTarget;
+        double                                              ratio;
+        std::atomic_bool                                    dtorCalled{false};
+        CrossplatformThread                                *task{nullptr};
 
         static void trampoline(void *context) {
             if (context) { static_cast<AsyncWrapper *>(context)->loop(); }

@@ -58,7 +58,7 @@ class VelMathFactory {
          * @param ilogger The logger this instance will log to.
          */
         static std::unique_ptr<VelMath> createPtr(double iticksPerRev, std::unique_ptr<Filter> ifilter,
-                                                  QTime isampleTime = 0_ms,
+                                                  QTime                          isampleTime = 0_ms,
                                                   const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
 };
 }  // namespace okapi

@@ -30,9 +30,9 @@ class AsyncVelIntegratedController : public AsyncVelocityController<double, doub
          * @param itimeUtil The TimeUtil.
          * @param ilogger The logger this instance will log to.
          */
-        AsyncVelIntegratedController(const std::shared_ptr<AbstractMotor> &imotor,
+        AsyncVelIntegratedController(const std::shared_ptr<AbstractMotor>  &imotor,
                                      const AbstractMotor::GearsetRatioPair &ipair, std::int32_t imaxVelocity,
-                                     const TimeUtil &itimeUtil,
+                                     const TimeUtil                &itimeUtil,
                                      const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
 
         /**
@@ -112,15 +112,15 @@ class AsyncVelIntegratedController : public AsyncVelocityController<double, doub
         void controllerSet(double ivalue) override;
 
     protected:
-        std::shared_ptr<Logger> logger;
-        TimeUtil timeUtil;
-        std::shared_ptr<AbstractMotor> motor;
+        std::shared_ptr<Logger>         logger;
+        TimeUtil                        timeUtil;
+        std::shared_ptr<AbstractMotor>  motor;
         AbstractMotor::GearsetRatioPair pair;
-        std::int32_t maxVelocity;
-        double lastTarget = 0;
-        bool controllerIsDisabled = false;
-        bool hasFirstTarget = false;
-        std::unique_ptr<SettledUtil> settledUtil;
+        std::int32_t                    maxVelocity;
+        double                          lastTarget = 0;
+        bool                            controllerIsDisabled = false;
+        bool                            hasFirstTarget = false;
+        std::unique_ptr<SettledUtil>    settledUtil;
 
         virtual void resumeMovement();
 };

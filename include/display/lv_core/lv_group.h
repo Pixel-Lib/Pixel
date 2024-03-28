@@ -47,16 +47,16 @@ typedef void (*lv_group_style_mod_func_t)(lv_style_t *);
 typedef void (*lv_group_focus_cb_t)(struct _lv_group_t *);
 
 typedef struct _lv_group_t {
-        lv_ll_t obj_ll;                           /*Linked list to store the objects in the group */
-        lv_obj_t **obj_focus;                     /*The object in focus*/
+        lv_ll_t                   obj_ll;         /*Linked list to store the objects in the group */
+        lv_obj_t                **obj_focus;      /*The object in focus*/
         lv_group_style_mod_func_t style_mod;      /*A function which modifies the style of the focused object*/
         lv_group_style_mod_func_t style_mod_edit; /*A function which modifies the
                                                      style of the focused object*/
         lv_group_focus_cb_t focus_cb;             /*A function to call when a new object is focused (optional)*/
-        lv_style_t style_tmp;                     /*Stores the modified style of the focused object */
-        uint8_t frozen : 1;                       /*1: can't focus to new object*/
-        uint8_t editing : 1;                      /*1: Edit mode, 0: Navigate mode*/
-        uint8_t click_focus : 1;                  /*1: If an object in a group is clicked by an indev
+        lv_style_t          style_tmp;            /*Stores the modified style of the focused object */
+        uint8_t             frozen : 1;           /*1: can't focus to new object*/
+        uint8_t             editing : 1;          /*1: Edit mode, 0: Navigate mode*/
+        uint8_t             click_focus : 1;      /*1: If an object in a group is clicked by an indev
                                                      then it will be focused */
         uint8_t refocus_policy : 1;               /*1: Focus prev if focused on deletion. 0: Focus
                                                      prev if focused on deletion.*/

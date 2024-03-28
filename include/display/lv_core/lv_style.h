@@ -56,18 +56,18 @@ typedef struct {
                 lv_color_t grad_color; /*`grad_color` will be removed in v6.0, use
                                           `aux_color` instead*/
                 lv_coord_t radius;
-                lv_opa_t opa;
+                lv_opa_t   opa;
 
                 struct {
-                        lv_color_t color;
-                        lv_coord_t width;
+                        lv_color_t       color;
+                        lv_coord_t       width;
                         lv_border_part_t part;
-                        lv_opa_t opa;
+                        lv_opa_t         opa;
                 } border;
 
                 struct {
-                        lv_color_t color;
-                        lv_coord_t width;
+                        lv_color_t       color;
+                        lv_coord_t       width;
                         lv_shadow_type_t type;
                 } shadow;
 
@@ -81,39 +81,39 @@ typedef struct {
         } body;
 
         struct {
-                lv_color_t color;
+                lv_color_t       color;
                 const lv_font_t *font;
-                lv_coord_t letter_space;
-                lv_coord_t line_space;
-                lv_opa_t opa;
+                lv_coord_t       letter_space;
+                lv_coord_t       line_space;
+                lv_opa_t         opa;
         } text;
 
         struct {
                 lv_color_t color;
-                lv_opa_t intense;
-                lv_opa_t opa;
+                lv_opa_t   intense;
+                lv_opa_t   opa;
         } image;
 
         struct {
                 lv_color_t color;
                 lv_coord_t width;
-                lv_opa_t opa;
-                uint8_t rounded : 1; /*1: rounded line endings*/
+                lv_opa_t   opa;
+                uint8_t    rounded : 1; /*1: rounded line endings*/
         } line;
 } lv_style_t;
 
 #if USE_LV_ANIMATION
 typedef struct {
-        const lv_style_t *style_start; /*Pointer to the starting style*/
-        const lv_style_t *style_end;   /*Pointer to the destination style*/
-        lv_style_t *style_anim;        /*Pointer to a style to animate*/
-        lv_anim_cb_t end_cb;           /*Call it when the animation is ready (NULL if unused)*/
-        int16_t time;                  /*Animation time in ms*/
-        int16_t act_time;              /*Current time in animation. Set to negative to make delay.*/
-        uint16_t playback_pause;       /*Wait before play back*/
-        uint16_t repeat_pause;         /*Wait before repeat*/
-        uint8_t playback : 1;          /*When the animation is ready play it back*/
-        uint8_t repeat : 1;            /*Repeat the animation infinitely*/
+        const lv_style_t *style_start;    /*Pointer to the starting style*/
+        const lv_style_t *style_end;      /*Pointer to the destination style*/
+        lv_style_t       *style_anim;     /*Pointer to a style to animate*/
+        lv_anim_cb_t      end_cb;         /*Call it when the animation is ready (NULL if unused)*/
+        int16_t           time;           /*Animation time in ms*/
+        int16_t           act_time;       /*Current time in animation. Set to negative to make delay.*/
+        uint16_t          playback_pause; /*Wait before play back*/
+        uint16_t          repeat_pause;   /*Wait before repeat*/
+        uint8_t           playback : 1;   /*When the animation is ready play it back*/
+        uint8_t           repeat : 1;     /*Repeat the animation infinitely*/
 } lv_style_anim_t;
 
 /* Example initialization

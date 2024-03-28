@@ -40,9 +40,9 @@ class ChassisControllerPID : public ChassisController {
                              std::unique_ptr<IterativePosPIDController> idistanceController,
                              std::unique_ptr<IterativePosPIDController> iturnController,
                              std::unique_ptr<IterativePosPIDController> iangleController,
-                             const AbstractMotor::GearsetRatioPair &igearset = AbstractMotor::gearset::green,
-                             const ChassisScales &iscales = ChassisScales({1, 1}, imev5GreenTPR),
-                             std::shared_ptr<Logger> ilogger = Logger::getDefaultLogger());
+                             const AbstractMotor::GearsetRatioPair     &igearset = AbstractMotor::gearset::green,
+                             const ChassisScales                       &iscales = ChassisScales({1, 1}, imev5GreenTPR),
+                             std::shared_ptr<Logger>                    ilogger = Logger::getDefaultLogger());
 
         ChassisControllerPID(const ChassisControllerPID &) = delete;
         ChassisControllerPID(ChassisControllerPID &&other) = delete;
@@ -237,24 +237,24 @@ class ChassisControllerPID : public ChassisController {
         ChassisModel &model() override;
 
     protected:
-        std::shared_ptr<Logger> logger;
-        bool normalTurns{true};
-        std::shared_ptr<ChassisModel> chassisModel;
-        TimeUtil timeUtil;
+        std::shared_ptr<Logger>                    logger;
+        bool                                       normalTurns{true};
+        std::shared_ptr<ChassisModel>              chassisModel;
+        TimeUtil                                   timeUtil;
         std::unique_ptr<IterativePosPIDController> distancePid;
         std::unique_ptr<IterativePosPIDController> turnPid;
         std::unique_ptr<IterativePosPIDController> anglePid;
-        ChassisScales scales;
-        AbstractMotor::GearsetRatioPair gearsetRatioPair;
-        bool velocityMode{true};
-        std::atomic_bool doneLooping{true};
-        std::atomic_bool doneLoopingSeen{true};
-        std::atomic_bool newMovement{false};
-        std::atomic_bool dtorCalled{false};
-        QTime threadSleepTime{10_ms};
+        ChassisScales                              scales;
+        AbstractMotor::GearsetRatioPair            gearsetRatioPair;
+        bool                                       velocityMode{true};
+        std::atomic_bool                           doneLooping{true};
+        std::atomic_bool                           doneLoopingSeen{true};
+        std::atomic_bool                           newMovement{false};
+        std::atomic_bool                           dtorCalled{false};
+        QTime                                      threadSleepTime{10_ms};
 
         static void trampoline(void *context);
-        void loop();
+        void        loop();
 
         /**
          * Wait for the distance setup (distancePid and anglePid) to settle.

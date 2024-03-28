@@ -43,7 +43,7 @@ extern "C" {
 typedef struct {
         lv_lmeter_ext_t lmeter; /*Ext. of ancestor*/
         /*New data for this type */
-        int16_t *values;                 /*Array of the set values (for needles) */
+        int16_t          *values;        /*Array of the set values (for needles) */
         const lv_color_t *needle_colors; /*Color of the needles (lv_color_t
                                             my_colors[needle_num])*/
         uint8_t needle_count;            /*Number of needles*/

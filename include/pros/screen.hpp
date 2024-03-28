@@ -28,7 +28,7 @@ namespace screen {
 
     namespace {
         template <typename T> T convert_args(T arg) { return arg; }
-        const char *convert_args(const std::string &arg) { return arg.c_str(); }
+        const char             *convert_args(const std::string &arg) { return arg.c_str(); }
     }  // namespace
 
 #pragma GCC diagnostic pop

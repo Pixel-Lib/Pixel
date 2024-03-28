@@ -35,10 +35,10 @@ typedef struct {
         /*No inherited ext.*/ /*Ext. of ancestor*/
         /*New data for this type */
         uint16_t scale_angle; /*Angle of the scale in deg. (0..360)*/
-        uint8_t line_cnt;     /*Count of lines */
-        int16_t cur_value;
-        int16_t min_value;
-        int16_t max_value;
+        uint8_t  line_cnt;    /*Count of lines */
+        int16_t  cur_value;
+        int16_t  min_value;
+        int16_t  max_value;
 } lv_lmeter_ext_t;
 
 /**********************

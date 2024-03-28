@@ -42,7 +42,7 @@ bool stand_still::updateStandstill(movement_Type type, bool &standStill, float e
 }
 
 void global_timeOuts::timeOut(float timeOut_S) {
-    float startTime = pros::millis();
+    float          startTime = pros::millis();
     const uint32_t endTime = pros::millis() + timeOut_S * 1000;
 
     do pros::delay(10);

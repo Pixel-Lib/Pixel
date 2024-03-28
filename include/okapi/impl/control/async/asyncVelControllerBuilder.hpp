@@ -176,16 +176,16 @@ class AsyncVelControllerBuilder {
     private:
         std::shared_ptr<Logger> logger;
 
-        bool hasMotors{false};  // Used to verify motors were passed
+        bool                           hasMotors{false};  // Used to verify motors were passed
         std::shared_ptr<AbstractMotor> motor;
 
-        bool sensorsSetByUser{false};  // Used so motors don't overwrite sensors set manually
+        bool                          sensorsSetByUser{false};  // Used so motors don't overwrite sensors set manually
         std::shared_ptr<RotarySensor> sensor;
 
         bool hasGains{false};  // Whether gains were passed, no gains means integrated control
         IterativeVelPIDController::Gains gains;
 
-        bool hasVelMath{false};  // Used to verify velMath was passed
+        bool                     hasVelMath{false};  // Used to verify velMath was passed
         std::unique_ptr<VelMath> velMath;
 
         std::unique_ptr<Filter> derivativeFilter = std::make_unique<PassthroughFilter>();
@@ -193,15 +193,15 @@ class AsyncVelControllerBuilder {
         bool gearsetSetByUser{false};  // Used so motor's don't overwrite a gearset set manually
         AbstractMotor::GearsetRatioPair pair{AbstractMotor::gearset::invalid};
 
-        bool maxVelSetByUser{false};  // Used so motors don't overwrite maxVelocity
+        bool   maxVelSetByUser{false};  // Used so motors don't overwrite maxVelocity
         double maxVelocity{600};
 
-        TimeUtilFactory timeUtilFactory = TimeUtilFactory();
+        TimeUtilFactory         timeUtilFactory = TimeUtilFactory();
         std::shared_ptr<Logger> controllerLogger = Logger::getDefaultLogger();
 
         bool isParentedToCurrentTask{true};
 
         std::shared_ptr<AsyncVelIntegratedController> buildAVIC();
-        std::shared_ptr<AsyncVelPIDController> buildAVPC();
+        std::shared_ptr<AsyncVelPIDController>        buildAVPC();
 };
 }  // namespace okapi

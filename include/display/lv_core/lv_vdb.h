@@ -53,7 +53,7 @@ extern "C" {
  **********************/
 
 typedef struct {
-        lv_area_t area;
+        lv_area_t   area;
         lv_color_t *buf;
 } lv_vdb_t;
 

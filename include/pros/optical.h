@@ -58,12 +58,12 @@ namespace pros {
         } optical_raw_s_t;
 
         typedef struct optical_gesture_s {
-                uint8_t udata;
-                uint8_t ddata;
-                uint8_t ldata;
-                uint8_t rdata;
-                uint8_t type;
-                uint8_t pad;
+                uint8_t  udata;
+                uint8_t  ddata;
+                uint8_t  ldata;
+                uint8_t  rdata;
+                uint8_t  type;
+                uint8_t  pad;
                 uint16_t count;
                 uint32_t time;
         } optical_gesture_s_t;

@@ -57,13 +57,13 @@ extern "C" {
 typedef struct {
         /*Ext. of ancestor*/
         /*New data for this type */
-        lv_obj_t *page;            /*Pointer to a page which holds the content*/
-        lv_obj_t *header;          /*Pointer to the header container of the window*/
-        lv_obj_t *title;           /*Pointer to the title label of the window*/
+        lv_obj_t   *page;          /*Pointer to a page which holds the content*/
+        lv_obj_t   *header;        /*Pointer to the header container of the window*/
+        lv_obj_t   *title;         /*Pointer to the title label of the window*/
         lv_style_t *style_header;  /*Style of the header container*/
         lv_style_t *style_btn_rel; /*Control button releases style*/
         lv_style_t *style_btn_pr;  /*Control button pressed style*/
-        lv_coord_t btn_size;       /*Size of the control buttons (square)*/
+        lv_coord_t  btn_size;      /*Size of the control buttons (square)*/
 } lv_win_ext_t;
 
 enum {
