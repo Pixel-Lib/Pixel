@@ -144,9 +144,9 @@ float ema(float current, float previous, float smooth);
  * @tparam vec The vector of elements.
  * @return The average value (in any datatype).
  */
-template <typename T> T avg(const std::vector<T>& vec) {
+template <typename T> T avg(const std::vector<T> &vec) {
     T sum = T();  // Initialize sum to default value for T
-    for (const T& elem : vec) { sum += elem; }
+    for (const T &elem : vec) { sum += elem; }
     return sum / vec.size();
 }
 /**
@@ -175,6 +175,6 @@ int dirToSpin(float target, float currHeading);
  * @param other The second point.
  * @return The absolute angle between the two points.
  */
-float absoluteAngleToPoint(const Coord& point, const Coord& other);
+float absoluteAngleToPoint(const Coord &point, const Coord &other);
 
 }  // namespace pxl
