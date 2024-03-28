@@ -104,16 +104,16 @@ $(function() {
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#aae3973eb617ab05e24069a0ad9a1d9b0">ema</a>(<span class="keywordtype">float</span> current, <span class="keywordtype">float</span> previous, <span class="keywordtype">float</span> smooth);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="namespacepxl.html#a1400e5c065d0e56c9cfc4d7998ab0a4f">  147</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; T <a class="code" href="namespacepxl.html#a1400e5c065d0e56c9cfc4d7998ab0a4f">avg</a>(<span class="keyword">const</span> std::vector&lt;T&gt;&amp; vec) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="namespacepxl.html#a1400e5c065d0e56c9cfc4d7998ab0a4f">  147</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; T <a class="code" href="namespacepxl.html#a1400e5c065d0e56c9cfc4d7998ab0a4f">avg</a>(<span class="keyword">const</span> std::vector&lt;T&gt; &amp;vec) {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    T sum = T();  <span class="comment">// Initialize sum to default value for T</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> T&amp; elem : vec) { sum += elem; }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> T &amp;elem : vec) { sum += elem; }</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">return</span> sum / vec.size();</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;std::pair&lt;float, float&gt; <a class="code" href="namespacepxl.html#aec6a4556717fb97f5c3cf2fb59899254">normalize</a>(<span class="keywordtype">float</span> lateralOut, <span class="keywordtype">float</span> angularOut, <span class="keywordtype">float</span> maxSpeed, <span class="keywordtype">bool</span> leftright = <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keywordtype">int</span> <a class="code" href="namespacepxl.html#af71c6114016a2ff82c929141b97670e4">dirToSpin</a>(<span class="keywordtype">float</span> target, <span class="keywordtype">float</span> currHeading);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#a9c5a571a77d33b91222c0a16e89d8f27">absoluteAngleToPoint</a>(<span class="keyword">const</span> Coord&amp; <a class="code" href="namespacepxl.html#a0701b37c7456e2154050add8257094c0ae049005f408ad18964ff92c37164b6c4">point</a>, <span class="keyword">const</span> Coord&amp; other);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#a9c5a571a77d33b91222c0a16e89d8f27">absoluteAngleToPoint</a>(<span class="keyword">const</span> Coord &amp;<a class="code" href="namespacepxl.html#a0701b37c7456e2154050add8257094c0ae049005f408ad18964ff92c37164b6c4">point</a>, <span class="keyword">const</span> Coord &amp;other);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}  <span class="comment">// namespace pxl</span></div>
 <div class="ttc" id="acoord_8hpp_html"><div class="ttname"><a href="coord_8hpp.html">coord.hpp</a></div></div>
@@ -136,7 +136,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 28 2024 04:04:11 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Mar 28 2024 04:12:00 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
