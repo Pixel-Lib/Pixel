@@ -21,7 +21,7 @@ void Drivebase::moveToPoint(float x, float y, float timeout, moveToPointParams p
     float angularError;
 
     while (!localTimeout.isDone()
-           || !linearController.getExit(linearError) && !angularController.getExit(angularError)){
+           || !linearController.getExit(linearError) && !angularController.getExit(angularError)) {
         linearError = this->odom.getPose().distance(target);
         float currHeading = this->odom.getPose().theta;
         float targetHeading = absoluteAngleToPoint(odom.getPose(), target);
@@ -33,25 +33,27 @@ void Drivebase::moveToPoint(float x, float y, float timeout, moveToPointParams p
         float angularOutput = angularController.update(angularError);
         float linearOutput = cre * linearController.update(linearError);
 
-                float minSpeed = params.minSpeed;
+        float minSpeed = params.minSpeed;
         float maxSpeed = params.maxSpeed;
 
-                std::pair<float, float> speeds = this->slewSpeedLimits(params, this->linearController);
+        std::pair<float, float> speeds = this->slewSpeedLimits(params, this->linearController);
         minSpeed = speeds.first;
         maxSpeed = speeds.second;
-        
-linearOutput = std::clamp(linearOutput, minSpeed, maxSpeed)*pxl::sgn(linearError);
-        angularOutput = std::clamp(angularOutput, minSpeed, maxSpeed)*pxl::sgn(angularError);
 
-float rVel = (linearOutput - (fabs(angularOutput) * params.rotationBias)) + angularOutput;
-float lVel = (linearOutput - (fabs(angularOutput) * params.rotationBias)) - angularOutput;
+        linearOutput = std::clamp(linearOutput, minSpeed, maxSpeed) * pxl::sgn(linearError);
+        angularOutput = std::clamp(angularOutput, minSpeed, maxSpeed) * pxl::sgn(angularError);
 
-std::pair<float, float> normalized = normalize(lVel, rVel, maxSpeed, true);
+        float rVel = (linearOutput - (fabs(angularOutput) * params.rotationBias)) + angularOutput;
+        float lVel = (linearOutput - (fabs(angularOutput) * params.rotationBias)) - angularOutput;
 
-            drivetrain.leftMotors->move(normalized.first);
-            drivetrain.rightMotors->move(normalized.second);
+        std::pair<float, float> normalized = normalize(lVel, rVel, maxSpeed, true);
 
-pros::delay(10);        }    drivetrain.leftMotors->move(0);
+        drivetrain.leftMotors->move(normalized.first);
+        drivetrain.rightMotors->move(normalized.second);
+
+        pros::delay(10);
+    }
+    drivetrain.leftMotors->move(0);
     drivetrain.rightMotors->move(0);
 }
-}
+}  // namespace pxl
