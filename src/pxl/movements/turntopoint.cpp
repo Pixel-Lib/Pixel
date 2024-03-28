@@ -8,7 +8,7 @@ void Drivebase::turnToPoint(float x, float y, float timeout, turnToPointParams t
         pros::delay(10);
         return;
     }
-    Coord target = Coord(x, y);
+    const Coord target = Coord(x, y);
     float angularError;
     // start the timeout
     Timer localTimeout(timeout);
