@@ -36,7 +36,7 @@ void Drivebase::eulerTurn(float target, float rate, float timeout, eulerTurnPara
         minSpeed = speeds.first;
         maxSpeed = speeds.second;
 
-        vel = std::fabs(vel) >= params.maxSpeed ? (params.maxSpeed * pxl::sgn(vel)) : vel;
+        vel = std::fabs(vel) >= maxSpeed ? (maxSpeed * pxl::sgn(vel)) : vel;
         float rvel = (2 * vel) / (ratio + 1);
         float lvel = ratio * rvel;
 

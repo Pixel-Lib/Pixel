@@ -1,4 +1,5 @@
 #include "pxl/drivebase/drivebase.hpp"
+#include "pxl/drivebase/exit_conditions.hpp"
 #include "pxl/util.hpp"
 
 namespace pxl {
@@ -32,10 +33,25 @@ void Drivebase::moveToPoint(float x, float y, float timeout, moveToPointParams p
         float angularOutput = angularController.update(angularError);
         float linearOutput = cre * linearController.update(linearError);
 
+                float minSpeed = params.minSpeed;
+        float maxSpeed = params.maxSpeed;
+
+                std::pair<float, float> speeds = this->slewSpeedLimits(params, this->linearController);
+        minSpeed = speeds.first;
+        maxSpeed = speeds.second;
+        
+linearOutput = std::clamp(linearOutput, minSpeed, maxSpeed)*pxl::sgn(linearError);
+        angularOutput = std::clamp(angularOutput, minSpeed, maxSpeed)*pxl::sgn(angularError);
+
 float rVel = (linearOutput - (fabs(angularOutput) * params.rotationBias)) + angularOutput;
 float lVel = (linearOutput - (fabs(angularOutput) * params.rotationBias)) - angularOutput;
 
+std::pair<float, float> normalized = normalize(lVel, rVel, maxSpeed, true);
 
-        }
+            drivetrain.leftMotors->move(normalized.first);
+            drivetrain.rightMotors->move(normalized.second);
+
+pros::delay(10);        }    drivetrain.leftMotors->move(0);
+    drivetrain.rightMotors->move(0);
 }
 }

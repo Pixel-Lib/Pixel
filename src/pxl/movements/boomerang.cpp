@@ -101,6 +101,7 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
 
         // clamp the output to the min and max speed
         linearOutput = std::clamp(linearOutput, minSpeed, maxSpeed);
+        angularOutput = std::clamp(angularOutput, minSpeed, maxSpeed);
 
         // if the error is negative, the robot should move backwards
         linearOutput = (pxl::sgn(linearOutput) != pxl::sgn(linearError)) ? -linearOutput : linearOutput;
