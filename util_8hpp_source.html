@@ -78,48 +78,49 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="coord_8hpp.html">pxl/parametrics/coord.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepxl.html">pxl</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#aef4d585e132a7669441e66bd34be8f11">slew</a>(<span class="keywordtype">float</span> target, <span class="keywordtype">float</span> current, <span class="keywordtype">float</span> maxChange);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#accc0c31a4c5d20ceb1ea8de0417006d6">radToDeg</a>(<span class="keywordtype">float</span> rad);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#a092e7e57e83f9d3a78fe9ffcf940cef8">degToRad</a>(<span class="keywordtype">float</span> deg);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#aa3ad78e90d5e52e5b47f463c6c6924be">wrapTo180</a>(<span class="keywordtype">float</span> deg);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#a7d815267e7c29949aacc85ab67ad82e6">wrapTo360</a>(<span class="keywordtype">float</span> deg);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#ad17d8719f3bf43ec4cc5d52c805338f7">wrapToPi</a>(<span class="keywordtype">float</span> rad);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#a847a12cda4c61b6fcc017ff7f8b35060">wrapTo2Pi</a>(<span class="keywordtype">float</span> rad);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#a26c76428239cd4f5adbb23aff8cd6384">angleError</a>(<span class="keywordtype">float</span> angle1, <span class="keywordtype">float</span> angle2, <span class="keywordtype">bool</span> radians);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="namespacepxl.html#afa79c20911ee3116206f645a9e1e3ed0">  112</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; T <a class="code" href="namespacepxl.html#afa79c20911ee3116206f645a9e1e3ed0">sgn</a>(T x) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> std::is_floating_point_v&lt;T&gt; ? (std::signbit(x) ? T(-1) : T(1)) : ((x &lt; T(0)) ? T(-1) : T(1));</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#aae3973eb617ab05e24069a0ad9a1d9b0">ema</a>(<span class="keywordtype">float</span> current, <span class="keywordtype">float</span> previous, <span class="keywordtype">float</span> smooth);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="namespacepxl.html#a1400e5c065d0e56c9cfc4d7998ab0a4f">  146</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; T <a class="code" href="namespacepxl.html#a1400e5c065d0e56c9cfc4d7998ab0a4f">avg</a>(<span class="keyword">const</span> std::vector&lt;T&gt; &amp;vec) {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    T sum = T();  <span class="comment">// Initialize sum to default value for T</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> T &amp;elem : vec) { sum += elem; }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">return</span> sum / vec.size();</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;std::pair&lt;float, float&gt; <a class="code" href="namespacepxl.html#aec6a4556717fb97f5c3cf2fb59899254">normalize</a>(<span class="keywordtype">float</span> lateralOut, <span class="keywordtype">float</span> angularOut, <span class="keywordtype">float</span> maxSpeed, <span class="keywordtype">bool</span> leftright = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keywordtype">int</span> <a class="code" href="namespacepxl.html#af71c6114016a2ff82c929141b97670e4">dirToSpin</a>(<span class="keywordtype">float</span> target, <span class="keywordtype">float</span> currHeading);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#a9c5a571a77d33b91222c0a16e89d8f27">absoluteAngleToPoint</a>(<span class="keyword">const</span> Coord&amp; <a class="code" href="namespacepxl.html#a0701b37c7456e2154050add8257094c0ae049005f408ad18964ff92c37164b6c4">point</a>, <span class="keyword">const</span> Coord&amp; other);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}  <span class="comment">// namespace pxl</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="coord_8hpp.html">pxl/parametrics/coord.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepxl.html">pxl</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#aef4d585e132a7669441e66bd34be8f11">slew</a>(<span class="keywordtype">float</span> target, <span class="keywordtype">float</span> current, <span class="keywordtype">float</span> maxChange);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#accc0c31a4c5d20ceb1ea8de0417006d6">radToDeg</a>(<span class="keywordtype">float</span> rad);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#a092e7e57e83f9d3a78fe9ffcf940cef8">degToRad</a>(<span class="keywordtype">float</span> deg);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#aa3ad78e90d5e52e5b47f463c6c6924be">wrapTo180</a>(<span class="keywordtype">float</span> deg);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#a7d815267e7c29949aacc85ab67ad82e6">wrapTo360</a>(<span class="keywordtype">float</span> deg);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#ad17d8719f3bf43ec4cc5d52c805338f7">wrapToPi</a>(<span class="keywordtype">float</span> rad);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#a847a12cda4c61b6fcc017ff7f8b35060">wrapTo2Pi</a>(<span class="keywordtype">float</span> rad);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#a26c76428239cd4f5adbb23aff8cd6384">angleError</a>(<span class="keywordtype">float</span> angle1, <span class="keywordtype">float</span> angle2, <span class="keywordtype">bool</span> radians);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="namespacepxl.html#afa79c20911ee3116206f645a9e1e3ed0">  113</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; T <a class="code" href="namespacepxl.html#afa79c20911ee3116206f645a9e1e3ed0">sgn</a>(T x) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> std::is_floating_point_v&lt;T&gt; ? (std::signbit(x) ? T(-1) : T(1)) : ((x &lt; T(0)) ? T(-1) : T(1));</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#aae3973eb617ab05e24069a0ad9a1d9b0">ema</a>(<span class="keywordtype">float</span> current, <span class="keywordtype">float</span> previous, <span class="keywordtype">float</span> smooth);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="namespacepxl.html#a1400e5c065d0e56c9cfc4d7998ab0a4f">  147</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; T <a class="code" href="namespacepxl.html#a1400e5c065d0e56c9cfc4d7998ab0a4f">avg</a>(<span class="keyword">const</span> std::vector&lt;T&gt;&amp; vec) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    T sum = T();  <span class="comment">// Initialize sum to default value for T</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> T&amp; elem : vec) { sum += elem; }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">return</span> sum / vec.size();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;std::pair&lt;float, float&gt; <a class="code" href="namespacepxl.html#aec6a4556717fb97f5c3cf2fb59899254">normalize</a>(<span class="keywordtype">float</span> lateralOut, <span class="keywordtype">float</span> angularOut, <span class="keywordtype">float</span> maxSpeed, <span class="keywordtype">bool</span> leftright = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keywordtype">int</span> <a class="code" href="namespacepxl.html#af71c6114016a2ff82c929141b97670e4">dirToSpin</a>(<span class="keywordtype">float</span> target, <span class="keywordtype">float</span> currHeading);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespacepxl.html#a9c5a571a77d33b91222c0a16e89d8f27">absoluteAngleToPoint</a>(<span class="keyword">const</span> Coord&amp; <a class="code" href="namespacepxl.html#a0701b37c7456e2154050add8257094c0ae049005f408ad18964ff92c37164b6c4">point</a>, <span class="keyword">const</span> Coord&amp; other);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}  <span class="comment">// namespace pxl</span></div>
 <div class="ttc" id="acoord_8hpp_html"><div class="ttname"><a href="coord_8hpp.html">coord.hpp</a></div></div>
 <div class="ttc" id="anamespacepxl_html"><div class="ttname"><a href="namespacepxl.html">pxl</a></div><div class="ttdef"><b>Definition:</b> aSync.hpp:12</div></div>
 <div class="ttc" id="anamespacepxl_html_a0701b37c7456e2154050add8257094c0ae049005f408ad18964ff92c37164b6c4"><div class="ttname"><a href="namespacepxl.html#a0701b37c7456e2154050add8257094c0ae049005f408ad18964ff92c37164b6c4">pxl::point</a></div><div class="ttdeci">@ point</div><div class="ttdef"><b>Definition:</b> aSync.hpp:16</div></div>
 <div class="ttc" id="anamespacepxl_html_a092e7e57e83f9d3a78fe9ffcf940cef8"><div class="ttname"><a href="namespacepxl.html#a092e7e57e83f9d3a78fe9ffcf940cef8">pxl::degToRad</a></div><div class="ttdeci">float degToRad(float deg)</div><div class="ttdoc">Converts degrees to radians.</div><div class="ttdef"><b>Definition:</b> util.cpp:17</div></div>
-<div class="ttc" id="anamespacepxl_html_a1400e5c065d0e56c9cfc4d7998ab0a4f"><div class="ttname"><a href="namespacepxl.html#a1400e5c065d0e56c9cfc4d7998ab0a4f">pxl::avg</a></div><div class="ttdeci">T avg(const std::vector&lt; T &gt; &amp;vec)</div><div class="ttdoc">Calculates the average of a vector of any type.</div><div class="ttdef"><b>Definition:</b> util.hpp:146</div></div>
+<div class="ttc" id="anamespacepxl_html_a1400e5c065d0e56c9cfc4d7998ab0a4f"><div class="ttname"><a href="namespacepxl.html#a1400e5c065d0e56c9cfc4d7998ab0a4f">pxl::avg</a></div><div class="ttdeci">T avg(const std::vector&lt; T &gt; &amp;vec)</div><div class="ttdoc">Calculates the average of a vector of any type.</div><div class="ttdef"><b>Definition:</b> util.hpp:147</div></div>
 <div class="ttc" id="anamespacepxl_html_a26c76428239cd4f5adbb23aff8cd6384"><div class="ttname"><a href="namespacepxl.html#a26c76428239cd4f5adbb23aff8cd6384">pxl::angleError</a></div><div class="ttdeci">float angleError(float angle1, float angle2, bool radians)</div><div class="ttdoc">Calculates the smallest angular difference between two angles.</div><div class="ttdef"><b>Definition:</b> util.cpp:27</div></div>
 <div class="ttc" id="anamespacepxl_html_a7d815267e7c29949aacc85ab67ad82e6"><div class="ttname"><a href="namespacepxl.html#a7d815267e7c29949aacc85ab67ad82e6">pxl::wrapTo360</a></div><div class="ttdeci">float wrapTo360(float deg)</div><div class="ttdoc">Wraps an angle to the range [0, 360] degrees.</div><div class="ttdef"><b>Definition:</b> util.cpp:21</div></div>
 <div class="ttc" id="anamespacepxl_html_a847a12cda4c61b6fcc017ff7f8b35060"><div class="ttname"><a href="namespacepxl.html#a847a12cda4c61b6fcc017ff7f8b35060">pxl::wrapTo2Pi</a></div><div class="ttdeci">float wrapTo2Pi(float rad)</div><div class="ttdoc">Wraps an angle to the range [0, 2*Pi] radians.</div><div class="ttdef"><b>Definition:</b> util.cpp:25</div></div>
@@ -131,11 +132,11 @@ $(function() {
 <div class="ttc" id="anamespacepxl_html_aec6a4556717fb97f5c3cf2fb59899254"><div class="ttname"><a href="namespacepxl.html#aec6a4556717fb97f5c3cf2fb59899254">pxl::normalize</a></div><div class="ttdeci">std::pair&lt; float, float &gt; normalize(float lateralOut, float angularOut, float maxSpeed, bool leftright=false)</div><div class="ttdoc">normalizes the output of a lateral and angular controller so speeds do not exceed the maxSpeed</div><div class="ttdef"><b>Definition:</b> util.cpp:35</div></div>
 <div class="ttc" id="anamespacepxl_html_aef4d585e132a7669441e66bd34be8f11"><div class="ttname"><a href="namespacepxl.html#aef4d585e132a7669441e66bd34be8f11">pxl::slew</a></div><div class="ttdeci">float slew(float target, float current, float maxChange)</div><div class="ttdoc">Clamps a value to a specified range.</div><div class="ttdef"><b>Definition:</b> util.cpp:6</div></div>
 <div class="ttc" id="anamespacepxl_html_af71c6114016a2ff82c929141b97670e4"><div class="ttname"><a href="namespacepxl.html#af71c6114016a2ff82c929141b97670e4">pxl::dirToSpin</a></div><div class="ttdeci">int dirToSpin(float target, float currHeading)</div><div class="ttdef"><b>Definition:</b> util.cpp:49</div></div>
-<div class="ttc" id="anamespacepxl_html_afa79c20911ee3116206f645a9e1e3ed0"><div class="ttname"><a href="namespacepxl.html#afa79c20911ee3116206f645a9e1e3ed0">pxl::sgn</a></div><div class="ttdeci">T sgn(T x)</div><div class="ttdoc">Returns the sign of a number (-1 for negative, 1 for positive, 0 for zero).</div><div class="ttdef"><b>Definition:</b> util.hpp:112</div></div>
+<div class="ttc" id="anamespacepxl_html_afa79c20911ee3116206f645a9e1e3ed0"><div class="ttname"><a href="namespacepxl.html#afa79c20911ee3116206f645a9e1e3ed0">pxl::sgn</a></div><div class="ttdeci">T sgn(T x)</div><div class="ttdoc">Returns the sign of a number (-1 for negative, 1 for positive, 0 for zero).</div><div class="ttdef"><b>Definition:</b> util.hpp:113</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 28 2024 03:58:02 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Mar 28 2024 04:04:11 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
