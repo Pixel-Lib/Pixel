@@ -19,8 +19,9 @@ void Drivebase::moveToPoint(float x, float y, float timeout, moveToPointParams p
     float linearError;
     float angularError;
 
-    while (!localTimeout.isDone()
-           || !linearController.getExit(linearError) && !angularController.getExit(angularError) || SemicircleExit(pxl::Pose(target.x,target.y,exitAngle), odom.getPose(), drivetrain.trackWidth * (1-std::cos(degToRad(angularError))))) {
+    while (!localTimeout.isDone() || !linearController.getExit(linearError) && !angularController.getExit(angularError)
+           || SemicircleExit(pxl::Pose(target.x, target.y, exitAngle), odom.getPose(),
+                             drivetrain.trackWidth * (1 - std::cos(degToRad(angularError))))) {
         exitAngle = std::atan2(target.y - odom.getPose().y, target.x - odom.getPose().x);
 
         linearError = this->odom.getPose().distance(target);
