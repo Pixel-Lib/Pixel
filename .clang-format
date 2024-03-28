@@ -3,7 +3,6 @@ Language:        Cpp
 # BasedOnStyle:  Google
 AccessModifierOffset: 0
 AlignAfterOpenBracket: Align
-AlignArrayOfStructures: true
 AlignConsecutiveAssignments: false
 AlignConsecutiveDeclarations: false
 AlignEscapedNewlines: Right
