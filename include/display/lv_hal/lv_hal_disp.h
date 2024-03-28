@@ -61,7 +61,7 @@ typedef struct _disp_drv_t {
 } lv_disp_drv_t;
 
 typedef struct _disp_t {
-        lv_disp_drv_t   driver;
+        lv_disp_drv_t driver;
         struct _disp_t *next;
 } lv_disp_t;
 

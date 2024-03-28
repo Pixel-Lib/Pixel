@@ -44,10 +44,10 @@ class SettledUtil {
         virtual void reset();
 
     protected:
-        double                         atTargetError = 50;
-        double                         atTargetDerivative = 5;
-        QTime                          atTargetTime = 250_ms;
+        double atTargetError = 50;
+        double atTargetDerivative = 5;
+        QTime atTargetTime = 250_ms;
         std::unique_ptr<AbstractTimer> atTargetTimer;
-        double                         lastError = 0;
+        double lastError = 0;
 };
 }  // namespace okapi

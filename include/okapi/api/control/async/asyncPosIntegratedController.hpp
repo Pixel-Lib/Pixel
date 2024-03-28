@@ -28,9 +28,9 @@ class AsyncPosIntegratedController : public AsyncPositionController<double, doub
          * @param itimeUtil The TimeUtil.
          * @param ilogger The logger this instance will log to.
          */
-        AsyncPosIntegratedController(const std::shared_ptr<AbstractMotor>  &imotor,
+        AsyncPosIntegratedController(const std::shared_ptr<AbstractMotor> &imotor,
                                      const AbstractMotor::GearsetRatioPair &ipair, std::int32_t imaxVelocity,
-                                     const TimeUtil                &itimeUtil,
+                                     const TimeUtil &itimeUtil,
                                      const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
 
         /**
@@ -128,16 +128,16 @@ class AsyncPosIntegratedController : public AsyncPositionController<double, doub
         virtual void stop();
 
     protected:
-        std::shared_ptr<Logger>         logger;
-        TimeUtil                        timeUtil;
-        std::shared_ptr<AbstractMotor>  motor;
+        std::shared_ptr<Logger> logger;
+        TimeUtil timeUtil;
+        std::shared_ptr<AbstractMotor> motor;
         AbstractMotor::GearsetRatioPair pair;
-        std::int32_t                    maxVelocity;
-        double                          lastTarget{0};
-        double                          offset{0};
-        bool                            controllerIsDisabled{false};
-        bool                            hasFirstTarget{false};
-        std::unique_ptr<SettledUtil>    settledUtil;
+        std::int32_t maxVelocity;
+        double lastTarget{0};
+        double offset{0};
+        bool controllerIsDisabled{false};
+        bool hasFirstTarget{false};
+        std::unique_ptr<SettledUtil> settledUtil;
 
         /**
          * Resumes moving after the controller is reset. Should not cause movement

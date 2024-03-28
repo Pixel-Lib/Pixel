@@ -16,7 +16,7 @@ PID::PID(float kP, float kI, float kD, float kP_d, float integralMAX)
 // Member function to update PID
 float PID::update(const float error) {
     // Calculate time difference (dt)
-    auto                         currentTime = std::chrono::system_clock::now();
+    auto currentTime = std::chrono::system_clock::now();
     std::chrono::duration<float> dt = currentTime - prevTime;
     prevTime = currentTime;
 

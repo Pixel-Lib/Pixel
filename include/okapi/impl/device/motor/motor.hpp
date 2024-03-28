@@ -31,7 +31,7 @@ class Motor : public AbstractMotor {
          * @param logger The logger that initialization warnings will be logged to.
          */
         Motor(std::uint8_t iport, bool ireverse, AbstractMotor::gearset igearset,
-              AbstractMotor::encoderUnits    iencoderUnits,
+              AbstractMotor::encoderUnits iencoderUnits,
               const std::shared_ptr<Logger> &logger = Logger::getDefaultLogger());
 
         /******************************************************************************/
@@ -475,6 +475,6 @@ class Motor : public AbstractMotor {
 
     protected:
         std::uint8_t port;
-        std::int8_t  reversed{1};
+        std::int8_t reversed{1};
 };
 }  // namespace okapi

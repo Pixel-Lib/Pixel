@@ -47,7 +47,7 @@ class ControlVector {
                    && nearly_equal(jerk, other.jerk);
         }
 
-        Pose   pose;
+        Pose pose;
         double vel;
         double accel;
         double jerk;

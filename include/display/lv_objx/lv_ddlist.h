@@ -45,15 +45,15 @@ extern "C" {
 typedef struct {
         lv_page_ext_t page; /*Ext. of ancestor*/
         /*New data for this type */
-        lv_obj_t   *label;          /*Label for the options*/
-        lv_style_t *sel_style;      /*Style of the selected option*/
-        lv_action_t action;         /*Pointer to function to call when an option is selected*/
-        uint16_t    option_cnt;     /*Number of options*/
-        uint16_t    sel_opt_id;     /*Index of the current option*/
-        uint16_t    sel_opt_id_ori; /*Store the original index on focus*/
-        uint16_t    anim_time;      /*Open/Close animation time [ms]*/
-        uint8_t     opened : 1;     /*1: The list is opened (handled by the library)*/
-        uint8_t     draw_arrow : 1; /*1: Draw arrow*/
+        lv_obj_t *label;         /*Label for the options*/
+        lv_style_t *sel_style;   /*Style of the selected option*/
+        lv_action_t action;      /*Pointer to function to call when an option is selected*/
+        uint16_t option_cnt;     /*Number of options*/
+        uint16_t sel_opt_id;     /*Index of the current option*/
+        uint16_t sel_opt_id_ori; /*Store the original index on focus*/
+        uint16_t anim_time;      /*Open/Close animation time [ms]*/
+        uint8_t opened : 1;      /*1: The list is opened (handled by the library)*/
+        uint8_t draw_arrow : 1;  /*1: Draw arrow*/
 
         lv_coord_t fix_height; /*Height of the ddlist when opened. (0: auto-size)*/
 } lv_ddlist_ext_t;

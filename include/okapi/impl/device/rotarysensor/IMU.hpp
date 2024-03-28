@@ -97,8 +97,8 @@ class IMU : public ContinuousRotarySensor {
 
     protected:
         std::uint8_t port;
-        IMUAxes      axis;
-        double       offset = 0;
+        IMUAxes axis;
+        double offset = 0;
 
         /**
          * Get the current rotation about the configured axis. The internal offset

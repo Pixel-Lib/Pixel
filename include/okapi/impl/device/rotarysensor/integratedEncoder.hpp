@@ -51,6 +51,6 @@ class IntegratedEncoder : public ContinuousRotarySensor {
 
     protected:
         std::uint8_t port;
-        std::int8_t  reversed{1};
+        std::int8_t reversed{1};
 };
 }  // namespace okapi

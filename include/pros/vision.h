@@ -46,15 +46,15 @@ namespace pros {
      * to detect objects.
      */
     typedef struct __attribute__((__packed__)) vision_signature {
-            uint8_t  id;
-            uint8_t  _pad[3];
-            float    range;
-            int32_t  u_min;
-            int32_t  u_max;
-            int32_t  u_mean;
-            int32_t  v_min;
-            int32_t  v_max;
-            int32_t  v_mean;
+            uint8_t id;
+            uint8_t _pad[3];
+            float range;
+            int32_t u_min;
+            int32_t u_max;
+            int32_t u_mean;
+            int32_t v_min;
+            int32_t v_max;
+            int32_t v_mean;
             uint32_t rgb;
             uint32_t type;
     } vision_signature_s_t;

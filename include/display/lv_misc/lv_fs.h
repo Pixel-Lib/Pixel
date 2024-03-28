@@ -54,12 +54,12 @@ typedef uint8_t lv_fs_res_t;
 struct __lv_fs_drv_t;
 
 typedef struct {
-        void                 *file_d;
+        void *file_d;
         struct __lv_fs_drv_t *drv;
 } lv_fs_file_t;
 
 typedef struct {
-        void                 *dir_d;
+        void *dir_d;
         struct __lv_fs_drv_t *drv;
 } lv_fs_dir_t;
 
@@ -70,7 +70,7 @@ enum {
 typedef uint8_t lv_fs_mode_t;
 
 typedef struct __lv_fs_drv_t {
-        char     letter;
+        char letter;
         uint16_t file_size;
         uint16_t rddir_size;
         bool (*ready)(void);

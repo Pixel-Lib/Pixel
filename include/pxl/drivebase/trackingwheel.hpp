@@ -81,14 +81,14 @@ class TrackingWheel {
         int getType();
 
     private:
-        std::unique_ptr<pros::ADIEncoder> encoder;        // Pointer to encoder (optional)
-        std::unique_ptr<pros::Rotation>   rotation;       // Pointer to rotation sensor (optional)
-        std::unique_ptr<pros::MotorGroup> motors;         // Pointer to motor group (optional)
-        float                             diameter;       // Wheel diameter in meters
-        float                             distance;       // Wheel offset from the robot center in meters
-        float                             gearRatio;      // Gear ratio of the wheel (encoder/motor)
-        float                             rpm;            // RPM of the motor group (optional)
-        float                             lastAngle = 0;  // Last angle of the wheel
+        std::unique_ptr<pros::ADIEncoder> encoder;  // Pointer to encoder (optional)
+        std::unique_ptr<pros::Rotation> rotation;   // Pointer to rotation sensor (optional)
+        std::unique_ptr<pros::MotorGroup> motors;   // Pointer to motor group (optional)
+        float diameter;                             // Wheel diameter in meters
+        float distance;                             // Wheel offset from the robot center in meters
+        float gearRatio;                            // Gear ratio of the wheel (encoder/motor)
+        float rpm;                                  // RPM of the motor group (optional)
+        float lastAngle = 0;                        // Last angle of the wheel
 };
 
 }  // namespace pxl

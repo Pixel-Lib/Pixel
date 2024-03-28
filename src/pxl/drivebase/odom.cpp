@@ -18,7 +18,7 @@ void Odom::calibrate(bool calibrateIMUs) {
     std::vector<std::unique_ptr<TrackingWheel>> newDrivetrain = {};
     std::vector<std::unique_ptr<TrackingWheel>> newVerticals = {};
     std::vector<std::unique_ptr<TrackingWheel>> newHorizontals = {};
-    std::vector<std::shared_ptr<pros::IMU>>     newIMUs = std::move(this->imu);
+    std::vector<std::shared_ptr<pros::IMU>> newIMUs = std::move(this->imu);
 
     // calibrate vertical tracking wheels
     for (auto it = this->verticals.begin(); it != this->verticals.end(); it++) {
@@ -73,8 +73,8 @@ float Odom::calcDeltaTheta(std::vector<std::shared_ptr<pros::IMU>> &imu, bool up
     };
 
     std::vector<float> deltaAngles;
-    const float        prevAngle = this->lastAngle;  // save lastAngle, as it will get reset when calling
-                                                     // getAngle() below
+    const float prevAngle = this->lastAngle;  // save lastAngle, as it will get reset when calling
+                                              // getAngle() below
 
     for (const auto &imu : this->imu) {
         const float angle = getRotation(imu);
@@ -115,7 +115,7 @@ void Odom::update() {
 
     const float deltaTheta = theta - this->pose.theta;  // change in angle
     const float avgTheta = this->pose.theta + deltaTheta / 2;
-    Pose        local(0, 0, deltaTheta);
+    Pose local(0, 0, deltaTheta);
     const float sinDTheta2 = (deltaTheta == 0) ? 1 : 2 * std::sin(deltaTheta / 2);
 
     const Coord LocalMatrix(calculateLocal(this->verticals, deltaTheta, sinDTheta2),

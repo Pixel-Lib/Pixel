@@ -78,8 +78,8 @@ typedef uint8_t lv_img_cf_t;
  * the result image converter utility*/
 typedef struct {
         lv_img_header_t header;
-        uint32_t        data_size;
-        const uint8_t  *data;
+        uint32_t data_size;
+        const uint8_t *data;
 } lv_img_dsc_t;
 
 /* Decoder function definitions */

@@ -29,6 +29,6 @@ class ConfigurableTimeUtilFactory : public TimeUtilFactory {
     private:
         double atTargetError;
         double atTargetDerivative;
-        QTime  atTargetTime;
+        QTime atTargetTime;
 };
 }  // namespace okapi

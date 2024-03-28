@@ -36,7 +36,7 @@ class AsyncMotionProfileController : public AsyncPositionController<std::string,
         AsyncMotionProfileController(const TimeUtil &itimeUtil, const PathfinderLimits &ilimits,
                                      const std::shared_ptr<ChassisModel> &imodel, const ChassisScales &iscales,
                                      const AbstractMotor::GearsetRatioPair &ipair,
-                                     const std::shared_ptr<Logger>         &ilogger = Logger::getDefaultLogger());
+                                     const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
 
         AsyncMotionProfileController(AsyncMotionProfileController &&other) = delete;
 
@@ -277,33 +277,33 @@ class AsyncMotionProfileController : public AsyncPositionController<std::string,
         void forceRemovePath(const std::string &ipathId);
 
     protected:
-        std::shared_ptr<Logger>                                     logger;
+        std::shared_ptr<Logger> logger;
         std::map<std::string, std::vector<squiggles::ProfilePoint>> paths{};
-        PathfinderLimits                                            limits;
-        std::shared_ptr<ChassisModel>                               model;
-        ChassisScales                                               scales;
-        AbstractMotor::GearsetRatioPair                             pair;
-        TimeUtil                                                    timeUtil;
+        PathfinderLimits limits;
+        std::shared_ptr<ChassisModel> model;
+        ChassisScales scales;
+        AbstractMotor::GearsetRatioPair pair;
+        TimeUtil timeUtil;
 
         // This must be locked when accessing the current path
         CrossplatformMutex currentPathMutex;
 
-        std::string          currentPath{""};
-        std::atomic_bool     isRunning{false};
-        std::atomic_int      direction{1};
-        std::atomic_bool     mirrored{false};
-        std::atomic_bool     disabled{false};
-        std::atomic_bool     dtorCalled{false};
+        std::string currentPath{""};
+        std::atomic_bool isRunning{false};
+        std::atomic_int direction{1};
+        std::atomic_bool mirrored{false};
+        std::atomic_bool disabled{false};
+        std::atomic_bool dtorCalled{false};
         CrossplatformThread *task{nullptr};
 
         static void trampoline(void *context);
-        void        loop();
+        void loop();
 
         /**
          * Follow the supplied path. Must follow the disabled lifecycle.
          */
         virtual void executeSinglePath(const std::vector<squiggles::ProfilePoint> &path,
-                                       std::unique_ptr<AbstractRate>               rate);
+                                       std::unique_ptr<AbstractRate> rate);
 
         /**
          * Converts linear chassis speed to rotational motor speed.

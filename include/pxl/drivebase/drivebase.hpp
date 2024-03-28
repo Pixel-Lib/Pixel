@@ -17,7 +17,7 @@ struct OdomSensors {
         TrackingWheel *vertical2;
         TrackingWheel *horizontal1;
         TrackingWheel *horizontal2;
-        pros::IMU     *imu;
+        pros::IMU *imu;
 };
 
 /**
@@ -47,9 +47,9 @@ class Drivetrain {
         // private:
         pros::MotorGroup *leftMotors;
         pros::MotorGroup *rightMotors;
-        float             trackWidth;
-        float             wheelDiameter;
-        float             rpm;
+        float trackWidth;
+        float wheelDiameter;
+        float rpm;
 };
 
 class ExtendedDrivetrain {
@@ -94,7 +94,7 @@ class Drivebase {
 
         //* DRIVE *//
         pros::Mutex mutex;
-        uint8_t     compstate = pros::competition::get_status();
+        uint8_t compstate = pros::competition::get_status();
 
         struct driveParams {
                 float minSpeed = 0;
@@ -128,7 +128,7 @@ class Drivebase {
                 float dlead = 0.5;
                 float glead = 0.2;
 
-                bool  forward = true;
+                bool forward = true;
                 float minSpeed = 0;
                 float maxSpeed = 127;
                 float minAccel = 0;
@@ -141,8 +141,8 @@ class Drivebase {
         //* ARCTURN *//
         struct arcturnParams {
                 float radius = NAN;
-                bool  right = true;
-                bool  forward = true;
+                bool right = true;
+                bool forward = true;
                 float minSpeed = 0;
                 float maxSpeed = 127;
                 float slew = NAN;
@@ -151,7 +151,7 @@ class Drivebase {
         void arcTurn(float target, float timeout, arcturnParams params = defaultArcturnParams(), bool async = true);
         //* EULER_TURN *//
         struct eulerTurnParams {
-                bool  forward = true;
+                bool forward = true;
                 float minSpeed = 0;
                 float maxSpeed = 127;
                 float slew = NAN;
@@ -172,8 +172,8 @@ class Drivebase {
 
     private:
         OdomSensors odomSensors = {nullptr, nullptr, nullptr, nullptr, nullptr};
-        void        calibrateIMU(OdomSensors sensors);
-        Odom        setSensors(OdomSensors sensors);
+        void calibrateIMU(OdomSensors sensors);
+        Odom setSensors(OdomSensors sensors);
         /**
          * Calculates the slew speed limits for a given object and seeking controller.
          *
@@ -197,10 +197,10 @@ class Drivebase {
     public:
         SeekingController linearController;
         SeekingController angularController;
-        Odom              odom;
-        bool              isDriverControl();
-        Drivetrain        drivetrain;
-        OdomSensors       sensors;
+        Odom odom;
+        bool isDriverControl();
+        Drivetrain drivetrain;
+        OdomSensors sensors;
 
         ExtendedDrivetrain extendedDrivetrain;
 

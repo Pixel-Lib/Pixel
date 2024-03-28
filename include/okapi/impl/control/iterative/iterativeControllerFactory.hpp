@@ -28,7 +28,7 @@ class IterativeControllerFactory {
          */
         static IterativePosPIDController
         posPID(double ikP, double ikI, double ikD, double ikBias = 0,
-               std::unique_ptr<Filter>        iderivativeFilter = std::make_unique<PassthroughFilter>(),
+               std::unique_ptr<Filter> iderivativeFilter = std::make_unique<PassthroughFilter>(),
                const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
 
         /**
@@ -43,8 +43,8 @@ class IterativeControllerFactory {
          */
         static IterativeVelPIDController
         velPID(double ikP, double ikD, double ikF = 0, double ikSF = 0,
-               std::unique_ptr<VelMath>       ivelMath = VelMathFactory::createPtr(imev5GreenTPR),
-               std::unique_ptr<Filter>        iderivativeFilter = std::make_unique<PassthroughFilter>(),
+               std::unique_ptr<VelMath> ivelMath = VelMathFactory::createPtr(imev5GreenTPR),
+               std::unique_ptr<Filter> iderivativeFilter = std::make_unique<PassthroughFilter>(),
                const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
 
         /**
@@ -61,8 +61,8 @@ class IterativeControllerFactory {
          */
         static IterativeMotorVelocityController
         motorVelocity(Motor imotor, double ikP, double ikD, double ikF = 0, double ikSF = 0,
-                      std::unique_ptr<VelMath>       ivelMath = VelMathFactory::createPtr(imev5GreenTPR),
-                      std::unique_ptr<Filter>        iderivativeFilter = std::make_unique<PassthroughFilter>(),
+                      std::unique_ptr<VelMath> ivelMath = VelMathFactory::createPtr(imev5GreenTPR),
+                      std::unique_ptr<Filter> iderivativeFilter = std::make_unique<PassthroughFilter>(),
                       const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
 
         /**
@@ -79,8 +79,8 @@ class IterativeControllerFactory {
          */
         static IterativeMotorVelocityController
         motorVelocity(MotorGroup imotor, double ikP, double ikD, double ikF = 0, double ikSF = 0,
-                      std::unique_ptr<VelMath>       ivelMath = VelMathFactory::createPtr(imev5GreenTPR),
-                      std::unique_ptr<Filter>        iderivativeFilter = std::make_unique<PassthroughFilter>(),
+                      std::unique_ptr<VelMath> ivelMath = VelMathFactory::createPtr(imev5GreenTPR),
+                      std::unique_ptr<Filter> iderivativeFilter = std::make_unique<PassthroughFilter>(),
                       const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
 
         /**

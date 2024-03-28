@@ -71,6 +71,6 @@ class ADIUltrasonic : public ControllerInput<double> {
 
     protected:
         pros::c::ext_adi_ultrasonic_t ultra;
-        std::unique_ptr<Filter>       filter;
+        std::unique_ptr<Filter> filter;
 };
 }  // namespace okapi

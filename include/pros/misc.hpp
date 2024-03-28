@@ -138,7 +138,7 @@ class Controller {
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-function"
         template <typename T> T convert_args(T arg) { return arg; }
-        const char             *convert_args(const std::string &arg) { return arg.c_str(); }
+        const char *convert_args(const std::string &arg) { return arg.c_str(); }
 #pragma GCC diagnostic pop
 
         /**

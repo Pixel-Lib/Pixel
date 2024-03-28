@@ -29,7 +29,7 @@ class SplineGenerator {
          * @param idt The difference in time in seconds between each state for the
          *            generated paths.
          */
-        SplineGenerator(Constraints                    iconstraints,
+        SplineGenerator(Constraints iconstraints,
                         std::shared_ptr<PhysicalModel> imodel = std::make_shared<PassthroughModel>(), double idt = 0.1);
 
         /**
@@ -108,7 +108,7 @@ class SplineGenerator {
                     return "GeneratedPoint: {" + pose.to_string() + ", curvature: " + std::to_string(curvature) + "}";
                 }
 
-                Pose   pose;
+                Pose pose;
                 double curvature;
         };
 
@@ -122,9 +122,9 @@ class SplineGenerator {
                     : point(ipoint), vel(ivel), accel(iaccel), jerk(ijerk) {}
 
                 GeneratedPoint point;
-                double         vel;
-                double         accel;
-                double         jerk;
+                double vel;
+                double accel;
+                double jerk;
 
                 std::string to_string() const {
                     return "GeneratedVector: {" + point.to_string() + ", vel: " + std::to_string(vel)
@@ -160,7 +160,7 @@ class SplineGenerator {
 
                 ConstrainedState() = default;
 
-                Pose   pose = Pose();
+                Pose pose = Pose();
                 double curvature = 0;
                 double distance = 0;
                 double max_vel = 0;

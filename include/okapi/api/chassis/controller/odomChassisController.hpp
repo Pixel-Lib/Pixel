@@ -142,17 +142,17 @@ class OdomChassisController : public ChassisController {
         std::shared_ptr<Odometry> getOdometry();
 
     protected:
-        std::shared_ptr<Logger>   logger;
-        TimeUtil                  timeUtil;
-        QLength                   moveThreshold;
-        QAngle                    turnThreshold;
+        std::shared_ptr<Logger> logger;
+        TimeUtil timeUtil;
+        QLength moveThreshold;
+        QAngle turnThreshold;
         std::shared_ptr<Odometry> odom;
-        CrossplatformThread      *odomTask{nullptr};
-        std::atomic_bool          dtorCalled{false};
-        StateMode                 defaultStateMode{StateMode::FRAME_TRANSFORMATION};
-        std::atomic_bool          odomTaskRunning{false};
+        CrossplatformThread *odomTask{nullptr};
+        std::atomic_bool dtorCalled{false};
+        StateMode defaultStateMode{StateMode::FRAME_TRANSFORMATION};
+        std::atomic_bool odomTaskRunning{false};
 
         static void trampoline(void *context);
-        void        loop();
+        void loop();
 };
 }  // namespace okapi

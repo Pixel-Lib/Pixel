@@ -32,7 +32,7 @@ class ChassisControllerIntegrated : public ChassisController {
                                     std::unique_ptr<AsyncPosIntegratedController> ileftController,
                                     std::unique_ptr<AsyncPosIntegratedController> irightController,
                                     const AbstractMotor::GearsetRatioPair &igearset = AbstractMotor::gearset::green,
-                                    const ChassisScales    &iscales = ChassisScales({1, 1}, imev5GreenTPR),
+                                    const ChassisScales &iscales = ChassisScales({1, 1}, imev5GreenTPR),
                                     std::shared_ptr<Logger> ilogger = Logger::getDefaultLogger());
 
         /**
@@ -175,14 +175,14 @@ class ChassisControllerIntegrated : public ChassisController {
         double getMaxVelocity() const override;
 
     protected:
-        std::shared_ptr<Logger>                       logger;
-        bool                                          normalTurns{true};
-        std::shared_ptr<ChassisModel>                 chassisModel;
-        TimeUtil                                      timeUtil;
+        std::shared_ptr<Logger> logger;
+        bool normalTurns{true};
+        std::shared_ptr<ChassisModel> chassisModel;
+        TimeUtil timeUtil;
         std::unique_ptr<AsyncPosIntegratedController> leftController;
         std::unique_ptr<AsyncPosIntegratedController> rightController;
-        int                                           lastTarget;
-        ChassisScales                                 scales;
-        AbstractMotor::GearsetRatioPair               gearsetRatioPair;
+        int lastTarget;
+        ChassisScales scales;
+        AbstractMotor::GearsetRatioPair gearsetRatioPair;
 };
 }  // namespace okapi

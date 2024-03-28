@@ -29,7 +29,7 @@ class VelMath {
          */
         VelMath(double iticksPerRev, std::unique_ptr<Filter> ifilter, QTime isampleTime,
                 std::unique_ptr<AbstractTimer> iloopDtTimer,
-                std::shared_ptr<Logger>        ilogger = Logger::getDefaultLogger());
+                std::shared_ptr<Logger> ilogger = Logger::getDefaultLogger());
 
         virtual ~VelMath();
 
@@ -62,14 +62,14 @@ class VelMath {
 
     protected:
         std::shared_ptr<Logger> logger;
-        QAngularSpeed           vel{0_rpm};
-        QAngularSpeed           lastVel{0_rpm};
-        QAngularAcceleration    accel{0.0};
-        double                  lastPos{0};
-        double                  ticksPerRev;
+        QAngularSpeed vel{0_rpm};
+        QAngularSpeed lastVel{0_rpm};
+        QAngularAcceleration accel{0.0};
+        double lastPos{0};
+        double ticksPerRev;
 
-        QTime                          sampleTime;
+        QTime sampleTime;
         std::unique_ptr<AbstractTimer> loopDtTimer;
-        std::unique_ptr<Filter>        filter;
+        std::unique_ptr<Filter> filter;
 };
 }  // namespace okapi

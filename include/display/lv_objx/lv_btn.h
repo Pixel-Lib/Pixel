@@ -62,9 +62,9 @@ typedef uint8_t lv_btn_action_t;
 typedef struct {
         lv_cont_ext_t cont; /*Ext. of ancestor*/
         /*New data for this type */
-        lv_action_t    actions[LV_BTN_ACTION_NUM];
-        lv_style_t    *styles[LV_BTN_STATE_NUM]; /*Styles in each state*/
-        lv_btn_state_t state;                    /*Current state of the button from 'lv_btn_state_t' enum*/
+        lv_action_t actions[LV_BTN_ACTION_NUM];
+        lv_style_t *styles[LV_BTN_STATE_NUM]; /*Styles in each state*/
+        lv_btn_state_t state;                 /*Current state of the button from 'lv_btn_state_t' enum*/
 #if LV_BTN_INK_EFFECT
         uint16_t ink_in_time;   /*[ms] Time of ink fill effect (0: disable ink effect)*/
         uint16_t ink_wait_time; /*[ms] Wait before the ink disappears */

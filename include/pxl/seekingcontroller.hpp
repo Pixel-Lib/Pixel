@@ -44,15 +44,15 @@ class SeekingController {
          * @param error The error value to check for the exit condition.
          * @return True if the exit condition is met, false otherwise.
          */
-        bool  getExit(float error);
+        bool getExit(float error);
         float prevOut = 0;  ///< The previous output value.
         float slew_;        ///< The slew rate for the controller.
     private:
-        PID        pid;            ///< The PID object containing the PID parameters.
-        Regression regression;     ///< The regression object for calculating the output.
-        float      globalTimeout;  ///< The global timeout value for the controller.
-        float      error;          ///< The current error value.
-        pxl::Timer timer;          ///< The timer object for the controller.
+        PID pid;                ///< The PID object containing the PID parameters.
+        Regression regression;  ///< The regression object for calculating the output.
+        float globalTimeout;    ///< The global timeout value for the controller.
+        float error;            ///< The current error value.
+        pxl::Timer timer;       ///< The timer object for the controller.
 };
 
 }  // namespace pxl

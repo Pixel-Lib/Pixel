@@ -40,7 +40,7 @@ class OpticalSensor : public ControllerInput<double> {
          * ``ioutput``) is filtered; the other outputs are untouched.
          */
         OpticalSensor(std::uint8_t iport, OpticalSensorOutput ioutput = OpticalSensorOutput::hue,
-                      bool                    idisableGestures = true,
+                      bool idisableGestures = true,
                       std::unique_ptr<Filter> ifilter = std::make_unique<PassthroughFilter>());
 
         virtual ~OpticalSensor() = default;
@@ -136,8 +136,8 @@ class OpticalSensor : public ControllerInput<double> {
         int32_t disableGestures() const;
 
     protected:
-        std::uint8_t            port;
-        OpticalSensorOutput     output;
+        std::uint8_t port;
+        OpticalSensorOutput output;
         std::unique_ptr<Filter> filter;
 
         /**

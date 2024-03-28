@@ -51,7 +51,7 @@
 #define ultrasonicInit(portEcho, portPing) adi_ultrasonic_init(portEcho, portPing)
 #define ultrasonicShutdown(ult) adi_ultrasonic_shutdown(ult)
 
-typedef _CNAMESPACE adi_encoder_t    Encoder;
+typedef _CNAMESPACE adi_encoder_t Encoder;
 typedef _CNAMESPACE adi_ultrasonic_t Ultrasonic;
 
 /**
@@ -92,7 +92,7 @@ typedef _CNAMESPACE adi_ultrasonic_t Ultrasonic;
 #define mutexTake(mutex, blockTime) mutex_take(mutex, blockTime)
 #define mutexGive(mutex) mutex_give(mutex)
 
-typedef _NAMESPACE task_t  TaskHandle;
+typedef _NAMESPACE task_t TaskHandle;
 typedef _NAMESPACE mutex_t Mutex;
 
 /**

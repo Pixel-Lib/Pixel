@@ -80,10 +80,10 @@ class ChassisScales {
         QLength wheelTrack;
         QLength middleWheelDistance;
         QLength middleWheelDiameter;
-        double  straight;
-        double  turn;
-        double  middle;
-        double  tpr;
+        double straight;
+        double turn;
+        double middle;
+        double tpr;
 
     protected:
         static void validateInputSize(std::size_t inputSize, const std::shared_ptr<Logger> &logger);

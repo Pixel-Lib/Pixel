@@ -256,33 +256,33 @@ class AsyncLinearMotionProfileController : public AsyncPositionController<std::s
         void forceRemovePath(const std::string &ipathId);
 
     protected:
-        std::shared_ptr<Logger>                                     logger;
+        std::shared_ptr<Logger> logger;
         std::map<std::string, std::vector<squiggles::ProfilePoint>> paths{};
-        PathfinderLimits                                            limits;
-        std::shared_ptr<ControllerOutput<double>>                   output;
-        QLength                                                     diameter;
-        AbstractMotor::GearsetRatioPair                             pair;
-        double                                                      currentProfilePosition{0};
-        TimeUtil                                                    timeUtil;
+        PathfinderLimits limits;
+        std::shared_ptr<ControllerOutput<double>> output;
+        QLength diameter;
+        AbstractMotor::GearsetRatioPair pair;
+        double currentProfilePosition{0};
+        TimeUtil timeUtil;
 
         // This must be locked when accessing the current path
         CrossplatformMutex currentPathMutex;
 
-        std::string          currentPath{""};
-        std::atomic_bool     isRunning{false};
-        std::atomic_int      direction{1};
-        std::atomic_bool     disabled{false};
-        std::atomic_bool     dtorCalled{false};
+        std::string currentPath{""};
+        std::atomic_bool isRunning{false};
+        std::atomic_int direction{1};
+        std::atomic_bool disabled{false};
+        std::atomic_bool dtorCalled{false};
         CrossplatformThread *task{nullptr};
 
         static void trampoline(void *context);
-        void        loop();
+        void loop();
 
         /**
          * Follow the supplied path. Must follow the disabled lifecycle.
          */
         virtual void executeSinglePath(const std::vector<squiggles::ProfilePoint> &path,
-                                       std::unique_ptr<AbstractRate>               rate);
+                                       std::unique_ptr<AbstractRate> rate);
 
         /**
          * Converts linear "chassis" speed to rotational motor speed.

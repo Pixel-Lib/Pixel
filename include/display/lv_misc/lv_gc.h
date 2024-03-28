@@ -36,13 +36,13 @@ extern "C" {
     prefix lv_ll_t _lv_drv_ll;                                                                                         \
     prefix lv_ll_t _lv_file_ll;                                                                                        \
     prefix lv_ll_t _lv_anim_ll;                                                                                        \
-    prefix void   *_lv_def_scr;                                                                                        \
-    prefix void   *_lv_act_scr;                                                                                        \
-    prefix void   *_lv_top_layer;                                                                                      \
-    prefix void   *_lv_sys_layer;                                                                                      \
-    prefix void   *_lv_task_act;                                                                                       \
-    prefix void   *_lv_indev_list;                                                                                     \
-    prefix void   *_lv_disp_list;
+    prefix void *_lv_def_scr;                                                                                          \
+    prefix void *_lv_act_scr;                                                                                          \
+    prefix void *_lv_top_layer;                                                                                        \
+    prefix void *_lv_sys_layer;                                                                                        \
+    prefix void *_lv_task_act;                                                                                         \
+    prefix void *_lv_indev_list;                                                                                       \
+    prefix void *_lv_disp_list;
 
 #define LV_NO_PREFIX
 #define LV_ROOTS LV_GC_ROOTS(LV_NO_PREFIX)

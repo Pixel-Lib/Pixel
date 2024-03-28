@@ -60,8 +60,8 @@ class AsyncMotionProfileControllerBuilder {
          * @return An ongoing builder.
          */
         AsyncMotionProfileControllerBuilder &withOutput(const std::shared_ptr<ControllerOutput<double>> &ioutput,
-                                                        const QLength                                   &idiameter,
-                                                        const AbstractMotor::GearsetRatioPair           &ipair);
+                                                        const QLength &idiameter,
+                                                        const AbstractMotor::GearsetRatioPair &ipair);
 
         /**
          * Sets the output. This must be used with buildMotionProfileController().
@@ -87,8 +87,8 @@ class AsyncMotionProfileControllerBuilder {
          * @param ipair The gearset.
          * @return An ongoing builder.
          */
-        AsyncMotionProfileControllerBuilder &withOutput(const std::shared_ptr<ChassisModel>   &imodel,
-                                                        const ChassisScales                   &iscales,
+        AsyncMotionProfileControllerBuilder &withOutput(const std::shared_ptr<ChassisModel> &imodel,
+                                                        const ChassisScales &iscales,
                                                         const AbstractMotor::GearsetRatioPair &ipair);
 
         /**
@@ -160,19 +160,19 @@ class AsyncMotionProfileControllerBuilder {
     private:
         std::shared_ptr<Logger> logger;
 
-        bool             hasLimits{false};
+        bool hasLimits{false};
         PathfinderLimits limits;
 
-        bool                                      hasOutput{false};
+        bool hasOutput{false};
         std::shared_ptr<ControllerOutput<double>> output;
-        QLength                                   diameter;
+        QLength diameter;
 
-        bool                            hasModel{false};
-        std::shared_ptr<ChassisModel>   model;
-        ChassisScales                   scales{{1, 1}, imev5GreenTPR};
+        bool hasModel{false};
+        std::shared_ptr<ChassisModel> model;
+        ChassisScales scales{{1, 1}, imev5GreenTPR};
         AbstractMotor::GearsetRatioPair pair{AbstractMotor::gearset::invalid};
-        TimeUtilFactory                 timeUtilFactory = TimeUtilFactory();
-        std::shared_ptr<Logger>         controllerLogger = Logger::getDefaultLogger();
+        TimeUtilFactory timeUtilFactory = TimeUtilFactory();
+        std::shared_ptr<Logger> controllerLogger = Logger::getDefaultLogger();
 
         bool isParentedToCurrentTask{true};
 };

@@ -240,12 +240,12 @@ class IterativePosPIDController : public IterativePositionController<double, dou
 
     protected:
         std::shared_ptr<Logger> logger;
-        double                  kP, kI, kD, kBias;
-        QTime                   sampleTime{10_ms};
-        double                  target{0};
-        double                  lastReading{0};
-        double                  error{0};
-        double                  lastError{0};
+        double kP, kI, kD, kBias;
+        QTime sampleTime{10_ms};
+        double target{0};
+        double lastReading{0};
+        double error{0};
+        double lastError{0};
         std::unique_ptr<Filter> derivativeFilter;
 
         // Integral bounds
@@ -273,6 +273,6 @@ class IterativePosPIDController : public IterativePositionController<double, dou
         bool controllerIsDisabled{false};
 
         std::unique_ptr<AbstractTimer> loopDtTimer;
-        std::unique_ptr<SettledUtil>   settledUtil;
+        std::unique_ptr<SettledUtil> settledUtil;
 };
 }  // namespace okapi

@@ -9,7 +9,7 @@ void Drivebase::moveToPoint(float x, float y, float timeout, moveToPointParams p
         return;
     }
     const Coord target = Coord(x, y);
-    float       exitAngle = this->odom.getPose().angle(target);
+    float exitAngle = this->odom.getPose().angle(target);
     // start the timeout
     Timer localTimeout(timeout);
     localTimeout.start();

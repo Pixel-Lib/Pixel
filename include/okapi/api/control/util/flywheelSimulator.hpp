@@ -135,17 +135,17 @@ class FlywheelSimulator {
         double getMaxTorque() const;
 
     protected:
-        double                                        inputTorque = 0;     // N*m
-        double                                        maxTorque = 0.5649;  // N*m
-        double                                        angle = 0;           // rad
-        double                                        omega = 0;           // rad / sec
-        double                                        accel = 0;           // rad / sec^2
-        double                                        mass;                // kg
-        double                                        linkLen;             // m
-        double                                        muStatic;            // N*m
-        double                                        muDynamic;           // N*m
-        double                                        timestep;            // sec
-        double                                        I = 0;               // moment of inertia
+        double inputTorque = 0;     // N*m
+        double maxTorque = 0.5649;  // N*m
+        double angle = 0;           // rad
+        double omega = 0;           // rad / sec
+        double accel = 0;           // rad / sec^2
+        double mass;                // kg
+        double linkLen;             // m
+        double muStatic;            // N*m
+        double muDynamic;           // N*m
+        double timestep;            // sec
+        double I = 0;               // moment of inertia
         std::function<double(double, double, double)> torqueFunc;
 
         const double minTimestep = 0.000001;  // 1 us

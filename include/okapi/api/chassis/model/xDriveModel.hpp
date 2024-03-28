@@ -256,12 +256,12 @@ class XDriveModel : public ChassisModel {
         std::shared_ptr<AbstractMotor> getBottomLeftMotor() const;
 
     protected:
-        double                                  maxVelocity;
-        double                                  maxVoltage;
-        std::shared_ptr<AbstractMotor>          topLeftMotor;
-        std::shared_ptr<AbstractMotor>          topRightMotor;
-        std::shared_ptr<AbstractMotor>          bottomRightMotor;
-        std::shared_ptr<AbstractMotor>          bottomLeftMotor;
+        double maxVelocity;
+        double maxVoltage;
+        std::shared_ptr<AbstractMotor> topLeftMotor;
+        std::shared_ptr<AbstractMotor> topRightMotor;
+        std::shared_ptr<AbstractMotor> bottomRightMotor;
+        std::shared_ptr<AbstractMotor> bottomLeftMotor;
         std::shared_ptr<ContinuousRotarySensor> leftSensor;
         std::shared_ptr<ContinuousRotarySensor> rightSensor;
 };

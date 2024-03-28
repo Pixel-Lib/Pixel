@@ -57,20 +57,20 @@ typedef uint8_t lv_tabview_btns_pos_t;
 typedef struct {
         /*Ext. of ancestor*/
         /*New data for this type */
-        lv_obj_t             *btns;
-        lv_obj_t             *indic;
-        lv_obj_t             *content; /*A rectangle to show the current tab*/
-        const char          **tab_name_ptr;
-        lv_point_t            point_last;
-        uint16_t              tab_cur;
-        uint16_t              tab_cnt;
-        uint16_t              anim_time;
-        uint8_t               slide_enable : 1; /*1: enable horizontal sliding by touch pad*/
-        uint8_t               draging : 1;
-        uint8_t               drag_hor : 1;
-        uint8_t               btns_hide : 1;
+        lv_obj_t *btns;
+        lv_obj_t *indic;
+        lv_obj_t *content; /*A rectangle to show the current tab*/
+        const char **tab_name_ptr;
+        lv_point_t point_last;
+        uint16_t tab_cur;
+        uint16_t tab_cnt;
+        uint16_t anim_time;
+        uint8_t slide_enable : 1; /*1: enable horizontal sliding by touch pad*/
+        uint8_t draging : 1;
+        uint8_t drag_hor : 1;
+        uint8_t btns_hide : 1;
         lv_tabview_btns_pos_t btns_pos : 1;
-        lv_tabview_action_t   tab_load_action;
+        lv_tabview_action_t tab_load_action;
 } lv_tabview_ext_t;
 
 enum {

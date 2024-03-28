@@ -188,10 +188,10 @@ class SkidSteerModel : public ChassisModel {
         std::shared_ptr<AbstractMotor> getRightSideMotor() const;
 
     protected:
-        double                                  maxVelocity;
-        double                                  maxVoltage;
-        std::shared_ptr<AbstractMotor>          leftSideMotor;
-        std::shared_ptr<AbstractMotor>          rightSideMotor;
+        double maxVelocity;
+        double maxVoltage;
+        std::shared_ptr<AbstractMotor> leftSideMotor;
+        std::shared_ptr<AbstractMotor> rightSideMotor;
         std::shared_ptr<ContinuousRotarySensor> leftSensor;
         std::shared_ptr<ContinuousRotarySensor> rightSensor;
 };

@@ -1475,8 +1475,8 @@ class Motor_Group {
 
     private:
         std::vector<Motor> _motors;
-        pros::Mutex        _motor_group_mutex;
-        std::uint8_t       _motor_count;
+        pros::Mutex _motor_group_mutex;
+        std::uint8_t _motor_count;
 };
 
 using MotorGroup = Motor_Group;  // alias

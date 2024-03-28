@@ -25,7 +25,7 @@ class MotorGroup : public AbstractMotor {
          * to.
          */
         MotorGroup(const std::initializer_list<Motor> &imotors,
-                   const std::shared_ptr<Logger>      &ilogger = Logger::getDefaultLogger());
+                   const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
 
         /**
          * A group of V5 motors which act as one motor (i.e. they are mechanically
@@ -37,7 +37,7 @@ class MotorGroup : public AbstractMotor {
          * to.
          */
         MotorGroup(const std::initializer_list<std::shared_ptr<AbstractMotor>> &imotors,
-                   const std::shared_ptr<Logger>                               &ilogger = Logger::getDefaultLogger());
+                   const std::shared_ptr<Logger> &ilogger = Logger::getDefaultLogger());
 
         /******************************************************************************/
         /**                         Motor movement functions **/

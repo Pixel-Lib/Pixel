@@ -47,16 +47,16 @@ template <std::size_t n> class MedianFilter : public Filter {
 
     protected:
         std::array<double, n> data{0};
-        std::size_t           index = 0;
-        double                output = 0;
-        const size_t          middleIndex;
+        std::size_t index = 0;
+        double output = 0;
+        const size_t middleIndex;
 
         /**
          * Algorithm from N. Wirth’s book, implementation by N. Devillard.
          */
         double kth_smallset() {
             std::array<double, n> dataCopy = data;
-            size_t                j, l, m;
+            size_t j, l, m;
             l = 0;
             m = n - 1;
 

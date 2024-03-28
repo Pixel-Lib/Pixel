@@ -48,14 +48,14 @@ typedef uint8_t lv_indev_state_t;
 /*Data type when an input device is read */
 typedef struct {
         union {
-                lv_point_t point;    /*For LV_INDEV_TYPE_POINTER the currently pressed point*/
-                uint32_t   key;      /*For LV_INDEV_TYPE_KEYPAD the currently pressed key*/
-                uint32_t   btn;      /*For LV_INDEV_TYPE_BUTTON the currently pressed button*/
-                int16_t    enc_diff; /*For LV_INDEV_TYPE_ENCODER number of steps since the
-                                        previous read*/
+                lv_point_t point; /*For LV_INDEV_TYPE_POINTER the currently pressed point*/
+                uint32_t key;     /*For LV_INDEV_TYPE_KEYPAD the currently pressed key*/
+                uint32_t btn;     /*For LV_INDEV_TYPE_BUTTON the currently pressed button*/
+                int16_t enc_diff; /*For LV_INDEV_TYPE_ENCODER number of steps since the
+                                     previous read*/
         };
-        void            *user_data; /*'lv_indev_drv_t.priv' for this driver*/
-        lv_indev_state_t state;     /*LV_INDEV_STATE_REL or LV_INDEV_STATE_PR*/
+        void *user_data;        /*'lv_indev_drv_t.priv' for this driver*/
+        lv_indev_state_t state; /*LV_INDEV_STATE_REL or LV_INDEV_STATE_PR*/
 } lv_indev_data_t;
 
 /*Initialized by the user and registered by 'lv_indev_add()'*/
@@ -89,7 +89,7 @@ typedef struct _lv_indev_proc_t {
                 };
                 struct { /*Keypad data*/
                         lv_indev_state_t last_state;
-                        uint32_t         last_key;
+                        uint32_t last_key;
                 };
         };
 
@@ -112,15 +112,15 @@ struct _lv_group_t;
 /*The main input device descriptor with driver, runtime data ('proc') and some
  * additional information*/
 typedef struct _lv_indev_t {
-        lv_indev_drv_t      driver;
-        lv_indev_proc_t     proc;
+        lv_indev_drv_t driver;
+        lv_indev_proc_t proc;
         lv_indev_feedback_t feedback;
-        uint32_t            last_activity_time;
+        uint32_t last_activity_time;
         union {
-                struct _lv_obj_t   *cursor;     /*Cursor for LV_INPUT_TYPE_POINTER*/
-                struct _lv_group_t *group;      /*Keypad destination group*/
-                const lv_point_t   *btn_points; /*Array points assigned to the button ()screen
-                                                   will be pressed here by the buttons*/
+                struct _lv_obj_t *cursor;     /*Cursor for LV_INPUT_TYPE_POINTER*/
+                struct _lv_group_t *group;    /*Keypad destination group*/
+                const lv_point_t *btn_points; /*Array points assigned to the button ()screen
+                                                 will be pressed here by the buttons*/
         };
         struct _lv_indev_t *next;
 } lv_indev_t;

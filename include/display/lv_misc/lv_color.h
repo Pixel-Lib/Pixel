@@ -134,16 +134,16 @@ typedef union {
 } lv_color32_t;
 
 #if LV_COLOR_DEPTH == 1
-typedef uint8_t     lv_color_int_t;
+typedef uint8_t lv_color_int_t;
 typedef lv_color1_t lv_color_t;
 #elif LV_COLOR_DEPTH == 8
 typedef uint8_t lv_color_int_t;
 typedef lv_color8_t lv_color_t;
 #elif LV_COLOR_DEPTH == 16
-typedef uint16_t     lv_color_int_t;
+typedef uint16_t lv_color_int_t;
 typedef lv_color16_t lv_color_t;
 #elif LV_COLOR_DEPTH == 32
-typedef uint32_t     lv_color_int_t;
+typedef uint32_t lv_color_int_t;
 typedef lv_color32_t lv_color_t;
 #else
 #error "Invalid LV_COLOR_DEPTH in lv_conf.h! Set it to 1, 8, 16 or 32!"
@@ -153,8 +153,8 @@ typedef uint8_t lv_opa_t;
 
 typedef struct {
         uint16_t h;
-        uint8_t  s;
-        uint8_t  v;
+        uint8_t s;
+        uint8_t v;
 } lv_color_hsv_t;
 
 /**********************

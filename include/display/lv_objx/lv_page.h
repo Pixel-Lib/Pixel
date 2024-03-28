@@ -53,12 +53,12 @@ typedef uint8_t lv_sb_mode_t;
 typedef struct {
         lv_cont_ext_t bg; /*Ext. of ancestor*/
         /*New data for this type */
-        lv_obj_t   *scrl;       /*The scrollable object on the background*/
+        lv_obj_t *scrl;         /*The scrollable object on the background*/
         lv_action_t rel_action; /*Function to call when the page is released*/
         lv_action_t pr_action;  /*Function to call when the page is pressed*/
         struct {
                 lv_style_t *style;     /*Style of scrollbars*/
-                lv_area_t   hor_area;  /*Horizontal scrollbar area relative to the page.
+                lv_area_t hor_area;    /*Horizontal scrollbar area relative to the page.
                                           (Handled by the library) */
                 lv_area_t ver_area;    /*Vertical scrollbar area relative to the page
                                           (Handled   by the library)*/
@@ -69,17 +69,17 @@ typedef struct {
                 lv_sb_mode_t mode : 3; /*Scrollbar visibility from 'lv_page_sb_mode_t'*/
         } sb;
         struct {
-                uint16_t    state;       /*Store the current size of the edge flash effect*/
-                lv_style_t *style;       /*Style of edge flash effect (usually homogeneous circle)*/
-                uint8_t     enabled : 1; /*1: Show a flash animation on the edge*/
-                uint8_t     top_ip : 1;  /*Used internally to show that top most position is
-                                            reached (flash is In Progress)*/
-                uint8_t bottom_ip : 1;   /*Used internally to show that bottom most
-                                            position is reached (flash is In Progress)*/
-                uint8_t right_ip : 1;    /*Used internally to show that right most position
-                                            is reached (flash is In Progress)*/
-                uint8_t left_ip : 1;     /*Used internally to show that left most position
-                                            is  reached (flash is In Progress)*/
+                uint16_t state;        /*Store the current size of the edge flash effect*/
+                lv_style_t *style;     /*Style of edge flash effect (usually homogeneous circle)*/
+                uint8_t enabled : 1;   /*1: Show a flash animation on the edge*/
+                uint8_t top_ip : 1;    /*Used internally to show that top most position is
+                                          reached (flash is In Progress)*/
+                uint8_t bottom_ip : 1; /*Used internally to show that bottom most
+                                          position is reached (flash is In Progress)*/
+                uint8_t right_ip : 1;  /*Used internally to show that right most position
+                                          is reached (flash is In Progress)*/
+                uint8_t left_ip : 1;   /*Used internally to show that left most position
+                                          is  reached (flash is In Progress)*/
         } edge_flash;
 
         uint8_t arrow_scroll : 1;   /*1: Enable scrolling with

@@ -25,8 +25,8 @@ class aSync {
 
 struct ActionFuncTuple {
         std::function<void()> func;
-        action_Point          actionPoint;
-        bool                  called;
+        action_Point actionPoint;
+        bool called;
 
         ActionFuncTuple(std::function<void()> func, action_Point actionPoint, bool called)
             : func(func), actionPoint(actionPoint), called(called) {}

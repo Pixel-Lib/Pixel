@@ -73,7 +73,7 @@ class DistanceSensor : public ControllerInput<double> {
         double getObjectVelocity() const;
 
     protected:
-        std::uint8_t            port;
+        std::uint8_t port;
         std::unique_ptr<Filter> filter;
 };
 }  // namespace okapi

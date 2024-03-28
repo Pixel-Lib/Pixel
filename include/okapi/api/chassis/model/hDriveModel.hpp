@@ -234,11 +234,11 @@ class HDriveModel : public ChassisModel {
         std::shared_ptr<AbstractMotor> getMiddleMotor() const;
 
     protected:
-        double                                  maxVelocity;
-        double                                  maxVoltage;
-        std::shared_ptr<AbstractMotor>          leftSideMotor;
-        std::shared_ptr<AbstractMotor>          rightSideMotor;
-        std::shared_ptr<AbstractMotor>          middleMotor;
+        double maxVelocity;
+        double maxVoltage;
+        std::shared_ptr<AbstractMotor> leftSideMotor;
+        std::shared_ptr<AbstractMotor> rightSideMotor;
+        std::shared_ptr<AbstractMotor> middleMotor;
         std::shared_ptr<ContinuousRotarySensor> leftSensor;
         std::shared_ptr<ContinuousRotarySensor> rightSensor;
         std::shared_ptr<ContinuousRotarySensor> middleSensor;
