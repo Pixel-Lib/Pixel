@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['secondarycontroller_161',['secondaryController',['../classpxl_1_1Drivebase.html#a6f51c4b044d3289dbbaa0773f68bd833',1,'pxl::Drivebase']]],
   ['seekingcontroller_162',['SeekingController',['../classpxl_1_1SeekingController.html',1,'pxl::SeekingController'],['../classpxl_1_1SeekingController.html#a88f5dc415b75a7b39d9ed7622f3292b3',1,'pxl::SeekingController::SeekingController()']]],
   ['seekingcontroller_2ecpp_163',['seekingcontroller.cpp',['../seekingcontroller_8cpp.html',1,'']]],
   ['seekingcontroller_2ehpp_164',['seekingcontroller.hpp',['../seekingcontroller_8hpp.html',1,'']]],
@@ -13,7 +12,7 @@ var searchData=
   ['setsensors_171',['setSensors',['../classpxl_1_1Drivebase.html#a7a040230cfcdc623d167d00102075662',1,'pxl::Drivebase']]],
   ['setstandstill_172',['setStandStill',['../structpxl_1_1stand__still.html#ae8204f83178b92b936dff72c17591d8d',1,'pxl::stand_still']]],
   ['sgn_173',['sgn',['../namespacepxl.html#afa79c20911ee3116206f645a9e1e3ed0',1,'pxl']]],
-  ['slew_174',['slew',['../structpxl_1_1Drivebase_1_1moveToPointParams.html#af9245b2ef33bec686bc6211ff74a1631',1,'pxl::Drivebase::moveToPointParams::slew()'],['../namespacepxl.html#aef4d585e132a7669441e66bd34be8f11',1,'pxl::slew()'],['../structpxl_1_1Drivebase_1_1eulerTurnParams.html#a3d254639ccb66ddb559035a6be614a9b',1,'pxl::Drivebase::eulerTurnParams::slew()'],['../structpxl_1_1Drivebase_1_1arcturnParams.html#aa72d2ea2fe61695a32571e6a151676aa',1,'pxl::Drivebase::arcturnParams::slew()'],['../structpxl_1_1Drivebase_1_1boomerangParams.html#a535e82b02b9d79b66070cbe34585ec92',1,'pxl::Drivebase::boomerangParams::slew()'],['../structpxl_1_1Drivebase_1_1turnToPointParams.html#af132e7b23203d287a21a8320b4a415f8',1,'pxl::Drivebase::turnToPointParams::slew()'],['../structpxl_1_1Drivebase_1_1driveParams.html#a7eed7805040a079eda2a719bd2e30314',1,'pxl::Drivebase::driveParams::slew()']]],
+  ['slew_174',['slew',['../structpxl_1_1Drivebase_1_1turnToPointParams.html#af132e7b23203d287a21a8320b4a415f8',1,'pxl::Drivebase::turnToPointParams::slew()'],['../structpxl_1_1Drivebase_1_1moveToPointParams.html#af9245b2ef33bec686bc6211ff74a1631',1,'pxl::Drivebase::moveToPointParams::slew()'],['../structpxl_1_1Drivebase_1_1eulerTurnParams.html#a3d254639ccb66ddb559035a6be614a9b',1,'pxl::Drivebase::eulerTurnParams::slew()'],['../structpxl_1_1Drivebase_1_1arcturnParams.html#aa72d2ea2fe61695a32571e6a151676aa',1,'pxl::Drivebase::arcturnParams::slew()'],['../structpxl_1_1Drivebase_1_1boomerangParams.html#a535e82b02b9d79b66070cbe34585ec92',1,'pxl::Drivebase::boomerangParams::slew()'],['../structpxl_1_1Drivebase_1_1driveParams.html#a7eed7805040a079eda2a719bd2e30314',1,'pxl::Drivebase::driveParams::slew()'],['../namespacepxl.html#aef4d585e132a7669441e66bd34be8f11',1,'pxl::slew()']]],
   ['slew_5f_175',['slew_',['../classpxl_1_1SeekingController.html#a86b4361b7ed37c4369205614f414f808',1,'pxl::SeekingController']]],
   ['slewspeedlimits_176',['slewSpeedLimits',['../classpxl_1_1Drivebase.html#a32e05eadde18b57d4a8faa961350d125',1,'pxl::Drivebase']]],
   ['ssactive_177',['SSActive',['../structpxl_1_1stand__still.html#a7910d69b391ab17e343c6a1fc3c239fe',1,'pxl::stand_still']]],
