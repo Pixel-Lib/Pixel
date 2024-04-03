@@ -203,8 +203,6 @@ class Drivebase {
         OdomSensors sensors;
 
         ExtendedDrivetrain extendedDrivetrain;
-
-        SeekingController secondaryController;
 };
 
 };  // namespace pxl
