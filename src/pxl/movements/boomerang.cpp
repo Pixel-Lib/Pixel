@@ -94,7 +94,7 @@ void Drivebase::boomerang(float x, float y, float theta, float timeout, boomeran
         float maxSpeed = params.maxSpeed;
         // if the real minSpeed and maxSpeed values are too high/low, the robot will ignore the slew when the clamping
         // happens
-        std::pair<float, float> speeds = slewSpeedLimits(params, linearController);
+        std::pair<float, float> speeds = this->slewSpeedLimits(params, this->linearController);
 
         minSpeed = speeds.first;
         maxSpeed = speeds.second;
