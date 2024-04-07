@@ -52,7 +52,6 @@ digraph "include/pxl/util.hpp"
   Node21 [label="src/pxl/pid.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pid_8cpp.html",tooltip=" "];
   Node1 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node22 [label="src/pxl/parametrics\l/pose.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pose_8cpp.html",tooltip=" "];
   Node1 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
