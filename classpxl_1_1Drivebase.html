@@ -115,8 +115,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a18e259d388285d8a1bfedb9d94ce9e15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a18e259d388285d8a1bfedb9d94ce9e15">calibrate</a> (bool <a class="el" href="classpxl_1_1Drivebase.html#af40956ce1b817eca0b6457171235dbd1">calibrateIMU</a>=true)</td></tr>
 <tr class="memdesc:a18e259d388285d8a1bfedb9d94ce9e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">callibrate the drivebase's sensors. Callibrates the IMU and resets the tracking wheels.  <a href="classpxl_1_1Drivebase.html#a18e259d388285d8a1bfedb9d94ce9e15">More...</a><br /></td></tr>
 <tr class="separator:a18e259d388285d8a1bfedb9d94ce9e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e1b8d4495ceab680ba4e78f1128c72e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a1e1b8d4495ceab680ba4e78f1128c72e">tank</a> (float left, float right, float(*curveFunc)(float)=nullptr)</td></tr>
-<tr class="separator:a1e1b8d4495ceab680ba4e78f1128c72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3807564cf668cc9a33f6b88ca44f51cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a3807564cf668cc9a33f6b88ca44f51cc">tank</a> (float left, float right, std::function&lt; float(float, float)&gt;curveFunc=[](float a, float b) { return NAN;})</td></tr>
+<tr class="separator:a3807564cf668cc9a33f6b88ca44f51cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8eeac1db6b13720eb2ce6c1f6f43ba76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a8eeac1db6b13720eb2ce6c1f6f43ba76">drive</a> (float target, float timeout, <a class="el" href="structpxl_1_1Drivebase_1_1driveParams.html">driveParams</a> params=<a class="el" href="classpxl_1_1Drivebase.html#ade8b1c3fe7c286d13ffdf3b8e830e5ed">defaultDriveParams</a>(), bool async=true)</td></tr>
 <tr class="separator:a8eeac1db6b13720eb2ce6c1f6f43ba76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45a7e947ea86fe9226b0b511079bb525"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a45a7e947ea86fe9226b0b511079bb525">turnToPoint</a> (float x, float y, float timeout, <a class="el" href="structpxl_1_1Drivebase_1_1turnToPointParams.html">turnToPointParams</a> params=<a class="el" href="classpxl_1_1Drivebase.html#a8898ef5e73867216635f477331f1c880">defaultTurnParams</a>(), bool async=true)</td></tr>
@@ -167,6 +167,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a728c5496401d6b53e263e4c522c720f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e11ca4438549d10deee7e1d4f31268b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1ExtendedDrivetrain.html">ExtendedDrivetrain</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a3e11ca4438549d10deee7e1d4f31268b">extendedDrivetrain</a></td></tr>
 <tr class="separator:a3e11ca4438549d10deee7e1d4f31268b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a095e61fecd4f55edc2dc2e38d4de8dea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpxl_1_1Controller.html">Controller</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpxl_1_1Drivebase.html#a095e61fecd4f55edc2dc2e38d4de8dea">controller</a></td></tr>
+<tr class="separator:a095e61fecd4f55edc2dc2e38d4de8dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -819,8 +821,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a1e1b8d4495ceab680ba4e78f1128c72e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e1b8d4495ceab680ba4e78f1128c72e">&#9670;&nbsp;</a></span>tank()</h2>
+<a id="a3807564cf668cc9a33f6b88ca44f51cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3807564cf668cc9a33f6b88ca44f51cc">&#9670;&nbsp;</a></span>tank()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -840,8 +842,8 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float(*)(float)&#160;</td>
-          <td class="paramname"><em>curveFunc</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramtype">std::function&lt; float(float, float)&gt;&#160;</td>
+          <td class="paramname"><em>curveFunc</em> = <code>[](float&#160;a,&#160;float&#160;b)&#160;{&#160;return&#160;NAN;&#160;}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -945,6 +947,20 @@ template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">uint8_t pxl::Drivebase::compstate = pros::competition::get_status()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a095e61fecd4f55edc2dc2e38d4de8dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a095e61fecd4f55edc2dc2e38d4de8dea">&#9670;&nbsp;</a></span>controller</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpxl_1_1Controller.html">Controller</a> pxl::Drivebase::controller</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1071,7 +1087,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 8 2024 20:32:20 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Apr 8 2024 20:32:53 for Pixel by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
