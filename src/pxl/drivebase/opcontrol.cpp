@@ -18,10 +18,10 @@ float Controller::joystickCurve(float val, joystickCurveParams params) {
     return result;
 }
 
-void Drivebase::tank(float left, float right, std::function<float(float, float)>curveFunc) {
+void Drivebase::tank(float left, float right, std::function<float(float, float)> curveFunc) {
 
-    drivetrain.leftMotors->move(curveFunc(left,controller.throttleParams.curve));
-    drivetrain.rightMotors->move(curveFunc(right,controller.throttleParams.curve));
+    drivetrain.leftMotors->move(curveFunc(left, controller.throttleParams.curve));
+    drivetrain.rightMotors->move(curveFunc(right, controller.throttleParams.curve));
 }
 
 }  // namespace pxl

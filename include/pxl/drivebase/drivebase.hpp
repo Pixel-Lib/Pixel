@@ -111,7 +111,7 @@ class Drivebase {
 
         //* OPCONTROL *//
 
-        void tank(float left, float right, std::function<float(float, float)>curveFunc);
+        void tank(float left, float right, std::function<float(float, float)> curveFunc);
 
         //* AUTONOMOUS MOTIONS*//
         //* DRIVE *//
