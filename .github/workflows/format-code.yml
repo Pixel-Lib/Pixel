@@ -32,6 +32,9 @@ jobs:
           sudo apt-get install -y clang-format
         fi
 
+    - name: Output clang-format version
+      run: clang-format --version
+
     - name: Check for changes in .cpp, .hpp, .h files
       id: check-changes
       run: |
