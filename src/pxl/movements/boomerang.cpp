@@ -7,7 +7,7 @@ namespace pxl {
 bool Drivebase::SemicircleExit(pxl::Pose target, pxl::Coord curr, float radius) {
     // Calculate the distance from the robot to the target
     pxl::Coord diff = pxl::Coord(curr.x - target.x, curr.y - target.y);
-    float distance = diff.distance(pxl::Coord(0,0));
+    float distance = diff.distance(pxl::Coord(0, 0));
 
     // Check if the robot is within the circle
     if (distance > radius) { return false; }
