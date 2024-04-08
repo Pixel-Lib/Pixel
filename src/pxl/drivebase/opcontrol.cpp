@@ -20,6 +20,10 @@ float Controller::joystickCurve(float val, joystickCurveParams params) {
 
 void Drivebase::tank(float left, float right, std::function<float(float, float)> curveFunc) {
 
+    if (curveFunc(-1.0f,-1.0f) == NAN) {
+        curveFunc = [](float val, float extra = NAN) { return Controller::joystickCurve(val); };
+    }
+
     drivetrain.leftMotors->move(curveFunc(left, controller.throttleParams.curve));
     drivetrain.rightMotors->move(curveFunc(right, controller.throttleParams.curve));
 }
