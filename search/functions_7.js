@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lerp_321',['lerp',['../classpxl_1_1Coord.html#a653a51dc4d0507336de4dbcb330a0979',1,'pxl::Coord']]]
+  ['joystickcurve_337',['joystickCurve',['../classpxl_1_1Controller.html#a1faaa8e0d0079874ec0a957baecc51ad',1,'pxl::Controller']]]
 ];

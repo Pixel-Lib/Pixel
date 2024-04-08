@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['wheeldiameter_211',['wheelDiameter',['../classpxl_1_1Drivetrain.html#a07571e4b87d1cc5654bfe12486cfdf7f',1,'pxl::Drivetrain']]],
-  ['wrapto180_212',['wrapTo180',['../namespacepxl.html#aa3ad78e90d5e52e5b47f463c6c6924be',1,'pxl']]],
-  ['wrapto2pi_213',['wrapTo2Pi',['../namespacepxl.html#a847a12cda4c61b6fcc017ff7f8b35060',1,'pxl']]],
-  ['wrapto360_214',['wrapTo360',['../namespacepxl.html#a7d815267e7c29949aacc85ab67ad82e6',1,'pxl']]],
-  ['wraptopi_215',['wrapToPi',['../namespacepxl.html#ad17d8719f3bf43ec4cc5d52c805338f7',1,'pxl']]]
+  ['vertical1_218',['vertical1',['../structpxl_1_1OdomSensors.html#a2506dfc8a7abd7bb0fe7e733a39b3428',1,'pxl::OdomSensors']]],
+  ['vertical2_219',['vertical2',['../structpxl_1_1OdomSensors.html#a3e73bf28f3f1274c5439b15f8fefb732',1,'pxl::OdomSensors']]],
+  ['verticals_220',['verticals',['../classpxl_1_1Odom.html#a147f2b027ea20a520998a7748a2c9d4a',1,'pxl::Odom']]],
+  ['verticaltrackwidth_221',['verticalTrackWidth',['../classpxl_1_1ExtendedDrivetrain.html#a62dac27e085d3a449e1999a861570c88',1,'pxl::ExtendedDrivetrain']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['movetopoint_322',['moveToPoint',['../classpxl_1_1Drivebase.html#aa7a4471072d6f12b37e8fe8aacf8bfb5',1,'pxl::Drivebase']]]
+  ['lerp_338',['lerp',['../classpxl_1_1Coord.html#a653a51dc4d0507336de4dbcb330a0979',1,'pxl::Coord']]]
 ];

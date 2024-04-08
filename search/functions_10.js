@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['wrapto180_357',['wrapTo180',['../namespacepxl.html#aa3ad78e90d5e52e5b47f463c6c6924be',1,'pxl']]],
-  ['wrapto2pi_358',['wrapTo2Pi',['../namespacepxl.html#a847a12cda4c61b6fcc017ff7f8b35060',1,'pxl']]],
-  ['wrapto360_359',['wrapTo360',['../namespacepxl.html#a7d815267e7c29949aacc85ab67ad82e6',1,'pxl']]],
-  ['wraptopi_360',['wrapToPi',['../namespacepxl.html#ad17d8719f3bf43ec4cc5d52c805338f7',1,'pxl']]]
+  ['update_372',['update',['../classpxl_1_1Odom.html#a464b30a97f57c9de25bff0ffada5302b',1,'pxl::Odom::update()'],['../classpxl_1_1PID.html#a92566c1bc7c45ea48f6886f3e16c1298',1,'pxl::PID::update()'],['../classpxl_1_1SeekingController.html#ab2ce62534e581c0ce4483af96be911c0',1,'pxl::SeekingController::update()']]],
+  ['updateintegral_373',['updateIntegral',['../classpxl_1_1PID.html#a0a844eff7cecf34f43989d5206e0be62',1,'pxl::PID']]],
+  ['updatestandstill_374',['updateStandstill',['../structpxl_1_1stand__still.html#a733202dabe91483848cd71913ea56885',1,'pxl::stand_still']]]
 ];

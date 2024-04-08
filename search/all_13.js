@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['vertical1_207',['vertical1',['../structpxl_1_1OdomSensors.html#a2506dfc8a7abd7bb0fe7e733a39b3428',1,'pxl::OdomSensors']]],
-  ['vertical2_208',['vertical2',['../structpxl_1_1OdomSensors.html#a3e73bf28f3f1274c5439b15f8fefb732',1,'pxl::OdomSensors']]],
-  ['verticals_209',['verticals',['../classpxl_1_1Odom.html#a147f2b027ea20a520998a7748a2c9d4a',1,'pxl::Odom']]],
-  ['verticaltrackwidth_210',['verticalTrackWidth',['../classpxl_1_1ExtendedDrivetrain.html#a62dac27e085d3a449e1999a861570c88',1,'pxl::ExtendedDrivetrain']]]
+  ['update_213',['update',['../classpxl_1_1Odom.html#a464b30a97f57c9de25bff0ffada5302b',1,'pxl::Odom::update()'],['../classpxl_1_1PID.html#a92566c1bc7c45ea48f6886f3e16c1298',1,'pxl::PID::update()'],['../classpxl_1_1SeekingController.html#ab2ce62534e581c0ce4483af96be911c0',1,'pxl::SeekingController::update()']]],
+  ['updateintegral_214',['updateIntegral',['../classpxl_1_1PID.html#a0a844eff7cecf34f43989d5206e0be62',1,'pxl::PID']]],
+  ['updatestandstill_215',['updateStandstill',['../structpxl_1_1stand__still.html#a733202dabe91483848cd71913ea56885',1,'pxl::stand_still']]],
+  ['util_2ecpp_216',['util.cpp',['../util_8cpp.html',1,'']]],
+  ['util_2ehpp_217',['util.hpp',['../util_8hpp.html',1,'']]]
 ];

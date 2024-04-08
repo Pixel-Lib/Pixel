@@ -6,7 +6,9 @@ var searchData=
   ['calibrateimu_22',['calibrateIMU',['../classpxl_1_1Drivebase.html#af40956ce1b817eca0b6457171235dbd1',1,'pxl::Drivebase']]],
   ['called_23',['called',['../structpxl_1_1ActionFuncTuple.html#aaedbeab6ec75482b759c7660996a7f58',1,'pxl::ActionFuncTuple']]],
   ['compstate_24',['compstate',['../classpxl_1_1Drivebase.html#ae1177ad96b380aba74b4dd3fa1107e4b',1,'pxl::Drivebase']]],
-  ['coord_25',['Coord',['../classpxl_1_1Coord.html#afc1f9aefc5bbd25daf9ac43589e0153a',1,'pxl::Coord::Coord(float x, float y)'],['../classpxl_1_1Coord.html#a29436cbffb3ad7ccfb422fab836f7660',1,'pxl::Coord::Coord()=default'],['../classpxl_1_1Coord.html',1,'pxl::Coord']]],
-  ['coord_2ecpp_26',['coord.cpp',['../coord_8cpp.html',1,'']]],
-  ['coord_2ehpp_27',['coord.hpp',['../coord_8hpp.html',1,'']]]
+  ['controller_25',['Controller',['../classpxl_1_1Controller.html#afd50f975ef51e41fce6fc45f79702a3a',1,'pxl::Controller::Controller(joystickCurveParams throttleParams, joystickCurveParams turnParams)'],['../classpxl_1_1Controller.html#ad166502a3c37de547b1c8f84cd5ec055',1,'pxl::Controller::Controller()=default'],['../classpxl_1_1Controller.html',1,'pxl::Controller']]],
+  ['coord_26',['Coord',['../classpxl_1_1Coord.html#a29436cbffb3ad7ccfb422fab836f7660',1,'pxl::Coord::Coord()=default'],['../classpxl_1_1Coord.html#afc1f9aefc5bbd25daf9ac43589e0153a',1,'pxl::Coord::Coord(float x, float y)'],['../classpxl_1_1Coord.html',1,'pxl::Coord']]],
+  ['coord_2ecpp_27',['coord.cpp',['../coord_8cpp.html',1,'']]],
+  ['coord_2ehpp_28',['coord.hpp',['../coord_8hpp.html',1,'']]],
+  ['curve_29',['curve',['../structpxl_1_1Controller_1_1joystickCurveParams.html#a430a2ba830189bdf5f9e603a483c238e',1,'pxl::Controller::joystickCurveParams']]]
 ];

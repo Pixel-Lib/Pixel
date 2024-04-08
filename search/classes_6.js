@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['movetopointparams_231',['moveToPointParams',['../structpxl_1_1Drivebase_1_1moveToPointParams.html',1,'pxl::Drivebase']]]
+  ['joystickcurveparams_243',['joystickCurveParams',['../structpxl_1_1Controller_1_1joystickCurveParams.html',1,'pxl::Controller']]]
 ];
