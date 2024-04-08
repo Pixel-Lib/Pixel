@@ -1,0 +1,43 @@
+name: PR Labeler
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/github-script@v3
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { owner, repo } = context.repo
+          const prNumber = context.issue.number
+          const { data: changedFiles } = await github.pulls.listFiles({ owner, repo, pull_number: prNumber })
+
+          const labels = Array.from(new Set(changedFiles.map(file => file.filename.split('/')[0]))).sort()
+
+          const getColor = (label, labels) => {
+            const index = labels.indexOf(label)
+            const ratio = index / (labels.length - 1)
+            const hue = Math.round(ratio * 120)
+            return `hsl(${hue}, 100%, 50%)`
+          }
+
+          for (const name of labels) {
+            try {
+              await github.issues.getLabel({ owner, repo, name })
+            } catch (error) {
+              if (error.status === 404) {
+                const color = getColor(name, labels).substring(1)
+                await github.issues.createLabel({ owner, repo, name, color })
+              } else {
+                throw error
+              }
+            }
+          }
+    - uses: actions/labeler@v3
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        configuration-path: .github/pull-request/pr-labels.yml
