@@ -1,7 +1,6 @@
 
 #include "pxl/drivebase/drivebase.hpp"
 
-
 namespace pxl {
 bool Drivebase::SemicircleExit(pxl::Pose target, pxl::Coord curr, float radius) {
     // Calculate the distance from the robot to the target
