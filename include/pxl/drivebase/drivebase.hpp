@@ -58,9 +58,6 @@ class ExtendedDrivetrain {
         ExtendedDrivetrain(float verticalTrackWidth);
         ExtendedDrivetrain() = default;
         float verticalTrackWidth;
-
-
-        
 };
 
 class Controller {
@@ -79,9 +76,6 @@ class Controller {
 
         joystickCurveParams throttleParams;
         joystickCurveParams turnParams;
-
-
-
 };
 /**
  * @brief The Drivebase class represents the base of a robot's drivetrain.
