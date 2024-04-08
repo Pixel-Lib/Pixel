@@ -18,15 +18,14 @@ float Controller::joystickCurve(float val, joystickCurveParams params) {
     return result;
 }
 
-void Drivebase::tank(float left, float right, float (*curveFunc)(float)) {
+void Drivebase::tank(float left, float right, std::function<float(float, float)> curveFunc) {
 
-    if (!curveFunc)
-        curveFunc = [](float input) {
-            return Controller::joystickCurve(input, Controller::defaultJoystickCurveParams());
-        };
+    if (curveFunc(-1.0f, -1.0f) == NAN) {
+        curveFunc = [](float val, float extra = NAN) { return Controller::joystickCurve(val); };
+    }
 
-    drivetrain.leftMotors->move(curveFunc(left));
-    drivetrain.rightMotors->move(curveFunc(right));
+    drivetrain.leftMotors->move(curveFunc(left, controller.throttleParams.curve));
+    drivetrain.rightMotors->move(curveFunc(right, controller.throttleParams.curve));
 }
 
 }  // namespace pxl

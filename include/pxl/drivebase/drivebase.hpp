@@ -111,7 +111,7 @@ class Drivebase {
 
         //* OPCONTROL *//
 
-        void tank(float left, float right, float (*curveFunc)(float) = nullptr);
+        void tank(float left, float right, std::function<float(float, float)>curveFunc = [](float a, float b) { return NAN; });
 
         //* AUTONOMOUS MOTIONS*//
         //* DRIVE *//
@@ -225,6 +225,7 @@ class Drivebase {
         OdomSensors sensors;
 
         ExtendedDrivetrain extendedDrivetrain;
+        Controller controller;
 };
 
 };  // namespace pxl
