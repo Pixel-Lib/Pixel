@@ -6,15 +6,14 @@
 namespace pxl {
 bool Drivebase::SemicircleExit(pxl::Pose target, pxl::Coord curr, float radius) {
     // Calculate the distance from the robot to the target
-    float dx = curr.x - target.x;
-    float dy = curr.y - target.y;
-    float distance = std::sqrt(dx * dx + dy * dy);
+    pxl::Coord diff = pxl::Coord(curr.x - target.x, curr.y - target.y);
+    float distance = diff.distance(pxl::Coord(0,0));
 
     // Check if the robot is within the circle
     if (distance > radius) { return false; }
 
     // Calculate the angle from the target to the robot
-    float angle = std::atan2(dy, dx);
+    float angle = std::atan2(diff.y, diff.x);
 
     // Normalize the angles to the range [-pi, pi]
     target.theta = pxl::wrapToPi(target.theta);
