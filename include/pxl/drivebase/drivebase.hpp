@@ -1,9 +1,9 @@
 #pragma once
 
 #include <cmath>
+#include <functional>
 #include <iostream>
 #include <memory>
-#include <functional>
 
 #include "pxl/aSync.hpp"
 #include "pxl/drivebase/odom.hpp"
@@ -60,23 +60,22 @@ class ExtendedDrivetrain {
         float verticalTrackWidth;
 };
 
-        class Controller{
-public:
+class Controller {
+    public:
         struct joystickCurveParams {
                 float curve = 1.0f;
                 float deadzone = 0.0f;
                 float minOutput = 0.0f;
                 float scale = 127.0f;
         };
-Controller(joystickCurveParams throttleParams, joystickCurveParams turnParams);
-Controller() = default;
+        Controller(joystickCurveParams throttleParams, joystickCurveParams turnParams);
+        Controller() = default;
         static joystickCurveParams defaultJoystickCurveParams() { return joystickCurveParams(); }
-        static float joystickCurve (float val, joystickCurveParams params = defaultJoystickCurveParams());
+        static float joystickCurve(float val, joystickCurveParams params = defaultJoystickCurveParams());
 
-           joystickCurveParams throttleParams;
-           joystickCurveParams turnParams;
-          
-        };
+        joystickCurveParams throttleParams;
+        joystickCurveParams turnParams;
+};
 /**
  * @brief The Drivebase class represents the base of a robot's drivetrain.
  *
@@ -111,9 +110,6 @@ class Drivebase {
         // friend class Controller;
 
         //* OPCONTROL *//
-
-        
-
 
         void tank(float left, float right, float (*curveFunc)(float) = nullptr);
 

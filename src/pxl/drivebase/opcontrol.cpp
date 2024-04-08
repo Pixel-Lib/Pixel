@@ -2,7 +2,8 @@
 #include "pxl/drivebase/drivebase.hpp"
 
 namespace pxl {
-pxl::Controller::Controller(joystickCurveParams throttleParams, joystickCurveParams turnParams) : throttleParams(throttleParams), turnParams(turnParams) {}
+pxl::Controller::Controller(joystickCurveParams throttleParams, joystickCurveParams turnParams)
+    : throttleParams(throttleParams), turnParams(turnParams) {}
 
 float Controller::joystickCurve(float val, joystickCurveParams params) {
     float g_x = std::fabs(val) - params.deadzone;
@@ -19,10 +20,13 @@ float Controller::joystickCurve(float val, joystickCurveParams params) {
 
 void Drivebase::tank(float left, float right, float (*curveFunc)(float)) {
 
-    if (!curveFunc) curveFunc = [](float input) { return Controller::joystickCurve(input, Controller::defaultJoystickCurveParams()); };
-    
+    if (!curveFunc)
+        curveFunc = [](float input) {
+            return Controller::joystickCurve(input, Controller::defaultJoystickCurveParams());
+        };
+
     drivetrain.leftMotors->move(curveFunc(left));
     drivetrain.rightMotors->move(curveFunc(right));
 }
 
-}   
+}  // namespace pxl

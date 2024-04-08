@@ -1,7 +1,5 @@
 #include "pxl/drivebase/trackingwheel.hpp"
 
-
-
 namespace pxl {
 
 // Constructor with encoder
