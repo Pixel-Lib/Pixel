@@ -99,7 +99,23 @@ jobs:
           POSTFIX: ${{ steps.template-postfix.outputs.postfix }}
 
       - name: Build PROS Project  
-        run: make clean quick -j
+        run: make quick -j
+        env:
+            ROOT: .
+            FWDIR: ./firmware
+            BINDIR: ./bin
+            SRCDIR: ./src
+            INCDIR: ./include
+            WARNFLAGS: 
+            EXTRA_CFLAGS: -I/opt/homebrew/Cellar/googletest/1.14.0/include -Isrc/pxl/yaml-cpp/include -Lsrc/pxl/yaml-cpp/lib -lyaml-cpp
+            EXTRA_CXXFLAGS: -I/opt/homebrew/Cellar/googletest/1.14.0/include -Isrc/pxl/yaml-cpp/include -Lsrc/pxl/yaml-cpp/lib -lyaml-cpp
+            USE_PACKAGE: 1
+            EXCLUDE_COLD_LIBRARIES: 
+            IS_LIBRARY: 1
+            LIBNAME: Pixel
+            VERSION: 0.1.0
+            EXCLUDE_SRC_FROM_LIB: $(foreach file, $(SRCDIR)/main,$(foreach cext,$(CEXTS),$(file).$(cext)) $(foreach cxxext,$(CXXEXTS),$(file).$(cxxext)))
+            TEMPLATE_FILES: $(INCDIR)/**/*.h $(INCDIR)/**/*.hpp
 
       - name: Create Pixel template
         run: pros make template
