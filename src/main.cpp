@@ -1,7 +1,6 @@
 #include "main.h"
 
 #include "pxl/api.hpp"
-#include "pxl/yaml-cpp/include/yaml-cpp/yaml.h"
 
 pros::Motor leftFront(1);
 pros::Motor leftMiddle(2);
