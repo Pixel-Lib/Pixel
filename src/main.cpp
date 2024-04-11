@@ -1,5 +1,5 @@
 #include "main.h"
-#include "yaml-cpp/yaml.h"
+#include "pxl/yaml-cpp/include/yaml-cpp/yaml.h"
 #include "pxl/api.hpp"
 
 pros::Motor leftFront(1);
