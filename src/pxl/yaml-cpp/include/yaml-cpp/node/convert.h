@@ -12,9 +12,9 @@
 #include <limits>
 #include <list>
 #include <map>
-#include <unordered_map>
 #include <sstream>
 #include <type_traits>
+#include <unordered_map>
 #include <valarray>
 #include <vector>
 
@@ -28,7 +28,6 @@
 #include "yaml-cpp/node/node.h"
 #include "yaml-cpp/node/type.h"
 #include "yaml-cpp/null.h"
-
 
 namespace YAML {
 class Binary;
@@ -51,7 +50,7 @@ inline bool IsNegativeInfinity(const std::string& input) {
 inline bool IsNaN(const std::string& input) {
   return input == ".nan" || input == ".NaN" || input == ".NAN";
 }
-}
+}  // namespace conversion
 
 // Node
 template <>
@@ -118,8 +117,8 @@ struct convert<_Null> {
 
 namespace conversion {
 template <typename T>
-typename std::enable_if< std::is_floating_point<T>::value, void>::type
-inner_encode(const T& rhs, std::stringstream& stream){
+typename std::enable_if<std::is_floating_point<T>::value, void>::type
+    inner_encode(const T& rhs, std::stringstream& stream) {
   if (std::isnan(rhs)) {
     stream << ".nan";
   } else if (std::isinf(rhs)) {
@@ -135,14 +134,15 @@ inner_encode(const T& rhs, std::stringstream& stream){
 
 template <typename T>
 typename std::enable_if<!std::is_floating_point<T>::value, void>::type
-inner_encode(const T& rhs, std::stringstream& stream){
+    inner_encode(const T& rhs, std::stringstream& stream) {
   stream << rhs;
 }
 
 template <typename T>
 typename std::enable_if<(std::is_same<T, unsigned char>::value ||
-                         std::is_same<T, signed char>::value), bool>::type
-ConvertStreamTo(std::stringstream& stream, T& rhs) {
+                         std::is_same<T, signed char>::value),
+                        bool>::type
+    ConvertStreamTo(std::stringstream& stream, T& rhs) {
   int num;
   if ((stream >> std::noskipws >> num) && (stream >> std::ws).eof()) {
     if (num >= (std::numeric_limits<T>::min)() &&
@@ -156,58 +156,59 @@ ConvertStreamTo(std::stringstream& stream, T& rhs) {
 
 template <typename T>
 typename std::enable_if<!(std::is_same<T, unsigned char>::value ||
-                          std::is_same<T, signed char>::value), bool>::type
-ConvertStreamTo(std::stringstream& stream, T& rhs) {
+                          std::is_same<T, signed char>::value),
+                        bool>::type
+    ConvertStreamTo(std::stringstream& stream, T& rhs) {
   if ((stream >> std::noskipws >> rhs) && (stream >> std::ws).eof()) {
     return true;
   }
   return false;
 }
-}
+}  // namespace conversion
 
-#define YAML_DEFINE_CONVERT_STREAMABLE(type, negative_op)                  \
-  template <>                                                              \
-  struct convert<type> {                                                   \
-                                                                           \
-    static Node encode(const type& rhs) {                                  \
-      std::stringstream stream;                                            \
-      stream.precision(std::numeric_limits<type>::max_digits10);           \
-      conversion::inner_encode(rhs, stream);                               \
-      return Node(stream.str());                                           \
-    }                                                                      \
-                                                                           \
-    static bool decode(const Node& node, type& rhs) {                      \
-      if (node.Type() != NodeType::Scalar) {                               \
-        return false;                                                      \
-      }                                                                    \
-      const std::string& input = node.Scalar();                            \
-      std::stringstream stream(input);                                     \
-      stream.unsetf(std::ios::dec);                                        \
-      if ((stream.peek() == '-') && std::is_unsigned<type>::value) {       \
-        return false;                                                      \
-      }                                                                    \
-      if (conversion::ConvertStreamTo(stream, rhs)) {                      \
-        return true;                                                       \
-      }                                                                    \
-      if (std::numeric_limits<type>::has_infinity) {                       \
-        if (conversion::IsInfinity(input)) {                               \
-          rhs = std::numeric_limits<type>::infinity();                     \
-          return true;                                                     \
-        } else if (conversion::IsNegativeInfinity(input)) {                \
-          rhs = negative_op std::numeric_limits<type>::infinity();         \
-          return true;                                                     \
-        }                                                                  \
-      }                                                                    \
-                                                                           \
-      if (std::numeric_limits<type>::has_quiet_NaN) {                      \
-        if (conversion::IsNaN(input)) {                                    \
-          rhs = std::numeric_limits<type>::quiet_NaN();                    \
-          return true;                                                     \
-        }                                                                  \
-      }                                                                    \
-                                                                           \
-      return false;                                                        \
-    }                                                                      \
+#define YAML_DEFINE_CONVERT_STREAMABLE(type, negative_op)            \
+  template <>                                                        \
+  struct convert<type> {                                             \
+                                                                     \
+    static Node encode(const type& rhs) {                            \
+      std::stringstream stream;                                      \
+      stream.precision(std::numeric_limits<type>::max_digits10);     \
+      conversion::inner_encode(rhs, stream);                         \
+      return Node(stream.str());                                     \
+    }                                                                \
+                                                                     \
+    static bool decode(const Node& node, type& rhs) {                \
+      if (node.Type() != NodeType::Scalar) {                         \
+        return false;                                                \
+      }                                                              \
+      const std::string& input = node.Scalar();                      \
+      std::stringstream stream(input);                               \
+      stream.unsetf(std::ios::dec);                                  \
+      if ((stream.peek() == '-') && std::is_unsigned<type>::value) { \
+        return false;                                                \
+      }                                                              \
+      if (conversion::ConvertStreamTo(stream, rhs)) {                \
+        return true;                                                 \
+      }                                                              \
+      if (std::numeric_limits<type>::has_infinity) {                 \
+        if (conversion::IsInfinity(input)) {                         \
+          rhs = std::numeric_limits<type>::infinity();               \
+          return true;                                               \
+        } else if (conversion::IsNegativeInfinity(input)) {          \
+          rhs = negative_op std::numeric_limits<type>::infinity();   \
+          return true;                                               \
+        }                                                            \
+      }                                                              \
+                                                                     \
+      if (std::numeric_limits<type>::has_quiet_NaN) {                \
+        if (conversion::IsNaN(input)) {                              \
+          rhs = std::numeric_limits<type>::quiet_NaN();              \
+          return true;                                               \
+        }                                                            \
+      }                                                              \
+                                                                     \
+      return false;                                                  \
+    }                                                                \
   }
 
 #define YAML_DEFINE_CONVERT_STREAMABLE_SIGNED(type) \
@@ -325,15 +326,15 @@ struct convert<std::vector<T, A>> {
 
 // std::list
 template <typename T, typename A>
-struct convert<std::list<T,A>> {
-  static Node encode(const std::list<T,A>& rhs) {
+struct convert<std::list<T, A>> {
+  static Node encode(const std::list<T, A>& rhs) {
     Node node(NodeType::Sequence);
     for (const auto& element : rhs)
       node.push_back(element);
     return node;
   }
 
-  static bool decode(const Node& node, std::list<T,A>& rhs) {
+  static bool decode(const Node& node, std::list<T, A>& rhs) {
     if (!node.IsSequence())
       return false;
 
@@ -382,7 +383,6 @@ struct convert<std::array<T, N>> {
   }
 };
 
-
 // std::valarray
 template <typename T>
 struct convert<std::valarray<T>> {
@@ -411,7 +411,6 @@ struct convert<std::valarray<T>> {
     return true;
   }
 };
-
 
 // std::pair
 template <typename T, typename U>
@@ -464,6 +463,6 @@ struct convert<Binary> {
     return true;
   }
 };
-}
+}  // namespace YAML
 
 #endif  // NODE_CONVERT_H_62B23520_7C8E_11DE_8A39_0800200C9A66

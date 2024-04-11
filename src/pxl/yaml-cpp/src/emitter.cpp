@@ -720,11 +720,12 @@ Emitter& Emitter::Write(const std::string& str) {
   if (!good())
     return *this;
 
-  StringEscaping::value stringEscaping = GetStringEscapingStyle(m_pState->GetOutputCharset());
+  StringEscaping::value stringEscaping =
+      GetStringEscapingStyle(m_pState->GetOutputCharset());
 
-  const StringFormat::value strFormat =
-      Utils::ComputeStringFormat(str, m_pState->GetStringFormat(),
-                                 m_pState->CurGroupFlowType(), stringEscaping == StringEscaping::NonAscii);
+  const StringFormat::value strFormat = Utils::ComputeStringFormat(
+      str, m_pState->GetStringFormat(), m_pState->CurGroupFlowType(),
+      stringEscaping == StringEscaping::NonAscii);
 
   if (strFormat == StringFormat::Literal || str.size() > 1024)
     m_pState->SetMapKeyFormat(YAML::LongKey, FmtScope::Local);
@@ -845,10 +846,9 @@ Emitter& Emitter::Write(char ch) {
   if (!good())
     return *this;
 
-
-
   PrepareNode(EmitterNodeType::Scalar);
-  Utils::WriteChar(m_stream, ch, GetStringEscapingStyle(m_pState->GetOutputCharset()));
+  Utils::WriteChar(m_stream, ch,
+                   GetStringEscapingStyle(m_pState->GetOutputCharset()));
   StartedScalar();
 
   return *this;
