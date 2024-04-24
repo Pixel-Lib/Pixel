@@ -18,7 +18,7 @@ pxl::Drivetrain drivetrain(&leftMotors,   // left motors
                            &rightMotors,  // right motors
                    12.5,          // track width
        3.25,          // diameter of wheel
-    360            // rpm of drivetrain. If unsure, type (input gear / output gear) * motor rpm
+    360           // rpm of drivetrain. If unsure, type (input gear / output gear) * motor rpm
 );
 pros::IMU imu(8);
 pros::Rotation leftRotation(7);
