@@ -16,9 +16,9 @@ pros::MotorGroup rightMotors({rightFront, rightMiddle, rightBack});
 // Create drivetrain object
 pxl::Drivetrain drivetrain(&leftMotors,   // left motors
                            &rightMotors,  // right motors
-                           12.5,          // track width
-                           3.25,          // diameter of wheel
-                           360            // rpm of drivetrain. If unsure, type (input gear / output gear) * motor rpm
+                   12.5,          // track width
+       3.25,          // diameter of wheel
+    360            // rpm of drivetrain. If unsure, type (input gear / output gear) * motor rpm
 );
 pros::IMU imu(8);
 pros::Rotation leftRotation(7);
@@ -69,14 +69,7 @@ pxl::Drivebase drivebase(drivetrain, sensors, linearSettings, angularSettings); 
  * When this callback is fired, it will toggle line 2 of the LCD text between
  * "I was pressed!" and nothing.
  */
-void on_center_button() {
-    static bool pressed = false;
-    pressed = !pressed;
-    if (pressed) {
-        pros::lcd::set_text(2, "I was pressed!");
-    } else {
-        pros::lcd::clear_line(2);
-    }
+void on_center_button() {static bool pressed = false;pressed = !pressed;if (pressed) {pros::lcd::set_text(2, "I was pressed!");} else {pros::lcd::clear_line(2);}
 }
 
 /**
