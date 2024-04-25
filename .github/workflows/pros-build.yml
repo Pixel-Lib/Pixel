@@ -25,18 +25,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pros-
 
-      - name: Get Date
-        id: get-date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Get Month Number
+        id: month-number
+        run: echo "::set-output name=month::$(date +'%m')"
 
       # Cache Python dependencies
       - name: Cache Python dependencies
         uses: actions/cache@v2
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/requirements.txt') }}
+          key: ${{ runner.os }}-pip-${{ steps.month-number.outputs.month }}-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
-            ${{ runner.os }}-pip-${{ steps.get-date.outputs.date }}-
+            ${{ runner.os }}-pip-${{ steps.month-number.outputs.month }}-
             ${{ runner.os }}-pip-
             ${{ runner.os }}-
 
