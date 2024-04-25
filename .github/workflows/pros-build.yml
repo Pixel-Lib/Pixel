@@ -13,6 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Get Week Number
+        id: week-number
+        run: echo "::set-output name=week::$(date +'%U')"
+
+      - name: Cache PROS CLI
+        uses: actions/cache@v2
+        with:
+          path: ~/.pros
+          key: ${{ runner.os }}-pros-${{ steps.week-number.outputs.week }}
+          restore-keys: |
+            ${{ runner.os }}-pros-
+
       - name: Get Date
         id: get-date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
