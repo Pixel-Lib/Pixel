@@ -73,6 +73,9 @@ jobs:
         with:
           release: '10-2020-q4'
 
+      - name: Add ARM Toolchain to PATH
+        run: echo "$HOME/arm-none-eabi/bin" >> $GITHUB_PATH
+
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
