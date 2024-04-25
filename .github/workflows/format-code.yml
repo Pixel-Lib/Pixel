@@ -36,7 +36,7 @@ jobs:
       run: clang-format --version
 
     - name: Check for changes in .cpp, .hpp, .h files
-      id: check-changes
+      id: check-file-changes
       run: |
         git fetch origin
         changed_files=$(git diff --name-only ${{ github.event.before }}..${{ github.sha }} -- '*.cpp' '*.hpp' '*.h')
@@ -48,7 +48,7 @@ jobs:
 
     - name: Format code
       run: |
-        if [ "${{ steps.check-changes.outputs.all_files }}" == "true" ]; then
+        if [ "${{ steps.check-file-changes.outputs.all_files }}" == "true" ]; then
           echo "No .cpp, .hpp, or .h files were changed in the last commit. Formatting all .cpp, .hpp, and .h files in the repository."
           find . -name '*.cpp' -or -name '*.hpp' -or -name '*.h' | while read filename; do
             clang-format -i $filename
@@ -63,11 +63,17 @@ jobs:
         fi
 
     - name: Check for changes
-      run: git diff
-
+      id: check-format-changes
+      run: |
+            git diff --quiet && echo "::set-output name=changed::false" || echo "::set-output name=changed::true"
+            exit_code=$?
+            echo "::set-output name=exit_code::$exit_code"
+  
     - name: Commit changes
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git diff --quiet || (git add . && git commit --amend --no-edit)
-        git push -f
+            if [ "${{ steps.check-format-changes.outputs.exit_code }}" != "0" ]; then
+              git config --local user.email "action@github.com"
+              git config --local user.name "GitHub Action"
+              git add . && git commit --amend --no-edit
+              git push -f
+            fi
