@@ -13,21 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Get Week Number
-        id: week-number
-        run: echo "::set-output name=week::$(date +'%U')"
+      - name: Get Month Number
+        id: month-number
+        run: echo "::set-output name=month::$(date +'%m')"
 
       - name: Cache PROS CLI
         uses: actions/cache@v2
         with:
           path: ~/.pros
-          key: ${{ runner.os }}-pros-${{ steps.week-number.outputs.week }}
+          key: ${{ runner.os }}-pros-${{ steps.month-number.outputs.month }}
           restore-keys: |
             ${{ runner.os }}-pros-
-
-      - name: Get Month Number
-        id: month-number
-        run: echo "::set-output name=month::$(date +'%m')"
 
       # Cache Python dependencies
       - name: Cache Python dependencies
@@ -62,7 +58,17 @@ jobs:
         env:
           SHA: ${{ steps.short-sha.outputs.sha }}
 
+      - name: Cache ARM Toolchain
+        id: cache-arm
+        uses: actions/cache@v2
+        with:
+          path: ~/arm-none-eabi
+          key: ${{ runner.os }}-arm-toolchain-${{ steps.month-number.outputs.month }}
+          restore-keys: |
+            ${{ runner.os }}-arm-toolchain-
+
       - name: Install ARM Toolchain
+        if: steps.cache-arm.outputs.cache-hit != 'true'
         uses: fiam/arm-none-eabi-gcc@v1
         with:
           release: '10-2020-q4'
