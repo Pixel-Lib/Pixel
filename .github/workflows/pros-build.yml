@@ -67,17 +67,20 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-arm-toolchain-
 
-      - name: Install ARM Toolchain
+      - name: Check ARM Toolchain
         run: |
-          if ! [ -x "$(command -v arm-none-eabi-gcc)" ]; then
-            echo "ARM Toolchain is not installed, installing..."
-            wget -qO- "https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2" | tar -xj -C ~/
-          else
-            echo "ARM Toolchain is already installed, skipping installation."
-          fi
-
-      - name: Add ARM Toolchain to PATH
-        run: echo "$HOME/arm-none-eabi/bin" >> $GITHUB_PATH
+                if ! [ -x "$(command -v arm-none-eabi-gcc)" ]; then
+                  echo "ARM Toolchain is not installed, installing..."
+                  wget -qO- "https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2" | tar -xj -C ~/
+                else
+                  echo "ARM Toolchain is already installed, checking path..."
+                  if ! echo $PATH | grep -q "$HOME/arm-none-eabi/bin"; then
+                    echo "Path to ARM Toolchain is not set, setting path..."
+                    echo "$HOME/arm-none-eabi/bin" >> $GITHUB_PATH
+                  else
+                    echo "Path to ARM Toolchain is already set."
+                  fi
+                fi
 
       - name: Setup Python
         uses: actions/setup-python@v2
