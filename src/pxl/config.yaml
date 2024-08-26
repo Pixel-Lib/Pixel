@@ -1,0 +1,37 @@
+motors:
+  left: [1, 2, 3]
+  right: [4, 5, 6]
+
+drivetrain:
+  trackWidth: 12.5
+  wheelDiameter: 3.25
+  rpm: 360
+
+imu: 8
+leftRotation: 7
+
+trackingWheel:
+  diameter: 2.75
+  offset: 4.5
+
+linearSettings:
+  pid:
+    kP: 25.0
+    kI: 0.0
+    kD: 4.0
+  slewRate: 20
+  regressionPoints:
+    - [1.0, 100]
+    - [3.0, 500]
+  globalTimeout: 5000.0
+
+angularSettings:
+  pid:
+    kP: 25.0
+    kI: 0.0
+    kD: 4.0
+  slewRate: 20
+  regressionPoints:
+    - [0.5, 100]
+    - [5.0, 700]
+  globalTimeout: 5000.0

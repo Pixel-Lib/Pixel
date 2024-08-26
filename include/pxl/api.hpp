@@ -4,3 +4,4 @@
 #include "pxl/drivebase/trackingwheel.hpp"
 #include "pxl/timer.hpp"
 #include "yaml-cpp/yaml.h"
+#include "pxl/config.hpp"

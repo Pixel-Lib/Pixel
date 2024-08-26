@@ -6,8 +6,9 @@
 #include <memory>
 #include <type_traits>
 #include <vector>
-
+#include <map>
 #include "pxl/parametrics/coord.hpp"
+#include <string>
 namespace pxl {
 
 /**
