@@ -2,16 +2,16 @@
 
 #include "pxl/api.hpp"
 
-pros::Motor leftFront(1);
-pros::Motor leftMiddle(2);
-pros::Motor leftBack(3);
+// pros::Motor leftFront(1);
+// pros::Motor leftMiddle(2);
+// pros::Motor leftBack(3);
 
-pros::Motor rightFront(4);
-pros::Motor rightMiddle(5);
-pros::Motor rightBack(6);
+// pros::Motor rightFront(4);
+// pros::Motor rightMiddle(5);
+// pros::Motor rightBack(6);
 
-pros::MotorGroup leftMotors({leftFront, leftMiddle, leftBack});
-pros::MotorGroup rightMotors({rightFront, rightMiddle, rightBack});
+// pros::MotorGroup leftMotors({leftFront, leftMiddle, leftBack});
+// pros::MotorGroup rightMotors({rightFront, rightMiddle, rightBack});
 
 // Create drivetrain object
 // pxl::Drivetrain drivetrain(&leftMotors,   // left motors
